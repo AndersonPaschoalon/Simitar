@@ -1,0 +1,18 @@
+/*
+ * DatabaseInterface.h
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef DATABASEINTERFACE_H_
+#define DATABASEINTERFACE_H_
+
+class DatabaseInterface
+{
+public:
+	DatabaseInterface();
+	virtual ~DatabaseInterface();
+};
+
+#endif /* DATABASEINTERFACE_H_ */

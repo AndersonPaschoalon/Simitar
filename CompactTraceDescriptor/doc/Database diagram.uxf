@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>30</y>
+      <w>350</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>ExperimentList
+--
+[PK] experimentID
+--
+experimentName
+Date
+Comment
+bg=#e6b3ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>190</y>
+      <w>860</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>TraceCapture
+--
+[PK FK]  experimentID
+[PK]     frame__number
+         FlowTag // This looks redundant, but may be not
+         FlowID
+--
+experimentID, frame__number, frame__cap_len, frame__comment, frame__len, frame__offset_shift, 
+frame__p2p_dir, frame__p_prot_data, frame__pkt_len, frame__protocols, frame__ref_time, frame__time, 
+frame__tim    e_delta, frame__time_delta_displayed, frame__time_epoch, frame__time_invalid, 
+frame__time_relative, ip__dst, ip__dst_host, ip__fragment, ip__fragment__count, ip__hdr_len, 
+ip__len, ip__proto, ip__src, ip__src_host, ip__ttl, ip__ve    rsion, ipv6__addr, ipv6__dst, 
+ipv6__flow, ipv6__fragment, ipv6__fragment__count, ipv6__opt__jumbo, ipv6__plen, ipv6__version, 
+eth__addr, eth__addr_resolved, eth__dst, eth__dst_resolved, eth__len, eth__padding, eth__src,
+eth__src_    resolved, eth__type, tcp__ack, tcp__dstport, tcp__hdr_len, tcp__len, tcp__nxtseq, 
+tcp___proc__dstcmd, tcp__proc__dstpid, tcp__proc__dstuid, tcp__proc__dstuname, tcp__proc__srccmd, 
+tcp__proc__srcpid, tcp__proc__srcuid, tcp__proc__    srcuname, tcp__reassembled_in, tcp__seq, 
+tcp__time_delta, tcp__time_relative, tcp__window_size, tcp__window_size_scalefacto, 
+tcp__window_size_value, udp__dstport, udp__length, udp__proc__dstcmd, udp__proc__dstpid, 
+udp__proc__dstu    id, udp__proc__dstuname, udp__proc__srccmd, udp__proc__srcpid, 
+udp__proc__srcuid, udp__proc__srcuname, udp__srcport, udp__stream, icmp__address_mask, 
+icmp__data_time, icmp__data_time_relative, icmp__ext__version, icmp__int_info__ip, 
+icmp__int_info__ipaddr, icmp__int_info__ipunknown, icmp__int_info__ipv4, icmp__int_info__ipv6, 
+icmp__int_info__mtu, icmp__length, icmp__length__original_datagram, icmp__lifetime, 
+icmp__mpls__ttl, icmp__seq, icmp__type, dccp__    dstport, dccp__padding, dccp__port, 
+dccp__seq, dccp__timestamp, dccp__timestamp_echo, dccp__type, sctp__asconf_ack_seq_nr_number, 
+sctp__dstport, sctp__forward_tsn_sid, sctp__forward_tsn_ssn, sctp__hmac, sctp__hmac_id, 
+sctp__parameter_hostname, sctp__parameter_ipv4_address, sctp__parameter_ipv6_address, 
+sctp__rtt, sctp__srcport
+bg=#99e6ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>130</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

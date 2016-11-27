@@ -1,0 +1,79 @@
+16:04:49 **** Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'objects.mk' has modification time 170 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp:446:8: warning: extra tokens at end of #endif directive
+ #endif DEBUG_StochasticModelFit
+        ^
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:163:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building file: ../src/TraceAnalyzer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TraceAnalyzer.d" -MT"src/TraceAnalyzer.o" -o "src/TraceAnalyzer.o" "../src/TraceAnalyzer.cpp"
+Finished building: ../src/TraceAnalyzer.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+16:05:02 Build Finished (took 12s.435ms)
+

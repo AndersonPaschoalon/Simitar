@@ -1,0 +1,20 @@
+/*
+ * TestClass.cpp
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#include "TestClass.h"
+
+TestClass::TestClass()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+TestClass::~TestClass()
+{
+	// TODO Auto-generated destructor stub
+}
+

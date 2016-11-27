@@ -1,0 +1,20 @@
+/*
+ * DatabaseInterface.cpp
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#include "DatabaseInterface.h"
+
+DatabaseInterface::DatabaseInterface()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+DatabaseInterface::~DatabaseInterface()
+{
+	// TODO Auto-generated destructor stub
+}
+

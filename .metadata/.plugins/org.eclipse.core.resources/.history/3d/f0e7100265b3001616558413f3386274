@@ -1,0 +1,20 @@
+/*
+ * DummyFlow.cpp
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#include "DummyFlow.h"
+
+DummyFlow::DummyFlow()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+DummyFlow::~DummyFlow()
+{
+	// TODO Auto-generated destructor stub
+}
+

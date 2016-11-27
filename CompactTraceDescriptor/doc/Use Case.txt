@@ -1,0 +1,156 @@
+################################################################################
+# Sniffer
+################################################################################
+
+1.	The sniffer should be able to create a new database, if and only if no 
+	other database existis.
+
+2.	The Sniffer should be able to create a new table for each experiment, 
+	to store its collected data
+
+3.	The sniffer should use SQL INSERT operations for each new packet to
+	store its data on databse 
+
+4.	The sniffer also should be able to insert two more fields, not grabbed
+	from the packet:
+	a.	String FlowID: an identfier from the socket to socket flow, 
+		created with packet information. It is a String, with the 
+		format:
+			<trans-prot>,<src-port>,<dst-port>,<net-prot>,<ip-src>,<ip-dst>
+			<trans-prot>	: tranport protocol
+			<src-po	rt>	: sorce port
+			<dst-port>	: destination port
+			<net-prot>	: network protocol
+			<ip-src>	: IPv4/IPv6 sorce	
+			<ip-dst>	: IPv4/IPv6 destination
+		If any of these fields do not exists, it is let in blank
+		Also, it is assument if two packets have the same FlowID, they
+		belong to the same flow
+	b.	int FlowSequenceNumber: another identifier related with FlowID.
+		It is just a number that identify each flow, assigned in order
+		of apparence.
+
+5.	The sniffer also, should be able to provide data visualizatin of the
+	network measurements. 
+	a. 	This should be done by  generation vectors of data in plain 
+		text of features listed down below. It may read collected data, 
+		or the database.(notation: M is a matrix in plain text)
+		i.	Flow per second (granularity of 1 second)
+			M = [(Number of flow) (time passed)]
+		ii.	Packet per second (granularity 1 ms)
+			M = [(Number of packets grabbed) (time passed)]
+		iii.Mbits per second (granularity 1 ms)
+			M = [(Number of Magabits) (time passed)]
+			(Number of Magabits) = (Number of packets grabbed)*(packet size)
+		iv.	Packet size distribution
+			M = [(packet size - each packet)]
+		v.	Inter arrival
+			M = [(inter arrival time - each packet)]
+			The inter arrival time of a packet it the arrival time of a 
+			packet subtracted by the arrival time of the last packet.
+		vi.	A list of protocols for each packet
+			M [(tranport protocol) (network protocol)]
+	b.	This data should be read and processed by octave scripts.
+
+6.	Should automatically detect if the is read from a live capture or a
+	pcap, and chood the apropiate fields to scan.
+
+7.	The sniffer should be able to delete tables from the database.
+
+################################################################################
+# Database
+################################################################################
+
+1.	Should have one main table, and one subtable for each experiment.
+
+2.	The parent table should have one row for each experiment, and also store
+	usefull information about that
+
+3.	The child table should store information about the trace capture and
+	two flow identificators: FlowID, and FlowTag
+	FlowTag
+	regx: /{eth__type}/{ip__src}/{ip__dst}/{ip__proto}/(tcp__srcport}|
+	{udp__srcport}|\.|{dccp__dstport}|{sctp__srcport})/({tcp__dstport}|
+	{udp___dstport}|\.|{dccp__dstport}|{sctp__dstport})	
+	format: /<Network Protocol>/<IP dst>/<IP src>/<Transport Protocol>/
+	<Port src or .>/<Port dst or .>
+	FlowID
+	integer flow idex related to FlowTag, in order of apparece. 
+
+################################################################################
+# Trace Analyzer
+################################################################################
+
+1.	The trace Analyzer should be able to request data from the trace database, 
+	execunting queries into it, to get data. The only previous required
+	information to get all information need should be just the trace ID number.
+	To execute these operations, should exist the follow types of queries:
+	a.	Per Trace queries
+		i.	Request flow IDs: with the trace ID number, it should be possible 
+			to request the ID number of each flow present on its trace.
+	b. 	Per Flow queries
+		i.	Request Flow invariant data: Invariant data inside a same flow. 
+			Just a request of a single cell is need to obtain the right data.
+		ii. Request per Flow stochastic data: It is need to obtain the value o 
+			each packet, in a vectorized way, order to process the data, and 
+			give an estimated valua using an algorithm (linear regression, 
+			avarage, mode, ...). May be numeric or text data.
+
+2.	Using this collected data, the collected data, the trace analyzer should 
+	be able to estimate a list of flow parameters for each, for each one of the 
+	flows. Some flows may have more then one class of parameters. For example, a
+	parameter may belong to a class A, B or C.
+
+3. 	Also it should estimate a list of parameters related to the trace itself.
+
+4. 	At the and, each trace should have a list of parameters related to it, and
+	a vector of flow parameters lists. 
+
+3.	This parameters should be either written and read in/from an XML file.
+	So, should be a set of functions that:
+	a. Take the set of parameters, and write them into a xml file.
+	b. Read a XML file, fill a set parameters.  
+
+4.	This read/write process should be done in a single run: 
+	* take a set of pameters data structures and write this in a XML file;
+	* take a XML file, parse it, and fill a set of data structures.
+
+5.	This XML file should be human readable.
+
+6.	The generated XML file MUST be portable between different traffic generators
+	APIs.
+
+################################################################################
+# Flow Generator
+################################################################################
+
+1. 	The Flow generator should be able to use the same flow  and trace data 
+	structures specifieds before. It should be able to read the XML file,
+	and fill its data structures.
+
+2.	Then, the flow generator should e able to provide this data to a scheduler.
+	It should be able to read the data from trace and flows, and schedule
+	the flow generation over time.
+
+3.	The Schedule should use the flow data, parse de data and provide it as an
+	input of a traffic generator (The flow and trace objects should be passed 
+	as a parameter, and the data retrived with gets operations -> ASSOCIATION).
+
+4.	The schedule should not create all threads in a single run, or this 
+	functionality should be optional (Inheritance - plimorfism). So, should 
+	be created one thread for each flow. The thread should sleep, util the
+	time to generate packets arrives, and then dies, when the last packet is
+	sent. The overhead should be smaller in that way.
+
+5.	The scheduler should be labelad as its traffic generator. For example
+	for the D-ITG traffic generator, the scheduler may be called:
+	DitgScheduler, DitgSingletScheduler or DitgMultitScheduler 
+	(although, may exist an abstract class or interface for all schedulers).
+
+6.	The XML file must be portable between different traffic generators API.
+	That means that the dada have to make sense in therms of network
+	architecture and pure mathematical models.
+	Although some traffic generators may be more or less limeted, if not 
+	configurable data is stored on the XML file, it just have to be ignored
+	by the traffic generator.
+

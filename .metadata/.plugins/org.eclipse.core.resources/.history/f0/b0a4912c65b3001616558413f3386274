@@ -1,0 +1,20 @@
+/*
+ * NetworkFlow.cpp
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#include "NetworkFlow.h"
+
+NetworkFlow::NetworkFlow()
+{
+	// TODO Auto-generated constructor stub
+
+}
+
+NetworkFlow::~NetworkFlow()
+{
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,18 @@
+/*
+ * TraceAnalyzer.h
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef TRACEANALYZER_H_
+#define TRACEANALYZER_H_
+
+class TraceAnalyzer
+{
+public:
+	TraceAnalyzer();
+	virtual ~TraceAnalyzer();
+};
+
+#endif /* TRACEANALYZER_H_ */

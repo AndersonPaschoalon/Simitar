@@ -1,0 +1,17 @@
+16:05:02 **** Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'objects.mk' has modification time 170 s in the future
+Building file: ../Algorithms/Prototypes.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"Algorithms/Prototypes.d" -MT"Algorithms/Prototypes.o" -o "Algorithms/Prototypes.o" "../Algorithms/Prototypes.cpp"
+Finished building: ../Algorithms/Prototypes.cpp
+ 
+Building target: Prototypes
+Invoking: GCC C++ Linker
+g++  -o "Prototypes"  ./Algorithms/Prototypes.o   -larmadillo
+Finished building target: Prototypes
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+16:05:05 Build Finished (took 3s.67ms)
+

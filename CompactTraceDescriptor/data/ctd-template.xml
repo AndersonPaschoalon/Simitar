@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<trace_descriptor>
+    <trace_info>
+        <!--This field may contain an interface name (eth0, eth1, ..) or 
+		just pcap-->
+        <original_capture_interface></original_capture_interface>
+    </trace_info>
+    <flow_count></flow_count>
+    <flow_data>
+        <flow>
+            <!--FLOW-LEVEL OPTIONS===========================================-->
+            <duration type="ms"></duration>
+            <start_delay type="ms"></start_delay>
+            <ds_byte></ds_byte>
+            <!--PROTOCOL OPTIONS=============================================-->
+            <link_layer>
+                <link_protocol type="string"></link_protocol>
+                <src_addr_count type="int"></src_addr_count>
+                <l2_addr_list>
+                    <!--l2 addr 1-->
+                    <l2_addr>
+                        <mac_src type="string"></mac_src>
+                        <mac_dst_count type="int"></mac_dst_count>
+                        <!--dst 1-->
+                        <mac_dst>
+                            <mac_add type="string"></mac_add>
+                            <frequency type="int"></frequency>
+                        </mac_dst>
+                        <!--dst 2-->
+                        <mac_dst>
+                            <mac_add type="string"></mac_add>
+                            <frequency type="int"></frequency>
+                        </mac_dst>
+                    </l2_addr>
+                    <!--l2 addr 2-->
+                    <l2_addr>
+                        <mac_src type="string"></mac_src>
+                        <mac_dst_count type="int"></mac_dst_count>
+                        <!--dst 1-->
+                        <mac_dst>
+                            <mac_add type="string"></mac_add>
+                            <frequency type="int"></frequency>
+                        </mac_dst>
+                        <!--dst 2-->
+                        <mac_dst>
+                            <mac_add type="string"></mac_add>
+                            <frequency type="int"></frequency>
+                        </mac_dst>
+                    </l2_addr>
+                    <!--.....-->
+                </l2_addr_list>
+            </link_layer>
+            <network_layer>
+                <ttl></ttl>
+                <!--This field contain the next tag to be parsed-->
+                <network_protocol></network_protocol>
+                <ipv4>
+                    <dst_addr></dst_addr>
+                    <src_addr></src_addr>
+                </ipv4>
+                <ipv6>
+                    <dst_addr></dst_addr>
+                    <src_addr></src_addr>
+                </ipv6>
+                <icmp>
+                    <dst_addr></dst_addr>
+                    <src_addr></src_addr>
+                    <type></type>
+                </icmp>
+            </network_layer>
+            <transport_layer>
+                <dst_port></dst_port>
+                <src_port></src_port>
+                <!--This field contain the next tag to be parsed-->
+                <trasport_protocol></trasport_protocol>
+                <tcp></tcp>
+                <udp></udp>
+                <dccp></dccp>
+                <sctp>
+                    <association_id></association_id>
+                    <max_streams></max_streams>
+                </sctp>
+            </transport_layer>
+            <application_layer></application_layer>
+
+            <!--PACKET SIZE MODEL============================================-->
+            <packet_size_model>
+                <!--The tag model1 contains the next tag to be parsed. But, 
+				if the traffic generator do not have support for this one
+				anothers may be choosen, from model2 to model6-->
+                <model1></model1>
+                <model2></model2>
+                <model3></model3>
+                <model4></model4>
+                <model5></model5>
+                <model6></model6>
+                <model7></model7>
+                <model8></model8>
+                <!--BIMODAL-->
+                <bimodal>
+                    <mode1>
+                        <!--Constant/normal/weibull-->
+                        <type></type>
+                        <constant></constant>
+                        <normal>
+                            <mean></mean>
+                            <std_dev></std_dev>
+                        </normal>
+                        <weibull>
+                            <shape></shape>
+                            <scale></scale>
+                        </weibull>
+                    </mode1>
+                    <mode2>
+                        <!--Constant/normal/weibull-->
+                        <type></type>
+                        <constant></constant>
+                        <normal>
+                            <mean></mean>
+                            <std_dev></std_dev>
+                        </normal>
+                        <weibull>
+                            <shape></shape>
+                            <scale></scale>
+                        </weibull>
+                    </mode2>
+                </bimodal>
+                <!--WEIBULL-->
+                <weibull>
+                    <shape></shape>
+                    <scale></scale>
+                </weibull>
+                <!--PARETO-->
+                <pareto>
+                    <shape></shape>
+                    <scale></scale>
+                </pareto>
+                <!--CONSTANT-->
+                <constant arg="pkt_size"></constant>
+                <!--NORMAL-->
+                <normal>
+                    <mean></mean>
+                    <std_dev></std_dev>
+                </normal>
+                <!--UNIFORM-->
+                <uniform>
+                    <min_pkt_size></min_pkt_size>
+                    <max_pkt_size></max_pkt_size>
+                </uniform>
+                <!--EXPONENTIAL-->
+                <exponential arg="average_pkt_size"></exponential>
+                <!--POISSON-->
+                <poisson>
+                    <mean></mean>
+                </poisson>
+            </packet_size_model>
+            <!--INTER-DEPERTURE MODEL========================================-->
+            <interdeperture_time>
+                <model1></model1>
+                <model2></model2>
+                <model3></model3>
+                <model4></model4>
+                <model5></model5>
+                <model6></model6>
+                <model7></model7>
+                <model8></model8>
+                <model9></model9>
+                <!--CONSTANT-->
+                <constant></constant>
+                <!--WEIBULL-->
+                <weibull>
+                    <shape></shape>
+                    <scale></scale>
+                </weibull>
+                <!--PARETO-->
+                <pareto>
+                    <shape></shape>
+                    <scale></scale>
+                </pareto>
+                <!--GAMMA-->
+                <gamma>
+                    <shape></shape>
+                    <scale></scale>
+                </gamma>
+                <!--CAUCHY-->
+                <cauchy>
+                    <shape></shape>
+                    <scale></scale>
+                </cauchy>
+                <!--POISSON-->
+                <poisson>
+                    <mean></mean>
+                </poisson>
+                <!--NORMAL-->
+                <normal>
+                    <mean></mean>
+                    <std_dev></std_dev>
+                </normal>
+                <!--UNIFORM-->
+                <uniform>
+                    <min_pkt_size></min_pkt_size>
+                    <max_pkt_size></max_pkt_size>
+                </uniform>
+                <!--EXPONENTIAL-->
+                <exponential arg="average_pkt_size"></exponential>
+            </interdeperture_time>
+            <!--ON/OFF MODEL=================================================-->
+            <onoff_model>
+                <model1></model1>
+                <model2></model2>
+                <model3></model3>
+                <model4></model4>
+                <model5></model5>
+                <model6></model6>
+                <model7></model7>
+                <model8></model8>
+                <model9></model9>
+                <!--CONSTANT-->
+                <constant></constant>
+                <!--WEIBULL-->
+                <weibull>
+                    <shape></shape>
+                    <scale></scale>
+                </weibull>
+                <!--PARETO-->
+                <pareto>
+                    <shape></shape>
+                    <scale></scale>
+                </pareto>
+                <!--GAMMA-->
+                <gamma>
+                    <shape></shape>
+                    <scale></scale>
+                </gamma>
+                <!--CAUCHY-->
+                <cauchy>
+                    <shape></shape>
+                    <scale></scale>
+                </cauchy>
+                <!--POISSON-->
+                <poisson>
+                    <mean></mean>
+                </poisson>
+                <!--NORMAL-->
+                <normal>
+                    <mean></mean>
+                    <std_dev></std_dev>
+                </normal>
+                <!--UNIFORM-->
+                <uniform>
+                    <min_pkt_size></min_pkt_size>
+                    <max_pkt_size></max_pkt_size>
+                </uniform>
+                <!--EXPONENTIAL-->
+                <exponential arg="average_pkt_size"></exponential>
+            </onoff_model>
+            <!--OTHER FEATURES MODEL=========================================-->
+            <!--This features may be used instead of more complex models-->
+            <number_of_packets></number_of_packets>
+            <number_of_kbytes></number_of_kbytes>
+        </flow>
+    </flow_data>
+</trace_descriptor>

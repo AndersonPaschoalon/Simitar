@@ -1,0 +1,18 @@
+/*
+ * DummyFlow.h
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef DUMMYFLOW_H_
+#define DUMMYFLOW_H_
+
+class DummyFlow
+{
+public:
+	DummyFlow();
+	virtual ~DummyFlow();
+};
+
+#endif /* DUMMYFLOW_H_ */

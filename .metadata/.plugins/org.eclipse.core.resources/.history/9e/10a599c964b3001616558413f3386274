@@ -1,0 +1,18 @@
+/*
+ * DitgFlow.h
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef DATA_DITGFLOW_H_
+#define DATA_DITGFLOW_H_
+
+class DitgFlow
+{
+public:
+	DitgFlow();
+	virtual ~DitgFlow();
+};
+
+#endif /* DATA_DITGFLOW_H_ */

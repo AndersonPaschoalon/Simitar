@@ -1,0 +1,18 @@
+/*
+ * NetworkTrace.h
+ *
+ *  Created on: 25 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef NETWORKTRACE_H_
+#define NETWORKTRACE_H_
+
+class NetworkTrace
+{
+public:
+	NetworkTrace();
+	virtual ~NetworkTrace();
+};
+
+#endif /* NETWORKTRACE_H_ */
