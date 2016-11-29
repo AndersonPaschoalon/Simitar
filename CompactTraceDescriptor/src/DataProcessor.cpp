@@ -43,28 +43,28 @@ int DataProcessor::calculate(const string& experimentName,
 	//protocol variables
 	string flowStrData = "";
 	long int flowIntData = 0;
-	double startDalay = 0;		//time of the fist packet of the flow
-	double flowDuration = 0;	//duration of the flow
+	time_sec startDalay = 0;		//time of the fist packet of the flow
+	time_sec flowDuration = 0;	//duration of the flow
 	list<long int> ttlList;
 	int ttl = 0;
 
 	//flow-level variables
-	list<double> relativeTime;	//time relative to the 1st packet list
+	list<time_sec> relativeTime;	//time relative to the 1st packet list
 	long int nKbytes = 0;		//Number of kbytes (bytes/1024) of the
 
 	//packetSize variables
 	list<long int> pslist;		//packet-size list
-	long int ps_mostFrequent = 0;
-	double mean_packetRate = 0;
+	//long int ps_mostFrequent = 0; //not being used
+	//double mean_packetRate = 0; //not being used
 
 	//inter-deperture time variables
-	StochasticModelFit* modelVet = NULL;
-	list<double> interArrival_list; // list of inter arrival times of a flow
-	list<double> interArrival_fileStack;
-	list<double> interArrival_interFileStack;
-	list<double> interArrival_interSessionStack;
-	double lastTime = 0;
-	double idt = 0;
+	//StochasticModelFit* modelVet = NULL; //not being used
+	list<time_sec> interArrival_list; // list of inter arrival times of a flow
+	list<time_sec> interArrival_fileStack;
+	list<time_sec> interArrival_interFileStack;
+	list<time_sec> interArrival_interSessionStack;
+	time_sec lastTime = 0;
+	time_sec idt = 0;
 
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
@@ -95,7 +95,7 @@ int DataProcessor::calculate(const string& experimentName,
 		//evaluate inter-arrival data
 		//time relative to the begin of the measurement
 		lastTime = 0;
-		for (list<double>::iterator it = relativeTime.begin();
+		for (list<time_sec>::iterator it = relativeTime.begin();
 				it != relativeTime.end(); it++)
 		{
 			idt = *it - lastTime;
@@ -281,7 +281,7 @@ int DataProcessor::calculate(const string& experimentName,
 		//netFlow->setInterDepertureTimeModels(
 		//		fitModels(interArrival_list, "aic"));
 
-		for (list<double>::iterator it = interArrival_list.begin();
+		for (list<time_sec>::iterator it = interArrival_list.begin();
 				it != interArrival_list.end(); it++)
 		{
 			if (*it < FILE_CUT_TIME)
@@ -298,6 +298,18 @@ int DataProcessor::calculate(const string& experimentName,
 			}
 		}
 
+		//set file interdeperture time model
+		netFlow->setInterDepertureTimeModels(
+				this->fitModels(interArrival_fileStack,
+						this->getInformationCriterion()));
+		//set interfile time model
+		netFlow->setInterFileTimeModel(
+				this->fitModels(interArrival_interFileStack,
+						this->getInformationCriterion()));
+		//st inter session time model
+		netFlow->setInterSessionTimeModel(
+				this->fitModels(interArrival_interSessionStack,
+						this->getInformationCriterion()));
 
 #ifdef DEBUG_DataProcessor_interArrival
 		if (fcounter == 0)
@@ -308,10 +320,10 @@ int DataProcessor::calculate(const string& experimentName,
 			save_data_on_file(file1, interArrival_fileStack);
 			save_data_on_file(file2, interArrival_interFileStack);
 			save_data_on_file(file3, interArrival_interSessionStack);
+
+
 		}
 #endif
-
-
 
 		//TODO set the right model
 
@@ -350,6 +362,31 @@ int DataProcessor::calculate(const string& experimentName,
 #endif //DEBUG_DataProcessor_calculate
 
 	return (0);
+}
+
+void DataProcessor::setInformationCriterion(const string& criterion)
+{
+	if (criterion == "aic")
+	{
+		informationCriterionParam = criterion;
+	}
+	else if (criterion == "bic")
+	{
+		informationCriterionParam = criterion;
+	}
+	else
+	{
+		cout << "\nInvalid criterion or no criterion selected: " << criterion
+				<< endl;
+		printf("Selecting default criterion: AIC\n");
+		informationCriterionParam = "aic";
+	}
+
+}
+
+const string& DataProcessor::getInformationCriterion()
+{
+	return (informationCriterionParam);
 }
 
 StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
@@ -974,8 +1011,8 @@ inline double DataProcessor::informationCriterion(const vec& data,
 	}
 	else
 	{
-		cout << "\nInvalid functionName or no functionName selected: "
-				<< functionName << endl;
+		cout << "\nInvalid criterion or no criterion selected: " << criterion
+				<< endl;
 		printf("Selecting default criterion: AIC\n");
 		criterionVal = 2 * nEstimatedParameters - 2 * likehoodLogVal;
 	}

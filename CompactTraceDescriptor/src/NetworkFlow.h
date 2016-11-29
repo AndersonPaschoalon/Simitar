@@ -65,10 +65,10 @@ public:
 	virtual void setApplicationProtocol(protocol applicationProtocol) = 0;
 	virtual unsigned int getFlowDsByte() const = 0;
 	virtual void setFlowDsByte(unsigned int flowDsByte) = 0;
-	virtual double getFlowDuration() const = 0;
-	virtual void setFlowDuration(double flowDuration) = 0;
-	virtual double getFlowStartDelay() const = 0;
-	virtual void setFlowStartDelay(double flowStartDelay) = 0;
+	virtual time_sec getFlowDuration() const = 0;
+	virtual void setFlowDuration(time_sec flowDuration) = 0;
+	virtual time_sec getFlowStartDelay() const = 0;
+	virtual void setFlowStartDelay(time_sec flowStartDelay) = 0;
 
 	virtual protocol getLinkProtocol() const = 0;
 	virtual void setLinkProtocol(protocol linkProtocol) = 0;
@@ -99,11 +99,11 @@ public:
 	virtual void setInterDepertureTimeModels(
 			StochasticModelFit* modelVet) = 0;
 
-	virtual void setInterFileTimeModel(StochasticModelFit& modelStruct) = 0;
-	virtual double getInterFileTime() = 0;
+	virtual void setInterFileTimeModel(StochasticModelFit* modelVet) = 0;
+	virtual time_sec getInterFileTime() = 0;
 
-	virtual void setInterSessionTimeModel(StochasticModelFit& modelStruct) = 0;
-	virtual double getInterSessionTime() = 0;
+	virtual void setInterSessionTimeModel(StochasticModelFit* modelVet) = 0;
+	virtual time_sec getInterSessionTime() = 0;
 
 	/*
 	 virtual double getIdtCauchyScale() const = 0;
@@ -227,8 +227,8 @@ public:
 	virtual unsigned int getTransportSctpMaxStreams() const = 0;
 	virtual void setTransportSctpMaxStreams(
 			unsigned int transportSctpMaxStreams) = 0;
-	virtual unsigned int getTransportSrcPort() const = 0;
-	virtual void setTransportSrcPort(unsigned int transportSrcPort) = 0;
+	virtual port_number getTransportSrcPort() const = 0;
+	virtual void setTransportSrcPort(port_number transportSrcPort) = 0;
 	virtual protocol getTransportProtocol() const = 0;
 	virtual void setTransportProtocol(protocol transportProtocol) = 0;
 

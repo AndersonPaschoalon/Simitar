@@ -150,7 +150,12 @@ DummyFlow::DummyFlow()
 
 DummyFlow::~DummyFlow()
 {
+	//interarrival data structs
 	delete[] interArrivalvet;
+	delete[] interFileModel;
+	delete[] interSessionModel;
+
+	//packet-size data structures
 	delete[] psMode1;
 	delete[] psMode2;
 }
@@ -1226,4 +1231,32 @@ void DummyFlow::setInterDepertureTimeModels(StochasticModelFit* modelVet)
 {
 	interArrivalvet = modelVet;
 	interDepertureTimeModel_counter = 0;
+}
+
+void DummyFlow::setInterFileTimeModel(StochasticModelFit* modelStruct)
+{
+	interFileModel = modelStruct;
+}
+
+time_sec DummyFlow::getInterFileTime()
+{
+	time_sec interFileTimeRngEstimation = 0;
+
+	//weibull-constant estimator rng generator
+
+	return(interFileTimeRngEstimation);
+}
+
+void DummyFlow::setInterSessionTimeModel(StochasticModelFit* modelStruct)
+{
+	interSessionModel = modelStruct;
+}
+
+time_sec DummyFlow::getInterSessionTime()
+{
+	time_sec interSessionTimeRngEstimation = 0;
+
+	//weibull-constant estimator rng generator
+
+	return(interSessionTimeRngEstimation);
 }

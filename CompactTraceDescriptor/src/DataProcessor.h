@@ -36,8 +36,7 @@ using namespace arma;
 
 #define DEBUG_StochasticModelFit 1
 
-
-//TODO: this class must be static
+//TODO: this class must be static... or not
 class DataProcessor
 {
 public:
@@ -80,7 +79,26 @@ public:
 	int calculate(const string& experimentName,
 			DatabaseInterface* databaseInterface, NetworkTrace* netTrace);
 
+	/**
+	 * @brief Set the information criterion.
+	 * May be setted as "aic" or "bic". If any other string is used as input,
+	 * it prints an error message, and set "aic" as default.
+	 *
+	 * @param criterion
+	 */
+	void setInformationCriterion(const string& criterion);
+
+	/**
+	 * @brief Returns the information criterion.
+	 * Returns the information criterion string setted in the DataProcessor
+	 * class. The default value is "aic".
+	 *
+	 * @return
+	 */
+	const string& getInformationCriterion();
+
 #ifdef TEST_FUNCTIONS
+
 	void save_data_on_file(const string& fileName, const mat& vet1,
 			const mat& vet2);
 	void save_data_on_file(const string& fileName, list<double>& theList);
@@ -105,9 +123,11 @@ public:
 	bool test_cdf_cauchy();
 	bool test_fitModels();
 	bool test_modelSelection();
+
 #endif //TEST_FUNCTIONS
 
 private:
+
 	/**
 	 * A time smaller than the min_time resolution. Once the current resolution
 	 * is 1e-6, min_time is half of this value. This value is used as default
@@ -121,22 +141,41 @@ private:
 	 */
 	double diferential = 4e-14;
 
-	// calculate the mean packet rate
-	int mean_packetRate(list<long int>& pakcetSizeList, double duration);
+	/**
+	 * Information Criterion used in the DataProcessor. May be AIC
+	 * (string "aic") or BIC (string "bic"). The default value is "aic".
+	 */
+	string informationCriterionParam = "aic";
 
-	//calculate the most frequent element from a list
+	/**
+	 * calculate the most frequent element from a list
+	 * @param thelist
+	 * @return
+	 */
 	long int mode(list<long int>& thelist);
 
 	/**
 	 * 	ACTUAL FUNCTIONS
 	 */
-	// Take as input a vector <T> vet[], its first and last position to be
-	// sorted. After the execution vet[] will be sorted.
-	// T* vet : C vector
-	// int left: fist position of the C vector to be sorted, usually 0.
-	// int right: last position of the C vector to be sorted, usually size-1;
+
+	/**
+	 * @brief
+	 * Take as input a vector <T> vet[], its first and last position to be
+	 * sorted. After the execution vet[] will be sorted.
+	 *
+	 * @param vet C vector
+	 * @param left fist position of the C vector to be sorted, usually 0.
+	 * @param right last position of the C vector to be sorted, usually size-1;
+	 */
 	template<typename T> void quickSort(T* vet, int left, int right);
-	// Evaluate the mode (the most frequent value) of a list list<T>
+
+	/**
+	 * @brief
+	 * Evaluate the mode (the most frequent value) of a list list<T>
+	 *
+	 * @param theList
+	 * @return
+	 */
 	template<typename T> T mode(list<T>* theList);
 
 	/**

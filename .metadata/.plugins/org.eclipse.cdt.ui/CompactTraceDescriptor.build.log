@@ -1,8 +1,9 @@
-22:15:29 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
-make all 
-make: Warning: File 'src/TestClass.d' has modification time 61 s in the future
+18:09:53 **** Clean-only build of configuration Debug for project CompactTraceDescriptor ****
+make clean 
+make: Warning: File 'src/subdir.mk' has modification time 127 s in the future
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DitgFlow.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/StochasticModelFit.d ./src/TestClass.d ./src/TraceAnalyzer.d  CompactTraceDescriptor
+ 
 make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Nothing to be done for 'all'.
 
-22:15:30 Build Finished (took 260ms)
+18:09:53 Build Finished (took 68ms)
 

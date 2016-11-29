@@ -9,30 +9,7 @@
 #define DUMMYFLOW_H_
 
 #include "NetworkFlow.h"
-//external libraries
 /*
- #include <stdio.h>
- #include <iostream>
- #include <stdlib.h>
- #include <thread>
- #include <unistd.h>
- #include <string>
- #include <errno.h>
- #include <stdlib.h>
- #include <string.h>
- #include <cstdlib>
- #include <pthread.h>
-
- //local includes
- #include "ITGapi.h"
- #include "Defines.h"
-
- //namespaces
- using std::string;
- using std::cout;
- using std::cin;
- using std::endl;
-
  TODO Implementation of L2 data structures
  typedef struct mac_dst_n {
  string mac_dst;
@@ -144,8 +121,16 @@ public:
 
 	//StochasticModelFit getPacketSizeModel_next() const;
 	//void setPacketSizeModel_next(StochasticModelFit* modelVet) const;
+
 	StochasticModelFit getInterDepertureTimeModel_next();
 	void setInterDepertureTimeModels(StochasticModelFit* modelVet);
+
+	void setInterFileTimeModel(StochasticModelFit* modelVet);
+	time_sec getInterFileTime();
+
+	void setInterSessionTimeModel(StochasticModelFit* modelVet);
+	time_sec getInterSessionTime();
+
 	/*
 	 double getIdtCauchyScale() const;
 	 void setIdtCauchyScale(double idtCauchyScale);
@@ -303,8 +288,11 @@ private:
 	/**
 	 * Interperture time
 	 */
-	StochasticModelFit* interArrivalvet;
-	int interDepertureTimeModel_counter;
+
+	StochasticModelFit* interArrivalvet; //file interdeperture time
+	counter interDepertureTimeModel_counter; //counter of for model get method
+	StochasticModelFit* interFileModel; //inter-file time
+	StochasticModelFit* interSessionModel; //inter-session time
 
 	/**
 	 * Packet Size Model
