@@ -36,7 +36,7 @@ Alternaively, you may execute:
 apt-get install libarmadillo-dev
 ```
 
-##D-ITG
+###D-ITG
 
 D-ITG is a internet traffic generation. It can be dawnloaded for free on their webpage (http://www.grid.unina.it/software/ITG/). As described by the authors: 
 
@@ -52,7 +52,7 @@ To use if along with this software:
 2. Dependencies: it uses DCCP and SCTP protocols.
 ```
 	sudo apt-get install libsctp-dev lksctp-tools
-````
+```
 3. Build and install
 ```
 	cd D-ITG-2.8.1-r1023/src/
