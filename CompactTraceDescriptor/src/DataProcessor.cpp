@@ -277,7 +277,10 @@ int DataProcessor::calculate(const string& experimentName,
 		//Inter-arrival-time Model
 		//######################################################################
 
-		/*
+		//v0.2
+		//netFlow->setInterDepertureTimeModels(
+		//		fitModels(interArrival_list, "aic"));
+
 		for (list<double>::iterator it = interArrival_list.begin();
 				it != interArrival_list.end(); it++)
 		{
@@ -294,7 +297,7 @@ int DataProcessor::calculate(const string& experimentName,
 				interArrival_interSessionStack.push_back(*it);
 			}
 		}
-		*/
+
 
 #ifdef DEBUG_DataProcessor_interArrival
 		if (fcounter == 0)
@@ -308,8 +311,7 @@ int DataProcessor::calculate(const string& experimentName,
 		}
 #endif
 
-		netFlow->setInterDepertureTimeModels(
-				fitModels(interArrival_list, "aic"));
+
 
 		//TODO set the right model
 

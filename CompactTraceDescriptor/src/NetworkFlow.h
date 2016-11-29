@@ -99,6 +99,12 @@ public:
 	virtual void setInterDepertureTimeModels(
 			StochasticModelFit* modelVet) = 0;
 
+	virtual void setInterFileTimeModel(StochasticModelFit& modelStruct) = 0;
+	virtual double getInterFileTime() = 0;
+
+	virtual void setInterSessionTimeModel(StochasticModelFit& modelStruct) = 0;
+	virtual double getInterSessionTime() = 0;
+
 	/*
 	 virtual double getIdtCauchyScale() const = 0;
 	 virtual void setIdtCauchyScale(double idtCauchyScale) = 0;
