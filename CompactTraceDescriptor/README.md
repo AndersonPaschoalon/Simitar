@@ -46,8 +46,8 @@ apt-get install libarmadillo-dev
 	make clean
 	make multiport=on bursty=on dccp=on sctp=on all
 	sudo make install
-
-
+3. Dependencies: if it fail to build, may be a leak on dependencies
+	sudo apt-get install libsctp-dev lksctp-tools
 
 
 
