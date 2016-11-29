@@ -83,7 +83,7 @@ public:
 #ifdef TEST_FUNCTIONS
 	void save_data_on_file(const string& fileName, const mat& vet1,
 			const mat& vet2);
-	void save_data_on_file(const string& fileName, const StochasticModelFit& data);
+	void save_data_on_file(const string& fileName, list<double>& theList);
 	void printTestResult(string testName, bool result);
 	bool compareDouble(double val1, double val2);
 	bool compareDouble(double val1, double val2, double acErr);
@@ -446,12 +446,15 @@ private:
 	 */
 	double cdf_uniform(double x, double x_min, double x_max);
 
-	// Take as input a list o inter-arrival times, and a pointer to a C vector
-	// of the struct StochasticModelFit. The available models are ordered here,
-	// from the best to the worst, according to the specified criterion BIC or
-	// AIC. If it is not specified, it uses as default AIC.
-
 	/**
+	 * @brief
+	 * Take as input a list o inter-arrival times, and a pointer to a C vector
+	 * of the struct StochasticModelFit. The available models are ordered here,
+	 * from the best to the worst, according to the specified criterion BIC or
+	 * AIC. If it is not specified, it uses as default AIC.
+	 * If the empirical data has only a single entry, it will set just a single
+	 * constant model with all parameters equal to zero, and AIC and BIC equals
+	 * to infinite
 	 *
 	 * @param empiricalData
 	 * @param criterion

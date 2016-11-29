@@ -857,3 +857,429 @@ g++  -o "Prototypes"  ./Algorithms/Prototypes.o   -larmadillo
 Finished building target: Prototypes
  
 make: warning:  Clock skew detected.  Your build may be incomplete.
+18:49:14 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:87:7: error: extra qualification ‘DataProcessor::’ on member ‘save_data_on_file’ [-fpermissive]
+  void DataProcessor::save_data_on_file(const string& fileName, list<T> theList);
+       ^
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+../src/DataProcessor.cpp: In member function ‘void DataProcessor::save_data_on_file(const string&, std::list<T>)’:
+../src/DataProcessor.cpp:1200:7: error: need ‘typename’ before ‘std::list<T>::iterator’ because ‘std::list<T>’ is a dependent scope
+  for (list<T>::iterator it = theList.begin(); it != theList.end(); it++)
+       ^
+../src/DataProcessor.cpp:1200:25: error: expected ‘;’ before ‘it’
+  for (list<T>::iterator it = theList.begin(); it != theList.end(); it++)
+                         ^
+../src/DataProcessor.cpp:1200:47: error: ‘it’ was not declared in this scope
+  for (list<T>::iterator it = theList.begin(); it != theList.end(); it++)
+                                               ^
+../src/DataProcessor.cpp: In instantiation of ‘void DataProcessor::save_data_on_file(const string&, std::list<T>) [with T = double; std::string = std::basic_string<char>]’:
+../src/DataProcessor.cpp:303:51:   required from here
+../src/DataProcessor.cpp:1200:45: error: dependent-name ‘std::list<T>::iterator’ is parsed as a non-type, but instantiation yields a type
+  for (list<T>::iterator it = theList.begin(); it != theList.end(); it++)
+                                             ^
+../src/DataProcessor.cpp:1200:45: note: say ‘typename std::list<T>::iterator’ if a type is meant
+../src/DataProcessor.cpp:1191:6: warning: unused variable ‘m’ [-Wunused-variable]
+  int m = theList.size();
+      ^
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+18:49:18 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+18:51:37 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:86:7: error: extra qualification ‘DataProcessor::’ on member ‘save_data_on_file’ [-fpermissive]
+  void DataProcessor::save_data_on_file(const string& fileName, list<double> theList);
+       ^
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+../src/DataProcessor.cpp: In member function ‘void DataProcessor::save_data_on_file(const string&, std::list<double>)’:
+../src/DataProcessor.cpp:1190:6: warning: unused variable ‘m’ [-Wunused-variable]
+  int m = theList.size();
+      ^
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+18:51:40 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+18:52:30 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:86:7: error: extra qualification ‘DataProcessor::’ on member ‘save_data_on_file’ [-fpermissive]
+  void DataProcessor::save_data_on_file(const string& fileName, list<double>& theList);
+       ^
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+../src/DataProcessor.cpp: In member function ‘void DataProcessor::save_data_on_file(const string&, std::list<double>&)’:
+../src/DataProcessor.cpp:1190:6: warning: unused variable ‘m’ [-Wunused-variable]
+  int m = theList.size();
+      ^
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+18:52:33 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+18:53:09 **** Clean-only build of configuration Debug for project CompactTraceDescriptor ****
+make clean 
+make: Warning: File 'src/subdir.mk' has modification time 129 s in the future
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DitgFlow.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/StochasticModelFit.d ./src/TestClass.d ./src/TraceAnalyzer.d  CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+18:53:09 **** Clean-only build of configuration Debug for project Prototypes ****
+make clean 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 132 s in the future
+rm -rf  ./Algorithms/Prototypes.o  ./Algorithms/Prototypes.d  Prototypes
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+18:53:11 **** Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'objects.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:86:7: error: extra qualification ‘DataProcessor::’ on member ‘save_data_on_file’ [-fpermissive]
+  void DataProcessor::save_data_on_file(const string& fileName, list<double>& theList);
+       ^
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+18:53:14 **** Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'objects.mk' has modification time 168 s in the future
+Building file: ../Algorithms/Prototypes.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"Algorithms/Prototypes.d" -MT"Algorithms/Prototypes.o" -o "Algorithms/Prototypes.o" "../Algorithms/Prototypes.cpp"
+Finished building: ../Algorithms/Prototypes.cpp
+ 
+Building target: Prototypes
+Invoking: GCC C++ Linker
+g++  -o "Prototypes"  ./Algorithms/Prototypes.o   -larmadillo
+Finished building target: Prototypes
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+18:54:03 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'objects.mk' has modification time 117 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:163:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building file: ../src/TraceAnalyzer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TraceAnalyzer.d" -MT"src/TraceAnalyzer.o" -o "src/TraceAnalyzer.o" "../src/TraceAnalyzer.cpp"
+Finished building: ../src/TraceAnalyzer.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+18:54:18 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/Prototypes.d' has modification time 107 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+18:54:21 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TraceAnalyzer.d' has modification time 164 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:12:42 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+../src/DataProcessor.cpp: In member function ‘StochasticModelFit* DataProcessor::fitModels(std::list<double>&, const string&)’:
+../src/DataProcessor.cpp:371:22: error: cannot convert ‘std::list<double>::iterator {aka std::_List_iterator<double>}’ to ‘double’ in assignment
+   modelVet[0].param1 = empiricalData.begin();
+                      ^
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+22:12:45 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:12:59 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+../src/DataProcessor.cpp: In member function ‘StochasticModelFit* DataProcessor::fitModels(std::list<double>&, const string&)’:
+../src/DataProcessor.cpp:371:48: error: no matching function for call to ‘std::list<double>::push_back()’
+   modelVet[0].param1 = empiricalData.push_back();
+                                                ^
+../src/DataProcessor.cpp:371:48: note: candidates are:
+In file included from /usr/include/c++/4.9/list:63:0,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_list.h:1028:7: note: void std::list<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = double; _Alloc = std::allocator<double>; std::list<_Tp, _Alloc>::value_type = double]
+       push_back(const value_type& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_list.h:1028:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/4.9/bits/stl_list.h:1033:7: note: void std::list<_Tp, _Alloc>::push_back(std::list<_Tp, _Alloc>::value_type&&) [with _Tp = double; _Alloc = std::allocator<double>; std::list<_Tp, _Alloc>::value_type = double]
+       push_back(value_type&& __x)
+       ^
+/usr/include/c++/4.9/bits/stl_list.h:1033:7: note:   candidate expects 1 argument, 0 provided
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+22:13:01 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:13:18 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 168 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:13:24 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:13:31 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 160 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:163:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:15:21 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 69 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:57:11: warning: unused variable ‘ps_mostFrequent’ [-Wunused-variable]
+  long int ps_mostFrequent = 0;
+           ^
+../src/DataProcessor.cpp:58:9: warning: unused variable ‘mean_packetRate’ [-Wunused-variable]
+  double mean_packetRate = 0;
+         ^
+../src/DataProcessor.cpp:61:22: warning: unused variable ‘modelVet’ [-Wunused-variable]
+  StochasticModelFit* modelVet = NULL;
+                      ^
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:15:27 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 168 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:15:29 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 61 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.

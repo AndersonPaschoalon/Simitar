@@ -1,0 +1,105 @@
+/*
+ * ConstantsDeinition.h
+ *
+ *  Created on: 4 de jul de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef DEFINES_H_
+#define DEFINES_H_
+
+/*******************************************************************************
+ * Defines
+ ******************************************************************************/
+
+/*******************************************************************************
+ * Types
+ ******************************************************************************/
+typedef unsigned short int protocol;
+
+/*******************************************************************************
+ * Constants
+ ******************************************************************************/
+//packet analysis features
+const double FILE_CUT_TIME = 0.1;
+const double SESSION_CUT_TIME = 30;
+const int PACKET_SIZE_MODE_CUT_VALUE = 500;
+
+//protocols
+protocol PROTOCOL__NULL = 0;
+protocol PROTOCOL__ETHERNET = 1;
+protocol PROTOCOL__IPV4 = 2;
+protocol PROTOCOL__IPV6 = 3;
+protocol PROTOCOL__ARP = 4;
+const unsigned short int PROTOCOL__ICMP = 5;
+const unsigned short int PROTOCOL__ICMPV6 = 6;
+const unsigned short int PROTOCOL__TCP = 7;
+const unsigned short int PROTOCOL__UDP = 8;
+const unsigned short int PROTOCOL__DCCP = 9;
+const unsigned short int PROTOCOL__GRE = 10;
+const unsigned short int PROTOCOL__SCTP = 11;
+const unsigned short int PROTOCOL__HTTP = 12;
+const unsigned short int PROTOCOL__HTML = 13;
+const unsigned short int PROTOCOL__SMTP = 14;
+
+
+
+
+// Debug defines
+//#define DEBUG 1 // basic debug
+//#define DEBUG_DataProcessor_calculate_loop 1
+//#define DEBUG_DataProcessor_calculate 1
+//#define DEBUG_NetworkFlow 1
+//#define DEBUG_flowThread 1
+//#define DEBUG_DatabaseInterface 1
+//#define DEBUG_NetworkTrace_exec 1
+
+#define DEBUG_
+
+//Math
+#define MEGA_POWER 1000000
+
+//Protocol code
+typedef unsigned short int protocol_code;
+#define IPV4_CODE 2048
+#define ARP_CODE 2054
+#define ARP_CODE_REV 2056
+#define IPV6_CODE 34525
+#define ICMP_CODE 1
+#define TCP_CODE 6
+#define UDP_CODE 17
+#define DCCP_CODE 33
+#define GRE_CODE 47
+#define ICMPV6_CODE 58
+#define SCTP_CODE 132
+
+//Protocols
+
+
+
+//Stochastic models
+typedef unsigned short int stochastic_model;
+#define WEIBULL "weibull"
+#define NORMAL "normal"
+#define EXPONENTIAL_MEAN "exponential-mean"
+#define EXPONENTIAL_LINEAR_REGRESSION "exponential-linear-regression"
+#define PARETO_LINEAR_REGRESSION "pareto-linear-regression"
+#define PARETO_MAXIMUM_LIKEHOOD "pareto-maximum-likehood"
+#define CAUCHY "cauchy"
+#define CONSTANT  "constant"
+#define NO_MODEL "no-model-selected"
+
+
+
+
+
+//Miscellaneous
+//typedef string ip_addr;
+typedef int port_number;
+#define TEST_FUNCTIONS 1 //execute regression testes
+#define HLINE "----------"
+#define TAB "::"
+const int MAX_TRANSPORT_PORT_NUMBER = 65535;
+
+
+#endif /* DEFINES_H_ */

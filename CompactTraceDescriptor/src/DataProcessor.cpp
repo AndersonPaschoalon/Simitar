@@ -59,7 +59,10 @@ int DataProcessor::calculate(const string& experimentName,
 
 	//inter-deperture time variables
 	StochasticModelFit* modelVet = NULL;
-	list<double> interArrival_list;
+	list<double> interArrival_list; // list of inter arrival times of a flow
+	list<double> interArrival_fileStack;
+	list<double> interArrival_interFileStack;
+	list<double> interArrival_interSessionStack;
 	double lastTime = 0;
 	double idt = 0;
 
@@ -69,7 +72,7 @@ int DataProcessor::calculate(const string& experimentName,
 		//new network flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 
-		//TODO chegar valor retornado de databaseInterface
+		//TODO checar valor retornado de databaseInterface
 
 		//reset temp vars
 		flowStrData = "";
@@ -77,6 +80,9 @@ int DataProcessor::calculate(const string& experimentName,
 		relativeTime.clear();
 		pslist.clear();
 		interArrival_list.clear();
+		interArrival_fileStack.clear();
+		interArrival_interFileStack.clear();
+		interArrival_interSessionStack.clear();
 
 		//load packet-size data
 		databaseInterface->getFlowData(experimentName, fcounter, "frame__len",
@@ -87,7 +93,7 @@ int DataProcessor::calculate(const string& experimentName,
 				"frame__time_relative", relativeTime);
 
 		//evaluate inter-arrival data
-		//time relative to the beguin of the measurement
+		//time relative to the begin of the measurement
 		lastTime = 0;
 		for (list<double>::iterator it = relativeTime.begin();
 				it != relativeTime.end(); it++)
@@ -102,10 +108,11 @@ int DataProcessor::calculate(const string& experimentName,
 		//######################################################################
 		startDalay = relativeTime.front();
 		netFlow->setFlowStartDelay(startDalay);
+
 		flowDuration = relativeTime.back() - relativeTime.front();
 		netFlow->setFlowDuration(flowDuration);
 
-		//TODO DS byte configuration -- now just
+		//TODO DS byte configuration -- now it is just set to zero
 		netFlow->setFlowDsByte(0);
 
 		//flow kbytes
@@ -269,6 +276,38 @@ int DataProcessor::calculate(const string& experimentName,
 		//######################################################################
 		//Inter-arrival-time Model
 		//######################################################################
+
+		/*
+		for (list<double>::iterator it = interArrival_list.begin();
+				it != interArrival_list.end(); it++)
+		{
+			if (*it < FILE_CUT_TIME)
+			{
+				interArrival_fileStack.push_back(*it);
+			}
+			else if (*it < SESSION_CUT_TIME)
+			{
+				interArrival_interFileStack.push_back(*it);
+			}
+			else
+			{
+				interArrival_interSessionStack.push_back(*it);
+			}
+		}
+		*/
+
+#ifdef DEBUG_DataProcessor_interArrival
+		if (fcounter == 0)
+		{
+			string file1 = "fileStack";
+			string file2 = "interFileStack";
+			string file3 = "interSessionStack";
+			save_data_on_file(file1, interArrival_fileStack);
+			save_data_on_file(file2, interArrival_interFileStack);
+			save_data_on_file(file3, interArrival_interSessionStack);
+		}
+#endif
+
 		netFlow->setInterDepertureTimeModels(
 				fitModels(interArrival_list, "aic"));
 
@@ -311,11 +350,6 @@ int DataProcessor::calculate(const string& experimentName,
 	return (0);
 }
 
-void DataProcessor::save_data_on_file(const string& fileName,
-		const StochasticModelFit& data)
-{
-}
-
 StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 		const string& criterion)
 {
@@ -328,124 +362,145 @@ StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 	vec paramVec = zeros<vec>(2);
 	vec infoCriterion = zeros<vec>(2);
 
-	modelVet = new StochasticModelFit[numberOfModels];
-
-	//Inter-arrival vec
-	vec interArrival = zeros<vec>(m);
-	counter = 0;
-	for (list<double>::iterator it = empiricalData.begin();
-			it != empiricalData.end(); it++)
+	if (m == 1)
 	{
-		interArrival(counter) = *it + min_time;
-		counter++;
-	}
-	//Empirical CDF of interArrival
-	vec* interArrivalCdf = empiricalCdf(empiricalData);
+		modelVet = new StochasticModelFit[1];
 
-	//Weibull
-	weibullFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
-	modelVet[0].aic = infoCriterion(0);
-	modelVet[0].bic = infoCriterion(1);
-	modelVet[0].modelName = WEIBULL;
-	modelVet[0].param1 = paramVec(0);
-	modelVet[0].param2 = paramVec(1);
-	modelVet[0].size = numberOfModels;
+		//Constant
+		modelVet[0].aic = datum::inf;
+		modelVet[0].bic = datum::inf;
+		modelVet[0].modelName = CONSTANT;
+		modelVet[0].param1 = 0;
+		modelVet[0].param2 = 0;
+		modelVet[0].size = 1;
 
-	//normal
-	normalFitting(interArrival, paramVec, infoCriterion);
-	modelVet[1].aic = infoCriterion(0);
-	modelVet[1].bic = infoCriterion(1);
-	modelVet[1].modelName = NORMAL;
-	modelVet[1].param1 = paramVec(0);
-	modelVet[1].param2 = paramVec(1);
-	modelVet[1].size = numberOfModels;
-
-	//exponential mean
-	exponentialMeFitting(interArrival, paramVec, infoCriterion);
-	modelVet[2].aic = infoCriterion(0);
-	modelVet[2].bic = infoCriterion(1);
-	modelVet[2].modelName = EXPONENTIAL_MEAN;
-	modelVet[2].param1 = paramVec(0);
-	modelVet[2].param2 = paramVec(1);
-	modelVet[2].size = numberOfModels;
-
-	//exponential Linear Regression (LR)
-	exponentialLrFitting(interArrival, *interArrivalCdf, paramVec,
-			infoCriterion);
-	modelVet[3].aic = infoCriterion(0);
-	modelVet[3].bic = infoCriterion(1);
-	modelVet[3].modelName = EXPONENTIAL_LINEAR_REGRESSION;
-	modelVet[3].param1 = paramVec(0);
-	modelVet[3].param2 = paramVec(1);
-	modelVet[3].size = numberOfModels;
-
-	//pareto linear regression
-	paretoLrFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
-	modelVet[4].aic = infoCriterion(0);
-	modelVet[4].bic = infoCriterion(1);
-	modelVet[4].modelName = PARETO_LINEAR_REGRESSION;
-	modelVet[4].param1 = paramVec(0);
-	modelVet[4].param2 = paramVec(1);
-	modelVet[4].size = numberOfModels;
-
-	//pareto maximum likehood
-	paretoMlhFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
-	modelVet[5].aic = infoCriterion(0);
-	modelVet[5].bic = infoCriterion(1);
-	modelVet[5].modelName = PARETO_MAXIMUM_LIKEHOOD;
-	modelVet[5].param1 = paramVec(0);
-	modelVet[5].param2 = paramVec(1);
-	modelVet[5].size = numberOfModels;
-
-	//Cauchy
-	cauchyFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
-	modelVet[6].aic = infoCriterion(0);
-	modelVet[6].bic = infoCriterion(1);
-	modelVet[6].modelName = CAUCHY;
-	modelVet[6].param1 = paramVec(0);
-	modelVet[6].param2 = paramVec(1);
-	modelVet[6].size = numberOfModels;
-
-	//Constant
-	constantFitting(interArrival, paramVec, infoCriterion);
-	modelVet[7].aic = infoCriterion(0);
-	modelVet[7].bic = infoCriterion(1);
-	modelVet[7].modelName = CONSTANT;
-	modelVet[7].param1 = paramVec(0);
-	modelVet[7].param2 = paramVec(1);
-	modelVet[7].size = numberOfModels;
-
-	if (criterion == "bic")
-	{
-		qsort(modelVet, numberOfModels, sizeof(StochasticModelFit), compareBic);
-	}
-	else if (criterion == "aic")
-	{
-		qsort(modelVet, numberOfModels, sizeof(StochasticModelFit), compareAic);
 	}
 	else
 	{
-		cout
-				<< "Error @ DataProcessor::fitModels -> Invalid criterion argument: "
-				<< criterion << endl;
-		cout << "AIC set as default" << endl;
-		qsort(modelVet, numberOfModels, sizeof(StochasticModelFit), compareAic);
 
-	}
+		modelVet = new StochasticModelFit[numberOfModels];
+
+		//Inter-arrival vec
+		vec interArrival = zeros<vec>(m);
+		counter = 0;
+		for (list<double>::iterator it = empiricalData.begin();
+				it != empiricalData.end(); it++)
+		{
+			interArrival(counter) = *it + min_time;
+			counter++;
+		}
+		//Empirical CDF of interArrival
+		vec* interArrivalCdf = empiricalCdf(empiricalData);
+
+		//Weibull
+		weibullFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
+		modelVet[0].aic = infoCriterion(0);
+		modelVet[0].bic = infoCriterion(1);
+		modelVet[0].modelName = WEIBULL;
+		modelVet[0].param1 = paramVec(0);
+		modelVet[0].param2 = paramVec(1);
+		modelVet[0].size = numberOfModels;
+
+		//normal
+		normalFitting(interArrival, paramVec, infoCriterion);
+		modelVet[1].aic = infoCriterion(0);
+		modelVet[1].bic = infoCriterion(1);
+		modelVet[1].modelName = NORMAL;
+		modelVet[1].param1 = paramVec(0);
+		modelVet[1].param2 = paramVec(1);
+		modelVet[1].size = numberOfModels;
+
+		//exponential mean
+		exponentialMeFitting(interArrival, paramVec, infoCriterion);
+		modelVet[2].aic = infoCriterion(0);
+		modelVet[2].bic = infoCriterion(1);
+		modelVet[2].modelName = EXPONENTIAL_MEAN;
+		modelVet[2].param1 = paramVec(0);
+		modelVet[2].param2 = paramVec(1);
+		modelVet[2].size = numberOfModels;
+
+		//exponential Linear Regression (LR)
+		exponentialLrFitting(interArrival, *interArrivalCdf, paramVec,
+				infoCriterion);
+		modelVet[3].aic = infoCriterion(0);
+		modelVet[3].bic = infoCriterion(1);
+		modelVet[3].modelName = EXPONENTIAL_LINEAR_REGRESSION;
+		modelVet[3].param1 = paramVec(0);
+		modelVet[3].param2 = paramVec(1);
+		modelVet[3].size = numberOfModels;
+
+		//pareto linear regression
+		paretoLrFitting(interArrival, *interArrivalCdf, paramVec,
+				infoCriterion);
+		modelVet[4].aic = infoCriterion(0);
+		modelVet[4].bic = infoCriterion(1);
+		modelVet[4].modelName = PARETO_LINEAR_REGRESSION;
+		modelVet[4].param1 = paramVec(0);
+		modelVet[4].param2 = paramVec(1);
+		modelVet[4].size = numberOfModels;
+
+		//pareto maximum likehood
+		paretoMlhFitting(interArrival, *interArrivalCdf, paramVec,
+				infoCriterion);
+		modelVet[5].aic = infoCriterion(0);
+		modelVet[5].bic = infoCriterion(1);
+		modelVet[5].modelName = PARETO_MAXIMUM_LIKEHOOD;
+		modelVet[5].param1 = paramVec(0);
+		modelVet[5].param2 = paramVec(1);
+		modelVet[5].size = numberOfModels;
+
+		//Cauchy
+		cauchyFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
+		modelVet[6].aic = infoCriterion(0);
+		modelVet[6].bic = infoCriterion(1);
+		modelVet[6].modelName = CAUCHY;
+		modelVet[6].param1 = paramVec(0);
+		modelVet[6].param2 = paramVec(1);
+		modelVet[6].size = numberOfModels;
+
+		//Constant
+		constantFitting(interArrival, paramVec, infoCriterion);
+		modelVet[7].aic = infoCriterion(0);
+		modelVet[7].bic = infoCriterion(1);
+		modelVet[7].modelName = CONSTANT;
+		modelVet[7].param1 = paramVec(0);
+		modelVet[7].param2 = paramVec(1);
+		modelVet[7].size = numberOfModels;
+
+		if (criterion == "bic")
+		{
+			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
+					compareBic);
+		}
+		else if (criterion == "aic")
+		{
+			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
+					compareAic);
+		}
+		else
+		{
+			cout
+					<< "Error @ DataProcessor::fitModels -> Invalid criterion argument: "
+					<< criterion << endl;
+			cout << "AIC set as default" << endl;
+			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
+					compareAic);
+
+		}
 
 #ifdef DEBUG_StochasticModelFit
+		//if (modelVet[0].modelName == WEIBULL)
+		//{
+		//	cout << modelVet[0].modelName << "aic:bic->" << modelVet[0].aic << ":" << modelVet[0].bic
+		//			<< "  " << "alpha:betha->" << modelVet[0].param1
+		//			<< modelVet[0].param2 << endl;
+		//	string fileName = "weibulldata_" + std::to_string(abs(modelVet[0].aic));
+		//	save_data_on_file(fileName, interArrival, *interArrivalCdf);
+		//}
+#endif //DEBUG_StochasticModelFit
 
-	//if (modelVet[0].modelName == WEIBULL)
-	//{
-		cout << modelVet[0].modelName << "aic:bic->" << modelVet[0].aic << ":" << modelVet[0].bic
-				<< "  " << "alpha:betha->" << modelVet[0].param1
-				<< modelVet[0].param2 << endl;
-		string fileName = "weibulldata_" + std::to_string(abs(modelVet[0].aic));
-		save_data_on_file(fileName, interArrival, *interArrivalCdf);
-	//}
-#endif DEBUG_StochasticModelFit
-
-	delete interArrivalCdf;
+		delete interArrivalCdf;
+	}
 
 	return (modelVet);
 }
@@ -1150,6 +1205,26 @@ void DataProcessor::save_data_on_file(const string& fileName, const mat& vet1,
 		writeOnFile << vet1(i) << " " << vet2(i) << endl;
 	}
 
+}
+
+void DataProcessor::save_data_on_file(const string& fileName,
+		list<double>& theList)
+{
+	string file_out = fileName + ".txt";
+	//int m = theList.size();
+
+	ofstream writeOnFile(file_out, ios::out);
+	if (!writeOnFile)
+	{
+		cerr << "file could not be oppeded" << endl;
+		exit(1);
+	}
+
+	for (list<double>::iterator it = theList.begin(); it != theList.end(); it++)
+	{
+		//list<T>::iterator it = randInt_list1.begin();
+		writeOnFile << *it << " \n";
+	}
 }
 
 bool DataProcessor::test_Mode()
