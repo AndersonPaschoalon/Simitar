@@ -979,8 +979,6 @@ inline double DataProcessor::computeCost(const mat& X, const vec& y,
 	return (J);
 }
 
-//TODO O GRADIENT DESCENDENT PRECISA POSSUIR UMA CONDIÇÃO DE PARADA PARA CONVERGENCIA
-//TODO 1500 STEPS PARA TODOS OS CASOS É MUITO, MUITO!!!
 inline void DataProcessor::gradientDescendent(const mat& X, const vec& y,
 		const double learning_rate, const int num_iters, vec& theta,
 		vec& J_history)
