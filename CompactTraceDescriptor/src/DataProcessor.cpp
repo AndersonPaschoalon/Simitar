@@ -68,7 +68,6 @@ int DataProcessor::calculate(const string& experimentName,
 
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
-
 		//new network flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 
@@ -281,6 +280,13 @@ int DataProcessor::calculate(const string& experimentName,
 		//netFlow->setInterDepertureTimeModels(
 		//		fitModels(interArrival_list, "aic"));
 
+#ifdef DEBUG_DataProcessor_interArrival
+		//debug
+		cout << ">" << interArrival_list.size() << endl;
+#endif
+
+		//TODO Analisas casos de borda, quando as pilhas de inter-arrival tem  1 ou zero valores
+		//TODO NÃO FUNCTIONA QUANDO AS LITAS POSSUEM 1 OU ZERO VALORES
 		for (list<time_sec>::iterator it = interArrival_list.begin();
 				it != interArrival_list.end(); it++)
 		{
@@ -298,6 +304,16 @@ int DataProcessor::calculate(const string& experimentName,
 			}
 		}
 
+
+
+#ifdef DEBUG_DataProcessor_interArrival
+		//debug
+		cout << "interArrival_fileStack.size() = " << interArrival_fileStack.size() << endl;
+		cout << "interArrival_interFileStack.size() = " << interArrival_interFileStack.size() << endl;
+		cout << "interArrival_interSessionStack.size() = " << interArrival_interSessionStack.size() << endl;
+		cout << fcounter << endl;
+#endif
+
 		//set file interdeperture time model
 		netFlow->setInterDepertureTimeModels(
 				this->fitModels(interArrival_fileStack,
@@ -312,17 +328,13 @@ int DataProcessor::calculate(const string& experimentName,
 						this->getInformationCriterion()));
 
 #ifdef DEBUG_DataProcessor_interArrival
-		if (fcounter == 0)
-		{
-			string file1 = "fileStack";
-			string file2 = "interFileStack";
-			string file3 = "interSessionStack";
-			save_data_on_file(file1, interArrival_fileStack);
-			save_data_on_file(file2, interArrival_interFileStack);
-			save_data_on_file(file3, interArrival_interSessionStack);
-
-
-		}
+		cout << fcounter << endl;
+		string file1 = to_string(fcounter) + "fileStack";
+		string file2 = to_string(fcounter) + "interFileStack";
+		string file3 = to_string(fcounter)+ "interSessionStack" ;
+		save_data_on_file(file1, interArrival_fileStack);
+		save_data_on_file(file2, interArrival_interFileStack);
+		save_data_on_file(file3, interArrival_interSessionStack);
 #endif
 
 		//TODO set the right model
@@ -389,6 +401,7 @@ const string& DataProcessor::getInformationCriterion()
 	return (informationCriterionParam);
 }
 
+//TODO Analisas casos de borda, quando as pilhas de inter-arrival tem  1 ou zero valores
 StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 		const string& criterion)
 {
@@ -401,22 +414,32 @@ StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 	vec paramVec = zeros<vec>(2);
 	vec infoCriterion = zeros<vec>(2);
 
-	if (m == 1)
+	if( m == 0)
+	{
+
+		modelVet = new StochasticModelFit[1];
+
+		modelVet[0].aic = datum::inf;
+		modelVet[0].bic = datum::inf;
+		modelVet[0].modelName = NO_MODEL;
+		modelVet[0].param1 = 0;
+		modelVet[0].param2 = 0;
+		modelVet[0].size = 1;
+	}
+	else if (m == 1)
 	{
 		modelVet = new StochasticModelFit[1];
 
-		//Constant
 		modelVet[0].aic = datum::inf;
 		modelVet[0].bic = datum::inf;
-		modelVet[0].modelName = CONSTANT;
-		modelVet[0].param1 = 0;
+		modelVet[0].modelName = CONSTANT_SINGLE_DATA;
+		modelVet[0].param1 = *empiricalData.begin();
 		modelVet[0].param2 = 0;
 		modelVet[0].size = 1;
 
 	}
 	else
 	{
-
 		modelVet = new StochasticModelFit[numberOfModels];
 
 		//Inter-arrival vec
@@ -428,6 +451,7 @@ StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 			interArrival(counter) = *it + min_time;
 			counter++;
 		}
+
 		//Empirical CDF of interArrival
 		vec* interArrivalCdf = empiricalCdf(empiricalData);
 

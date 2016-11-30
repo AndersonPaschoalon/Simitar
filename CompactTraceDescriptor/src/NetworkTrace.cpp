@@ -127,9 +127,7 @@ int NetworkTrace::exec(bool verbose)
 
 	for (i = 0; i < size; i++)
 	{
-		//TODO trocar flowThread2 por flowThread
-		// usar polimorfismo
-		//ditg
+		//TODO passar o tipo de flow(dummy, ostinado, ditg), e um contador indicando o numero da flow
 		th_flw[i] = networkFlow[i]->flowThread();
 		//dummy
 		//th_flw[i] = netFlow[i].flowThread2();

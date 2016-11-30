@@ -1694,3 +1694,1328 @@ make: Warning: File 'Algorithms/subdir.mk' has modification time 127 s in the fu
 rm -rf  ./Algorithms/Prototypes.o  ./Algorithms/Prototypes.d  Prototypes
  
 make: warning:  Clock skew detected.  Your build may be incomplete.
+20:01:39 **** Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'objects.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:168:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getInterDepertureTimeModel_next()’:
+../src/DummyFlow.cpp:1222:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (themodel.size > interDepertureTimeModel_counter)
+                    ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building file: ../src/TraceAnalyzer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TraceAnalyzer.d" -MT"src/TraceAnalyzer.o" -o "src/TraceAnalyzer.o" "../src/TraceAnalyzer.cpp"
+Finished building: ../src/TraceAnalyzer.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:01:52 **** Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'objects.mk' has modification time 167 s in the future
+Building file: ../Algorithms/Prototypes.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"Algorithms/Prototypes.d" -MT"Algorithms/Prototypes.o" -o "Algorithms/Prototypes.o" "../Algorithms/Prototypes.cpp"
+Finished building: ../Algorithms/Prototypes.cpp
+ 
+Building target: Prototypes
+Invoking: GCC C++ Linker
+g++  -o "Prototypes"  ./Algorithms/Prototypes.o   -larmadillo
+Finished building target: Prototypes
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:08:20 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+In file included from ../src/DitgFlow.h:12:0,
+                 from ../src/DitgFlow.cpp:8:
+../src/DummyFlow.h:108:8: error: ‘protocolSupport’ does not name a type
+  const protocolSupport& getProtocols() const;
+        ^
+../src/DummyFlow.h:109:26: error: ‘protocolSupport’ does not name a type
+  void setProtocols(const protocolSupport& protocols);
+                          ^
+src/subdir.mk:45: recipe for target 'src/DitgFlow.o' failed
+make: *** [src/DitgFlow.o] Error 1
+20:08:25 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+20:09:12 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 119 s in the future
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:170:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getInterDepertureTimeModel_next()’:
+../src/DummyFlow.cpp:1226:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (themodel.size > interDepertureTimeModel_counter)
+                    ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:09:20 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+20:34:24 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+In file included from ../src/DitgFlow.h:12:0,
+                 from ../src/DitgFlow.cpp:8:
+../src/DummyFlow.h:135:51: error: expected ‘;’ at end of member declaration
+  StochasticModelFit getInterSessionTimeModel_next()
+                                                   ^
+src/subdir.mk:45: recipe for target 'src/DitgFlow.o' failed
+make: *** [src/DitgFlow.o] Error 1
+20:34:29 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:35:15 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 121 s in the future
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:170:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:35:22 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:03:21 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:170:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:03:34 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:03:40 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 159 s in the future
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:04:18 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 121 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:04:19 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:04:21 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 118 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:04:36 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 103 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:06:02 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 18 s in the future
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:06:07 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/TestClass.d' has modification time 13 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:06:26 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/NetworkTrace.d' has modification time 1,8 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:07:05 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/Main.d' has modification time 105 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:07:24 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/Main.d' has modification time 87 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:07:46 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/Main.d' has modification time 65 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:11:45 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:11:51 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:11:53 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 163 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:11:57 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 159 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:16:30 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:16:37 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+21:16:42 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/Main.d' has modification time 161 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:18:57 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/Main.d' has modification time 26 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:19:39 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 130 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+21:19:55 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 154 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:16:05 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:16:07 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:16:10 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:17:29 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:18:26 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 113 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:29:33 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:32:20 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 4,2 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:36:04 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 166 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘StochasticModelFit* DataProcessor::fitModels(std::list<double>&, const string&)’:
+../src/DataProcessor.cpp:411:19: error: no match for ‘operator==’ (operand types are ‘std::list<double>’ and ‘long int’)
+  if(empiricalData == NULL)
+                   ^
+../src/DataProcessor.cpp:411:19: note: candidates are:
+In file included from /usr/include/c++/4.9/iosfwd:40:0,
+                 from /usr/include/c++/4.9/ios:38,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/postypes.h:216:5: note: template<class _StateT> bool std::operator==(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.9/bits/postypes.h:216:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::fpos<_StateT>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_pair.h:214:5: note: template<class _T1, class _T2> constexpr bool std::operator==(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.9/bits/stl_pair.h:214:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::pair<_T1, _T2>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_iterator.h:292:5: note: template<class _Iterator> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator==(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:292:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_iterator.h:342:5: note: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator==(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:342:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_iterator.h:1048:5: note: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_IteratorR>&)
+     operator==(const move_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:1048:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::move_iterator<_Iterator>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_iterator.h:1054:5: note: template<class _Iterator> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_Iterator>&)
+     operator==(const move_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:1054:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::move_iterator<_Iterator>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/string:41:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/allocator.h:128:5: note: template<class _T1, class _T2> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator==(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.9/bits/allocator.h:128:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::allocator<_CharT>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/string:41:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/allocator.h:133:5: note: template<class _Tp> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.9/bits/allocator.h:133:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::allocator<_CharT>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/basic_string.h:2505:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2505:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/basic_string.h:2512:5: note: template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, bool>::__type std::operator==(const std::basic_string<_CharT>&, const std::basic_string<_CharT>&)
+     operator==(const basic_string<_CharT>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2512:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::basic_string<_CharT>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/basic_string.h:2526:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2526:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   mismatched types ‘const _CharT*’ and ‘std::list<double>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/string:52:0,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/basic_string.h:2538:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/basic_string.h:2538:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.9/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.9/ios:44,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/streambuf_iterator.h:204:5: note: template<class _CharT, class _Traits> bool std::operator==(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.9/bits/streambuf_iterator.h:204:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/list:63:0,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_list.h:285:5: note: template<class _Val> bool std::operator==(const std::_List_iterator<_Tp>&, const std::_List_const_iterator<_Val>&)
+     operator==(const _List_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.9/bits/stl_list.h:285:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::_List_iterator<_Tp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/list:63:0,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_list.h:1729:5: note: template<class _Tp, class _Alloc> bool std::operator==(const std::list<_Tp, _Alloc>&, const std::list<_Tp, _Alloc>&)
+     operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.9/bits/stl_list.h:1729:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   mismatched types ‘const std::list<_Tp, _Alloc>’ and ‘long int’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/vector:64:0,
+                 from ../src/DataProcessor.h:21,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_vector.h:1511:5: note: template<class _Tp, class _Alloc> bool std::operator==(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.9/bits/stl_vector.h:1511:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+  if(empiricalData == NULL)
+                      ^
+In file included from ../src/DataProcessor.h:22:0,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/array:232:5: note: template<class _Tp, long unsigned int _Nm> bool std::operator==(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+     ^
+/usr/include/c++/4.9/array:232:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::array<_Tp, _Nm>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/random:51:0,
+                 from /usr/include/c++/4.9/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.9/algorithm:62,
+                 from /usr/include/armadillo:28,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/random.tcc:2030:5: note: template<class _RealType1> bool std::operator==(const std::normal_distribution<_RealType>&, const std::normal_distribution<_RealType>&)
+     operator==(const std::normal_distribution<_RealType>& __d1,
+     ^
+/usr/include/c++/4.9/bits/random.tcc:2030:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::normal_distribution<_RealType>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:29:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/complex:453:5: note: template<class _Tp> constexpr bool std::operator==(const std::complex<_Tp>&, const std::complex<_Tp>&)
+     operator==(const complex<_Tp>& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.9/complex:453:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::complex<_Tp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:29:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/complex:458:5: note: template<class _Tp> constexpr bool std::operator==(const std::complex<_Tp>&, const _Tp&)
+     operator==(const complex<_Tp>& __x, const _Tp& __y)
+     ^
+/usr/include/c++/4.9/complex:458:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::complex<_Tp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:29:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/complex:463:5: note: template<class _Tp> constexpr bool std::operator==(const _Tp&, const std::complex<_Tp>&)
+     operator==(const _Tp& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.9/complex:463:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   mismatched types ‘const std::complex<_Tp>’ and ‘long int’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/functional:55:0,
+                 from /usr/include/armadillo:58,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/tuple:848:5: note: template<class ... _TElements, class ... _UElements> constexpr bool std::operator==(const std::tuple<_Elements ...>&, const std::tuple<_Elements ...>&)
+     operator==(const tuple<_TElements...>& __t,
+     ^
+/usr/include/c++/4.9/tuple:848:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::tuple<_Elements ...>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:58:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/functional:2505:5: note: template<class _Res, class ... _Args> bool std::operator==(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)
+     operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.9/functional:2505:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:58:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/functional:2511:5: note: template<class _Res, class ... _Args> bool std::operator==(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)
+     operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+     ^
+/usr/include/c++/4.9/functional:2511:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   cannot convert ‘empiricalData’ (type ‘std::list<double>’) to type ‘std::nullptr_t’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/memory:81:0,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/unique_ptr.h:624:5: note: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator==(const unique_ptr<_Tp, _Dp>& __x,
+     ^
+/usr/include/c++/4.9/bits/unique_ptr.h:624:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/memory:81:0,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/unique_ptr.h:630:5: note: template<class _Tp, class _Dp> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.9/bits/unique_ptr.h:630:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/memory:81:0,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/unique_ptr.h:635:5: note: template<class _Tp, class _Dp> bool std::operator==(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+     ^
+/usr/include/c++/4.9/bits/unique_ptr.h:635:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   cannot convert ‘empiricalData’ (type ‘std::list<double>’) to type ‘std::nullptr_t’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/4.9/memory:82,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/shared_ptr_base.h:1182:5: note: template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator==(const __shared_ptr<_Tp1, _Lp>& __a,
+     ^
+/usr/include/c++/4.9/bits/shared_ptr_base.h:1182:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/4.9/memory:82,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/shared_ptr_base.h:1188:5: note: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator==(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.9/bits/shared_ptr_base.h:1188:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/4.9/memory:82,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/shared_ptr_base.h:1193:5: note: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator==(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^
+/usr/include/c++/4.9/bits/shared_ptr_base.h:1193:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   cannot convert ‘empiricalData’ (type ‘std::list<double>’) to type ‘std::nullptr_t’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/memory:82:0,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/shared_ptr.h:333:5: note: template<class _Tp1, class _Tp2> bool std::operator==(const std::shared_ptr<_Tp1>&, const std::shared_ptr<_Tp2>&)
+     operator==(const shared_ptr<_Tp1>& __a,
+     ^
+/usr/include/c++/4.9/bits/shared_ptr.h:333:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::shared_ptr<_Tp1>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/memory:82:0,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/shared_ptr.h:339:5: note: template<class _Tp> bool std::operator==(const std::shared_ptr<_Tp1>&, std::nullptr_t)
+     operator==(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.9/bits/shared_ptr.h:339:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const std::shared_ptr<_Tp1>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/memory:82:0,
+                 from /usr/include/c++/4.9/thread:40,
+                 from ../src/NetworkTrace.h:19,
+                 from ../src/DataProcessor.h:29,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/shared_ptr.h:344:5: note: template<class _Tp> bool std::operator==(std::nullptr_t, const std::shared_ptr<_Tp1>&)
+     operator==(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^
+/usr/include/c++/4.9/bits/shared_ptr.h:344:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   cannot convert ‘empiricalData’ (type ‘std::list<double>’) to type ‘std::nullptr_t’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:401:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_cube_relational.hpp:257:1: note: template<class T1> const arma::mtOpCube<long long unsigned int, T1, arma::op_rel_eq> arma::operator==(const arma::BaseCube<typename T1::elem_type, T1>&, typename T1::elem_type)
+ operator==
+ ^
+/usr/include/armadillo_bits/operator_cube_relational.hpp:257:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const arma::BaseCube<typename T1::elem_type, T1>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:401:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_cube_relational.hpp:244:1: note: template<class T1> const arma::mtOpCube<long long unsigned int, T1, arma::op_rel_eq> arma::operator==(typename T1::elem_type, const arma::BaseCube<typename T1::elem_type, T1>&)
+ operator==
+ ^
+/usr/include/armadillo_bits/operator_cube_relational.hpp:244:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   mismatched types ‘const arma::BaseCube<typename T1::elem_type, T1>’ and ‘long int’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:401:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_cube_relational.hpp:82:1: note: template<class T1, class T2> const arma::mtGlueCube<long long unsigned int, T1, T2, arma::glue_rel_eq> arma::operator==(const arma::BaseCube<typename T1::elem_type, T1>&, const arma::BaseCube<typename T1::elem_type, T2>&)
+ operator==
+ ^
+/usr/include/armadillo_bits/operator_cube_relational.hpp:82:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const arma::BaseCube<typename T1::elem_type, T1>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/armadillo:394:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_relational.hpp:345:1: note: template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_eq> >::result arma::operator==(const T1&, typename T1::elem_type)
+ operator==
+ ^
+/usr/include/armadillo_bits/operator_relational.hpp:345:1: note:   template argument deduction/substitution failed:
+/usr/include/armadillo_bits/operator_relational.hpp: In substitution of ‘template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_eq> >::result arma::operator==(const T1&, typename T1::elem_type) [with T1 = std::list<double>]’:
+../src/DataProcessor.cpp:411:22:   required from here
+/usr/include/armadillo_bits/operator_relational.hpp:345:1: error: no type named ‘result’ in ‘struct arma::enable_if2<false, const arma::mtOp<long long unsigned int, std::list<double>, arma::op_rel_eq> >’
+/usr/include/armadillo_bits/operator_relational.hpp:327:1: note: template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_eq> >::result arma::operator==(typename T1::elem_type, const T1&)
+ operator==
+ ^
+/usr/include/armadillo_bits/operator_relational.hpp:327:1: note:   template argument deduction/substitution failed:
+/usr/include/armadillo_bits/operator_relational.hpp: In substitution of ‘template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_eq> >::result arma::operator==(typename T1::elem_type, const T1&) [with T1 = long int]’:
+../src/DataProcessor.cpp:411:22:   required from here
+/usr/include/armadillo_bits/operator_relational.hpp:327:1: error: no type named ‘result’ in ‘struct arma::enable_if2<false, const arma::mtOp<long long unsigned int, long int, arma::op_rel_eq> >’
+/usr/include/armadillo_bits/operator_relational.hpp:105:1: note: template<class T1, class T2> typename arma::enable_if2<(arma::is_arma_type<T1>::value && arma::is_arma_type<T2>::value), const arma::mtGlue<long long unsigned int, T1, T2, arma::glue_rel_eq> >::result arma::operator==(const T1&, const T2&)
+ operator==
+ ^
+/usr/include/armadillo_bits/operator_relational.hpp:105:1: note:   template argument deduction/substitution failed:
+/usr/include/armadillo_bits/operator_relational.hpp: In substitution of ‘template<class T1, class T2> typename arma::enable_if2<(arma::is_arma_type<T1>::value && arma::is_arma_type<T2>::value), const arma::mtGlue<long long unsigned int, T1, T2, arma::glue_rel_eq> >::result arma::operator==(const T1&, const T2&) [with T1 = std::list<double>; T2 = long int]’:
+../src/DataProcessor.cpp:411:22:   required from here
+/usr/include/armadillo_bits/operator_relational.hpp:105:1: error: no type named ‘result’ in ‘struct arma::enable_if2<false, const arma::mtGlue<long long unsigned int, std::list<double>, long int, arma::glue_rel_eq> >’
+In file included from /usr/include/armadillo:289:0,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:32:13: note: bool arma::operator==(const arma::gmm_seed_mode&, const arma::gmm_seed_mode&)
+ inline bool operator==(const gmm_seed_mode& a, const gmm_seed_mode& b) { return (a.id == b.id); }
+             ^
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:32:13: note:   no known conversion for argument 1 from ‘std::list<double>’ to ‘const arma::gmm_seed_mode&’
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:17:13: note: bool arma::operator==(const arma::gmm_dist_mode&, const arma::gmm_dist_mode&)
+ inline bool operator==(const gmm_dist_mode& a, const gmm_dist_mode& b) { return (a.id == b.id); }
+             ^
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:17:13: note:   no known conversion for argument 1 from ‘std::list<double>’ to ‘const arma::gmm_dist_mode&’
+In file included from /usr/include/x86_64-linux-gnu/c++/4.9/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.9/bits/allocator.h:46,
+                 from /usr/include/c++/4.9/string:41,
+                 from /usr/include/c++/4.9/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.9/bits/ios_base.h:41,
+                 from /usr/include/c++/4.9/ios:42,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/ext/new_allocator.h:139:5: note: template<class _Tp> bool __gnu_cxx::operator==(const __gnu_cxx::new_allocator<_Tp>&, const __gnu_cxx::new_allocator<_Tp>&)
+     operator==(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+     ^
+/usr/include/c++/4.9/ext/new_allocator.h:139:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const __gnu_cxx::new_allocator<_Tp>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_iterator.h:815:5: note: template<class _Iterator, class _Container> bool __gnu_cxx::operator==(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator==(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:815:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+  if(empiricalData == NULL)
+                      ^
+In file included from /usr/include/c++/4.9/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.9/bits/char_traits.h:39,
+                 from /usr/include/c++/4.9/ios:40,
+                 from /usr/include/c++/4.9/ostream:38,
+                 from /usr/include/c++/4.9/iostream:39,
+                 from ../src/DataProcessor.h:18,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/4.9/bits/stl_iterator.h:808:5: note: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator==(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator==(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^
+/usr/include/c++/4.9/bits/stl_iterator.h:808:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/unistd.h:226:0,
+                 from /usr/include/armadillo:35,
+                 from ../src/DataProcessor.h:25,
+                 from ../src/DataProcessor.cpp:8:
+../src/DataProcessor.cpp:411:22: note:   ‘std::list<double>’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+  if(empiricalData == NULL)
+                      ^
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+22:36:39 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:36:45 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:36:48 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 162 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+22:55:47 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:170:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:55:56 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.

@@ -32,7 +32,7 @@ typedef struct stochastic_model_fitting
 	double param2;
 
 	//Number of models setted by the method DataProcessor::fitModels()
-	int size;
+	unsigned int size;
 
 } StochasticModelFit;
 

@@ -23,6 +23,7 @@
 #define PARETO_MAXIMUM_LIKEHOOD "pareto-maximum-likehood"
 #define CAUCHY "cauchy"
 #define CONSTANT  "constant"
+#define CONSTANT_SINGLE_DATA "constant-single-data"
 #define NO_MODEL "no-model-selected"
 
 // Debug defines
@@ -64,6 +65,10 @@ enum protocol_enum{
 	PROTOCOL__HTML,
 	PROTOCOL__SMTP
 };
+
+/**
+ *
+ */
 typedef protocol_enum protocol;
 
 /**

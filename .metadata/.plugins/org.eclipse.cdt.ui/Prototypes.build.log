@@ -1,9 +1,8 @@
-18:09:53 **** Clean-only build of configuration Debug for project Prototypes ****
-make clean 
-make: Warning: File 'Algorithms/subdir.mk' has modification time 127 s in the future
-rm -rf  ./Algorithms/Prototypes.o  ./Algorithms/Prototypes.d  Prototypes
- 
+22:55:56 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 167 s in the future
+make: Nothing to be done for 'all'.
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
-18:09:53 Build Finished (took 85ms)
+22:55:56 Build Finished (took 67ms)
 

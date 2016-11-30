@@ -10,20 +10,22 @@
 
 DummyFlow::DummyFlow()
 {
-	//protocol support
+	/*
+	 //protocol support
 
-	protocols.arp = false;
-	protocols.dccp = true;
-	protocols.ethernet = true;
-	protocols.gre = false;
-	protocols.html = false;
-	protocols.igmp = false;
-	protocols.ipv4 = true;
-	protocols.ipv6 = true;
-	protocols.smnp = true;
-	protocols.tcp = true;
-	protocols.udp = true;
-	protocols.use_ip_add_list = false;
+	 protocols.arp = false;
+	 protocols.dccp = true;
+	 protocols.ethernet = true;
+	 protocols.gre = false;
+	 protocols.html = false;
+	 protocols.igmp = false;
+	 protocols.ipv4 = true;
+	 protocols.ipv6 = true;
+	 protocols.smnp = true;
+	 protocols.tcp = true;
+	 protocols.udp = true;
+	 protocols.use_ip_add_list = false;
+	 */
 
 	//
 	//flow-level parameters initialization
@@ -347,6 +349,100 @@ void DummyFlow::flowGenerate()
 	 */
 	flow_str_print += " Inter-deperture[";
 	themodel = this->getInterDepertureTimeModel_next();
+	flow_str_print += themodel.modelName;
+
+	if (themodel.modelName == WEIBULL)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1)
+				+ ", betha=" + std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == NORMAL)
+	{
+		flow_str_print += ": mu=" + std::to_string(themodel.param1) + ", sigma="
+				+ std::to_string(themodel.param2);
+	}
+	else if ((themodel.modelName == EXPONENTIAL_LINEAR_REGRESSION)
+			|| (themodel.modelName == EXPONENTIAL_MEAN))
+	{
+		flow_str_print += ": lambda=" + std::to_string(themodel.param1);
+	}
+	else if ((themodel.modelName == PARETO_LINEAR_REGRESSION)
+			|| (themodel.modelName == PARETO_MAXIMUM_LIKEHOOD))
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", xm="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CAUCHY)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", x0="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CONSTANT)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
+	else
+	{
+		perror(
+				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-deperture\n");
+		cout << "Hint: " << " this->getInterDepertureTimeModel_next() = "
+				<< themodel.modelName << endl;
+		errno = EINVAL;
+	}
+	flow_str_print += "] ";
+
+	/**
+	 * Inter-File time model
+	 */
+	flow_str_print += " Inter-File[";
+	themodel = this->getInterFileTimeModel_next();
+	flow_str_print += themodel.modelName;
+
+	if (themodel.modelName == WEIBULL)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1)
+				+ ", betha=" + std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == NORMAL)
+	{
+		flow_str_print += ": mu=" + std::to_string(themodel.param1) + ", sigma="
+				+ std::to_string(themodel.param2);
+	}
+	else if ((themodel.modelName == EXPONENTIAL_LINEAR_REGRESSION)
+			|| (themodel.modelName == EXPONENTIAL_MEAN))
+	{
+		flow_str_print += ": lambda=" + std::to_string(themodel.param1);
+	}
+	else if ((themodel.modelName == PARETO_LINEAR_REGRESSION)
+			|| (themodel.modelName == PARETO_MAXIMUM_LIKEHOOD))
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", xm="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CAUCHY)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", x0="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CONSTANT)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
+	else
+	{
+		perror(
+				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-deperture\n");
+		cout << "Hint: " << " this->getInterDepertureTimeModel_next() = "
+				<< themodel.modelName << endl;
+		errno = EINVAL;
+	}
+	flow_str_print += "] ";
+
+	/**
+	 * Inter-session time model
+	 */
+	flow_str_print += " Inter-session[";
+	themodel = this->getInterSessionTimeModel_next();
 	flow_str_print += themodel.modelName;
 
 	if (themodel.modelName == WEIBULL)
@@ -817,15 +913,17 @@ void DummyFlow::setNumberOfPackets(unsigned long long int numberOfPackets)
 	number_of_packets = numberOfPackets;
 }
 
-const protocolSupport& DummyFlow::getProtocols() const
-{
-	return protocols;
-}
+/*
+ const protocolSupport& DummyFlow::getProtocols() const
+ {
+ return protocols;
+ }
 
-void DummyFlow::setProtocols(const protocolSupport& protocols)
-{
-	this->protocols = protocols;
-}
+ void DummyFlow::setProtocols(const protocolSupport& protocols)
+ {
+ this->protocols = protocols;
+ }
+ */
 
 /*
  double DummyFlow::getPsBimodalMode1Constant() const
@@ -1219,7 +1317,7 @@ StochasticModelFit DummyFlow::getInterDepertureTimeModel_next()
 		themodel = this->interArrivalvet[interDepertureTimeModel_counter];
 	}
 
-	if (themodel.size > interDepertureTimeModel_counter)
+	if (counter(themodel.size) > interDepertureTimeModel_counter)
 	{
 		interDepertureTimeModel_counter++;
 	}
@@ -1238,13 +1336,35 @@ void DummyFlow::setInterFileTimeModel(StochasticModelFit* modelStruct)
 	interFileModel = modelStruct;
 }
 
+StochasticModelFit DummyFlow::getInterFileTimeModel_next()
+{
+	StochasticModelFit themodel;
+	if (interFileModel == NULL)
+	{
+		themodel.modelName = NO_MODEL;
+		themodel.param1 = 0;
+		themodel.param2 = 0;
+	}
+	else
+	{
+		themodel = this->interFileModel[interFileModel_counter];
+	}
+
+	if (themodel.size > interFileModel_counter)
+	{
+		interDepertureTimeModel_counter++;
+	}
+
+	return (themodel);
+}
+
 time_sec DummyFlow::getInterFileTime()
 {
 	time_sec interFileTimeRngEstimation = 0;
 
-	//weibull-constant estimator rng generator
+	//TODO: weibull-constant estimator rng generator
 
-	return(interFileTimeRngEstimation);
+	return (interFileTimeRngEstimation);
 }
 
 void DummyFlow::setInterSessionTimeModel(StochasticModelFit* modelStruct)
@@ -1252,11 +1372,45 @@ void DummyFlow::setInterSessionTimeModel(StochasticModelFit* modelStruct)
 	interSessionModel = modelStruct;
 }
 
+StochasticModelFit DummyFlow::getInterSessionTimeModel_next()
+{
+	StochasticModelFit themodel;
+	if (interSessionModel == NULL)
+	{
+		themodel.modelName = NO_MODEL;
+		themodel.param1 = 0;
+		themodel.param2 = 0;
+	}
+	else
+	{
+		themodel = this->interSessionModel[interSessionModel_counter];
+	}
+
+	if (themodel.size > interSessionModel_counter)
+	{
+		interSessionModel_counter++;
+	}
+
+	return (themodel);
+}
+
 time_sec DummyFlow::getInterSessionTime()
 {
 	time_sec interSessionTimeRngEstimation = 0;
 
-	//weibull-constant estimator rng generator
+	//TODO: weibull-constant estimator rng generator
 
-	return(interSessionTimeRngEstimation);
+	return (interSessionTimeRngEstimation);
+}
+
+StochasticModelFit DummyFlow::getPacketSizeModel_next() const
+{
+	StochasticModelFit themodel;
+	//TODO implement this method
+	return (themodel);
+}
+
+void DummyFlow::setPacketSizeModel_next(StochasticModelFit* modelVet) const
+{
+	//TODO
 }

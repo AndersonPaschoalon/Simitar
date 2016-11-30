@@ -41,7 +41,9 @@ int main()
 	// constructor that uses a experiment name and a database interface pointer
 	// as input.
 	dbif.getNumberOfFlows(experimentName, &nflows);
+
 	trace = new NetworkTrace();
+
 	dp.calculate(experimentName, &dbif, trace);
 
 #ifdef EXEC_BIN

@@ -1,4 +1,4 @@
-pcap/*
-plots/*
-
+Debug/src/*.o 
+Debug/src/*.d
 Debug/CompactTraceDescriptor
+
