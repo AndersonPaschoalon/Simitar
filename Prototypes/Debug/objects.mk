@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -larmadillo
+LIBS := -larmadillo -lsqlite3
 

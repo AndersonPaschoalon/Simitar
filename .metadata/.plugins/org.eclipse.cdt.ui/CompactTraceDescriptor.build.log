@@ -1,41 +1,8 @@
-22:55:47 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+22:21:35 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
 make all 
-make: Warning: File 'src/subdir.mk' has modification time 167 s in the future
-Building file: ../src/DataProcessor.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
-Finished building: ../src/DataProcessor.cpp
- 
-Building file: ../src/DitgFlow.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
-Finished building: ../src/DitgFlow.cpp
- 
-Building file: ../src/DummyFlow.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
-../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
-../src/DummyFlow.cpp:170:15: warning: unused variable ‘usecs’ [-Wunused-variable]
-  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
-               ^
-Finished building: ../src/DummyFlow.cpp
- 
-Building file: ../src/Main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
-Finished building: ../src/Main.cpp
- 
-Building file: ../src/NetworkFlow.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
-Finished building: ../src/NetworkFlow.cpp
- 
-Building target: CompactTraceDescriptor
-Invoking: GCC C++ Linker
-g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
-Finished building target: CompactTraceDescriptor
- 
+make: Warning: File 'src/DummyFlow.d' has modification time 159 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
 
-22:55:56 Build Finished (took 9s.439ms)
+22:21:35 Build Finished (took 366ms)
 

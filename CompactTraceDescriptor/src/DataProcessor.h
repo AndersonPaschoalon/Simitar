@@ -15,6 +15,8 @@
 #include <math.h>
 #include <stdio.h>
 #include <malloc.h>
+#include <err.h>
+#include <errno.h>
 #include <iostream>
 #include <fstream>
 #include <list>
@@ -32,6 +34,7 @@
 
 //namespaces
 using std::string;
+using std::cerr; // for error messages
 using namespace arma;
 
 #define DEBUG_StochasticModelFit 1
@@ -500,6 +503,8 @@ private:
 	 * @return
 	 */
 	StochasticModelFit* fitModels(list<double>& empiricalData,
+			const string& criterion);
+	StochasticModelFit* fitModelsSimplified(list<double>& empiricalData,
 			const string& criterion);
 
 #ifdef TEST_FUNCTIONS

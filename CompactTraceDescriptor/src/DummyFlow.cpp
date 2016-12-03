@@ -10,22 +10,6 @@
 
 DummyFlow::DummyFlow()
 {
-	/*
-	 //protocol support
-
-	 protocols.arp = false;
-	 protocols.dccp = true;
-	 protocols.ethernet = true;
-	 protocols.gre = false;
-	 protocols.html = false;
-	 protocols.igmp = false;
-	 protocols.ipv4 = true;
-	 protocols.ipv6 = true;
-	 protocols.smnp = true;
-	 protocols.tcp = true;
-	 protocols.udp = true;
-	 protocols.use_ip_add_list = false;
-	 */
 
 	//
 	//flow-level parameters initialization
@@ -54,99 +38,26 @@ DummyFlow::DummyFlow()
 	application_protocol = PROTOCOL__NULL;
 
 	//
-	//Packet Size Model
+	//Interarrival
 	//
-	interArrivalvet = NULL;
+	interArrivalvet = 0;
 	interDepertureTimeModel_counter = 0;
+	interFileModel = 0;
+	interFileModel_counter = 0;
+	interSessionModel = 0;
+	interSessionModel_counter = 0;
 
 	//
 	//Interarrival time parameters
 	//
 	psMode1 = NULL;
 	psMode2 = NULL;
-	packetSizeModel_counter = 0;
-
-	/*
-	 //
-	 //Packet Size Model
-	 //
-	 ps_model1 = MODEL__NULL;
-	 ps_model2 = MODEL__NULL;
-	 ps_model3 = MODEL__NULL;
-	 ps_model4 = MODEL__NULL;
-	 ps_model5 = MODEL__NULL;
-	 ps_model6 = MODEL__NULL;
-	 ps_model7 = MODEL__NULL;
-	 ps_model8 = MODEL__NULL;
-	 //bimodal
-	 ps_bimodal_type_mode1 = MODEL__NULL;
-	 ps_bimodal_mode1_constant = 0;
-	 ps_bimodal_mode1_normal_mean = 0;
-	 ps_bimodal_mode1_normal_devstd = 0;
-	 ps_bimodal_mode1_weibull_shape = 0;
-	 ps_bimodal_mode1_weibull_scale = 0;
-	 ps_bimodal_type_mode2 = MODEL__NULL;
-	 ps_bimodal_mode2_constant = 0;
-	 ps_bimodal_mode2_normal_mean = 0;
-	 ps_bimodal_mode2_normal_devstd = 0;
-	 ps_bimodal_mode2_weibull_shape = 0;
-	 ps_bimodal_mode2_weibull_scale = 0;
-	 //weibull
-	 ps_weibull_shape = 0;
-	 ps_weibull_scale = 0;
-	 //pareto
-	 ps_pareto_shape = 0;
-	 ps_pareto_scale = 0;
-	 //constant
-	 ps_constant = 0;
-	 //Normal
-	 ps_normal_mean = 0;
-	 ps_normal_stdDev = 0;
-	 //uniform
-	 ps_uniform_maxpktsize = 0;
-	 ps_uniform_minpktsize = 0;
-	 //exponential
-	 ps_exponential = 0;
-	 //poisson
-	 ps_poisson_mean = 0;
-
-	 //
-	 //Interarrival time parameters
-	 //
-	 idt_model1 = MODEL__NULL;
-	 idt_model2 = MODEL__NULL;
-	 idt_model3 = MODEL__NULL;
-	 idt_model4 = MODEL__NULL;
-	 idt_model5 = MODEL__NULL;
-	 idt_model6 = MODEL__NULL;
-	 idt_model7 = MODEL__NULL;
-	 idt_model8 = MODEL__NULL;
-	 idt_model9 = MODEL__NULL;
-	 //constant
-	 idt_constant = 0;
-	 //weibull
-	 idt_weibull_shape = 0;
-	 idt_weibull_scale = 0;
-	 //pareto
-	 idt_pareto_shape = 0;
-	 idt_pareto_scale = 0;
-	 //gamma
-	 idt_gamma_shape = 0;
-	 idt_gamma_scale = 0;
-	 //cauchy
-	 idt_cauchy_shape = 0;
-	 idt_cauchy_scale = 0;
-	 //poisson
-	 idt_poisson_mean = 0;
-	 //normal
-	 idt_normal_mean = 0;
-	 idt_normal_stdDev = 0;
-	 //uniform
-	 idt_uniform_maxpktsize = 0;
-	 idt_uniform_minpktsize = 0;
-	 //exponential
-	 idt_exponential = 0;
-	 */
+	nkbytes_mode1 = 0;
+	nkbytes_mode2 = 0;
+	npacket_mode1 = 0;
+	npackets_mode2 = 0;
+	packetSizeModel1_counter = 0;
+	packetSizeModel2_counter = 0;
 
 }
 
@@ -381,11 +292,15 @@ void DummyFlow::flowGenerate()
 	{
 		flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
+	else if (themodel.modelName == NO_MODEL)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
 	else
 	{
 		perror(
-				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-deperture\n");
-		cout << "Hint: " << " this->getInterDepertureTimeModel_next() = "
+				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-deperture model\n");
+		cerr << "Hint: " << " this->getInterDepertureTimeModel_next() = "
 				<< themodel.modelName << endl;
 		errno = EINVAL;
 	}
@@ -428,11 +343,15 @@ void DummyFlow::flowGenerate()
 	{
 		flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
+	else if (themodel.modelName == NO_MODEL)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
 	else
 	{
 		perror(
-				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-deperture\n");
-		cout << "Hint: " << " this->getInterDepertureTimeModel_next() = "
+				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-File time model\n");
+		cerr << "Hint: " << " this->getInterFileTimeModel_next() = "
 				<< themodel.modelName << endl;
 		errno = EINVAL;
 	}
@@ -475,15 +394,122 @@ void DummyFlow::flowGenerate()
 	{
 		flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
+	else if (themodel.modelName == NO_MODEL)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
 	else
 	{
 		perror(
-				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-deperture\n");
-		cout << "Hint: " << " this->getInterDepertureTimeModel_next() = "
+				"Error @ DummyFlow::flowGenerate(). No model selected for Inter-session time model\n");
+		cerr << "Hint: " << " this->getInterSessionTimeModel_next() = "
 				<< themodel.modelName << endl;
 		errno = EINVAL;
 	}
 	flow_str_print += "] ";
+
+	/**
+	 * Packet-size model
+	 */
+	flow_str_print += " Packet-size-Mode1[";
+
+	themodel = this->getPacketSizeModelMode1_next();
+	flow_str_print += themodel.modelName;
+
+	if (themodel.modelName == WEIBULL)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1)
+				+ ", betha=" + std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == NORMAL)
+	{
+		flow_str_print += ": mu=" + std::to_string(themodel.param1) + ", sigma="
+				+ std::to_string(themodel.param2);
+	}
+	else if ((themodel.modelName == EXPONENTIAL_LINEAR_REGRESSION)
+			|| (themodel.modelName == EXPONENTIAL_MEAN))
+	{
+		flow_str_print += ": lambda=" + std::to_string(themodel.param1);
+	}
+	else if ((themodel.modelName == PARETO_LINEAR_REGRESSION)
+			|| (themodel.modelName == PARETO_MAXIMUM_LIKEHOOD))
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", xm="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CAUCHY)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", x0="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CONSTANT)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
+	else if (themodel.modelName == NO_MODEL)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
+	else
+	{
+		perror(
+				"Error @ DummyFlow::flowGenerate(). No model selected for Packet-size Mode1 model\n");
+		cerr << "Hint: " << " getPacketSizeModelMode1_next = "
+				<< themodel.modelName << endl;
+		errno = EINVAL;
+	}
+	flow_str_print += "] ";
+
+	flow_str_print += " Packet-size-Mode2[";
+
+	themodel = this->getPacketSizeModelMode2_next();
+	flow_str_print += themodel.modelName;
+
+	if (themodel.modelName == WEIBULL)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1)
+				+ ", betha=" + std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == NORMAL)
+	{
+		flow_str_print += ": mu=" + std::to_string(themodel.param1) + ", sigma="
+				+ std::to_string(themodel.param2);
+	}
+	else if ((themodel.modelName == EXPONENTIAL_LINEAR_REGRESSION)
+			|| (themodel.modelName == EXPONENTIAL_MEAN))
+	{
+		flow_str_print += ": lambda=" + std::to_string(themodel.param1);
+	}
+	else if ((themodel.modelName == PARETO_LINEAR_REGRESSION)
+			|| (themodel.modelName == PARETO_MAXIMUM_LIKEHOOD))
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", xm="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CAUCHY)
+	{
+		flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", x0="
+				+ std::to_string(themodel.param2);
+	}
+	else if (themodel.modelName == CONSTANT)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
+	else if (themodel.modelName == NO_MODEL)
+	{
+		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+	}
+	else
+	{
+		perror(
+				"Error @ DummyFlow::flowGenerate(). No model selected for Packet-size Mode2 model\n");
+		cerr << "Hint: " << " getPacketSizeModelMode2_next = "
+				<< themodel.modelName << endl;
+		errno = EINVAL;
+	}
+	flow_str_print += "] ";
+
+	/// ///////////////////////////////////////////////////
 
 	//convert the cpp flow-string to a c flow string, in order to atomize the printing
 	const char* flow_print = flow_str_print.c_str();
@@ -893,22 +919,22 @@ void DummyFlow::setNetworkTtl(unsigned int networkTtl)
 	network_ttl = networkTtl;
 }
 
-unsigned long long int DummyFlow::getNumberOfKbytes() const
+unsigned long int DummyFlow::getNumberOfKbytes() const
 {
 	return number_of_kbytes;
 }
 
-void DummyFlow::setNumberOfKbytes(unsigned long long int numberOfKbytes)
+void DummyFlow::setNumberOfKbytes(unsigned long int numberOfKbytes)
 {
 	number_of_kbytes = numberOfKbytes;
 }
 
-unsigned long long int DummyFlow::getNumberOfPackets() const
+unsigned long int DummyFlow::getNumberOfPackets() const
 {
 	return number_of_packets;
 }
 
-void DummyFlow::setNumberOfPackets(unsigned long long int numberOfPackets)
+void DummyFlow::setNumberOfPackets(unsigned long int numberOfPackets)
 {
 	number_of_packets = numberOfPackets;
 }
@@ -1403,14 +1429,82 @@ time_sec DummyFlow::getInterSessionTime()
 	return (interSessionTimeRngEstimation);
 }
 
-StochasticModelFit DummyFlow::getPacketSizeModel_next() const
+StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()
 {
 	StochasticModelFit themodel;
-	//TODO implement this method
+	if (interFileModel == NULL)
+	{
+		themodel.modelName = NO_MODEL;
+		themodel.param1 = 0;
+		themodel.param2 = 0;
+	}
+	else
+	{
+		themodel = this->psMode1[packetSizeModel1_counter];
+	}
+
+	if (themodel.size > interFileModel_counter)
+	{
+		packetSizeModel1_counter++;
+	}
+
 	return (themodel);
 }
 
-void DummyFlow::setPacketSizeModel_next(StochasticModelFit* modelVet) const
+StochasticModelFit DummyFlow::getPacketSizeModelMode2_next()
 {
-	//TODO
+	StochasticModelFit themodel;
+	if (interFileModel == NULL)
+	{
+		themodel.modelName = NO_MODEL;
+		themodel.param1 = 0;
+		themodel.param2 = 0;
+	}
+	else
+	{
+		themodel = this->psMode2[packetSizeModel2_counter];
+	}
+
+	if (themodel.size > interFileModel_counter)
+	{
+		packetSizeModel2_counter++;
+	}
+
+	return (themodel);
 }
+
+void DummyFlow::setPacketSizeModel(StochasticModelFit* modelVet1,
+		StochasticModelFit* modelVet2, long int nkbytesMode1,
+		long int nkbytesMode2, long int nPacketsMode1, long int nPacketsMode2)
+{
+	psMode1 = modelVet1;
+	psMode2 = modelVet2;
+	packetSizeModel1_counter = 0;
+	packetSizeModel2_counter = 0;
+	nkbytes_mode1 = nkbytesMode1;
+	nkbytes_mode2 = nkbytesMode2;
+	npacket_mode1 = nPacketsMode1;
+	npackets_mode2 = nPacketsMode2;
+
+}
+
+long int DummyFlow::getNkbytesMode1() const
+{
+	return nkbytes_mode1;
+}
+
+long int DummyFlow::getNkbytesMode2() const
+{
+	return nkbytes_mode2;
+}
+
+long int DummyFlow::getNpacketMode1() const
+{
+	return npacket_mode1;
+}
+
+long int DummyFlow::getNpacketsMode2() const
+{
+	return npackets_mode2;
+}
+

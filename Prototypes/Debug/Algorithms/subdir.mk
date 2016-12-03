@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Algorithms/Prototypes.cpp 
+../Algorithms/Algorithms.cpp 
 
 OBJS += \
-./Algorithms/Prototypes.o 
+./Algorithms/Algorithms.o 
 
 CPP_DEPS += \
-./Algorithms/Prototypes.d 
+./Algorithms/Algorithms.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

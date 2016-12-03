@@ -3297,3 +3297,12 @@ Command-line arguments:  -data file:/home/ldapusers/apaschoalon/ProjetoMestrado/
 
 !ENTRY org.gna.eclox.core 4 0 2016-11-29 17:29:11.438
 !MESSAGE : invalid custom doxygen identifier found.
+!SESSION 2016-11-30 15:51:58.378 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_77
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-11-30 15:52:02.649
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.

@@ -89,10 +89,10 @@ public:
 	void setNetworkSrcAddr(const string& networkSrcAddr);
 	unsigned int getNetworkTtl() const;
 	void setNetworkTtl(unsigned int networkTtl);
-	unsigned long long int getNumberOfKbytes() const;
-	void setNumberOfKbytes(unsigned long long int numberOfKbytes);
-	unsigned long long int getNumberOfPackets() const;
-	void setNumberOfPackets(unsigned long long int numberOfPackets);
+	unsigned long int getNumberOfKbytes() const;
+	void setNumberOfKbytes(unsigned long int numberOfKbytes);
+	unsigned long int getNumberOfPackets() const;
+	void setNumberOfPackets(unsigned long int numberOfPackets);
 
 //	const protocolSupport& getProtocols() const;
 //	void setProtocols(const protocolSupport& protocols);
@@ -108,9 +108,6 @@ public:
 	protocol getTransportProtocol() const;
 	void setTransportProtocol(protocol transportProtocol);
 
-	StochasticModelFit getPacketSizeModel_next() const;
-	void setPacketSizeModel_next(StochasticModelFit* modelVet) const;
-
 	void setInterDepertureTimeModels(StochasticModelFit* modelVet);
 	StochasticModelFit getInterDepertureTimeModel_next();
 
@@ -121,6 +118,18 @@ public:
 	void setInterSessionTimeModel(StochasticModelFit* modelVet);
 	StochasticModelFit getInterSessionTimeModel_next();
 	time_sec getInterSessionTime();
+
+	StochasticModelFit getPacketSizeModelMode1_next();
+	StochasticModelFit getPacketSizeModelMode2_next();
+
+	void setPacketSizeModel(StochasticModelFit* modelVet1,
+			StochasticModelFit* modelVet, long int nkbytesMode1,
+			long int nkbytesMode2, long int nPacketsMode1,
+			long int nPacketsMode2);
+	long int getNkbytesMode1() const;
+	long int getNkbytesMode2() const;
+	long int getNpacketMode1() const;
+	long int getNpacketsMode2() const;
 
 protected:
 	//protocolSupport protocols;
@@ -176,9 +185,12 @@ private:
 	 */
 	StochasticModelFit* psMode1;
 	StochasticModelFit* psMode2;
-	kbytes nkbytes_mode1;
-	kbytes nkbytes_mode2;
-	int packetSizeModel_counter;
+	long int nkbytes_mode1;
+	long int nkbytes_mode2;
+	long int npacket_mode1;
+	long int npackets_mode2;
+	int packetSizeModel1_counter;
+	int packetSizeModel2_counter;
 
 };
 

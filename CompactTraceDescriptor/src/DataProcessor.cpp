@@ -30,6 +30,7 @@ string DataProcessor::toString(void)
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
+	//err
 
 	//iterator variables
 	long int fcounter = 0;
@@ -50,10 +51,16 @@ int DataProcessor::calculate(const string& experimentName,
 
 	//flow-level variables
 	list<time_sec> relativeTime;	//time relative to the 1st packet list
-	long int nKbytes = 0;		//Number of kbytes (bytes/1024) of the
+	long int nbytesMode1 = 0;
+	long int nbytesMode2 = 0;
+	long int nKbytesMode1 = 0;		//Number of kbytes (bytes/1024) of the
+	long int nKbytesMode2 = 0;
 
 	//packetSize variables
-	list<long int> pslist;		//packet-size list
+	//list<long int> pslist;		//packet-size list
+	list<long int> pslist;
+	list<packet_size> psFirstMode;
+	list<packet_size> psSecondMode;
 	//long int ps_mostFrequent = 0; //not being used
 	//double mean_packetRate = 0; //not being used
 
@@ -63,8 +70,8 @@ int DataProcessor::calculate(const string& experimentName,
 	list<time_sec> interArrival_fileStack;
 	list<time_sec> interArrival_interFileStack;
 	list<time_sec> interArrival_interSessionStack;
-	time_sec lastTime = 0;
-	time_sec idt = 0;
+	time_sec idt_pivot = 0;
+	time_sec idt_next = 0;
 
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
@@ -76,8 +83,14 @@ int DataProcessor::calculate(const string& experimentName,
 		//reset temp vars
 		flowStrData = "";
 		flowIntData = 0;
+		nbytesMode1 = 0;
+		nbytesMode2 = 0;
+		nKbytesMode1 = 0;
+		nKbytesMode2 = 0;
 		relativeTime.clear();
 		pslist.clear();
+		psFirstMode.clear();
+		psSecondMode.clear();
 		interArrival_list.clear();
 		interArrival_fileStack.clear();
 		interArrival_interFileStack.clear();
@@ -87,24 +100,66 @@ int DataProcessor::calculate(const string& experimentName,
 		databaseInterface->getFlowData(experimentName, fcounter, "frame__len",
 				pslist);
 
-		//laod time-relative data
+		// Evaluate packet-size and number ob kbytes for each mode
+		for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+				it++)
+		{
+			if (*it <= PACKET_SIZE_MODE_CUT_VALUE)
+			{
+				psFirstMode.push_back(packet_size(*it));
+				nbytesMode1 += *it;
+			}
+			else
+			{
+				psSecondMode.push_back(packet_size(*it));
+				nbytesMode2 += *it;
+			}
+		}
+		nKbytesMode1 = nbytesMode1 / 1024;
+		nKbytesMode2 = nbytesMode2 / 1024;
+
+		// load time-relative data. The time values are relative to the begin of
+		// the experiment
 		databaseInterface->getFlowData(experimentName, fcounter,
 				"frame__time_relative", relativeTime);
 
-		//evaluate inter-arrival data
-		//time relative to the begin of the measurement
-		lastTime = 0;
+		// Evaluate interarriaval  times
 		for (list<time_sec>::iterator it = relativeTime.begin();
 				it != relativeTime.end(); it++)
 		{
-			idt = *it - lastTime;
-			interArrival_list.push_back(idt);
-			lastTime = *it;
+			if (it == relativeTime.begin())
+			{
+				idt_pivot = *it;
+			}
+			else
+			{
+				idt_next = *it;
+				interArrival_list.push_back(idt_next - idt_pivot);
+				idt_pivot = idt_next;
+			}
+		}
+		//Evaluate interraval  in file (burst), inter-file and session level
+		for (list<time_sec>::iterator it = interArrival_list.begin();
+				it != interArrival_list.end(); it++)
+		{
+			if (*it < FILE_CUT_TIME)
+			{
+				interArrival_fileStack.push_back(*it);
+			}
+			else if (*it < SESSION_CUT_TIME)
+			{
+				interArrival_interFileStack.push_back(*it);
+			}
+			else
+			{
+				interArrival_interSessionStack.push_back(*it);
+			}
 		}
 
 		//######################################################################
 		//Flow-level Options
 		//######################################################################
+
 		startDalay = relativeTime.front();
 		netFlow->setFlowStartDelay(startDalay);
 
@@ -114,19 +169,25 @@ int DataProcessor::calculate(const string& experimentName,
 		//TODO DS byte configuration -- now it is just set to zero
 		netFlow->setFlowDsByte(0);
 
-		//flow kbytes
-		for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
-				it++)
-		{
-			nKbytes = nKbytes + *it;
-		}
-		nKbytes = nKbytes / 1024;
+		//evaluate flow kbytes
 
-		netFlow->setNumberOfKbytes(nKbytes);
-		netFlow->setNumberOfPackets(relativeTime.size());
+		//
+		// Flow statistical and stochastic data
+		//
+
+		netFlow->setNumberOfKbytes(nKbytesMode1 + nKbytesMode2);
+		netFlow->setNumberOfPackets(pslist.size());
+
+		netFlow->setInterFileTimeModel(
+				this->fitModels(interArrival_interFileStack,
+						this->getInformationCriterion()));
+
+		netFlow->setInterSessionTimeModel(
+				this->fitModels(interArrival_interSessionStack,
+						this->getInformationCriterion()));
 
 		//######################################################################
-		//Protocol Options
+		// Packet-level Options
 		//######################################################################
 
 		//
@@ -180,8 +241,7 @@ int DataProcessor::calculate(const string& experimentName,
 		//set ttl as the most frequent
 		databaseInterface->getFlowData(experimentName, fcounter, "ip__ttl",
 				ttlList);
-		//ttl = (int) mode(ttlList);
-		ttl = (int) mode(&ttlList);
+		ttl = mode(&ttlList);
 		netFlow->setNetworkTtl(ttl);
 
 		//
@@ -252,98 +312,44 @@ int DataProcessor::calculate(const string& experimentName,
 			//netFlow->setL4DstPort(flowIntData);
 		}
 
-		//######################################################################
-		//Packet Size Model
-		//######################################################################
-
 		//
-		// Constant model:  Just set the packet size as the most frequent value
+		// Packet Interarrival data
 		//
-		//ps_mostFrequent = mode(pslist);
-		//ps_mostFrequent = mode(&pslist);
-		//mean_packetRate = ((double) pslist.size() / flowDuration);
-		//netFlow->setPsConstant(ps_mostFrequent);
-		//netFlow->setIdtConstant(mean_packetRate);
 
-		//
-		// Algorithm to choose the priority order of the models
-		// 1st version: just the constant model
-		//
-		//TODO implement a best algorithm
-		//netFlow->setPsModel1(MODEL__CONSTANT);
-
-		//######################################################################
-		//Inter-arrival-time Model
-		//######################################################################
-
-		//v0.2
-		//netFlow->setInterDepertureTimeModels(
-		//		fitModels(interArrival_list, "aic"));
-
-#ifdef DEBUG_DataProcessor_interArrival
-		//debug
-		cout << ">" << interArrival_list.size() << endl;
-#endif
-
-		//TODO Analisas casos de borda, quando as pilhas de inter-arrival tem  1 ou zero valores
-		//TODO NÃO FUNCTIONA QUANDO AS LITAS POSSUEM 1 OU ZERO VALORES
-		for (list<time_sec>::iterator it = interArrival_list.begin();
-				it != interArrival_list.end(); it++)
-		{
-			if (*it < FILE_CUT_TIME)
-			{
-				interArrival_fileStack.push_back(*it);
-			}
-			else if (*it < SESSION_CUT_TIME)
-			{
-				interArrival_interFileStack.push_back(*it);
-			}
-			else
-			{
-				interArrival_interSessionStack.push_back(*it);
-			}
-		}
-
-
-
-#ifdef DEBUG_DataProcessor_interArrival
-		//debug
-		cout << "interArrival_fileStack.size() = " << interArrival_fileStack.size() << endl;
-		cout << "interArrival_interFileStack.size() = " << interArrival_interFileStack.size() << endl;
-		cout << "interArrival_interSessionStack.size() = " << interArrival_interSessionStack.size() << endl;
-		cout << fcounter << endl;
-#endif
-
-		//set file interdeperture time model
 		netFlow->setInterDepertureTimeModels(
 				this->fitModels(interArrival_fileStack,
 						this->getInformationCriterion()));
-		//set interfile time model
-		netFlow->setInterFileTimeModel(
-				this->fitModels(interArrival_interFileStack,
-						this->getInformationCriterion()));
-		//st inter session time model
-		netFlow->setInterSessionTimeModel(
-				this->fitModels(interArrival_interSessionStack,
-						this->getInformationCriterion()));
+
+		//
+		// Packet size data
+		//
+
+		netFlow->setPacketSizeModel(
+				this->fitModels(psFirstMode, this->getInformationCriterion()),
+				this->fitModels(psSecondMode, this->getInformationCriterion()),
+				nKbytesMode1, nKbytesMode2, psFirstMode.size(),
+				psSecondMode.size());
+
+		//TODO Set all packet-size data
 
 #ifdef DEBUG_DataProcessor_interArrival
+		cout << "list_size>" << interArrival_list.size() << endl;
+		cout << "interArrival_fileStack.size() = "
+		<< interArrival_fileStack.size() << endl;
+		cout << "interArrival_interFileStack.size() = "
+		<< interArrival_interFileStack.size() << endl;
+		cout << "interArrival_interSessionStack.size() = "
+		<< interArrival_interSessionStack.size() << endl;
 		cout << fcounter << endl;
+
+		cout << "flow no.:"<< fcounter << endl;
 		string file1 = to_string(fcounter) + "fileStack";
 		string file2 = to_string(fcounter) + "interFileStack";
-		string file3 = to_string(fcounter)+ "interSessionStack" ;
+		string file3 = to_string(fcounter) + "interSessionStack";
 		save_data_on_file(file1, interArrival_fileStack);
 		save_data_on_file(file2, interArrival_interFileStack);
 		save_data_on_file(file3, interArrival_interSessionStack);
 #endif
-
-		//TODO set the right model
-
-		//netFlow->setIdtModel1(MODEL__CONSTANT);
-
-		//TODO
-
-		//TODO
 
 		//######################################################################
 		//Push-back the flow to Trace Flow-list
@@ -388,9 +394,8 @@ void DataProcessor::setInformationCriterion(const string& criterion)
 	}
 	else
 	{
-		cout << "\nInvalid criterion or no criterion selected: " << criterion
-				<< endl;
-		printf("Selecting default criterion: AIC\n");
+		cerr << "\nInvalid criterion or no criterion selected: " << criterion
+				<< endl << "Selecting default criterion: AIC\n";
 		informationCriterionParam = "aic";
 	}
 
@@ -414,7 +419,7 @@ StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 	vec paramVec = zeros<vec>(2);
 	vec infoCriterion = zeros<vec>(2);
 
-	if( m == 0)
+	if (m == 0)
 	{
 
 		modelVet = new StochasticModelFit[1];
@@ -432,7 +437,7 @@ StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 
 		modelVet[0].aic = datum::inf;
 		modelVet[0].bic = datum::inf;
-		modelVet[0].modelName = CONSTANT_SINGLE_DATA;
+		modelVet[0].modelName = CONSTANT;
 		modelVet[0].param1 = *empiricalData.begin();
 		modelVet[0].param2 = 0;
 		modelVet[0].size = 1;
@@ -542,31 +547,180 @@ StochasticModelFit* DataProcessor::fitModels(list<double>& empiricalData,
 		}
 		else
 		{
-			cout
+			cerr
 					<< "Error @ DataProcessor::fitModels -> Invalid criterion argument: "
 					<< criterion << endl;
-			cout << "AIC set as default" << endl;
+			cerr << "AIC set as default" << endl;
 			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
 					compareAic);
 
 		}
 
-#ifdef DEBUG_StochasticModelFit
-		//if (modelVet[0].modelName == WEIBULL)
-		//{
-		//	cout << modelVet[0].modelName << "aic:bic->" << modelVet[0].aic << ":" << modelVet[0].bic
-		//			<< "  " << "alpha:betha->" << modelVet[0].param1
-		//			<< modelVet[0].param2 << endl;
-		//	string fileName = "weibulldata_" + std::to_string(abs(modelVet[0].aic));
-		//	save_data_on_file(fileName, interArrival, *interArrivalCdf);
-		//}
-#endif //DEBUG_StochasticModelFit
 
 		delete interArrivalCdf;
 	}
 
 	return (modelVet);
 }
+
+//TODO
+StochasticModelFit* DataProcessor::fitModelsSimplified(list<double>& empiricalData,
+		const string& criterion)
+{
+	//constants
+	const int numberOfModels = 8;
+	const int m = empiricalData.size(); //empirical data-size
+	//vars
+	int counter = 0;
+	StochasticModelFit* modelVet = NULL;
+	vec paramVec = zeros<vec>(2);
+	vec infoCriterion = zeros<vec>(2);
+
+	if (m == 0)
+	{
+
+		modelVet = new StochasticModelFit[1];
+
+		modelVet[0].aic = datum::inf;
+		modelVet[0].bic = datum::inf;
+		modelVet[0].modelName = NO_MODEL;
+		modelVet[0].param1 = 0;
+		modelVet[0].param2 = 0;
+		modelVet[0].size = 1;
+	}
+	else if (m == 1)
+	{
+		modelVet = new StochasticModelFit[1];
+
+		modelVet[0].aic = datum::inf;
+		modelVet[0].bic = datum::inf;
+		modelVet[0].modelName = CONSTANT;
+		modelVet[0].param1 = *empiricalData.begin();
+		modelVet[0].param2 = 0;
+		modelVet[0].size = 1;
+
+	}
+	else
+	{
+		modelVet = new StochasticModelFit[numberOfModels];
+
+		//Inter-arrival vec
+		vec interArrival = zeros<vec>(m);
+		counter = 0;
+		for (list<double>::iterator it = empiricalData.begin();
+				it != empiricalData.end(); it++)
+		{
+			interArrival(counter) = *it + min_time;
+			counter++;
+		}
+
+		//Empirical CDF of interArrival
+		vec* interArrivalCdf = empiricalCdf(empiricalData);
+
+		//Weibull
+		weibullFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
+		modelVet[0].aic = infoCriterion(0);
+		modelVet[0].bic = infoCriterion(1);
+		modelVet[0].modelName = WEIBULL;
+		modelVet[0].param1 = paramVec(0);
+		modelVet[0].param2 = paramVec(1);
+		modelVet[0].size = numberOfModels;
+
+		//normal
+		normalFitting(interArrival, paramVec, infoCriterion);
+		modelVet[1].aic = infoCriterion(0);
+		modelVet[1].bic = infoCriterion(1);
+		modelVet[1].modelName = NORMAL;
+		modelVet[1].param1 = paramVec(0);
+		modelVet[1].param2 = paramVec(1);
+		modelVet[1].size = numberOfModels;
+
+		//exponential mean
+		exponentialMeFitting(interArrival, paramVec, infoCriterion);
+		modelVet[2].aic = infoCriterion(0);
+		modelVet[2].bic = infoCriterion(1);
+		modelVet[2].modelName = EXPONENTIAL_MEAN;
+		modelVet[2].param1 = paramVec(0);
+		modelVet[2].param2 = paramVec(1);
+		modelVet[2].size = numberOfModels;
+
+		//exponential Linear Regression (LR)
+		exponentialLrFitting(interArrival, *interArrivalCdf, paramVec,
+				infoCriterion);
+		modelVet[3].aic = infoCriterion(0);
+		modelVet[3].bic = infoCriterion(1);
+		modelVet[3].modelName = EXPONENTIAL_LINEAR_REGRESSION;
+		modelVet[3].param1 = paramVec(0);
+		modelVet[3].param2 = paramVec(1);
+		modelVet[3].size = numberOfModels;
+
+		//pareto linear regression
+		paretoLrFitting(interArrival, *interArrivalCdf, paramVec,
+				infoCriterion);
+		modelVet[4].aic = infoCriterion(0);
+		modelVet[4].bic = infoCriterion(1);
+		modelVet[4].modelName = PARETO_LINEAR_REGRESSION;
+		modelVet[4].param1 = paramVec(0);
+		modelVet[4].param2 = paramVec(1);
+		modelVet[4].size = numberOfModels;
+
+		//pareto maximum likehood
+		paretoMlhFitting(interArrival, *interArrivalCdf, paramVec,
+				infoCriterion);
+		modelVet[5].aic = infoCriterion(0);
+		modelVet[5].bic = infoCriterion(1);
+		modelVet[5].modelName = PARETO_MAXIMUM_LIKEHOOD;
+		modelVet[5].param1 = paramVec(0);
+		modelVet[5].param2 = paramVec(1);
+		modelVet[5].size = numberOfModels;
+
+		//Cauchy
+		cauchyFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
+		modelVet[6].aic = infoCriterion(0);
+		modelVet[6].bic = infoCriterion(1);
+		modelVet[6].modelName = CAUCHY;
+		modelVet[6].param1 = paramVec(0);
+		modelVet[6].param2 = paramVec(1);
+		modelVet[6].size = numberOfModels;
+
+		//Constant
+		constantFitting(interArrival, paramVec, infoCriterion);
+		modelVet[7].aic = infoCriterion(0);
+		modelVet[7].bic = infoCriterion(1);
+		modelVet[7].modelName = CONSTANT;
+		modelVet[7].param1 = paramVec(0);
+		modelVet[7].param2 = paramVec(1);
+		modelVet[7].size = numberOfModels;
+
+		if (criterion == "bic")
+		{
+			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
+					compareBic);
+		}
+		else if (criterion == "aic")
+		{
+			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
+					compareAic);
+		}
+		else
+		{
+			cerr
+					<< "Error @ DataProcessor::fitModels -> Invalid criterion argument: "
+					<< criterion << endl;
+			cerr << "AIC set as default" << endl;
+			qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
+					compareAic);
+
+		}
+
+
+		delete interArrivalCdf;
+	}
+
+	return (modelVet);
+}
+
+
 
 inline void DataProcessor::weibullFitting(const vec& interArrival,
 		const vec& interArrivalCdf, vec& paramVec, vec& infoCriterion)
@@ -1037,9 +1191,8 @@ inline double DataProcessor::informationCriterion(const vec& data,
 	}
 	else
 	{
-		cout << "\nInvalid criterion or no criterion selected: " << criterion
-				<< endl;
-		printf("Selecting default criterion: AIC\n");
+		cerr << "\nInvalid criterion or no criterion selected: " << criterion
+				<< endl << "Selecting default criterion: AIC\n";
 		criterionVal = 2 * nEstimatedParameters - 2 * likehoodLogVal;
 	}
 
@@ -1088,9 +1241,9 @@ inline double DataProcessor::logLikehood(const vec& data,
 	}
 	else
 	{
-		cout << "Warning, no valid stochastic function selected: "
-				<< functionName << endl;
-		printf("Likehood logarithm seted to -Inf (worst as possible)\n");
+		cerr << "Warning, no valid stochastic function selected: "
+				<< functionName << endl
+				<< "Likehood logarithm seted to -Inf (worst as possible)\n";
 		return (datum::inf);
 	}
 

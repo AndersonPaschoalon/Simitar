@@ -1,0 +1,18 @@
+/*
+ * Prototypes.h
+ *
+ *  Created on: 30 de nov de 2016
+ *      Author: apaschoalon
+ */
+
+#ifndef PROTOTYPES_H_
+#define PROTOTYPES_H_
+
+class Prototypes
+{
+public:
+	Prototypes();
+	virtual ~Prototypes();
+};
+
+#endif /* PROTOTYPES_H_ */
