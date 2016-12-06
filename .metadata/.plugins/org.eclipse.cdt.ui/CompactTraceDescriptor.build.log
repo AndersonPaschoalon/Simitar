@@ -1,8 +1,8 @@
-22:21:35 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+17:35:54 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
 make all 
-make: Warning: File 'src/DummyFlow.d' has modification time 159 s in the future
+make: Warning: File 'src/DummyFlow.d' has modification time 148 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 make: Nothing to be done for 'all'.
 
-22:21:35 Build Finished (took 366ms)
+17:35:54 Build Finished (took 214ms)
 

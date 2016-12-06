@@ -2631,3 +2631,213 @@ make all
 make: Warning: File 'src/DummyFlow.d' has modification time 159 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 make: Nothing to be done for 'all'.
+16:30:32 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 158 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:507:82: error: expected ‘,’ or ‘...’ before ‘::’ token
+  StochasticModelFit* fitModelsSimplified(list<double>& empiricalDataDataProcessor::fitModelsSimplified);
+                                                                                  ^
+../src/DataProcessor.cpp: In member function ‘StochasticModelFit* DataProcessor::fitModelsSimplified(std::list<double>&)’:
+../src/DataProcessor.cpp:694:7: error: ‘criterion’ was not declared in this scope
+   if (criterion == "bic")
+       ^
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+16:30:35 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 158 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+16:31:10 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 158 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘StochasticModelFit* DataProcessor::fitModelsSimplified(std::list<double>&)’:
+../src/DataProcessor.cpp:694:7: error: ‘criterion’ was not declared in this scope
+   if (criterion == "bic")
+       ^
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+16:31:13 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 158 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+16:33:22 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 158 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘StochasticModelFit* DataProcessor::fitModelsPsSize(std::list<double>&)’:
+../src/DataProcessor.cpp:694:7: error: ‘criterion’ was not declared in this scope
+   if (criterion == "bic")
+       ^
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+16:33:25 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 159 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+16:36:05 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 158 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp:2020:48: error: no ‘bool DataProcessor::test_fitModelsInterArrival()’ member function declared in class ‘DataProcessor’
+ bool DataProcessor::test_fitModelsInterArrival()
+                                                ^
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+16:36:08 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 159 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+16:36:33 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 159 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+../src/TestClass.cpp: In constructor ‘std::TestClass::TestClass(std::string)’:
+../src/TestClass.cpp:112:37: error: ‘class DataProcessor’ has no member named ‘test_fitModels’
+   printTestResult("All fitting", dp.test_fitModels());
+                                     ^
+src/subdir.mk:45: recipe for target 'src/TestClass.o' failed
+make: *** [src/TestClass.o] Error 1
+16:36:41 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 159 s in the future
+make: Nothing to be done for 'all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+17:24:42 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 159 s in the future
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+../src/TestClass.cpp: In constructor ‘std::TestClass::TestClass(std::string)’:
+../src/TestClass.cpp:112:37: error: ‘class DataProcessor’ has no member named ‘test_fitModels’
+   printTestResult("All fitting", dp.test_fitModels());
+                                     ^
+src/subdir.mk:45: recipe for target 'src/TestClass.o' failed
+make: *** [src/TestClass.o] Error 1
+17:24:44 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 158 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:25:03 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 158 s in the future
+Building file: ../src/TestClass.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/TestClass.d" -MT"src/TestClass.o" -o "src/TestClass.o" "../src/TestClass.cpp"
+Finished building: ../src/TestClass.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+17:25:07 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 158 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:29:21 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 159 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+17:29:27 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 159 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:29:31 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 153 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:33:30 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 158 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+17:33:37 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 158 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:33:39 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 154 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:35:41 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DataProcessor.d' has modification time 32 s in the future
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:81:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+17:35:45 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 158 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
+17:35:54 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/DummyFlow.d' has modification time 148 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.

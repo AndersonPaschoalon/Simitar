@@ -178,83 +178,6 @@ void DummyFlow::flowGenerate()
 	 */
 	flow_str_print += " Application[no-protocol] ";
 
-	/*
-	 //
-	 // Packet-size model
-	 //
-	 //TODO Normal model for bimodal
-	 //TODO more statistical models
-	 flow_str_print += " PacketSize[";
-
-	 themodel = this->getPsModel1();
-	 if (themodel == MODEL__NULL)
-	 {
-	 flow_str_print += "no-model";
-	 }
-	 else if (themodel == MODEL__BIMODAL_CONSTANT_CONSTANT)
-	 {
-	 flow_str_print += "bimodal-constant-constant: mean1="
-	 + std::to_string(this->getPsBimodalMode1Constant()) + ", mean2="
-	 + std::to_string(this->getPsBimodalMode2Constant());
-	 }
-	 else if (themodel == MODEL__BIMODAL_CONSTANT_WEIBULL)
-	 {
-	 flow_str_print += "bimodal-constant-weibull: mean1="
-	 + std::to_string(this->getPsBimodalMode1Constant())
-	 + ", shape2="
-	 + std::to_string(this->getPsBimodalMode2WeibullShape())
-	 + ", scale2="
-	 + std::to_string(this->getPsBimodalMode2WeibullScale());
-	 }
-	 else if (themodel == MODEL__BIMODAL_WEIBULL_CONSTANT)
-	 {
-	 flow_str_print += "bimodal-weibull-constant: scale1="
-	 + std::to_string(this->getPsBimodalMode1WeibullScale())
-	 + ", shape1="
-	 + std::to_string(this->getPsBimodalMode1WeibullShape())
-	 + +", mean2="
-	 + std::to_string(this->getPsBimodalMode2Constant());
-	 }
-	 else if (themodel == MODEL__BIMODAL_WEIBULL_WEIBULL)
-	 {
-	 flow_str_print += "bimodal-weibull-weibull: scale1="
-	 + std::to_string(this->getPsBimodalMode1WeibullScale())
-	 + ", shape1="
-	 + std::to_string(this->getPsBimodalMode1WeibullShape())
-	 + +", scale2="
-	 + std::to_string(this->getPsBimodalMode2WeibullScale())
-	 + ", shape2="
-	 + std::to_string(this->getPsBimodalMode2WeibullShape());
-	 }
-	 else if (themodel == MODEL__CONSTANT)
-	 {
-	 flow_str_print += "constant: mean="
-	 + std::to_string(this->getPsConstant()) + ", ="
-	 + std::to_string(this->getPsConstant());
-	 }
-	 else if (themodel == MODEL__WEIBULL)
-	 {
-	 flow_str_print += "weibull: shape="
-	 + std::to_string(this->getPsWeibullShape()) + ", scale="
-	 + std::to_string(this->getPsWeibullScale());
-
-	 }
-	 else if (themodel == MODEL__UNIFORM)
-	 {
-	 flow_str_print += "uniform: max="
-	 + std::to_string(this->getPsUniformMaxpktsize()) + ", min="
-	 + std::to_string(this->getPsUniformMinpktsize());
-	 }
-	 else
-	 {
-	 perror("Error @ DummyFlow::flowGenerate(). No model selected for Packet Size\n");
-	 cout << "Hint: " << "this->getPsModel1() = "<< this->getPsModel1();
-	 cout << " && themodel = " << themodel << endl;
-	 errno = EINVAL;
-	 }
-	 flow_str_print += "] ";
-	 */
-
 	/**
 	 * Inter-deperture model
 	 */
@@ -294,7 +217,7 @@ void DummyFlow::flowGenerate()
 	}
 	else if (themodel.modelName == NO_MODEL)
 	{
-		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+		//flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
 	else
 	{
@@ -345,7 +268,7 @@ void DummyFlow::flowGenerate()
 	}
 	else if (themodel.modelName == NO_MODEL)
 	{
-		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+		//flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
 	else
 	{
@@ -396,7 +319,7 @@ void DummyFlow::flowGenerate()
 	}
 	else if (themodel.modelName == NO_MODEL)
 	{
-		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+		//flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
 	else
 	{
@@ -448,7 +371,7 @@ void DummyFlow::flowGenerate()
 	}
 	else if (themodel.modelName == NO_MODEL)
 	{
-		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+		//flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
 	else
 	{
@@ -497,7 +420,7 @@ void DummyFlow::flowGenerate()
 	}
 	else if (themodel.modelName == NO_MODEL)
 	{
-		flow_str_print += ": mean=" + std::to_string(themodel.param1);
+		//flow_str_print += ": mean=" + std::to_string(themodel.param1);
 	}
 	else
 	{
@@ -508,8 +431,6 @@ void DummyFlow::flowGenerate()
 		errno = EINVAL;
 	}
 	flow_str_print += "] ";
-
-	/// ///////////////////////////////////////////////////
 
 	//convert the cpp flow-string to a c flow string, in order to atomize the printing
 	const char* flow_print = flow_str_print.c_str();
@@ -607,248 +528,6 @@ void DummyFlow::setFlowStartDelay(double flowStartDelay)
 	flow_start_delay = flowStartDelay;
 }
 
-/*
- double DummyFlow::getIdtCauchyScale() const
- {
- return idt_cauchy_scale;
- }
-
- void DummyFlow::setIdtCauchyScale(double idtCauchyScale)
- {
- idt_cauchy_scale = idtCauchyScale;
- }
-
- double DummyFlow::getIdtCauchyShape() const
- {
- return idt_cauchy_shape;
- }
-
- void DummyFlow::setIdtCauchyShape(double idtCauchyShape)
- {
- idt_cauchy_shape = idtCauchyShape;
- }
-
- double DummyFlow::getIdtConstant() const
- {
- return idt_constant;
- }
-
- void DummyFlow::setIdtConstant(double idtConstant)
- {
- idt_constant = idtConstant;
- }
-
- double DummyFlow::getIdtExponential() const
- {
- return idt_exponential;
- }
-
- void DummyFlow::setIdtExponential(double idtExponential)
- {
- idt_exponential = idtExponential;
- }
-
- double DummyFlow::getIdtGammaScale() const
- {
- return idt_gamma_scale;
- }
-
- void DummyFlow::setIdtGammaScale(double idtGammaScale)
- {
- idt_gamma_scale = idtGammaScale;
- }
-
- double DummyFlow::getIdtGammaShape() const
- {
- return idt_gamma_shape;
- }
-
- void DummyFlow::setIdtGammaShape(double idtGammaShape)
- {
- idt_gamma_shape = idtGammaShape;
- }
-
- stochastic_model DummyFlow::getIdtModel1() const
- {
- return idt_model1;
- }
-
- void DummyFlow::setIdtModel1(stochastic_model idtModel1)
- {
- idt_model1 = idtModel1;
- }
-
- stochastic_model DummyFlow::getIdtModel2() const
- {
- return idt_model2;
- }
-
- void DummyFlow::setIdtModel2(stochastic_model idtModel2)
- {
- idt_model2 = idtModel2;
- }
-
- stochastic_model DummyFlow::getIdtModel3() const
- {
- return idt_model3;
- }
-
- void DummyFlow::setIdtModel3(stochastic_model idtModel3)
- {
- idt_model3 = idtModel3;
- }
-
- stochastic_model DummyFlow::getIdtModel4() const
- {
- return idt_model4;
- }
-
- void DummyFlow::setIdtModel4(stochastic_model idtModel4)
- {
- idt_model4 = idtModel4;
- }
-
- stochastic_model DummyFlow::getIdtModel5() const
- {
- return idt_model5;
- }
-
- void DummyFlow::setIdtModel5(stochastic_model idtModel5)
- {
- idt_model5 = idtModel5;
- }
-
- stochastic_model DummyFlow::getIdtModel6() const
- {
- return idt_model6;
- }
-
- void DummyFlow::setIdtModel6(stochastic_model idtModel6)
- {
- idt_model6 = idtModel6;
- }
-
- stochastic_model DummyFlow::getIdtModel7() const
- {
- return idt_model7;
- }
-
- void DummyFlow::setIdtModel7(stochastic_model idtModel7)
- {
- idt_model7 = idtModel7;
- }
-
- stochastic_model DummyFlow::getIdtModel8() const
- {
- return idt_model8;
- }
-
- void DummyFlow::setIdtModel8(stochastic_model idtModel8)
- {
- idt_model8 = idtModel8;
- }
-
- stochastic_model DummyFlow::getIdtModel9() const
- {
- return idt_model9;
- }
-
- void DummyFlow::setIdtModel9(stochastic_model idtModel9)
- {
- idt_model9 = idtModel9;
- }
-
- double DummyFlow::getIdtNormalStdDev() const
- {
- return idt_normal_stdDev;
- }
-
- void DummyFlow::setIdtNormalStdDev(double idtNormalStdDev)
- {
- idt_normal_stdDev = idtNormalStdDev;
- }
-
- double DummyFlow::getIdtNormalMean() const
- {
- return idt_normal_mean;
- }
-
- void DummyFlow::setIdtNormalMean(double idtNormalMean)
- {
- idt_normal_mean = idtNormalMean;
- }
-
- double DummyFlow::getIdtParetoScale() const
- {
- return idt_pareto_scale;
- }
-
- void DummyFlow::setIdtParetoScale(double idtParetoScale)
- {
- idt_pareto_scale = idtParetoScale;
- }
-
- double DummyFlow::getIdtParetoShape() const
- {
- return idt_pareto_shape;
- }
-
- void DummyFlow::setIdtParetoShape(double idtParetoShape)
- {
- idt_pareto_shape = idtParetoShape;
- }
-
- double DummyFlow::getIdtPoissonMean() const
- {
- return idt_poisson_mean;
- }
-
- void DummyFlow::setIdtPoissonMean(double idtPoissonMean)
- {
- idt_poisson_mean = idtPoissonMean;
- }
-
- double DummyFlow::getIdtUniformMaxpktsize() const
- {
- return idt_uniform_maxpktsize;
- }
-
- void DummyFlow::setIdtUniformMaxpktsize(double idtUniformMaxpktsize)
- {
- idt_uniform_maxpktsize = idtUniformMaxpktsize;
- }
-
- double DummyFlow::getIdtUniformMinpktsize() const
- {
- return idt_uniform_minpktsize;
- }
-
- void DummyFlow::setIdtUniformMinpktsize(double idtUniformMinpktsize)
- {
- idt_uniform_minpktsize = idtUniformMinpktsize;
- }
-
- double DummyFlow::getIdtWeibullScale() const
- {
- return idt_weibull_scale;
- }
-
- void DummyFlow::setIdtWeibullScale(double idtWeibullScale)
- {
- idt_weibull_scale = idtWeibullScale;
- }
-
- double DummyFlow::getIdtWeibullShape() const
- {
- return idt_weibull_shape;
- }
-
- void DummyFlow::setIdtWeibullShape(double idtWeibullShape)
- {
- idt_weibull_shape = idtWeibullShape;
- }
- */
-
 protocol DummyFlow::getLinkProtocol() const
 {
 	return link_protocol;
@@ -939,336 +618,6 @@ void DummyFlow::setNumberOfPackets(unsigned long int numberOfPackets)
 	number_of_packets = numberOfPackets;
 }
 
-/*
- const protocolSupport& DummyFlow::getProtocols() const
- {
- return protocols;
- }
-
- void DummyFlow::setProtocols(const protocolSupport& protocols)
- {
- this->protocols = protocols;
- }
- */
-
-/*
- double DummyFlow::getPsBimodalMode1Constant() const
- {
- return ps_bimodal_mode1_constant;
- }
-
- void DummyFlow::setPsBimodalMode1Constant(double psBimodalMode1Constant)
- {
- ps_bimodal_mode1_constant = psBimodalMode1Constant;
- }
-
- double DummyFlow::getPsBimodalMode1NormalDevstd() const
- {
- return ps_bimodal_mode1_normal_devstd;
- }
-
- void DummyFlow::setPsBimodalMode1NormalDevstd(
- double psBimodalMode1NormalDevstd)
- {
- ps_bimodal_mode1_normal_devstd = psBimodalMode1NormalDevstd;
- }
-
- double DummyFlow::getPsBimodalMode1NormalMean() const
- {
- return ps_bimodal_mode1_normal_mean;
- }
-
- void DummyFlow::setPsBimodalMode1NormalMean(double psBimodalMode1NormalMean)
- {
- ps_bimodal_mode1_normal_mean = psBimodalMode1NormalMean;
- }
-
- double DummyFlow::getPsBimodalMode1WeibullScale() const
- {
- return ps_bimodal_mode1_weibull_scale;
- }
-
- void DummyFlow::setPsBimodalMode1WeibullScale(
- double psBimodalMode1WeibullScale)
- {
- ps_bimodal_mode1_weibull_scale = psBimodalMode1WeibullScale;
- }
-
- double DummyFlow::getPsBimodalMode1WeibullShape() const
- {
- return ps_bimodal_mode1_weibull_shape;
- }
-
- void DummyFlow::setPsBimodalMode1WeibullShape(
- double psBimodalMode1WeibullShape)
- {
- ps_bimodal_mode1_weibull_shape = psBimodalMode1WeibullShape;
- }
-
- double DummyFlow::getPsBimodalMode2Constant() const
- {
- return ps_bimodal_mode2_constant;
- }
-
- void DummyFlow::setPsBimodalMode2Constant(double psBimodalMode2Constant)
- {
- ps_bimodal_mode2_constant = psBimodalMode2Constant;
- }
-
- double DummyFlow::getPsBimodalMode2NormalDevstd() const
- {
- return ps_bimodal_mode2_normal_devstd;
- }
-
- void DummyFlow::setPsBimodalMode2NormalDevstd(
- double psBimodalMode2NormalDevstd)
- {
- ps_bimodal_mode2_normal_devstd = psBimodalMode2NormalDevstd;
- }
-
- double DummyFlow::getPsBimodalMode2NormalMean() const
- {
- return ps_bimodal_mode2_normal_mean;
- }
-
- void DummyFlow::setPsBimodalMode2NormalMean(double psBimodalMode2NormalMean)
- {
- ps_bimodal_mode2_normal_mean = psBimodalMode2NormalMean;
- }
-
- double DummyFlow::getPsBimodalMode2WeibullScale() const
- {
- return ps_bimodal_mode2_weibull_scale;
- }
-
- void DummyFlow::setPsBimodalMode2WeibullScale(
- double psBimodalMode2WeibullScale)
- {
- ps_bimodal_mode2_weibull_scale = psBimodalMode2WeibullScale;
- }
-
- double DummyFlow::getPsBimodalMode2WeibullShape() const
- {
- return ps_bimodal_mode2_weibull_shape;
- }
-
- void DummyFlow::setPsBimodalMode2WeibullShape(
- double psBimodalMode2WeibullShape)
- {
- ps_bimodal_mode2_weibull_shape = psBimodalMode2WeibullShape;
- }
-
- stochastic_model DummyFlow::getPsBimodalTypeMode1() const
- {
- return ps_bimodal_type_mode1;
- }
-
- void DummyFlow::setPsBimodalTypeMode1(stochastic_model psBimodalTypeMode1)
- {
- ps_bimodal_type_mode1 = psBimodalTypeMode1;
- }
-
- stochastic_model DummyFlow::getPsBimodalTypeMode2() const
- {
- return ps_bimodal_type_mode2;
- }
-
- void DummyFlow::setPsBimodalTypeMode2(stochastic_model psBimodalTypeMode2)
- {
- ps_bimodal_type_mode2 = psBimodalTypeMode2;
- }
-
- int DummyFlow::getPsConstant() const
- {
- return ps_constant;
- }
-
- void DummyFlow::setPsConstant(int psConstant)
- {
- ps_constant = psConstant;
- }
-
- double DummyFlow::getPsExponential() const
- {
- return ps_exponential;
- }
-
- void DummyFlow::setPsExponential(double psExponential)
- {
- ps_exponential = psExponential;
- }
-
- stochastic_model DummyFlow::getPsModel1() const
- {
- return ps_model1;
- }
-
- void DummyFlow::setPsModel1(stochastic_model psModel1)
- {
- ps_model1 = psModel1;
- }
-
- stochastic_model DummyFlow::getPsModel2() const
- {
- return ps_model2;
- }
-
- void DummyFlow::setPsModel2(stochastic_model psModel2)
- {
- ps_model2 = psModel2;
- }
-
- stochastic_model DummyFlow::getPsModel3() const
- {
- return ps_model3;
- }
-
- void DummyFlow::setPsModel3(stochastic_model psModel3)
- {
- ps_model3 = psModel3;
- }
-
- stochastic_model DummyFlow::getPsModel4() const
- {
- return ps_model4;
- }
-
- void DummyFlow::setPsModel4(stochastic_model psModel4)
- {
- ps_model4 = psModel4;
- }
-
- stochastic_model DummyFlow::getPsModel5() const
- {
- return ps_model5;
- }
-
- void DummyFlow::setPsModel5(stochastic_model psModel5)
- {
- ps_model5 = psModel5;
- }
-
- stochastic_model DummyFlow::getPsModel6() const
- {
- return ps_model6;
- }
-
- void DummyFlow::setPsModel6(stochastic_model psModel6)
- {
- ps_model6 = psModel6;
- }
-
- stochastic_model DummyFlow::getPsModel7() const
- {
- return ps_model7;
- }
-
- void DummyFlow::setPsModel7(stochastic_model psModel7)
- {
- ps_model7 = psModel7;
- }
-
- stochastic_model DummyFlow::getPsModel8() const
- {
- return ps_model8;
- }
-
- void DummyFlow::setPsModel8(stochastic_model psModel8)
- {
- ps_model8 = psModel8;
- }
-
- double DummyFlow::getPsNormalMean() const
- {
- return ps_normal_mean;
- }
-
- void DummyFlow::setPsNormalMean(double psNormalMean)
- {
- ps_normal_mean = psNormalMean;
- }
-
- double DummyFlow::getPsNormalStdDev() const
- {
- return ps_normal_stdDev;
- }
-
- void DummyFlow::setPsNormalStdDev(double psNormalStdDev)
- {
- ps_normal_stdDev = psNormalStdDev;
- }
-
- double DummyFlow::getPsParetoScale() const
- {
- return ps_pareto_scale;
- }
-
- void DummyFlow::setPsParetoScale(double psParetoScale)
- {
- ps_pareto_scale = psParetoScale;
- }
-
- double DummyFlow::getPsParetoShape() const
- {
- return ps_pareto_shape;
- }
-
- void DummyFlow::setPsParetoShape(double psParetoShape)
- {
- ps_pareto_shape = psParetoShape;
- }
-
- double DummyFlow::getPsPoissonMean() const
- {
- return ps_poisson_mean;
- }
-
- void DummyFlow::setPsPoissonMean(double psPoissonMean)
- {
- ps_poisson_mean = psPoissonMean;
- }
-
- double DummyFlow::getPsUniformMaxpktsize() const
- {
- return ps_uniform_maxpktsize;
- }
-
- void DummyFlow::setPsUniformMaxpktsize(double psUniformMaxpktsize)
- {
- ps_uniform_maxpktsize = psUniformMaxpktsize;
- }
-
- double DummyFlow::getPsUniformMinpktsize() const
- {
- return ps_uniform_minpktsize;
- }
-
- void DummyFlow::setPsUniformMinpktsize(double psUniformMinpktsize)
- {
- ps_uniform_minpktsize = psUniformMinpktsize;
- }
-
- double DummyFlow::getPsWeibullScale() const
- {
- return ps_weibull_scale;
- }
-
- void DummyFlow::setPsWeibullScale(double psWeibullScale)
- {
- ps_weibull_scale = psWeibullScale;
- }
-
- double DummyFlow::getPsWeibullShape() const
- {
- return ps_weibull_shape;
- }
-
- void DummyFlow::setPsWeibullShape(double psWeibullShape)
- {
- ps_weibull_shape = psWeibullShape;
- }
- */
-
 unsigned int DummyFlow::getTransportDstPort() const
 {
 	return transport_dst_port;
@@ -1319,15 +668,6 @@ void DummyFlow::setTransportProtocol(protocol transportProtocol)
 {
 	transport_protocol = transportProtocol;
 }
-
-//TODO
-//StochasticModelFit DummyFlow::getPacketSizeModel_next() const
-//{
-//}
-//TODO
-//void DummyFlow::setPacketSizeModel_next(StochasticModelFit* modelVet) const
-//{
-//}
 
 StochasticModelFit DummyFlow::getInterDepertureTimeModel_next()
 {

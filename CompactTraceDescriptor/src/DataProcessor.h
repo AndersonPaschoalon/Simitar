@@ -124,7 +124,7 @@ public:
 	bool test_cdf_pareto();
 	bool test_pdf_cauchy();
 	bool test_cdf_cauchy();
-	bool test_fitModels();
+	bool test_fitModelsInterArrival();
 	bool test_modelSelection();
 
 #endif //TEST_FUNCTIONS
@@ -502,10 +502,9 @@ private:
 	 * @param criterion
 	 * @return
 	 */
-	StochasticModelFit* fitModels(list<double>& empiricalData,
+	StochasticModelFit* fitModelsInterArrival(list<double>& empiricalData,
 			const string& criterion);
-	StochasticModelFit* fitModelsSimplified(list<double>& empiricalData,
-			const string& criterion);
+	StochasticModelFit* fitModelsPsSize(list<double>& empiricalData);
 
 #ifdef TEST_FUNCTIONS
 

@@ -109,7 +109,7 @@ TestClass::TestClass(string test)
 		printTestResult("Pareto CDF", dp.test_cdf_pareto());
 		printTestResult("PDF Cauchy", dp.test_pdf_cauchy());
 		printTestResult("CDF Cauchy", dp.test_cdf_cauchy());
-		printTestResult("All fitting", dp.test_fitModels());
+		printTestResult("All fitting", dp.test_fitModelsInterArrival());
 		printTestResult("Model selection", dp.test_modelSelection());
 
 		//Create Network Trace
