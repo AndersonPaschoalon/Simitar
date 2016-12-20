@@ -53,9 +53,24 @@
 #define CAUCHY "cauchy"
 
 /**
- * The data obeys a Constant distribution (regular time intervals)
+ * The data obeys a Constant distribution (regular time intervals), equal to
+ * the mean of the original data value
  */
 #define CONSTANT  "constant"
+
+/**
+ * TODO
+ * The data obeys a Constant distribution (regular time intervals), equal to
+ * the max of the original data value
+ */
+#define CONSTANT_MAX "constant-max"
+
+/**
+ * TODO
+ * The data obeys a Constant distribution (regular time intervals), equal to
+ * the minimum of the original data value
+ */
+#define CONSTANT_MIN "constant-min"
 
 /**
  * No model selected, this means there is no data to evaluate any stochastic

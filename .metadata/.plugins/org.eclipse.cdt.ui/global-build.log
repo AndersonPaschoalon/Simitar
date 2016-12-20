@@ -2841,3 +2841,31 @@ make all
 make: Warning: File 'src/DummyFlow.d' has modification time 148 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 make: Nothing to be done for 'all'.
+18:41:12 **** Incremental Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+make: Warning: File 'src/subdir.mk' has modification time 148 s in the future
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/ldapusers/apaschoalon/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:81:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building target: CompactTraceDescriptor
+Invoking: GCC C++ Linker
+g++  -o "CompactTraceDescriptor"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/StochasticModelFit.o ./src/TestClass.o ./src/TraceAnalyzer.o   -lpthread -lsqlite3 -larmadillo -lITG
+Finished building target: CompactTraceDescriptor
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+18:41:19 **** Incremental Build of configuration Debug for project Prototypes ****
+make all 
+make: Warning: File 'Algorithms/subdir.mk' has modification time 148 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for 'all'.
