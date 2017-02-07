@@ -5,8 +5,32 @@ This software is part of my Master degree project in development
 
 Before instaling it, you have to install some 3rd parties softwares and lybraries.
 
+###Wireshark
+Wireshark instalation comes with tshark, which is used by the sniffer. To install Wireshark, type at the terminal:
+```
+sudo apt-get install wireshark
+```
 ###Octave
-TODO
+Octave is a free open-souce platform and scientific programming language, compatible with Matlab. To install, type on terminal:
+```
+sudo apt-get update
+sudo apt-add-repository ppa:octave/stable
+sudo apt-get update
+sudo apt-get install octave
+```
+If you have any issues with the ".config/octave/qt-settings" file, type on terminal:
+```
+cd ~
+cd .config/octave
+sudo chown <your-user-name> qt-settings
+```
+
+###Sqlite3
+To install Sqlite3, type onterminal:
+```
+sudo apt-get install sqlite3
+sudo apt-get install libsqlite3-dev
+```
 
 ###Armadillo
 
