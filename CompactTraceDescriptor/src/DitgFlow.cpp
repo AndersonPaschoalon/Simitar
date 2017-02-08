@@ -72,13 +72,13 @@ void DitgFlow::flowGenerate()
 	{
 		strCommand += " -T TCP -D ";
 		strCommand += " -rp " + std::to_string(this->getTransportDstPort());
-		//strCommand += " -sp " + std::to_string(this->getL4SrcPort());
+		strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
 	}
 	else if (this->getTransportProtocol() == PROTOCOL__UDP)
 	{
 		strCommand += " -T UDP ";
 		strCommand += " -rp " + std::to_string(this->getTransportDstPort());
-		//strCommand += " -sp " + std::to_string(this->getL4SrcPort());
+		strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
 	}
 	else if (this->getTransportProtocol() == PROTOCOL__ICMP)
 	{
@@ -182,23 +182,31 @@ void DitgFlow::flowGenerate()
 	 * D-ITG: generatte flow
 	 **************************************************************************/
 
-	//send mode one
-	rc = DITGsend(host, commandMode1);
-	if (rc != 0)
+	if (this->getNpacketMode1() > 0)
 	{
-		perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
-		printf("\nDITGsend() return value was %d\n", rc);
-		errno = EAGAIN;
-		exit(EXIT_FAILURE);
+		//send mode one
+		rc = DITGsend(host, commandMode1);
+		if (rc != 0)
+		{
+			perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
+			printf("\nDITGsend() return value was %d\n", rc);
+			errno = EAGAIN;
+			exit(EXIT_FAILURE);
+		}
+
 	}
-	//send mode two
-	rc = DITGsend(host, commandMode2);
-	if (rc != 0)
+	if (this->getNpacketsMode2() > 0)
 	{
-		perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
-		printf("\nDITGsend() return value was %d\n", rc);
-		errno = EAGAIN;
-		exit(EXIT_FAILURE);
+		//send mode two
+		rc = DITGsend(host, commandMode2);
+		if (rc != 0)
+		{
+			perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
+			printf("\nDITGsend() return value was %d\n", rc);
+			errno = EAGAIN;
+			exit(EXIT_FAILURE);
+		}
+
 	}
 
 	/***************************************************************************
