@@ -9,24 +9,36 @@
 
 DitgFlow::DitgFlow()
 {
-	// TODO Auto-generated constructor stub
+	//TODO Utilizar esse método para realizar a configuração e parseamento,
+	//e o proximo unica a exclusifamente para a geração do trafego em si
 
 }
 
 DitgFlow::~DitgFlow()
 {
-	// TODO Auto-generated destructor stub
+	// TODO Utilizar esse metodo para desalocar memória
 }
 
 void DitgFlow::flowGenerate()
 {
 	//TODO Criar um metodo que retorna o IP de eth0 (default) da maquina atual
 	char host[] = "10.1.1.48";
+
+	//Argumentos para serem passados como argumento do flowGenerate
+	char ethernetInterface[] = "eth0";
+	int fileTimeout = int(this->getFlowDuration() * 1000);
+	int userOption;
+
+	/***************************************************************************
+	 * Initialization
+	 **************************************************************************/
 	string strCommand = "";
+	string strCommandMode1 = "";
+	string strCommandMode2 = "";
 	char* command = NULL;
+	char* commandMode1 = NULL;
+	char* commandMode2 = NULL;
 	int rc = 0;
-	int flowDuration = 0;
-	unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
 
 	/***************************************************************************
 	 * D-ITG settings parser
@@ -36,15 +48,11 @@ void DitgFlow::flowGenerate()
 	 * Flow-level settings
 	 */
 	//duration
-	flowDuration = int(this->getFlowDuration() * 1000);
-	if (flowDuration == 0)
-		flowDuration = 1;
-	strCommand += " -t " + std::to_string(flowDuration);
-	//flow start-delay
-	//strCommand += " -d " + std::to_string(this->getFlowStartDelay()*1000);
-	//TODO DS-byte configuration
-	//DS-byte
-	//strCommand += " -b " + std::to_string(this->getFlowDsByte());
+	if (fileTimeout == 0)
+		fileTimeout = 1;
+	strCommand += " -t " + std::to_string(fileTimeout);
+	//DS byte
+	strCommand += " -b " + std::to_string(this->getFlowDsByte());
 	//Guarantee the mean packet rate
 	strCommand += " -j 1";
 
@@ -53,12 +61,9 @@ void DitgFlow::flowGenerate()
 	 */
 	//tty byte
 	strCommand += " -f " + std::to_string(this->getNetworkTtl());
-	//destination IPv4 address
-	strCommand += " -a " + this->getHostIP();
-	//strCommand += " -a " + this->getL3DstAddr();
-	//TODO setar diferentes destinos IP, se possivel
-	//source IPv4 address
-	//strCommand += " -sa " + this->getL3SrcAddr();
+	//destination and sources IPv4/IPv6 address
+	strCommand += " -a " + this->getNetworkDstAddr();
+	strCommand += " -sa " + this->getNetworkSrcAddr();
 
 	/**
 	 * Transport-layer settings
@@ -102,35 +107,92 @@ void DitgFlow::flowGenerate()
 	/**
 	 * Inter-departure time options
 	 */
+	for (;;)
+	{
+		StochasticModelFit idtModel = this->getInterDepertureTimeModel_next();
 
-	//-C  <rate>              Constant (default: 1000 pkts/s).
-	//TODO select the best model
-	//strCommand += " -C " + std::to_string(this->getIdtConstant());
+		if (idtModel.modelName
+				== ( WEIBULL || NORMAL || EXPONENTIAL || PARETO || CAUCHY
+						|| CONSTANT))
+		{
+			if (idtModel.modelName == WEIBULL)
+			{
+				//idtModel.param1 = alpha (shape)
+				//idtModel.param2 = betha (scale)
+				strCommand += " -W " + std::to_string(idtModel.param1) + " "
+						+ std::to_string(idtModel.param2);
+			}
+			else if (idtModel.modelName == NORMAL)
+			{
+				//idtModel.param1 = mu (shape)
+				//idtModel.param2 = sigma dev
+				strCommand += " -N " + std::to_string(idtModel.param1) + " "
+						+ std::to_string(idtModel.param2);
+			}
+			else if (idtModel.modelName == EXPONENTIAL)
+			{
+				//idtModel.param1 = mean
+				strCommand += " -E " + std::to_string(idtModel.param1);
+			}
+			else if (idtModel.modelName == PARETO)
+			{
+				//idtModel.param1 = alpha (shape)
+				//idtModel.param2 = xm (scale)
+				strCommand += " -V " + std::to_string(idtModel.param1) + " "
+						+ std::to_string(idtModel.param2);
+			}
+			else if (idtModel.modelName == CAUCHY)
+			{
+				//idtModel.param1 = gamma (scale)
+				//idtModel.param2 = xm (shape - location)
+				strCommand += " -Y " + std::to_string(idtModel.param2) + " "
+						+ std::to_string(idtModel.param1);
+			}
+			else //CONSTANT
+			{
+				strCommand += " -C " + std::to_string(idtModel.param1);
+			}
+			break;
+		}
+	}
 
 	/**
 	 * Packet size options
 	 */
-	//TODO choose the best model
-	// now, just use the constant model
-	//strCommand += " -c " + std::to_string(this->getPsConstant());
+	//First model: Contant
+	strCommandMode1 = strCommand + " -c "
+			+ std::to_string(this->getPacketSizeModelMode1_next().param1);
+	//First model: Contant
+	strCommandMode2 = strCommand + " -c "
+			+ std::to_string(this->getPacketSizeModelMode2_next().param1);
+
+	/**
+	 * Generate C string
+	 */
+	command = new char[strCommand.length() + 1];
+	strcpy(command, strCommand.c_str());
+
+	commandMode1 = new char[strCommandMode1.length() + 1];
+	strcpy(commandMode1, strCommandMode1.c_str());
+
+	commandMode2 = new char[strCommandMode2.length() + 1];
+	strcpy(commandMode2, strCommandMode2.c_str());
 
 	/***************************************************************************
 	 * D-ITG: generatte flow
 	 **************************************************************************/
-	command = new char[strCommand.length() + 1];
-	strcpy(command, strCommand.c_str());
 
-	//start-delay using usleep()
-	rc = usleep(usecs);
+	//send mode one
+	rc = DITGsend(host, commandMode1);
 	if (rc != 0)
 	{
-		perror("Error on usleep() @ DummyFlow::flowGenerate()");
-		printf("\n usleep() return value was %d\n", rc);
+		perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
+		printf("\nDITGsend() return value was %d\n", rc);
 		errno = EAGAIN;
 		exit(EXIT_FAILURE);
 	}
-
-	rc = DITGsend(host, command);
+	//send mode two
+	rc = DITGsend(host, commandMode2);
 	if (rc != 0)
 	{
 		perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
@@ -139,7 +201,12 @@ void DitgFlow::flowGenerate()
 		exit(EXIT_FAILURE);
 	}
 
+	/***************************************************************************
+	 * Ending
+	 **************************************************************************/
 	delete[] command;
+	delete[] commandMode1;
+	delte[] commandMode2;
 
 #ifdef DEBUG
 	cout << "D-ITG command: " << command << endl;

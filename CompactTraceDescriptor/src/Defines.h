@@ -27,6 +27,8 @@
  */
 #define NORMAL "normal"
 
+#define EXPONENTIAL "exponential"
+
 /**
  * The data obeys a Exponential distribution fitted by mean evaluation
  */
@@ -36,6 +38,8 @@
  * The data obeys a Exponential distribution fitted by Linear Regression
  */
 #define EXPONENTIAL_LINEAR_REGRESSION "exponential-linear-regression"
+
+#define PARETO "pareto"
 
 /**
  * The data obeys a Pareto distribution fitted by Linear Regression

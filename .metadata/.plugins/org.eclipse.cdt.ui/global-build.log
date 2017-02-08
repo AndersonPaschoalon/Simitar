@@ -2869,3 +2869,27 @@ make all
 make: Warning: File 'Algorithms/subdir.mk' has modification time 148 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 make: Nothing to be done for 'all'.
+21:57:36 **** Build of configuration Debug for project CompactTraceDescriptor ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -I"/home/anderson/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:27:21: fatal error: armadillo: Arquivo ou diretório não encontrado
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+ #include <armadillo>
+                     ^
+compilation terminated.
+make: *** [src/DataProcessor.o] Error 1
+21:57:36 **** Build of configuration Debug for project Prototypes ****
+make all 
+Building file: ../Algorithms/Algorithms.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"Algorithms/Algorithms.d" -MT"Algorithms/Algorithms.o" -o "Algorithms/Algorithms.o" "../Algorithms/Algorithms.cpp"
+In file included from ../Algorithms/Algorithms.cpp:9:0:
+../Algorithms/Algorithms.h:23:21: fatal error: armadillo: Arquivo ou diretório não encontrado
+ #include <armadillo>
+                     ^
+compilation terminated.
+make: *** [Algorithms/Algorithms.o] Error 1
+Algorithms/subdir.mk:18: recipe for target 'Algorithms/Algorithms.o' failed
