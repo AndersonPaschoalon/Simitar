@@ -5,10 +5,14 @@ This software is part of my Master degree project in development
 
 Before instaling it, you have to install some 3rd parties softwares and lybraries.
 
-###Wireshark
+###Wireshark and Pyshark
 Wireshark instalation comes with tshark, which is used by the sniffer. To install Wireshark, type at the terminal:
 ```
 sudo apt-get install wireshark
+```
+Pyshark is a python wrapper for tshark, wich allows python packet parsing, using tshark dissectors. To install it:
+```
+sudo pip install pyshark
 ```
 ###Octave
 Octave is a free open-souce platform and scientific programming language, compatible with Matlab. To install, type on terminal:
