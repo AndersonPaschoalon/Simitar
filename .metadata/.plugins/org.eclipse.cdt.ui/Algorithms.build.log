@@ -1,0 +1,6 @@
+01:46:44 **** Build of configuration Default for project Algorithms ****
+make all 
+make: *** No rule to make target 'all'.  Pare.
+
+01:46:44 Build Finished (took 62ms)
+
