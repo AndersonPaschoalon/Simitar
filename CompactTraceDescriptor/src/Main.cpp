@@ -28,7 +28,7 @@ int main()
 	// command-line options, instantiate any component, and say what it
 	//should do. So it should parse the command
 
-	string experimentName = "exAbacate";
+	string experimentName = "exQualification";
 	DataProcessor dp;
 	DatabaseInterface dbif;
 	long int nflows = 0;
@@ -48,8 +48,8 @@ int main()
 
 #ifdef EXEC_BIN
 
-	cout << "executing network trace" << endl;
-	trace->exec(true);
+	//cout << "executing network trace" << endl;
+	//trace->exec(true);
 
 	delete trace;
 

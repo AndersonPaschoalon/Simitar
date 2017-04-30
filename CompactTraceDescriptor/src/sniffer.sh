@@ -14,17 +14,17 @@ main()
 {
 	local name1="exQualification";
 	local coment1="Qualification";
-	local pcap_file="../pcap/live_background-traffic-1.pcap";
+	#local pcap_file="../pcap/live_background-traffic-1.pcap";
 	create_tempFiles;
 
 	reset_traceDb;
 	create_traceDb;
 
-	pcap_file="../pcap/qualification1.pcap";
+	local pcap_file="./pcap/qualification1.pcap";
 	tshark_pcapToFile ${pcap_file};
 	store_fileToDatabase $name1 $coment1;
 	parser_toMatlab $name1
-	./plotTraceData.m ${MATLAB_PLOT_DATA}$name1".txt" ${name1};
+	./src/plotTraceData.m ${MATLAB_PLOT_DATA}$name1".txt" ${name1};
 	
 	remove_tempFiles;
 	return 0;

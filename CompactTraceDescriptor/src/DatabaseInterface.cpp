@@ -49,6 +49,76 @@ string DatabaseInterface::toString()
 	return (info + status);
 }
 
+DatabaseInterface::DatabaseInterface(const DatabaseInterface& rhs)
+{
+	char databaseName[] = "data/trace.db";	//database file name
+	int rc = 0; //control output flag
+
+	tracesList_table = rhs.tracesList_table;
+	capture_table = rhs.capture_table;
+	rc = sqlite3_open(databaseName, &db);
+	if (rc != SQLITE_OK)
+	{
+		errno = ENOENT;
+		fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		databaseInterface_error = 1;
+	}
+	else
+	{
+		databaseInterface_error = 0;
+
+#ifdef DEBUG_DatabaseInterface
+		cout << "atabaseInterface_error: " << databaseInterface_error << endl;
+#endif
+	}
+
+}
+
+const DatabaseInterface& DatabaseInterface::operator =(
+		const DatabaseInterface& rhs)
+{
+	if (&rhs != this)
+	{
+		sqlite3_close(db);
+		char databaseName[] = "data/trace.db";	//database file name
+		int rc = 0; //control output flag
+
+		tracesList_table = rhs.tracesList_table;
+		capture_table = rhs.capture_table;
+		rc = sqlite3_open(databaseName, &db);
+		if (rc != SQLITE_OK)
+		{
+			errno = ENOENT;
+			fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+			sqlite3_close(db);
+			databaseInterface_error = 1;
+		}
+		else
+		{
+			databaseInterface_error = 0;
+
+#ifdef DEBUG_DatabaseInterface
+			cout << "atabaseInterface_error: " << databaseInterface_error << endl;
+#endif
+		}
+
+	}
+	else
+	{
+		cerr << "Error @  DatabaseInterface& DatabaseInterface::operator =():"
+				<< "Attempted assignment of a StochasticModelFit object to itself"
+				<< endl;
+		cerr << "Hint: StochasticModelFit = " << toString();
+	}
+
+	return (*this);
+}
+
+void DatabaseInterface::print()
+{
+}
+
 int DatabaseInterface::getTraceData(const string experimentName,
 		const string label, string* value)
 {
@@ -78,7 +148,8 @@ int DatabaseInterface::getTraceData(const string experimentName,
 	rc = sqlite3_step(res);
 	if (rc != SQLITE_ROW)
 	{
-		perror("Error @ `int DatabaseInterface::getTraceData()`, column not found");
+		perror(
+				"Error @ `int DatabaseInterface::getTraceData()`, column not found");
 		databaseInterface_error = 3;
 	}
 
@@ -184,7 +255,8 @@ int DatabaseInterface::getNumberOfFlows(string experimentName, long int* nflows)
 	rc = sqlite3_step(res);
 	if (rc != SQLITE_ROW)
 	{
-		perror("Error @ `DatabaseInterface::getNumberOfFlows()`, column not found");
+		perror(
+				"Error @ `DatabaseInterface::getNumberOfFlows()`, column not found");
 		databaseInterface_error = 3;
 		return (-3);
 	}
@@ -498,3 +570,4 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 	sqlite3_finalize(res);
 	return (0);
 }
+

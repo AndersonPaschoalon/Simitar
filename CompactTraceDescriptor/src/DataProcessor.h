@@ -25,6 +25,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <armadillo>
+#include <algorithm>    // std::sort
 
 //local libs
 #include "DatabaseInterface.h"
@@ -35,6 +36,7 @@
 //namespaces
 using std::string;
 using std::cerr; // for error messages
+using std::sort;
 using namespace arma;
 
 #define DEBUG_StochasticModelFit 1
@@ -53,6 +55,16 @@ public:
 	 * Destructor. Clean any allocated memory
 	 */
 	virtual ~DataProcessor();
+
+
+	//copy cosntructor
+	DataProcessor(const DataProcessor &rhs);
+
+	//assignment operator
+	const DataProcessor& operator= (const DataProcessor& rhs);
+
+	//print method
+	void print();
 
 	/**
 	 * @brief  Returns a string information about the class
@@ -502,9 +514,9 @@ private:
 	 * @param criterion
 	 * @return
 	 */
-	StochasticModelFit* fitModelsInterArrival(list<double>& empiricalData,
+	vector<StochasticModelFit> fitModelsInterArrival(list<double>& empiricalData,
 			const string& criterion);
-	StochasticModelFit* fitModelsPsSize(list<double>& empiricalData);
+	vector<StochasticModelFit> fitModelsPsSize(list<double>& empiricalData);
 
 #ifdef TEST_FUNCTIONS
 

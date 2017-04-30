@@ -14,11 +14,17 @@
 //}
 NetworkTrace::NetworkTrace(string trafficGen)
 {
+	NetworkTrace();
 	trafficGenEngine = trafficGen;
 }
 
 NetworkTrace::NetworkTrace()
 {
+	trafficGenEngine = "dummy";
+	info_tracename = "";
+	info_captureInterface = "";
+	info_captureDate = "";
+	info_commentaries = "";
 }
 
 NetworkTrace::NetworkTrace(FILE* CompactTraceDescriptor, string trafficGen)
@@ -32,6 +38,85 @@ NetworkTrace::~NetworkTrace()
 {
 	for (unsigned int i = 0; i < networkFlow.size(); i++)
 		delete[] networkFlow[i];
+}
+
+NetworkTrace::NetworkTrace(const NetworkTrace& rhs)
+{
+	trafficGenEngine = rhs.trafficGenEngine;
+	info_tracename = rhs.info_tracename;
+	info_captureInterface = rhs.info_captureInterface;
+	info_captureDate = rhs.info_captureDate;
+	info_commentaries = rhs.info_commentaries;
+	int netFlow_size = networkFlow.size();
+	vector<NetworkFlow*> temp(netFlow_size);
+
+	for (unsigned int i = 0; i < networkFlow.size(); i++)
+		delete[] networkFlow[i];
+
+	for (unsigned int i = 0; i < networkFlow.size(); i++)
+	{
+		networkFlow[i] = NetworkFlow::make_flow(trafficGenEngine);
+		networkFlow[i] = rhs.networkFlow[i];
+	}
+}
+
+const NetworkTrace& NetworkTrace::operator =(const NetworkTrace& rhs)
+{
+	if (&rhs != this)
+	{
+		trafficGenEngine = rhs.trafficGenEngine;
+		info_tracename = rhs.info_tracename;
+		info_captureInterface = rhs.info_captureInterface;
+		info_captureDate = rhs.info_captureDate;
+		info_commentaries = rhs.info_commentaries;
+		int netFlow_size = networkFlow.size();
+		vector<NetworkFlow*> temp(netFlow_size);
+
+		for (unsigned int i = 0; i < networkFlow.size(); i++)
+			delete[] networkFlow[i];
+
+		for (unsigned int i = 0; i < networkFlow.size(); i++)
+		{
+			networkFlow[i] = NetworkFlow::make_flow(trafficGenEngine);
+			networkFlow[i] = rhs.networkFlow[i];
+		}
+	}
+	else
+	{
+		cerr << "Error @  NetworkTrace::operator =():"
+				<< "Attempted assignment of a StochasticModelFit object to itself"
+				<< endl;
+		cerr << "Hint: StochasticModelFit = " << endl;
+	}
+
+	return (*this);
+}
+
+string NetworkTrace::toString()
+{
+	string toStrReturn;
+
+	toStrReturn =
+			"--------------------------------------------------------------\nTrace Name: "
+					+ info_tracename + "\nInterface: " + info_captureInterface
+					+ "\nDate: " + info_captureDate + "\n" + info_commentaries
+					+ "--------------------------------------------------------------\n";
+	for (int i = 0; i < networkFlow.size(); i++)
+	{
+		toStrReturn += "Flow[" + std::to_string(i) + "]\n"
+				+ networkFlow[i]->toString();
+
+	}
+	toStrReturn +=
+			"--------------------------------------------------------------\n";
+
+	return (toStrReturn);
+
+}
+
+void NetworkTrace::print()
+{
+	cout << toString() << endl;
 }
 
 const string& NetworkTrace::getInfoCaptureDate() const
@@ -87,7 +172,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 {
 	int returnFlag = 0;
 
-	//TODO
+//TODO
 
 	return returnFlag;
 }
@@ -96,7 +181,7 @@ long int NetworkTrace::getNumberOfFlows() const
 {
 
 	return (networkFlow.size());
-	//return numberOfFlows;
+//return numberOfFlows;
 }
 
 const string NetworkTrace::toString() const
@@ -117,6 +202,7 @@ int NetworkTrace::pushback_Netflow(NetworkFlow* vetNetFlow)
 
 int NetworkTrace::exec(bool verbose)
 {
+
 	int size = this->getNumberOfFlows();
 	int i = 0;
 	std::thread* th_flw = new std::thread[size];
@@ -142,3 +228,4 @@ int NetworkTrace::exec(bool verbose)
 	return 0;
 
 }
+

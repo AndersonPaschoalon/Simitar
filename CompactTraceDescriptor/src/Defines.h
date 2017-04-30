@@ -13,6 +13,8 @@
  ******************************************************************************/
 //Math
 #define MEGA_POWER 1000000
+#define NUMBER_OF_MODELS_INTERARRIVAL 8
+#define NUMBER_OF_MODELS_PSSIZE 3
 
 //Stochastic Models
 
@@ -32,24 +34,24 @@
 /**
  * The data obeys a Exponential distribution fitted by mean evaluation
  */
-#define EXPONENTIAL_MEAN "exponential-mean"
+//#define EXPONENTIAL_MEAN "exponential-mean"
 
 /**
  * The data obeys a Exponential distribution fitted by Linear Regression
  */
-#define EXPONENTIAL_LINEAR_REGRESSION "exponential-linear-regression"
+//#define EXPONENTIAL_LINEAR_REGRESSION "exponential-linear-regression"
 
 #define PARETO "pareto"
 
 /**
  * The data obeys a Pareto distribution fitted by Linear Regression
  */
-#define PARETO_LINEAR_REGRESSION "pareto-linear-regression"
+//#define PARETO_LINEAR_REGRESSION "pareto-linear-regression"
 
 /**
  * The data obeys a Pareto distribution fitted Maximum Likehood
  */
-#define PARETO_MAXIMUM_LIKEHOOD "pareto-maximum-likehood"
+//#define PARETO_MAXIMUM_LIKEHOOD "pareto-maximum-likehood"
 
 /**
  * The data obeys a Cauchy distribution fitted by Linear Regression
@@ -82,13 +84,13 @@
  * file or session to be executed. In case of packet size this means that
  * there isn't any packet on that mode
  */
-#define NO_MODEL "no-model-selected"
+#define NO_MODEL "no-model"
 
 // Debug defines
 //#define DEBUG 1 // basic debug
 //#define DEBUG_DataProcessor_calculate_loop 1
 //#define DEBUG_DataProcessor_calculate 1
-//#define DEBUG_NetworkFlow 1
+#define DEBUG_NetworkFlow 1
 //#define DEBUG_flowThread 1
 //#define DEBUG_DatabaseInterface 1
 //#define DEBUG_NetworkTrace_exec 1
@@ -179,6 +181,11 @@ typedef long int kbytes;
  */
 typedef unsigned int counter;
 
+/**
+ *
+ */
+typedef unsigned short int int_flag;
+
 /*******************************************************************************
  * Constants
  ******************************************************************************/
@@ -186,12 +193,14 @@ typedef unsigned int counter;
 /**
  *
  */
-const time_sec FILE_CUT_TIME = 0.1;
+//const time_sec FILE_CUT_TIME = 0.1;
+const time_sec FILE_CUT_TIME = 9999999;
 
 /**
  *
  */
-const time_sec SESSION_CUT_TIME = 30;
+//const time_sec SESSION_CUT_TIME = 30;
+const time_sec SESSION_CUT_TIME = 999999;
 
 /**
  *

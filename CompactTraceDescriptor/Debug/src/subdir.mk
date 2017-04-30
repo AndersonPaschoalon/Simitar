@@ -12,8 +12,7 @@ CPP_SRCS += \
 ../src/NetworkFlow.cpp \
 ../src/NetworkTrace.cpp \
 ../src/StochasticModelFit.cpp \
-../src/TestClass.cpp \
-../src/TraceAnalyzer.cpp 
+../src/TestClass.cpp 
 
 OBJS += \
 ./src/DataProcessor.o \
@@ -24,8 +23,7 @@ OBJS += \
 ./src/NetworkFlow.o \
 ./src/NetworkTrace.o \
 ./src/StochasticModelFit.o \
-./src/TestClass.o \
-./src/TraceAnalyzer.o 
+./src/TestClass.o 
 
 CPP_DEPS += \
 ./src/DataProcessor.d \
@@ -36,15 +34,14 @@ CPP_DEPS += \
 ./src/NetworkFlow.d \
 ./src/NetworkTrace.d \
 ./src/StochasticModelFit.d \
-./src/TestClass.d \
-./src/TraceAnalyzer.d 
+./src/TestClass.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -std=c++11 -I"/home/anderson/ProjetoMestrado/Components/D-ITG-2.8.1-r1023//src/libITG" -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

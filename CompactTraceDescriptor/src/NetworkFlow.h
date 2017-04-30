@@ -21,18 +21,23 @@
 #include <cstdlib>
 #include <pthread.h>
 #include <string>
+#include <list>
+#include <vector>
 
 //local includes
-#include "ITGapi.h"
+
 #include "Defines.h"
 #include "StochasticModelFit.h"
 
 //namespaces
-using std::string;
+
 using std::cout;
 using std::cin;
 using std::endl;
 using std::cerr;
+using std::list;
+using std::string;
+using std::vector;
 
 class NetworkFlow
 {
@@ -40,6 +45,11 @@ public:
 	//Create flow
 	NetworkFlow();
 	virtual ~NetworkFlow();
+	//copy cosntructor
+	NetworkFlow(const NetworkFlow &rhs);
+	//virtual const NetworkFlow& operator= (const NetworkFlow& rhs) = 0;
+	virtual string toString() = 0;
+	virtual void print() = 0;
 	static NetworkFlow *make_flow(string choise);
 	virtual std::thread flowThread() = 0;
 	virtual void flowGenerate() = 0;
@@ -96,8 +106,8 @@ public:
 	//
 	virtual StochasticModelFit getPacketSizeModelMode1_next() = 0;
 	virtual StochasticModelFit getPacketSizeModelMode2_next() = 0;
-	virtual void setPacketSizeModel(StochasticModelFit* modelVet1,
-			StochasticModelFit* modelVet2, long int nkbytesMode1,
+	virtual void setPacketSizeModel(vector<StochasticModelFit> modelVet1,
+			vector<StochasticModelFit> modelVet2, long int nkbytesMode1,
 			long int nkbytesMode2, long int nPacketsMode1,
 			long int nPacketsMode2) = 0;
 	virtual long int getNkbytesMode1() const = 0;
@@ -111,16 +121,32 @@ public:
 	//
 	//Inter-arrival-size
 	//
-	virtual void setInterDepertureTimeModels(StochasticModelFit* modelVet) = 0;
+	//InterDeperture models
+	virtual void setInterDepertureTimeModels(vector<StochasticModelFit>) = 0;
 	virtual StochasticModelFit getInterDepertureTimeModel_next()= 0;
 
-	virtual void setInterFileTimeModel(StochasticModelFit* modelVet) = 0;
-	virtual StochasticModelFit getInterFileTimeModel_next() = 0;
+	//Inter-burst models
+	virtual void setInterFileTimeModel(StochasticModelFit modelVet) = 0;
+	virtual StochasticModelFit getInterFileTimeModel() = 0;
 	virtual time_sec getInterFileTime() = 0;
 
-	virtual void setInterSessionTimeModel(StochasticModelFit* modelVet) = 0;
-	virtual StochasticModelFit getInterSessionTimeModel_next() = 0;
-	virtual time_sec getInterSessionTime() = 0;
+//	virtual void setInterSessionTimeModel(StochasticModelFit* modelVet) = 0;
+
+//	virtual StochasticModelFit getInterSessionTimeModel_next() = 0;
+	//inter-session model
+//	virtual void setInterSessionTimes(list<time_sec>& thelist) = 0;
+//	virtual const list<time_sec>& getInterSessionTimes() = 0;
+//	virtual time_sec getInterSessionTime() = 0;
+	//TODO
+	virtual void setInterSessionOnOffPeriods(list<time_sec>& interArrivalTimes,
+			time_sec session_cut_time) = 0;
+	virtual time_sec getSessionTimeON() = 0;
+	virtual time_sec getSessionTimeOFF() = 0;
+	virtual const list<time_sec>& getSessionOnTimes() = 0;
+	virtual const list<time_sec>& getSessionOffTimes() = 0;
+
+
+
 
 };
 

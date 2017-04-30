@@ -12,6 +12,13 @@
 namespace std
 {
 
+void waitKey()
+{
+	string anyString;
+	cin >> anyString;
+}
+
+
 TestClass::TestClass(string test)
 {
 
@@ -212,5 +219,6 @@ bool std::TestClass::isEqual(const T val1, const T val2)
 	else
 		return (false);
 }
+
 
 } /* namespace std */

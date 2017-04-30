@@ -48,6 +48,20 @@ public:
 	 */
 	virtual ~NetworkTrace();
 
+
+	//copy cosntructor
+	NetworkTrace(const NetworkTrace &rhs);
+
+	//assignment operator
+	const NetworkTrace& operator= (const NetworkTrace& rhs);
+
+	//to string operator
+	string toString();
+
+	//print method
+	void print();
+
+
 	/**
 	 * TODO: this method should be private. I just have to pass a pointer
 	 * to the database interface, and the experiment name. The object

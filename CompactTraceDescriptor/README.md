@@ -28,6 +28,26 @@ cd ~
 cd .config/octave
 sudo chown <your-user-name> qt-settings
 ```
+Then, install liboctave:
+```
+sudo apt-get install liboctave-dev
+sudo apt-get install epstool
+```
+After installing octave, run:
+```
+octave-cli
+```
+And Intall the packages io and statistics:
+```
+pkg install -forge io
+pkg install -forge statistics
+```
+
+###Python
+
+```
+sudo pip install fnvhash
+```
 
 ###Sqlite3
 To install Sqlite3, type onterminal:
@@ -64,6 +84,12 @@ Alternaively, you may execute:
 apt-get install libarmadillo-dev
 ```
 
+###Log4cpp
+
+```
+sudo apt-get install liblog4cpp-doc liblog4cpp5-dev liblog4cpp5v5
+```
+
 ###D-ITG
 
 D-ITG is a internet traffic generation. It can be dawnloaded for free on their webpage (http://www.grid.unina.it/software/ITG/). As described by the authors: 
@@ -87,6 +113,9 @@ To use if along with this software:
 	make clean
 	make multiport=on bursty=on dccp=on sctp=on all
 	sudo make install
+	sudo cp src/libITG/ITGapi.h /usr/include
+	sudo ldconfig
+
 ```
 
 ##About the releases names

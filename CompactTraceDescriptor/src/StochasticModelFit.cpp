@@ -7,6 +7,8 @@
 
 #include "StochasticModelFit.h"
 
+
+/*
 int compareBic(const void* a, const void* b)
 {
 
@@ -32,3 +34,4 @@ int compareAic(const void* a, const void* b)
 
 	return (0);
 }
+*/

@@ -8,6 +8,7 @@
 #ifndef DUMMYFLOW_H_
 #define DUMMYFLOW_H_
 
+#include <list>
 #include "NetworkFlow.h"
 /*
  TODO Implementation of L2 data structures
@@ -37,6 +38,31 @@ public:
 	 *
 	 */
 	virtual ~DummyFlow();
+
+
+	/**
+	 *
+	 * @param rhs
+	 */
+	DummyFlow(const DummyFlow &rhs);
+
+	/**
+	 *
+	 * @param rhs
+	 * @return
+	 */
+	const DummyFlow& operator= (const DummyFlow& rhs);
+
+	/**
+	 *
+	 * @return
+	 */
+	string toString();
+
+	/**
+	 *
+	 */
+	void print();
 
 	/**
 	 *
@@ -108,22 +134,33 @@ public:
 	protocol getTransportProtocol() const;
 	void setTransportProtocol(protocol transportProtocol);
 
-	void setInterDepertureTimeModels(StochasticModelFit* modelVet);
+	void setInterDepertureTimeModels(vector<StochasticModelFit> modelVet);
 	StochasticModelFit getInterDepertureTimeModel_next();
 
-	void setInterFileTimeModel(StochasticModelFit* modelVet);
-	StochasticModelFit getInterFileTimeModel_next();
+	void setInterFileTimeModel(StochasticModelFit model);
+	StochasticModelFit getInterFileTimeModel();
 	time_sec getInterFileTime();
 
-	void setInterSessionTimeModel(StochasticModelFit* modelVet);
-	StochasticModelFit getInterSessionTimeModel_next();
-	time_sec getInterSessionTime();
+//	void setInterSessionTimes(list<time_sec>& thelist);
+//	list<time_sec>& getInterSessionTimes();
+//	time_sec getInterSessionTime();
+	void setInterSessionOnOffPeriods(list<time_sec>& interArrivalTimes,
+			time_sec session_cut_time);
+	time_sec getSessionTimeON();
+	time_sec getSessionTimeOFF();
+	const list<time_sec>& getSessionOnTimes();
+	const list<time_sec>& getSessionOffTimes();
+
+
+//	void setInterSessionTimeModel(StochasticModelFit* modelVet);
+//	StochasticModelFit getInterSessionTimeModel_next();
+//	time_sec getInterSessionTime();
 
 	StochasticModelFit getPacketSizeModelMode1_next();
 	StochasticModelFit getPacketSizeModelMode2_next();
 
-	void setPacketSizeModel(StochasticModelFit* modelVet1,
-			StochasticModelFit* modelVet, long int nkbytesMode1,
+	void setPacketSizeModel(vector<StochasticModelFit> modelVet1,
+			vector<StochasticModelFit> modelVet, long int nkbytesMode1,
 			long int nkbytesMode2, long int nPacketsMode1,
 			long int nPacketsMode2);
 	long int getNkbytesMode1() const;
@@ -173,24 +210,37 @@ private:
 	/**
 	 * Interperture time
 	 */
-	StochasticModelFit* interArrivalvet; //file interdeperture time
+	vector<StochasticModelFit> interArrivalvet; //file interdeperture time
 	counter interDepertureTimeModel_counter = 0; //counter of for model get method
-	StochasticModelFit* interFileModel; //inter-file time
-	counter interFileModel_counter = 0;
-	StochasticModelFit* interSessionModel; //inter-session time
-	counter interSessionModel_counter = 0;
+	bool interDepertureIsSet = false;
+
+	StochasticModelFit interFileModel; //inter-file time
+	bool interFileIsSet = false;
+	//counter interFileModel_counter = 0;
+
+	list<time_sec> sessionOnTimes;
+	list<time_sec> sessionOffTimes;
+	counter sessionOnOff_counter = 0;
+	bool sessionOnOffIsSet = false;
+//	list<time_sec> interSessionTimes;
+//	counter interFileModel_counter = 0;
+	//list<time_sec>::iterator currentTimePosition;
+	//bool interSessionFirstRound;
+//	StochasticModelFit* interSessionModel; //inter-session time
+//	counter interSessionModel_counter = 0;
 
 	/**
 	 * Packet Size Model
 	 */
-	StochasticModelFit* psMode1;
-	StochasticModelFit* psMode2;
+	vector<StochasticModelFit> psMode1;
+	vector<StochasticModelFit> psMode2;
 	long int nkbytes_mode1;
 	long int nkbytes_mode2;
 	long int npacket_mode1;
 	long int npackets_mode2;
-	int packetSizeModel1_counter;
-	int packetSizeModel2_counter;
+	counter packetSizeModel1_counter;
+	counter packetSizeModel2_counter;
+	bool psModelIsSet = false;
 
 };
 

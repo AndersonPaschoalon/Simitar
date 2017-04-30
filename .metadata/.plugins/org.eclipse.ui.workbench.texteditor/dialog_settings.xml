@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="operator" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="operator"/>
+			<item value="toString"/>
+			<item value="DummyFlow::flowGenerate(). No model selected for Inter-File time model"/>
+			<item value="make_flow"/>
+			<item value="@ `int DatabaseInterface::getTraceData()`"/>
+			<item value="flowThread"/>
 			<item value="xml"/>
 			<item value="getPacketSizeModel_next"/>
-			<item value="NO_MODEL"/>
-			<item value="fitModelsPsSize"/>
-			<item value="fitModels"/>
-			<item value="interArrivalCdf"/>
-			<item value="fitModelsSimplified"/>
-			<item value="getPacketSizeModelMode1_next"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -24,7 +24,7 @@
 		<item value="322" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="425" key="DIALOG_HEIGHT"/>
-		<item value="1281" key="DIALOG_X_ORIGIN"/>
-		<item value="488" key="DIALOG_Y_ORIGIN"/>
+		<item value="1338" key="DIALOG_X_ORIGIN"/>
+		<item value="631" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

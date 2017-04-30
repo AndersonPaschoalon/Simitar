@@ -57,5 +57,8 @@ private:
 } /* namespace std */
 
 
+void waitKey();
+
+
 
 #endif /* TESTCLASS_H_ */

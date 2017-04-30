@@ -53,9 +53,30 @@ public:
 	virtual ~DatabaseInterface();
 
 	/**
-	 * Returns a short information about the class
+	 *
+	 */
+	DatabaseInterface(const DatabaseInterface &rhs);
+
+	/**
+	 *
+	 * @param rhs
+	 * @return
+	 */
+	const DatabaseInterface& operator= (const DatabaseInterface& rhs);
+
+	/**
+	 *Returns a short information about the class
+	 *Returns
+	 * @return
 	 */
 	string toString();
+
+	/**
+	 *
+	 */
+	void print();
+
+
 
 
 

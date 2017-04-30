@@ -8,6 +8,7 @@
 #ifndef DITGFLOW_H_
 #define DITGFLOW_H_
 
+#include <ITGapi.h>
 #include "NetworkFlow.h"
 #include "DummyFlow.h"
 

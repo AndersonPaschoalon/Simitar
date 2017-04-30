@@ -11,6 +11,9 @@
 		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item value="/home/anderson/workspace" key="OUTSIDE_LOCATION"/>
+	</section>
 	<section name="NewWizardAction">
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">

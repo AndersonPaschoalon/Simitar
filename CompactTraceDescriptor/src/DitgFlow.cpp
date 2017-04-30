@@ -7,6 +7,9 @@
 
 #include "DitgFlow.h"
 
+//TODO provavel solucao do bug
+// http://stackoverflow.com/questions/1226634/how-to-use-base-classs-constructors-and-assignment-operator-in-c
+
 DitgFlow::DitgFlow()
 {
 	//TODO Utilizar esse método para realizar a configuração e parseamento,
@@ -19,8 +22,10 @@ DitgFlow::~DitgFlow()
 	// TODO Utilizar esse metodo para desalocar memória
 }
 
+
 void DitgFlow::flowGenerate()
 {
+
 	//TODO Criar um metodo que retorna o IP de eth0 (default) da maquina atual
 	char host[] = "10.1.1.48";
 
@@ -111,9 +116,11 @@ void DitgFlow::flowGenerate()
 	{
 		StochasticModelFit idtModel = this->getInterDepertureTimeModel_next();
 
-		if (idtModel.modelName
-				== ( WEIBULL || NORMAL || EXPONENTIAL || PARETO || CAUCHY
-						|| CONSTANT))
+		if ((idtModel.modelName == WEIBULL) || (idtModel.modelName == NORMAL)
+				|| (idtModel.modelName == EXPONENTIAL)
+				|| (idtModel.modelName == PARETO)
+				|| (idtModel.modelName == CAUCHY)
+				|| (idtModel.modelName == CONSTANT))
 		{
 			if (idtModel.modelName == WEIBULL)
 			{
@@ -214,7 +221,7 @@ void DitgFlow::flowGenerate()
 	 **************************************************************************/
 	delete[] command;
 	delete[] commandMode1;
-	delte[] commandMode2;
+	delete[] commandMode2;
 
 #ifdef DEBUG
 	cout << "D-ITG command: " << command << endl;
