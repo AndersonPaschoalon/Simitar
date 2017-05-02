@@ -46,6 +46,7 @@ using std::vector;
 #include "RegressionTests.h"
 #include "MesserLog.h"
 
+//#define LOG_LEVEL INFO
 #define LOG_LEVEL INFO
 
 //namespaces

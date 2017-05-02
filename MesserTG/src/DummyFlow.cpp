@@ -24,7 +24,7 @@ DummyFlow::DummyFlow()
 	//protocols parameters  initialization
 	//
 	link_protocol = PROTOCOL__ETHERNET; //default
-	link_src_addr_count = 0;
+	//link_src_addr_count = 0;
 	network_dst_addr = "";
 	network_protocol = PROTOCOL__IPV4; //default
 	network_src_addr = "";
@@ -579,15 +579,15 @@ void DummyFlow::setLinkProtocol(protocol linkProtocol)
 	link_protocol = linkProtocol;
 }
 
-long int DummyFlow::getLinkSrcAddrCount() const
-{
-	return link_src_addr_count;
-}
+//long int DummyFlow::getLinkSrcAddrCount() const
+//{
+//	return link_src_addr_count;
+//}
 
-void DummyFlow::setLinkSrcAddrCount(long int linkSrcAddrCount)
-{
-	link_src_addr_count = linkSrcAddrCount;
-}
+//void DummyFlow::setLinkSrcAddrCount(long int linkSrcAddrCount)
+//{
+//	link_src_addr_count = linkSrcAddrCount;
+//}
 
 const string& DummyFlow::getNetworkDstAddr() const
 {

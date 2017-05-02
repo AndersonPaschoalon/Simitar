@@ -25,9 +25,12 @@ NetworkTrace::NetworkTrace(const string& fileName)
 	long int nflows = 0;
 	long int fcounter = 0;
 	string strBuffer;
-	unsigned int intBuffer;
+	unsigned int uintBuffer;
 	unsigned long int lintBuffer;
-	double doubleBuffer;
+	time_sec timeBuffer;
+	port_number portBuffer = 0;
+	Protocol pBuffer = Protocol();
+	list<StochasticModelFit>* modelList = NULL;
 
 	xml_document<> doc;
 	xml_node<> * root_node;
@@ -61,12 +64,242 @@ NetworkTrace::NetworkTrace(const string& fileName)
 			root_node->first_attribute("n_flows")->value());
 
 	charvet2type(root_node->first_attribute("n_flows")->value(), nflows);
-	for (fcounter = 0; fcounter < nflows; fcounter++)
+	//for (fcounter = 0; fcounter < nflows; fcounter++)
+	//{
+	fcounter = 0;
+	for (xml_node<> * flow_node = root_node->first_node("flow"); flow_node;
+			flow_node = flow_node->next_sibling())
 	{
-		//Create flow
+
+		/// Create flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 		MESSER_DEBUG("<%s> netFlow[%d]", fcounter);
 
+		/// Flow Settings
+		charvet2type(flow_node->first_attribute("start_delay")->value(),
+				timeBuffer);
+		netFlow->setFlowStartDelay(timeBuffer);
+
+		charvet2type(flow_node->first_attribute("duration")->value(),
+				timeBuffer);
+		netFlow->setFlowDuration(timeBuffer);
+
+		charvet2type(flow_node->first_attribute("ds_byte")->value(),
+				uintBuffer);
+		netFlow->setFlowDsByte(uintBuffer);
+
+		charvet2type(flow_node->first_attribute("n_kbytes")->value(),
+				lintBuffer);
+		netFlow->setNumberOfKbytes(lintBuffer);
+
+		charvet2type(flow_node->first_attribute("n_packets")->value(),
+				lintBuffer);
+		netFlow->setNumberOfPackets(lintBuffer);
+
+		/// Link layer
+		xml_node<> * link_node = flow_node->first_node("link_layer");
+
+		pBuffer = Protocol(link_node->value());
+		netFlow->setLinkProtocol(pBuffer.get());
+
+		/// Network layer
+		xml_node<> * network_node = flow_node->first_node("network_layer");
+		pBuffer = Protocol(network_node->value());
+		netFlow->setNetworkProtocol(pBuffer.get());
+		netFlow->setNetworkSrcAddr(
+				network_node->first_attribute("src_ip")->value());
+		netFlow->setNetworkDstAddr(
+				network_node->first_attribute("dst_ip")->value());
+		charvet2type(network_node->first_attribute("ttl")->value(), uintBuffer);
+		netFlow->setNetworkTtl(uintBuffer);
+
+		/// Transport layer
+		xml_node<> * transport_node = flow_node->first_node("transport_layer");
+
+		pBuffer = Protocol(transport_node->value());
+		netFlow->setTransportProtocol(pBuffer.get());
+
+		charvet2type(transport_node->first_attribute("src_port")->value(),
+				portBuffer);
+		netFlow->setTransportSrcPort(portBuffer);
+
+		charvet2type(transport_node->first_attribute("dst_port")->value(),
+				portBuffer);
+		netFlow->setTransportDstPort(portBuffer);
+
+		/// Application
+		xml_node<> * application_node = flow_node->first_node(
+				"application_layer");
+		pBuffer = Protocol(application_node->value());
+		netFlow->setApplicationProtocol(pBuffer.get());
+
+		/// Inter packet times
+		xml_node<> * interpacket_node = flow_node->first_node(
+				"inter_packet_times");
+
+		modelList = new list<StochasticModelFit>;
+		for (xml_node<> * model_node = interpacket_node->first_node(
+				"stochastic_model"); model_node;
+				model_node = model_node->next_sibling())
+		{
+			double p1 = 0;
+			double p2 = 0;
+			double aic = 0;
+			double bic = 0;
+			charvet2type(model_node->first_attribute("param1")->value(), p1);
+			charvet2type(model_node->first_attribute("param2")->value(), p2);
+			charvet2type(model_node->first_attribute("aic")->value(), aic);
+			charvet2type(model_node->first_attribute("bic")->value(), bic);
+			modelList->push_back(
+					StochasticModelFit(
+							model_node->first_attribute("name")->value(), p1,
+							p2, aic, bic));
+			/*
+			 printf(
+			 "\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+			 model_node->first_attribute("name")->value(),
+			 model_node->first_attribute("param1")->value(),
+			 model_node->first_attribute("param2")->value(),
+			 model_node->first_attribute("aic")->value(),
+			 model_node->first_attribute("bic")->value());
+			 */
+		}
+		netFlow->setInterDepertureTimeModels(modelList);
+
+		/// Packet sizes
+		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
+
+		charvet2type(packetsizes_nodes->first_attribute("n_packets")->value(),
+				lintBuffer);
+		netFlow->setNumberOfPackets(lintBuffer);
+
+		charvet2type(packetsizes_nodes->first_attribute("n_kbytes")->value(),
+				lintBuffer);
+		netFlow->setNumberOfKbytes(lintBuffer);
+
+		long int npacketsm1 = 0;
+		long int nkbytesm1 = 0;
+		long int npacketsm2 = 0;
+		long int nkbytesm2 = 0;
+		list<StochasticModelFit>* psm1 = new list<StochasticModelFit>;
+		list<StochasticModelFit>* psm2 = new list<StochasticModelFit>;
+
+		/// Packet size, mode 1
+		xml_node<> * psmode1_node = packetsizes_nodes->first_node("ps_mode1");
+		charvet2type(psmode1_node->first_attribute("n_packets")->value(),
+				npacketsm1);
+		charvet2type(psmode1_node->first_attribute("n_kbytes")->value(),
+				nkbytesm1);
+		for (xml_node<> * model_node = psmode1_node->first_node(
+				"stochastic_model"); model_node;
+				model_node = model_node->next_sibling())
+		{
+			//	printf(
+			//			"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+			//			model_node->first_attribute("name")->value(),
+			//			model_node->first_attribute("param1")->value(),
+			//			model_node->first_attribute("param2")->value(),
+			//			model_node->first_attribute("aic")->value(),
+			//			model_node->first_attribute("bic")->value());
+			double p1 = 0;
+			double p2 = 0;
+			double aic = 0;
+			double bic = 0;
+			charvet2type(model_node->first_attribute("param1")->value(), p1);
+			charvet2type(model_node->first_attribute("param2")->value(), p2);
+			charvet2type(model_node->first_attribute("aic")->value(), aic);
+			charvet2type(model_node->first_attribute("bic")->value(), bic);
+			psm1->push_back(
+					StochasticModelFit(
+							model_node->first_attribute("name")->value(), p1,
+							p2, aic, bic));
+		}
+
+		/// Packet size, mode 2
+		xml_node<> * psmode2_node = packetsizes_nodes->first_node("ps_mode2");
+		charvet2type(psmode2_node->first_attribute("n_packets")->value(),
+				npacketsm2);
+		charvet2type(psmode2_node->first_attribute("n_kbytes")->value(),
+				nkbytesm2);
+		for (xml_node<> * model_node = psmode2_node->first_node(
+				"stochastic_model"); model_node;
+				model_node = model_node->next_sibling())
+		{
+			//	printf(
+			//			"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+			//			model_node->first_attribute("name")->value(),
+			//			model_node->first_attribute("param1")->value(),
+			//			model_node->first_attribute("param2")->value(),
+			//			model_node->first_attribute("aic")->value(),
+			//			model_node->first_attribute("bic")->value());
+			double p1 = 0;
+			double p2 = 0;
+			double aic = 0;
+			double bic = 0;
+			charvet2type(model_node->first_attribute("param1")->value(), p1);
+			charvet2type(model_node->first_attribute("param2")->value(), p2);
+			charvet2type(model_node->first_attribute("aic")->value(), aic);
+			charvet2type(model_node->first_attribute("bic")->value(), bic);
+			psm2->push_back(
+					StochasticModelFit(
+							model_node->first_attribute("name")->value(), p1,
+							p2, aic, bic));
+		}
+
+		netFlow->setPacketSizeModel(psm1, psm2, nkbytesm1, nkbytesm2,
+				npacketsm1, npacketsm2);
+
+		/*
+		//TODO
+		////////////////////////////////////////////////////////////////////////
+
+		// Packet sizes
+		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
+
+		printf("\t\tpacketSizes: n_packets=%s, n_kbytes=%s\n",
+				packetsizes_nodes->first_attribute("n_packets")->value(),
+				packetsizes_nodes->first_attribute("n_kbytes")->value());
+
+		xml_node<> * psmode1_node = packetsizes_nodes->first_node("ps_mode1");
+		printf("\t\t\tps_mode1: n_packets=%s, n_kbytes=%s\n",
+				psmode1_node->first_attribute("n_packets")->value(),
+				psmode1_node->first_attribute("n_kbytes")->value());
+
+		for (xml_node<> * model_node = psmode1_node->first_node(
+				"stochastic_model"); model_node;
+				model_node = model_node->next_sibling())
+		{
+			printf(
+					"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+					model_node->first_attribute("name")->value(),
+					model_node->first_attribute("param1")->value(),
+					model_node->first_attribute("param2")->value(),
+					model_node->first_attribute("aic")->value(),
+					model_node->first_attribute("bic")->value());
+
+		}
+
+		xml_node<> * psmode2_node = packetsizes_nodes->first_node("ps_mode2");
+		printf("\t\t\tps_mode2: n_packets=%s, n_kbytes=%s\n",
+				psmode2_node->first_attribute("n_packets")->value(),
+				psmode2_node->first_attribute("n_kbytes")->value());
+
+		for (xml_node<> * model_node = psmode2_node->first_node(
+				"stochastic_model"); model_node;
+				model_node = model_node->next_sibling())
+		{
+			printf(
+					"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+					model_node->first_attribute("name")->value(),
+					model_node->first_attribute("param1")->value(),
+					model_node->first_attribute("param2")->value(),
+					model_node->first_attribute("aic")->value(),
+					model_node->first_attribute("bic")->value());
+
+		}
+		*/
+
+		///////////////////////////////////////////////////////////////////////
 		//netFlow->print();
 		//store flow on trace
 		pushback_Netflow(netFlow);
@@ -87,7 +320,7 @@ NetworkTrace::~NetworkTrace()
 	}
 
 	networkFlow.clear();
-	///Old ways - modification made at 04/04/2017
+///Old ways - modification made at 04/04/2017
 	/*
 	 for (unsigned int i = 0; i < networkFlow.size(); i++)
 	 delete[] networkFlow[i];
@@ -165,7 +398,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 	Protocol proto;
 	StochasticModelFit sf;
 
-	//LOG interface declaration
+//LOG interface declaration
 	log4cpp::PropertyConfigurator::configure(LOG_PROPERTIES_FILE);
 	log4cpp::Category& logfile = log4cpp::Category::getRoot();
 	log4cpp::Category& console = log4cpp::Category::getInstance("console");
@@ -203,7 +436,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 
 	doc.append_node(trace);
 
-	// Allocate values
+// Allocate values
 	fd = new flowData[nFlows];
 	for (i = 0; i < nFlows; i++)
 	{
@@ -282,8 +515,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 			sf.strModelName(fd[i].interPkt[j].name);
 			sprintf(fd[i].interPkt[j].aic, "%f", sf.aic());
 			sprintf(fd[i].interPkt[j].bic, "%f", sf.bic());
-			sprintf(fd[i].interPkt[j].param1, "%f", sf.param1());
-			sprintf(fd[i].interPkt[j].param2, "%f", sf.param2());
+			sprintf(fd[i].interPkt[j].param1, "%.15f", sf.param1());
+			sprintf(fd[i].interPkt[j].param2, "%.15f", sf.param2());
 
 			MESSER_DEBUG("<%s> fd[i].interPkt[j].name=%s",
 					fd[i].interPkt[j].name);
@@ -333,7 +566,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 				networkFlow[i]->getNpacketsMode2());
 	}
 
-	// => Create XML
+// => Create XML
 	for (i = 0; i < nFlows; i++)
 	{
 		xml_node<>* flow = doc.allocate_node(node_element, LABEL_FLOW);
@@ -563,18 +796,18 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		trace->append_node(flow);
 	}
 
-	// Convert doc to string if needed
+// Convert doc to string if needed
 	std::string xml_as_string;
 	rapidxml::print(std::back_inserter(xml_as_string), doc);
 
-	// Save to file
+// Save to file
 	string2charvet(fileName, charfileName);
 	std::ofstream file_stored(charfileName);
 	file_stored << doc;
 	file_stored.close();
 	doc.clear();
 
-	//Free memory allocated
+//Free memory allocated
 	for (i = 0; i < nFlows; i++)
 	{
 		delete[] fd[i].interPkt;

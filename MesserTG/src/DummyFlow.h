@@ -167,15 +167,17 @@ private:
 	time_sec flow_duration;
 	time_sec flow_start_delay;
 	unsigned int flow_ds_byte;
-	unsigned long long int number_of_packets;
-	unsigned long long int number_of_kbytes;
+	unsigned long int number_of_packets;
+	unsigned long int number_of_kbytes;
 
 	/**
 	 * Protocol stack options
 	 */
 	//TODO L2: Link Layer Implementation of L2 structures
 	protocol link_protocol;
-	long int link_src_addr_count;
+	string link_src;
+	string link_dst;
+	//long int link_src_addr_count;
 	//l2_addr linkedlist;
 
 	//L3: Network Layer

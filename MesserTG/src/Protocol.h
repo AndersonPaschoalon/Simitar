@@ -13,6 +13,7 @@
 //#include "Defines.h"
 #include "RegressionTests.h"
 #include "MesserLog.h"
+//#define LOG_LEVEL INFO
 #define LOG_LEVEL INFO
 #define PROTOCOL_STR_SIZE 15
 

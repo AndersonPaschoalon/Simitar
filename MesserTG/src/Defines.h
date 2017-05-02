@@ -7,8 +7,80 @@
 
 #ifndef DEFINES_H_
 #define DEFINES_H_
-#include <string>
+//#include <string>
 using namespace std;
+
+
+#define DEBUG_NetworkTrace_writeToFile 1
+
+/**
+ * Length of a standard C string vector
+ */
+#define CHAR_BUFFER 120
+
+/**
+ * Length of a large C string vector
+ */
+#define CHAR_LARGE_BUFFER 10000
+
+/**
+ * Macro for  \f$ 10^6 \f$.
+ */
+#define MEGA_POWER 1000000
+
+
+/**
+ * Port number type
+ */
+typedef unsigned int port_number;
+
+/**
+ * Time to live type
+ */
+typedef unsigned short int ttl_val;
+
+/**
+ * Time type
+ */
+typedef double time_sec;
+
+/**
+ * Packet size type
+ */
+typedef double packet_size;
+
+/**
+ * Kbytes type
+ */
+typedef long int kbytes;
+
+/**
+ * Counter type
+ */
+typedef unsigned int counter;
+
+
+/**
+ *
+ */
+const time_sec FILE_CUT_TIME = 0.1;
+
+/**
+ *
+ */
+const time_sec SESSION_CUT_TIME = 30;
+
+/**
+ * Cut value for packet size modes distributions. A value smaller than
+ * PACKET_SIZE_MODE_CUT_VALUE belongs to the first mode, and a larger to the
+ * second mode.
+ */
+const int PACKET_SIZE_MODE_CUT_VALUE = 500;
+
+/**
+ * Max valid value for a port number
+ */
+const port_number MAX_TRANSPORT_PORT_NUMBER = 65535;
 
 // FATAL -> the program cant run
 // ALERT -> A serious bug
@@ -31,21 +103,21 @@ using namespace std;
 //#define DEBUG_DataProcessor_interArrival 1
 //#define DEBUG_StochasticModelFit 1
 //#define DEBUG_DummyFlow 1
-#define DEBUG_NetworkTrace_writeToFile 1
+
 //Misc
 //#define TEST_FUNCTIONS 1 //execute regression testes
-#define HLINE "----------"
-#define TAB "::"
+//#define HLINE "----------"
+//#define TAB "::"
 
 /*******************************************************************************
  * Defines
  ******************************************************************************/
 
 //#define LOG_PROPERTIES_FILE "data/log4cpp-config.properties"
-#define CHAR_BUFFER 120
-#define CHAR_LARGE_BUFFER 10000
+
+
 //Math
-#define MEGA_POWER 1000000
+
 //Stochastic Models
 /*
  #define WEIBULL "weibull"
@@ -79,10 +151,11 @@ using namespace std;
  *
  */
 //test
-#define NUMBER_OF_MODELS 8
+//#define NUMBER_OF_MODELS 8
 /**
  *
  */
+/*
 typedef enum stochastic_functions_enum
 {
 	WEIBULL,                      //!< WEIBULL
@@ -98,28 +171,29 @@ typedef enum stochastic_functions_enum
 	SINGLE_PACKET,                //!< SINGLE_PACKET
 	NO_MODEL                      //!< NO_MODEL
 } stochastic_functions;
-
+*/
 /**
  *
  */
+/*
 typedef enum information_criterion_enum
 {
 	AIC, BIC
 } information_criterion;
-
+*/
 /*
  * TODO
  * The data obeys a Constant distribution (regular time intervals), equal to
  * the max of the original data value
  */
-#define CONSTANT_MAX "constant-max"
+//#define CONSTANT_MAX "constant-max"
 
 /*
  * TODO
  * The data obeys a Constant distribution (regular time intervals), equal to
  * the minimum of the original data value
  */
-#define CONSTANT_MIN "constant-min"
+//#define CONSTANT_MIN "constant-min"
 
 /**
  * No model selected, this means there is no data to evaluate any stochastic
@@ -184,56 +258,15 @@ typedef enum information_criterion_enum
 /**
  *
  */
-typedef unsigned short int stochastic_model;
+//typedef unsigned short int stochastic_model;
 
-/**
- *
- */
-typedef unsigned int port_number;
 
-/**
- *
- */
-typedef unsigned short int ttl_val;
-
-/**
- *
- */
-typedef double time_sec;
-
-/**
- *
- */
-typedef double packet_size;
-
-/**
- *
- */
-typedef long int kbytes;
-
-/**
- *
- */
-typedef unsigned int counter;
 
 /*******************************************************************************
  * Constants
  ******************************************************************************/
 
-/**
- *
- */
-const time_sec FILE_CUT_TIME = 0.1;
 
-/**
- *
- */
-const time_sec SESSION_CUT_TIME = 30;
-
-/**
- *
- */
-const int PACKET_SIZE_MODE_CUT_VALUE = 500;
 
 /*
 
@@ -270,9 +303,6 @@ const int PACKET_SIZE_MODE_CUT_VALUE = 500;
  const protocol_code SCTP_CODE = 132;
 
  */
-/**
- *
- */
-const port_number MAX_TRANSPORT_PORT_NUMBER = 65535;
+
 
 #endif /* DEFINES_H_ */

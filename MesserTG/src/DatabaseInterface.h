@@ -22,6 +22,10 @@
 #include <list>
 #include <errno.h>
 
+//local includes
+#include "MesserLog.h"
+#include "Protocol.h"
+
 //local defines
 #define INT_BUFFER_SIZE 20
 
@@ -37,7 +41,8 @@ using std::stod;
 using std::stoi;
 using std::to_string;
 
-class DatabaseInterface {
+class DatabaseInterface
+{
 public:
 
 	/**
@@ -56,8 +61,6 @@ public:
 	 * Returns a short information about the class
 	 */
 	string toString();
-
-
 
 	// TODO Metodos para o *Sniffer*
 	//--------------------------------------------------------------------------
@@ -132,7 +135,8 @@ public:
 	/**
 	 * Retrieve a
 	 */
-	int getFlowData(string experimentName, int flowID, string label, string* str);
+	int getFlowData(string experimentName, int flowID, string label,
+			string* str);
 
 	/**
 	 * Retrieve a

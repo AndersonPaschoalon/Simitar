@@ -26,16 +26,19 @@
 int main()
 {
 #ifdef REGRESSION_TESTS
-	//string test = "DataProcessor";
-	//cout << "Test: " << test << endl;
-	//TestClass t = TestClass(test);
+	RegressionTests rt;
+
 	DataProcessor regTest_dp = DataProcessor();
 	Protocol regTest_proto = Protocol();
 	NetworkTrace regTest_nt;
+	StochasticModelFit unityTest_smf = StochasticModelFit();
 
 	regTest_dp.regression_tests();
 	regTest_nt.regression_tests();
 	regTest_proto.regression_tests();
+	unityTest_smf.unity_tests();
+
+	rt.wait_int("Finished tests, press any key...");
 #endif
 
 	//TODO the main function is the controller: it should parse the
@@ -97,6 +100,13 @@ int main()
 	NetworkTrace* tracetest = NULL;
 	tracetest = new NetworkTrace("kkk.xml");
 	//NetworkTrace traceTest = NetworkTrace("kkk.xml");
+	tracetest->setInfoTracename("teste-chapolin");
+	tracetest->setInfoCommentaries("este e um teste do compact trace descriptor");
+	tracetest->setTrafficGenEngine("D-ITG");
+	tracetest->setInfoCaptureInterface("eth0");
+	tracetest->setInfoCaptureDate("07/04/2017");
+	tracetest->writeToFile("copia-kjjjjj.xml");
+
 	delete tracetest;
 
 	cout << "llllasd"<< endl;

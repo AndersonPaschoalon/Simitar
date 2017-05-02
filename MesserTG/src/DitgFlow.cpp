@@ -6,6 +6,8 @@
  */
 
 #include "DitgFlow.h"
+/*
+
 
 DitgFlow::DitgFlow()
 {
@@ -29,9 +31,11 @@ void DitgFlow::flowGenerate()
 	int fileTimeout = int(this->getFlowDuration() * 1000);
 	int userOption;
 
-	/***************************************************************************
-	 * Initialization
-	 **************************************************************************/
+	////////////////////////////////////////////////////////////////////////////
+	///Initialization
+	////////////////////////////////////////////////////////////////////////////
+
+
 	string strCommand = "";
 	string strCommandMode1 = "";
 	string strCommandMode2 = "";
@@ -40,13 +44,13 @@ void DitgFlow::flowGenerate()
 	char* commandMode2 = NULL;
 	int rc = 0;
 
-	/***************************************************************************
-	 * D-ITG settings parser
-	 **************************************************************************/
+	////////////////////////////////////////////////////////////////////////////
+	/// D-ITG settings parser
+	////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Flow-level settings
-	 */
+
+	/// Flow-level settings
+
 	//duration
 	if (fileTimeout == 0)
 		fileTimeout = 1;
@@ -56,18 +60,15 @@ void DitgFlow::flowGenerate()
 	//Guarantee the mean packet rate
 	strCommand += " -j 1";
 
-	/**
-	 * Network-layer settings
-	 */
-	//tty byte
+
+	/// Network-layer settings
 	strCommand += " -f " + std::to_string(this->getNetworkTtl());
 	//destination and sources IPv4/IPv6 address
 	strCommand += " -a " + this->getNetworkDstAddr();
 	strCommand += " -sa " + this->getNetworkSrcAddr();
 
-	/**
-	 * Transport-layer settings
-	 */
+
+	/// Transport-layer settings
 	if (this->getTransportProtocol() == PROTOCOL__TCP)
 	{
 		strCommand += " -T TCP -D ";
@@ -104,9 +105,8 @@ void DitgFlow::flowGenerate()
 		strCommand += " -T UDP -rp " + std::to_string(this->randTranportPort());
 	}
 
-	/**
-	 * Inter-departure time options
-	 */
+
+	/// Inter-departure time options
 	for (;;)
 	{
 		StochasticModelFit idtModel = this->getInterDepertureTimeModel_next();
@@ -163,9 +163,9 @@ void DitgFlow::flowGenerate()
 		}
 	}
 
-	/**
-	 * Packet size options
-	 */
+
+	/// Packet size options
+
 	//First model: Contant
 	strCommandMode1 = strCommand + " -c "
 			+ std::to_string(this->getPacketSizeModelMode1_next().param1());
@@ -173,9 +173,9 @@ void DitgFlow::flowGenerate()
 	strCommandMode2 = strCommand + " -c "
 			+ std::to_string(this->getPacketSizeModelMode2_next().param1());
 
-	/**
-	 * Generate C string
-	 */
+
+	/// Generate C string
+
 	command = new char[strCommand.length() + 1];
 	strcpy(command, strCommand.c_str());
 
@@ -185,9 +185,9 @@ void DitgFlow::flowGenerate()
 	commandMode2 = new char[strCommandMode2.length() + 1];
 	strcpy(commandMode2, strCommandMode2.c_str());
 
-	/***************************************************************************
-	 * D-ITG: generatte flow
-	 **************************************************************************/
+	////////////////////////////////////////////////////////////////////////////
+	/// D-ITG: generatte flow
+	////////////////////////////////////////////////////////////////////////////
 
 	if (this->getNpacketsMode1() > 0)
 	{
@@ -216,9 +216,9 @@ void DitgFlow::flowGenerate()
 
 	}
 
-	/***************************************************************************
-	 * Ending
-	 **************************************************************************/
+	////////////////////////////////////////////////////////////////////////////
+	/// Ending
+	////////////////////////////////////////////////////////////////////////////
 	delete[] command;
 	delete[] commandMode1;
 	delete[] commandMode2;
@@ -229,3 +229,5 @@ void DitgFlow::flowGenerate()
 
 	return;
 }
+
+*/

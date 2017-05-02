@@ -22,9 +22,11 @@
 #include <pthread.h>
 #include <string>
 #include <list>
+#include <ITGapi.h>
+#include <vector>
 
 //local includes
-#include <ITGapi.h>
+
 #include "Defines.h"
 #include "Protocol.h"
 #include "StochasticModelFit.h"
@@ -37,6 +39,7 @@ using std::cin;
 using std::endl;
 using std::cerr;
 using std::list;
+using std::vector;
 
 class NetworkFlow
 {
@@ -72,8 +75,8 @@ public:
 	virtual void setApplicationProtocol(protocol applicationProtocol) = 0;
 	virtual protocol getLinkProtocol() const = 0;
 	virtual void setLinkProtocol(protocol linkProtocol) = 0;
-	virtual long int getLinkSrcAddrCount() const = 0;
-	virtual void setLinkSrcAddrCount(long int linkSrcAddrCount) = 0;
+	//virtual long int getLinkSrcAddrCount() const = 0;
+	//virtual void setLinkSrcAddrCount(long int linkSrcAddrCount) = 0;
 	virtual const string& getNetworkDstAddr() const = 0;
 	virtual void setNetworkDstAddr(const string& networkDstAddr) = 0;
 	virtual int getNetworkHostListConter() const = 0;

@@ -41,12 +41,28 @@ void string2charvet(const string s, char* vetc);
 void charvet2type(const char* vetc, int& v);
 
 /**
+ * @brief
+ *
+ * @param vetc
+ * @param v
+ */
+void charvet2type(const char* vetc, unsigned int& v);
+
+/**
  * @brief Convert a integer written in a C string format to long int type.
  *
  * @param vetc	C string integer
  * @param v		long int integer output
  */
 void charvet2type(const char* vetc, long int& v);
+
+/**
+ * @brief Convert a integer written in a C string format to long int type.
+ *
+ * @param vetc	C string integer
+ * @param v		long int integer output
+ */
+void charvet2type(const char* vetc, unsigned long int& v);
 
 /**
  * @brief Convert a float number written in a C string format to double type.
