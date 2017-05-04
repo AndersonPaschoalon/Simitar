@@ -30,6 +30,9 @@ m = length(delta_time);
 % in: min time for ON
 min_on_time = 0.1;
 
+% max time
+max_time = max(arrival_time);
+
 % session cut time 
 %session_cut_time = 2.90;
 
@@ -40,6 +43,10 @@ min_on_time = 0.1;
 
 
 [list_generated] = emissionSimulation (onTimes, offTimes, lambdaOnOffInterfile, lambdaFile);
+
+%
+meanSimulated = 0;
+hustSimulated = 0;
 
 %correlation = corr()
 meanOriginal = mean(ExpData);

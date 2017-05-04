@@ -22,7 +22,7 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-03
 
-function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cut_time, min_on_time)
+function [onOff onTimes offTimes] = a__calcOnOffTimes (arrival_time, delta_time, cut_time, min_on_time)
 
 	% in: number of inter packet times
 	m = length(delta_time);
@@ -40,7 +40,6 @@ function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cu
 	i = 0;
 	j = 0;
 
-
 	% Calc list of OnOff times
 	for i = 1:m
 		if(delta_time(i) > cut_time)
@@ -50,32 +49,32 @@ function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cu
 				j++;
 				onOff(j) = delta_time(i);
 				last_off = i;
-			endif
-			if(j == 0) % base first case
-				j++;
-				onOff(j) = arrival_time(i - 1);
-				j++;
-				onOff(j) = delta_time(i);
-				last_off = i;
-			else %base case
-				j++;
-				%onOff(j) = delta_time(i-1) - delta_time(last_off);
-				onOff(j) = arrival_time(i-1) - arrival_time(last_off);
-				if(onOff(j) < min_on_time)
+			elseif (i == m)
+				if(last_off == m) % if last is session-off 
+					j++;
 					onOff(j) = min_on_time;
-				endif
-				j++;
-				onOff(j) = delta_time(i);
-				last_off = i;
-			endif
-		endif
-		if(i == m) % last case
-			if(last_off == m) % if last is session-off 
-				j++;
-				onOff(j) = min_on_time;
-			else % base last case
-				j++;
-				onOff(j) = arrival_time(i) - arrival_time(last_off);
+				else % base last case
+					j++;
+					onOff(j) = arrival_time(i) - arrival_time(last_off);
+				endif				
+			else 
+				if(j == 0) % base first case
+					j++;
+					onOff(j) = arrival_time(i - 1);
+					j++;
+					onOff(j) = delta_time(i);
+					last_off = i;
+				else %base case
+					j++;
+					%onOff(j) = delta_time(i-1) - delta_time(last_off);
+					onOff(j) = arrival_time(i-1) - arrival_time(last_off);
+					if(onOff(j) < min_on_time)
+						onOff(j) = min_on_time;
+					endif
+					j++;
+					onOff(j) = delta_time(i);
+					last_off = i;
+				endif		
 			endif
 		endif
 	endfor

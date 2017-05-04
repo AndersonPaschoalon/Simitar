@@ -30,8 +30,7 @@ function [lambda c_mean] = interFileParam_expConst (delta_time, session_cut_time
 	arrival_time = cumulativeData(delta_time);
 	% max length possible
 	m = length(delta_time);
-	m
-	[onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, file_cut_time, min_on_time)
+	[onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, file_cut_time, min_on_time);
 	
 	meanOn = mean(onTimes);
 	lambdaOn = 1/meanOn;

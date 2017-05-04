@@ -242,7 +242,7 @@ public:
 	}
 
 	/**
-	 * @brief Set and stochastic model
+	 * @brief Set and stochastic model.
 	 * Set a stochastic model, with its name (enum stochastic_functions
 	 * type, std::string or C string format), first and second parameters,
 	 * and AIC and BIC criterion. If there is no second parameter, it should
@@ -276,18 +276,26 @@ public:
 	 *		\f[ f(t) = \frac{1}{\pi \gamma}[\frac{\gamma^2}{(t - t_{0})^{2} + \gamma^{2}}] \f]
 	 *	On each case, the parameter order follow its alphabetical order.
 	 *	The current relationship between parameters are:
-	 *	- Weibull: \f$ (\alpha, \beta ) = (shape, scale) = (param1, param2)\f$
-	 *	- Normal: \f$ (\mu, \sigma = (mean, standard deviation) = (param1, param2)\f$
-	 *	- Exponential \f$ (\lambda ) = (rate) = (param1)\f$
-	 *	- Pareto: \f$( \alpha, x_m) = (shape, scale) = (param1, param2) \f$
-	 *	- Cauchy: \f$(\gamma, x_0) =  (scale, location) = (param1, param2)\f$
+	 *
+	 *	- Weibull: \f$ (\alpha, \beta ) = (shape, scale) = (param1, param2)\f$;
+	 *
+	 *	- Normal: \f$ (\mu, \sigma = (mean, standard deviation) = (param1, param2)\f$;
+	 *
+	 *	- Exponential \f$ (\lambda ) = (rate) = (param1)\f$;
+	 *
+	 *	- Pareto: \f$( \alpha, x_m) = (shape, scale) = (param1, param2) \f$;
+	 *
+	 *	- Cauchy: \f$(\gamma, x_0) =  (scale, location) = (param1, param2)\f$.
+	 *
 	 *  Notice that on Cauchy distribution the first parameter is the scale!
 	 *
-	 * @param sf
-	 * @param param1
-	 * @param param2
-	 * @param aic
-	 * @param bic
+	 * @param sf stochastic function
+	 * @param param1 first parameter (alphabetical order)
+	 * @param param2 second parameter (alphabetical order)
+	 * @param aic <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">
+	 * 			Akaike information criterion</a>
+	 * @param bic <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">
+	 * 			Bayesian information criterion</a>
 	 */
 	void set(stochastic_functions sf, double param1, double param2, double aic,
 			double bic)
