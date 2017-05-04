@@ -80,7 +80,7 @@ function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cu
 		endif
 	endfor
 
-	i = 0
+	i = 0;
 	onOff = onOff(onOff != 0);
 	m = length(onOff); % update onOff length
 	onTimes = zeros(m, 1);

@@ -22,15 +22,16 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-03
 
-function [pps] = packetsPerSecond (arrival_time)
+function [pps] = packetsPerSecond (arrival_time, fig_name)
 	max = ceil(max(arrival_time));
-	pps = zeros(max, 1);
+	pps = zeros(max - 1, 1);
 	
 	for i = 1:(max - 1)
-		pps(i) = length(pps( (pps>i) & (pps< (i+1))));
+		pps(i) = length(arrival_time( (arrival_time>i) & (arrival_time< (i+1))));
 	endfor
 	
-	fig = plot((1:(max - 1)), pps)
-	saveas(fig, 'figures/pps_simulation', 'pdf');
+	fig = plot((1:(max - 1)), pps);
+	plot_name = ['figures/' fig_name];
+	saveas(fig, plot_name, 'pdf');
 
 endfunction

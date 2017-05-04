@@ -14,26 +14,32 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {Function File} {@var{retval} =} cumulativeData (@var{input1}, @var{input2})
+## @deftypefn {Function File} {@var{retval} =} interFileParam (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
-## Created: 2017-04-12
+## Created: 2017-05-03
 
-function [retVet] = cumulativeData (dataVet)
-	m = length(dataVet);
-	%init retVet
-	retVet = zeros(m, 1);
+function [lambda c_mean] = interFileParam_expConst (delta_time, session_cut_time, file_cut_time, min_on_time)
+	% discard session off times
+	delta_time = delta_time(delta_time < session_cut_time);
+	% calc arrival times, as if there was only one file tranfered on all
+	% section
+	arrival_time = cumulativeData(delta_time);
+	% max length possible
+	m = length(delta_time);
+	m
+	[onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, file_cut_time, min_on_time)
 	
-	for i = 1:m
-		if(i == 1)
-			retVet(i) = dataVet(i);
-		else
-			retVet(i) = dataVet(i) + retVet(i - 1);
-		endif
-		
-	endfor
-
+	meanOn = mean(onTimes);
+	lambdaOn = 1/meanOn;
+	
+	meanOff = mean(offTimes);
+	lambdaOff = 1/meanOff;
+	
+	lambda = [lambdaOn lambdaOff]';
+	c_mean = [meanOn meanOff]';
+	
 endfunction

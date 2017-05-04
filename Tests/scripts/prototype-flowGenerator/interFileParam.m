@@ -22,9 +22,9 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-03
 
-function [lambda c_mean] = interFileParam_expConst (delta_time, file_cut_time, min_on_time)
+function [lambda c_mean] = interFileParam_expConst (delta_time, session_cut_time, file_cut_time, min_on_time)
 	% discard session off times
-	delta_time = delta_time(delta_time < file_cut_time);
+	delta_time = delta_time(delta_time < session_cut_time);
 	% calc arrival times, as if there was only one file tranfered on all
 	% section
 	arrival_time = cumulativeData(delta_time);

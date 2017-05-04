@@ -14,26 +14,16 @@
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ## -*- texinfo -*- 
-## @deftypefn {Function File} {@var{retval} =} cumulativeData (@var{input1}, @var{input2})
+## @deftypefn {Function File} {@var{retval} =} fileParam_expConst (@var{input1}, @var{input2})
 ##
 ## @seealso{}
 ## @end deftypefn
 
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
-## Created: 2017-04-12
+## Created: 2017-05-03
 
-function [retVet] = cumulativeData (dataVet)
-	m = length(dataVet);
-	%init retVet
-	retVet = zeros(m, 1);
-	
-	for i = 1:m
-		if(i == 1)
-			retVet(i) = dataVet(i);
-		else
-			retVet(i) = dataVet(i) + retVet(i - 1);
-		endif
-		
-	endfor
-
+function [lambda meanTime] = fileParam_expConst (delta_time, file_cut_time)
+	delta_time = delta_time(delta_time < file_cut_time);
+	meanTime = mean(delta_time);
+	lambda = 1/meanTime;
 endfunction
