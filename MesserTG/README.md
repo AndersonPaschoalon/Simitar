@@ -93,6 +93,15 @@ To use if along with this software:
 ```
 sudo apt-get install libspdlog-dev
 ```
+### Ostinato 
+```
+sudo apt-get install ostinato
+sudo -H pip install python-ostinato
+```
+### Iperf
+```
+sudo apt-get install iperf
+```
 
 ## About the releases names
 
