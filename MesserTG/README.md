@@ -1,5 +1,6 @@
-# CompactTraceDescriptor
+# MesserTG 
 This software is part of my Master degree project in development
+Current version: Eulemur coronatus (v0.3.1) 
 
 ## Dependencies
 
