@@ -1,11 +1,11 @@
 # CompactTraceDescriptor
 This software is part of my Master degree project in development
 
-##Dependencies
+## Dependencies
 
 Before instaling it, you have to install some 3rd parties softwares and lybraries.
 
-###Wireshark and Pyshark
+### Wireshark and Pyshark
 Wireshark instalation comes with tshark, which is used by the sniffer. To install Wireshark, type at the terminal:
 ```
 sudo apt-get install wireshark
@@ -14,7 +14,7 @@ Pyshark is a python wrapper for tshark, wich allows python packet parsing, using
 ```
 sudo pip install pyshark
 ```
-###Octave
+### Octave
 Octave is a free open-souce platform and scientific programming language, compatible with Matlab. To install, type on terminal:
 ```
 sudo apt-get update
@@ -29,14 +29,14 @@ cd .config/octave
 sudo chown <your-user-name> qt-settings
 ```
 
-###Sqlite3
+### Sqlite3
 To install Sqlite3, type onterminal:
 ```
 sudo apt-get install sqlite3
 sudo apt-get install libsqlite3-dev
 ```
 
-###Armadillo
+### Armadillo
 
 Armadillo is a free algebra library for the C++ language. To install it, you have first to intall its dependencies.
 
@@ -64,7 +64,7 @@ Alternaively, you may execute:
 apt-get install libarmadillo-dev
 ```
 
-###D-ITG
+### D-ITG
 
 D-ITG is a internet traffic generation. It can be dawnloaded for free on their webpage (http://www.grid.unina.it/software/ITG/). As described by the authors: 
 
@@ -89,12 +89,12 @@ To use if along with this software:
 	sudo make install
 ```
 
-#Spdlog
+### Spdlog
 ```
 sudo apt-get install libspdlog-dev
 ```
 
-##About the releases names
+## About the releases names
 
 The releases are named, in alphabetical order, with the scientific name of Lemurs species from the family Lemuridae.
 No special reason, just because they are awsome, there is a plenty of names avaliable, and Zubumafu is a Lemur.
