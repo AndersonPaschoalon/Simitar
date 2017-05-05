@@ -113,7 +113,6 @@ const port_number MAX_TRANSPORT_PORT_NUMBER = 65535;
  * Defines
  ******************************************************************************/
 
-//#define LOG_PROPERTIES_FILE "data/log4cpp-config.properties"
 
 
 //Math

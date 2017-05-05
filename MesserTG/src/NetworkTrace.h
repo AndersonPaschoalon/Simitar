@@ -23,9 +23,6 @@
 #include <rapidxml/rapidxml_print.hpp>
 #include <rapidxml/rapidxml_iterators.hpp>
 #include <rapidxml/rapidxml_utils.hpp>
-#include <log4cpp/Category.hh>
-#include <log4cpp/FileAppender.hh>
-#include <log4cpp/PropertyConfigurator.hh>
 
 //#include "rapidxml-1.13/rapidxml.hpp"
 
@@ -47,7 +44,7 @@ using std::vector;
 #include "MesserLog.h"
 
 //#define LOG_LEVEL INFO
-#define LOG_LEVEL INFO
+#define LOG_LEVEL_TRACE DEBUG
 
 //namespaces
 typedef struct flow_data_struct flowData;

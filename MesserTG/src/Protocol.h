@@ -121,7 +121,7 @@ public:
 	}
 	Protocol& operator=(const Protocol& rhs) noexcept
 	{
-		MESSER_LOG_INIT(LOG_LEVEL);
+		//MESSER_LOG_INIT(LOG_LEVEL);
 
 		if (this != &rhs)
 		{
@@ -129,16 +129,16 @@ public:
 		}
 		else
 		{
-			MESSER_ALERT(
-					"<%s> Attempted assignment of a StochasticModelFit object to itself :: m_prot=%d",
-					m_prot);
+			//MESSER_ALERT(
+			//		"<%s> Attempted assignment of a StochasticModelFit object to itself :: m_prot=%d",
+			//		m_prot);
 			std::cerr
 					<< "Attempted assignment of a StochasticModelFit object to itself"
 					<< std::endl;
 
 		}
 
-		MESSER_LOG_END();
+		//MESSER_LOG_END();
 		return (*this);
 	}
 

@@ -31,6 +31,7 @@
 #include "Protocol.h"
 #include "StochasticModelFit.h"
 #include "RegressionTests.h"
+#include "MesserLog.h"
 
 //namespaces
 using std::string;

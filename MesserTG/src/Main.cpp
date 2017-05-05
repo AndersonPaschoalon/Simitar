@@ -11,22 +11,22 @@
 #include "DataProcessor.h"
 #include "DummyFlow.h"
 #include "NetworkTrace.h"
-//#include "TestClass.h"
 #include "Defines.h"
 #include "Protocol.h"
 #include "cfunctions.h"
+#include "MesserLog.h"
 
-
-//#define DEBUG 1
-#define EXEC_BIN 1
+#define LOG_LEVEL_MAIN DEBUG
 #define REGRESSION_TESTS 1
-
 
 //using namespace std;
 
 int main()
 {
+	RegressionTests wait;
+	MESSER_LOG_INIT(LOG_LEVEL_MAIN);
 #ifdef REGRESSION_TESTS
+	MESSER_NOTICE("<%s> Starting regression tests...");
 	RegressionTests rt;
 
 	DataProcessor regTest_dp = DataProcessor();
@@ -40,12 +40,9 @@ int main()
 	unityTest_smf.unity_tests();
 	cfunctions_unitytests();
 
-	rt.wait_int("Finished tests, press any key...");
+	//wait.wait_int("Finished tests, press any key...");
+	MESSER_NOTICE("<%s> Finishing regression tests...");
 #endif
-
-	//TODO the main function is the controller: it should parse the
-	// command-line options, instantiate any component, and say what it
-	//should do. So it should parse the command
 
 	string experimentName = "live_background-traffic-1";
 	DataProcessor dp;
@@ -53,57 +50,83 @@ int main()
 	long int nflows = 0;
 	NetworkTrace* trace = NULL;
 
-	cout << "creating a network trace" << endl;
-
 	//Create Network Trace from database
 	//TODO: the data object structure do not have to change.. I just want a
 	// constructor that uses a experiment name and a database interface pointer
 	// as input.
 	dbif.getNumberOfFlows(experimentName, &nflows);
-
+	MESSER_NOTICE("<%s> Creating a NetworkTrace. (nflows = %d)", nflows);
 	trace = new NetworkTrace();
 
+	MESSER_DEBUG("<%s> aaaaaa");
+
 	dp.calculate(experimentName, &dbif, trace);
+
+	MESSER_DEBUG("<%s> <<<<<<<<<<<<<<<<<");
 
 	trace->setInfoTracename("teste-chapolin");
 	trace->setInfoCommentaries("este e um teste do compact trace descriptor");
 	trace->setTrafficGenEngine("D-ITG");
 	trace->setInfoCaptureInterface("eth0");
 	trace->setInfoCaptureDate("07/04/2017");
+
+	MESSER_DEBUG("<%s> <<<<<<<<<<<<<<<<<");
+
 	trace->writeToFile("kkk.xml");
 
-#ifdef EXEC_BIN
+	MESSER_DEBUG("<%s> >>>>>>>>><<<<<<<<<");
 
 
-	cout << "executing network trace" << endl;
+	MESSER_NOTICE("<%s> Executing NetworkTrace: trace->exec(true)");
 	trace->exec(true);
-
-	delete trace;
 
 	//cout << "sleep before the next trace" << endl;
 	//sleep(160);
-#endif
 
-#ifdef DEBUG_NetworkFlow
-	cout << "trace->networkFlow[0]->getNetworkProtocol() = " << trace->networkFlow[0]->getNetworkProtocol() << endl;
-	cout << "trace->networkFlow[0]->getNetworkDstAddr() = " << trace->networkFlow[0]->getNetworkDstAddr() << endl;
-	cout << "trace->networkFlow[0]->getTransportProtocol()  = " << trace->networkFlow[0]->getTransportProtocol() << endl;
-	cout << "trace->networkFlow[0]->getTransportDstPort() = " << trace->networkFlow[0]->getTransportDstPort() << endl;
-	cout << "trace->networkFlow[2]->getNetworkProtocol() = " << trace->networkFlow[2]->getNetworkProtocol() << endl;
-	cout << "trace->networkFlow[4]->getNetworkDstAddr() = " << trace->networkFlow[4]->getNetworkDstAddr() << endl;
-	cout << "trace->networkFlow[6]->getTransportProtocol()  = " << trace->networkFlow[6]->getTransportProtocol() << endl;
-	cout << "trace->networkFlow[30]->getTransportDstPort() = " << trace->networkFlow[30]->getTransportDstPort() << endl;
-	cout << "trace->getNumberOfFlows() = " << trace->getNumberOfFlows() << endl;
-#endif
+	MESSER_NOTICE(
+			"<%s> Check the values of networkFlow inside NetworkTrace class");
+
+	MESSER_DEBUG("<%s> trace->networkFlow[0]->getNetworkProtocol() = %s",
+			Protocol(trace->networkFlow[0]->getNetworkProtocol()).str().c_str());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[0]->getNetworkDstAddr() = %s",
+			trace->networkFlow[0]->getNetworkDstAddr().c_str());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[0]->getTransportProtocol() = %s",
+			Protocol(trace->networkFlow[0]->getTransportProtocol()).str().c_str());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[0]->getTransportDstPort() = %d",
+			trace->networkFlow[0]->getTransportDstPort());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[2]->getNetworkProtocol() = %s",
+			Protocol(trace->networkFlow[2]->getNetworkProtocol()).str().c_str());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[4]->getNetworkDstAddr() = %s",
+			trace->networkFlow[4]->getNetworkDstAddr().c_str());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[6]->getTransportProtocol()  = %s",
+			Protocol(trace->networkFlow[6]->getTransportProtocol()).str().c_str());
+
+	MESSER_DEBUG("<%s> trace->networkFlow[30]->getTransportDstPort() = %d",
+			trace->networkFlow[30]->getTransportDstPort());
+
+	MESSER_DEBUG("<%s> trace->getNumberOfFlows() = %d",
+
+			trace->getNumberOfFlows());
+	MESSER_DEBUG("<%s>");
 
 
-	cout << "\n\n\n\n\n\n\n\n\n\n";
+
+	//wait.wait_int();
+
+	delete trace;
 
 	NetworkTrace* tracetest = NULL;
 	tracetest = new NetworkTrace("kkk.xml");
 	//NetworkTrace traceTest = NetworkTrace("kkk.xml");
 	tracetest->setInfoTracename("teste-chapolin");
-	tracetest->setInfoCommentaries("este e um teste do compact trace descriptor");
+	tracetest->setInfoCommentaries(
+			"este e um teste do compact trace descriptor");
 	tracetest->setTrafficGenEngine("D-ITG");
 	tracetest->setInfoCaptureInterface("eth0");
 	tracetest->setInfoCaptureDate("07/04/2017");
@@ -111,7 +134,8 @@ int main()
 
 	delete tracetest;
 
-	cout << "llllasd"<< endl;
+	MESSER_INFO("<%s> file:%s");
 
+	MESSER_LOG_END();
 	return 0;
 }

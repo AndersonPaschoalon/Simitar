@@ -2786,3 +2786,7 @@ void DataProcessor::regression_tests()
 
 }
 
+void DataProcessor::calcOnOff(list<time_sec>& arrivalVet, time_sec cut_time,
+		time_sec min_on_time, list<time_sec>* onTimes, list<time_sec>* offTimes)
+{
+}

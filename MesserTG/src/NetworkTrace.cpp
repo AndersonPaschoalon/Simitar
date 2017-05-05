@@ -15,12 +15,17 @@
 
 NetworkTrace::NetworkTrace()
 {
+	//cout << "aaaaaaaaaaaaaaa\n";
+	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
+	//MESSER_INFO("<%s>Constructor NetworkTrace()");
+	//MESSER_LOG_END();
+
 
 }
 
 NetworkTrace::NetworkTrace(const string& fileName)
 {
-	MESSER_LOG_INIT(LOG_LEVEL);
+	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
 	long int nflows = 0;
 	long int fcounter = 0;
@@ -55,13 +60,13 @@ NetworkTrace::NetworkTrace(const string& fileName)
 	m_trafficGenEngine =
 			root_node->first_attribute(LABEL_TRAFFIC_ENGINE)->value();
 
-	MESSER_INFO(
-			"Trace: info_tracename=%s, trafficGenEngine=%s,info_captureDate=%s, info_commentaries=%s, n_flows=%s",
-			root_node->first_attribute("info_tracename")->value(),
-			root_node->first_attribute("trafficGenEngine")->value(),
-			root_node->first_attribute("info_captureDate")->value(),
-			root_node->first_attribute("info_commentaries")->value(),
-			root_node->first_attribute("n_flows")->value());
+	//MESSER_INFO(
+	//		"<%s> Creating Trace: info_tracename=%s, trafficGenEngine=%s,info_captureDate=%s, info_commentaries=%s, n_flows=%s",
+	//		root_node->first_attribute("info_tracename")->value(),
+	//		root_node->first_attribute("trafficGenEngine")->value(),
+	//		root_node->first_attribute("info_captureDate")->value(),
+	//		root_node->first_attribute("info_commentaries")->value(),
+	//		root_node->first_attribute("n_flows")->value());
 
 	charvet2type(root_node->first_attribute("n_flows")->value(), nflows);
 	//for (fcounter = 0; fcounter < nflows; fcounter++)
@@ -73,7 +78,7 @@ NetworkTrace::NetworkTrace(const string& fileName)
 
 		/// Create flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
-		MESSER_DEBUG("<%s> netFlow[%d]", fcounter);
+		//MESSER_DEBUG("<%s> netFlow[%d]", fcounter);
 
 		/// Flow Settings
 		charvet2type(flow_node->first_attribute("start_delay")->value(),
@@ -250,54 +255,54 @@ NetworkTrace::NetworkTrace(const string& fileName)
 				npacketsm1, npacketsm2);
 
 		/*
-		//TODO
-		////////////////////////////////////////////////////////////////////////
+		 //TODO
+		 ////////////////////////////////////////////////////////////////////////
 
-		// Packet sizes
-		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
+		 // Packet sizes
+		 xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
 
-		printf("\t\tpacketSizes: n_packets=%s, n_kbytes=%s\n",
-				packetsizes_nodes->first_attribute("n_packets")->value(),
-				packetsizes_nodes->first_attribute("n_kbytes")->value());
+		 printf("\t\tpacketSizes: n_packets=%s, n_kbytes=%s\n",
+		 packetsizes_nodes->first_attribute("n_packets")->value(),
+		 packetsizes_nodes->first_attribute("n_kbytes")->value());
 
-		xml_node<> * psmode1_node = packetsizes_nodes->first_node("ps_mode1");
-		printf("\t\t\tps_mode1: n_packets=%s, n_kbytes=%s\n",
-				psmode1_node->first_attribute("n_packets")->value(),
-				psmode1_node->first_attribute("n_kbytes")->value());
+		 xml_node<> * psmode1_node = packetsizes_nodes->first_node("ps_mode1");
+		 printf("\t\t\tps_mode1: n_packets=%s, n_kbytes=%s\n",
+		 psmode1_node->first_attribute("n_packets")->value(),
+		 psmode1_node->first_attribute("n_kbytes")->value());
 
-		for (xml_node<> * model_node = psmode1_node->first_node(
-				"stochastic_model"); model_node;
-				model_node = model_node->next_sibling())
-		{
-			printf(
-					"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
-					model_node->first_attribute("name")->value(),
-					model_node->first_attribute("param1")->value(),
-					model_node->first_attribute("param2")->value(),
-					model_node->first_attribute("aic")->value(),
-					model_node->first_attribute("bic")->value());
+		 for (xml_node<> * model_node = psmode1_node->first_node(
+		 "stochastic_model"); model_node;
+		 model_node = model_node->next_sibling())
+		 {
+		 printf(
+		 "\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+		 model_node->first_attribute("name")->value(),
+		 model_node->first_attribute("param1")->value(),
+		 model_node->first_attribute("param2")->value(),
+		 model_node->first_attribute("aic")->value(),
+		 model_node->first_attribute("bic")->value());
 
-		}
+		 }
 
-		xml_node<> * psmode2_node = packetsizes_nodes->first_node("ps_mode2");
-		printf("\t\t\tps_mode2: n_packets=%s, n_kbytes=%s\n",
-				psmode2_node->first_attribute("n_packets")->value(),
-				psmode2_node->first_attribute("n_kbytes")->value());
+		 xml_node<> * psmode2_node = packetsizes_nodes->first_node("ps_mode2");
+		 printf("\t\t\tps_mode2: n_packets=%s, n_kbytes=%s\n",
+		 psmode2_node->first_attribute("n_packets")->value(),
+		 psmode2_node->first_attribute("n_kbytes")->value());
 
-		for (xml_node<> * model_node = psmode2_node->first_node(
-				"stochastic_model"); model_node;
-				model_node = model_node->next_sibling())
-		{
-			printf(
-					"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
-					model_node->first_attribute("name")->value(),
-					model_node->first_attribute("param1")->value(),
-					model_node->first_attribute("param2")->value(),
-					model_node->first_attribute("aic")->value(),
-					model_node->first_attribute("bic")->value());
+		 for (xml_node<> * model_node = psmode2_node->first_node(
+		 "stochastic_model"); model_node;
+		 model_node = model_node->next_sibling())
+		 {
+		 printf(
+		 "\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
+		 model_node->first_attribute("name")->value(),
+		 model_node->first_attribute("param1")->value(),
+		 model_node->first_attribute("param2")->value(),
+		 model_node->first_attribute("aic")->value(),
+		 model_node->first_attribute("bic")->value());
 
-		}
-		*/
+		 }
+		 */
 
 		///////////////////////////////////////////////////////////////////////
 		//netFlow->print();
@@ -305,14 +310,15 @@ NetworkTrace::NetworkTrace(const string& fileName)
 		pushback_Netflow(netFlow);
 	}
 
-	MESSER_LOG_END();
+	//MESSER_LOG_END();
 }
 
 NetworkTrace::~NetworkTrace()
 {
-	MESSER_LOG_INIT(LOG_LEVEL);
+	MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
-	MESSER_INFO("<%s> networkFlow.size() = %d", networkFlow.size());
+	MESSER_INFO("<%s> Destructor ~NetworkTrace(). networkFlow.size() = %d",
+			networkFlow.size());
 	for (unsigned int i = 0; i < networkFlow.size(); i++)
 	{
 		//cout << "i: " << i << endl;
@@ -326,7 +332,7 @@ NetworkTrace::~NetworkTrace()
 	 delete[] networkFlow[i];
 	 */
 
-	MESSER_LOG_END();
+	//MESSER_LOG_END();
 }
 
 const string& NetworkTrace::getInfoCaptureDate() const
@@ -380,7 +386,7 @@ int NetworkTrace::writeToFile(void) const
 
 int NetworkTrace::writeToFile(const string& fileName) const
 {
-	MESSER_LOG_INIT(LOG_LEVEL);
+	MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
 	unsigned int nPsM1Fittings = 3;
 	unsigned int nPsM2Fittings = 3;
@@ -397,14 +403,6 @@ int NetworkTrace::writeToFile(const string& fileName) const
 	flowData* fd = NULL;
 	Protocol proto;
 	StochasticModelFit sf;
-
-//LOG interface declaration
-	log4cpp::PropertyConfigurator::configure(LOG_PROPERTIES_FILE);
-	log4cpp::Category& logfile = log4cpp::Category::getRoot();
-	log4cpp::Category& console = log4cpp::Category::getInstance("console");
-	logfile.setPriority(log4cpp::Priority::DEBUG);
-	console.setPriority(log4cpp::Priority::WARN);
-	logfile.warn("Storm is coming %s", __PRETTY_FUNCTION__);
 
 	xml_document<> doc;
 	xml_node<>* decl = doc.allocate_node(node_declaration);
@@ -450,8 +448,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 		nPsM2Fittings = networkFlow[i]->getNumberOfPsMode2Models();
 
-		MESSER_DEBUG("<%s> (nPsM1Fittings, nPsM2Fittings) = (%d, %d)",
-				nPsM1Fittings, nPsM2Fittings);
+		//MESSER_DEBUG("<%s> (nPsM1Fittings, nPsM2Fittings) = (%d, %d)",
+		//		nPsM1Fittings, nPsM2Fittings);
 
 		fd[i].psMode1 = new modelData[nPsM1Fittings];
 		fd[i].psMode2 = new modelData[nPsM2Fittings];
@@ -462,8 +460,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 
 	for (i = 0; i < nFlows; i++)
 	{
-		MESSER_DEBUG("<%s> networkFlow[%d]->getFlowStartDelay()=%f ", i,
-				networkFlow[i]->getFlowStartDelay());
+		//MESSER_DEBUG("<%s> networkFlow[%d]->getFlowStartDelay()=%f ", i,
+		//		networkFlow[i]->getFlowStartDelay());
 
 		//flow
 		sprintf(fd[i].flow_start_delay, "%f",
@@ -506,8 +504,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		// Inter deperture times
 		nFittings = networkFlow[i]->getNumberOfInterdepertureTimeModels();
 
-		MESSER_DEBUG("<%s> nFittings=%d, fd[%d].n_interPktModels=%d, ",
-				nFittings, i, fd[i].n_interPktModels);
+		//MESSER_DEBUG("<%s> nFittings=%d, fd[%d].n_interPktModels=%d, ",
+		//		nFittings, i, fd[i].n_interPktModels);
 
 		for (j = 0; j < nFittings; j++)
 		{
@@ -518,8 +516,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 			sprintf(fd[i].interPkt[j].param1, "%.15f", sf.param1());
 			sprintf(fd[i].interPkt[j].param2, "%.15f", sf.param2());
 
-			MESSER_DEBUG("<%s> fd[i].interPkt[j].name=%s",
-					fd[i].interPkt[j].name);
+			//MESSER_DEBUG("<%s> fd[i].interPkt[j].name=%s",
+			//		fd[i].interPkt[j].name);
 
 		}
 
@@ -533,7 +531,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 			sprintf(fd[i].psMode1[j].bic, "%f", sf.bic());
 			sprintf(fd[i].psMode1[j].param1, "%f", sf.param1());
 			sprintf(fd[i].psMode1[j].param2, "%f", sf.param2());
-			cout << fd[i].psMode1[j].name << endl;
+			//cout << fd[i].psMode1[j].name << endl;
 		}
 		sprintf(fd[i].psMode1_Nkbytes, "%ld",
 				networkFlow[i]->getNkbytesMode1());
@@ -554,7 +552,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 			sprintf(fd[i].psMode2[j].bic, "%f", sf.bic());
 			sprintf(fd[i].psMode2[j].param1, "%f", sf.param1());
 			sprintf(fd[i].psMode2[j].param2, "%f", sf.param2());
-			cout << fd[i].psMode2[j].name << endl;
+			//cout << fd[i].psMode2[j].name << endl;
 		}
 		sprintf(fd[i].psMode2_Nkbytes, "%ld",
 				networkFlow[i]->getNkbytesMode2());
@@ -566,7 +564,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 				networkFlow[i]->getNpacketsMode2());
 	}
 
-// => Create XML
+	// => Create XML
 	for (i = 0; i < nFlows; i++)
 	{
 		xml_node<>* flow = doc.allocate_node(node_element, LABEL_FLOW);
@@ -822,7 +820,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 	delete[] fd;
 	fd = NULL;
 
-	MESSER_LOG_END();
+	//MESSER_LOG_END();
 	return (0);
 
 }
@@ -850,13 +848,14 @@ int NetworkTrace::pushback_Netflow(NetworkFlow* vetNetFlow)
 
 int NetworkTrace::exec(bool verbose)
 {
-	MESSER_LOG_INIT(LOG_LEVEL);
+	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
 	int size = this->getNumberOfFlows();
 	int i = 0;
 	std::thread* th_flw = new std::thread[size];
 
-	MESSER_DEBUG("<%s> this->getNumberOfFlows()=%d", this->getNumberOfFlows());
+	//MESSER_INFO("<%s> NetworkTrace::exec(). this->getNumberOfFlows()=%d",
+	//		this->getNumberOfFlows());
 
 	for (i = 0; i < size; i++)
 	{
@@ -872,7 +871,7 @@ int NetworkTrace::exec(bool verbose)
 
 	delete[] th_flw;
 
-	MESSER_LOG_END();
+	//MESSER_LOG_END();
 	return 0;
 
 }

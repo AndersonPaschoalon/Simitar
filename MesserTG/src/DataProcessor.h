@@ -571,8 +571,9 @@ private:
 	 * @param onTimes
 	 * @param offTimes
 	 */
-	template<typename T> void calcOnOff(list<T>& arrivalVet, T cut_time,
-			T min_on_time, list<T>* onTimes, list<T>* offTimes);
+	void calcOnOff(list<time_sec>& arrivalVet, time_sec cut_time,
+			time_sec min_on_time, list<time_sec>* onTimes,
+			list<time_sec>* offTimes);
 
 	vec interArrivalSample =
 	{ 0, 0, 0.000203, 1e-05, 0.318392, 1.00003, 0.517214, 3.2e-05, 7.6e-05,

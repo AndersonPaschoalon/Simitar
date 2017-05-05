@@ -21,7 +21,7 @@
 #include "MesserLog.h"
 #include "RegressionTests.h"
 
-#define LOG_LEVEL_SF FATAL
+#define LOG_LEVEL_SF INFO
 
 using std::string;
 using namespace arma;
@@ -69,7 +69,6 @@ public:
 		m_param2 = 0;
 		m_aic = datum::nan;
 		m_bic = datum::nan;
-		m_seed = 0;
 	}
 
 	/**
@@ -221,7 +220,7 @@ public:
 	// <TESTED>
 	void strModelName(char* cStr) const
 	{
-		MESSER_LOG_INIT(LOG_LEVEL_SF);
+		//MESSER_LOG_INIT(LOG_LEVEL_SF);
 
 		if (m_modelName == WEIBULL)
 		{
@@ -276,12 +275,12 @@ public:
 			fprintf(stderr,
 					"Error: No valid stochastic model. m_modelName=`%d`. Returning default value: `%s`\n",
 					m_modelName, LABEL_NO_MODEL);
-			MESSER_CRIT(
-					"<%s> Error: No valid stochastic model. m_modelName=`%d`. Returning default value: `%s`",
-					m_modelName, LABEL_NO_MODEL);
+			//MESSER_CRIT(
+			//		"<%s> Error: No valid stochastic model. m_modelName=`%d`. Returning default value: `%s`",
+			//		m_modelName, LABEL_NO_MODEL);
 		}
 
-		MESSER_LOG_END();
+		//MESSER_LOG_END();
 	}
 	stochastic_functions modelName() const
 	{
@@ -480,13 +479,13 @@ public:
 	int set(const string& modelStr, double param1, double param2, double aic,
 			double bic)
 	{
-		MESSER_LOG_INIT(LOG_LEVEL_SF);
+		//MESSER_LOG_INIT(LOG_LEVEL_SF);
 		stochastic_functions sf;
 		int setRet = 0;
 
-		MESSER_DEBUG("<%s> \n\t charM1=%s, LABEL_CAUCHY=%s cmp=%d",
-				modelStr.c_str(), LABEL_CAUCHY,
-				(modelStr == string(LABEL_CAUCHY)));
+		//MESSER_DEBUG("<%s> \n\t charM1=%s, LABEL_CAUCHY=%s cmp=%d",
+		//		modelStr.c_str(), LABEL_CAUCHY,
+		//		(modelStr == string(LABEL_CAUCHY)));
 
 		if (modelStr == string(LABEL_WEIBULL))
 		{
@@ -541,15 +540,15 @@ public:
 			fprintf(stderr,
 					"Error: No valid stochastic model name `%s`. Setting default value: `%s`\n",
 					modelStr.c_str(), LABEL_NO_MODEL);
-			MESSER_CRIT(
-					"<%s> Error: No valid stochastic model name `%s`. Setting default value: `%s`",
-					modelStr.c_str(), LABEL_NO_MODEL);
+			//MESSER_CRIT(
+			//		"<%s> Error: No valid stochastic model name `%s`. Setting default value: `%s`",
+			//		modelStr.c_str(), LABEL_NO_MODEL);
 			setRet = -1;
 			sf = NO_MODEL;
 		}
 		set(sf, param1, param2, aic, bic);
 
-		MESSER_LOG_END();
+		//MESSER_LOG_END();
 		return (setRet);
 	}
 
@@ -601,7 +600,6 @@ public:
 		m_param2 = other.param2();
 		m_aic = other.aic();
 		m_bic = other.bic();
-		m_seed = other.m_seed;
 	}
 
 	/**
@@ -621,7 +619,6 @@ public:
 			m_aic = other.aic();
 			m_bic = other.bic();
 			m_infoCrit = other.m_infoCrit;
-			m_seed = other.m_seed;
 		}
 		else
 		{
@@ -662,16 +659,8 @@ public:
 	 */
 	double getRandom(unsigned seed)
 	{
-		if (m_seed != 0)
-		{
-			m_seed++;
-		}
-		else
-		{
-			m_seed = seed;
-		}
 
-		MESSER_LOG_INIT(LOG_LEVEL_SF);
+		//MESSER_LOG_INIT(LOG_LEVEL_SF);
 		double retVal = .0;
 
 		std::ranlux48 generator(seed);
@@ -730,12 +719,12 @@ public:
 			fprintf(stderr,
 					"Error: No valid stochastic model (It is `%s)`. Returning default value: `%f`\n",
 					this->strModelName().c_str(), .0);
-			MESSER_CRIT(
-					"<%s> Error: No valid stochastic model (It is `%s)`. Returning default value: `%f`",
-					this->strModelName().c_str(), .0);
+			//MESSER_CRIT(
+			//		"<%s> Error: No valid stochastic model (It is `%s)`. Returning default value: `%f`",
+			//		this->strModelName().c_str(), .0);
 		}
 
-		MESSER_LOG_END();
+		//MESSER_LOG_END();
 		return (retVal);
 	}
 
@@ -758,7 +747,6 @@ private:
 	double m_bic;
 	double m_param1;
 	double m_param2;
-	unsigned m_seed;
 	information_criterion m_infoCrit = AIC;
 
 	////////////////////////////////////////////////////////////////////////////
@@ -782,7 +770,7 @@ private:
 	////////////////////////////////////////////////////////////////////////////
 	bool test_set()
 	{
-		MESSER_LOG_INIT(LOG_LEVEL_SF);
+		//MESSER_LOG_INIT(LOG_LEVEL_SF);
 
 		cout << "*4 Error messages should appear now*" << endl;
 
@@ -826,13 +814,13 @@ private:
 		strcpy(charM15, LABEL_CAUCHY);
 		strcpy(charM16, LABEL_CONSTANT);
 
-		MESSER_DEBUG("<%s> charM1=%s", charM1);
+		//MESSER_DEBUG("<%s> charM1=%s", charM1);
 
 		/// char
 		rr = set(charM1, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM1);
+			//MESSER_CRIT("<%s> Test error at %s", charM1);
 			return (false);
 		}
 		rr = set(charM2, alpha, beta, aa, bb);
@@ -874,89 +862,89 @@ private:
 		rr = set(charM5, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM5);
+			//MESSER_CRIT("<%s> Test error at %s", charM5);
 			return (false);
 		}
 		rr = set(charM6, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM6);
+			//MESSER_CRIT("<%s> Test error at %s", charM6);
 			return (false);
 		}
 		rr = set(charM6, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM6);
+			//MESSER_CRIT("<%s> Test error at %s", charM6);
 			return (false);
 		}
 		rr = set(charM6, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM6);
+			//MESSER_CRIT("<%s> Test error at %s", charM6);
 			return (false);
 		}
 		rr = set(charM7, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM7);
+			//MESSER_CRIT("<%s> Test error at %s", charM7);
 			return (false);
 		}
 		rr = set(charM8, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM8);
+			//MESSER_CRIT("<%s> Test error at %s", charM8);
 			return (false);
 		}
 		rr = set(charM9, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM9);
+			//MESSER_CRIT("<%s> Test error at %s", charM9);
 			return (false);
 		}
 		rr = set(charM10, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM10);
+			//MESSER_CRIT("<%s> Test error at %s", charM10);
 			return (false);
 		}
 		rr = set(charM11, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM11);
+			//MESSER_CRIT("<%s> Test error at %s", charM11);
 			return (false);
 		}
 		rr = set(charM12, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM12);
+			//MESSER_CRIT("<%s> Test error at %s", charM12);
 			return (false);
 		}
 		rr = set(charM13, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM13);
+			//MESSER_CRIT("<%s> Test error at %s", charM13);
 			return (false);
 		}
 		rr = set(charM14, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM14);
+			//MESSER_CRIT("<%s> Test error at %s", charM14);
 			return (false);
 		}
 		rr = set(charM15, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM15);
+			//MESSER_CRIT("<%s> Test error at %s", charM15);
 			return (false);
 		}
 		rr = set(charM16, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			MESSER_CRIT("<%s> Test error at %s", charM16);
+			//MESSER_CRIT("<%s> Test error at %s", charM16);
 			return (false);
 		}
 
-		MESSER_LOG_END();
+		//MESSER_LOG_END();
 		return (true);
 	}
 

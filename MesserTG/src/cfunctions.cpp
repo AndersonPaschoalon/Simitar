@@ -453,8 +453,8 @@ bool test_charvet2type()
 
 bool test_cumulativeDistribution()
 {
-	mat M;
-	M.load("data/regression-tests/exp_interarrival_times.txt");
+	//mat M;
+	//M.load("data/regression-tests/exp_interarrival_times.txt");
 
 	list<double> dlist;
 	list<double> cdlist;
