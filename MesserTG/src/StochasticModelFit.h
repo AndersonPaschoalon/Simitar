@@ -60,7 +60,7 @@ class StochasticModelFit
 {
 public:
 	/**
-	 *
+	 * @brief Creates a not void stochastic model
 	 */
 	StochasticModelFit()
 	{
@@ -69,8 +69,65 @@ public:
 		m_param2 = 0;
 		m_aic = datum::nan;
 		m_bic = datum::nan;
+		m_seed = 0;
 	}
 
+	/**
+	 * @brief Create a stochastic model.
+	 * Creates a stochastic model, with its name (enum stochastic_functions
+	 * type, std::string or C string format), first and second parameters,
+	 * and AIC and BIC criterion. If there is no second parameter, it should
+	 * be filled with zero. Currently it supports the follow distributions:
+	 *	- Weibull distribution
+	 *		\f[
+	 *		f(t) = \begin{cases}
+	 *				\frac{\alpha}{\beta^\alpha}t^{\alpha - 1}e^{(t/\beta)^{\alpha}}; & t \geq 0 \\
+		 *				0; & t < 0
+	 *			\end{cases}
+	 *		\f]
+	 *	- Normal distribution
+	 *		\f[
+	 *		f(t) =  \frac{1}{\sqrt[]{2\sigma^2}\pi}e^{\frac{(t - \mu)^2}{2\sigma^2}}
+	 *		\f]
+	 *	- Exponential distribution
+	 *		\f[
+	 *		f(t) = 	\begin{cases}
+	 *					\lambda e^{-\lambda t} ; & t \geq 0  \\
+		 *					0; & t < 0
+	 *				\end{cases}
+	 *		\f]
+	 *	- Pareto distibution
+	 *		\f[ f(t) =	\begin{cases}
+	 *				\frac{
+	 *					\alpha t_{m}^\alpha}{t^{\alpha + 1}} ;& t \geq t_{m} \\
+		 *					0;& t < t_{m}
+	 *				\end{cases}
+	 *		\f]
+	 *	- Cauchy distribution
+	 *		\f[ f(t) = \frac{1}{\pi \gamma}[\frac{\gamma^2}{(t - t_{0})^{2} + \gamma^{2}}] \f]
+	 *	On each case, the parameter order follow its alphabetical order.
+	 *	The current relationship between parameters are:
+	 *
+	 *	- Weibull: \f$ (\alpha, \beta ) = (shape, scale) = (param1, param2)\f$;
+	 *
+	 *	- Normal: \f$ (\mu, \sigma = (mean, standard deviation) = (param1, param2)\f$;
+	 *
+	 *	- Exponential \f$ (\lambda ) = (rate) = (param1)\f$;
+	 *
+	 *	- Pareto: \f$( \alpha, x_m) = (shape, scale) = (param1, param2) \f$;
+	 *
+	 *	- Cauchy: \f$(\gamma, x_0) =  (scale, location) = (param1, param2)\f$.
+	 *
+	 *  Notice that on Cauchy distribution the first parameter is the scale!
+	 *
+	 * @param sf stochastic function
+	 * @param param1 first parameter (alphabetical order)
+	 * @param param2 second parameter (alphabetical order)
+	 * @param aic <a href="https://en.wikipedia.org/wiki/Akaike_information_criterion">
+	 * 			Akaike information criterion</a>
+	 * @param bic <a href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">
+	 * 			Bayesian information criterion</a>
+	 */
 	StochasticModelFit(stochastic_functions sf, double param1, double param2,
 			double aic, double bic)
 	{
@@ -356,9 +413,10 @@ public:
 	 * @param param2
 	 * @param aic
 	 * @param bic
-	 * @return
+	 * @return 	returns 0 in success, and -1 if the model's name string
+	 * 			(modelStr) has a invalid name. In this case, the parameters are
+	 * 			setted, and the model name is set to NO_MODEL.
 	 */
-
 	int set(char* modelStr, double param1, double param2, double aic,
 			double bic)
 	{
@@ -416,7 +474,8 @@ public:
 	 * @param aic
 	 * @param bic
 	 * @return 	returns 0 in success, and -1 if the model's name string
-	 * 			(modelStr) has a invalid name
+	 * 			(modelStr) has a invalid name. In this case, the parameters are
+	 * 			setted, and the model name is set to NO_MODEL.
 	 */
 	int set(const string& modelStr, double param1, double param2, double aic,
 			double bic)
@@ -486,6 +545,7 @@ public:
 					"<%s> Error: No valid stochastic model name `%s`. Setting default value: `%s`",
 					modelStr.c_str(), LABEL_NO_MODEL);
 			setRet = -1;
+			sf = NO_MODEL;
 		}
 		set(sf, param1, param2, aic, bic);
 
@@ -493,6 +553,13 @@ public:
 		return (setRet);
 	}
 
+	/**
+	 * Define the information criterion to be uses as comparator ">" and "<"
+	 * between models. So, the stochastic models are ordered according this
+	 * value.
+	 *
+	 * @param infoCrit
+	 */
 	void setInforCriterion(information_criterion infoCrit)
 	{
 		m_infoCrit = infoCrit;
@@ -534,6 +601,7 @@ public:
 		m_param2 = other.param2();
 		m_aic = other.aic();
 		m_bic = other.bic();
+		m_seed = other.m_seed;
 	}
 
 	/**
@@ -553,6 +621,7 @@ public:
 			m_aic = other.aic();
 			m_bic = other.bic();
 			m_infoCrit = other.m_infoCrit;
+			m_seed = other.m_seed;
 		}
 		else
 		{
@@ -593,6 +662,15 @@ public:
 	 */
 	double getRandom(unsigned seed)
 	{
+		if (m_seed != 0)
+		{
+			m_seed++;
+		}
+		else
+		{
+			m_seed = seed;
+		}
+
 		MESSER_LOG_INIT(LOG_LEVEL_SF);
 		double retVal = .0;
 
@@ -666,8 +744,8 @@ public:
 		RegressionTests rt;
 
 		rt.printHeader("class StochasticModelFit");
-		rt.printTestResult("set() method", test_set());
-		rt.printTestResult("ramdom() method", test_ramdom());
+		rt.printTestResult("set method", test_set());
+		rt.printTestResult("getRandom method", test_ramdom());
 	}
 
 private:
@@ -680,6 +758,7 @@ private:
 	double m_bic;
 	double m_param1;
 	double m_param2;
+	unsigned m_seed;
 	information_criterion m_infoCrit = AIC;
 
 	////////////////////////////////////////////////////////////////////////////
@@ -704,6 +783,8 @@ private:
 	bool test_set()
 	{
 		MESSER_LOG_INIT(LOG_LEVEL_SF);
+
+		cout << "*4 Error messages should appear now*" << endl;
 
 		int rr = 0;
 		double alpha = 1.2;
@@ -881,8 +962,117 @@ private:
 
 	bool test_ramdom()
 	{
-		cout << "This is a just a visual test\n" << endl;
-		cout << "TODO" << endl;
+		cout << "getRandom: This is a just a visual test\n";
+
+		const int nrolls = 1000; // number of experiments
+		const int nstars = 500; // maximum number of stars to distribute
+
+		this->set(WEIBULL, 2.0, 4.0, 0, 0);
+		unsigned seed = 77;
+		int pw[10] =
+		{ };
+
+		for (int i = 0; i < nrolls; ++i)
+		{
+			double number = this->getRandom(seed);
+			seed++;
+			if (number < 10)
+				++pw[int(number)];
+		}
+
+		std::cout << "weibull_distribution (2.0,4.0):" << std::endl;
+
+		for (int i = 0; i < 10; ++i)
+		{
+			std::cout << i << "-" << (i + 1) << ": ";
+			std::cout << std::string(pw[i] * nstars / nrolls, '*') << std::endl;
+		}
+
+		this->set(EXPONENTIAL, 3.5, 0, 0, 0);
+
+		const int nintervals = 20; // number of intervals
+
+		int pe[nintervals] =
+		{ };
+
+		for (int i = 0; i < nrolls; ++i)
+		{
+			double number = this->getRandom();
+			if (number < 1.0)
+				++pe[int(nintervals * number)];
+		}
+
+		std::cout << "exponential_distribution (3.5):" << std::endl;
+		std::cout << std::fixed;
+		std::cout.precision(1);
+
+		for (int i = 0; i < nintervals; ++i)
+		{
+			std::cout << float(i) / nintervals << "-"
+					<< float(i + 1) / nintervals << ": ";
+			std::cout << std::string(pe[i] * nstars / nrolls, '*') << std::endl;
+		}
+
+		this->set(NORMAL, 5.0, 2.0, 0, 0);
+
+		int pn[10] =
+		{ };
+
+		for (int i = 0; i < nrolls; ++i)
+		{
+			double number = this->getRandom();
+			if ((number >= 0.0) && (number < 10.0))
+				++pn[int(number)];
+		}
+
+		std::cout << "normal_distribution (5.0,2.0):" << std::endl;
+
+		for (int i = 0; i < 10; ++i)
+		{
+			std::cout << i << "-" << (i + 1) << ": ";
+			std::cout << std::string(pn[i] * nstars / nrolls, '*') << std::endl;
+		}
+
+		this->set(CAUCHY, 5.0, 1.0, 0, 0);
+
+		int pc[10] =
+		{ };
+
+		for (int i = 0; i < nrolls; ++i)
+		{
+			double number = this->getRandom();
+			if ((number >= 0.0) && (number < 10.0))
+				++pc[int(number)];
+		}
+
+		std::cout << "cauchy_distribution (5.0,1.0):" << std::endl;
+
+		for (int i = 0; i < 10; ++i)
+		{
+			std::cout << i << "-" << (i + 1) << ": ";
+			std::cout << std::string(pc[i] * nstars / nrolls, '*') << std::endl;
+		}
+
+		this->set(PARETO, 0.1, 0.5, 0, 0);
+
+		int pp[10] =
+		{ };
+
+		for (int i = 0; i < nrolls; ++i)
+		{
+			double number = this->getRandom();
+			if ((number >= 0.0) && (number < 10.0))
+				++pp[int(number)];
+		}
+
+		std::cout << "pareto_distribution (0.1, 0.5):" << std::endl;
+
+		for (int i = 0; i < 10; ++i)
+		{
+			std::cout << i << "-" << (i + 1) << ": ";
+			std::cout << std::string(pp[i] * nstars / nrolls, '*') << std::endl;
+		}
+
 		return (true);
 	}
 };

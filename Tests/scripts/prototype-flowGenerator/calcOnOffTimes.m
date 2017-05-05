@@ -22,7 +22,7 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-03
 
-function [onOff onTimes offTimes] = a__calcOnOffTimes (arrival_time, delta_time, cut_time, min_on_time)
+function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cut_time, min_on_time)
 
 	% in: number of inter packet times
 	m = length(delta_time);

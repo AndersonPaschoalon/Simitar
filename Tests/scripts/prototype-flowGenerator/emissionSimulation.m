@@ -93,16 +93,18 @@ function [list_generated] = emissionSimulation (onTimes, offTimes, lambdaOnOffIn
 			% the emulated part is ended, now the simulated... :P
 			%EMULATE-TG:end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			
-			time_session_left = current_file_time - current_session_time;
+			time_session_left = session_time - current_file_time;
 			
 			% Now, file off time
 			file_time_off = exprnd(1/lambdaOff);
+			current_session_time = current_session_time + current_file_time + file_time_off;
+			
 			%TODO, >>>>>um if else pra ver se esse off gerado e muio grande <<<<<<< 
 			list_generated = [list_generated ; file_time_off];
 			%two ways to do this, they should do the same
 			%current_session_time = current_session_time + file_time_on + file_time_off;
 			%or....current_file_time
-			current_session_time = current_session_time + current_file_time + file_time_off;
+			
 			%debug 
 			%fprintf("\tcurrent_file_time is %f, and it should be %f \n",current_file_time, file_time_on);
 			DIFF_current_file_time_file_time_on = sum(DIFF_current_file_time_file_time_on + current_file_time - file_time_on);

@@ -14,6 +14,7 @@
 //#include "TestClass.h"
 #include "Defines.h"
 #include "Protocol.h"
+#include "cfunctions.h"
 
 
 //#define DEBUG 1
@@ -37,6 +38,7 @@ int main()
 	regTest_nt.regression_tests();
 	regTest_proto.regression_tests();
 	unityTest_smf.unity_tests();
+	cfunctions_unitytests();
 
 	rt.wait_int("Finished tests, press any key...");
 #endif

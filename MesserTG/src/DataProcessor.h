@@ -562,6 +562,18 @@ private:
 	protocol aplicationProtocol(protocol transportProtocol, port_number srcPort,
 			port_number dstPort);
 
+	/**
+	 * @brief
+	 *
+	 * @param arrivalVet
+	 * @param cut_time
+	 * @param min_on_time
+	 * @param onTimes
+	 * @param offTimes
+	 */
+	template<typename T> void calcOnOff(list<T>& arrivalVet, T cut_time,
+			T min_on_time, list<T>* onTimes, list<T>* offTimes);
+
 	vec interArrivalSample =
 	{ 0, 0, 0.000203, 1e-05, 0.318392, 1.00003, 0.517214, 3.2e-05, 7.6e-05,
 			0.159572, 0.028456, 0.000267, 1.6e-05, 0.000362, 0.001436, 0.012243,

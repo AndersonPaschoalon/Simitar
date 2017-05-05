@@ -12,11 +12,13 @@
 #include <string.h>
 #include <string>
 #include <list>
+#include <armadillo>
 
 using std::list;
 using std::string;
 using std::cout;
 using std::endl;
+using namespace arma;
 
 #include "Defines.h"
 #include "RegressionTests.h"
@@ -31,6 +33,57 @@ using std::endl;
  * @param vetc 	C string output
  */
 void string2charvet(const string s, char* vetc);
+
+/**
+ * @brief
+ *
+ * @param theList
+ * @param str
+ */
+void list2str(list<double> theList, char* str);
+
+/**
+ * @brief
+ *
+ * @param theList
+ * @param str
+ */
+void list2str(list<int> theList, char* str);
+
+/**
+ * @brief
+ *
+ * @param theList
+ * @param str
+ */
+void list2str(list<long int> theList, char* str);
+
+/**
+ * @brief
+ *
+ * @param theList
+ * @param str
+ */
+void list2str(list<unsigned int> theList, char* str);
+
+/**
+ *
+ * @param theList
+ * @param str
+ */
+void list2str(list<unsigned long int> theList, char* str);
+
+
+/**
+ * @brief
+ *
+ * @param theList
+ * @param str
+ */
+template<typename T>
+void list2str(list<T> theList, string str);
+
+
 
 /**
  * @brief Convert a integer written in a C string format to int type.
@@ -127,15 +180,48 @@ bool delimiter(char c);
 bool delimiter(char c, const char& d);
 
 /**
- * test function
+ * @brief Calc a cumulative distribution of a dataset
+ * @param dataSample
+ * @param cumulativeDat
+ */
+template<typename T> void cumulativeDistribution(list<T>& dataSample,
+		list<T>* cumulativeDat);
+
+////////////////////////////////////////////////////////////////////////////////
+/// Tests
+////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * @brief execute unity tests
+ */
+void cfunctions_unitytests();
+
+/**
+ * Uniy test function
  * @return true if succed
  */
 bool test_delimiter();
 
 /**
- * test function
+ * Unity test function
  * @return true if succed
  */
 bool test_charvet2type();
+
+
+/**
+ * Unity test function
+ * @return true if succed
+ */
+bool test_cumulativeDistribution();
+
+/**
+ * Unity test function
+ * @return true if succed
+ */
+bool test_list2str();
+
+
 
 #endif /* CFUNCTIONS_H_ */

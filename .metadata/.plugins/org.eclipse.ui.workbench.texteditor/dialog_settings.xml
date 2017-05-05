@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getLinkSrcAddrCount" key="selection"/>
+		<item value="Error messages should appear now" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Error messages should appear now"/>
+			<item value="str len"/>
+			<item value="test_charvet2type"/>
+			<item value="charvet2type"/>
+			<item value="cumulativeDistribution"/>
+			<item value="load"/>
+			<item value="empiricalCdf"/>
 			<item value="getLinkSrcAddrCount"/>
-			<item value="setLinkSrcAddrCount"/>
-			<item value="cdf_pareto"/>
-			<item value="LOG_LEVEL"/>
-			<item value="ptr_interArrivalModelList"/>
-			<item value="setInterDepertureTimeModels"/>
-			<item value="operator"/>
-			<item value="toString"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -24,7 +24,7 @@
 		<item value="322" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="425" key="DIALOG_HEIGHT"/>
-		<item value="1338" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_X_ORIGIN"/>
 		<item value="631" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

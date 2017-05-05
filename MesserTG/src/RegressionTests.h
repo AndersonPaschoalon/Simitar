@@ -40,7 +40,6 @@ public:
 	bool compareDouble(double val1, double val2, double acErr);
 	void wait_int(string msg);
 	void wait_int();
-
 	void print(list<double>& theList);
 	void print(list<int>& theList);
 

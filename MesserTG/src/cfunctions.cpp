@@ -13,6 +13,111 @@ void string2charvet(const string s, char* vetc)
 	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
 }
 
+void list2str(list<double> theList, char* str)
+{
+	str[0] = '\0';
+	char buffer[CHAR_BUFFER] = "\0";
+	for (list<double>::iterator it = theList.begin(); it != theList.end();)
+	{
+		//string val = to_string(*it);
+		sprintf(buffer, "%.8f", *it);
+		strcat(str, buffer);
+		it++;
+		if (it != theList.end())
+		{
+			strcat(str, ",");
+		}
+
+	}
+}
+
+void list2str(list<int> theList, char* str)
+{
+
+	str[0] = '\0';
+	char buffer[CHAR_BUFFER] = "\0";
+	for (list<int>::iterator it = theList.begin(); it != theList.end();)
+	{
+		//string val = to_string(*it);
+		sprintf(buffer, "%d", *it);
+		strcat(str, buffer);
+		it++;
+		if (it != theList.end())
+		{
+			strcat(str, ",");
+		}
+
+	}
+
+}
+
+void list2str(list<long int> theList, char* str)
+{
+
+	str[0] = '\0';
+	char buffer[CHAR_BUFFER] = "\0";
+	for (list<long int>::iterator it = theList.begin(); it != theList.end();)
+	{
+		//string val = to_string(*it);
+		sprintf(buffer, "%ld", *it);
+		strcat(str, buffer);
+		it++;
+		if (it != theList.end())
+		{
+			strcat(str, ",");
+		}
+
+	}
+
+}
+
+void list2str(list<unsigned int> theList, char* str)
+{
+	str[0] = '\0';
+	char buffer[CHAR_BUFFER] = "\0";
+	for (list<unsigned int>::iterator it = theList.begin(); it != theList.end();
+			)
+	{
+		//string val = to_string(*it);
+		sprintf(buffer, "%d", *it);
+		strcat(str, buffer);
+		it++;
+		if (it != theList.end())
+		{
+			strcat(str, ",");
+		}
+
+	}
+
+}
+
+void list2str(list<unsigned long int> theList, char* str)
+{
+
+	str[0] = '\0';
+	char buffer[CHAR_BUFFER] = "\0";
+	for (list<unsigned long int>::iterator it = theList.begin();
+			it != theList.end();)
+	{
+		//string val = to_string(*it);
+		sprintf(buffer, "%ld", *it);
+		strcat(str, buffer);
+		it++;
+		if (it != theList.end())
+		{
+			strcat(str, ",");
+		}
+
+	}
+
+}
+
+template<typename T>
+void list2str(list<T> theList, string str)
+{
+
+}
+
 void charvet2type(const char* vetc, unsigned int& v)
 {
 	sscanf(vetc, "%d", &v);
@@ -32,7 +137,6 @@ void charvet2type(const char* vetc, unsigned long int& v)
 {
 	sscanf(vetc, "%ld", &v);
 }
-
 
 void charvet2type(const char* vetc, double& v)
 {
@@ -183,6 +287,47 @@ void printList(list<T>& theList)
 
 }
 
+template<typename T>
+void cumulativeDistribution(list<T>& dataSample, list<T>* cumulativeDat)
+{
+	unsigned int i = 0;
+	T cVal = 0;
+
+	for (typename list<T>::iterator it = dataSample.begin();
+			it != dataSample.end(); it++)
+	{
+		if (i == 0)
+		{
+			cVal = *it;
+			cumulativeDat->push_back(cVal);
+			i++;
+		}
+		else
+		{
+			cVal = cVal + *it;
+			cumulativeDat->push_back(cVal);
+		}
+	}
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+/// Tests
+////////////////////////////////////////////////////////////////////////////////
+
+void cfunctions_unitytests()
+{
+	RegressionTests rt = RegressionTests();
+	rt.printHeader("C functions");
+	rt.printTestResult("delimiter", test_delimiter());
+	rt.printTestResult("charvet2type", test_charvet2type());
+	rt.printTestResult("cumulativeDistribution", test_cumulativeDistribution());
+	rt.printTestResult("test_list2str", test_list2str());
+	rt.printTestResult("test_cumulativeDistribution",
+			test_cumulativeDistribution());
+
+}
+
 bool test_delimiter()
 {
 	if (delimiter('c') == true)
@@ -302,20 +447,61 @@ bool test_charvet2type()
 		i++;
 	}
 
-	//printList(theList);
-	charvet2type(in_cstrI, aListI);
-	printList(aListI);
-
-	charvet2type(in_cstrD, aList);
-	printList(aList);
-
-	charvet2type(in_cstrI, aListL);
-	printList(aListL);
-
-	charvet2type(in_cstrN, aListL);
-	printList(aListN);
-
 	return (true);
 
+}
+
+bool test_cumulativeDistribution()
+{
+	mat M;
+	M.load("data/regression-tests/exp_interarrival_times.txt");
+
+	list<double> dlist;
+	list<double> cdlist;
+	char buffer[CHAR_BUFFER] = "\0";
+	charvet2type("10.1,10.2,10.3,11,15.5,16.7", dlist);
+
+	cumulativeDistribution(dlist, &cdlist);
+	list2str(cdlist, buffer);
+
+	if (strcmp(buffer,
+			"10.10000000,20.30000000,30.60000000,41.60000000,57.10000000,73.80000000")
+			!= 0)
+	{
+		return (false);
+	}
+
+	//cout << "clist: " << buffer << endl;
+
+	return (true);
+}
+
+bool test_list2str()
+{
+	char dstr[CHAR_BUFFER];
+	char istr[CHAR_BUFFER];
+	list<double> doublelist;
+	list<int> intlist;
+	charvet2type("10.1,10.2,10.3,11,15.5,16.7", doublelist);
+	charvet2type("1,2,3,4,5,6,7,8,9,0", intlist);
+	//printList(doublelist);
+	list2str(doublelist, dstr);
+	list2str(intlist, istr);
+
+	//cout << "str len: " << doublelist.size() << endl;
+
+	if (strcmp(dstr,
+			"10.10000000,10.20000000,10.30000000,11.00000000,15.50000000,16.70000000")
+			!= 0)
+	{
+
+		return (false);
+	}
+	if (strcmp(istr, "1,2,3,4,5,6,7,8,9,0") != 0)
+	{
+		return (false);
+	}
+
+	return (true);
 }
 

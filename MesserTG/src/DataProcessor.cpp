@@ -417,7 +417,6 @@ protocol DataProcessor::aplicationProtocol(protocol transportProtocol,
 		port_number srcPort, port_number dstPort)
 {
 
-
 	if ((transportProtocol == PROTOCOL__TCP)
 			&& ((srcPort == 443) || (dstPort == 443)))
 	{
@@ -498,7 +497,6 @@ protocol DataProcessor::aplicationProtocol(protocol transportProtocol,
 	return (PROTOCOL__NULL);
 
 }
-
 
 void DataProcessor::setInformationCriterion(const string& criterion)
 {
@@ -2787,5 +2785,4 @@ void DataProcessor::regression_tests()
 	rt.printTestResult("Model selection", test_modelSelection());
 
 }
-
 
