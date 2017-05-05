@@ -1,5 +1,0 @@
-<map id="NetworkFlow::setNumberOfKbytes" name="NetworkFlow::setNumberOfKbytes">
-<area shape="rect" id="node2" href="$classDataProcessor.html#a2bc95d6c8063eb3fe4d547c87c3914cd" title="This method parameterize a network trace. Through the database interface class, this method retrieves..." alt="" coords="251,5,421,32"/>
-<area shape="rect" id="node4" href="$classNetworkTrace.html#a5a81fa1f5b6ef5ddc26be70b61aff1ac" title="NetworkTrace::NetworkTrace" alt="" coords="239,56,433,83"/>
-<area shape="rect" id="node3" href="$Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="481,5,532,32"/>
-</map>

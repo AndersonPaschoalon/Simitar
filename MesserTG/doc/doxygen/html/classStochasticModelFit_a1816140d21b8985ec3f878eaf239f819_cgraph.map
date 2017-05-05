@@ -1,9 +1,0 @@
-<map id="StochasticModelFit::set" name="StochasticModelFit::set">
-<area shape="rect" id="node2" href="$classStochasticModelFit.html#a42224ae927eebe5ac66883b5b40ff8e8" title="StochasticModelFit::aic" alt="" coords="232,5,391,32"/>
-<area shape="rect" id="node3" href="$classStochasticModelFit.html#a8aeaf6f4fe698d4d5c8cd232b7b076ca" title="StochasticModelFit::bic" alt="" coords="232,56,391,83"/>
-<area shape="rect" id="node4" href="$classStochasticModelFit.html#af3f966ffd843cce4d380b1d15bc2ca87" title="StochasticModelFit\l::modelName" alt="" coords="244,107,379,149"/>
-<area shape="rect" id="node5" href="$classStochasticModelFit.html#aa6d0e5e7591c56be2ee7f06b50868a97" title="StochasticModelFit\l::param1" alt="" coords="244,173,379,214"/>
-<area shape="rect" id="node6" href="$classStochasticModelFit.html#ae5c2ffb8484605aea4ebe51cfcebd2b8" title="StochasticModelFit\l::param2" alt="" coords="244,238,379,279"/>
-<area shape="rect" id="node7" href="$classRegressionTests.html#aeccad549560f5f15671ea2ad24c02e7d" title="RegressionTests::printHeader" alt="" coords="213,304,409,331"/>
-<area shape="rect" id="node8" href="$classRegressionTests.html#ae3fc67567f9ede026c89c1bf8c04cd9d" title="RegressionTests::printTest\lResult" alt="" coords="221,355,401,397"/>
-</map>

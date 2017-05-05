@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['ylabel',['ylabel',['../plotData_8m.html#a1d3d25e190e9834ab0511d147f4597b3',1,'ylabel(&quot;Frequency&quot;):&#160;plotData.m'],['../plotData_8m.html#a01f1142f3742f6be829b93007a9b293f',1,'ylabel(&apos;Packets per second&apos;):&#160;plotData.m'],['../plotData_8m.html#a48f6edfdac67b83e627f27a67d79f829',1,'ylabel(&apos;Mbps&apos;):&#160;plotData.m'],['../plotData_8m.html#aeca28cc0f169bcc5d9bc3ae69e01f914',1,'ylabel(&apos;Number of flows&apos;):&#160;plotData.m'],['../plotTraceData_8m.html#a1d3d25e190e9834ab0511d147f4597b3',1,'ylabel(&quot;Frequency&quot;):&#160;plotTraceData.m'],['../plotTraceData_8m.html#a01f1142f3742f6be829b93007a9b293f',1,'ylabel(&apos;Packets per second&apos;):&#160;plotTraceData.m'],['../plotTraceData_8m.html#a48f6edfdac67b83e627f27a67d79f829',1,'ylabel(&apos;Mbps&apos;):&#160;plotTraceData.m'],['../plotTraceData_8m.html#aeca28cc0f169bcc5d9bc3ae69e01f914',1,'ylabel(&apos;Number of flows&apos;):&#160;plotTraceData.m']]]
-];

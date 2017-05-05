@@ -1,8 +1,0 @@
-<map id="Protocol::regression_tests" name="Protocol::regression_tests">
-<area shape="rect" id="node2" href="$classRegressionTests.html#aeccad549560f5f15671ea2ad24c02e7d" title="RegressionTests::printHeader" alt="" coords="192,5,388,32"/>
-<area shape="rect" id="node3" href="$classRegressionTests.html#ae3fc67567f9ede026c89c1bf8c04cd9d" title="RegressionTests::printTest\lResult" alt="" coords="200,57,380,98"/>
-<area shape="rect" id="node4" href="$classProtocol.html#a5a5359f9566fc47d5758dd247e71668a" title="Default constructor. " alt="" coords="227,123,353,149"/>
-<area shape="rect" id="node5" href="$classProtocol.html#a1f295afbef93472b7370f1b93adcf89d" title="Protocol::get" alt="" coords="242,173,338,200"/>
-<area shape="rect" id="node6" href="$classProtocol.html#a4a90f10965b6cb4e0d51a0e9c9ed647d" title="Protocol::print" alt="" coords="239,224,341,251"/>
-<area shape="rect" id="node7" href="$classProtocol.html#a200c3ed856644241c5d8c1d84718e999" title="Protocol::str" alt="" coords="436,224,529,251"/>
-</map>

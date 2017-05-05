@@ -1,5 +1,0 @@
-<map id="DatabaseInterface::getFlowData" name="DatabaseInterface::getFlowData">
-<area shape="rect" id="node2" href="$classDatabaseInterface.html#ad102e3792d9128fe9adf32ea0b57466f" title="DatabaseInterface::\lgetFlowData" alt="" coords="207,5,344,47"/>
-<area shape="rect" id="node3" href="$classDataProcessor.html#a2bc95d6c8063eb3fe4d547c87c3914cd" title="This method parameterize a network trace. Through the database interface class, this method retrieves..." alt="" coords="191,71,360,98"/>
-<area shape="rect" id="node4" href="$Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="408,71,459,98"/>
-</map>

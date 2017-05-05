@@ -1,5 +1,0 @@
-<map id="DummyFlow::getTransportDstPort" name="DummyFlow::getTransportDstPort">
-<area shape="rect" id="node2" href="$classDitgFlow.html#a5f369f952bc800a2cd57a533098214a9" title="DitgFlow::flowGenerate" alt="" coords="287,5,446,32"/>
-<area shape="rect" id="node3" href="$classDummyFlow.html#a9ca3541fe12fdec7fe05170eb7b57a1d" title="DummyFlow::flowGenerate" alt="" coords="276,56,457,83"/>
-<area shape="rect" id="node4" href="$classDummyFlow.html#a016f4370c6df67bc5ff1250ddba7793c" title="DummyFlow::flowThread" alt="" coords="505,81,673,108"/>
-</map>
