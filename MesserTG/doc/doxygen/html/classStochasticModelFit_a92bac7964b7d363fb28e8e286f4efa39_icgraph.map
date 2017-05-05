@@ -1,0 +1,12 @@
+<map id="StochasticModelFit::set" name="StochasticModelFit::set">
+<area shape="rect" id="node2" href="$classDataProcessor.html#a2cb70bdc3ea61fe2386c3408c670524b" title="Returns the information criterion. Returns the information criterion string setted in the DataProcess..." alt="" coords="216,5,416,47"/>
+<area shape="rect" id="node5" href="$classDummyFlow.html#a43abc504cecc27377ca3fbf05c1f6b7b" title="DummyFlow::getInterDeperture\lTimeModel_next" alt="" coords="213,139,419,180"/>
+<area shape="rect" id="node9" href="$classDummyFlow.html#ae89a1b2b6a24c92b83ec4b89f44c79d3" title="DummyFlow::getInterFileTime\lModel_next" alt="" coords="467,59,665,100"/>
+<area shape="rect" id="node10" href="$classDummyFlow.html#a725795e9d11a5bd9773a65fbbb1bbb9f" title="DummyFlow::getPacketSize\lModelMode1_next" alt="" coords="221,204,411,245"/>
+<area shape="rect" id="node11" href="$classDummyFlow.html#a3c17ce71335325c6b7df3fc0841f32d1" title="DummyFlow::getPacketSize\lModelMode2_next" alt="" coords="221,269,411,311"/>
+<area shape="rect" id="node3" href="$classDataProcessor.html#a2bc95d6c8063eb3fe4d547c87c3914cd" title="This method parameterize a network trace. Through the database interface class, this method retrieves..." alt="" coords="481,7,651,34"/>
+<area shape="rect" id="node4" href="$Main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="772,7,823,34"/>
+<area shape="rect" id="node6" href="$classDitgFlow.html#a5f369f952bc800a2cd57a533098214a9" title="DitgFlow::flowGenerate" alt="" coords="487,277,645,303"/>
+<area shape="rect" id="node7" href="$classDummyFlow.html#a9ca3541fe12fdec7fe05170eb7b57a1d" title="DummyFlow::flowGenerate" alt="" coords="475,226,657,253"/>
+<area shape="rect" id="node8" href="$classDummyFlow.html#a016f4370c6df67bc5ff1250ddba7793c" title="DummyFlow::flowThread" alt="" coords="713,175,881,202"/>
+</map>

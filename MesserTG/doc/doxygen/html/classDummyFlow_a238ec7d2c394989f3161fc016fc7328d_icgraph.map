@@ -1,0 +1,4 @@
+<map id="DummyFlow::randTranportPort" name="DummyFlow::randTranportPort">
+<area shape="rect" id="node2" href="$classDitgFlow.html#a5f369f952bc800a2cd57a533098214a9" title="DitgFlow::flowGenerate" alt="" coords="259,5,418,32"/>
+<area shape="rect" id="node3" href="$classDummyFlow.html#a016f4370c6df67bc5ff1250ddba7793c" title="DummyFlow::flowThread" alt="" coords="255,56,423,83"/>
+</map>
