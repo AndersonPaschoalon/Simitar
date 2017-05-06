@@ -74,6 +74,14 @@ function install_iperf()
 	sudo apt-get install iperf
 }
 
+function install_octave()
+{	
+	sudo apt-get update
+	sudo apt-add-repository ppa:octave/stable
+	sudo apt-get update
+	sudo apt-get install octave
+}
+
 function main()
 {
 	install_armadillo
@@ -83,6 +91,7 @@ function main()
 	install_ditg
 	install_ostinato
 	install_iperf
+	install_octave
 }
 
 
