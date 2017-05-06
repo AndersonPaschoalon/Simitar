@@ -1,6 +1,6 @@
 #/bin/bash
 
-function print_header()
+function print_header
 {
 	softwareName=$1
 	echo ""
@@ -9,7 +9,7 @@ function print_header()
 	echo "################################################################################"
 }
 
-function install_armadillo()
+function install_armadillo
 {
 	print_header "Armadillo"	
 	sudo apt-get install cmake liblapack-dev libblas-dev libboost-dev
@@ -28,26 +28,26 @@ function install_armadillo()
 
 }
 
-function install_wireshark()
+function install_wireshark
 {
 	print_header "Wireshark"
 	sudo apt-get install wireshark tshark
 	sudo pip install pyshark
 }
 
-function install_sqlitev3()
+function install_sqlitev3
 {
 	sudo apt-get install sqlite3 libsqlite3-dev 
 }
 
-function install_log4cpp()
+function install_log4cpp
 {
 	print_header "Log4cpp"
 	sudo apt-get install liblog4cpp-doc liblog4cpp5-dev liblog4cpp5v5
 
 }
 
-function install_ditg()
+function install_ditg
 {
 	print_header "D-ITG"
 	sudo apt-get install unzip
@@ -62,19 +62,19 @@ function install_ditg()
 	sudo ldconfig
 }
 
-function install_ostinato()
+function install_ostinato
 {
 	print_header "Ostinato"
 	sudo apt-get install ostinato
 	sudo -H pip install python-ostinato
 }
 
-function install_iperf()
+function install_iperf
 {
 	sudo apt-get install iperf
 }
 
-function install_octave()
+function install_octave
 {	
 	sudo apt-get update
 	sudo apt-add-repository ppa:octave/stable
