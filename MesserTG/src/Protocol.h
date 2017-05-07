@@ -19,33 +19,33 @@
 
 enum protocol_enum
 {
-	PROTOCOL__NULL,    //!< PROTOCOL__NULL
+	PROTOCOL__NULL,    //!< No valid protocol setted
 	// Link layer protocols
-	PROTOCOL__ETHERNET,    //!< PROTOCOL__ETHERNET
+	PROTOCOL__ETHERNET,    //!< Ethernet protocol
 	//Network layer protocols
-	PROTOCOL__IPV4,    //!< PROTOCOL__IPV4
-	PROTOCOL__IPV6,    //!< PROTOCOL__IPV6
-	PROTOCOL__ARP,     //!< PROTOCOL__ARP
-	PROTOCOL__ICMP,    //!< PROTOCOL__ICMP
-	PROTOCOL__ICMPV6,  //!< PROTOCOL__ICMPV6
+	PROTOCOL__IPV4,    //!< IPv4 network protocol
+	PROTOCOL__IPV6,    //!< IPv6 network protocol
+	PROTOCOL__ARP,     //!< ARP protocol
+	PROTOCOL__ICMP,    //!< ICMP network protocol
+	PROTOCOL__ICMPV6,  //!< ICMPv6 network protocol
 	// Transport layer protocols
-	PROTOCOL__TCP,     //!< PROTOCOL__TCP
-	PROTOCOL__UDP,     //!< PROTOCOL__UDP
-	PROTOCOL__DCCP,    //!< PROTOCOL__DCCP
-	PROTOCOL__GRE,     //!< PROTOCOL__GRE
-	PROTOCOL__SCTP,    //!< PROTOCOL__SCTP
+	PROTOCOL__TCP,     //!< TCP transport protocol
+	PROTOCOL__UDP,     //!< UDP transport protocol
+	PROTOCOL__DCCP,    //!< DCCP protocol
+	PROTOCOL__GRE,     //!< GRE protocol
+	PROTOCOL__SCTP,    //!< SCTP protocol
 	// Application layer protocols
-	PROTOCOL__HTTP,    //!< ok
-	PROTOCOL__HTTPS,   //!< ok
-	PROTOCOL__SNMP,    //!< PROTOCOL__SMTP
-	PROTOCOL__SMTP,    //!< PROTOCOL__SMTP
-	PROTOCOL__FTP,     //!< ok
-	PROTOCOL__BGP,     //!< ok
-	PROTOCOL__DHCP,    //!< ok
-	PROTOCOL__DNS,     //!< ok
-	PROTOCOL__SSH,     //!< ok
-	PROTOCOL__Telnet,  //!< ok
-	PROTOCOL__TACACS  //!< ok
+	PROTOCOL__HTTP,    //!< HTTP application protocol
+	PROTOCOL__HTTPS,   //!< HTTPS application protocol
+	PROTOCOL__SNMP,    //!< SNMP application protocol
+	PROTOCOL__SMTP,    //!< SMTP application protocol
+	PROTOCOL__FTP,     //!< FTP application protocol
+	PROTOCOL__BGP,     //!< BGP protocol
+	PROTOCOL__DHCP,    //!< DHCP application protocol
+	PROTOCOL__DNS,     //!< DNS application protocol
+	PROTOCOL__SSH,     //!< SSH application protocol
+	PROTOCOL__Telnet,  //!< Telnet application protocol
+	PROTOCOL__TACACS  //!< TACACS application protocol
 
 };
 
@@ -121,7 +121,7 @@ public:
 	}
 	Protocol& operator=(const Protocol& rhs) noexcept
 	{
-		//MESSER_LOG_INIT(LOG_LEVEL);
+		MESSER_LOG_INIT(LOG_LEVEL);
 
 		if (this != &rhs)
 		{
@@ -129,9 +129,9 @@ public:
 		}
 		else
 		{
-			//MESSER_ALERT(
-			//		"<%s> Attempted assignment of a StochasticModelFit object to itself :: m_prot=%d",
-			//		m_prot);
+			MESSER_ALERT(
+					"Attempted assignment of a StochasticModelFit object to itself :: m_prot=%d  @<%s, %s>",
+					m_prot);
 			std::cerr
 					<< "Attempted assignment of a StochasticModelFit object to itself"
 					<< std::endl;

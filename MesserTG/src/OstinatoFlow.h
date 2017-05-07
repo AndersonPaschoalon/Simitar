@@ -13,7 +13,7 @@
 #include "NetworkFlow.h"
 #include "DummyFlow.h"
 
-/*
+
 class OstinatoFlow: public DummyFlow
 {
 public:
@@ -32,7 +32,7 @@ public:
 
 	}
 };
-*/
+
 
 
 #endif /* OSTINATOFLOW_H_ */

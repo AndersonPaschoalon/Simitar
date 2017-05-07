@@ -287,14 +287,53 @@ void printList(list<T>& theList)
 
 }
 
-template<typename T>
-void cumulativeDistribution(list<T>& dataSample, list<T>* cumulativeDat)
+void printList(list<double>& theList)
+{
+
+	cout << "[";
+	for (list<double>::iterator it = theList.begin(); it != theList.end();
+			it++)
+	{
+		cout << *it << ", ";
+	}
+	cout << "]" << endl;
+
+}
+
+/*
+ template<typename T>
+ void cumulativeDistribution(list<T>& dataSample, list<T>* cumulativeDat)
+ {
+ unsigned int i = 0;
+ T cVal = 0;
+
+ for (typename list<T>::iterator it = dataSample.begin();
+ it != dataSample.end(); it++)
+ {
+ if (i == 0)
+ {
+ cVal = *it;
+ cumulativeDat->push_back(cVal);
+ i++;
+ }
+ else
+ {
+ cVal = cVal + *it;
+ cumulativeDat->push_back(cVal);
+ }
+ }
+
+ }
+ */
+
+void cumulativeDistribution(list<double>& dataSample,
+		list<double>* cumulativeDat)
 {
 	unsigned int i = 0;
-	T cVal = 0;
+	double cVal = 0;
 
-	for (typename list<T>::iterator it = dataSample.begin();
-			it != dataSample.end(); it++)
+	for (list<double>::iterator it = dataSample.begin(); it != dataSample.end();
+			it++)
 	{
 		if (i == 0)
 		{
@@ -308,7 +347,6 @@ void cumulativeDistribution(list<T>& dataSample, list<T>* cumulativeDat)
 			cumulativeDat->push_back(cVal);
 		}
 	}
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -457,7 +495,7 @@ bool test_cumulativeDistribution()
 	//M.load("data/regression-tests/exp_interarrival_times.txt");
 
 	list<double> dlist;
-	list<double> cdlist;
+	list<time_sec> cdlist;
 	char buffer[CHAR_BUFFER] = "\0";
 	charvet2type("10.1,10.2,10.3,11,15.5,16.7", dlist);
 

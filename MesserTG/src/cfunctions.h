@@ -73,7 +73,6 @@ void list2str(list<unsigned int> theList, char* str);
  */
 void list2str(list<unsigned long int> theList, char* str);
 
-
 /**
  * @brief
  *
@@ -82,8 +81,6 @@ void list2str(list<unsigned long int> theList, char* str);
  */
 template<typename T>
 void list2str(list<T> theList, string str);
-
-
 
 /**
  * @brief Convert a integer written in a C string format to int type.
@@ -162,6 +159,13 @@ void charvet2type(const char* vetc, list<long int>& theList);
 template<typename T>
 void printList(list<T>& theList);
 
+
+/**
+ *
+ * @param theList
+ */
+void printList(list<double>& theList);
+
 /**
  * @brief check if the character c is a delimiter. Delimiters default are ',',
  * ';' and ' '(white space).
@@ -184,13 +188,20 @@ bool delimiter(char c, const char& d);
  * @param dataSample
  * @param cumulativeDat
  */
-template<typename T> void cumulativeDistribution(list<T>& dataSample,
-		list<T>* cumulativeDat);
+//template<typename T> void cumulativeDistribution(list<T>& dataSample,
+//		list<T>* cumulativeDat);
+
+/**
+ *
+ * @param dataSample
+ * @param cumulativeDat
+ */
+void cumulativeDistribution(list<double>& dataSample,
+		list<double>* cumulativeDat);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Tests
 ////////////////////////////////////////////////////////////////////////////////
-
 
 /**
  * @brief execute unity tests
@@ -209,7 +220,6 @@ bool test_delimiter();
  */
 bool test_charvet2type();
 
-
 /**
  * Unity test function
  * @return true if succed
@@ -221,7 +231,5 @@ bool test_cumulativeDistribution();
  * @return true if succed
  */
 bool test_list2str();
-
-
 
 #endif /* CFUNCTIONS_H_ */

@@ -1,11 +1,10 @@
-#/bin/bash
+#!/bin/bash
 
-function print_header
+function print_header 
 {
-	softwareName=$1
 	echo ""
 	echo "################################################################################"
-	echo $softwareName
+	echo $1
 	echo "################################################################################"
 }
 
@@ -35,8 +34,9 @@ function install_wireshark
 	sudo pip install pyshark
 }
 
-function install_sqlitev3
+function install_sqlite
 {
+	print_header "Sqlite3"
 	sudo apt-get install sqlite3 libsqlite3-dev 
 }
 
@@ -71,11 +71,13 @@ function install_ostinato
 
 function install_iperf
 {
+	print_header "Iperf"
 	sudo apt-get install iperf
 }
 
 function install_octave
-{	
+{
+	print_header "Octave"	
 	sudo apt-get update
 	sudo apt-add-repository ppa:octave/stable
 	sudo apt-get update
@@ -84,15 +86,15 @@ function install_octave
 
 function main()
 {
-	install_armadillo
+	#install_armadillo
 	install_wireshark
-	install_sqlitev3
+	install_sqlite
 	install_log4cpp
-	install_ditg
+	#install_ditg
 	install_ostinato
 	install_iperf
 	install_octave
+
 }
 
-
-
+main;

@@ -25,6 +25,7 @@
 //local includes
 //#include "MesserLog.h"
 #include "Protocol.h"
+#include "cfunctions.h"
 
 //local defines
 #define INT_BUFFER_SIZE 20

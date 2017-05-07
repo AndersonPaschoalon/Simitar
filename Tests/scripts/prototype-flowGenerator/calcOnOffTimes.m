@@ -42,7 +42,7 @@ function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cu
 
 	% Calc list of OnOff times
 	for i = 1:m
-		if(delta_time(i) > cut_time)
+		if((delta_time(i) > cut_time)||(i == m))
 			if(i == 1) % if the first is session-off
 				j++;
 				onOff(j) = min_on_time;

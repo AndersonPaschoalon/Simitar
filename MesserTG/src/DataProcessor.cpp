@@ -522,315 +522,6 @@ const string& DataProcessor::getInformationCriterion()
 	return (informationCriterionParam);
 }
 
-//void printStochastic(StochasticModelFit s)
-//{
-//	cout << s.modelName << ", (" << s.param1 << ", " << s.param2 << ")"
-//			<< ", aic:" << s.aic << endl;
-//}
-
-/*
- //TODO Analisas casos de borda, quando as pilhas de inter-arrival tem  1 ou zero valores
- StochasticModelFit* DataProcessor::fitModelsInterArrival(
- list<double>& empiricalData, const string& criterion)
- {
-
- //debug temp
- for (list<double>::iterator it = empiricalData.begin();
- it != empiricalData.end(); it++)
- {
- std::cout << *it << ", ";
- }
-
-
- //constants
- const int numberOfModels = 8;
- const int m = empiricalData.size(); //empirical data-size
- //vars
- int counter = 0;
- StochasticModelFit* modelVet = NULL;
- vec paramVec = zeros<vec>(2);
- vec infoCriterion = zeros<vec>(2);
-
- if (m == 0)
- {
-
- modelVet = new StochasticModelFit[1];
-
- modelVet[0].aic = datum::inf;
- modelVet[0].bic = datum::inf;
- modelVet[0].modelName = NO_MODEL;
- modelVet[0].param1 = 0;
- modelVet[0].param2 = 0;
- modelVet[0].size = 1;
- }
- else if (m == 1)
- {
- modelVet = new StochasticModelFit[1];
-
- modelVet[0].aic = datum::inf;
- modelVet[0].bic = datum::inf;
- modelVet[0].modelName = CONSTANT;
- modelVet[0].param1 = *empiricalData.begin();
- modelVet[0].param2 = 0;
- modelVet[0].size = 1;
-
- }
- else if (m < minimumAmountOfPackets)
- {
- modelVet = new StochasticModelFit[1];
-
- //Inter-arrival vec
- vec interArrival = zeros<vec>(m);
- counter = 0;
- for (list<double>::iterator it = empiricalData.begin();
- it != empiricalData.end(); it++)
- {
- interArrival(counter) = *it + min_time;
- counter++;
- }
-
- //Empirical CDF of interArrival
- //vec* interArrivalCdf = empiricalCdf(empiricalData);
-
- //Constant
- constantFitting(interArrival, paramVec, infoCriterion);
- modelVet[0].aic = infoCriterion(0);
- modelVet[0].bic = infoCriterion(1);
- modelVet[0].modelName = CONSTANT;
- modelVet[0].param1 = paramVec(0);
- modelVet[0].param2 = paramVec(1);
- modelVet[0].size = numberOfModels;
- }
- else
- {
- modelVet = new StochasticModelFit[numberOfModels];
-
- //Inter-arrival vec
- vec interArrival = zeros<vec>(m);
- counter = 0;
- for (list<double>::iterator it = empiricalData.begin();
- it != empiricalData.end(); it++)
- {
- interArrival(counter) = *it + min_time;
- counter++;
- }
-
- //Empirical CDF of interArrival
- vec* interArrivalCdf = empiricalCdf(empiricalData);
-
- //Weibull
- weibullFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
- modelVet[0].aic = infoCriterion(0);
- modelVet[0].bic = infoCriterion(1);
- modelVet[0].modelName = WEIBULL;
- modelVet[0].param1 = paramVec(0);
- modelVet[0].param2 = paramVec(1);
- modelVet[0].size = numberOfModels;
-
-
-
- //normal
- normalFitting(interArrival, paramVec, infoCriterion);
- modelVet[1].aic = infoCriterion(0);
- modelVet[1].bic = infoCriterion(1);
- modelVet[1].modelName = NORMAL;
- modelVet[1].param1 = paramVec(0);
- modelVet[1].param2 = paramVec(1);
- modelVet[1].size = numberOfModels;
-
-
-
- //exponential mean
- exponentialMeFitting(interArrival, paramVec, infoCriterion);
- modelVet[2].aic = infoCriterion(0);
- modelVet[2].bic = infoCriterion(1);
- modelVet[2].modelName = EXPONENTIAL_MEAN;
- modelVet[2].param1 = paramVec(0);
- modelVet[2].param2 = paramVec(1);
- modelVet[2].size = numberOfModels;
-
-
-
- //exponential Linear Regression (LR)
- exponentialLrFitting(interArrival, *interArrivalCdf, paramVec,
- infoCriterion);
- modelVet[3].aic = infoCriterion(0);
- modelVet[3].bic = infoCriterion(1);
- modelVet[3].modelName = EXPONENTIAL_LINEAR_REGRESSION;
- modelVet[3].param1 = paramVec(0);
- modelVet[3].param2 = paramVec(1);
- modelVet[3].size = numberOfModels;
-
-
-
- //pareto linear regression
- paretoLrFitting(interArrival, *interArrivalCdf, paramVec,
- infoCriterion);
- modelVet[4].aic = infoCriterion(0);
- modelVet[4].bic = infoCriterion(1);
- modelVet[4].modelName = PARETO_LINEAR_REGRESSION;
- modelVet[4].param1 = paramVec(0);
- modelVet[4].param2 = paramVec(1);
- modelVet[4].size = numberOfModels;
-
-
-
- //pareto maximum likehood
- paretoMlhFitting(interArrival, *interArrivalCdf, paramVec,
- infoCriterion);
- modelVet[5].aic = infoCriterion(0);
- modelVet[5].bic = infoCriterion(1);
- modelVet[5].modelName = PARETO_MAXIMUM_LIKEHOOD;
- modelVet[5].param1 = paramVec(0);
- modelVet[5].param2 = paramVec(1);
- modelVet[5].size = numberOfModels;
-
-
-
- //Cauchy
- cauchyFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
- modelVet[6].aic = infoCriterion(0);
- modelVet[6].bic = infoCriterion(1);
- modelVet[6].modelName = CAUCHY;
- modelVet[6].param1 = paramVec(0);
- modelVet[6].param2 = paramVec(1);
- modelVet[6].size = numberOfModels;
-
-
-
- //Constant
- constantFitting(interArrival, paramVec, infoCriterion);
- modelVet[7].aic = infoCriterion(0);
- modelVet[7].bic = infoCriterion(1);
- modelVet[7].modelName = CONSTANT;
- modelVet[7].param1 = paramVec(0);
- modelVet[7].param2 = paramVec(1);
- modelVet[7].size = numberOfModels;
-
-
-
- if (criterion == "bic")
- {
- qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
- compareBic);
- }
- else if (criterion == "aic")
- {
- qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
- compareAic);
- }
- else
- {
- cerr
- << "Error @ DataProcessor::fitModelsInterArrival -> Invalid criterion argument: "
- << criterion << endl;
- cerr << "AIC set as default" << endl;
- qsort(modelVet, numberOfModels, sizeof(StochasticModelFit),
- compareAic);
-
- }
-
-
-
-
-
- delete interArrivalCdf;
- }
-
- for(unsigned int i = 0; i < modelVet[0].size; i++)
- {
- cout << endl<< "modelVet[" << i << "]";
- printStochastic(modelVet[i]);
- }
- int waitt;
- cin >> waitt;
-
- return (modelVet);
- }
-
- //TODO
- StochasticModelFit* DataProcessor::fitModelsPsSize(list<double>& empiricalData)
- {
- //constants
- const int numberOfModels = 3;
- const int m = empiricalData.size(); //empirical data-size
- //vars
- int counter = 0;
- StochasticModelFit* modelVet = NULL;
- vec paramVec = zeros<vec>(2);
- vec infoCriterion = zeros<vec>(2);
-
- if (m == 0)
- {
-
- modelVet = new StochasticModelFit[1];
-
- modelVet[0].aic = datum::inf;
- modelVet[0].bic = datum::inf;
- modelVet[0].modelName = NO_MODEL;
- modelVet[0].param1 = 0;
- modelVet[0].param2 = 0;
- modelVet[0].size = 1;
- }
- else if (m == 1)
- {
- modelVet = new StochasticModelFit[1];
-
- modelVet[0].aic = datum::inf;
- modelVet[0].bic = datum::inf;
- modelVet[0].modelName = CONSTANT;
- modelVet[0].param1 = *empiricalData.begin();
- modelVet[0].param2 = 0;
- modelVet[0].size = 1;
-
- }
- else
- {
- modelVet = new StochasticModelFit[numberOfModels];
-
- //Inter-arrival vec
- vec interArrival = zeros<vec>(m);
- counter = 0;
- for (list<double>::iterator it = empiricalData.begin();
- it != empiricalData.end(); it++)
- {
- interArrival(counter) = *it;
- counter++;
- }
-
- //Constant
- constantFitting(interArrival, paramVec, infoCriterion);
- modelVet[0].aic = infoCriterion(0);
- modelVet[0].bic = infoCriterion(1);
- modelVet[0].modelName = CONSTANT;
- modelVet[0].param1 = paramVec(0);
- modelVet[0].param2 = paramVec(1);
- modelVet[0].size = numberOfModels;
-
- //normal
- normalFitting(interArrival, paramVec, infoCriterion);
- modelVet[1].aic = infoCriterion(0);
- modelVet[1].bic = infoCriterion(1);
- modelVet[1].modelName = NORMAL;
- modelVet[1].param1 = paramVec(0);
- modelVet[1].param2 = paramVec(1);
- modelVet[1].size = numberOfModels;
-
- //exponential mean
- exponentialMeFitting(interArrival, paramVec, infoCriterion);
- modelVet[2].aic = infoCriterion(0);
- modelVet[2].bic = infoCriterion(1);
- modelVet[2].modelName = EXPONENTIAL_MEAN;
- modelVet[2].param1 = paramVec(0);
- modelVet[2].param2 = paramVec(1);
- modelVet[2].size = numberOfModels;
-
- }
-
- return (modelVet);
- }
- */
-
 list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		list<double>& empiricalData, const string& criterion)
 {
@@ -1560,7 +1251,7 @@ T DataProcessor::mode(list<T>* theList)
 }
 
 template<typename T>
-inline T* DataProcessor::list_to_cvector(list<T>* theList)
+inline T* DataProcessor::list_to_cvector(list<T>* theList) const
 {
 	int listSize = theList->size();
 	T* vet;
@@ -1583,7 +1274,7 @@ inline T* DataProcessor::list_to_cvector(list<T>* theList)
 	return (vet);
 }
 template<typename T>
-inline void DataProcessor::delete_cvector(T* c_vet)
+inline void DataProcessor::delete_cvector(T* c_vet) const
 {
 	delete[] c_vet;
 }
@@ -2783,10 +2474,237 @@ void DataProcessor::regression_tests()
 	rt.printTestResult("CDF Cauchy", test_cdf_cauchy());
 	rt.printTestResult("All fitting", test_fitModelsInterArrival());
 	rt.printTestResult("Model selection", test_modelSelection());
+	rt.printTestResult("calcOnOff times", test_calcOnOff());
 
 }
 
-void DataProcessor::calcOnOff(list<time_sec>& arrivalVet, time_sec cut_time,
-		time_sec min_on_time, list<time_sec>* onTimes, list<time_sec>* offTimes)
+void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+		const time_sec min_on_time, list<time_sec>* onTimes,
+		list<time_sec>* offTimes)
 {
+	// log
+	MESSER_LOG_INIT(ERROR);
+	MESSER_DEBUG("<%s, %s>");
+
+	// data structures
+	unsigned int m = deltaVet.size();
+	list<time_sec> arrivalVet;
+	cumulativeDistribution(deltaVet, &arrivalVet);
+	time_sec* arrival_time = list_to_cvector(&arrivalVet);
+	time_sec* delta_time = list_to_cvector(&deltaVet);
+	list<time_sec> onOff;
+
+	// vars inity
+	time_sec timebuffer = 0;
+	unsigned int last_off = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
+
+	for (i = 0; i < m; i++)
+	{
+		if ((delta_time[i] > cut_time) || (i == (m - 1)))
+		{
+
+			if (i == 0) // the first times is off
+			{
+				j++;
+				onOff.push_back(min_on_time);
+				j++;
+				onOff.push_back(delta_time[i]);
+				last_off = i;
+				MESSER_DEBUG("the first times is off @ <%s, %s>");
+			}
+			else if (i == (m - 1))
+			{
+				if (last_off == m) //last is session-off
+				{
+					j++;
+					onOff.push_back(min_on_time);
+				}
+				else // base last case
+				{
+					j++;
+					onOff.push_back(arrival_time[i] - arrival_time[last_off]);
+				}
+			}
+			else
+			{
+				if (j == 0) // base first case
+				{
+					j++;
+					onOff.push_back(arrival_time[i - 1]);
+					j++;
+					onOff.push_back(delta_time[i]);
+					last_off = i;
+				}
+				else // base case
+				{
+					j++;
+					timebuffer = arrival_time[i - 1] - arrival_time[last_off];
+					if (timebuffer < min_on_time)
+					{
+						onOff.push_back(min_on_time);
+					}
+					else
+					{
+						onOff.push_back(timebuffer);
+					}
+					j++;
+					onOff.push_back(delta_time[i]);
+					last_off = i;
+				}
+
+			}
+
+		}
+	}
+
+	MESSER_DEBUG("onOff.size() = %d @<%s, %s>", onOff.size());
+	m = onOff.size();
+	if (m == 0)
+	{
+		cerr << "Somenthing went wrong, onOff.size() is zero.";
+		MESSER_FATAL("Somenthing went wrong, onOff.size() is zero. @ <%s, %s>");
+	}
+
+	i = 0;
+	for (list<time_sec>::iterator it = onOff.begin(); it != onOff.end(); it++)
+	{
+		i++;
+		if ((i % 2) == 1)
+		{
+			onTimes->push_back(*it);
+		}
+		else
+		{
+			offTimes->push_back(*it);
+		}
+	}
+
+	MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
+	MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
+	delete_cvector(arrival_time);
+	delete_cvector(delta_time);
+}
+
+bool DataProcessor::test_calcOnOff()
+{
+	MESSER_LOG_INIT(DEBUG);
+	time_sec min_on_time = 0.1;
+	double accErr = 0.01;
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Trivial test
+	////////////////////////////////////////////////////////////////////////////
+
+	time_sec session_cut_time1 = 2.9;
+	vec delta_sample_1 =
+	{ 0.1, 3, 2, 0.2, 5, 1.1, 0.5, 4, 0.9 };
+	vec test1_expected_on =
+	{ 0.10000, 2.20000, 1.60000, 0.90000 };
+	vec test1_expected_off =
+	{ 3.00000, 5.00000, 4.00000 };
+
+	unsigned int size_deltaSample1 = delta_sample_1.size();
+	list<double> onTimes;
+	list<time_sec> offTimes;
+	list<time_sec> list_deltaSample1;
+	unsigned int i = 0;
+	for (i = 0; i < size_deltaSample1; i++)
+	{
+		list_deltaSample1.push_back(delta_sample_1(i));
+	}
+	calcOnOff(list_deltaSample1, session_cut_time1, min_on_time, &onTimes,
+			&offTimes);
+
+	list<time_sec>::iterator it = offTimes.begin();
+	for (i = 0; i < test1_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(*it, test1_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"%dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, *it, test1_expected_off(i));
+
+			return (false);
+		}
+		it++;
+	}
+
+	it = onTimes.begin();
+	for (i = 0; i < test1_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(*it, test1_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"%dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, *it, test1_expected_on(i));
+			return (false);
+		}
+		it++;
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	/// 10000 ramdom generated entries, exponentially distributed
+	///////////////////////////////////////////////////////////////////////////
+
+	onTimes.clear();
+	offTimes.clear();
+	time_sec session_cut_time2 = 7;
+	vec delta_sample_2;
+	delta_sample_2.load("data/regression-tests/exp_interarrival_times.txt");
+	vec test2_expected_on =
+	{ 801.89, 896.71, 764.22, 398.49, 2823.59, 213.07, 1034.47, 2972.63 };
+	vec test2_expected_off =
+	{ 7.3502, 7.3181, 7.2477, 10.3901, 7.3315, 8.9811, 7.5889 };
+	unsigned int size_deltaSample2 = delta_sample_2.size();
+	list<time_sec> list_deltaSample2;
+	i = 0;
+	for (i = 0; i < size_deltaSample2; i++)
+	{
+		list_deltaSample2.push_back(delta_sample_2(i));
+	}
+
+	calcOnOff(list_deltaSample2, session_cut_time2, min_on_time, &onTimes,
+			&offTimes);
+
+	//list<time_sec>::iterator it = offTimes.begin();
+	it = offTimes.begin();
+	for (i = 0; i < test2_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(*it, test2_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"%dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, *it, test2_expected_off(i));
+			return (false);
+		}
+		it++;
+	}
+
+	it = onTimes.begin();
+	for (i = 0; i < test2_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(*it, test2_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"%dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, *it, test2_expected_on(i));
+			return (false);
+		}
+		it++;
+	}
+
+	RegressionTests rt;
+	rt.wait_int();
+	//printList(onTimes);
+	//printList(offTimes);
+
+	//delta_sample_2.print();
+
+	return (true);
 }

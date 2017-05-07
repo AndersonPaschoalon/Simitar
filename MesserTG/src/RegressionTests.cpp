@@ -23,10 +23,12 @@ void RegressionTests::printTestResult(string testName, bool result)
 	string outRes;
 	if (result == true)
 		outRes = "ok";
-	else
+	else{
 		outRes = "failed";
-
+		wait_int("test failed. Press any key to continue...\n");
+	}
 	cout << testName << ":\t\t" << outRes << endl;
+
 }
 
 bool RegressionTests::compareDouble(double val1, double val2)

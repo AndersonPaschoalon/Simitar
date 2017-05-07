@@ -276,7 +276,7 @@ public:
 					"Error: No valid stochastic model. m_modelName=`%d`. Returning default value: `%s`\n",
 					m_modelName, LABEL_NO_MODEL);
 			//MESSER_CRIT(
-			//		"<%s> Error: No valid stochastic model. m_modelName=`%d`. Returning default value: `%s`",
+			//		"Error: No valid stochastic model. m_modelName=`%d`. Returning default value: `%s`  @<%s, %s>",
 			//		m_modelName, LABEL_NO_MODEL);
 		}
 
@@ -483,7 +483,7 @@ public:
 		stochastic_functions sf;
 		int setRet = 0;
 
-		//MESSER_DEBUG("<%s> \n\t charM1=%s, LABEL_CAUCHY=%s cmp=%d",
+		//MESSER_DEBUG("\n\t charM1=%s, LABEL_CAUCHY=%s cmp=%d  @<%s, %s>",
 		//		modelStr.c_str(), LABEL_CAUCHY,
 		//		(modelStr == string(LABEL_CAUCHY)));
 
@@ -541,7 +541,7 @@ public:
 					"Error: No valid stochastic model name `%s`. Setting default value: `%s`\n",
 					modelStr.c_str(), LABEL_NO_MODEL);
 			//MESSER_CRIT(
-			//		"<%s> Error: No valid stochastic model name `%s`. Setting default value: `%s`",
+			//		"Error: No valid stochastic model name `%s`. Setting default value: `%s`  @<%s, %s>",
 			//		modelStr.c_str(), LABEL_NO_MODEL);
 			setRet = -1;
 			sf = NO_MODEL;
@@ -720,7 +720,7 @@ public:
 					"Error: No valid stochastic model (It is `%s)`. Returning default value: `%f`\n",
 					this->strModelName().c_str(), .0);
 			//MESSER_CRIT(
-			//		"<%s> Error: No valid stochastic model (It is `%s)`. Returning default value: `%f`",
+			//		"Error: No valid stochastic model (It is `%s)`. Returning default value: `%f`  @<%s, %s>",
 			//		this->strModelName().c_str(), .0);
 		}
 
@@ -814,13 +814,13 @@ private:
 		strcpy(charM15, LABEL_CAUCHY);
 		strcpy(charM16, LABEL_CONSTANT);
 
-		//MESSER_DEBUG("<%s> charM1=%s", charM1);
+		//MESSER_DEBUG("charM1=%s  @<%s, %s>", charM1);
 
 		/// char
 		rr = set(charM1, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM1);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM1);
 			return (false);
 		}
 		rr = set(charM2, alpha, beta, aa, bb);
@@ -862,85 +862,85 @@ private:
 		rr = set(charM5, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM5);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM5);
 			return (false);
 		}
 		rr = set(charM6, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM6);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM6);
 			return (false);
 		}
 		rr = set(charM6, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM6);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM6);
 			return (false);
 		}
 		rr = set(charM6, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM6);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM6);
 			return (false);
 		}
 		rr = set(charM7, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM7);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM7);
 			return (false);
 		}
 		rr = set(charM8, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM8);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM8);
 			return (false);
 		}
 		rr = set(charM9, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM9);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM9);
 			return (false);
 		}
 		rr = set(charM10, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM10);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM10);
 			return (false);
 		}
 		rr = set(charM11, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM11);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM11);
 			return (false);
 		}
 		rr = set(charM12, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM12);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM12);
 			return (false);
 		}
 		rr = set(charM13, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM13);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM13);
 			return (false);
 		}
 		rr = set(charM14, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM14);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM14);
 			return (false);
 		}
 		rr = set(charM15, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM15);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM15);
 			return (false);
 		}
 		rr = set(charM16, alpha, beta, aa, bb);
 		if (rr < 0)
 		{
-			//MESSER_CRIT("<%s> Test error at %s", charM16);
+			//MESSER_CRIT("Test error at %s  @<%s, %s>", charM16);
 			return (false);
 		}
 

@@ -17,7 +17,7 @@ NetworkTrace::NetworkTrace()
 {
 	//cout << "aaaaaaaaaaaaaaa\n";
 	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
-	//MESSER_INFO("<%s>Constructor NetworkTrace()");
+	//MESSER_INFO("Constructor NetworkTrace()  @<%s, %s>");
 	//MESSER_LOG_END();
 
 
@@ -61,7 +61,7 @@ NetworkTrace::NetworkTrace(const string& fileName)
 			root_node->first_attribute(LABEL_TRAFFIC_ENGINE)->value();
 
 	//MESSER_INFO(
-	//		"<%s> Creating Trace: info_tracename=%s, trafficGenEngine=%s,info_captureDate=%s, info_commentaries=%s, n_flows=%s",
+	//		"Creating Trace: info_tracename=%s, trafficGenEngine=%s,info_captureDate=%s, info_commentaries=%s, n_flows=%s  @<%s, %s>",
 	//		root_node->first_attribute("info_tracename")->value(),
 	//		root_node->first_attribute("trafficGenEngine")->value(),
 	//		root_node->first_attribute("info_captureDate")->value(),
@@ -78,7 +78,7 @@ NetworkTrace::NetworkTrace(const string& fileName)
 
 		/// Create flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
-		//MESSER_DEBUG("<%s> netFlow[%d]", fcounter);
+		//MESSER_DEBUG("netFlow[%d]  @<%s, %s>", fcounter);
 
 		/// Flow Settings
 		charvet2type(flow_node->first_attribute("start_delay")->value(),
@@ -317,7 +317,7 @@ NetworkTrace::~NetworkTrace()
 {
 	MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
-	MESSER_INFO("<%s> Destructor ~NetworkTrace(). networkFlow.size() = %d",
+	MESSER_INFO("Destructor ~NetworkTrace(). networkFlow.size() = %d  @<%s, %s>",
 			networkFlow.size());
 	for (unsigned int i = 0; i < networkFlow.size(); i++)
 	{
@@ -448,7 +448,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 		nPsM2Fittings = networkFlow[i]->getNumberOfPsMode2Models();
 
-		//MESSER_DEBUG("<%s> (nPsM1Fittings, nPsM2Fittings) = (%d, %d)",
+		//MESSER_DEBUG("(nPsM1Fittings, nPsM2Fittings) = (%d, %d)  @<%s, %s>",
 		//		nPsM1Fittings, nPsM2Fittings);
 
 		fd[i].psMode1 = new modelData[nPsM1Fittings];
@@ -460,7 +460,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 
 	for (i = 0; i < nFlows; i++)
 	{
-		//MESSER_DEBUG("<%s> networkFlow[%d]->getFlowStartDelay()=%f ", i,
+		//MESSER_DEBUG("networkFlow[%d]->getFlowStartDelay()=%f  @<%s, %s>", i,
 		//		networkFlow[i]->getFlowStartDelay());
 
 		//flow
@@ -504,7 +504,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		// Inter deperture times
 		nFittings = networkFlow[i]->getNumberOfInterdepertureTimeModels();
 
-		//MESSER_DEBUG("<%s> nFittings=%d, fd[%d].n_interPktModels=%d, ",
+		//MESSER_DEBUG("nFittings=%d, fd[%d].n_interPktModels=%d  @<%s, %s>",
 		//		nFittings, i, fd[i].n_interPktModels);
 
 		for (j = 0; j < nFittings; j++)
@@ -516,7 +516,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 			sprintf(fd[i].interPkt[j].param1, "%.15f", sf.param1());
 			sprintf(fd[i].interPkt[j].param2, "%.15f", sf.param2());
 
-			//MESSER_DEBUG("<%s> fd[i].interPkt[j].name=%s",
+			//MESSER_DEBUG("fd[i].interPkt[j].name=%s  @<%s, %s>",
 			//		fd[i].interPkt[j].name);
 
 		}
@@ -854,7 +854,7 @@ int NetworkTrace::exec(bool verbose)
 	int i = 0;
 	std::thread* th_flw = new std::thread[size];
 
-	//MESSER_INFO("<%s> NetworkTrace::exec(). this->getNumberOfFlows()=%d",
+	//MESSER_INFO("NetworkTrace::exec(). this->getNumberOfFlows()=%d  @<%s, %s>",
 	//		this->getNumberOfFlows());
 
 	for (i = 0; i < size; i++)

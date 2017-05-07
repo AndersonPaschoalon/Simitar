@@ -65,19 +65,20 @@ public:
 	virtual void setNumberOfKbytes(unsigned long int numberOfKbytes) = 0;
 	virtual unsigned long int getNumberOfPackets() const = 0;
 	virtual void setNumberOfPackets(unsigned long int numberOfPackets) = 0;
+	virtual void setFlowDsByte(unsigned int flowDsByte) = 0;
+	virtual unsigned int getFlowDsByte() const = 0;
 
 	//
 	//Packet-level data
 	//
 	virtual int randTranportPort() = 0;
-	virtual unsigned int getFlowDsByte() const = 0;
-	virtual void setFlowDsByte(unsigned int flowDsByte) = 0;
 	virtual protocol getApplicationProtocol() const = 0;
 	virtual void setApplicationProtocol(protocol applicationProtocol) = 0;
 	virtual protocol getLinkProtocol() const = 0;
 	virtual void setLinkProtocol(protocol linkProtocol) = 0;
-	//virtual long int getLinkSrcAddrCount() const = 0;
-	//virtual void setLinkSrcAddrCount(long int linkSrcAddrCount) = 0;
+	virtual void setMacAddr(const string& macSrc, const string& macDst) = 0;
+	virtual const string& getMacSrcAddr() = 0;
+	virtual const string& getMacDstAddr() = 0;
 	virtual const string& getNetworkDstAddr() const = 0;
 	virtual void setNetworkDstAddr(const string& networkDstAddr) = 0;
 	virtual int getNetworkHostListConter() const = 0;

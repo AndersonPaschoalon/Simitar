@@ -13,15 +13,15 @@
 #include <log4cpp/PropertyConfigurator.hh>
 
 /**
-	FATAL -> the program cant run
-	ALERT -> A serious bug
-	CRIT -> It should not happen
-	ERROR -> a predictable error, execution program is interrupted
-	WARN -> an error, but it can run correctelly
-	NOTICE -> crictical execution information
-	INFO -> important execution information
-	DEBUG -> trivial execution information
-**/
+ FATAL -> the program cant run
+ ALERT -> A serious bug
+ CRIT -> It should not happen
+ ERROR -> a predictable error, execution program is interrupted
+ WARN -> an error, but it can run correctelly
+ NOTICE -> crictical execution information
+ INFO -> important execution information
+ DEBUG -> trivial execution information
+ **/
 
 /**
  * Log onfiguration file
@@ -57,38 +57,35 @@
  */
 #define MESSER_LOG_END() log4cpp::Category::shutdown();
 
+#define MESSER_NOTSET(fmt, args...) logfile__.notset(fmt, ##args, __PRETTY_FUNCTION__,  __FILE__);\
+	console__.notset(fmt, ##args,__PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_NOTSET(fmt, args...) logfile__.notset(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.notset(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_DEBUG(fmt, args...) logfile__.debug(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.debug(fmt, ##args,__PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_DEBUG(fmt, args...) logfile__.debug(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.debug(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_INFO(fmt, args...) logfile__.info(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.info(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_INFO(fmt, args...) logfile__.info(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.info(fmt, __PRETTY_FUNCTION__ ,##args, __FILE__);\
+#define MESSER_NOTICE(fmt, args...) logfile__.notice(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.notice(fmt, ##args,__PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_NOTICE(fmt, args...) logfile__.notice(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.notice(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_WARN(fmt, args...) logfile__.warn(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.warn(fmt, ##args,__PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_WARN(fmt, args...) logfile__.warn(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.warn(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_ERROR(fmt, args...) logfile__.error(fmt, ##args, __PRETTY_FUNCTION__,__FILE__);\
+	console__.error(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_ERROR(fmt, args...) logfile__.error(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.error(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_CRIT(fmt, args...) logfile__.crit(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.crit(fmt, ##args,__PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_CRIT(fmt, args...) logfile__.crit(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.crit(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_ALERT(fmt, args...) logfile__.alert(fmt, ##args, __PRETTY_FUNCTION__,__FILE__);\
+	console__.alert(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_ALERT(fmt, args...) logfile__.alert(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.alert(fmt, __PRETTY_FUNCTION__ ,##args);\
+#define MESSER_FATAL(fmt, args...) logfile__.fatal(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.fatal(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
 
-#define MESSER_FATAL(fmt, args...) logfile__.fatal(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.fatal(fmt, __PRETTY_FUNCTION__ ,##args);\
-
-#define MESSER_EMERG(fmt, args...) logfile__.emerg(fmt, __PRETTY_FUNCTION__ ,##args);\
-	console__.emerg(fmt, __PRETTY_FUNCTION__ ,##args);\
-
-
+#define MESSER_EMERG(fmt, args...) logfile__.emerg(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
+	console__.emerg(fmt, ##args, __PRETTY_FUNCTION__, __FILE__);\
 
 
 #endif /* MESSERLOG_H_ */

@@ -44,11 +44,13 @@ DummyFlow::DummyFlow()
 	interDepertureTimeModel_counter = 0;
 	ptr_interFileModelList = NULL;
 	interFileModel_counter = 0;
-	ptr_interSessionOnOffTimes = NULL;
-	interSessionModel_counter = 0;
+	ptr_session_onTimes = NULL;
+	ptr_session_offTimes = NULL;
+	interSessionOnTimes_counter = 0;
+	interSessionOffTimes_counter = 0;
 
 	//
-	//Interarrival time parameters
+	//Packet size parameters
 	//
 	ptr_psMode1 = NULL;
 	ptr_psMode2 = NULL;
@@ -63,25 +65,37 @@ DummyFlow::DummyFlow()
 
 DummyFlow::~DummyFlow()
 {
+	MESSER_LOG_INIT(INFO);
+
 	ptr_interArrivalModelList->clear();
-//	ptr_interFileModelList->clear();
-//	ptr_interSessionOnOffTimes->clear();
+	//	ptr_interFileModelList->clear();
+	//	ptr_interSessionOnOffTimes->clear();
+	ptr_session_onTimes->clear();
+	ptr_session_offTimes->clear();
+
 	ptr_psMode1->clear();
 	ptr_psMode2->clear();
 
-#ifdef DEBUG_DummyFlow
-	cout << "ptr_interArrivalModelList->size(): "
-	<< ptr_interArrivalModelList->size() << endl;
+	MESSER_DEBUG("ptr_interArrivalModelList->size(): %d <%s, %s>",
+			ptr_interArrivalModelList->size());
+	MESSER_DEBUG("ptr_interFileModelList->size(): %d <%s, %s>",
+			ptr_interFileModelList->size());
+	MESSER_DEBUG("ptr_psMode1->size():%d  <%s, %s>", ptr_psMode1->size());
+	MESSER_DEBUG("ptr_psMode2->size(): %d <%s, %s>", ptr_psMode2->size());
+
+//#ifdef DEBUG_DummyFlow
+//
 //	cout << "ptr_interFileModelList->size(): " << ptr_interFileModelList->size() << endl;
 //	cout << "ptr_interArrivalModelList->size(): " << ptr_interArrivalModelList->size() << endl;
-	cout << "ptr_psMode1->size(): " << ptr_psMode1->size() << endl;
-	cout << "ptr_psMode2->size(): " << ptr_psMode2->size() << endl;
-#endif //DEBUG_DummyFlow
+//	cout << "ptr_psMode1->size(): " << ptr_psMode1->size() << endl;
+//	cout << "ptr_psMode2->size(): " << ptr_psMode2->size() << endl;
+//#endif //DEBUG_DummyFlow
 
 	//interarrival data structs
 	delete ptr_interArrivalModelList;
 	delete ptr_interFileModelList;
-	delete ptr_interSessionOnOffTimes;
+	delete ptr_session_onTimes;
+	delete ptr_session_offTimes;
 
 	//packet-size data structures
 	delete ptr_psMode1;
@@ -779,7 +793,6 @@ void DummyFlow::setInterFileTimeModel(list<StochasticModelFit>* modelList)
 	interFileModel_counter = 0;
 }
 
-
 //TODO implement on/off
 StochasticModelFit DummyFlow::getInterFileTimeModel_next()
 {
@@ -816,12 +829,10 @@ StochasticModelFit DummyFlow::getInterFileTimeModel_next()
 
 	}
 
-	if ((ptr_interFileModelList->size() - 1)
-			> interFileModel_counter)
+	if ((ptr_interFileModelList->size() - 1) > interFileModel_counter)
 	{
 		interFileModel_counter++;
 	}
-
 
 	return (themodel);
 
@@ -838,23 +849,23 @@ time_sec DummyFlow::getInterFileTime()
 
 void DummyFlow::setInterSessionTimesOnOff(vector<time_sec>* onOffVec)
 {
-	ptr_interSessionOnOffTimes = onOffVec;
+	//ptr_interSessionOnOffTimes = onOffVec;
 }
 
 //StochasticModelFit DummyFlow::getInterSessionTimeModel_next()
 time_sec DummyFlow::getInterSessionOnOffTime_next()
 {
-	time_sec theTime;
+	time_sec theTime = 0;
 
-	if (interSessionModel_counter > ptr_interSessionOnOffTimes->size())
-	{
-		return (0);
-	}
-	else
-	{
-		theTime = ptr_interSessionOnOffTimes->at(interSessionModel_counter);
-		interSessionModel_counter++;
-	}
+//	if (interSessionModel_counter > ptr_interSessionOnOffTimes->size())
+//	{
+//		return (0);
+//	}
+//	else
+//	{
+//		theTime = ptr_interSessionOnOffTimes->at(interSessionModel_counter);
+//		interSessionModel_counter++;
+//	}
 
 	return (theTime);
 }
@@ -1000,7 +1011,6 @@ unsigned int DummyFlow::getNumberOfPsMode1Models() const
 	}
 }
 
-
 //TODO test -> not tested
 unsigned int DummyFlow::getNumberOfPsMode2Models() const
 {
@@ -1016,14 +1026,15 @@ unsigned int DummyFlow::getNumberOfPsMode2Models() const
 
 unsigned int DummyFlow::getNumberOfSessionOnOffTimes()
 {
-	if (ptr_interSessionOnOffTimes != NULL)
-	{
-		return (ptr_interSessionOnOffTimes->size());
-	}
-	else
-	{
-		return (0);
-	}
+//	if (ptr_interSessionOnOffTimes != NULL)
+//	{
+//		return (ptr_interSessionOnOffTimes->size());
+//	}
+//	else
+//	{
+//		return (0);
+//	}
+	return (0);
 }
 
 long int DummyFlow::getNpacketsMode2() const
@@ -1042,4 +1053,20 @@ void DummyFlow::printModels()
 		it->print();
 	}
 
+}
+
+void DummyFlow::setMacAddr(const string& macSrc, const string& macDst)
+{
+	mac_src = macSrc;
+	mac_dst = macDst;
+}
+
+const string& DummyFlow::getMacSrcAddr()
+{
+	return (mac_src);
+}
+
+const string& DummyFlow::getMacDstAddr()
+{
+	return (mac_dst);
 }

@@ -225,13 +225,13 @@ private:
 	 * @param theList
 	 * @return
 	 */
-	template<typename T> T* list_to_cvector(list<T>* theList);
+	template<typename T> T* list_to_cvector(list<T>* theList) const;
 
 	/**
 	 * @brief Delete a C vector
 	 * @param c_vet pointer to the C vector
 	 */
-	template<typename T> void delete_cvector(T* c_vet);
+	template<typename T> void delete_cvector(T* c_vet) const;
 
 	/**
 	 * @brief Compare two C vectors T.
@@ -571,8 +571,8 @@ private:
 	 * @param onTimes
 	 * @param offTimes
 	 */
-	void calcOnOff(list<time_sec>& arrivalVet, time_sec cut_time,
-			time_sec min_on_time, list<time_sec>* onTimes,
+	void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+			const time_sec min_on_time, list<time_sec>* onTimes,
 			list<time_sec>* offTimes);
 
 	vec interArrivalSample =
@@ -1016,6 +1016,7 @@ private:
 	bool test_cdf_cauchy();
 	bool test_fitModelsInterArrival();
 	bool test_modelSelection();
+	bool test_calcOnOff();
 };
 
 #endif /* DATAPROCESSOR_H_ */

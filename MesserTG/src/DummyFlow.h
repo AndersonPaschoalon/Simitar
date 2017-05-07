@@ -82,8 +82,10 @@ public:
 
 	protocol getLinkProtocol() const;
 	void setLinkProtocol(protocol linkProtocol);
-	long int getLinkSrcAddrCount() const;
-	void setLinkSrcAddrCount(long int linkSrcAddrCount);
+	void setMacAddr(const string& macSrc, const string& macDst);
+	const string& getMacSrcAddr();
+	const string& getMacDstAddr();
+
 	const string& getNetworkDstAddr() const;
 	void setNetworkDstAddr(const string& networkDstAddr);
 	int getNetworkHostListConter() const;
@@ -173,10 +175,9 @@ private:
 	/**
 	 * Protocol stack options
 	 */
-	//TODO L2: Link Layer Implementation of L2 structures
 	protocol link_protocol;
-	string link_src;
-	string link_dst;
+	string mac_src;
+	string mac_dst;
 	//long int link_src_addr_count;
 	//l2_addr linkedlist;
 
@@ -205,8 +206,13 @@ private:
 	counter interDepertureTimeModel_counter = 0; //counter of for model get method
 	list<StochasticModelFit>* ptr_interFileModelList; //inter-file time
 	counter interFileModel_counter = 0;
-	vector<time_sec>* ptr_interSessionOnOffTimes; //inter-session time
-	counter interSessionModel_counter = 0;
+	list<time_sec>* ptr_session_onTimes;
+	list<time_sec>* ptr_session_offTimes;
+	counter interSessionOnTimes_counter = 0;
+	counter interSessionOffTimes_counter = 0;
+
+	//vector<time_sec>* ptr_interSessionOnOffTimes; //inter-session time
+	//counter interSessionModel_counter = 0;
 	/*
 	 StochasticModelFit* interArrivalvet; //file interdeperture time
 	 counter interDepertureTimeModel_counter = 0; //counter of for model get method

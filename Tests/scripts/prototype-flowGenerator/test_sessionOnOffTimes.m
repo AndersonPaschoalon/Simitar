@@ -49,4 +49,42 @@ min_time = 0.1;
 onoff 
 ontimes 
 offtimes
-fprintf("Soma on+off = %d\n", sum(calcOnOffTimes(arrival_time, delta_time, SESSION_CUT_TIME, min_time)));
+fprintf("Soma on+off = %f arrival_time=%f\n", sum(calcOnOffTimes(arrival_time, delta_time, SESSION_CUT_TIME, min_time)), sum(delta_time));
+
+
+% Exponential Example
+fprintf("Exponential file data\n");
+
+%from load data
+delta_time = load("data/exp_interarrival_times.txt");
+arrival_time = cumulativeData(delta_time);
+cut_time = 7;
+min_time = 0.1;
+
+[onoff ontimes offtimes] = calcOnOffTimes(arrival_time, delta_time, cut_time, min_time);
+
+onoff
+
+ontimes
+
+offtimes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
