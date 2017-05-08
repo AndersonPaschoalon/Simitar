@@ -32,18 +32,16 @@ string DataProcessor::toString(void)
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
-	//err
+	MESSER_LOG_INIT(DEBUG);
 
-	//iterator variables
+	///iterator variables
 	long int fcounter = 0;
 	long int nflows = 0;
 	databaseInterface->getNumberOfFlows(experimentName, &nflows);
 
-#ifdef DEBUG_DataProcessor_calculate
-	cout << "DataProcessor::calculate() -> Number of flows = " << nflows << endl;
-#endif // DEBUG_DataProcessor_calculate
+	MESSER_DEBUG("Number of flows = %d @ <%s, %s>", nflows);
 
-	//protocol variables
+	///protocol variables
 	string flowStrData = "";
 	long int flowIntData = 0;
 	time_sec startDalay = 0;		//time of the fist packet of the flow
@@ -51,33 +49,30 @@ int DataProcessor::calculate(const string& experimentName,
 	list<long int> ttlList;
 	int ttl = 0;
 
-	//flow-level variables
+	///flow-level variables
 	list<time_sec> relativeTime;	//time relative to the 1st packet list
 	long int nbytesMode1 = 0;
 	long int nbytesMode2 = 0;
 	long int nKbytesMode1 = 0;		//Number of kbytes (bytes/1024) of the
 	long int nKbytesMode2 = 0;
 
-	//packetSize variables
-	//list<long int> pslist;		//packet-size list
+	///packetSize variables
 	list<long int> pslist;
 	list<packet_size> psFirstMode;
 	list<packet_size> psSecondMode;
-	//long int ps_mostFrequent = 0; //not being used
-	//double mean_packetRate = 0; //not being used
 
-	//inter-deperture time variables
-	//StochasticModelFit* modelVet = NULL; //not being used
+	///inter-deperture time variables
 	list<time_sec> interArrival_list; // list of inter arrival times of a flow
 	list<time_sec> interArrival_fileStack;
-	list<time_sec> interArrival_interFileStack;
-	list<time_sec> interArrival_interSessionStack;
+	//list<time_sec> interArrival_interFileStack;
+	//vector<time_sec>* interArrival_sessionOnTimes;
+	//vector<time_sec>* interArrival_sessionOffTimes;
 	time_sec idt_pivot = 0;
 	time_sec idt_next = 0;
 
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
-		//new network flow
+		///new network flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 
 		//TODO checar valor retornado de databaseInterface
@@ -95,8 +90,9 @@ int DataProcessor::calculate(const string& experimentName,
 		psSecondMode.clear();
 		interArrival_list.clear();
 		interArrival_fileStack.clear();
-		interArrival_interFileStack.clear();
-		interArrival_interSessionStack.clear();
+		//interArrival_interFileStack.clear();
+//		interArrival_sessionOnTimes->clear();
+//		interArrival_sessionOffTimes->clear();
 
 		//load packet-size data
 		databaseInterface->getFlowData(experimentName, fcounter, "frame__len",
@@ -141,69 +137,35 @@ int DataProcessor::calculate(const string& experimentName,
 			}
 		}
 
-		//// Olddays-29/03/2017
-		/*
-		 //Evaluate interraval  in file (burst), inter-file and session level
-		 for (list<time_sec>::iterator it = interArrival_list.begin();
-		 it != interArrival_list.end(); it++)
-		 {
-		 if (*it < FILE_CUT_TIME)
-		 {
-		 interArrival_fileStack.push_back(*it);
-		 }
-		 else if (*it < SESSION_CUT_TIME)
-		 {
-		 interArrival_interFileStack.push_back(*it);
-		 }
-		 else
-		 {
-		 interArrival_interSessionStack.push_back(*it);
-		 }
-		 }
-		 */
-		//######################################################################
-		//Flow-level Options
-		//######################################################################
+		////////////////////////////////////////////////////////////////////////
+		/// Flow-level Options
+		////////////////////////////////////////////////////////////////////////
+
 		startDalay = relativeTime.front();
 		netFlow->setFlowStartDelay(startDalay);
 
 		flowDuration = relativeTime.back() - relativeTime.front();
 		netFlow->setFlowDuration(flowDuration);
 
-		//TODO DS byte configuration -- now it is just set to zero
+		/// DS byte configuration -- now it is just set to zero
 		netFlow->setFlowDsByte(0);
 
-		//evaluate flow kbytes
-
-		//
-		// Flow statistical and stochastic data
-		//
-
+		/// set npackes and nkbytes
 		netFlow->setNumberOfKbytes(nKbytesMode1 + nKbytesMode2);
 		netFlow->setNumberOfPackets(pslist.size());
 
-		//// Olddays-29/03/2017
-		/*
-		 netFlow->setInterFileTimeModel(
-		 this->fitModelsInterArrival(interArrival_interFileStack,
-		 this->getInformationCriterion()));
+		////////////////////////////////////////////////////////////////////////
+		/// Protocols Options
+		////////////////////////////////////////////////////////////////////////
 
-		 netFlow->setInterSessionTimeModel(
-		 this->fitModelsInterArrival(interArrival_interSessionStack,
-		 this->getInformationCriterion()));
-		 */
+		/// L3 protocols
+		/// reference :
+		/// http://www.iana.org/assignments/ieee-802-numbers/ieee-802-numbers.xhtml
 
-		//######################################################################
-		// Packet-level Options
-		//######################################################################
-		//
-		//L3 protocols
-		//reference http://www.iana.org/assignments/ieee-802-numbers/ieee-802-numbers.xhtml
-		//
 		databaseInterface->getFlowData(experimentName, fcounter, "eth__type",
 				&flowIntData);
 		if (flowIntData == IPV4_CODE)
-		{ //IPv4
+		{ /// IPv4
 			netFlow->setNetworkProtocol(PROTOCOL__IPV4);
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__src",
 					&flowStrData);
@@ -213,7 +175,7 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
 		else if (flowIntData == (ARP_CODE || ARP_CODE_REV))
-		{ //ARP, Frame Relay ARP
+		{ /// ARP, Frame Relay ARP
 			netFlow->setNetworkProtocol(PROTOCOL__ARP);
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__src",
 					&flowStrData);
@@ -223,7 +185,7 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
 		else if (flowIntData == IPV6_CODE)
-		{ //IPv6
+		{ /// IPv6
 			netFlow->setNetworkProtocol(PROTOCOL__ICMPV6);
 			databaseInterface->getFlowData(experimentName, fcounter,
 					"ipv6__addr", &flowStrData);
@@ -233,7 +195,7 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
 		else
-		{ //default IPv4
+		{ /// default IPv4
 			netFlow->setNetworkProtocol(PROTOCOL__IPV4);
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__src",
 					&flowStrData);
@@ -243,16 +205,15 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
 
-		//set ttl as the most frequent
+		/// set ttl as the most frequent
 		databaseInterface->getFlowData(experimentName, fcounter, "ip__ttl",
 				ttlList);
 		ttl = mode(&ttlList);
 		netFlow->setNetworkTtl(ttl);
 
-		//
-		//L4 Protocols
-		//reference https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers
-		//
+		/// L4 Protocols
+		/// reference: https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers
+
 		databaseInterface->getFlowData(experimentName, fcounter, "ip__proto",
 				&flowIntData);
 		if (flowIntData == ICMP_CODE)
@@ -309,32 +270,56 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setTransportDstPort(flowIntData);
 		}
 		else
-		{ //default: UDP
+		{
 			netFlow->setTransportProtocol(PROTOCOL__NULL);
-			//databaseInterface->getFlowData(experimentName, fcounter, "udp__dstport", &flowIntData);
-			//netFlow->setL4SrcPort(flowIntData);
-			//databaseInterface->getFlowData(experimentName, fcounter, "udp__srcport", &flowIntData);
-			//netFlow->setL4DstPort(flowIntData);
 		}
 
-		//Application protocol
+		/// Application protocol
+		/// reference :
+		/// https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
 		netFlow->setApplicationProtocol(
 				aplicationProtocol(netFlow->getTransportProtocol(),
 						netFlow->getTransportSrcPort(),
 						netFlow->getTransportDstPort()));
 
-		//// Olddays-29/03/2017
-		/*
-		 //
-		 // Packet Interarrival data
-		 //
-		 netFlow->setInterDepertureTimeModels(
-		 this->fitModelsInterArrival(interArrival_fileStack,
-		 this->getInformationCriterion()));
-		 */
+		////////////////////////////////////////////////////////////////////////
+		/// Packet-level Options
+		////////////////////////////////////////////////////////////////////////
+
+		/// Inter-packet times
+
 		netFlow->setInterDepertureTimeModels(
 				fitModelsInterArrival(interArrival_list,
 						getInformationCriterion()));
+		MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
+				interArrival_list.size());
+
+		vector<time_sec> on_t;
+		vector<time_sec> off_t;
+		calcOnOff(interArrival_list, 7, 0.1, &on_t, &off_t);
+
+		// DEBUG
+		RegressionTests rt;
+		char vecbuffer1[CHAR_LARGE_BUFFER];
+		char vecbuffer2[CHAR_LARGE_BUFFER];
+		vector2str(on_t, vecbuffer1);
+		vector2str(off_t, vecbuffer2);
+		MESSER_DEBUG("OnOff>> onTimes=[%s] offTimes=[%s] @ <%s, %s>",
+				vecbuffer1, vecbuffer2);
+
+		/// allocate and calc on/off times
+		//interArrival_sessionOnTimes = new vector<time_sec>;
+		//interArrival_sessionOffTimes = new vector<time_sec>;
+		//calcOnOff(interArrival_list, m_session_cut_time, m_min_on_time,
+		//		interArrival_sessionOnTimes, interArrival_sessionOffTimes);
+
+		/// set on/off times
+		//netFlow->setInterSessionTimesOnOff(interArrival_sessionOnTimes,
+		//		interArrival_sessionOffTimes);
+		//MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
+		//		interArrival_sessionOnTimes->size());
+		//MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
+		//		interArrival_sessionOffTimes->size());
 
 		//DEBUG
 		//cout << "Print models setted\n";
@@ -357,36 +342,29 @@ int DataProcessor::calculate(const string& experimentName,
 //		rt.print(psSecondMode);
 //		rt.wait_int("psmode2 list");
 
-		//
-		// Packet size data
-		//
+		/// Packet size data
 		netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
 				fitModelsPsSize(psSecondMode), nKbytesMode1, nKbytesMode2,
 				psFirstMode.size(), psSecondMode.size());
 
-#ifdef DEBUG_DataProcessor_interArrival
-		cout << "list_size>" << interArrival_list.size() << endl;
-		cout << "interArrival_fileStack.size() = "
-		<< interArrival_fileStack.size() << endl;
-		cout << "interArrival_interFileStack.size() = "
-		<< interArrival_interFileStack.size() << endl;
-		cout << "interArrival_interSessionStack.size() = "
-		<< interArrival_interSessionStack.size() << endl;
-		cout << fcounter << endl;
-
-		string file1 = to_string(fcounter) + "fileStack";
-		string file2 = to_string(fcounter) + "interFileStack";
-		string file3 = to_string(fcounter) + "interSessionStack";
-		save_data_on_file(file1, interArrival_fileStack);
-		save_data_on_file(file2, interArrival_interFileStack);
-		save_data_on_file(file3, interArrival_interSessionStack);
-#endif
-
-		//######################################################################
-		//Push-back the flow to Trace Flow-list
-		//######################################################################
-
+		////////////////////////////////////////////////////////////////////////
+		/// Push-back the flow to Trace Flow-list
+		////////////////////////////////////////////////////////////////////////
 		netTrace->pushback_Netflow(netFlow);
+
+		MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
+				interArrival_list.size());
+		//MESSER_DEBUG("interArrival_fileStack.size() = %d, ", interArrival_fileStack.size() );
+//		MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
+//				interArrival_sessionOnTimes->size());
+//		MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
+//				interArrival_sessionOffTimes->size());
+		//string file1 = to_string(fcounter) + "fileStack";
+		//string file2 = to_string(fcounter) + "interFileStack";
+		//string file3 = to_string(fcounter) + "interSessionStack";
+		//save_data_on_file(file1, interArrival_fileStack);
+		//save_data_on_file(file2, interArrival_interFileStack);
+		//save_data_on_file(file3, interArrival_interSessionStack);
 
 #ifdef DEBUG_DataProcessor_calculate_loop
 		cout << fcounter << ": ps_mostFrequent=" << ps_mostFrequent << endl;
@@ -2503,62 +2481,72 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 	unsigned int i = 0;
 	unsigned int j = 0;
 
-	for (i = 0; i < m; i++)
+	if (m == 0)
 	{
-		if ((delta_time[i] > cut_time) || (i == (m - 1)))
-		{
+		onOff.push_back(min_on_time);
+	}
+	else
+	{
 
-			if (i == 0) // the first times is off
+		for (i = 0; i < m; i++)
+		{
+			if ((delta_time[i] > cut_time) || (i == (m - 1)))
 			{
-				j++;
-				onOff.push_back(min_on_time);
-				j++;
-				onOff.push_back(delta_time[i]);
-				last_off = i;
-				MESSER_DEBUG("the first times is off @ <%s, %s>");
-			}
-			else if (i == (m - 1))
-			{
-				if (last_off == m) //last is session-off
+
+				if (i == 0) // the first times is off
 				{
 					j++;
 					onOff.push_back(min_on_time);
-				}
-				else // base last case
-				{
-					j++;
-					onOff.push_back(arrival_time[i] - arrival_time[last_off]);
-				}
-			}
-			else
-			{
-				if (j == 0) // base first case
-				{
-					j++;
-					onOff.push_back(arrival_time[i - 1]);
 					j++;
 					onOff.push_back(delta_time[i]);
 					last_off = i;
+					MESSER_DEBUG("the first times is off @ <%s, %s>");
 				}
-				else // base case
+				else if (i == (m - 1))
 				{
-					j++;
-					timebuffer = arrival_time[i - 1] - arrival_time[last_off];
-					if (timebuffer < min_on_time)
+					if (last_off == m) //last is session-off
 					{
+						j++;
 						onOff.push_back(min_on_time);
 					}
-					else
+					else // base last case
 					{
-						onOff.push_back(timebuffer);
+						j++;
+						onOff.push_back(
+								arrival_time[i] - arrival_time[last_off]);
 					}
-					j++;
-					onOff.push_back(delta_time[i]);
-					last_off = i;
+				}
+				else
+				{
+					if (j == 0) // base first case
+					{
+						j++;
+						onOff.push_back(arrival_time[i - 1]);
+						j++;
+						onOff.push_back(delta_time[i]);
+						last_off = i;
+					}
+					else // base case
+					{
+						j++;
+						timebuffer = arrival_time[i - 1]
+								- arrival_time[last_off];
+						if (timebuffer < min_on_time)
+						{
+							onOff.push_back(min_on_time);
+						}
+						else
+						{
+							onOff.push_back(timebuffer);
+						}
+						j++;
+						onOff.push_back(delta_time[i]);
+						last_off = i;
+					}
+
 				}
 
 			}
-
 		}
 	}
 
@@ -2588,6 +2576,15 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 	MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
 	delete_cvector(arrival_time);
 	delete_cvector(delta_time);
+}
+
+DataProcessor::DataProcessor(time_sec sessionCutTime, time_sec filCutTime)
+{
+}
+
+void DataProcessor::setSessionOnOffTimes(list<time_sec>& interArrivalTimes)
+{
+
 }
 
 bool DataProcessor::test_calcOnOff()

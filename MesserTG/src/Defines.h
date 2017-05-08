@@ -63,12 +63,12 @@ typedef unsigned int counter;
 /**
  *
  */
-const time_sec FILE_CUT_TIME = 0.1;
+const time_sec DEFAULT_FILE_CUT_TIME = 0.1;
 
 /**
  *
  */
-const time_sec SESSION_CUT_TIME = 30;
+const time_sec DEFAULT_SESSION_CUT_TIME = 30;
 
 /**
  * Cut value for packet size modes distributions. A value smaller than

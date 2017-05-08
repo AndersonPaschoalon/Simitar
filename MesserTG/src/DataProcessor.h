@@ -33,6 +33,7 @@
 #include "NetworkTrace.h"
 #include "StochasticModelFit.h"
 #include "RegressionTests.h"
+#include "MesserLog.h"
 
 //namespaces
 using std::string;
@@ -52,6 +53,11 @@ public:
 	 * Default constructor
 	 */
 	DataProcessor();
+
+	/**
+	 * Default constructor
+	 */
+	DataProcessor(time_sec sessionCutTime, time_sec filCutTime);
 
 	/**
 	 * Destructor. Clean any allocated memory
@@ -122,7 +128,7 @@ private:
 	 * as substitute for times equal to zero.
 	 */
 	//double min_time = 5e-7;
-	double min_time = 5e-8;
+	time_sec min_time = 5e-8;
 
 	/**
 	 * A very small time value. This is used to avoid evaluating the operation
@@ -187,6 +193,17 @@ private:
 	 * A close one value, but smaller (to calc tangent of a vector)
 	 */
 	double almost_one = 0.999999;
+
+	/**
+	 * Minimum value possible on Session On/Off times
+	 */
+	double m_min_on_time = 0.1;
+
+	/**
+	 * Default value of cut time (SESSION_CUT_TIME) for sections
+	 */
+	double m_session_cut_time = DEFAULT_SESSION_CUT_TIME;
+
 
 	/**
 	 * calculate the most frequent element from a list
@@ -574,6 +591,12 @@ private:
 	void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 			const time_sec min_on_time, vector<time_sec>* onTimes,
 			vector<time_sec>* offTimes);
+
+	/**
+	 *
+	 * @param interArrivalTimes
+	 */
+	void setSessionOnOffTimes(list<time_sec>& interArrivalTimes);
 
 	vec interArrivalSample =
 	{ 0, 0, 0.000203, 1e-05, 0.318392, 1.00003, 0.517214, 3.2e-05, 7.6e-05,

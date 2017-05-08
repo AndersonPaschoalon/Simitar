@@ -1,19 +1,6 @@
-00:11:56 **** Incremental Build of configuration Debug for project MesserTG ****
+17:27:27 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
-Building file: ../src/DummyFlow.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
-../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
-../src/DummyFlow.cpp:116:15: warning: unused variable ‘usecs’ [-Wunused-variable]
-  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
-               ^~~~~
-Finished building: ../src/DummyFlow.cpp
- 
-Building target: MesserTG
-Invoking: GCC C++ Linker
-g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
-Finished building target: MesserTG
- 
+make: Nothing to be done for 'all'.
 
-00:11:59 Build Finished (took 3s.262ms)
+17:27:28 Build Finished (took 82ms)
 

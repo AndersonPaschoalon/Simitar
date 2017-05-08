@@ -15,11 +15,9 @@
 
 NetworkTrace::NetworkTrace()
 {
-	//cout << "aaaaaaaaaaaaaaa\n";
-	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
-	//MESSER_INFO("Constructor NetworkTrace()  @<%s, %s>");
-	//MESSER_LOG_END();
 
+	MESSER_LOG_INIT(NOTICE);
+	MESSER_DEBUG("Constructor NetworkTrace()  @<%s, %s>");
 
 }
 
@@ -529,7 +527,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		char charSessionOff[CHAR_BUFFER];
 
 		//gravar aqui os tempos e tals... vo durmi
-		vector2str()
+		//vector2str()
 
 
 		//Packet size mode1

@@ -11,23 +11,23 @@
 DummyFlow::DummyFlow()
 {
 
-	//
-	//flow-level parameters initialization
-	//
+	///flow-level parameters initialization
+
 	flow_ds_byte = 0;
 	flow_duration = 0;
 	flow_start_delay = 0;
 	number_of_kbytes = 0;
 	number_of_packets = 0;
 
-	//
-	//protocols parameters  initialization
-	//
+
+	///protocols parameters  initialization
+
 	link_protocol = PROTOCOL__ETHERNET; //default
-	//link_src_addr_count = 0;
+	mac_src = "";
+	mac_dst = "";
 	network_dst_addr = "";
-	network_protocol = PROTOCOL__IPV4; //default
 	network_src_addr = "";
+	network_protocol = PROTOCOL__IPV4; //default
 	network_ttl = 64; //default
 	network_hostList_conter = 0;
 	transport_protocol = PROTOCOL__UDP; //default
@@ -65,21 +65,22 @@ DummyFlow::DummyFlow()
 
 DummyFlow::~DummyFlow()
 {
-	MESSER_LOG_INIT(INFO);
+	MESSER_LOG_INIT(DEBUG);
+	MESSER_DEBUG("@ <%s, %s>");
 
 	ptr_interArrivalModelList->clear();
 	//	ptr_interFileModelList->clear();
 	//	ptr_interSessionOnOffTimes->clear();
-	ptr_session_onTimes->clear();
-	ptr_session_offTimes->clear();
+//	ptr_session_onTimes->clear();
+//	ptr_session_offTimes->clear();
 
 	ptr_psMode1->clear();
 	ptr_psMode2->clear();
 
 	MESSER_DEBUG("ptr_interArrivalModelList->size(): %d <%s, %s>",
 			ptr_interArrivalModelList->size());
-	MESSER_DEBUG("ptr_interFileModelList->size(): %d <%s, %s>",
-			ptr_interFileModelList->size());
+	//MESSER_DEBUG("ptr_interFileModelList->size(): %d <%s, %s>",
+	//		ptr_interFileModelList->size());
 	MESSER_DEBUG("ptr_psMode1->size():%d  <%s, %s>", ptr_psMode1->size());
 	MESSER_DEBUG("ptr_psMode2->size(): %d <%s, %s>", ptr_psMode2->size());
 
