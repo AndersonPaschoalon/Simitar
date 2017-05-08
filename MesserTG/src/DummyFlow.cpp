@@ -46,8 +46,8 @@ DummyFlow::DummyFlow()
 	interFileModel_counter = 0;
 	ptr_session_onTimes = NULL;
 	ptr_session_offTimes = NULL;
-	interSessionOnTimes_counter = 0;
-	interSessionOffTimes_counter = 0;
+	sessionOnTimes_counter = 0;
+	sessionOffTimes_counter = 0;
 
 	//
 	//Packet size parameters
@@ -797,7 +797,7 @@ void DummyFlow::setInterFileTimeModel(list<StochasticModelFit>* modelList)
 StochasticModelFit DummyFlow::getInterFileTimeModel_next()
 {
 	StochasticModelFit themodel;
-	unsigned int i = 0;
+	counter i = 0;
 
 	if (ptr_interFileModelList == NULL)
 	{
@@ -847,28 +847,97 @@ time_sec DummyFlow::getInterFileTime()
 	return (interFileTimeRngEstimation);
 }
 
-void DummyFlow::setInterSessionTimesOnOff(vector<time_sec>* onOffVec)
+void DummyFlow::setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+		vector<time_sec>* offTimesVec)
 {
-	//ptr_interSessionOnOffTimes = onOffVec;
+	ptr_session_onTimes = onTimesVec;
+	ptr_session_offTimes = offTimesVec;
 }
 
-//StochasticModelFit DummyFlow::getInterSessionTimeModel_next()
-time_sec DummyFlow::getInterSessionOnOffTime_next()
+time_sec DummyFlow::getInterSessionOnTime_next()
 {
+	MESSER_LOG_INIT(DEBUG);
 	time_sec theTime = 0;
 
-//	if (interSessionModel_counter > ptr_interSessionOnOffTimes->size())
-//	{
-//		return (0);
-//	}
-//	else
-//	{
-//		theTime = ptr_interSessionOnOffTimes->at(interSessionModel_counter);
-//		interSessionModel_counter++;
-//	}
+	if (sessionOnTimes_counter >= ptr_session_onTimes->size())
+	{
+		MESSER_NOTICE(
+				"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
+				sessionOnTimes_counter);
+		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
+		sessionOnTimes_counter = 0;
+	}
+	else
+	{
+		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
+		sessionOnTimes_counter++;
+	}
 
 	return (theTime);
 }
+
+time_sec DummyFlow::getInterSessionOffTime_next()
+{
+	MESSER_LOG_INIT(DEBUG);
+	time_sec theTime = 0;
+
+	if (sessionOffTimes_counter >= ptr_session_offTimes->size())
+	{
+		MESSER_NOTICE(
+				"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
+				sessionOffTimes_counter);
+		theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
+		sessionOffTimes_counter = 0;
+	}
+	else
+	{
+		theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
+		sessionOffTimes_counter++;
+	}
+
+	return (theTime);
+}
+
+//StochasticModelFit DummyFlow::getInterSessionTimeModel_next()
+/*
+ time_sec DummyFlow::getInterSessionOnOffTime_next()
+ {
+ MESSER_LOG_INIT(DEBUG);
+
+ if (ptr_session_onTimes->size() != (ptr_session_offTimes->size() + 1))
+ {
+ MESSER_CRIT(
+ "The on/off vectors do not have the expected size. onTimes->size() = %d, offTimes->size() = %d @ <%s, %s>",
+ ptr_session_onTimes->size(), ptr_session_offTimes->size());
+ exit(-1);
+ }
+
+ time_sec theTime = 0;
+
+ if(ptr_session_onTimes->size() == 0)
+ {
+ MESSER_ERROR("No inter-session times setted @ <%s, %s>");
+ return(0);
+ }
+ else{
+ if(ptr_session_onTimes->size() <= interSessionOnTimes_counter){
+ MESSER_NOTICE("No more On times available on the stack.  @ <%s, %s>");
+ }
+ }
+
+ //	if (interSessionModel_counter > ptr_interSessionOnOffTimes->size())
+ //	{
+ //		return (0);
+ //	}
+ //	else
+ //	{
+ //		theTime = ptr_interSessionOnOffTimes->at(interSessionModel_counter);
+ //		interSessionModel_counter++;
+ //	}
+
+ return (theTime);
+ }
+ */
 
 time_sec DummyFlow::getInterSessionTime()
 {
@@ -889,7 +958,7 @@ StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()
 	}
 	else
 	{
-		int i = 0;
+		counter i = 0;
 		for (list<StochasticModelFit>::iterator it = ptr_psMode1->begin();
 				it != ptr_psMode1->end(); it++)
 		{
@@ -921,7 +990,7 @@ StochasticModelFit DummyFlow::getPacketSizeModelMode2_next()
 	}
 	else
 	{
-		int i = 0;
+		counter i = 0;
 		for (list<StochasticModelFit>::iterator it = ptr_psMode2->begin();
 				it != ptr_psMode2->end(); it++)
 		{

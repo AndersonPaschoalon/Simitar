@@ -171,6 +171,9 @@ NetworkTrace::NetworkTrace(const string& fileName)
 		}
 		netFlow->setInterDepertureTimeModels(modelList);
 
+
+
+
 		/// Packet sizes
 		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
 
@@ -520,6 +523,14 @@ int NetworkTrace::writeToFile(const string& fileName) const
 			//		fd[i].interPkt[j].name);
 
 		}
+
+		// Inter session times
+		char charSessionOn[CHAR_BUFFER];
+		char charSessionOff[CHAR_BUFFER];
+
+		//gravar aqui os tempos e tals... vo durmi
+		vector2str()
+
 
 		//Packet size mode1
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
@@ -945,6 +956,7 @@ const char * NetworkTrace::LABEL_APPLICATION_LAYER = "application_layer";
 const char * NetworkTrace::LABEL_INTERPACKETTIMES = "inter_packet_times";
 const char * NetworkTrace::LABEL_INTERFILE = "inter_file_times";
 const char * NetworkTrace::LABEL_INTERSESSION = "inter_session_times";
+const char * NetworkTrace::LABEL_SESSION = "session_times";
 const char * NetworkTrace::LABEL_PACKETSIZES = "packet_sizes";
 const char * NetworkTrace::LABEL_PSMODE1 = "ps_mode1";
 const char * NetworkTrace::LABEL_PSMODE2 = "ps_mode2";

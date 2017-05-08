@@ -26409,3 +26409,356 @@ Finished building target: MesserTG
 20:12:28 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
 make: Nothing to be done for 'all'.
+20:50:03 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘bool DataProcessor::test_calcOnOff()’:
+../src/DataProcessor.cpp:2625:46: error: conversion from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to non-scalar type ‘std::__cxx11::list<double>::iterator {aka std::_List_iterator<double>}’ requested
+  list<time_sec>::iterator it = offTimes.begin();
+                                ~~~~~~~~~~~~~~^~
+../src/DataProcessor.cpp:2640:21: error: no match for ‘operator=’ (operand types are ‘std::__cxx11::list<double>::iterator {aka std::_List_iterator<double>}’ and ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’)
+  it = onTimes.begin();
+                     ^
+In file included from /usr/include/c++/6/list:63:0,
+                 from ../src/DataProcessor.h:22,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_list.h:128:12: note: candidate: std::_List_iterator<double>& std::_List_iterator<double>::operator=(const std::_List_iterator<double>&)
+     struct _List_iterator
+            ^~~~~~~~~~~~~~
+/usr/include/c++/6/bits/stl_list.h:128:12: note:   no known conversion for argument 1 from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to ‘const std::_List_iterator<double>&’
+/usr/include/c++/6/bits/stl_list.h:128:12: note: candidate: std::_List_iterator<double>& std::_List_iterator<double>::operator=(std::_List_iterator<double>&&)
+/usr/include/c++/6/bits/stl_list.h:128:12: note:   no known conversion for argument 1 from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to ‘std::_List_iterator<double>&&’
+../src/DataProcessor.cpp:2679:22: error: no match for ‘operator=’ (operand types are ‘std::__cxx11::list<double>::iterator {aka std::_List_iterator<double>}’ and ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’)
+  it = offTimes.begin();
+                      ^
+In file included from /usr/include/c++/6/list:63:0,
+                 from ../src/DataProcessor.h:22,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_list.h:128:12: note: candidate: std::_List_iterator<double>& std::_List_iterator<double>::operator=(const std::_List_iterator<double>&)
+     struct _List_iterator
+            ^~~~~~~~~~~~~~
+/usr/include/c++/6/bits/stl_list.h:128:12: note:   no known conversion for argument 1 from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to ‘const std::_List_iterator<double>&’
+/usr/include/c++/6/bits/stl_list.h:128:12: note: candidate: std::_List_iterator<double>& std::_List_iterator<double>::operator=(std::_List_iterator<double>&&)
+/usr/include/c++/6/bits/stl_list.h:128:12: note:   no known conversion for argument 1 from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to ‘std::_List_iterator<double>&&’
+../src/DataProcessor.cpp:2693:21: error: no match for ‘operator=’ (operand types are ‘std::__cxx11::list<double>::iterator {aka std::_List_iterator<double>}’ and ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’)
+  it = onTimes.begin();
+                     ^
+In file included from /usr/include/c++/6/list:63:0,
+                 from ../src/DataProcessor.h:22,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_list.h:128:12: note: candidate: std::_List_iterator<double>& std::_List_iterator<double>::operator=(const std::_List_iterator<double>&)
+     struct _List_iterator
+            ^~~~~~~~~~~~~~
+/usr/include/c++/6/bits/stl_list.h:128:12: note:   no known conversion for argument 1 from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to ‘const std::_List_iterator<double>&’
+/usr/include/c++/6/bits/stl_list.h:128:12: note: candidate: std::_List_iterator<double>& std::_List_iterator<double>::operator=(std::_List_iterator<double>&&)
+/usr/include/c++/6/bits/stl_list.h:128:12: note:   no known conversion for argument 1 from ‘std::vector<double>::iterator {aka __gnu_cxx::__normal_iterator<double*, std::vector<double> >}’ to ‘std::_List_iterator<double>&&’
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:51: recipe for target 'src/DataProcessor.o' failed
+20:53:37 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:53:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:56:21 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:56:28 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:56:58 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:57:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+21:45:09 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:31:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:447:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:01:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+In file included from ../src/DitgFlow.cpp:8:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate()’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:116:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp: In member function ‘virtual time_sec DummyFlow::getInterSessionOnTime_next()’:
+../src/DummyFlow.cpp:867:55: error: cannot convert ‘std::vector<double>’ to ‘time_sec {aka double}’ in assignment
+   theTime = ptr_session_onTimes[sessionOnTimes_counter];
+                                                       ^
+../src/DummyFlow.cpp:872:55: error: cannot convert ‘std::vector<double>’ to ‘time_sec {aka double}’ in assignment
+   theTime = ptr_session_onTimes[sessionOnTimes_counter];
+                                                       ^
+../src/DummyFlow.cpp: In member function ‘virtual time_sec DummyFlow::getInterSessionOffTime_next()’:
+../src/DummyFlow.cpp:889:57: error: cannot convert ‘std::vector<double>’ to ‘time_sec {aka double}’ in assignment
+   theTime = ptr_session_offTimes[sessionOffTimes_counter];
+                                                         ^
+../src/DummyFlow.cpp:894:60: error: invalid types ‘counter {aka unsigned int}[counter {aka unsigned int}]’ for array subscript
+   theTime = sessionOffTimes_counter[sessionOffTimes_counter];
+                                                            ^
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()’:
+../src/DummyFlow.cpp:975:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (ptr_psMode1->size() > packetSizeModel1_counter)
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode2_next()’:
+../src/DummyFlow.cpp:1007:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (ptr_psMode2->size() > packetSizeModel2_counter)
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:51: recipe for target 'src/DummyFlow.o' failed
+00:06:50 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:116:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp: In member function ‘virtual time_sec DummyFlow::getInterSessionOffTime_next()’:
+../src/DummyFlow.cpp:894:36: error: base operand of ‘->’ is not a pointer
+   theTime = sessionOffTimes_counter->at(sessionOffTimes_counter);
+                                    ^~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()’:
+../src/DummyFlow.cpp:975:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (ptr_psMode1->size() > packetSizeModel1_counter)
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode2_next()’:
+../src/DummyFlow.cpp:1007:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (ptr_psMode2->size() > packetSizeModel2_counter)
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:51: recipe for target 'src/DummyFlow.o' failed
+00:07:21 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:116:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()’:
+../src/DummyFlow.cpp:975:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (ptr_psMode1->size() > packetSizeModel1_counter)
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode2_next()’:
+../src/DummyFlow.cpp:1007:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if (ptr_psMode2->size() > packetSizeModel2_counter)
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/IperfFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IperfFlow.d" -MT"src/IperfFlow.o" -o "src/IperfFlow.o" "../src/IperfFlow.cpp"
+Finished building: ../src/IperfFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate()’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:31:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/OstinatoFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/OstinatoFlow.d" -MT"src/OstinatoFlow.o" -o "src/OstinatoFlow.o" "../src/OstinatoFlow.cpp"
+Finished building: ../src/OstinatoFlow.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:10:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DitgFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DitgFlow.d" -MT"src/DitgFlow.o" -o "src/DitgFlow.o" "../src/DitgFlow.cpp"
+In file included from ../src/DitgFlow.cpp:8:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate()’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/DitgFlow.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:116:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()’:
+../src/DummyFlow.cpp:965:10: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (i == packetSizeModel1_counter)
+        ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual StochasticModelFit DummyFlow::getPacketSizeModelMode2_next()’:
+../src/DummyFlow.cpp:997:10: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (i == packetSizeModel2_counter)
+        ~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/IperfFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/IperfFlow.d" -MT"src/IperfFlow.o" -o "src/IperfFlow.o" "../src/IperfFlow.cpp"
+Finished building: ../src/IperfFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate()’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/OstinatoFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/OstinatoFlow.d" -MT"src/OstinatoFlow.o" -o "src/OstinatoFlow.o" "../src/OstinatoFlow.cpp"
+Finished building: ../src/OstinatoFlow.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:11:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate()’:
+../src/DummyFlow.cpp:116:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DitgFlow.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/OstinatoFlow.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 

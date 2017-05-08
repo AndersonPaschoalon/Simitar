@@ -23,6 +23,48 @@ using namespace arma;
 #include "Defines.h"
 #include "RegressionTests.h"
 
+
+/**
+ * @brief
+ *
+ * @param theVec
+ * @param str
+ */
+void vector2str(vector<double> theVec, char* str);
+
+/**
+ * @brief
+ *
+ * @param theVec
+ * @param str
+ */
+void vector2str(vector<int> theVec, char* str);
+
+/**
+ * @brief
+ *
+ * @param theVec
+ * @param str
+ */
+void vector2str(vector<long int> theVec, char* str);
+
+/**
+ * @brief
+ *
+ * @param theVec
+ * @param str
+ */
+void vector2str(vector<unsigned int> theVec, char* str);
+
+/**
+ * @brief
+ *
+ * @param theVec
+ * @param str
+ */
+void vector2str(vector<unsigned long int> theVec, char* str);
+
+
 /**
  * @brief Convert a string s to a C string vetc (char vector).
  * Convet a std::string to a C string. The C string must have been

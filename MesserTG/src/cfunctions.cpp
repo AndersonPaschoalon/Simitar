@@ -13,6 +13,37 @@ void string2charvet(const string s, char* vetc)
 	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
 }
 
+void vector2str(vector<double> theVec, char* str)
+{
+	list<double> theList;
+	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
+	list2str(theList, str);
+}
+void vector2str(vector<int> theVec, char* str)
+{
+	list<int> theList;
+	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
+	list2str(theList, str);
+}
+void vector2str(vector<long int> theVec, char* str)
+{
+	list<long int> theList;
+	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
+	list2str(theList, str);
+}
+void vector2str(vector<unsigned int> theVec, char* str)
+{
+	list<unsigned int> theList;
+	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
+	list2str(theList, str);
+}
+void vector2str(vector<unsigned long int> theVec, char* str)
+{
+	list<unsigned long int> theList;
+	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
+	list2str(theList, str);
+}
+
 void list2str(list<double> theList, char* str)
 {
 	str[0] = '\0';
@@ -112,11 +143,11 @@ void list2str(list<unsigned long int> theList, char* str)
 
 }
 
-template<typename T>
-void list2str(list<T> theList, string str)
-{
-
-}
+//template<typename T>
+//void list2str(list<T> theList, string str)
+//{
+//
+//}
 
 void charvet2type(const char* vetc, unsigned int& v)
 {
@@ -291,8 +322,7 @@ void printList(list<double>& theList)
 {
 
 	cout << "[";
-	for (list<double>::iterator it = theList.begin(); it != theList.end();
-			it++)
+	for (list<double>::iterator it = theList.begin(); it != theList.end(); it++)
 	{
 		cout << *it << ", ";
 	}

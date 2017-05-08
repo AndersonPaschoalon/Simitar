@@ -217,6 +217,7 @@ private:
 	static const char * LABEL_INTERARRIVAL;
 	static const char * LABEL_INTERFILE;
 	static const char * LABEL_INTERSESSION;
+	static const char * LABEL_SESSION;
 	static const char * LABEL_PACKETSIZES;
 	static const char * LABEL_PSMODE1;
 	static const char * LABEL_PSMODE2;
@@ -250,8 +251,8 @@ struct flow_data_struct
 {
 	//Inter packet times
 
-	unsigned int session_onoffStrLen;
-	char* session_OnOffTimes;
+	char session_OnTimes[CHAR_LARGE_BUFFER];
+	char session_OffTimes[CHAR_LARGE_BUFFER];
 
 	unsigned int n_interFileModels;
 	modelData* interFileOn;

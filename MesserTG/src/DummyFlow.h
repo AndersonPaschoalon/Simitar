@@ -123,16 +123,17 @@ public:
 
 
 	void setInterFileTimeModel(list<StochasticModelFit>* modelList);
-//	void setInterFileTimeModel(StochasticModelFit* modelVet);
 	StochasticModelFit getInterFileTimeModel_next();
 	time_sec getInterFileTime();
 	unsigned int getNumberOfInterfileTimeModels();
 
 //	void setInterSessionTimeModel(StochasticModelFit* modelVet);
 //	void setInterSessionTimeModel(list<StochasticModelFit>* modelList);
-	void setInterSessionTimesOnOff(vector<time_sec>* onOffList);
+	void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec, vector<time_sec>* offTimesVec);
 //	StochasticModelFit getInterSessionOnOffTime_next();
-	time_sec getInterSessionOnOffTime_next();
+//	time_sec getInterSessionOnOffTime_next();
+	time_sec getInterSessionOnTime_next();
+	time_sec getInterSessionOffTime_next();
 	time_sec getInterSessionTime();
 	unsigned int getNumberOfSessionOnOffTimes();
 
@@ -206,10 +207,10 @@ private:
 	counter interDepertureTimeModel_counter = 0; //counter of for model get method
 	list<StochasticModelFit>* ptr_interFileModelList; //inter-file time
 	counter interFileModel_counter = 0;
-	list<time_sec>* ptr_session_onTimes;
-	list<time_sec>* ptr_session_offTimes;
-	counter interSessionOnTimes_counter = 0;
-	counter interSessionOffTimes_counter = 0;
+	vector<time_sec>* ptr_session_onTimes;
+	vector<time_sec>* ptr_session_offTimes;
+	counter sessionOnTimes_counter = 0;
+	counter sessionOffTimes_counter = 0;
 
 	//vector<time_sec>* ptr_interSessionOnOffTimes; //inter-session time
 	//counter interSessionModel_counter = 0;
@@ -231,8 +232,8 @@ private:
 	long int nkbytes_mode2;
 	long int npacket_mode1;
 	long int npackets_mode2;
-	int packetSizeModel1_counter;
-	int packetSizeModel2_counter;
+	counter packetSizeModel1_counter;
+	counter packetSizeModel2_counter;
 
 };
 

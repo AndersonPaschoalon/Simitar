@@ -123,18 +123,17 @@ public:
 
 	virtual long int getNpacketsMode2() const = 0;
 
-	virtual unsigned int  getNumberOfPsMode2Models() const = 0;
-	virtual unsigned int  getNumberOfPsMode1Models() const = 0;
-
+	virtual unsigned int getNumberOfPsMode2Models() const = 0;
+	virtual unsigned int getNumberOfPsMode1Models() const = 0;
 
 	//DEBUG
 	virtual void printModels() = 0;
 
-
 	//
 	//Inter-arrival-size
 	//
-	virtual void setInterDepertureTimeModels(list<StochasticModelFit>* modelList) = 0;
+	virtual void setInterDepertureTimeModels(
+			list<StochasticModelFit>* modelList) = 0;
 //	virtual void setInterDepertureTimeModels(StochasticModelFit* modelVet) = 0;
 	virtual StochasticModelFit getInterDepertureTimeModel_next()= 0;
 	virtual unsigned int getNumberOfInterdepertureTimeModels()= 0;
@@ -146,12 +145,15 @@ public:
 	virtual unsigned int getNumberOfInterfileTimeModels()= 0;
 
 	//virtual void setInterSessionTimeModel(list<StochasticModelFit>* modelList) = 0;
-	virtual void setInterSessionTimesOnOff(vector<time_sec>* onOffList) = 0;
+	virtual void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+			vector<time_sec>* offTimesVec) = 0;
 //	virtual void setInterSessionTimeModel(StochasticModelFit* modelVet) = 0;
 //	virtual StochasticModelFit getInterSessionTimeModel_next() = 0;
-	virtual time_sec getInterSessionOnOffTime_next() = 0;
+//	virtual time_sec getInterSessionOnOffTime_next() = 0;
 //	virtual time_sec getInterSessionTime() = 0;
-	virtual unsigned int getNumberOfSessionOnOffTimes()= 0;
+	virtual time_sec getInterSessionOnTime_next() = 0;
+	virtual time_sec getInterSessionOffTime_next() = 0;
+	virtual unsigned int getNumberOfSessionOnOffTimes() = 0;
 
 };
 

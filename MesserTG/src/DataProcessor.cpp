@@ -2478,9 +2478,12 @@ void DataProcessor::regression_tests()
 
 }
 
+//void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+//		const time_sec min_on_time, list<time_sec>* onTimes,
+//		list<time_sec>* offTimes)
 void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
-		const time_sec min_on_time, list<time_sec>* onTimes,
-		list<time_sec>* offTimes)
+		const time_sec min_on_time, vector<time_sec>* onTimes,
+		vector<time_sec>* offTimes)
 {
 	// log
 	MESSER_LOG_INIT(ERROR);
@@ -2606,8 +2609,10 @@ bool DataProcessor::test_calcOnOff()
 	{ 3.00000, 5.00000, 4.00000 };
 
 	unsigned int size_deltaSample1 = delta_sample_1.size();
-	list<double> onTimes;
-	list<time_sec> offTimes;
+//	list<time_sec> onTimes;
+//	list<time_sec> offTimes;
+	vector<time_sec> onTimes;
+	vector<time_sec> offTimes;
 	list<time_sec> list_deltaSample1;
 	unsigned int i = 0;
 	for (i = 0; i < size_deltaSample1; i++)
@@ -2617,33 +2622,33 @@ bool DataProcessor::test_calcOnOff()
 	calcOnOff(list_deltaSample1, session_cut_time1, min_on_time, &onTimes,
 			&offTimes);
 
-	list<time_sec>::iterator it = offTimes.begin();
+	//list<time_sec>::iterator it = offTimes.begin();
 	for (i = 0; i < test1_expected_off.size(); i++)
 	{
 
-		if (!compareDouble(*it, test1_expected_off(i), accErr))
+		if (!compareDouble(offTimes[i], test1_expected_off(i), accErr))
 		{
 			MESSER_ERROR(
 					"%dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
-					i, *it, test1_expected_off(i));
+					i, offTimes[i], test1_expected_off(i));
 
 			return (false);
 		}
-		it++;
+		//it++;
 	}
 
-	it = onTimes.begin();
+	//it = onTimes.begin();
 	for (i = 0; i < test1_expected_on.size(); i++)
 	{
 
-		if (!compareDouble(*it, test1_expected_on(i), accErr))
+		if (!compareDouble(onTimes[i], test1_expected_on(i), accErr))
 		{
 			MESSER_ERROR(
 					"%dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
-					i, *it, test1_expected_on(i));
+					i, onTimes[i], test1_expected_on(i));
 			return (false);
 		}
-		it++;
+		//it++;
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -2671,32 +2676,37 @@ bool DataProcessor::test_calcOnOff()
 			&offTimes);
 
 	//list<time_sec>::iterator it = offTimes.begin();
-	it = offTimes.begin();
+	//it = offTimes.begin();
 	for (i = 0; i < test2_expected_off.size(); i++)
 	{
 
-		if (!compareDouble(*it, test2_expected_off(i), accErr))
+		if (!compareDouble(offTimes[i], test2_expected_off(i), accErr))
 		{
 			MESSER_ERROR(
 					"%dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
-					i, *it, test2_expected_off(i));
+					i, offTimes[i], test2_expected_off(i));
 			return (false);
 		}
-		it++;
+		//it++;
 	}
 
-	it = onTimes.begin();
+	//for(i = 0; i < test2_expected_on.size(); i++)
+	//{
+	//	cout << onTimes[i] << endl;
+	//}
+
+	//it = onTimes.begin();
 	for (i = 0; i < test2_expected_on.size(); i++)
 	{
 
-		if (!compareDouble(*it, test2_expected_on(i), accErr))
+		if (!compareDouble(onTimes[i], test2_expected_on(i), accErr))
 		{
 			MESSER_ERROR(
 					"%dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
-					i, *it, test2_expected_on(i));
+					i, onTimes[i], test2_expected_on(i));
 			return (false);
 		}
-		it++;
+		//it++;
 	}
 
 	RegressionTests rt;

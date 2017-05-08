@@ -572,8 +572,8 @@ private:
 	 * @param offTimes
 	 */
 	void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
-			const time_sec min_on_time, list<time_sec>* onTimes,
-			list<time_sec>* offTimes);
+			const time_sec min_on_time, vector<time_sec>* onTimes,
+			vector<time_sec>* offTimes);
 
 	vec interArrivalSample =
 	{ 0, 0, 0.000203, 1e-05, 0.318392, 1.00003, 0.517214, 3.2e-05, 7.6e-05,
