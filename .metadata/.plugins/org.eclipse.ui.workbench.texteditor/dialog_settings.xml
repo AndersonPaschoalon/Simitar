@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Somenthing went wrong, onOff.size() is zero" key="selection"/>
+		<item value="mean_packetRate" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Somenthing went wrong, onOff.size() is zero"/>
-			<item value="save_data_on_file"/>
-			<item value="interArrival_list"/>
-			<item value="interArrival_fileStack"/>
-			<item value="packetSizeModel1_counter"/>
-			<item value="ptr_session_onTimes"/>
-			<item value="sessionOffTimes"/>
-			<item value="sessionOffTimes_counter"/>
+			<item value="mean_packetRate"/>
+			<item value="startDalay"/>
+			<item value="ps_mostFrequent"/>
+			<item value="getInter"/>
+			<item value="getNumberOfSessionOnOffTimes"/>
+			<item value="session_OnTimes"/>
+			<item value="setInterSessionTimesOnOff"/>
+			<item value="psm1"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
@@ -25,7 +25,7 @@
 		<item value="322" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="425" key="DIALOG_HEIGHT"/>
-		<item value="134" key="DIALOG_X_ORIGIN"/>
-		<item value="619" key="DIALOG_Y_ORIGIN"/>
+		<item value="1210" key="DIALOG_X_ORIGIN"/>
+		<item value="566" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

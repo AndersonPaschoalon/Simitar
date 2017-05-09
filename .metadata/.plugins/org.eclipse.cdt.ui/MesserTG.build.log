@@ -1,6 +1,6 @@
-17:27:27 **** Incremental Build of configuration Debug for project MesserTG ****
+19:59:12 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
 make: Nothing to be done for 'all'.
 
-17:27:28 Build Finished (took 82ms)
+19:59:12 Build Finished (took 65ms)
 

@@ -15,6 +15,7 @@
 			<stochastic_model name="cauchy" aic="136032.008564" bic="136042.518333" param1="0.000000000000896" param2="-14625.880262030268568"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.111920114310954" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="38.36852400,0.77834600,10.70248600,0.10000000,16.01057600,10.32355600,3.99875800" off_times="7.99962600,7.22157000,8.15617800,13.79708400,10.98878600,30.02076200"/>
 		<packet_sizes n_packets="1416" n_kbytes="1434">
 			<ps_mode1 n_packets="487" n_kbytes="88">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="186.772074" param2="0.000000"/>
@@ -43,6 +44,7 @@
 			<stochastic_model name="cauchy" aic="8412.362233" bic="8422.021820" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.171207266216215" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="38.36830900,0.73814400,10.66265800,0.10000000,16.01012100,10.32312500,3.99841100" off_times="8.00004900,7.26169200,8.19599100,13.79754600,10.98920600,30.02111300"/>
 		<packet_sizes n_packets="926" n_kbytes="168">
 			<ps_mode1 n_packets="896" n_kbytes="127">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="145.535714" param2="0.000000"/>
@@ -71,6 +73,7 @@
 			<stochastic_model name="cauchy" aic="8788.254681" bic="8793.383377" param1="0.000000000000090" param2="-1456.930830948511584"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="1.655685424999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="10.05933600,1.99760000,4.99989800,0.10000000,36.93459500,17.26717600,15.28929000" off_times="7.58715400,8.29103800,10.12483000,15.94598500,22.84881400,7.60006800"/>
 		<packet_sizes n_packets="97" n_kbytes="5">
 			<ps_mode1 n_packets="97" n_kbytes="5">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="58.701031" param2="0.000000"/>
@@ -97,6 +100,7 @@
 			<stochastic_model name="cauchy" aic="286.684708" bic="289.200901" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="5.995637973076922" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="4.04386100,0.10000000,1.11719700,0.10000000,0.37520100,0.10000000,0.10000000,0.10000000,1.22712600,0.10000000,15.07790100" off_times="15.07715200,9.54132700,15.00119500,10.28757500,14.82306400,10.94863300,15.07899200,14.89179500,14.85443500,13.54113200"/>
 		<packet_sizes n_packets="27" n_kbytes="2">
 			<ps_mode1 n_packets="27" n_kbytes="2">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="78.851852" param2="0.000000"/>
@@ -123,6 +127,7 @@
 			<stochastic_model name="cauchy" aic="232.520417" bic="234.511882" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.790505899999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="4.06924200,0.10000000,1.09160600,0.10000000,0.37395000,0.10000000,0.10000000,0.10000000,1.22698700,0.10000000,14.97581300" off_times="14.97540000,9.64316900,14.92522600,10.36484200,14.74729200,11.05026700,14.97683600,14.96831000,14.77829200,13.64288500"/>
 		<packet_sizes n_packets="21" n_kbytes="2">
 			<ps_mode1 n_packets="21" n_kbytes="2">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="119.619048" param2="0.000000"/>
@@ -149,6 +154,7 @@
 			<stochastic_model name="pareto-ml" aic="inf" bic="inf" param1="21994.404499144438887" param2="1.999180049999999"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="1.999270947435896" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="153.94386700" off_times=""/>
 		<packet_sizes n_packets="79" n_kbytes="4">
 			<ps_mode1 n_packets="79" n_kbytes="4">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
@@ -175,6 +181,7 @@
 			<stochastic_model name="cauchy" aic="6261.134149" bic="6265.543534" param1="0.000000000000234" param2="-3762.619757635248334"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="2.339835796268656" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="9.08061600,8.84869700,9.99216500,5.69485900" off_times="16.55089700,13.52057700,93.08118400"/>
 		<packet_sizes n_packets="68" n_kbytes="5">
 			<ps_mode1 n_packets="68" n_kbytes="5">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="86.235294" param2="0.000000"/>
@@ -201,6 +208,7 @@
 			<stochastic_model name="cauchy" aic="2046.652064" bic="2048.923052" param1="0.000000000000025" param2="-386.206488490522929"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="6.807496136956520" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="23.78832300,25.13679600,12.14631600,6.12007100,3.06001300" off_times="18.85906100,10.39155900,39.02442400,18.04584700"/>
 		<packet_sizes n_packets="24" n_kbytes="11">
 			<ps_mode1 n_packets="10" n_kbytes="3">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="342.000000" param2="0.000000"/>
@@ -222,6 +230,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.005692050000004" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000,30.00571400" off_times="30.00551800,30.00527800,30.00600200,30.00594800"/>
 		<packet_sizes n_packets="6" n_kbytes="1">
 			<ps_mode1 n_packets="6" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="276.000000" param2="0.000000"/>
@@ -241,6 +250,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.005697649999995" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000,30.00575900" off_times="30.00555300,30.00528000,30.00603700,30.00585900"/>
 		<packet_sizes n_packets="6" n_kbytes="1">
 			<ps_mode1 n_packets="6" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="276.000000" param2="0.000000"/>
@@ -267,6 +277,7 @@
 			<stochastic_model name="cauchy" aic="307.714281" bic="310.516676" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="3.733869116666667" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="7.05318900,0.10000000,0.10000000,7.00558800,0.10000000,32.03159600" off_times="8.00834300,16.00867700,17.89077300,8.00343400,16.01447200"/>
 		<packet_sizes n_packets="31" n_kbytes="6">
 			<ps_mode1 n_packets="31" n_kbytes="6">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="215.258065" param2="0.000000"/>
@@ -286,6 +297,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.086666716666663" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,45.05600000" off_times="45.14802800,45.05597200"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -305,6 +317,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.086652049999998" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,45.05572700" off_times="45.14806800,45.05616100"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -324,6 +337,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.055994383333335" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,45.05598600" off_times="45.05602400,45.05597300"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -343,6 +357,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.056002049999996" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,45.05598100" off_times="45.05605000,45.05597500"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -369,6 +384,7 @@
 			<stochastic_model name="cauchy" aic="180.819691" bic="182.486117" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.952660285294117" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.06660600,0.10000000,45.05594400" off_times="45.01667700,45.05599700"/>
 		<packet_sizes n_packets="18" n_kbytes="2">
 			<ps_mode1 n_packets="16" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="94.312500" param2="0.000000"/>
@@ -397,6 +413,7 @@
 			<stochastic_model name="cauchy" aic="153.735920" bic="155.014035" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="9.656796407142858" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.06652800,0.10000000,45.05592300" off_times="45.01668500,45.05601300"/>
 		<packet_sizes n_packets="15" n_kbytes="1">
 			<ps_mode1 n_packets="15" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="105.933333" param2="0.000000"/>
@@ -416,6 +433,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.021052999999998" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times="0.02105300"/>
 		<packet_sizes n_packets="2" n_kbytes="1">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="82.000000" param2="0.000000"/>
@@ -433,6 +451,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.016375000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times="0.01637500"/>
 		<packet_sizes n_packets="2" n_kbytes="2">
 			<ps_mode1 n_packets="0" n_kbytes="0">
 				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
@@ -452,6 +471,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="13.340931494444446" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.00066300,0.10000000,0.10000000,0.10000000,0.00013300" off_times="30.01761600,30.00946500,30.02258300,30.01595800"/>
 		<packet_sizes n_packets="10" n_kbytes="2">
 			<ps_mode1 n_packets="10" n_kbytes="2">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="287.000000" param2="0.000000"/>
@@ -471,6 +491,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.010827299999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,0.10000000,30.01345300" off_times="30.01025800,30.00974400,30.00985400"/>
 		<packet_sizes n_packets="5" n_kbytes="1">
 			<ps_mode1 n_packets="5" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="286.000000" param2="0.000000"/>
@@ -490,6 +511,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.010820550000002" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,0.10000000,0.10000000,30.01341600" off_times="30.01028800,30.00968200,30.00989600"/>
 		<packet_sizes n_packets="5" n_kbytes="1">
 			<ps_mode1 n_packets="5" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="286.000000" param2="0.000000"/>
@@ -509,6 +531,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="125.442631999999989" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times="125.44263200"/>
 		<packet_sizes n_packets="2" n_kbytes="0">
 			<ps_mode1 n_packets="2" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
@@ -528,6 +551,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.056009050000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,45.05597700" off_times="45.05604100"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
 			<ps_mode1 n_packets="3" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -547,6 +571,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.056031550000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,45.05606800" off_times="45.05599500"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
 			<ps_mode1 n_packets="3" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -566,6 +591,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="124.788645999999986" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times="124.78864600"/>
 		<packet_sizes n_packets="2" n_kbytes="0">
 			<ps_mode1 n_packets="2" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
@@ -585,6 +611,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="75.000000" param2="0.000000"/>
@@ -602,6 +629,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="91.000000" param2="0.000000"/>
@@ -619,6 +647,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.118609383333333" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="1.06713900" off_times=""/>
 		<packet_sizes n_packets="10" n_kbytes="5">
 			<ps_mode1 n_packets="6" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="188.666667" param2="0.000000"/>
@@ -647,6 +676,7 @@
 			<stochastic_model name="cauchy" aic="128.406532" bic="129.376345" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.632054549999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.96856400,45.30801100" off_times="45.30807900"/>
 		<packet_sizes n_packets="13" n_kbytes="1">
 			<ps_mode1 n_packets="12" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="99.916667" param2="0.000000"/>
@@ -666,6 +696,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.675646799999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.97657800,15.46854000" off_times="44.96005600"/>
 		<packet_sizes n_packets="9" n_kbytes="0">
 			<ps_mode1 n_packets="8" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="94.000000" param2="0.000000"/>
@@ -685,6 +716,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="13.908316799999998" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.61267500,45.00761800" off_times="10.01297400"/>
 		<packet_sizes n_packets="5" n_kbytes="0">
 			<ps_mode1 n_packets="5" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="67.600000" param2="0.000000"/>
@@ -711,6 +743,7 @@
 			<stochastic_model name="cauchy" aic="110.349551" bic="110.954721" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="9.158458950000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.96759300,45.30802300" off_times="45.30897300"/>
 		<packet_sizes n_packets="11" n_kbytes="1">
 			<ps_mode1 n_packets="11" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="94.363636" param2="0.000000"/>
@@ -737,6 +770,7 @@
 			<stochastic_model name="cauchy" aic="805.420988" bic="806.026158" param1="0.000000000000000" param2="-5.396170012280763"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.075735050000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.75723700" off_times=""/>
 		<packet_sizes n_packets="11" n_kbytes="6">
 			<ps_mode1 n_packets="6" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="112.666667" param2="0.000000"/>
@@ -758,6 +792,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.656086716666668" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="45.63649200" off_times=""/>
 		<packet_sizes n_packets="7" n_kbytes="0">
 			<ps_mode1 n_packets="7" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="105.142857" param2="0.000000"/>
@@ -777,6 +812,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="18.544432716666662" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.30067100,45.31966700" off_times="10.01296000"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="68.500000" param2="0.000000"/>
@@ -796,6 +832,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.039996549999998" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,45.05592300" off_times="45.02407000"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
 			<ps_mode1 n_packets="3" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -815,6 +852,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.040009550000001" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,45.05588300" off_times="45.02413600"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
 			<ps_mode1 n_packets="3" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -834,6 +872,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.055977049999996" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,45.05595100" off_times="45.05600300"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
 			<ps_mode1 n_packets="3" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -853,6 +892,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.055934049999991" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,45.05596700" off_times="45.05590100"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
 			<ps_mode1 n_packets="3" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -872,6 +912,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="17.250831049999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,36.56705900" off_times="15.18543400"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -891,6 +932,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="17.250818383333328" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000,36.74683000" off_times="15.00562500"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="73.750000" param2="0.000000"/>
@@ -910,6 +952,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="83.000000" param2="0.000000"/>
@@ -927,6 +970,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="115.000000" param2="0.000000"/>
@@ -944,6 +988,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="74.000000" param2="0.000000"/>
@@ -961,6 +1006,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="78.000000" param2="0.000000"/>
@@ -978,6 +1024,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="115.000000" param2="0.000000"/>
@@ -995,6 +1042,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="108.000000" param2="0.000000"/>
@@ -1012,6 +1060,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
@@ -1029,6 +1078,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="108.000000" param2="0.000000"/>
@@ -1046,6 +1096,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
@@ -1063,6 +1114,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="137.000000" param2="0.000000"/>
@@ -1080,6 +1132,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="79.000000" param2="0.000000"/>
@@ -1097,6 +1150,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="79.000000" param2="0.000000"/>
@@ -1114,6 +1168,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="179.000000" param2="0.000000"/>
@@ -1138,6 +1193,7 @@
 			<stochastic_model name="cauchy" aic="108.792313" bic="109.397483" param1="1.935832000000000" param2="-7.245692000000000"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="6.590450449999999" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.60847700,0.10000000,5.03653300" off_times="44.96002800,15.29946600"/>
 		<packet_sizes n_packets="11" n_kbytes="2">
 			<ps_mode1 n_packets="9" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="111.333333" param2="0.000000"/>
@@ -1159,6 +1215,7 @@
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="9.383431335714286" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.38659600,0.10000000,5.00017700" off_times="45.18189900,15.11534700"/>
 		<packet_sizes n_packets="8" n_kbytes="0">
 			<ps_mode1 n_packets="7" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="91.142857" param2="0.000000"/>
@@ -1178,6 +1235,7 @@
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="179.000000" param2="0.000000"/>

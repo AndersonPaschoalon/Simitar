@@ -218,6 +218,8 @@ private:
 	static const char * LABEL_INTERFILE;
 	static const char * LABEL_INTERSESSION;
 	static const char * LABEL_SESSION;
+	static const char * LABEL_SESSION_ON;
+	static const char * LABEL_SESSION_OFF;
 	static const char * LABEL_PACKETSIZES;
 	static const char * LABEL_PSMODE1;
 	static const char * LABEL_PSMODE2;

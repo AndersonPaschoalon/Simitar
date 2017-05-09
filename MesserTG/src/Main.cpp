@@ -116,6 +116,8 @@ int main()
 
 	delete trace;
 
+	MESSER_DEBUG("<%s, %s>");
+
 	NetworkTrace* tracetest = NULL;
 	tracetest = new NetworkTrace("kkk.xml");
 	//NetworkTrace traceTest = NetworkTrace("kkk.xml");
@@ -132,5 +134,6 @@ int main()
 	MESSER_INFO(" @<%s, %s>");
 
 	MESSER_LOG_END();
+
 	return 0;
 }

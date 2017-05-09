@@ -194,6 +194,13 @@ void charvet2type(const char* vetc, list<int>& theList);
  */
 void charvet2type(const char* vetc, list<long int>& theList);
 
+
+void charvet2type(const char* vetc, vector<long int>& theVector);
+//void charvet2type(const char* vetc, vector<unsigned long int>& theVector);
+void charvet2type(const char* vetc, vector<int>& theVector);
+//void charvet2type(const char* vetc, vector<unsigned int>& theVector);
+void charvet2type(const char* vetc, vector<double>& theVector);
+
 /**
  * @brief Pint a list of any type in the standard output.
  * @param theList

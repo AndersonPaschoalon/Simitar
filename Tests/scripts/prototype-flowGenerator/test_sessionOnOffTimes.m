@@ -69,10 +69,21 @@ ontimes
 
 offtimes
 
+fprintf("SAMPLE NOW LOL");
 
 
+delta_sample_data = [30.00551800,30.00527800,30.00600200,30.00594800,30.00571400];
+cumulative_sample_data = cumulativeData(arrival_sample_data);
+arrival_time = cumulative_sample_data;
+delta_time = delta_sample_data;
+cut_time = 7;
+[onoff ontimes offtimes] = calcOnOffTimes(arrival_time, delta_time, cut_time, min_time);
 
+onoff
 
+ontimes
+
+offtimes
 
 
 

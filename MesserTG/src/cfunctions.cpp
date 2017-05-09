@@ -15,33 +15,43 @@ void string2charvet(const string s, char* vetc)
 
 void vector2str(vector<double> theVec, char* str)
 {
+
 	list<double> theList;
 	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
 	list2str(theList, str);
+
 }
 void vector2str(vector<int> theVec, char* str)
 {
+
 	list<int> theList;
 	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
 	list2str(theList, str);
+
 }
 void vector2str(vector<long int> theVec, char* str)
 {
+
 	list<long int> theList;
 	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
 	list2str(theList, str);
+
 }
 void vector2str(vector<unsigned int> theVec, char* str)
 {
+
 	list<unsigned int> theList;
 	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
 	list2str(theList, str);
+
 }
 void vector2str(vector<unsigned long int> theVec, char* str)
 {
+
 	list<unsigned long int> theList;
 	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
 	list2str(theList, str);
+
 }
 
 void list2str(list<double> theList, char* str)
@@ -177,7 +187,7 @@ void charvet2type(const char* vetc, double& v)
 void charvet2type(const char* vetc, list<double>& theList)
 {
 
-	//char in_cstr[CHAR_BUFFER] = "1,223,3;4 5555 6";
+//char in_cstr[CHAR_BUFFER] = "1,223,3;4 5555 6";
 	char buffer[CHAR_BUFFER];
 	double val_buffer = 0;
 
@@ -281,6 +291,37 @@ void charvet2type(const char* vetc, list<long int>& theList)
 			in_conter++;
 	}
 
+}
+
+void charvet2type(const char* vetc, vector<long int>& theVector)
+{
+	list<long int> theList;
+	charvet2type(vetc, theList);
+	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
+}
+//void charvet2type(const char* vetc, vector<unsigned long int>& theVector)
+//{
+//	list<unsigned long int> theList;
+//	charvet2type(vetc, theList);
+//	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
+//}
+void charvet2type(const char* vetc, vector<int>& theVector)
+{
+	list<int> theList;
+	charvet2type(vetc, theList);
+	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
+}
+//void charvet2type(const char* vetc, vector<unsigned int>& theVector)
+//{
+//	list<unsigned int> theList;
+//	charvet2type(vetc, theList);
+//	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
+//}
+void charvet2type(const char* vetc, vector<double>& theVector)
+{
+	list<double> theList;
+	charvet2type(vetc, theList);
+	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 }
 
 bool delimiter(char c)
@@ -471,20 +512,20 @@ bool test_charvet2type()
 	vd[4] = 5.555;
 	vd[5] = 6.0;
 
-	//printList (theList);
+//printList (theList);
 	charvet2type(in_cstrI, aListI);
-	//printList(aListI);
+//printList(aListI);
 
 	charvet2type(in_cstrD, aList);
-	//printList(aList);
+//printList(aList);
 
 	charvet2type(in_cstrI, aListL);
-	//printList(aListL);
+//printList(aListL);
 
-	//charvet2type(in_cstrN, aListL);
-	//printList(aListN);
+//charvet2type(in_cstrN, aListL);
+//printList(aListN);
 
-	//double
+//double
 	unsigned int i = 0;
 	for (list<double>::iterator it = aList.begin(); it != aList.end(); it++)
 	{
@@ -496,7 +537,7 @@ bool test_charvet2type()
 		}
 		i++;
 	}
-	//int
+//int
 	i = 0;
 	for (list<int>::iterator it = aListI.begin(); it != aListI.end(); it++)
 	{
@@ -505,7 +546,7 @@ bool test_charvet2type()
 			return (false);
 		i++;
 	}
-	//long int
+//long int
 	i = 0;
 	for (list<long int>::iterator it = aListL.begin(); it != aListL.end(); it++)
 	{
@@ -521,8 +562,8 @@ bool test_charvet2type()
 
 bool test_cumulativeDistribution()
 {
-	//mat M;
-	//M.load("data/regression-tests/exp_interarrival_times.txt");
+//mat M;
+//M.load("data/regression-tests/exp_interarrival_times.txt");
 
 	list<double> dlist;
 	list<time_sec> cdlist;
@@ -539,7 +580,7 @@ bool test_cumulativeDistribution()
 		return (false);
 	}
 
-	//cout << "clist: " << buffer << endl;
+//cout << "clist: " << buffer << endl;
 
 	return (true);
 }
@@ -552,11 +593,11 @@ bool test_list2str()
 	list<int> intlist;
 	charvet2type("10.1,10.2,10.3,11,15.5,16.7", doublelist);
 	charvet2type("1,2,3,4,5,6,7,8,9,0", intlist);
-	//printList(doublelist);
+//printList(doublelist);
 	list2str(doublelist, dstr);
 	list2str(intlist, istr);
 
-	//cout << "str len: " << doublelist.size() << endl;
+//cout << "str len: " << doublelist.size() << endl;
 
 	if (strcmp(dstr,
 			"10.10000000,10.20000000,10.30000000,11.00000000,15.50000000,16.70000000")

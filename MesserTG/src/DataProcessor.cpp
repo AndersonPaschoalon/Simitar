@@ -32,7 +32,7 @@ string DataProcessor::toString(void)
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
-	MESSER_LOG_INIT(DEBUG);
+	MESSER_LOG_INIT(NOTICE);
 
 	///iterator variables
 	long int fcounter = 0;
@@ -162,6 +162,9 @@ int DataProcessor::calculate(const string& experimentName,
 		/// reference :
 		/// http://www.iana.org/assignments/ieee-802-numbers/ieee-802-numbers.xhtml
 
+		//DEBUG
+		unsigned int debugflag = 0;
+
 		databaseInterface->getFlowData(experimentName, fcounter, "eth__type",
 				&flowIntData);
 		if (flowIntData == IPV4_CODE)
@@ -170,8 +173,16 @@ int DataProcessor::calculate(const string& experimentName,
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__src",
 					&flowStrData);
 			netFlow->setNetworkSrcAddr(flowStrData);
+
+			//DEBUG
+			if (flowStrData == "10.1.1.41")
+			{
+				debugflag = 33;
+			}
+
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__dst",
 					&flowStrData);
+
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
 		else if (flowIntData == (ARP_CODE || ARP_CODE_REV))
@@ -200,6 +211,13 @@ int DataProcessor::calculate(const string& experimentName,
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__src",
 					&flowStrData);
 			netFlow->setNetworkSrcAddr(flowStrData);
+
+			//DEBUG
+			if (flowStrData == "10.1.1.41")
+			{
+				debugflag = 33;
+			}
+
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__dst",
 					&flowStrData);
 			netFlow->setNetworkDstAddr(flowStrData);
@@ -253,7 +271,6 @@ int DataProcessor::calculate(const string& experimentName,
 		else if (flowIntData == GRE_CODE)
 		{
 			netFlow->setTransportProtocol(PROTOCOL__GRE);
-			//TODO não suportado pelo D-ITG
 		}
 		else if (flowIntData == ICMPV6_CODE)
 		{
@@ -287,60 +304,25 @@ int DataProcessor::calculate(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 
 		/// Inter-packet times
-
 		netFlow->setInterDepertureTimeModels(
 				fitModelsInterArrival(interArrival_list,
 						getInformationCriterion()));
 		MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
 				interArrival_list.size());
 
-		vector<time_sec> on_t;
-		vector<time_sec> off_t;
-		calcOnOff(interArrival_list, 7, 0.1, &on_t, &off_t);
-
-		// DEBUG
-		RegressionTests rt;
-		char vecbuffer1[CHAR_LARGE_BUFFER];
-		char vecbuffer2[CHAR_LARGE_BUFFER];
-		vector2str(on_t, vecbuffer1);
-		vector2str(off_t, vecbuffer2);
-		MESSER_DEBUG("OnOff>> onTimes=[%s] offTimes=[%s] @ <%s, %s>",
-				vecbuffer1, vecbuffer2);
-
-		/// allocate and calc on/off times
-		//interArrival_sessionOnTimes = new vector<time_sec>;
-		//interArrival_sessionOffTimes = new vector<time_sec>;
-		//calcOnOff(interArrival_list, m_session_cut_time, m_min_on_time,
-		//		interArrival_sessionOnTimes, interArrival_sessionOffTimes);
-
-		/// set on/off times
-		//netFlow->setInterSessionTimesOnOff(interArrival_sessionOnTimes,
-		//		interArrival_sessionOffTimes);
-		//MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
-		//		interArrival_sessionOnTimes->size());
-		//MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
-		//		interArrival_sessionOffTimes->size());
-
 		//DEBUG
-		//cout << "Print models setted\n";
-		//netFlow->printModels();
-		//
-		//cout << "Print first model\n";
-		//for (unsigned int counterUbaluba = 0;
-		//		counterUbaluba < netFlow->getNumberOfInterdepertureTimeModels();
-		//		counterUbaluba++)
-		//{
-		//	StochasticModelFit sf = netFlow->getInterDepertureTimeModel_next();
-		//	sf.print();
-		//}
+		if (debugflag == 33)
+		{
+			char debugout[CHAR_LARGE_BUFFER];
+			list2str(interArrival_list, debugout);
+			MESSER_DEBUG("interarrival of 10.1.1.41: %s <%s, %s>", debugout);
+		}
 
-		//DEBUG
-		//int waitt;
-		//cin >> waitt;
-
-//		RegressionTests rt;
-//		rt.print(psSecondMode);
-//		rt.wait_int("psmode2 list");
+		//Session Times
+		vector<time_sec>* onTimes = new vector<time_sec>;
+		vector<time_sec>* offTimes = new vector<time_sec>;
+		calcOnOff(interArrival_list, 7, 0.1, onTimes, offTimes);
+		netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
 
 		/// Packet size data
 		netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
@@ -352,13 +334,15 @@ int DataProcessor::calculate(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 		netTrace->pushback_Netflow(netFlow);
 
+		//logs
 		MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
 				interArrival_list.size());
-		//MESSER_DEBUG("interArrival_fileStack.size() = %d, ", interArrival_fileStack.size() );
-//		MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
-//				interArrival_sessionOnTimes->size());
-//		MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
-//				interArrival_sessionOffTimes->size());
+		MESSER_DEBUG("interArrival_fileStack.size() = %d, ",
+				interArrival_fileStack.size());
+		MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
+				onTimes->size());
+		MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
+				offTimes->size());
 		//string file1 = to_string(fcounter) + "fileStack";
 		//string file2 = to_string(fcounter) + "interFileStack";
 		//string file3 = to_string(fcounter) + "interSessionStack";
@@ -366,28 +350,25 @@ int DataProcessor::calculate(const string& experimentName,
 		//save_data_on_file(file2, interArrival_interFileStack);
 		//save_data_on_file(file3, interArrival_interSessionStack);
 
-#ifdef DEBUG_DataProcessor_calculate_loop
-		cout << fcounter << ": ps_mostFrequent=" << ps_mostFrequent << endl;
-		cout << fcounter << ": startDalay=" << startDalay << endl;
-		cout << fcounter << ": mean_packetRate=" << mean_packetRate << endl;
-		cout << fcounter << ": idt_constant=" << netFlow->getIdtConstant() << endl;
-#endif //DEBUG_DataProcessor_calculate_loop
-#ifdef DEBUG_DataProcessor_calculate_loop
-		cout << fcounter << ": netFlow->getTransportProtocol()  = " << netFlow->getTransportProtocol() << endl;
-		cout << fcounter << ": netFlow->getNetworkProtocol() = " << netFlow->getNetworkProtocol() << endl;
-		cout << fcounter << ": netFlow->getTransportDstPort() = " << netFlow->getTransportDstPort() << endl;
-		cout << fcounter << ": netFlow->getFlowDsByte() = " << netFlow->getFlowDsByte() << endl;
-		cout << fcounter << ": netFlow->getNetworkDstAddr() = " << netFlow->getNetworkDstAddr() << endl << endl;
+		MESSER_DEBUG("flow%d: startDalay=%f @ <%s, %s>", fcounter, startDalay);
 
-#endif //DEBUG_DataProcessor_calculate_loop
+		MESSER_DEBUG("flow%d: netFlow->getTransportProtocol()=%d  @ <%s, %s>",
+				fcounter, netFlow->getTransportProtocol());
+		MESSER_DEBUG("flow%d: netFlow->getNetworkProtocol()=%d  @ <%s, %s>",
+				fcounter, netFlow->getNetworkProtocol());
+		MESSER_DEBUG("flow%d: netFlow->getTransportDstPort()=%d  @ <%s, %s>",
+				fcounter, netFlow->getTransportDstPort());
+		MESSER_DEBUG("flow%d: netFlow->getFlowDsByte()=%d  @ <%s, %s>",
+				fcounter, netFlow->getFlowDsByte());
+		MESSER_DEBUG("flow%d: netFlow->getNetworkDstAddr()=%s @ <%s, %s>",
+				fcounter, netFlow->getNetworkDstAddr().c_str());
 
 	}
 
-#ifdef DEBUG_DataProcessor_calculate
-	cout << "netTrace->networkFlow.size() = " << netTrace->networkFlow.size() << endl;
-	cout << "netTrace->getNumberOfFlows() = " << netTrace->getNumberOfFlows() << endl;
-#endif //DEBUG_DataProcessor_calculate
-
+	MESSER_DEBUG("netTrace->networkFlow.size()=%d",
+			netTrace->networkFlow.size());
+	MESSER_DEBUG("netTrace->getNumberOfFlows()=%d",
+			netTrace->getNumberOfFlows());
 	return (0);
 }
 
@@ -504,58 +485,26 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		list<double>& empiricalData, const string& criterion)
 {
 
-	//debug temp
-	//for (list<double>::iterator it = empiricalData.begin();
-	//		it != empiricalData.end(); it++)
-	//{
-	//	std::cout << *it << ", ";
-	//}
-
-	//constants
-	//const int numberOfModels = 8;
 	const int m = empiricalData.size(); //empirical data-size
 	//vars
 	int counter = 0;
 	list<StochasticModelFit>* modelList = new list<StochasticModelFit>;
 	StochasticModelFit smf = StochasticModelFit();
-	//std::vector<StochasticModelFit>* modelVet = NULL;
-	//modelVet = new std::vector<StochasticModelFit>();
 	vec paramVec = zeros<vec>(2);
 	vec infoCriterion = zeros<vec>(2);
 
 	if (m == 0)
 	{
-
 		smf.set(SINGLE_PACKET, 0, 0, datum::inf, datum::inf);
 		modelList->push_back(smf);
-
-//		modelVet[0].aic = datum::inf;
-//		modelVet[0].bic = datum::inf;
-//		modelVet[0].modelName = NO_MODEL;
-//		modelVet[0].param1 = 0;
-//		modelVet[0].param2 = 0;
-//		modelVet[0].size = 1;
 	}
 	else if (m == 1)
 	{
-		//modelVet = new StochasticModelFit[1];
-		//modelVet = new std::array<StochasticModelFit, 1>;
 		smf.set(CONSTANT, *empiricalData.begin(), 0, datum::inf, datum::inf);
 		modelList->push_back(smf);
-
-//		modelVet[0].aic = datum::inf;
-//		modelVet[0].bic = datum::inf;
-//		modelVet[0].modelName = CONSTANT;
-//		modelVet[0].param1 = *empiricalData.begin();
-//		modelVet[0].param2 = 0;
-//		modelVet[0].size = 1;
-
 	}
 	else if (m < minimumAmountOfPackets)
 	{
-		//modelVet = new StochasticModelFit[1];
-		//modelList = new std::array<StochasticModelFit, 1>;
-
 		//Inter-arrival vec
 		vec interArrival = zeros<vec>(m);
 		counter = 0;
@@ -566,26 +515,14 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 			counter++;
 		}
 
-		//Empirical CDF of interArrival
-		//vec* interArrivalCdf = empiricalCdf(empiricalData);
-
 		//Constant
 		constantFitting(interArrival, paramVec, infoCriterion);
 		smf.set(CONSTANT, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-
-//		modelVet[0].aic = infoCriterion(0);
-//		modelVet[0].bic = infoCriterion(1);
-//		modelVet[0].modelName = CONSTANT;
-//		modelVet[0].param1 = paramVec(0);
-//		modelVet[0].param2 = paramVec(1);
-//		modelVet[0].size = numberOfModels;
 	}
 	else
 	{
-		//modelList = new StochasticModelFit[numberOfModels];
-
 		//Inter-arrival vec
 		vec interArrival = zeros<vec>(m);
 		counter = 0;
@@ -604,36 +541,18 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		smf.set(WEIBULL, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[0].aic = infoCriterion(0);
-//		modelVet[0].bic = infoCriterion(1);
-//		modelVet[0].modelName = WEIBULL;
-//		modelVet[0].param1 = paramVec(0);
-//		modelVet[0].param2 = paramVec(1);
-//		modelVet[0].size = numberOfModels;
 
 		//normal
 		normalFitting(interArrival, paramVec, infoCriterion);
 		smf.set(NORMAL, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[1].aic = infoCriterion(0);
-//		modelVet[1].bic = infoCriterion(1);
-//		modelVet[1].modelName = NORMAL;
-//		modelVet[1].param1 = paramVec(0);
-//		modelVet[1].param2 = paramVec(1);
-//		modelVet[1].size = numberOfModels;
 
 		//exponential mean
 		exponentialMeFitting(interArrival, paramVec, infoCriterion);
 		smf.set(EXPONENTIAL_MEAN, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[2].aic = infoCriterion(0);
-//		modelVet[2].bic = infoCriterion(1);
-//		modelVet[2].modelName = EXPONENTIAL_MEAN;
-//		modelVet[2].param1 = paramVec(0);
-//		modelVet[2].param2 = paramVec(1);
-//		modelVet[2].size = numberOfModels;
 
 		//exponential Linear Regression (LR)
 		exponentialLrFitting(interArrival, *interArrivalCdf, paramVec,
@@ -641,12 +560,6 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		smf.set(EXPONENTIAL_LINEAR_REGRESSION, paramVec(0), paramVec(1),
 				infoCriterion(0), infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[3].aic = infoCriterion(0);
-//		modelVet[3].bic = infoCriterion(1);
-//		modelVet[3].modelName = EXPONENTIAL_LINEAR_REGRESSION;
-//		modelVet[3].param1 = paramVec(0);
-//		modelVet[3].param2 = paramVec(1);
-//		modelVet[3].size = numberOfModels;
 
 		//pareto linear regression
 		paretoLrFitting(interArrival, *interArrivalCdf, paramVec,
@@ -654,12 +567,6 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		smf.set(PARETO_LINEAR_REGRESSION, paramVec(0), paramVec(1),
 				infoCriterion(0), infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[4].aic = infoCriterion(0);
-//		modelVet[4].bic = infoCriterion(1);
-//		modelVet[4].modelName = PARETO_LINEAR_REGRESSION;
-//		modelVet[4].param1 = paramVec(0);
-//		modelVet[4].param2 = paramVec(1);
-//		modelVet[4].size = numberOfModels;
 
 		//pareto maximum likehood
 		paretoMlhFitting(interArrival, *interArrivalCdf, paramVec,
@@ -667,45 +574,18 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		smf.set(PARETO_MAXIMUM_LIKEHOOD, paramVec(0), paramVec(1),
 				infoCriterion(0), infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[5].aic = infoCriterion(0);
-//		modelVet[5].bic = infoCriterion(1);
-//		modelVet[5].modelName = PARETO_MAXIMUM_LIKEHOOD;
-//		modelVet[5].param1 = paramVec(0);
-//		modelVet[5].param2 = paramVec(1);
-//		modelVet[5].size = numberOfModels;
 
 		//Cauchy
 		cauchyFitting(interArrival, *interArrivalCdf, paramVec, infoCriterion);
 		smf.set(CAUCHY, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[6].aic = infoCriterion(0);
-//		modelVet[6].bic = infoCriterion(1);
-//		modelVet[6].modelName = CAUCHY;
-//		modelVet[6].param1 = paramVec(0);
-//		modelVet[6].param2 = paramVec(1);
-//		modelVet[6].size = numberOfModels;
 
 		//Constant
 		constantFitting(interArrival, paramVec, infoCriterion);
 		smf.set(CONSTANT, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[7].aic = infoCriterion(0);
-//		modelVet[7].bic = infoCriterion(1);
-//		modelVet[7].modelName = CONSTANT;
-//		modelVet[7].param1 = paramVec(0);
-//		modelVet[7].param2 = paramVec(1);
-//		modelVet[7].size = numberOfModels;
-
-//		cout << endl;
-//		for (list<StochasticModelFit>::iterator it = modelList->begin();
-//				it != modelList->end(); it++)
-//		{
-//			it->print();
-//			int waitt;
-//			cin >> waitt;
-//		}
 
 		if (criterion == "bic")
 		{
@@ -726,31 +606,11 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		delete interArrivalCdf;
 	}
 
-// DEBUG
-//	cout << "print list" << endl;
-//	for (list<StochasticModelFit>::iterator it = modelList->begin();
-//			it != modelList->end(); it++)
-//	{
-//		it->print();
-//	}
-
 	modelList->sort();
-
-// DEBUG
-//	cout << "--------\n";
-//	cout << "print list" << endl;
-//	for (list<StochasticModelFit>::iterator it = modelList->begin();
-//			it != modelList->end(); it++)
-//	{
-//		it->print();
-//	}
-//	int waitt;
-//	cin >> waitt;
 
 	return (modelList);
 }
 
-//TODO
 list<StochasticModelFit>* DataProcessor::fitModelsPsSize(
 		list<double>& empiricalData)
 {
@@ -768,37 +628,16 @@ list<StochasticModelFit>* DataProcessor::fitModelsPsSize(
 
 	if (m == 0)
 	{
-
-		//modelVet = new StochasticModelFit[1];
-
 		smf.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
 		modelList->push_back(smf);
-
-//		modelVet[0].aic = datum::inf;
-//		modelVet[0].bic = datum::inf;
-//		modelVet[0].modelName = NO_MODEL;
-//		modelVet[0].param1 = 0;
-//		modelVet[0].param2 = 0;
-//		modelVet[0].size = 1;
 	}
 	else if (m == 1)
 	{
-		//modelVet = new StochasticModelFit[1];
 		smf.set(CONSTANT, *empiricalData.begin(), 0, datum::inf, datum::inf);
 		modelList->push_back(smf);
-
-//		modelVet[0].aic = datum::inf;
-//		modelVet[0].bic = datum::inf;
-//		modelVet[0].modelName = CONSTANT;
-//		modelVet[0].param1 = *empiricalData.begin();
-//		modelVet[0].param2 = 0;
-//		modelVet[0].size = 1;
-
 	}
 	else
 	{
-		//modelVet = new StochasticModelFit[numberOfModels];
-
 		//Inter-arrival vec
 		vec psList = zeros<vec>(m);
 		counter = 0;
@@ -814,36 +653,18 @@ list<StochasticModelFit>* DataProcessor::fitModelsPsSize(
 		smf.set(CONSTANT, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[0].aic = infoCriterion(0);
-//		modelVet[0].bic = infoCriterion(1);
-//		modelVet[0].modelName = CONSTANT;
-//		modelVet[0].param1 = paramVec(0);
-//		modelVet[0].param2 = paramVec(1);
-//		modelVet[0].size = numberOfModels;
 
 		//normal
 		normalFitting(psList, paramVec, infoCriterion);
 		smf.set(NORMAL, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[1].aic = infoCriterion(0);
-//		modelVet[1].bic = infoCriterion(1);
-//		modelVet[1].modelName = NORMAL;
-//		modelVet[1].param1 = paramVec(0);
-//		modelVet[1].param2 = paramVec(1);
-//		modelVet[1].size = numberOfModels;
 
 		//exponential mean
 		exponentialMeFitting(psList, paramVec, infoCriterion);
 		smf.set(EXPONENTIAL_MEAN, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
 		modelList->push_back(smf);
-//		modelVet[2].aic = infoCriterion(0);
-//		modelVet[2].bic = infoCriterion(1);
-//		modelVet[2].modelName = EXPONENTIAL_MEAN;
-//		modelVet[2].param1 = paramVec(0);
-//		modelVet[2].param2 = paramVec(1);
-//		modelVet[2].size = numberOfModels;
 
 	}
 
@@ -867,25 +688,10 @@ inline void DataProcessor::weibullFitting(const vec& interArrival,
 	//gradient descendent
 	gradientDescendent(*X, y, learning_rate, iterations, theta, J_history);
 
-	//// Olddays-29/03/2017
-	//TODO ver se essa modificação faz sentido.... ela ferrou com os testes de
-	// regressão... e mesmo que os resoltados divirgam, há dois metodos com
-	// garantia de não divergencia
-	//check if the values make sense
-//	if (fabs(theta(1)) < diferential)
-//	{
-//		if (theta(1) < 0)
-//			theta(1) = -diferential;
-//		else
-//			theta(1) = diferential;
-//	}
-
 	//parameter evaluation
 	double weibull_alpha = theta(1);
 	double weibull_betha = exp(-theta(0) / theta(1));
 
-	//// Olddays-29/03/2017
-	// check if they are valid weibull parameters. If not, replace by default
 	if (isRealPositive(weibull_alpha, weibull_betha))
 	{
 		paramVec(0) = weibull_alpha;
@@ -2606,8 +2412,6 @@ bool DataProcessor::test_calcOnOff()
 	{ 3.00000, 5.00000, 4.00000 };
 
 	unsigned int size_deltaSample1 = delta_sample_1.size();
-//	list<time_sec> onTimes;
-//	list<time_sec> offTimes;
 	vector<time_sec> onTimes;
 	vector<time_sec> offTimes;
 	list<time_sec> list_deltaSample1;
@@ -2619,7 +2423,6 @@ bool DataProcessor::test_calcOnOff()
 	calcOnOff(list_deltaSample1, session_cut_time1, min_on_time, &onTimes,
 			&offTimes);
 
-	//list<time_sec>::iterator it = offTimes.begin();
 	for (i = 0; i < test1_expected_off.size(); i++)
 	{
 
@@ -2631,10 +2434,8 @@ bool DataProcessor::test_calcOnOff()
 
 			return (false);
 		}
-		//it++;
 	}
 
-	//it = onTimes.begin();
 	for (i = 0; i < test1_expected_on.size(); i++)
 	{
 
@@ -2645,7 +2446,6 @@ bool DataProcessor::test_calcOnOff()
 					i, onTimes[i], test1_expected_on(i));
 			return (false);
 		}
-		//it++;
 	}
 
 	///////////////////////////////////////////////////////////////////////////
@@ -2672,8 +2472,6 @@ bool DataProcessor::test_calcOnOff()
 	calcOnOff(list_deltaSample2, session_cut_time2, min_on_time, &onTimes,
 			&offTimes);
 
-	//list<time_sec>::iterator it = offTimes.begin();
-	//it = offTimes.begin();
 	for (i = 0; i < test2_expected_off.size(); i++)
 	{
 
@@ -2684,15 +2482,8 @@ bool DataProcessor::test_calcOnOff()
 					i, offTimes[i], test2_expected_off(i));
 			return (false);
 		}
-		//it++;
 	}
 
-	//for(i = 0; i < test2_expected_on.size(); i++)
-	//{
-	//	cout << onTimes[i] << endl;
-	//}
-
-	//it = onTimes.begin();
 	for (i = 0; i < test2_expected_on.size(); i++)
 	{
 
@@ -2703,15 +2494,7 @@ bool DataProcessor::test_calcOnOff()
 					i, onTimes[i], test2_expected_on(i));
 			return (false);
 		}
-		//it++;
 	}
-
-	RegressionTests rt;
-	rt.wait_int();
-	//printList(onTimes);
-	//printList(offTimes);
-
-	//delta_sample_2.print();
 
 	return (true);
 }

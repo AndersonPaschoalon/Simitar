@@ -115,12 +115,10 @@ public:
 	protocol getTransportProtocol() const;
 	void setTransportProtocol(protocol transportProtocol);
 
-
 	void setInterDepertureTimeModels(list<StochasticModelFit>* modelList);
 //	void setInterDepertureTimeModels(StochasticModelFit* modelVet);
 	StochasticModelFit getInterDepertureTimeModel_next();
 	unsigned int getNumberOfInterdepertureTimeModels();
-
 
 	void setInterFileTimeModel(list<StochasticModelFit>* modelList);
 	StochasticModelFit getInterFileTimeModel_next();
@@ -129,13 +127,15 @@ public:
 
 //	void setInterSessionTimeModel(StochasticModelFit* modelVet);
 //	void setInterSessionTimeModel(list<StochasticModelFit>* modelList);
-	void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec, vector<time_sec>* offTimesVec);
-//	StochasticModelFit getInterSessionOnOffTime_next();
-//	time_sec getInterSessionOnOffTime_next();
-	time_sec getInterSessionOnTime_next();
-	time_sec getInterSessionOffTime_next();
-	time_sec getInterSessionTime();
-	unsigned int getNumberOfSessionOnOffTimes();
+	void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+			vector<time_sec>* offTimesVec);
+	time_sec getSessionOnTime_next();
+	time_sec getSessionOffTime_next();
+	void getSessionOfOffVectors(vector<time_sec>* onTimes,
+			vector<time_sec>* offTimes);
+	vector<time_sec>* getSessionOnVector();
+	vector<time_sec>* getSessionOffVector();
+	//unsigned int getNumberOfSessionOnOffTimes();
 
 	StochasticModelFit getPacketSizeModelMode1_next();
 	StochasticModelFit getPacketSizeModelMode2_next();
@@ -153,12 +153,12 @@ public:
 	long int getNpacketsMode1() const;
 	long int getNpacketsMode2() const;
 
-	unsigned int  getNumberOfPsMode2Models() const;
-	unsigned int  getNumberOfPsMode1Models() const;
+	unsigned int getNumberOfPsMode2Models() const;
+	unsigned int getNumberOfPsMode1Models() const;
 
 	//DEBUG
 	void printModels();
-
+	void logOnOff();
 
 protected:
 	//protocolSupport protocols;
@@ -236,7 +236,5 @@ private:
 	counter packetSizeModel2_counter;
 
 };
-
-
 
 #endif /* DUMMYFLOW_H_ */

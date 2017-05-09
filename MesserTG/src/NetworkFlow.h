@@ -32,6 +32,7 @@
 #include "StochasticModelFit.h"
 #include "RegressionTests.h"
 #include "MesserLog.h"
+#include "cfunctions.h"
 
 //namespaces
 using std::string;
@@ -126,9 +127,6 @@ public:
 	virtual unsigned int getNumberOfPsMode2Models() const = 0;
 	virtual unsigned int getNumberOfPsMode1Models() const = 0;
 
-	//DEBUG
-	virtual void printModels() = 0;
-
 	//
 	//Inter-arrival-size
 	//
@@ -151,9 +149,15 @@ public:
 //	virtual StochasticModelFit getInterSessionTimeModel_next() = 0;
 //	virtual time_sec getInterSessionOnOffTime_next() = 0;
 //	virtual time_sec getInterSessionTime() = 0;
-	virtual time_sec getInterSessionOnTime_next() = 0;
-	virtual time_sec getInterSessionOffTime_next() = 0;
-	virtual unsigned int getNumberOfSessionOnOffTimes() = 0;
+	virtual time_sec getSessionOnTime_next() = 0;
+	virtual time_sec getSessionOffTime_next() = 0;
+	virtual vector<time_sec>* getSessionOnVector() = 0;
+	virtual vector<time_sec>* getSessionOffVector() = 0;
+	//virtual unsigned int getNumberOfSessionOnOffTimes() = 0;
+
+	//DEBUG
+	virtual void printModels() = 0;
+	virtual void logOnOff() = 0;
 
 };
 
