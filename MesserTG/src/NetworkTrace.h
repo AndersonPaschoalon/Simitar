@@ -203,6 +203,8 @@ private:
 	static const char * LABEL_FLOW_NUMBER_KBYTES;
 	static const char * LABEL_FLOW_NUMBER_PACKETS;
 	static const char * LABEL_LINK_LAYER;
+	static const char * LABEL_MAC_SRC;
+	static const char * LABEL_MAC_DST;
 	static const char * LABEL_NETWORK_LAYER;
 	static const char * LABEL_TTL;
 	static const char * LABEL_SRC_IP;
@@ -285,6 +287,8 @@ struct flow_data_struct
 	//Protocols
 
 	char link_p[CHAR_BUFFER];
+	char mac_src[CHAR_BUFFER];
+	char mac_dst[CHAR_BUFFER];
 	char net_p[CHAR_BUFFER];
 	char net_addrsrc[CHAR_BUFFER];
 	char net_addrdst[CHAR_BUFFER];

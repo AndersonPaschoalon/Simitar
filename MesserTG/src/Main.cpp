@@ -18,29 +18,16 @@
 
 #define REGRESSION_TESTS 1
 
-//using namespace std;
+void unity_regression_tests();
+
 
 int main()
 {
 	RegressionTests wait;
 	MESSER_LOG_INIT(INFO);
+
 #ifdef REGRESSION_TESTS
-	MESSER_NOTICE("Starting regression tests... <%s, %s>");
-	RegressionTests rt;
-
-	DataProcessor regTest_dp = DataProcessor();
-	Protocol regTest_proto = Protocol();
-	NetworkTrace regTest_nt;
-	StochasticModelFit unityTest_smf = StochasticModelFit();
-
-	regTest_dp.regression_tests();
-	regTest_nt.regression_tests();
-	regTest_proto.regression_tests();
-	unityTest_smf.unity_tests();
-	cfunctions_unitytests();
-
-	//wait.wait_int("Finished tests, press any key...");
-	MESSER_NOTICE("Finishing regression tests...  @<%s, %s>");
+	unity_regression_tests();
 #endif
 
 	string experimentName = "live_background-traffic-1";
@@ -70,6 +57,7 @@ int main()
 
 
 	trace->writeToFile("kkk.xml");
+	trace->writeToFile("data/regression-tests/test-trace.xml");
 
 	MESSER_NOTICE("Executing NetworkTrace: trace->exec(true) @<%s, %s>");
 	trace->exec(true);
@@ -118,7 +106,8 @@ int main()
 	MESSER_DEBUG("<%s, %s>");
 
 	NetworkTrace* tracetest = NULL;
-	tracetest = new NetworkTrace("kkk.xml");
+	//tracetest = new NetworkTrace("kkk.xml");
+	tracetest = new NetworkTrace("data/regression-tests/test-trace.xml");
 	//NetworkTrace traceTest = NetworkTrace("kkk.xml");
 	tracetest->setInfoTracename("teste-chapolin");
 	tracetest->setInfoCommentaries(
@@ -127,6 +116,7 @@ int main()
 	tracetest->setInfoCaptureInterface("eth0");
 	tracetest->setInfoCaptureDate("07/04/2017");
 	tracetest->writeToFile("copia-kjjjjj.xml");
+	tracetest->writeToFile("data/regression-tests/copy-test-trace.xml");
 
 	delete tracetest;
 
@@ -136,3 +126,29 @@ int main()
 
 	return 0;
 }
+
+
+void unity_regression_tests(){
+	MESSER_LOG_INIT(INFO);
+	MESSER_NOTICE("Starting Unitary tests... <%s, %s>");
+	RegressionTests rt;
+
+	DataProcessor unity_dp = DataProcessor();
+	Protocol unity_proto = Protocol();
+	NetworkTrace unity_nt;
+	StochasticModelFit unity_smf = StochasticModelFit();
+
+	unity_dp.regression_tests();
+	unity_nt.regression_tests();
+	unity_proto.regression_tests();
+	unity_smf.unity_tests();
+	cfunctions_unitytests();
+
+	//wait.wait_int("Finished tests, press any key...");
+	MESSER_NOTICE("Finishing Unity tests...  @<%s, %s>");
+
+
+
+}
+
+

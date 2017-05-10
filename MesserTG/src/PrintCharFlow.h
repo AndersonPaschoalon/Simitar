@@ -13,13 +13,17 @@
 class PrintCharFlow: public DummyFlow
 {
 public:
-	PrintCharFlow(){
+	PrintCharFlow()
+	{
 
 	}
-	virtual ~PrintCharFlow(){
+	virtual ~PrintCharFlow()
+	{
 
 	}
-	void flowGenerate(){
+	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+			string netInterface)
+	{
 
 	}
 };

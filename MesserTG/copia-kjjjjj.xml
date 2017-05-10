@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <trace info_tracename="teste-chapolin" trafficGenEngine="D-ITG" info_captureDate="07/04/2017" info_commentaries="este e um teste do compact trace descriptor" n_flows="58">
 	<flow start_delay="0.000000" duration="158.366891" ds_byte="0" n_kbytes="1434" n_packets="1416">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="10.1.1.215" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="908" src_port="2049">TCP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -30,7 +30,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="0.000203" duration="158.366675" ds_byte="0" n_kbytes="168" n_packets="926">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.215" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="2049" src_port="908">TCP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -59,7 +59,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="0.318605" duration="158.945796" ds_byte="0" n_kbytes="5" n_packets="97">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="" dst_ip="" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -86,7 +86,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="1.835849" duration="155.886586" ds_byte="0" n_kbytes="2" n_packets="27">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="64.233.190.189" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="44583">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -113,7 +113,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="1.835957" duration="155.810117" ds_byte="0" n_kbytes="2" n_packets="21">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="64.233.190.189" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="44583" src_port="443">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -140,7 +140,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="1.995529" duration="155.943130" ds_byte="0" n_kbytes="4" n_packets="79">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="" dst_ip="" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -154,7 +154,7 @@
 			<stochastic_model name="pareto-ml" aic="inf" bic="inf" param1="21994.404499144438887" param2="1.999180049999999"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="1.999270947435896" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="153.94386700" off_times="0.00000000"/>
+		<session_times on_times="153.94386700" off_times=""/>
 		<packet_sizes n_packets="79" n_kbytes="4">
 			<ps_mode1 n_packets="79" n_kbytes="4">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
@@ -167,7 +167,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="2.026066" duration="156.768995" ds_byte="0" n_kbytes="5" n_packets="68">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="" dst_ip="" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -194,7 +194,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="2.038309" duration="156.572410" ds_byte="0" n_kbytes="11" n_packets="24">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="0.0.0.0" dst_ip="255.255.255.255" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="68" src_port="67">UDP</transport_layer>
 		<application_layer>DHCP</application_layer>
@@ -223,7 +223,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="2.573436" duration="150.028460" ds_byte="0" n_kbytes="1" n_packets="6">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.41" dst_ip="255.255.255.255" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -243,7 +243,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="2.573597" duration="150.028488" ds_byte="0" n_kbytes="1" n_packets="6">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.41" dst_ip="10.1.1.255" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -263,7 +263,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="3.142972" duration="112.016072" ds_byte="0" n_kbytes="6" n_packets="31">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="" dst_ip="" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -290,7 +290,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="8.286553" duration="135.260000" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.202.14" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="33776" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -310,7 +310,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="8.290085" duration="135.259956" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.202.14" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="33776">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -330,7 +330,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="8.506552" duration="135.167983" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="172.217.28.67" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="50296" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -350,7 +350,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="8.510089" duration="135.168006" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="172.217.28.67" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="50296">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -370,7 +370,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="16.927270" duration="135.195224" ds_byte="0" n_kbytes="2" n_packets="18">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="172.217.28.67" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="50301" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -399,7 +399,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="16.930376" duration="135.195149" ds_byte="0" n_kbytes="1" n_packets="15">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="172.217.28.67" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="50301">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -426,7 +426,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="16.932874" duration="0.021053" ds_byte="0" n_kbytes="1" n_packets="2">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="172.217.28.67" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="50084" src_port="443">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -444,7 +444,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="16.937488" duration="0.016375" ds_byte="0" n_kbytes="2" n_packets="2">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="172.217.28.67" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="50084">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -464,7 +464,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="21.639590" duration="120.068383" ds_byte="0" n_kbytes="2" n_packets="10">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.44" dst_ip="255.255.255.255" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="47813" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -484,7 +484,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="26.842770" duration="120.043309" ds_byte="0" n_kbytes="1" n_packets="5">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.44" dst_ip="255.255.255.255" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -504,7 +504,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="26.842960" duration="120.043282" ds_byte="0" n_kbytes="1" n_packets="5">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.44" dst_ip="10.1.1.255" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -524,7 +524,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="27.659327" duration="125.442632" ds_byte="0" n_kbytes="0" n_packets="2">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="0.0.0.0" dst_ip="224.0.0.1" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -544,7 +544,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="28.346533" duration="90.112018" ds_byte="0" n_kbytes="0" n_packets="3">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.202.14" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="33775" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -564,7 +564,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="28.350370" duration="90.112063" ds_byte="0" n_kbytes="0" n_packets="3">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.202.14" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="33775">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -584,7 +584,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="28.735866" duration="124.788646" ds_byte="0" n_kbytes="0" n_packets="2">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.42" dst_ip="224.0.0.251" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -604,14 +604,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.470571" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="29843" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="75.000000" param2="0.000000"/>
@@ -622,14 +622,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.620848" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="29843">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="91.000000" param2="0.000000"/>
@@ -640,14 +640,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.621784" duration="1.067484" ds_byte="0" n_kbytes="5" n_packets="10">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.199.35" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="35987" src_port="443">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.118609383333333" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="1.06713900" off_times="0.00000000"/>
+		<session_times on_times="1.06713900" off_times=""/>
 		<packet_sizes n_packets="10" n_kbytes="5">
 			<ps_mode1 n_packets="6" n_kbytes="1">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="188.666667" param2="0.000000"/>
@@ -662,7 +662,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.621941" duration="91.584654" ds_byte="0" n_kbytes="1" n_packets="13">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.199.35" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="34683" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -689,7 +689,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.621953" duration="61.405174" ds_byte="0" n_kbytes="0" n_packets="9">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.199.35" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="34684" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -709,7 +709,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.721302" duration="55.633267" ds_byte="0" n_kbytes="0" n_packets="5">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.199.35" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="34685" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -729,7 +729,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.931066" duration="91.584589" ds_byte="0" n_kbytes="1" n_packets="11">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.199.35" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="34683">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -756,7 +756,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.931790" duration="0.757350" ds_byte="0" n_kbytes="6" n_packets="11">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.199.35" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="35987">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
@@ -770,7 +770,7 @@
 			<stochastic_model name="cauchy" aic="805.420988" bic="806.026158" param1="0.000000000000000" param2="-5.396170012280763"/>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.075735050000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.75723700" off_times="0.00000000"/>
+		<session_times on_times="0.75723700" off_times=""/>
 		<packet_sizes n_packets="11" n_kbytes="6">
 			<ps_mode1 n_packets="6" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="112.666667" param2="0.000000"/>
@@ -785,14 +785,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="31.933998" duration="45.936520" ds_byte="0" n_kbytes="0" n_packets="7">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.199.35" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="34684">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.656086716666668" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="45.63649200" off_times="0.00000000"/>
+		<session_times on_times="45.63649200" off_times=""/>
 		<packet_sizes n_packets="7" n_kbytes="0">
 			<ps_mode1 n_packets="7" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="105.142857" param2="0.000000"/>
@@ -805,7 +805,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="32.033300" duration="55.633298" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.199.35" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="34685">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -825,7 +825,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="38.362506" duration="90.079993" ds_byte="0" n_kbytes="0" n_packets="3">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.222.67" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="51457" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -845,7 +845,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="38.377009" duration="90.080019" ds_byte="0" n_kbytes="0" n_packets="3">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.222.67" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="51457">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -865,7 +865,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="39.226552" duration="90.111954" ds_byte="0" n_kbytes="0" n_packets="3">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="216.58.202.3" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="45833" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -885,7 +885,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="39.230142" duration="90.111868" ds_byte="0" n_kbytes="0" n_packets="3">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="216.58.202.3" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="45833">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -905,7 +905,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="41.274515" duration="51.752493" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="23.21.252.35" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="37578" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -925,7 +925,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="41.454286" duration="51.752455" ds_byte="0" n_kbytes="0" n_packets="4">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="23.21.252.35" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="37578">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -945,14 +945,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="51.671982" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="50376" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="83.000000" param2="0.000000"/>
@@ -963,14 +963,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="51.840421" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="50376">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="115.000000" param2="0.000000"/>
@@ -981,14 +981,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="52.047513" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="57165" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="74.000000" param2="0.000000"/>
@@ -999,14 +999,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="52.095494" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="33483" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="78.000000" param2="0.000000"/>
@@ -1017,14 +1017,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="52.247428" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="57165">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="115.000000" param2="0.000000"/>
@@ -1035,14 +1035,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="52.256507" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="33483">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="108.000000" param2="0.000000"/>
@@ -1053,14 +1053,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="54.554841" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="49921" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
@@ -1071,14 +1071,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="54.558488" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="49921">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="108.000000" param2="0.000000"/>
@@ -1089,14 +1089,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="54.558632" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="52840" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
@@ -1107,14 +1107,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="54.563334" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="52840">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="137.000000" param2="0.000000"/>
@@ -1125,14 +1125,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="93.027317" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="4920" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="79.000000" param2="0.000000"/>
@@ -1143,14 +1143,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="93.408348" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="8.8.8.8" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="9108" src_port="53">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="79.000000" param2="0.000000"/>
@@ -1161,14 +1161,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="93.593653" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="9108">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="179.000000" param2="0.000000"/>
@@ -1179,7 +1179,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="93.594046" duration="65.904504" ds_byte="0" n_kbytes="2" n_packets="11">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.48" dst_ip="23.21.252.35" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="37585" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -1208,7 +1208,7 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="93.778153" duration="65.684019" ds_byte="0" n_kbytes="0" n_packets="8">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="23.21.252.35" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="443" src_port="37585">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
@@ -1228,14 +1228,14 @@
 		</packet_sizes>
 	</flow>
 	<flow start_delay="94.582125" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
-		<link_layer>ETHERNET</link_layer>
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
 		<network_layer src_ip="8.8.8.8" dst_ip="10.1.1.48" ttl="64">IPV4</network_layer>
 		<transport_layer dst_port="53" src_port="4920">UDP</transport_layer>
 		<application_layer>DNS</application_layer>
 		<inter_packet_times>
 			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000" off_times="0.00000000"/>
+		<session_times on_times="0.10000000" off_times=""/>
 		<packet_sizes n_packets="1" n_kbytes="0">
 			<ps_mode1 n_packets="1" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="179.000000" param2="0.000000"/>

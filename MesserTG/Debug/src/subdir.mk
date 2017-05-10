@@ -7,7 +7,6 @@ CPP_SRCS += \
 ../src/DataProcessor.cpp \
 ../src/DatabaseInterface.cpp \
 ../src/DummyFlow.cpp \
-../src/IperfFlow.cpp \
 ../src/Main.cpp \
 ../src/NetworkFlow.cpp \
 ../src/NetworkTrace.cpp \
@@ -20,7 +19,6 @@ OBJS += \
 ./src/DataProcessor.o \
 ./src/DatabaseInterface.o \
 ./src/DummyFlow.o \
-./src/IperfFlow.o \
 ./src/Main.o \
 ./src/NetworkFlow.o \
 ./src/NetworkTrace.o \
@@ -33,7 +31,6 @@ CPP_DEPS += \
 ./src/DataProcessor.d \
 ./src/DatabaseInterface.d \
 ./src/DummyFlow.d \
-./src/IperfFlow.d \
 ./src/Main.d \
 ./src/NetworkFlow.d \
 ./src/NetworkTrace.d \

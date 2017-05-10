@@ -158,6 +158,12 @@ int DataProcessor::calculate(const string& experimentName,
 		/// Protocols Options
 		////////////////////////////////////////////////////////////////////////
 
+		/// L2 protocols
+		netFlow->setLinkProtocol(PROTOCOL__ETHERNET);
+		//TODO mac src/dst
+		netFlow->setMacAddr("no-mac-src", "no-mac-dst");
+
+
 		/// L3 protocols
 		/// reference :
 		/// http://www.iana.org/assignments/ieee-802-numbers/ieee-802-numbers.xhtml
@@ -326,19 +332,19 @@ int DataProcessor::calculate(const string& experimentName,
 		netFlow->setSessionTimesOnOff(onTimes, offTimes);
 
 		//DEBUG
-		printf("duration:%f\n",  netFlow->getFlowDuration() );
-		for(counter banana_jaca = 0; banana_jaca < (netFlow->getSessionOffVector()->size() +1); banana_jaca++)
-		{
-			time_sec time_on;
-			time_sec time_off;
-			time_on = netFlow->getSessionOnTime_next();
-			time_off = netFlow->getSessionOffTime_next();
-
-			printf("%d: on:%f, off:%f\n",banana_jaca,  time_on, time_off);
-
-		}
-		RegressionTests wait_in;
-		wait_in.wait_int(">");
+		//printf("duration:%f\n",  netFlow->getFlowDuration() );
+		//for(counter banana_jaca = 0; banana_jaca < (netFlow->getSessionOffVector()->size() +1); banana_jaca++)
+		//{
+		//	time_sec time_on;
+		//	time_sec time_off;
+		//	time_on = netFlow->getSessionOnTime_next();
+		//	time_off = netFlow->getSessionOffTime_next();
+		//
+		//	printf("%d: on:%f, off:%f\n",banana_jaca,  time_on, time_off);
+		//
+		//}
+		//RegressionTests wait_in;
+		//wait_in.wait_int(">");
 
 
 		/// Packet size data

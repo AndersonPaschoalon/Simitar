@@ -53,11 +53,11 @@ public:
 	virtual void print() = 0;
 
 	virtual std::thread flowThread() = 0;
-	virtual void flowGenerate() = 0;
+	virtual void flowGenerate(counter flowId, time_sec onTime,
+			unsigned int npackets, string netInterface) = 0;
 
-	//
-	//Flow-level data
-	//
+
+	/// Flow-level data
 	virtual time_sec getFlowDuration() const = 0;
 	virtual void setFlowDuration(time_sec flowDuration) = 0;
 	virtual time_sec getFlowStartDelay() const = 0;
@@ -69,9 +69,7 @@ public:
 	virtual void setFlowDsByte(unsigned int flowDsByte) = 0;
 	virtual unsigned int getFlowDsByte() const = 0;
 
-	//
-	//Packet-level data
-	//
+	/// Protocol data
 	virtual int randTranportPort() = 0;
 	virtual protocol getApplicationProtocol() const = 0;
 	virtual void setApplicationProtocol(protocol applicationProtocol) = 0;
@@ -103,59 +101,38 @@ public:
 	virtual protocol getTransportProtocol() const = 0;
 	virtual void setTransportProtocol(protocol transportProtocol) = 0;
 
-	//
-	//Packet-size
-	//
+
+	/// Packet-size
 	virtual StochasticModelFit getPacketSizeModelMode1_next() = 0;
 	virtual StochasticModelFit getPacketSizeModelMode2_next() = 0;
-//	virtual void setPacketSizeModel(StochasticModelFit* modelVet1,
-//			StochasticModelFit* modelVet2, long int nkbytesMode1,
-//			long int nkbytesMode2, long int nPacketsMode1,
-//			long int nPacketsMode2) = 0;
 	virtual void setPacketSizeModel(list<StochasticModelFit>* modelVet1,
 			list<StochasticModelFit>* modelVet2, long int nkbytesMode1,
 			long int nkbytesMode2, long int nPacketsMode1,
 			long int nPacketsMode2) = 0;
 	virtual long int getNkbytesMode1() const = 0;
-
 	virtual long int getNkbytesMode2() const = 0;
-
 	virtual long int getNpacketsMode1() const = 0;
-
 	virtual long int getNpacketsMode2() const = 0;
-
 	virtual unsigned int getNumberOfPsMode2Models() const = 0;
 	virtual unsigned int getNumberOfPsMode1Models() const = 0;
 
-	//
-	//Inter-arrival-size
-	//
+
+	/// Interarrival modelling
+
 	virtual void setInterDepertureTimeModels(
 			list<StochasticModelFit>* modelList) = 0;
-//	virtual void setInterDepertureTimeModels(StochasticModelFit* modelVet) = 0;
 	virtual StochasticModelFit getInterDepertureTimeModel_next()= 0;
 	virtual unsigned int getNumberOfInterdepertureTimeModels()= 0;
 
-	virtual void setInterFileTimeModel(list<StochasticModelFit>* modelList) = 0;
-//	virtual void setInterFileTimeModel(StochasticModelFit* modelVet) = 0;
-	virtual StochasticModelFit getInterFileTimeModel_next() = 0;
-	virtual time_sec getInterFileTime() = 0;
-	virtual unsigned int getNumberOfInterfileTimeModels()= 0;
+	//TODO File Modelling
 
-	//virtual void setInterSessionTimeModel(list<StochasticModelFit>* modelList) = 0;
-//	virtual void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
-//			vector<time_sec>* offTimesVec) = 0;
+	/// Session modelling
 	virtual void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 			vector<time_sec>* offTimesVec) = 0;
-//	virtual void setInterSessionTimeModel(StochasticModelFit* modelVet) = 0;
-//	virtual StochasticModelFit getInterSessionTimeModel_next() = 0;
-//	virtual time_sec getInterSessionOnOffTime_next() = 0;
-//	virtual time_sec getInterSessionTime() = 0;
 	virtual time_sec getSessionOnTime_next() = 0;
 	virtual time_sec getSessionOffTime_next() = 0;
 	virtual vector<time_sec>* getSessionOnVector() = 0;
 	virtual vector<time_sec>* getSessionOffVector() = 0;
-	//virtual unsigned int getNumberOfSessionOnOffTimes() = 0;
 
 	//DEBUG
 	virtual void printModels() = 0;

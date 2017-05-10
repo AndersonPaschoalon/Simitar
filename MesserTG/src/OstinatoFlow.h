@@ -28,7 +28,7 @@ public:
 	}
 
 
-	void flowGenerate(){
+	void flowGenerate(int arg1, int arg2, string arg3, double arg4){
 
 	}
 };

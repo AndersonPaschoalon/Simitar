@@ -47,17 +47,21 @@ public:
 	 *
 	 * @return
 	 */
-	void flowGenerate();
+	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+			string netInterface);
 
 	std::thread flowThread()
 	{
+		MESSER_LOG_INIT(INFO);
+		MESSER_DEBUG("std::thread flowThread() ok! @<%s, %s>");
 
-#ifdef DEBUG_flowThread
-		cout << "Debug: std::thread flowThread() ok!" << endl;
-#endif
+		counter flowId = 0;
+		time_sec onTime = 0;
+		unsigned int npackets = 0;
+		string netInterface = "";
 
 		return std::thread([=]
-		{	flowGenerate();});
+		{	flowGenerate(flowId, onTime, npackets, netInterface);});
 	}
 
 	/**
@@ -166,68 +170,61 @@ protected:
 	//protocolSupport protocols;
 
 private:
-	/**
-	 * Flow-level options
-	 */
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Flow-level options
+	////////////////////////////////////////////////////////////////////////////
+
 	time_sec flow_duration;
 	time_sec flow_start_delay;
 	unsigned int flow_ds_byte;
 	unsigned long int number_of_packets;
 	unsigned long int number_of_kbytes;
 
-	/**
-	 * Protocol stack options
-	 */
+	////////////////////////////////////////////////////////////////////////////
+	/// Protocol stack options
+	////////////////////////////////////////////////////////////////////////////
+
+	/// L2: Link Layer
 	protocol link_protocol;
 	string mac_src;
 	string mac_dst;
-	//long int link_src_addr_count;
-	//l2_addr linkedlist;
 
-	//L3: Network Layer
+	/// L3: Network Layer
 	unsigned int network_ttl;
 	protocol network_protocol;
 	string network_dst_addr;
 	string network_src_addr;
 	int network_hostList_conter;
 
-	//L4: Transport Layer
+	///L4: Transport Layer
 	unsigned int transport_dst_port;
 	unsigned int transport_src_port;
 	protocol transport_protocol;
 	unsigned int transport_sctp_association_id;
 	unsigned int transport_sctp_max_streams;
 
-	//L5: Application Layer
+	/// L5: Application Layer
 	protocol application_protocol;
-	// TODO Application Layer implementation
 
-	/**
-	 * Interperture time
-	 */
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Interperture time
+	////////////////////////////////////////////////////////////////////////////
+
+	/// Interarrival
 	list<StochasticModelFit>* ptr_interArrivalModelList; //file interdeperture time
 	counter interDepertureTimeModel_counter = 0; //counter of for model get method
-	list<StochasticModelFit>* ptr_interFileModelList; //inter-file time
-	counter interFileModel_counter = 0;
+	/// Session on/off
 	vector<time_sec>* ptr_session_onTimes;
 	vector<time_sec>* ptr_session_offTimes;
 	counter sessionOnTimes_counter = 0;
 	counter sessionOffTimes_counter = 0;
 
-	//vector<time_sec>* ptr_interSessionOnOffTimes; //inter-session time
-	//counter interSessionModel_counter = 0;
-	/*
-	 StochasticModelFit* interArrivalvet; //file interdeperture time
-	 counter interDepertureTimeModel_counter = 0; //counter of for model get method
-	 StochasticModelFit* interFileModel; //inter-file time
-	 counter interFileModel_counter = 0;
-	 StochasticModelFit* interSessionModel; //inter-session time
-	 counter interSessionModel_counter = 0;
-	 */
+	////////////////////////////////////////////////////////////////////////////
+	///Packet Size Model
+	////////////////////////////////////////////////////////////////////////////
 
-	/**
-	 * Packet Size Model
-	 */
 	list<StochasticModelFit>* ptr_psMode1;
 	list<StochasticModelFit>* ptr_psMode2;
 	long int nkbytes_mode1;

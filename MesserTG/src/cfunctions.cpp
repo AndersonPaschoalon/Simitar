@@ -153,11 +153,6 @@ void list2str(list<unsigned long int> theList, char* str)
 
 }
 
-//template<typename T>
-//void list2str(list<T> theList, string str)
-//{
-//
-//}
 
 void charvet2type(const char* vetc, unsigned int& v)
 {
@@ -194,6 +189,11 @@ void charvet2type(const char* vetc, list<double>& theList)
 	int buffer_conter = 0;
 	int in_conter = 0;
 	int out_conter = 0;
+
+	if( strcmp(vetc, "") == 0 ){
+		return;
+	}
+
 
 	while (1)
 	{

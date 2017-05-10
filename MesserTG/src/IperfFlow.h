@@ -22,10 +22,10 @@ public:
 	{
 	}
 
-	void flowGenerate()
+	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+			string netInterface)
 	{
 	}
 };
-
 
 #endif /* IPERFFLOW_H_ */

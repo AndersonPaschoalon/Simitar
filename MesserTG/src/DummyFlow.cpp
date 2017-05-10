@@ -36,21 +36,15 @@ DummyFlow::DummyFlow()
 	transport_src_port = 0;
 	application_protocol = PROTOCOL__NULL;
 
-	//
-	//Interarrival
-	//
+	/// Interarrival
 	ptr_interArrivalModelList = NULL;
 	interDepertureTimeModel_counter = 0;
-	ptr_interFileModelList = NULL;
-	interFileModel_counter = 0;
 	ptr_session_onTimes = NULL;
 	ptr_session_offTimes = NULL;
 	sessionOnTimes_counter = 0;
 	sessionOffTimes_counter = 0;
 
-	//
-	//Packet size parameters
-	//
+	/// Packet size parameters
 	ptr_psMode1 = NULL;
 	ptr_psMode2 = NULL;
 	nkbytes_mode1 = 0;
@@ -68,26 +62,25 @@ DummyFlow::~DummyFlow()
 	//MESSER_DEBUG("@ <%s, %s>");
 
 	ptr_interArrivalModelList->clear();
-	//	ptr_interFileModelList->clear();
-	//	ptr_interSessionOnOffTimes->clear();
 	ptr_session_onTimes->clear();
 	ptr_session_offTimes->clear();
 
 	ptr_psMode1->clear();
 	ptr_psMode2->clear();
 
+	//DEBUG
 	//MESSER_DEBUG("ptr_interArrivalModelList->size(): %d <%s, %s>",
 	//		ptr_interArrivalModelList->size());
 	//MESSER_DEBUG("ptr_psMode1->size():%d  <%s, %s>", ptr_psMode1->size());
 	//MESSER_DEBUG("ptr_psMode2->size(): %d <%s, %s>", ptr_psMode2->size());
 
-	//interarrival data structs
+	/// interarrival data structs
 	delete ptr_interArrivalModelList;
-	delete ptr_interFileModelList;
+
 	delete ptr_session_onTimes;
 	delete ptr_session_offTimes;
 
-	//packet-size data structures
+	/// packet-size data structures
 	delete ptr_psMode1;
 	delete ptr_psMode2;
 }
@@ -98,7 +91,8 @@ void DummyFlow::print()
 	cout << "flow created" << endl;
 }
 
-void DummyFlow::flowGenerate()
+void DummyFlow::flowGenerate(counter flowId, time_sec onTime,
+		unsigned int npackets, string netInterface)
 {
 	int rc = 0;
 
@@ -417,9 +411,9 @@ unsigned int DummyFlow::getFlowDsByte() const
 
 void DummyFlow::setFlowDsByte(unsigned int flowDsByte)
 {
-//allowed range [0, 255]
-//Under Linux you need root privileges to set the DS byte to a value
-//larger than 160
+	//allowed range [0, 255]
+	//Under Linux you need root privileges to set the DS byte to a value
+	//larger than 160
 	if (flowDsByte < 255)
 		flow_ds_byte = flowDsByte;
 	else
@@ -465,16 +459,6 @@ void DummyFlow::setLinkProtocol(protocol linkProtocol)
 {
 	link_protocol = linkProtocol;
 }
-
-//long int DummyFlow::getLinkSrcAddrCount() const
-//{
-//	return link_src_addr_count;
-//}
-
-//void DummyFlow::setLinkSrcAddrCount(long int linkSrcAddrCount)
-//{
-//	link_src_addr_count = linkSrcAddrCount;
-//}
 
 const string& DummyFlow::getNetworkDstAddr() const
 {
@@ -651,72 +635,7 @@ void DummyFlow::setInterDepertureTimeModels(list<StochasticModelFit>* modelList)
 	interDepertureTimeModel_counter = 0;
 }
 
-void DummyFlow::setInterFileTimeModel(list<StochasticModelFit>* modelList)
-{
-	ptr_interFileModelList = modelList;
-	interFileModel_counter = 0;
-}
 
-//TODO implement on/off
-StochasticModelFit DummyFlow::getInterFileTimeModel_next()
-{
-	StochasticModelFit themodel;
-	counter i = 0;
-
-	if (ptr_interFileModelList == NULL)
-	{
-		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
-		ptr_interFileModelList->push_back(themodel);
-
-		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
-				<< "Trying to get a StochasticModelFit, but no model was set.\n"
-				<< "NO_MODEL set as default" << endl;
-	}
-	else
-	{
-
-		for (list<StochasticModelFit>::iterator it =
-				ptr_interFileModelList->begin();
-				it != ptr_interFileModelList->end(); it++)
-		{
-			if (i >= interFileModel_counter)
-			{
-				themodel = *it;
-				break;
-			}
-			else
-			{
-				i++;
-			}
-
-		}
-
-	}
-
-	if ((ptr_interFileModelList->size() - 1) > interFileModel_counter)
-	{
-		interFileModel_counter++;
-	}
-
-	return (themodel);
-
-}
-
-time_sec DummyFlow::getInterFileTime()
-{
-	time_sec interFileTimeRngEstimation = 0;
-
-//TODO: weibull-constant estimator rng generator
-
-	return (interFileTimeRngEstimation);
-}
-
-//void DummyFlow::setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
-//		vector<time_sec>* offTimesVec)
-//{
-//	ptr_session_onTimes = onTimesVec;
-//	ptr_session_offTimes = offTimesVec;
-//}
 void DummyFlow::setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 		vector<time_sec>* offTimesVec)
 {
@@ -775,47 +694,6 @@ the On/Off times should aways start with a On. After that, it will be reseted  @
 
 	return (theTime);
 }
-
-//StochasticModelFit DummyFlow::getInterSessionTimeModel_next()
-/*
- time_sec DummyFlow::getInterSessionOnOffTime_next()
- {
- MESSER_LOG_INIT(DEBUG);
-
- if (ptr_session_onTimes->size() != (ptr_session_offTimes->size() + 1))
- {
- MESSER_CRIT(
- "The on/off vectors do not have the expected size. onTimes->size() = %d, offTimes->size() = %d @ <%s, %s>",
- ptr_session_onTimes->size(), ptr_session_offTimes->size());
- exit(-1);
- }
-
- time_sec theTime = 0;
-
- if(ptr_session_onTimes->size() == 0)
- {
- MESSER_ERROR("No inter-session times setted @ <%s, %s>");
- return(0);
- }
- else{
- if(ptr_session_onTimes->size() <= interSessionOnTimes_counter){
- MESSER_NOTICE("No more On times available on the stack.  @ <%s, %s>");
- }
- }
-
- //	if (interSessionModel_counter > ptr_interSessionOnOffTimes->size())
- //	{
- //		return (0);
- //	}
- //	else
- //	{
- //		theTime = ptr_interSessionOnOffTimes->at(interSessionModel_counter);
- //		interSessionModel_counter++;
- //	}
-
- return (theTime);
- }
- */
 
 StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()
 {
@@ -924,18 +802,6 @@ unsigned int DummyFlow::getNumberOfInterdepertureTimeModels()
 	}
 }
 
-unsigned int DummyFlow::getNumberOfInterfileTimeModels()
-{
-	if (ptr_interFileModelList != NULL)
-	{
-		return (ptr_interFileModelList->size());
-	}
-	else
-	{
-		return (0);
-	}
-}
-
 //TODO test -> not tested
 unsigned int DummyFlow::getNumberOfPsMode1Models() const
 {
@@ -961,19 +827,6 @@ unsigned int DummyFlow::getNumberOfPsMode2Models() const
 		return (0);
 	}
 }
-
-//unsigned int DummyFlow::getNumberOfSessionOnOffTimes()
-//{
-//	if (ptr_interSessionOnOffTimes != NULL)
-//	{
-//		return (ptr_interSessionOnOffTimes->size());
-//	}
-//	else
-//	{
-//		return (0);
-//	}
-//	return (0);
-//}
 
 long int DummyFlow::getNpacketsMode2() const
 {

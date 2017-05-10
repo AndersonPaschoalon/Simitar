@@ -31282,3 +31282,599 @@ Invoking: GCC C++ Linker
 g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/IperfFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
 Finished building target: MesserTG
  
+22:38:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp:101:75: error: expected initializer before ‘)’ token
+ void DummyFlow::flowGenerate(int arg1, int arg2, string arg3, double arg4))
+                                                                           ^
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+22:39:15 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(int, int, std::__cxx11::string, double)’:
+../src/DummyFlow.cpp:105:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(int, int, std::__cxx11::string, double)’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+22:40:08 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+22:41:59 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+22:42:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+22:43:36 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(int, int, std::__cxx11::string, double)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+22:55:18 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h: In lambda function:
+../src/DummyFlow.h:65:63: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+   { flowGenerate(flowId,onTime,npackets, netInterface, anyData);});
+                                                               ^
+../src/DummyFlow.h:50:7: note:   initializing argument 5 of ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’
+  void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+       ^~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+22:55:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h: In lambda function:
+../src/DummyFlow.h:65:63: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+   { flowGenerate(flowId,onTime,npackets, netInterface, anyData);});
+                                                               ^
+../src/DummyFlow.h:50:7: note:   initializing argument 5 of ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’
+  void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+       ^~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+make: *** [src/DummyFlow.o] Error 1
+22:56:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h: In lambda function:
+../src/DummyFlow.h:65:64: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+   { flowGenerate(flowId,onTime, npackets, netInterface, anyData);});
+                                                                ^
+../src/DummyFlow.h:50:7: note:   initializing argument 5 of ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’
+  void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+       ^~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+make: *** [src/DummyFlow.o] Error 1
+22:56:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h: In lambda function:
+../src/DummyFlow.h:65:65: error: invalid conversion from ‘const char*’ to ‘char*’ [-fpermissive]
+   { flowGenerate(flowId, onTime, npackets, netInterface, anyData);});
+                                                                 ^
+../src/DummyFlow.h:50:7: note:   initializing argument 5 of ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’
+  void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+       ^~~~~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+22:56:44 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h: In member function ‘virtual std::thread DummyFlow::flowThread()’:
+../src/DummyFlow.h:65:68: warning: ‘flowId’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   { flowGenerate(flowId, onTime, npackets, netInterface, anyData);});
+                                                                    ^
+../src/DummyFlow.h:65:68: warning: ‘onTime’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../src/DummyFlow.h:65:68: warning: ‘npackets’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../src/DummyFlow.h:65:68: warning: ‘anyData’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘void DitgFlow::flowGenerate(int, int, std::__cxx11::string, double)’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+In file included from ../src/NetworkFlow.cpp:9:0:
+../src/DummyFlow.h: In member function ‘virtual std::thread DummyFlow::flowThread()’:
+../src/DummyFlow.h:65:68: warning: ‘flowId’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   { flowGenerate(flowId, onTime, npackets, netInterface, anyData);});
+                                                                    ^
+../src/DummyFlow.h:65:68: warning: ‘onTime’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../src/DummyFlow.h:65:68: warning: ‘npackets’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+../src/DummyFlow.h:65:68: warning: ‘anyData’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+22:57:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h: In member function ‘virtual std::thread DummyFlow::flowThread()’:
+../src/DummyFlow.h:65:68: warning: ‘anyData’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   { flowGenerate(flowId, onTime, npackets, netInterface, anyData);});
+                                                                    ^
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘void DitgFlow::flowGenerate(int, int, std::__cxx11::string, double)’:
+../src/DitgFlow.h:40:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:42:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+In file included from ../src/NetworkFlow.cpp:9:0:
+../src/DummyFlow.h: In member function ‘virtual std::thread DummyFlow::flowThread()’:
+../src/DummyFlow.h:65:68: warning: ‘anyData’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   { flowGenerate(flowId, onTime, npackets, netInterface, anyData);});
+                                                                    ^
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:01:47 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp:101:6: error: prototype for ‘void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string, char*)’ does not match any in class ‘DummyFlow’
+ void DummyFlow::flowGenerate(counter flowId, time_sec onTime,
+      ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:7: error: candidate is: virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)
+  void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+       ^~~~~~~~~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+23:02:18 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:106:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:43:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:05:55 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:06:04 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:07:59 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:16:33 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:16:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+10:13:58 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:99:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:43:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::writeToFile(const string&) const’:
+../src/NetworkTrace.cpp:389:31: error: ‘class NetworkFlow’ has no member named ‘getNumberOfInterfileTimeModels’; did you mean ‘getNumberOfInterdepertureTimeModels’?
+   nFittings = networkFlow[i]->getNumberOfInterfileTimeModels();
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/NetworkTrace.o' failed
+make: *** [src/NetworkTrace.o] Error 1
+10:15:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+10:15:23 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+10:56:45 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:488:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+10:56:52 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+10:57:23 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:03:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+11:03:55 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:10:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+11:10:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:11:26 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:12:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+11:14:54 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:18:46 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+11:18:51 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+13:36:10 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.

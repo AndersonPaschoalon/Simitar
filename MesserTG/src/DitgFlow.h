@@ -32,7 +32,8 @@ public:
 	/**
 	 *
 	 */
-	void flowGenerate(){
+	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
+			string netInterface){
 		//TODO Criar um metodo que retorna o IP de eth0 (default) da maquina atual
 		char host[] = "10.1.1.48";
 

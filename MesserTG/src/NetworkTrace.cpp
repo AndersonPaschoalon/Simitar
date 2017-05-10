@@ -99,9 +99,10 @@ NetworkTrace::NetworkTrace(const string& fileName)
 
 		/// Link layer
 		xml_node<> * link_node = flow_node->first_node("link_layer");
-
 		pBuffer = Protocol(link_node->value());
 		netFlow->setLinkProtocol(pBuffer.get());
+		netFlow->setMacAddr(link_node->first_attribute(LABEL_MAC_SRC)->value(),
+				link_node->first_attribute(LABEL_MAC_DST)->value());
 
 		/// Network layer
 		xml_node<> * network_node = flow_node->first_node("network_layer");
@@ -254,7 +255,6 @@ NetworkTrace::NetworkTrace(const string& fileName)
 		netFlow->setPacketSizeModel(psm1, psm2, nkbytesm1, nkbytesm2,
 				npacketsm1, npacketsm2);
 
-
 		/// Store flow on trace
 		pushback_Netflow(netFlow);
 		//netFlow->print();
@@ -386,9 +386,6 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		fd[i].interPkt = new modelData[nFittings];
 		fd[i].n_interPktModels = nFittings;
 
-		nFittings = networkFlow[i]->getNumberOfInterfileTimeModels();
-		//TODO >> continuar aqui
-
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 		nPsM2Fittings = networkFlow[i]->getNumberOfPsMode2Models();
 
@@ -418,6 +415,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 
 		// Link layer
 		Protocol(networkFlow[i]->getLinkProtocol()).get(fd[i].link_p);
+		string2charvet(networkFlow[i]->getMacSrcAddr(), fd[i].mac_src);
+		string2charvet(networkFlow[i]->getMacDstAddr(), fd[i].mac_dst);
 
 		// Network layer
 		Protocol(networkFlow[i]->getNetworkProtocol()).get(fd[i].net_p);
@@ -544,7 +543,12 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		xml_node<>* link_layer = doc.allocate_node(node_element,
 				LABEL_LINK_LAYER);
 		flow->append_node(link_layer);
+
 		link_layer->value(fd[i].link_p);
+		link_layer->append_attribute(
+				doc.allocate_attribute(LABEL_MAC_SRC, fd[i].mac_src));
+		link_layer->append_attribute(
+				doc.allocate_attribute(LABEL_MAC_DST, fd[i].mac_dst));
 
 		//Network layer
 
@@ -794,7 +798,6 @@ int NetworkTrace::exec(bool verbose)
 
 	delete[] th_flw;
 
-
 	return 0;
 
 }
@@ -852,6 +855,8 @@ const char * NetworkTrace::LABEL_FLOW_DS_BYTE = "ds_byte";
 const char * NetworkTrace::LABEL_FLOW_NUMBER_KBYTES = "n_kbytes";
 const char * NetworkTrace::LABEL_FLOW_NUMBER_PACKETS = "n_packets";
 const char * NetworkTrace::LABEL_LINK_LAYER = "link_layer";
+const char * NetworkTrace::LABEL_MAC_SRC = "mac_src";
+const char * NetworkTrace::LABEL_MAC_DST = "mac_dst";
 const char * NetworkTrace::LABEL_NETWORK_LAYER = "network_layer";
 const char * NetworkTrace::LABEL_TTL = "ttl";
 const char * NetworkTrace::LABEL_SRC_IP = "src_ip";
