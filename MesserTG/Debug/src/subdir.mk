@@ -6,13 +6,12 @@
 CPP_SRCS += \
 ../src/DataProcessor.cpp \
 ../src/DatabaseInterface.cpp \
-../src/DitgFlow.cpp \
 ../src/DummyFlow.cpp \
 ../src/IperfFlow.cpp \
 ../src/Main.cpp \
 ../src/NetworkFlow.cpp \
 ../src/NetworkTrace.cpp \
-../src/OstinatoFlow.cpp \
+../src/PrintCharFlow_test.cpp \
 ../src/RegressionTests.cpp \
 ../src/StochasticModelFit.cpp \
 ../src/cfunctions.cpp 
@@ -20,13 +19,12 @@ CPP_SRCS += \
 OBJS += \
 ./src/DataProcessor.o \
 ./src/DatabaseInterface.o \
-./src/DitgFlow.o \
 ./src/DummyFlow.o \
 ./src/IperfFlow.o \
 ./src/Main.o \
 ./src/NetworkFlow.o \
 ./src/NetworkTrace.o \
-./src/OstinatoFlow.o \
+./src/PrintCharFlow_test.o \
 ./src/RegressionTests.o \
 ./src/StochasticModelFit.o \
 ./src/cfunctions.o 
@@ -34,13 +32,12 @@ OBJS += \
 CPP_DEPS += \
 ./src/DataProcessor.d \
 ./src/DatabaseInterface.d \
-./src/DitgFlow.d \
 ./src/DummyFlow.d \
 ./src/IperfFlow.d \
 ./src/Main.d \
 ./src/NetworkFlow.d \
 ./src/NetworkTrace.d \
-./src/OstinatoFlow.d \
+./src/PrintCharFlow_test.d \
 ./src/RegressionTests.d \
 ./src/StochasticModelFit.d \
 ./src/cfunctions.d 

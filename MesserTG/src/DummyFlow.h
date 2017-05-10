@@ -127,7 +127,9 @@ public:
 
 //	void setInterSessionTimeModel(StochasticModelFit* modelVet);
 //	void setInterSessionTimeModel(list<StochasticModelFit>* modelList);
-	void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//	void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//			vector<time_sec>* offTimesVec);
+	void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 			vector<time_sec>* offTimesVec);
 	time_sec getSessionOnTime_next();
 	time_sec getSessionOffTime_next();

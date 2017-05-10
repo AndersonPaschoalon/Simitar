@@ -25,7 +25,7 @@ void RegressionTests::printTestResult(string testName, bool result)
 		outRes = "ok";
 	else{
 		outRes = "failed";
-		wait_int("test failed. Press any key to continue...\n");
+		//wait_int("test failed. Press any key to continue...\n");
 	}
 	cout << testName << ":\t\t" << outRes << endl;
 

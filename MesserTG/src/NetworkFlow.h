@@ -143,7 +143,9 @@ public:
 	virtual unsigned int getNumberOfInterfileTimeModels()= 0;
 
 	//virtual void setInterSessionTimeModel(list<StochasticModelFit>* modelList) = 0;
-	virtual void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//	virtual void setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//			vector<time_sec>* offTimesVec) = 0;
+	virtual void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 			vector<time_sec>* offTimesVec) = 0;
 //	virtual void setInterSessionTimeModel(StochasticModelFit* modelVet) = 0;
 //	virtual StochasticModelFit getInterSessionTimeModel_next() = 0;

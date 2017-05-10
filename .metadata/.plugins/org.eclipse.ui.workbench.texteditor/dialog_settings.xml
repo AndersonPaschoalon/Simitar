@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="mean_packetRate" key="selection"/>
+		<item value="flowThread" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="flowThread"/>
+			<item value="exec"/>
+			<item value="getSessionOnTime_next"/>
+			<item value="getSession"/>
+			<item value="setSession"/>
+			<item value="SessionTimesOnOff"/>
+			<item value="~NetworkTrace()"/>
 			<item value="mean_packetRate"/>
-			<item value="startDalay"/>
-			<item value="ps_mostFrequent"/>
-			<item value="getInter"/>
-			<item value="getNumberOfSessionOnOffTimes"/>
-			<item value="session_OnTimes"/>
-			<item value="setInterSessionTimesOnOff"/>
-			<item value="psm1"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

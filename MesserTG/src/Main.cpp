@@ -16,7 +16,6 @@
 #include "cfunctions.h"
 #include "MesserLog.h"
 
-#define LOG_LEVEL_MAIN DEBUG
 #define REGRESSION_TESTS 1
 
 //using namespace std;
@@ -24,7 +23,7 @@
 int main()
 {
 	RegressionTests wait;
-	MESSER_LOG_INIT(LOG_LEVEL_MAIN);
+	MESSER_LOG_INIT(INFO);
 #ifdef REGRESSION_TESTS
 	MESSER_NOTICE("Starting regression tests... <%s, %s>");
 	RegressionTests rt;
@@ -78,7 +77,7 @@ int main()
 	//cout << "sleep before the next trace" << endl;
 	//sleep(160);
 
-	MESSER_NOTICE(
+	MESSER_DEBUG(
 			"Check the values of networkFlow inside NetworkTrace class @<%s, %s>");
 
 	MESSER_DEBUG("trace->networkFlow[0]->getNetworkProtocol() = %s @<%s, %s>",
@@ -131,7 +130,7 @@ int main()
 
 	delete tracetest;
 
-	MESSER_INFO(" @<%s, %s>");
+	MESSER_DEBUG(" @<%s, %s>");
 
 	MESSER_LOG_END();
 

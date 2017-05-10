@@ -168,7 +168,8 @@ NetworkTrace::NetworkTrace(const string& fileName)
 		charvet2type(session_node->first_attribute(LABEL_SESSION_OFF)->value(),
 				*offTimes);
 
-		netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
+		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
+		netFlow->setSessionTimesOnOff(onTimes, offTimes);
 
 		/// Packet sizes
 		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
@@ -264,14 +265,14 @@ NetworkTrace::NetworkTrace(const string& fileName)
 
 NetworkTrace::~NetworkTrace()
 {
-	MESSER_LOG_INIT(NOTICE);
+	MESSER_LOG_INIT(WARN);
 
 	MESSER_DEBUG(
 			"Destructor ~NetworkTrace(). networkFlow.size() = %d  @<%s, %s>",
 			networkFlow.size());
 	for (unsigned int i = 0; i < networkFlow.size(); i++)
 	{
-		MESSER_DEBUG("delete networkFlow[%d] @ <%s, %s>", i);
+		//MESSER_DEBUG("delete networkFlow[%d] @ <%s, %s>", i);
 		delete networkFlow[i];
 	}
 	networkFlow.clear();
@@ -776,7 +777,7 @@ int NetworkTrace::exec(bool verbose)
 	int i = 0;
 	std::thread* th_flw = new std::thread[size];
 
-	MESSER_INFO("NetworkTrace::exec(). this->getNumberOfFlows()=%d  @<%s, %s>",
+	MESSER_DEBUG("NetworkTrace::exec(). this->getNumberOfFlows()=%d  @<%s, %s>",
 			this->getNumberOfFlows());
 
 	for (i = 0; i < size; i++)

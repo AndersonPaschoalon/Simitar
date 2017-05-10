@@ -19,7 +19,6 @@ DummyFlow::DummyFlow()
 	number_of_kbytes = 0;
 	number_of_packets = 0;
 
-
 	///protocols parameters  initialization
 
 	link_protocol = PROTOCOL__ETHERNET; //default
@@ -103,11 +102,9 @@ void DummyFlow::flowGenerate()
 {
 	int rc = 0;
 
-//start delay
 	unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
 	string flow_str_print = "";
 	protocol prt;
-//stochastic_model themodel;
 	StochasticModelFit themodel;
 
 	/***************************************************************************
@@ -121,9 +118,9 @@ void DummyFlow::flowGenerate()
 			+ ", Start-delay:" + std::to_string(flow_start_delay) + "s"
 			+ ", N.packets: " + std::to_string(number_of_packets);
 
-	/**
-	 * Link-layer protocol
-	 */
+	////////////////////////////////////////////////////////////////////////////
+	/// Link-layer protocol
+	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Link[";
 	prt = this->getLinkProtocol();
 	if (prt == PROTOCOL__ETHERNET)
@@ -136,24 +133,10 @@ void DummyFlow::flowGenerate()
 	}
 	flow_str_print += "]";
 
-	/**
-	 * Network-layer protocol
-	 */	//#define NO_MODEL "no-model-selected"
-		// Debug defines
-		//#define DEBUG 1 // basic debug
-		//#define DEBUG_DataProcessor_calculate_loop 1
-		//#define DEBUG_DataProcessor_calculate 1
-		//#define DEBUG_NetworkFlow 1
-		//#define DEBUG_flowThread 1
-		//#define DEBUG_DatabaseInterface 1
-		//#define DEBUG_NetworkTrace_exec 1
-		//#define DEBUG_DataProcessor_interArrival 1
-		//#define DEBUG_StochasticModelFit 1
-#define DEBUG_DummyFlow 1
-	//Misc
-	//#define TEST_FUNCTIONS 1 //execute regression testes
-#define HLINE "----------"
-#define TAB "::"
+	////////////////////////////////////////////////////////////////////////////
+	/// Network-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+
 	flow_str_print += " Network[";
 	prt = this->getNetworkProtocol();
 	if (prt == PROTOCOL__IPV4)
@@ -171,9 +154,10 @@ void DummyFlow::flowGenerate()
 	flow_str_print += this->getNetworkSrcAddr() + " > "
 			+ this->getNetworkDstAddr() + "]";
 
-	/**
-	 * Transport-layer protocol
-	 */
+	////////////////////////////////////////////////////////////////////////////
+	/// Transport-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+
 	flow_str_print += " Transport[";
 	prt = this->getTransportProtocol();
 	if (prt == PROTOCOL__TCP)
@@ -214,12 +198,13 @@ void DummyFlow::flowGenerate()
 	flow_str_print += ": " + std::to_string(this->getTransportSrcPort()) + " > "
 			+ std::to_string(this->getTransportDstPort()) + "]";
 
-// Application protocol
+	// Application protocol
 	flow_str_print += " Application[no-protocol] ";
 
-	/**
-	 * Inter-deperture model
-	 */
+	////////////////////////////////////////////////////////////////////////////
+	/// Inter-deperture model
+	////////////////////////////////////////////////////////////////////////////
+
 	flow_str_print += " Inter-deperture[";
 	themodel = this->getInterDepertureTimeModel_next();
 	flow_str_print += themodel.strModelName();
@@ -273,113 +258,10 @@ void DummyFlow::flowGenerate()
 	flow_str_print += " ("
 			+ std::to_string(getNumberOfInterdepertureTimeModels()) + ")";
 
-//// Olddays-29/03/2017
-	/*
-	 //Inter-File time model
-	 flow_str_print += " Inter-File[";
-	 themodel = this->getInterFileTimeModel_next();
-	 flow_str_print += themodel.modelName;
+	////////////////////////////////////////////////////////////////////////////
+	/// Packet-size model
+	////////////////////////////////////////////////////////////////////////////
 
-	 if (themodel.modelName == WEIBULL)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1)
-	 + ", betha=" + std::to_string(themodel.param2);
-	 }
-	 else if (themodel.modelName == NORMAL)
-	 {
-	 flow_str_print += ": mu=" + std::to_string(themodel.param1) + ", sigma="
-	 + std::to_string(themodel.param2);
-	 }
-	 else if ((themodel.modelName == EXPONENTIAL_LINEAR_REGRESSION)
-	 || (themodel.modelName == EXPONENTIAL_MEAN))
-	 {
-	 flow_str_print += ": lambda=" + std::to_string(themodel.param1);
-	 }
-	 else if ((themodel.modelName == PARETO_LINEAR_REGRESSION)
-	 || (themodel.modelName == PARETO_MAXIMUM_LIKEHOOD))
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", xm="
-	 + std::to_string(themodel.param2);
-	 }
-	 else if (themodel.modelName == CAUCHY)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", x0="
-	 + std::to_string(themodel.param2);
-	 }
-	 else if (themodel.modelName == CONSTANT)
-	 {
-	 flow_str_print += ": mean=" + std::to_string(themodel.param1);
-	 }
-	 else if (themodel.modelName == NO_MODEL)
-	 {
-	 //flow_str_print += ": mean=" + std::to_string(themodel.param1);
-	 }
-	 else
-	 {
-	 perror(
-	 "Error @ DummyFlow::flowGenerate(). No model selected for Inter-File time model\n");
-	 cerr << "Hint: " << " this->getInterFileTimeModel_next() = "
-	 << themodel.modelName << endl;
-	 errno = EINVAL;
-	 }
-	 flow_str_print += "] ";
-	 */
-
-//// Olddays-29/03/2017
-	/*
-	 // Inter-session time model
-	 flow_str_print += " Inter-session[";
-	 themodel = this->getInterSessionTimeModel_next();
-	 flow_str_print += themodel.modelName;
-
-	 if (themodel.modelName == WEIBULL)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1)
-	 + ", betha=" + std::to_string(themodel.param2);
-	 }
-	 else if (themodel.modelName == NORMAL)
-	 {
-	 flow_str_print += ": mu=" + std::to_string(themodel.param1) + ", sigma="
-	 + std::to_string(themodel.param2);
-	 }
-	 else if ((themodel.modelName == EXPONENTIAL_LINEAR_REGRESSION)
-	 || (themodel.modelName == EXPONENTIAL_MEAN))
-	 {
-	 flow_str_print += ": lambda=" + std::to_string(themodel.param1);
-	 }
-	 else if ((themodel.modelName == PARETO_LINEAR_REGRESSION)
-	 || (themodel.modelName == PARETO_MAXIMUM_LIKEHOOD))
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", xm="
-	 + std::to_string(themodel.param2);
-	 }
-	 else if (themodel.modelName == CAUCHY)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1) + ", x0="
-	 + std::to_string(themodel.param2);
-	 }
-	 else if (themodel.modelName == CONSTANT)
-	 {
-	 flow_str_print += ": mean=" + std::to_string(themodel.param1);
-	 }
-	 else if (themodel.modelName == NO_MODEL)
-	 {
-	 //flow_str_print += ": mean=" + std::to_string(themodel.param1);
-	 }
-	 else
-	 {
-	 perror(
-	 "Error @ DummyFlow::flowGenerate(). No model selected for Inter-session time model\n");
-	 cerr << "Hint: " << " this->getInterSessionTimeModel_next() = "
-	 << themodel.modelName << endl;
-	 errno = EINVAL;
-	 }
-	 flow_str_print += "] ";
-	 */
-
-	/**
-	 * Packet-size model
-	 */
 	flow_str_print += " Packet-size-Mode1[";
 
 	themodel = this->getPacketSizeModelMode1_next();
@@ -478,10 +360,10 @@ void DummyFlow::flowGenerate()
 	}
 	flow_str_print += "] ";
 
-//convert the cpp flow-string to a c flow string, in order to atomize the printing
+	//convert the cpp flow-string to a c flow string, in order to atomize the printing
 	const char* flow_print = flow_str_print.c_str();
 
-//rc = usleep(usecs);
+	//rc = usleep(usecs);
 	if (rc != 0)
 	{
 		perror(
@@ -752,15 +634,6 @@ StochasticModelFit DummyFlow::getInterDepertureTimeModel_next()
 
 	}
 
-//  cout << "counter " << interDepertureTimeModel_counter << endl;
-//DEBUG
-//	cout << endl;
-//	cout << i << ":" << interDepertureTimeModel_counter << ":"
-//			<< (ptr_interArrivalModelList->size() - 1) << endl;
-//	themodel.print();
-//	int waitt;
-//	cin >> waitt;
-//
 	if ((ptr_interArrivalModelList->size() - 1)
 			> interDepertureTimeModel_counter)
 	{
@@ -838,7 +711,13 @@ time_sec DummyFlow::getInterFileTime()
 	return (interFileTimeRngEstimation);
 }
 
-void DummyFlow::setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//void DummyFlow::setInterSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//		vector<time_sec>* offTimesVec)
+//{
+//	ptr_session_onTimes = onTimesVec;
+//	ptr_session_offTimes = offTimesVec;
+//}
+void DummyFlow::setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 		vector<time_sec>* offTimesVec)
 {
 	ptr_session_onTimes = onTimesVec;
@@ -850,13 +729,16 @@ time_sec DummyFlow::getSessionOnTime_next()
 	MESSER_LOG_INIT(DEBUG);
 	time_sec theTime = 0;
 
+	//MESSER_DEBUG("ptr_session_onTimes->size()=%d", ptr_session_onTimes->size());
+
 	if (sessionOnTimes_counter >= ptr_session_onTimes->size())
 	{
 		MESSER_NOTICE(
 				"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
 				sessionOnTimes_counter);
-		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
 		sessionOnTimes_counter = 0;
+		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
+
 	}
 	else
 	{
@@ -875,10 +757,15 @@ time_sec DummyFlow::getSessionOffTime_next()
 	if (sessionOffTimes_counter >= ptr_session_offTimes->size())
 	{
 		MESSER_NOTICE(
-				"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
+				"No more Off times available on the stack. The last was the \
+%dth value. Now, it will return 0, and than will be reseted. This is because, \
+the On/Off times should aways start with a On. After that, it will be reseted  @ <%s, %s>",
 				sessionOffTimes_counter);
-		theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
+
+		//theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
+		theTime = 0;
 		sessionOffTimes_counter = 0;
+
 	}
 	else
 	{
@@ -929,7 +816,6 @@ time_sec DummyFlow::getSessionOffTime_next()
  return (theTime);
  }
  */
-
 
 StochasticModelFit DummyFlow::getPacketSizeModelMode1_next()
 {
@@ -1109,7 +995,6 @@ const string& DummyFlow::getMacDstAddr()
 	return (mac_dst);
 }
 
-
 //DEBUG
 void DummyFlow::printModels()
 {
@@ -1125,14 +1010,15 @@ void DummyFlow::printModels()
 
 vector<time_sec>* DummyFlow::getSessionOnVector()
 {
-	return(ptr_session_onTimes);
+	return (ptr_session_onTimes);
 }
 
 vector<time_sec>* DummyFlow::getSessionOffVector()
 {
-	return(ptr_session_offTimes);
+	return (ptr_session_offTimes);
 }
 
+//DEBUG ERASE IT
 void DummyFlow::logOnOff()
 {
 	MESSER_LOG_INIT(DEBUG);

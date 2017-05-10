@@ -322,7 +322,24 @@ int DataProcessor::calculate(const string& experimentName,
 		vector<time_sec>* onTimes = new vector<time_sec>;
 		vector<time_sec>* offTimes = new vector<time_sec>;
 		calcOnOff(interArrival_list, 7, 0.1, onTimes, offTimes);
-		netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
+		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
+		netFlow->setSessionTimesOnOff(onTimes, offTimes);
+
+		//DEBUG
+		printf("duration:%f\n",  netFlow->getFlowDuration() );
+		for(counter banana_jaca = 0; banana_jaca < (netFlow->getSessionOffVector()->size() +1); banana_jaca++)
+		{
+			time_sec time_on;
+			time_sec time_off;
+			time_on = netFlow->getSessionOnTime_next();
+			time_off = netFlow->getSessionOffTime_next();
+
+			printf("%d: on:%f, off:%f\n",banana_jaca,  time_on, time_off);
+
+		}
+		RegressionTests wait_in;
+		wait_in.wait_int(">");
+
 
 		/// Packet size data
 		netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
