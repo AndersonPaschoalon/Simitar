@@ -9,13 +9,15 @@
 #define NETWORKTRACE_H_
 
 //external libs
+//#include <cstring>
+#include <string.h>
 #include <stdio.h>
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include <errno.h>
-#include <cstdlib>
+//#include <cstdlib>
 #include <thread>
 #include <unistd.h>
 #include <vector>
@@ -239,6 +241,7 @@ private:
 
 	//
 	bool test_string2charvet();
+	bool test_readWrite2XML();
 
 };
 

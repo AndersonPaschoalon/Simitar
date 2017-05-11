@@ -31878,3 +31878,582 @@ make: Nothing to be done for 'all'.
 13:36:10 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
 make: Nothing to be done for 'all'.
+13:48:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:28:55: error: ‘time_sec NetworkFlow::flow_duration’ is private within this context
+  flow_str_print += "Flow> Duration:" + std::to_string(flow_duration)
+                                                       ^~~~~~~~~~~~~
+In file included from ../src/DummyFlow.h:11:0,
+                 from ../src/DummyFlow.cpp:9:
+../src/NetworkFlow.h:256:11: note: declared private here
+  time_sec flow_duration;
+           ^~~~~~~~~~~~~
+../src/DummyFlow.cpp:29:40: error: ‘time_sec NetworkFlow::flow_start_delay’ is private within this context
+    + ", Start-delay:" + std::to_string(flow_start_delay) + "s"
+                                        ^~~~~~~~~~~~~~~~
+In file included from ../src/DummyFlow.h:11:0,
+                 from ../src/DummyFlow.cpp:9:
+../src/NetworkFlow.h:257:11: note: declared private here
+  time_sec flow_start_delay;
+           ^~~~~~~~~~~~~~~~
+../src/DummyFlow.cpp:30:39: error: ‘long unsigned int NetworkFlow::number_of_packets’ is private within this context
+    + ", N.packets: " + std::to_string(number_of_packets);
+                                       ^~~~~~~~~~~~~~~~~
+In file included from ../src/DummyFlow.h:11:0,
+                 from ../src/DummyFlow.cpp:9:
+../src/NetworkFlow.h:259:20: note: declared private here
+  unsigned long int number_of_packets;
+                    ^~~~~~~~~~~~~~~~~
+../src/DummyFlow.cpp:16:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+src/subdir.mk:45: recipe for target 'src/DummyFlow.o' failed
+make: *** [src/DummyFlow.o] Error 1
+13:50:14 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:16:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:43:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+./src/NetworkFlow.o: na função `DitgFlow::DitgFlow()':
+/home/anderson/ProjetoMestrado/MesserTG/Debug/../src/DitgFlow.h:21: referência indefinida para `DummyFlow::DummyFlow()'
+makefile:45: recipe for target 'MesserTG' failed
+./src/NetworkFlow.o: na função `NetworkFlow::make_flow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/anderson/ProjetoMestrado/MesserTG/Debug/../src/NetworkFlow.cpp:34: referência indefinida para `DummyFlow::DummyFlow()'
+./src/NetworkFlow.o: na função `DitgFlow::~DitgFlow()':
+/home/anderson/ProjetoMestrado/MesserTG/Debug/../src/DitgFlow.h:28: referência indefinida para `DummyFlow::~DummyFlow()'
+./src/NetworkFlow.o: na função `DitgFlow::~DitgFlow()':
+/home/anderson/ProjetoMestrado/MesserTG/Debug/../src/DitgFlow.h:28: referência indefinida para `DummyFlow::~DummyFlow()'
+./src/NetworkFlow.o:(.data.rel.ro._ZTI8DitgFlow[_ZTI8DitgFlow]+0x10): referência indefinida para `typeinfo for DummyFlow'
+./src/NetworkFlow.o:(.data.rel.ro._ZTV8DitgFlow[_ZTV8DitgFlow]+0x30): referência indefinida para `DummyFlow::print()'
+collect2: error: ld returned 1 exit status
+make: *** [MesserTG] Error 1
+13:51:12 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:28:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:51:18 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:16:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:28:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:43:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:16:47 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:04:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:28:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:43:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::resetCounters()’:
+../src/NetworkFlow.cpp:584:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:12:35 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DummyFlow.cpp:28:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Terminado
+Command canceled
+20:12:57 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(counter, time_sec, unsigned int, std::__cxx11::string)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:43:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/PrintCharFlow_test.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
+Finished building: ../src/PrintCharFlow_test.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:13:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:25:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:242:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+20:30:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:242:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+20:32:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:243:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+20:32:23 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:244:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+20:32:43 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:244:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+20:33:03 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:244:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+20:37:32 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:244:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+20:40:52 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:244:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+20:47:10 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:121:32: error: ‘bool NetworkTrace::test_readWrite2XML()’ is private within this context
+  tracetest->test_readWrite2XML();
+                                ^
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/Main.cpp:11:
+../src/NetworkTrace.h:244:7: note: declared private here
+  bool test_readWrite2XML();
+       ^~~~~~~~~~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+20:47:29 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_readWrite2XML()’:
+../src/NetworkTrace.cpp:900:32: error: too many arguments to function ‘FILE* popen()’
+  if (!(in = popen(command, mode)))
+                                ^
+../src/NetworkTrace.cpp:895:15: note: declared here
+  extern FILE *popen();
+               ^~~~~
+src/subdir.mk:45: recipe for target 'src/NetworkTrace.o' failed
+make: *** [src/NetworkTrace.o] Error 1
+20:49:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_readWrite2XML()’:
+../src/NetworkTrace.cpp:900:32: error: too many arguments to function ‘FILE* popen()’
+  if (!(in = popen(command, mode)))
+                                ^
+../src/NetworkTrace.cpp:895:15: note: declared here
+  extern FILE *popen();
+               ^~~~~
+src/subdir.mk:45: recipe for target 'src/NetworkTrace.o' failed
+make: *** [src/NetworkTrace.o] Error 1
+20:51:53 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:52:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:53:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:56:54 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_readWrite2XML()’:
+../src/NetworkTrace.cpp:908:15: warning: comparison with string literal results in unspecified behavior [-Waddress]
+   if (buff != "")
+               ^~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+21:12:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/PrintCharFlow_test.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+21:12:16 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.

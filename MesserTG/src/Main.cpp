@@ -118,6 +118,8 @@ int main()
 	tracetest->writeToFile("copia-kjjjjj.xml");
 	tracetest->writeToFile("data/regression-tests/copy-test-trace.xml");
 
+	tracetest->regression_tests();
+
 	delete tracetest;
 
 	MESSER_DEBUG(" @<%s, %s>");

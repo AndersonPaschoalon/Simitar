@@ -514,6 +514,9 @@ int NetworkTrace::writeToFile(const string& fileName) const
 				networkFlow[i]->getNkbytesMode2());
 		sprintf(fd[i].psMode2_Npackets, "%ld",
 				networkFlow[i]->getNpacketsMode2());
+
+		//Reset data structure conters
+		networkFlow[i]->resetCounters();
 	}
 
 	// => Create XML
@@ -815,6 +818,7 @@ void NetworkTrace::regression_tests()
 
 	rt.printHeader("class NetworkTrace");
 	rt.printTestResult("string2charvet", test_string2charvet());
+	rt.printTestResult("Read and Write to the XML", test_readWrite2XML());
 
 }
 
@@ -885,3 +889,30 @@ const char * NetworkTrace::LABEL_BIC = "bic";
 const char * NetworkTrace::LABEL_NPACKETS = "n_packets";
 const char * NetworkTrace::LABEL_NKBYTES = "n_kbytes";
 
+bool NetworkTrace::test_readWrite2XML()
+{
+	bool noError = true;
+	FILE* in;
+	char buff[CHAR_BUFFER];
+	const char command[] =
+			"diff data/regression-tests/test-trace.xml data/regression-tests/test-trace.xml";
+	//const char command[] = "ls -lahn data/regression-tests/";
+	const char mode[] = "r";
+
+
+	if (!(in = popen(command, mode)))
+	{
+		return (false);
+	}
+	while (fgets(buff, sizeof(buff), in) != NULL)
+	{
+		if ( strcmp(buff, "") != 0)
+		{
+			fprintf(stderr, "diff:%s", buff);
+			noError = false;
+		}
+	}
+	pclose(in);
+
+	return (noError);
+}
