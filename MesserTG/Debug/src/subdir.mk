@@ -7,7 +7,11 @@ CPP_SRCS += \
 ../src/DataProcessor.cpp \
 ../src/DatabaseInterface.cpp \
 ../src/DummyFlow.cpp \
+../src/LibtinsFlow.cpp \
+../src/LibtinsFlow_test.cpp \
 ../src/Main.cpp \
+../src/NemesisFlow.cpp \
+../src/NemesisFlow_test.cpp \
 ../src/NetworkFlow.cpp \
 ../src/NetworkTrace.cpp \
 ../src/PrintCharFlow_test.cpp \
@@ -19,7 +23,11 @@ OBJS += \
 ./src/DataProcessor.o \
 ./src/DatabaseInterface.o \
 ./src/DummyFlow.o \
+./src/LibtinsFlow.o \
+./src/LibtinsFlow_test.o \
 ./src/Main.o \
+./src/NemesisFlow.o \
+./src/NemesisFlow_test.o \
 ./src/NetworkFlow.o \
 ./src/NetworkTrace.o \
 ./src/PrintCharFlow_test.o \
@@ -31,7 +39,11 @@ CPP_DEPS += \
 ./src/DataProcessor.d \
 ./src/DatabaseInterface.d \
 ./src/DummyFlow.d \
+./src/LibtinsFlow.d \
+./src/LibtinsFlow_test.d \
 ./src/Main.d \
+./src/NemesisFlow.d \
+./src/NemesisFlow_test.d \
 ./src/NetworkFlow.d \
 ./src/NetworkTrace.d \
 ./src/PrintCharFlow_test.d \

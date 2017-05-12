@@ -8,25 +8,48 @@
 #include "NetworkFlow.h"
 #include "DummyFlow.h"
 #include "DitgFlow.h"
+#include "PrintCharFlow.h"
+#include "IperfFlow.h"
+#include "OstinatoFlow.h"
+#include "NemesisFlow.h"
+#include "LibtinsFlow.h"
 
-NetworkFlow* NetworkFlow::make_flow(string choise)
+NetworkFlow* NetworkFlow::make_flow(const string& choise)
 {
-#ifdef DEBUG_NetworkFlow
-	cout << "NetworkFlow type: " << choise << endl;
-#endif
-
-	if (choise == "ditg")
+	if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
+	{
 		return new DitgFlow;
+	}
+	else if ((choise == "iperf") || (choise == "Iperf") || (choise == "IPERF"))
+	{
+		return new IperfFlow;
+	}
+	else if ((choise == "ostinato") || (choise == "Ostinato")
+			|| (choise == "OSTINATO"))
+	{
+		return new OstinatoFlow;
+	}
+	else if ((choise == "Nemesis") || (choise == "nemesis")
+			|| (choise == "NEMESIS"))
+	{
+		return new NemesisFlow;
+	}
+	else if ((choise == "Libtins") || (choise == "libtins")
+			|| (choise == "LIBTINS"))
+	{
+		return new LibtinsFlow;
+	}
 	else
+	{
 		return new DummyFlow;
-
+	}
 }
 
 NetworkFlow::NetworkFlow()
 {
 
 	///flow-level parameters initialization
-
+	flowId = 0;
 	flow_ds_byte = 0;
 	flow_duration = 0;
 	flow_start_delay = 0;
@@ -376,16 +399,16 @@ void NetworkFlow::setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 
 time_sec NetworkFlow::getSessionOnTime_next()
 {
-	MESSER_LOG_INIT(DEBUG);
+	//MESSER_LOG_INIT(NOTICE);
 	time_sec theTime = 0;
 
 	//MESSER_DEBUG("ptr_session_onTimes->size()=%d", ptr_session_onTimes->size());
 
 	if (sessionOnTimes_counter >= ptr_session_onTimes->size())
 	{
-		MESSER_NOTICE(
-				"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
-				sessionOnTimes_counter);
+		//MESSER_DEBUG(
+		//		"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
+		//		sessionOnTimes_counter);
 		sessionOnTimes_counter = 0;
 		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
 
@@ -401,16 +424,16 @@ time_sec NetworkFlow::getSessionOnTime_next()
 
 time_sec NetworkFlow::getSessionOffTime_next()
 {
-	MESSER_LOG_INIT(DEBUG);
+	MESSER_LOG_INIT(NOTICE);
 	time_sec theTime = 0;
 
 	if (sessionOffTimes_counter >= ptr_session_offTimes->size())
 	{
-		MESSER_NOTICE(
-				"No more Off times available on the stack. The last was the \
-%dth value. Now, it will return 0, and than will be reseted. This is because, \
-the On/Off times should aways start with a On. After that, it will be reseted  @ <%s, %s>",
-				sessionOffTimes_counter);
+//		MESSER_DEBUG(
+//				"No more Off times available on the stack. The last was the \
+//%dth value. Now, it will return 0, and than will be reseted. This is because, \
+//the On/Off times should aways start with a On. After that, it will be reseted  @ <%s, %s>",
+//				sessionOffTimes_counter);
 
 		//theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
 		theTime = 0;
@@ -588,6 +611,84 @@ void NetworkFlow::resetCounters()
 	packetSizeModel2_counter = 0;
 }
 
+inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
+{
+	struct ifaddrs *ifaddr, *ifa;
+	int family, s;
+	char host[NI_MAXHOST];
+
+	if (getifaddrs(&ifaddr) == -1)
+	{
+		perror("getifaddrs");
+		return (-1);
+	}
+
+	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
+	{
+
+		if (ifa->ifa_addr == NULL)
+			continue;
+
+		s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host,
+		NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
+
+		if ((strcmp(ifa->ifa_name, "lo") != 0)
+				&& (ifa->ifa_addr->sa_family == AF_INET))
+		{
+			if (s != 0)
+			{
+				printf("getnameinfo() failed: %s\n", gai_strerror(s));
+				return (-2);
+			}
+			strcpy(interface, ifa->ifa_name);
+			strcpy(ipaddr, host);
+			break;
+		}
+	}
+
+	freeifaddrs(ifaddr);
+	return (0);
+}
+
+inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
+{
+	struct ifaddrs *ifaddr, *ifa;
+	int family, s;
+	char host[NI_MAXHOST];
+
+	if (getifaddrs(&ifaddr) == -1)
+	{
+		perror("getifaddrs");
+		return (-1);
+	}
+
+	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
+	{
+
+		if (ifa->ifa_addr == NULL)
+			continue;
+
+		s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host,
+		NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
+
+		if ((strcmp(ifa->ifa_name, interface) == 0)
+				&& (ifa->ifa_addr->sa_family == AF_INET))
+		{
+			if (s != 0)
+			{
+				printf("getnameinfo() failed: %s\n", gai_strerror(s));
+				return (-2);
+			}
+
+			strcpy(ipaddr, host);
+			break;
+		}
+	}
+
+	freeifaddrs(ifaddr);
+	return (0);
+}
+
 //DEBUG
 void NetworkFlow::printModels()
 {
@@ -601,12 +702,12 @@ void NetworkFlow::printModels()
 
 }
 
-vector<time_sec>* NetworkFlow::getSessionOnVector()
+vector<time_sec> *NetworkFlow::getSessionOnVector()
 {
 	return (ptr_session_onTimes);
 }
 
-vector<time_sec>* NetworkFlow::getSessionOffVector()
+vector<time_sec> *NetworkFlow::getSessionOffVector()
 {
 	return (ptr_session_offTimes);
 }

@@ -20,8 +20,63 @@ void DummyFlow::print()
 {
 }
 
-void DummyFlow::flowGenerate(counter flowId, time_sec onTime,
-		unsigned int npackets, string netInterface)
+void DummyFlow::flowStart()
+{
+	/// Statistical vars
+	counter flowId = 0;
+	unsigned int npackets = 0;
+	string netInterface = "";
+
+	/// On/Off time vars
+	//struct timespec start, end; // time probes
+	time_t usec_startDelay = 0; // time in useconds
+	//time_t usec_onTime = 0; // time in useconds
+	time_t usec_offTime = 0; // time in useconds
+	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
+	time_sec sec_onTime = 0;
+	time_sec sec_offTime = 0;
+	//uint64_t delta_us; // calc delta times ?
+	//time_sec delta_s;
+
+	usec_startDelay = time_t(sec_startDelay * 1.0e6);
+
+	int fid = int(getFlowId());
+	//int fid = 0;
+
+	//DEBUG
+	//clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+
+	//cout << sec_startDelay << endl;
+
+	usleep(usec_startDelay);
+	while (1)
+	{
+		sec_onTime = getSessionOnTime_next();
+		flowGenerate(fid, sec_onTime, npackets, netInterface);
+		//resetCounters();
+
+		sec_offTime = getSessionOffTime_next();
+		if (sec_offTime == 0)
+		{
+			break;
+		}
+		usec_offTime = time_t(sec_offTime * 1.0e6);
+		usleep(usec_offTime);
+
+	}
+
+	////DEBUG
+	//clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+
+	//delta_us = (end.tv_sec - start.tv_sec) * 1000000
+	//		+ (end.tv_nsec - start.tv_nsec) / 1000;
+	//
+	//printf("FlowDuration[actual/expected] = (%0.5d, %0.5d)", (delta_us / 1.0e6),
+	//		getFlowDuration());
+}
+
+void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+		const unsigned int& npackets, const string& netInterface)
 {
 	int rc = 0;
 
@@ -37,9 +92,11 @@ void DummyFlow::flowGenerate(counter flowId, time_sec onTime,
 	/**
 	 * Flow-level
 	 */
-	flow_str_print += "Flow> Duration:" + std::to_string(getFlowDuration())
+	flow_str_print += "Flow" + std::to_string(flowId) + "> Duration:" + std::to_string(getFlowDuration())
 			+ ", Start-delay:" + std::to_string(getFlowStartDelay()) + "s"
 			+ ", N.packets: " + std::to_string(getNumberOfPackets());
+
+
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Link-layer protocol

@@ -352,6 +352,8 @@ int DataProcessor::calculate(const string& experimentName,
 				fitModelsPsSize(psSecondMode), nKbytesMode1, nKbytesMode2,
 				psFirstMode.size(), psSecondMode.size());
 
+		netFlow->setFlowId(fcounter);
+
 		////////////////////////////////////////////////////////////////////////
 		/// Push-back the flow to Trace Flow-list
 		////////////////////////////////////////////////////////////////////////
@@ -385,6 +387,7 @@ int DataProcessor::calculate(const string& experimentName,
 				fcounter, netFlow->getFlowDsByte());
 		MESSER_DEBUG("flow%d: netFlow->getNetworkDstAddr()=%s @ <%s, %s>",
 				fcounter, netFlow->getNetworkDstAddr().c_str());
+
 
 	}
 

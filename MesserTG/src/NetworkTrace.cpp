@@ -38,7 +38,7 @@ NetworkTrace::NetworkTrace(const string& fileName)
 
 	// Read the xml file into a vector
 	//ifstream theFile(fileName);
-	ifstream theFile("kkk.xml"); //TODO
+	ifstream theFile(fileName); //TODO
 	vector<char> buffer((istreambuf_iterator<char>(theFile)),
 			istreambuf_iterator<char>());
 	buffer.push_back('\0');
@@ -73,7 +73,8 @@ NetworkTrace::NetworkTrace(const string& fileName)
 	{
 
 		/// Create flow
-		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
+		NetworkFlow* netFlow = NetworkFlow::make_flow(m_trafficGenEngine);
+		//NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 		//MESSER_DEBUG("netFlow[%d]  @<%s, %s>", fcounter);
 
 		/// Flow Settings
@@ -888,6 +889,19 @@ const char * NetworkTrace::LABEL_AIC = "aic";
 const char * NetworkTrace::LABEL_BIC = "bic";
 const char * NetworkTrace::LABEL_NPACKETS = "n_packets";
 const char * NetworkTrace::LABEL_NKBYTES = "n_kbytes";
+
+inline int NetworkTrace::setDstIP(const string& dstIpAddr)
+{
+	//TODO
+	return(0);
+}
+
+inline int NetworkTrace::setDstNetwork(const string& dstIpPrefix,
+		const string& dstNetmask)
+{
+	//TODO
+	return(0);
+}
 
 bool NetworkTrace::test_readWrite2XML()
 {

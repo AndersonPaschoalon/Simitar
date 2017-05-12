@@ -47,21 +47,18 @@ public:
 	 *
 	 * @return
 	 */
-	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
-			string netInterface);
+	inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const unsigned int& npackets, const string& netInterface);
+
+	void flowStart();
 
 	std::thread flowThread()
 	{
-		MESSER_LOG_INIT(INFO);
-		MESSER_DEBUG("std::thread flowThread() ok! @<%s, %s>");
-
-		counter flowId = 0;
-		time_sec onTime = 0;
-		unsigned int npackets = 0;
-		string netInterface = "";
+		//MESSER_LOG_INIT(INFO);
+		//MESSER_DEBUG("std::thread flowThread() ok! @<%s, %s>");
 
 		return std::thread([=]
-		{	flowGenerate(flowId, onTime, npackets, netInterface);});
+		{	flowStart();});
 	}
 
 };

@@ -8,6 +8,7 @@
 #ifndef NETWORKFLOW_H_
 #define NETWORKFLOW_H_
 
+//#define _GNU_SOURCE
 //external libraries
 #include <stdio.h>
 #include <iostream>
@@ -24,6 +25,10 @@
 #include <list>
 #include <ITGapi.h>
 #include <vector>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <ifaddrs.h>
 
 //local includes
 
@@ -49,11 +54,16 @@ public:
 	//Create flow
 	NetworkFlow();
 	virtual ~NetworkFlow();
-	static NetworkFlow *make_flow(string choise);
+	static NetworkFlow *make_flow(const string& choise);
 
-	virtual std::thread flowThread() = 0;
-	virtual void flowGenerate(counter flowId, time_sec onTime,
-			unsigned int npackets, string netInterface) = 0;
+	inline virtual std::thread flowThread() = 0;
+	inline virtual void flowGenerate(const counter& flowId,
+			const time_sec& onTime, const unsigned int& npackets,
+			const string& netInterface) = 0;
+
+	inline int getLocalIfIp(char* interface, char* ipaddr);
+
+	inline int getLocalIp(const char* interface, char* ipaddr);
 
 	virtual void print() = 0;
 
@@ -100,7 +110,6 @@ public:
 	unsigned long int getNumberOfPackets() const;
 	void setNumberOfPackets(unsigned long int numberOfPackets);
 
-
 	unsigned int getTransportDstPort() const;
 	void setTransportDstPort(unsigned int transportDstPort);
 	unsigned int getTransportSctpAssociationId() const;
@@ -116,11 +125,10 @@ public:
 	StochasticModelFit getInterDepertureTimeModel_next();
 	unsigned int getNumberOfInterdepertureTimeModels();
 
-	void setInterFileTimeModel(list<StochasticModelFit>* modelList);
-	StochasticModelFit getInterFileTimeModel_next();
-	time_sec getInterFileTime();
-	unsigned int getNumberOfInterfileTimeModels();
-
+	//void setInterFileTimeModel(list<StochasticModelFit>* modelList);
+	//StochasticModelFit getInterFileTimeModel_next();
+	//time_sec getInterFileTime();
+	//unsigned int getNumberOfInterfileTimeModels();
 
 	void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 			vector<time_sec>* offTimesVec);
@@ -131,10 +139,8 @@ public:
 	vector<time_sec>* getSessionOnVector();
 	vector<time_sec>* getSessionOffVector();
 
-
 	StochasticModelFit getPacketSizeModelMode1_next();
 	StochasticModelFit getPacketSizeModelMode2_next();
-
 
 	void setPacketSizeModel(list<StochasticModelFit>* modelList1,
 			list<StochasticModelFit>* modelList2, long int nkbytesMode1,
@@ -148,12 +154,19 @@ public:
 	unsigned int getNumberOfPsMode2Models() const;
 	unsigned int getNumberOfPsMode1Models() const;
 
-
-
-
-
 	//DEBUG
 	void printModels();
+
+	unsigned int getFlowId() const
+	{
+		return flowId;
+	}
+
+	void setFlowId(unsigned int flowId)
+	{
+		this->flowId = flowId;
+	}
+
 	//void logOnOff();
 
 private:
@@ -167,6 +180,7 @@ private:
 	unsigned int flow_ds_byte;
 	unsigned long int number_of_packets;
 	unsigned long int number_of_kbytes;
+	unsigned int flowId;
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Protocol stack options

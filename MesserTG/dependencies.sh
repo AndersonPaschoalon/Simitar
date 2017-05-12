@@ -84,6 +84,13 @@ function install_octave
 	sudo apt-get install octave
 }
 
+
+functio install_libtins
+{
+	print_header "Libtins"
+	sudo apt-get install libpcap-dev libssl-dev cmake
+}
+
 function main()
 {
 	#install_armadillo
@@ -94,7 +101,7 @@ function main()
 	install_ostinato
 	install_iperf
 	install_octave
-
+	install_libtins
 }
 
 main;

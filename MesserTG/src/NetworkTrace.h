@@ -180,6 +180,12 @@ public:
 		m_trafficGenEngine = trafficGenEngine;
 	}
 
+
+	inline int setDstIP(const string& dstIpAddr);
+
+	inline int setDstNetwork(const string& dstIpPrefix, const string& dstNetmask);
+
+
 	void regression_tests();
 
 private:

@@ -11,14 +11,14 @@
 #include "NetworkFlow.h"
 #include "DummyFlow.h"
 
-
 class DitgFlow: public DummyFlow
 {
 public:
 	/**
 	 *
 	 */
-	DitgFlow(){
+	DitgFlow()
+	{
 		//TODO
 	}
 	/**
@@ -32,8 +32,9 @@ public:
 	/**
 	 *
 	 */
-	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
-			string netInterface){
+	void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const unsigned int& npackets, const string& netInterface)
+	{
 		//TODO Criar um metodo que retorna o IP de eth0 (default) da maquina atual
 		char host[] = "10.1.1.48";
 
@@ -45,7 +46,6 @@ public:
 		////////////////////////////////////////////////////////////////////////////
 		///Initialization
 		////////////////////////////////////////////////////////////////////////////
-
 
 		string strCommand = "";
 		string strCommandMode1 = "";
@@ -59,7 +59,6 @@ public:
 		/// D-ITG settings parser
 		////////////////////////////////////////////////////////////////////////////
 
-
 		/// Flow-level settings
 
 		//duration
@@ -71,13 +70,11 @@ public:
 		//Guarantee the mean packet rate
 		strCommand += " -j 1";
 
-
 		/// Network-layer settings
 		strCommand += " -f " + std::to_string(this->getNetworkTtl());
 		//destination and sources IPv4/IPv6 address
 		strCommand += " -a " + this->getNetworkDstAddr();
 		strCommand += " -sa " + this->getNetworkSrcAddr();
-
 
 		/// Transport-layer settings
 		if (this->getTransportProtocol() == PROTOCOL__TCP)
@@ -102,8 +99,9 @@ public:
 			//TODO Set D-ITG compile file to support SCTP
 			// To enable this option D-ITG has to be compiled with"sctp" option enabled (i.e.  make sctp=on).
 			strCommand += " -T SCTP "
-					+ std::to_string(this->getTransportSctpAssociationId()) + " "
-					+ std::to_string(this->getTransportSctpMaxStreams()) + " ";
+					+ std::to_string(this->getTransportSctpAssociationId())
+					+ " " + std::to_string(this->getTransportSctpMaxStreams())
+					+ " ";
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__DCCP)
 		{
@@ -113,14 +111,15 @@ public:
 		}
 		else
 		{
-			strCommand += " -T UDP -rp " + std::to_string(this->randTranportPort());
+			strCommand += " -T UDP -rp "
+					+ std::to_string(this->randTranportPort());
 		}
-
 
 		/// Inter-departure time options
 		for (;;)
 		{
-			StochasticModelFit idtModel = this->getInterDepertureTimeModel_next();
+			StochasticModelFit idtModel =
+					this->getInterDepertureTimeModel_next();
 
 			if ((idtModel.modelName() == WEIBULL)
 					|| (idtModel.modelName() == NORMAL)
@@ -135,15 +134,15 @@ public:
 				{
 					//idtModel.param1 = alpha (shape)
 					//idtModel.param2 = betha (scale)
-					strCommand += " -W " + std::to_string(idtModel.param1()) + " "
-							+ std::to_string(idtModel.param2());
+					strCommand += " -W " + std::to_string(idtModel.param1())
+							+ " " + std::to_string(idtModel.param2());
 				}
 				else if (idtModel.modelName() == NORMAL)
 				{
 					//idtModel.param1 = mu (shape)
 					//idtModel.param2 = sigma dev
-					strCommand += " -N " + std::to_string(idtModel.param1()) + " "
-							+ std::to_string(idtModel.param2());
+					strCommand += " -N " + std::to_string(idtModel.param1())
+							+ " " + std::to_string(idtModel.param2());
 				}
 				else if ((idtModel.modelName() == EXPONENTIAL_LINEAR_REGRESSION)
 						|| (idtModel.modelName() == EXPONENTIAL_MEAN))
@@ -156,15 +155,15 @@ public:
 				{
 					//idtModel.param1 = alpha (shape)
 					//idtModel.param2 = xm (scale)
-					strCommand += " -V " + std::to_string(idtModel.param1()) + " "
-							+ std::to_string(idtModel.param2());
+					strCommand += " -V " + std::to_string(idtModel.param1())
+							+ " " + std::to_string(idtModel.param2());
 				}
 				else if (idtModel.modelName() == CAUCHY)
 				{
 					//idtModel.param1 = gamma (scale)
 					//idtModel.param2 = xm (shape - location)
-					strCommand += " -Y " + std::to_string(idtModel.param2()) + " "
-							+ std::to_string(idtModel.param1());
+					strCommand += " -Y " + std::to_string(idtModel.param2())
+							+ " " + std::to_string(idtModel.param1());
 				}
 				else //CONSTANT
 				{
@@ -174,7 +173,6 @@ public:
 			}
 		}
 
-
 		/// Packet size options
 
 		//First model: Contant
@@ -183,7 +181,6 @@ public:
 		//First model: Contant
 		strCommandMode2 = strCommand + " -c "
 				+ std::to_string(this->getPacketSizeModelMode2_next().param1());
-
 
 		/// Generate C string
 
@@ -234,9 +231,9 @@ public:
 		delete[] commandMode1;
 		delete[] commandMode2;
 
-	#ifdef DEBUG
+#ifdef DEBUG
 		cout << "D-ITG command: " << command << endl;
-	#endif
+#endif
 
 		return;
 	}

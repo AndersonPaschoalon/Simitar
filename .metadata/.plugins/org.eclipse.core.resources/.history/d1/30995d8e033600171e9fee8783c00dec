@@ -1,0 +1,51 @@
+/*
+ * PrintCharFlow.h
+ *
+ *  Created on: 9 de mai de 2017
+ *      Author: anderson
+ */
+
+#ifndef PRINTCHARFLOW_H_
+#define PRINTCHARFLOW_H_
+
+#include "DummyFlow.h"
+
+class PrintCharFlow: public DummyFlow
+{
+public:
+	PrintCharFlow()
+	{
+
+	}
+	virtual ~PrintCharFlow()
+	{
+
+	}
+	inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const unsigned int& npackets, const string& netInterface)
+	{
+		uint64_t  wait_us = time_t(onTime * 1.0e6);
+		struct timespec start, end;
+		uint64_t delta_us;
+
+		printf("*");
+
+		clock_gettime(CLOCK_MONOTONIC_RAW, &start);
+		for(;;)
+		{
+			clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+			delta_us = (end.tv_sec - start.tv_sec) * 1000000
+						+ (end.tv_nsec - start.tv_nsec) / 1000;
+			if(delta_us <  wait_us){
+				continue;
+			}
+			else
+			{
+				break;
+			}
+		}
+
+	}
+};
+
+#endif /* PRINTCHARFLOW_H_ */

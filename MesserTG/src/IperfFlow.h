@@ -22,8 +22,8 @@ public:
 	{
 	}
 
-	void flowGenerate(counter flowId, time_sec onTime, unsigned int npackets,
-			string netInterface)
+	inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const unsigned int& npackets, const string& netInterface)
 	{
 	}
 };

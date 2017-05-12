@@ -13,26 +13,25 @@
 #include "NetworkFlow.h"
 #include "DummyFlow.h"
 
-
 class OstinatoFlow: public DummyFlow
 {
 public:
 
-	OstinatoFlow(){
+	OstinatoFlow()
+	{
 
 	}
 
-
-	virtual ~OstinatoFlow(){
+	virtual ~OstinatoFlow()
+	{
 
 	}
 
-
-	void flowGenerate(int arg1, int arg2, string arg3, double arg4){
+	inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const unsigned int& npackets, const string& netInterface)
+	{
 
 	}
 };
-
-
 
 #endif /* OSTINATOFLOW_H_ */
