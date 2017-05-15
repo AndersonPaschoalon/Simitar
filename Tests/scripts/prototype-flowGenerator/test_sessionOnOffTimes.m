@@ -9,7 +9,7 @@ EXPRAND_CUMULATIVE_DATA = cumulativeData(EXPRAND_DATA);
 
 
 % First Example
-fprintf("Default Example\n");
+fprintf("\n===================================\nDefault Example\n===================================\n");
 
 % in: list of packet arrival time relative to the first
 ARRIVAL_SAMPLE = [0.1 3.1 5.1 5.3 10.3 11.4 11.9 15.9 16.8]';
@@ -27,7 +27,7 @@ fprintf("Soma on+off = %d\n", sum(calcOnOffTimes(arrival_time, delta_time, SESSI
 
 
 % Exponential Example
-fprintf("Exponential\n");
+fprintf("\n===================================\nExponential Random\n===================================\n");
 
 % redef
 SESSION_CUT_TIME = 7.0;
@@ -53,7 +53,7 @@ fprintf("Soma on+off = %f arrival_time=%f\n", sum(calcOnOffTimes(arrival_time, d
 
 
 % Exponential Example
-fprintf("Exponential file data\n");
+fprintf("\n===================================\nExponential file data\n===================================\n");
 
 %from load data
 delta_time = load("data/exp_interarrival_times.txt");
@@ -69,11 +69,11 @@ ontimes
 
 offtimes
 
-fprintf("SAMPLE NOW LOL");
-
+% Bord case example 1
+fprintf("\n===================================\nBord case example 1\n===================================\n");
 
 delta_sample_data = [30.00551800,30.00527800,30.00600200,30.00594800,30.00571400];
-cumulative_sample_data = cumulativeData(arrival_sample_data);
+cumulative_sample_data = cumulativeData(delta_sample_data);
 arrival_time = cumulative_sample_data;
 delta_time = delta_sample_data;
 cut_time = 7;
@@ -85,6 +85,22 @@ ontimes
 
 offtimes
 
+
+% Bord case example 2
+fprintf("\n===================================\nBord case example 2\n===================================\n");
+
+delta_sample_data = [0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 ];
+cumulative_sample_data = cumulativeData(delta_sample_data);
+arrival_time = cumulative_sample_data;
+delta_time = delta_sample_data;
+cut_time = 7;
+[onoff ontimes offtimes] = calcOnOffTimes(arrival_time, delta_time, cut_time, min_time);
+
+onoff
+
+ontimes
+
+offtimes
 
 
 

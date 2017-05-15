@@ -1,78 +1,9 @@
-22:31:41 **** Incremental Build of configuration Debug for project MesserTG ****
+17:45:31 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
-Building file: ../src/NetworkFlow.cpp
+Building file: ../src/DataProcessor.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
-../src/NetworkFlow.cpp:433:1: warning: multi-line comment [-Wcomment]
- //    "No more Off times available on the stack. The last was the \
- ^
-In file included from ../src/NetworkFlow.cpp:10:0:
-../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
-../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
-   char ethernetInterface[] = "eth0";
-        ^~~~~~~~~~~~~~~~~
-../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
-   int userOption;
-       ^~~~~~~~~~
-../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
-../src/NetworkFlow.cpp:617:6: warning: unused variable ‘family’ [-Wunused-variable]
-  int family, s;
-      ^~~~~~
-../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
-../src/NetworkFlow.cpp:656:6: warning: unused variable ‘family’ [-Wunused-variable]
-  int family, s;
-      ^~~~~~
-Finished building: ../src/NetworkFlow.cpp
- 
-Building file: ../src/NetworkTrace.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
-../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
-../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
-  long int fcounter = 0;
-           ^~~~~~~~
-In file included from ../src/NetworkTrace.h:43:0,
-                 from ../src/NetworkTrace.cpp:8:
-../src/NetworkFlow.h: At global scope:
-../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
-  inline virtual std::thread flowThread() = 0;
-                             ^~~~~~~~~~
-Finished building: ../src/NetworkTrace.cpp
- 
-Building file: ../src/PrintCharFlow_test.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/PrintCharFlow_test.d" -MT"src/PrintCharFlow_test.o" -o "src/PrintCharFlow_test.o" "../src/PrintCharFlow_test.cpp"
-Finished building: ../src/PrintCharFlow_test.cpp
- 
-Building file: ../src/LibtinsFlow.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
-In file included from ../src/LibtinsFlow.h:11:0,
-                 from ../src/LibtinsFlow.cpp:8:
-../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
-  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
-              ^~~~~~~~~~~~
-Finished building: ../src/LibtinsFlow.cpp
- 
-Building file: ../src/LibtinsFlow_test.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow_test.d" -MT"src/LibtinsFlow_test.o" -o "src/LibtinsFlow_test.o" "../src/LibtinsFlow_test.cpp"
-Finished building: ../src/LibtinsFlow_test.cpp
- 
-Building file: ../src/NemesisFlow.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NemesisFlow.d" -MT"src/NemesisFlow.o" -o "src/NemesisFlow.o" "../src/NemesisFlow.cpp"
-In file included from ../src/NemesisFlow.h:11:0,
-                 from ../src/NemesisFlow.cpp:8:
-../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
-  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
-              ^~~~~~~~~~~~
-Finished building: ../src/NemesisFlow.cpp
- 
-Building file: ../src/NemesisFlow_test.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NemesisFlow_test.d" -MT"src/NemesisFlow_test.o" -o "src/NemesisFlow_test.o" "../src/NemesisFlow_test.cpp"
-Finished building: ../src/NemesisFlow_test.cpp
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
  
 Building target: MesserTG
 Invoking: GCC C++ Linker
@@ -80,5 +11,5 @@ g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyF
 Finished building target: MesserTG
  
 
-22:31:56 Build Finished (took 15s.148ms)
+17:45:37 Build Finished (took 5s.244ms)
 

@@ -42,21 +42,13 @@ function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cu
 
 	% Calc list of OnOff times
 	for i = 1:m
-		if((delta_time(i) > cut_time)||(i == m))
+		if((delta_time(i) > cut_time))
 			if(i == 1) % if the first is session-off
 				j++;
 				onOff(j) = min_on_time;
 				j++;
 				onOff(j) = delta_time(i);
 				last_off = i;
-			elseif (i == m)
-				if(last_off == m) % if last is session-off 
-					j++;
-					onOff(j) = min_on_time;
-				else % base last case
-					j++;
-					onOff(j) = arrival_time(i) - arrival_time(last_off);
-				endif				
 			else 
 				if(j == 0) % base first case
 					j++;
@@ -78,6 +70,23 @@ function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cu
 			endif
 		endif
 	endfor
+	i = m + 1;
+	
+	%debug
+	%printf("\n###############\n");
+	%printf("m=%d, i=%d, last_off=%d\n", m, i, last_off);
+	if(last_off == m ) % if last is session-off 
+		j++;
+		onOff(j) = min_on_time;
+	else % base last case
+		j++;
+		if(last_off != 0)
+			onOff(j) = arrival_time(m) - arrival_time(last_off);
+		else 
+			onOff(j) = arrival_time(m);
+		endif
+	endif	
+	
 
 	i = 0;
 	onOff = onOff(onOff != 0);

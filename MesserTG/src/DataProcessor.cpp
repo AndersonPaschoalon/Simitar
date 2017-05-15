@@ -27,12 +27,11 @@ string DataProcessor::toString(void)
 	return (dataProcessor);
 }
 
-// Olddays-29/03/2017: vou tentar eliminar os modelos parciais, e realizar os cauculos utilizando somente
-// fitting para o flow como um todo, e ver no que da
+
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
-	MESSER_LOG_INIT(NOTICE);
+	MESSER_LOG_INIT(DEBUG);
 
 	///iterator variables
 	long int fcounter = 0;
@@ -62,13 +61,15 @@ int DataProcessor::calculate(const string& experimentName,
 	list<packet_size> psSecondMode;
 
 	///inter-deperture time variables
+	list<time_sec> arrival_list;
 	list<time_sec> interArrival_list; // list of inter arrival times of a flow
-	list<time_sec> interArrival_fileStack;
+	//list<time_sec> interArrival_fileStack;
 	//list<time_sec> interArrival_interFileStack;
 	//vector<time_sec>* interArrival_sessionOnTimes;
 	//vector<time_sec>* interArrival_sessionOffTimes;
 	time_sec idt_pivot = 0;
 	time_sec idt_next = 0;
+	time_sec idt_start = 0;
 
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
@@ -88,8 +89,9 @@ int DataProcessor::calculate(const string& experimentName,
 		pslist.clear();
 		psFirstMode.clear();
 		psSecondMode.clear();
+		arrival_list.clear();
 		interArrival_list.clear();
-		interArrival_fileStack.clear();
+		//interArrival_fileStack.clear();
 		//interArrival_interFileStack.clear();
 //		interArrival_sessionOnTimes->clear();
 //		interArrival_sessionOffTimes->clear();
@@ -128,11 +130,13 @@ int DataProcessor::calculate(const string& experimentName,
 			if (it == relativeTime.begin())
 			{
 				idt_pivot = *it;
+				idt_start = idt_pivot;
 			}
 			else
 			{
 				idt_next = *it;
 				interArrival_list.push_back(idt_next - idt_pivot);
+				arrival_list.push_back(idt_next - idt_start);
 				idt_pivot = idt_next;
 			}
 		}
@@ -221,6 +225,7 @@ int DataProcessor::calculate(const string& experimentName,
 			//DEBUG
 			if (flowStrData == "10.1.1.41")
 			{
+				//cout << "33\n";
 				debugflag = 33;
 			}
 
@@ -319,9 +324,17 @@ int DataProcessor::calculate(const string& experimentName,
 		//DEBUG
 		if (debugflag == 33)
 		{
-			char debugout[CHAR_LARGE_BUFFER];
-			list2str(interArrival_list, debugout);
-			MESSER_DEBUG("interarrival of 10.1.1.41: %s <%s, %s>", debugout);
+			cout << debugflag << endl;
+			char delta[CHAR_LARGE_BUFFER];
+			char relative[CHAR_LARGE_BUFFER];
+			char arrival[CHAR_LARGE_BUFFER];
+			list2str(interArrival_list, delta);
+			list2str(relativeTime, relative);
+			list2str(arrival_list, arrival);
+			printf("arrivaltime of 10.1.1.41: %s\n", arrival);
+			printf("relativeTime of 10.1.1.41: %s\n", relative);
+			printf("interarrival of 10.1.1.41: %s\n", delta);
+			MESSER_DEBUG("interarrival of 10.1.1.41: %s <%s, %s>", delta);
 		}
 
 		//Session Times
@@ -362,8 +375,8 @@ int DataProcessor::calculate(const string& experimentName,
 		//logs
 		MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
 				interArrival_list.size());
-		MESSER_DEBUG("interArrival_fileStack.size() = %d, ",
-				interArrival_fileStack.size());
+		//MESSER_DEBUG("interArrival_fileStack.size() = %d, ",
+		//		interArrival_fileStack.size());
 		MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
 				onTimes->size());
 		MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
