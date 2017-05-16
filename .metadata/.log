@@ -7296,3 +7296,49 @@ Binding(F3,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.cdt.ui 4 0 2017-05-15 21:21:25.189
+!MESSAGE Error in CDT UI during reconcile
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: 
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:110)
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:96)
+	at org.eclipse.cdt.core.parser.util.ArrayUtil.appendAt(ArrayUtil.java:164)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPUsingDeclaration.getDelegates(PDOMCPPUsingDeclaration.java:97)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.expandUsingDeclarations(CPPSemantics.java:1372)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.expandUsingDeclarationsAndRemoveObjects(CPPSemantics.java:1353)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.getBindingsFromScope(CPPSemantics.java:1332)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.lookup(CPPSemantics.java:1041)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPSemantics.resolveBinding(CPPSemantics.java:300)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.resolveBinding(CPPVisitor.java:1418)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPVisitor.createBinding(CPPVisitor.java:300)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTName.createIntermediateBinding(CPPASTName.java:62)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTNameBase.resolveBinding(CPPASTNameBase.java:107)
+	at org.eclipse.cdt.internal.ui.editor.SemanticToken.getBinding(SemanticToken.java:47)
+	at org.eclipse.cdt.internal.ui.editor.SemanticHighlightings$ExternalSDKHighlighting.consumes(SemanticHighlightings.java:1513)
+	at org.eclipse.cdt.internal.ui.editor.SemanticHighlightingReconciler$PositionCollector.visitNode(SemanticHighlightingReconciler.java:203)
+	at org.eclipse.cdt.internal.ui.editor.SemanticHighlightingReconciler$PositionCollector.visit(SemanticHighlightingReconciler.java:167)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTName.accept(CPPASTName.java:150)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTIdExpression.accept(CPPASTIdExpression.java:93)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionCallExpression.accept(CPPASTFunctionCallExpression.java:201)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTEqualsInitializer.accept(ASTEqualsInitializer.java:59)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTDeclarator.postAccept(CPPASTDeclarator.java:214)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTDeclarator.accept(CPPASTDeclarator.java:204)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTSimpleDeclaration.accept(CPPASTSimpleDeclaration.java:103)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTDeclarationStatement.accept(CPPASTDeclarationStatement.java:76)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTCompoundStatement.accept(CPPASTCompoundStatement.java:95)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:221)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:266)
+	at org.eclipse.cdt.internal.ui.editor.SemanticHighlightingReconciler.reconcilePositions(SemanticHighlightingReconciler.java:423)
+	at org.eclipse.cdt.internal.ui.editor.SemanticHighlightingReconciler.reconciled(SemanticHighlightingReconciler.java:372)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-05-16 02:12:21.418
+!MESSAGE Indexed 'Nemesis' (31 sources, 139 headers) in 0,971 sec: 7.067 declarations; 16.811 references; 0 unresolved inclusions; 0 syntax errors; 649 unresolved names (2,6%)

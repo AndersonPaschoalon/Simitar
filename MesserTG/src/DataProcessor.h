@@ -210,7 +210,7 @@ private:
 	 * @param thelist
 	 * @return
 	 */
-	long int mode(list<long int>& thelist);
+	//long int mode(list<long int>& thelist);
 
 	/**
 	 * 	ACTUAL FUNCTIONS
@@ -368,7 +368,7 @@ private:
 			vec& paramVec, vec& informationCriterion);
 
 	/**
-	 * @brief evaluate mean and standard deviation
+	 * @brief evaluate mean and standard fileSizedeviation
 	 *
 	 * @param interArrival
 	 * @param paramVec
@@ -591,6 +591,20 @@ private:
 	void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 			const time_sec min_on_time, vector<time_sec>* onTimes,
 			vector<time_sec>* offTimes);
+
+
+	/**
+	 * @brief
+	 *
+	 * @param deltaVet
+	 * @param cut_time
+	 * @param min_on_time
+	 * @param onTimes
+	 * @param offTimes
+	 */
+	void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
+			const time_sec min_on_time, vector<time_sec>* onTimes,
+			vector<time_sec>* offTimes, vector<unsigned int>* pktCounter, vector<double>* fileSize);
 
 	/**
 	 *
@@ -1040,6 +1054,7 @@ private:
 	bool test_fitModelsInterArrival();
 	bool test_modelSelection();
 	bool test_calcOnOff();
+	bool test_calcOnOff2();
 };
 
 #endif /* DATAPROCESSOR_H_ */

@@ -3,8 +3,8 @@
 	<item value="&quot;${workspace_loc}/${DITG_PATH}/src/libITG&quot;" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
-		<item value="153" key="size.height"/>
-		<item value="635" key="size.width"/>
+		<item value="147" key="size.height"/>
+		<item value="806" key="size.width"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

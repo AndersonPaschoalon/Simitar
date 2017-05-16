@@ -27,7 +27,6 @@ string DataProcessor::toString(void)
 	return (dataProcessor);
 }
 
-
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
@@ -166,7 +165,6 @@ int DataProcessor::calculate(const string& experimentName,
 		netFlow->setLinkProtocol(PROTOCOL__ETHERNET);
 		//TODO mac src/dst
 		netFlow->setMacAddr("no-mac-src", "no-mac-dst");
-
 
 		/// L3 protocols
 		/// reference :
@@ -359,7 +357,6 @@ int DataProcessor::calculate(const string& experimentName,
 		//RegressionTests wait_in;
 		//wait_in.wait_int(">");
 
-
 		/// Packet size data
 		netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
 				fitModelsPsSize(psSecondMode), nKbytesMode1, nKbytesMode2,
@@ -400,7 +397,6 @@ int DataProcessor::calculate(const string& experimentName,
 				fcounter, netFlow->getFlowDsByte());
 		MESSER_DEBUG("flow%d: netFlow->getNetworkDstAddr()=%s @ <%s, %s>",
 				fcounter, netFlow->getNetworkDstAddr().c_str());
-
 
 	}
 
@@ -2298,12 +2294,135 @@ void DataProcessor::regression_tests()
 	rt.printTestResult("All fitting", test_fitModelsInterArrival());
 	rt.printTestResult("Model selection", test_modelSelection());
 	rt.printTestResult("calcOnOff times", test_calcOnOff());
+	rt.printTestResult("calcOnOff2 times", test_calcOnOff2());
+	//rt.wait_int();
 
 }
 
 //void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 //		const time_sec min_on_time, list<time_sec>* onTimes,
 //		list<time_sec>* offTimes)
+/*
+ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+ const time_sec min_on_time, vector<time_sec>* onTimes,
+ vector<time_sec>* offTimes)
+ {
+ // log
+ MESSER_LOG_INIT(ERROR);
+ MESSER_DEBUG("<%s, %s>");
+
+ // data structures
+ unsigned int m = deltaVet.size();
+ list<time_sec> arrivalVet;
+ cumulativeDistribution(deltaVet, &arrivalVet);
+ time_sec* arrival_time = list_to_cvector(&arrivalVet);
+ time_sec* delta_time = list_to_cvector(&deltaVet);
+ list<time_sec> onOff;
+
+ // vars inity
+ time_sec timebuffer = 0;
+ unsigned int last_off = 0;
+ unsigned int i = 0;
+ unsigned int j = 0;
+
+ if (m == 0)
+ {
+ onOff.push_back(min_on_time);
+ }
+ else
+ {
+
+ for (i = 0; i < m; i++)
+ {
+ if ((delta_time[i] > cut_time) || (i == (m - 1)))
+ {
+
+ if (i == 0) // the first times is off
+ {
+ j++;
+ onOff.push_back(min_on_time);
+ j++;
+ onOff.push_back(delta_time[i]);
+ last_off = i;
+ MESSER_DEBUG("the first times is off @ <%s, %s>");
+ }
+ else if (i == (m - 1))
+ {
+ if (last_off == m) //last is session-off
+ {
+ j++;
+ onOff.push_back(min_on_time);
+ }
+ else // base last case
+ {
+ j++;
+ onOff.push_back(
+ arrival_time[i] - arrival_time[last_off]);
+ }
+ }
+ else
+ {
+ if (j == 0) // base first case
+ {
+ j++;
+ onOff.push_back(arrival_time[i - 1]);
+ j++;
+ onOff.push_back(delta_time[i]);
+ last_off = i;
+ }
+ else // base case
+ {
+ j++;
+ timebuffer = arrival_time[i - 1]
+ - arrival_time[last_off];
+ if (timebuffer < min_on_time)
+ {
+ onOff.push_back(min_on_time);
+ }
+ else
+ {
+ onOff.push_back(timebuffer);
+ }
+ j++;
+ onOff.push_back(delta_time[i]);
+ last_off = i;
+ }
+
+ }
+
+ }
+ }
+ }
+
+ MESSER_DEBUG("onOff.size() = %d @<%s, %s>", onOff.size());
+ m = onOff.size();
+ if (m == 0)
+ {
+ cerr << "Somenthing went wrong, onOff.size() is zero.";
+ MESSER_FATAL("Somenthing went wrong, onOff.size() is zero. @ <%s, %s>");
+ }
+
+ i = 0;
+ for (list<time_sec>::iterator it = onOff.begin(); it != onOff.end(); it++)
+ {
+ i++;
+ if ((i % 2) == 1)
+ {
+ onTimes->push_back(*it);
+ }
+ else
+ {
+ offTimes->push_back(*it);
+ }
+ }
+
+ MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
+ MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
+ delete_cvector(arrival_time);
+ delete_cvector(delta_time);
+ }
+ */
+
 void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 		const time_sec min_on_time, vector<time_sec>* onTimes,
 		vector<time_sec>* offTimes)
@@ -2332,12 +2451,10 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 	}
 	else
 	{
-
 		for (i = 0; i < m; i++)
 		{
-			if ((delta_time[i] > cut_time) || (i == (m - 1)))
+			if (delta_time[i] > cut_time)
 			{
-
 				if (i == 0) // the first times is off
 				{
 					j++;
@@ -2346,20 +2463,6 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 					onOff.push_back(delta_time[i]);
 					last_off = i;
 					MESSER_DEBUG("the first times is off @ <%s, %s>");
-				}
-				else if (i == (m - 1))
-				{
-					if (last_off == m) //last is session-off
-					{
-						j++;
-						onOff.push_back(min_on_time);
-					}
-					else // base last case
-					{
-						j++;
-						onOff.push_back(
-								arrival_time[i] - arrival_time[last_off]);
-					}
 				}
 				else
 				{
@@ -2393,7 +2496,34 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 
 			}
 		}
+
+		if (last_off == (m - 1)) //last is session-off
+		{
+			j++;
+			onOff.push_back(min_on_time);
+		}
+		else // base last case
+		{
+			j++;
+			if (last_off != 0)
+			{
+				onOff.push_back(arrival_time[m - 1] - arrival_time[last_off]);
+			}
+			else
+			{
+				onOff.push_back(arrival_time[m - 1]);
+			}
+
+		}
+
 	}
+
+	//DEBUG
+	char charList[CHAR_LARGE_BUFFER];
+	list2str(onOff, charList);
+	MESSER_DEBUG("onOff = %s @<%s, %s>", charList);
+	//RegressionTests rt;
+	//rt.wait_int();
 
 	MESSER_DEBUG("onOff.size() = %d @<%s, %s>", onOff.size());
 	m = onOff.size();
@@ -2432,6 +2562,167 @@ void DataProcessor::setSessionOnOffTimes(list<time_sec>& interArrivalTimes)
 
 }
 
+void DataProcessor::calcOnOff(list<time_sec>& deltaVet,
+		list<packet_size>& psList, const time_sec cut_time,
+		const time_sec min_on_time, vector<time_sec>* onTimes,
+		vector<time_sec>* offTimes, vector<unsigned int>* pktCounter,
+		vector<double>* fileSize)
+{
+	// log
+	MESSER_LOG_INIT(ERROR);
+	MESSER_DEBUG("<%s, %s>");
+
+	// data structures
+	unsigned int m = deltaVet.size();
+	list<time_sec> arrivalVet;
+	cumulativeDistribution(deltaVet, &arrivalVet);
+	time_sec* arrival_time = list_to_cvector(&arrivalVet);
+	time_sec* delta_time = list_to_cvector(&deltaVet);
+	list<time_sec> onOff;
+
+	// vars inity
+	unsigned int pktCounterSum = 0;
+	double fileSizeSum = 0;
+	time_sec timebuffer = 0;
+	unsigned int last_off = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	list<packet_size>::iterator psList_it = psList.begin();
+
+	if (m == 0)
+	{
+		pktCounterSum++;
+		fileSizeSum = *psList_it;
+		onOff.push_back(min_on_time);
+		pktCounter->push_back(pktCounterSum);
+		fileSize->push_back(fileSizeSum);
+	}
+	else
+	{
+		for (i = 0; i < m; i++)
+		{
+			pktCounterSum++;
+			fileSizeSum = fileSizeSum + *psList_it;
+			psList_it++;
+			if (delta_time[i] > cut_time)
+			{
+				if (i == 0) // the first times is off
+				{
+					j++;
+					onOff.push_back(min_on_time);
+					j++;
+					onOff.push_back(delta_time[i]);
+					last_off = i;
+					// packet counter and file size
+					pktCounter->push_back(pktCounterSum);
+					fileSize->push_back(fileSizeSum);
+					pktCounterSum = 0;
+					fileSizeSum = 0;
+					MESSER_DEBUG("the first times is off @ <%s, %s>");
+				}
+				else
+				{
+					if (j == 0) // base first case
+					{
+						j++;
+						onOff.push_back(arrival_time[i - 1]);
+						j++;
+						onOff.push_back(delta_time[i]);
+						last_off = i;
+						// packet counter and file size
+						pktCounter->push_back(pktCounterSum);
+						fileSize->push_back(fileSizeSum);
+						pktCounterSum = 0;
+						fileSizeSum = 0;
+					}
+					else // base case
+					{
+						j++;
+						timebuffer = arrival_time[i - 1]
+								- arrival_time[last_off];
+						if (timebuffer < min_on_time)
+						{
+							onOff.push_back(min_on_time);
+						}
+						else
+						{
+							onOff.push_back(timebuffer);
+						}
+						j++;
+						onOff.push_back(delta_time[i]);
+						last_off = i;
+						// packet counter and file size
+						pktCounter->push_back(pktCounterSum);
+						fileSize->push_back(fileSizeSum);
+						pktCounterSum = 0;
+						fileSizeSum = 0;
+					}
+
+				}
+
+			}
+		}
+
+		pktCounterSum++;
+		fileSizeSum = fileSizeSum + *psList_it;
+		pktCounter->push_back(pktCounterSum);
+		fileSize->push_back(fileSizeSum);
+		if (last_off == (m - 1)) //last is session-off
+		{
+			j++;
+			onOff.push_back(min_on_time);
+		}
+		else // base last case
+		{
+			j++;
+			if (last_off != 0)
+			{
+				onOff.push_back(arrival_time[m - 1] - arrival_time[last_off]);
+			}
+			else
+			{
+				onOff.push_back(arrival_time[m - 1]);
+			}
+
+		}
+
+	}
+
+	//DEBUG
+	char charList[CHAR_LARGE_BUFFER];
+	list2str(onOff, charList);
+	MESSER_DEBUG("onOff = %s @<%s, %s>", charList);
+	//RegressionTests rt;
+	//rt.wait_int();
+
+	MESSER_DEBUG("onOff.size() = %d @<%s, %s>", onOff.size());
+	m = onOff.size();
+	if (m == 0)
+	{
+		cerr << "Somenthing went wrong, onOff.size() is zero.";
+		MESSER_FATAL("Somenthing went wrong, onOff.size() is zero. @ <%s, %s>");
+	}
+
+	i = 0;
+	for (list<time_sec>::iterator it = onOff.begin(); it != onOff.end(); it++)
+	{
+		i++;
+		if ((i % 2) == 1)
+		{
+			onTimes->push_back(*it);
+		}
+		else
+		{
+			offTimes->push_back(*it);
+		}
+	}
+
+	MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
+	MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
+	delete_cvector(arrival_time);
+	delete_cvector(delta_time);
+}
+
 bool DataProcessor::test_calcOnOff()
 {
 	MESSER_LOG_INIT(DEBUG);
@@ -2468,7 +2759,7 @@ bool DataProcessor::test_calcOnOff()
 		if (!compareDouble(offTimes[i], test1_expected_off(i), accErr))
 		{
 			MESSER_ERROR(
-					"%dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					"(Trivial test) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
 					i, offTimes[i], test1_expected_off(i));
 
 			return (false);
@@ -2517,7 +2808,7 @@ bool DataProcessor::test_calcOnOff()
 		if (!compareDouble(offTimes[i], test2_expected_off(i), accErr))
 		{
 			MESSER_ERROR(
-					"%dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					"(10000 ramdom entries) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
 					i, offTimes[i], test2_expected_off(i));
 			return (false);
 		}
@@ -2529,11 +2820,433 @@ bool DataProcessor::test_calcOnOff()
 		if (!compareDouble(onTimes[i], test2_expected_on(i), accErr))
 		{
 			MESSER_ERROR(
-					"%dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					"(10000 ramdom entries) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
 					i, onTimes[i], test2_expected_on(i));
 			return (false);
 		}
 	}
+
+	///////////////////////////////////////////////////////////////////////////
+	/// Bord case 1
+	///////////////////////////////////////////////////////////////////////////
+	onTimes.clear();
+	offTimes.clear();
+	time_sec session_cut_time3 = 7;
+	vec delta_sample_3 =
+	{ 30.00551800, 30.00527800, 30.00600200, 30.00594800, 30.00571400 };
+	vec test3_expected_on =
+	{ 0.10000, 0.10000, 0.10000, 0.10000, 0.10000, 0.10000 };
+	vec test3_expected_off =
+	{ 30.006, 30.005, 30.006, 30.006, 30.006 };
+	unsigned int size_deltaSample3 = delta_sample_3.size();
+	list<time_sec> list_deltaSample3;
+	i = 0;
+	for (i = 0; i < size_deltaSample3; i++)
+	{
+		list_deltaSample3.push_back(delta_sample_3(i));
+	}
+
+	calcOnOff(list_deltaSample3, session_cut_time3, min_on_time, &onTimes,
+			&offTimes);
+
+	for (i = 0; i < test3_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(offTimes[i], test3_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Bord case 1) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, offTimes[i], test3_expected_off(i));
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test3_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(onTimes[i], test3_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Bord case 1) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, onTimes[i], test3_expected_on(i));
+			return (false);
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	/// Bord case 2
+	///////////////////////////////////////////////////////////////////////////
+	onTimes.clear();
+	offTimes.clear();
+	time_sec session_cut_time4 = 7;
+	vec delta_sample_4 =
+	{ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,
+			0.1, 0.1, 0.1, 0.1, 0.1, 0.1 };
+	vec test4_expected_on =
+	{ 2.1000 };
+	vec test4_expected_off =
+	{ };
+	unsigned int size_deltaSample4 = delta_sample_4.size();
+	list<time_sec> list_deltaSample4;
+	i = 0;
+	for (i = 0; i < size_deltaSample4; i++)
+	{
+		list_deltaSample4.push_back(delta_sample_4(i));
+	}
+
+	calcOnOff(list_deltaSample4, session_cut_time4, min_on_time, &onTimes,
+			&offTimes);
+
+	for (i = 0; i < test4_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(offTimes[i], test4_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Bord case 2) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, offTimes[i], test4_expected_off(i));
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test4_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(onTimes[i], test4_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Bord case 2) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, onTimes[i], test4_expected_on(i));
+			return (false);
+		}
+	}
+
+	//RegressionTests rt;
+	//rt.wait_int();
+
+	return (true);
+}
+
+bool DataProcessor::test_calcOnOff2()
+{
+	MESSER_LOG_INIT(DEBUG);
+	time_sec min_on_time = 0.1;
+	double accErr = 0.01;
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Trivial test
+	////////////////////////////////////////////////////////////////////////////
+
+	time_sec session_cut_time1 = 2.9;
+	vec delta_sample_1 =
+	{ 0.1, 3, 2, 0.2, 5, 1.1, 0.5, 4, 0.9 };
+	vec psList_sample_1 = ones(delta_sample_1.size() + 1, 1) * 3;
+	vec test1_expected_on =
+	{ 0.10000, 2.20000, 1.60000, 0.90000 };
+	vec test1_expected_off =
+	{ 3.00000, 5.00000, 4.00000 };
+	vec test1_expected_conter =
+	{ 2, 3, 3, 2 };
+	vec test1_expected_fsize =
+	{ 6, 9, 9, 6 };
+
+	unsigned int size_deltaSample1 = delta_sample_1.size();
+	unsigned int size_psSample1 = psList_sample_1.size();
+	list<time_sec> list_deltaSample1;
+	list<time_sec> list_psListSample1;
+	vector<time_sec> onTimes;
+	vector<time_sec> offTimes;
+	vector<unsigned int> pktCounter;
+	vector<double> fileSize;
+	unsigned int i = 0;
+	for (i = 0; i < size_deltaSample1; i++)
+	{
+		list_deltaSample1.push_back(delta_sample_1(i));
+	}
+	i = 0;
+	for (i = 0; i < size_psSample1; i++)
+	{
+		list_psListSample1.push_back(psList_sample_1(i));
+	}
+	calcOnOff(list_deltaSample1, list_psListSample1, session_cut_time1,
+			min_on_time, &onTimes, &offTimes, &pktCounter, &fileSize);
+
+	for (i = 0; i < test1_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(offTimes[i], test1_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Trivial test) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, offTimes[i], test1_expected_off(i));
+
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test1_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(onTimes[i], test1_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Trivial test) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, onTimes[i], test1_expected_on(i));
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test1_expected_fsize.size(); i++)
+	{
+
+		if (!compareDouble(fileSize[i], test1_expected_fsize(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Trivial test) %dth file size do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, fileSize[i], test1_expected_fsize(i));
+
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test1_expected_conter.size(); i++)
+	{
+
+		if (!compareDouble(pktCounter[i], test1_expected_conter(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Trivial test) %dth pktCounter do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, pktCounter[i], test1_expected_conter(i));
+
+			return (false);
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	/// 10000 ramdom generated entries, exponentially distributed
+	///////////////////////////////////////////////////////////////////////////
+
+	pktCounter.clear();
+	fileSize.clear();
+	onTimes.clear();
+	offTimes.clear();
+	time_sec session_cut_time2 = 7;
+	vec delta_sample_2;
+	delta_sample_2.load("data/regression-tests/exp_interarrival_times.txt");
+	vec psList_sample2 = ones(delta_sample_2.size() + 1, 1) * 3;
+	vec test2_expected_on =
+	{ 801.89, 896.71, 764.22, 398.49, 2823.59, 213.07, 1034.47, 2972.63 };
+	vec test2_expected_off =
+	{ 7.3502, 7.3181, 7.2477, 10.3901, 7.3315, 8.9811, 7.5889 };
+	vec test2_expected_conter =
+	{ 814, 930, 787, 389, 2872, 222, 1005, 2982 };
+	vec test2_expected_fsize =
+	{ 2442, 2790, 2361, 1167, 8616, 666, 3015, 8946 };
+	unsigned int size_deltaSample2 = delta_sample_2.size();
+	unsigned int size_psSample2 = psList_sample2.size();
+	list<time_sec> list_deltaSample2;
+	list<time_sec> list_psListSample2;
+	i = 0;
+	for (i = 0; i < size_deltaSample2; i++)
+	{
+		list_deltaSample2.push_back(delta_sample_2(i));
+	}
+	i = 0;
+	for (i = 0; i < size_psSample2; i++)
+	{
+		list_psListSample2.push_back(psList_sample2(i));
+	}
+
+	calcOnOff(list_deltaSample2, list_psListSample2, session_cut_time2,
+			min_on_time, &onTimes, &offTimes, &pktCounter, &fileSize);
+	for (i = 0; i < test2_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(offTimes[i], test2_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, offTimes[i], test1_expected_off(i));
+
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test2_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(onTimes[i], test2_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, onTimes[i], test2_expected_on(i));
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test2_expected_fsize.size(); i++)
+	{
+
+		if (!compareDouble(fileSize[i], test2_expected_fsize(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth file size do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, fileSize[i], test2_expected_fsize(i));
+
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test2_expected_conter.size(); i++)
+	{
+
+		if (!compareDouble(pktCounter[i], test2_expected_conter(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth pktCounter do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, pktCounter[i], test2_expected_conter(i));
+
+			return (false);
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	/// Bord case 1
+	///////////////////////////////////////////////////////////////////////////
+	pktCounter.clear();
+	fileSize.clear();
+	onTimes.clear();
+	offTimes.clear();
+	time_sec session_cut_time3 = 7;
+	vec delta_sample_3 =
+	{ 30.00551800, 30.00527800, 30.00600200, 30.00594800, 30.00571400 };
+	vec psList_sample3 = ones(delta_sample_3.size() + 1, 1) * 3;
+	vec test3_expected_on =
+	{ 0.10000, 0.10000, 0.10000, 0.10000, 0.10000, 0.10000 };
+	vec test3_expected_off =
+	{ 30.006, 30.005, 30.006, 30.006, 30.006 };
+	vec test3_expected_conter =
+	{ 1, 1, 1, 1, 1, 1 };
+	vec test3_expected_fsize =
+	{ 3, 3, 3, 3, 3, 3 };
+	unsigned int size_deltaSample3 = delta_sample_3.size();
+	unsigned int size_psSample3 = psList_sample3.size();
+	list<time_sec> list_deltaSample3;
+	list<time_sec> list_psListSample3;
+	i = 0;
+	for (i = 0; i < size_deltaSample3; i++)
+	{
+		list_deltaSample3.push_back(delta_sample_3(i));
+	}
+	i = 0;
+	for (i = 0; i < size_psSample3; i++)
+	{
+		list_psListSample3.push_back(psList_sample3(i));
+	}
+
+	calcOnOff(list_deltaSample3, list_psListSample3, session_cut_time3,
+			min_on_time, &onTimes, &offTimes, &pktCounter, &fileSize);
+	for (i = 0; i < test3_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(offTimes[i], test3_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, offTimes[i], test3_expected_off(i));
+
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test3_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(onTimes[i], test3_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, onTimes[i], test3_expected_on(i));
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test3_expected_fsize.size(); i++)
+	{
+
+		if (!compareDouble(fileSize[i], test3_expected_fsize(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth file size do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, fileSize[i], test3_expected_fsize(i));
+
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test3_expected_conter.size(); i++)
+	{
+
+		if (!compareDouble(pktCounter[i], test3_expected_conter(i), accErr))
+		{
+			MESSER_ERROR(
+					"(10000 ramdom entries) %dth pktCounter do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, pktCounter[i], test3_expected_conter(i));
+
+			return (false);
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+	/// Bord case 2
+	///////////////////////////////////////////////////////////////////////////
+	onTimes.clear();
+	offTimes.clear();
+	time_sec session_cut_time4 = 7;
+	vec delta_sample_4 =
+	{ 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,
+			0.1, 0.1, 0.1, 0.1, 0.1, 0.1 };
+	vec test4_expected_on =
+	{ 2.1000 };
+	vec test4_expected_off =
+	{ };
+	unsigned int size_deltaSample4 = delta_sample_4.size();
+	list<time_sec> list_deltaSample4;
+	i = 0;
+	for (i = 0; i < size_deltaSample4; i++)
+	{
+		list_deltaSample4.push_back(delta_sample_4(i));
+	}
+
+	calcOnOff(list_deltaSample4, session_cut_time4, min_on_time, &onTimes,
+			&offTimes);
+
+	for (i = 0; i < test4_expected_off.size(); i++)
+	{
+
+		if (!compareDouble(offTimes[i], test4_expected_off(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Bord case 2) %dth Off time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, offTimes[i], test4_expected_off(i));
+			return (false);
+		}
+	}
+
+	for (i = 0; i < test4_expected_on.size(); i++)
+	{
+
+		if (!compareDouble(onTimes[i], test4_expected_on(i), accErr))
+		{
+			MESSER_ERROR(
+					"(Bord case 2) %dth On time do not match\tResult::Expected = %f::%f\t<%s, %s>",
+					i, onTimes[i], test4_expected_on(i));
+			return (false);
+		}
+	}
+
+	//RegressionTests rt;
+	//rt.wait_int();
 
 	return (true);
 }
