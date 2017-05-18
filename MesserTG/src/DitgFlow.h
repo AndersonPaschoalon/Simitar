@@ -116,10 +116,13 @@ public:
 		}
 
 		/// Inter-departure time options
-		for (;;)
+		unsigned int i = 0;
+		for (;;i++)
 		{
+			//StochasticModelFit idtModel =
+			//		this->getInterDepertureTimeModel_next();
 			StochasticModelFit idtModel =
-					this->getInterDepertureTimeModel_next();
+					this->getInterDepertureTimeModel(i);
 
 			if ((idtModel.modelName() == WEIBULL)
 					|| (idtModel.modelName() == NORMAL)
@@ -176,11 +179,17 @@ public:
 		/// Packet size options
 
 		//First model: Contant
+		//strCommandMode1 = strCommand + " -c "
+		//		+ std::to_string(this->getPacketSizeModelMode1_next().param1());
+		//First model: Contant
+		//strCommandMode2 = strCommand + " -c "
+		//		+ std::to_string(this->getPacketSizeModelMode2_next().param1());
+
 		strCommandMode1 = strCommand + " -c "
-				+ std::to_string(this->getPacketSizeModelMode1_next().param1());
+				+ std::to_string(this->getPacketSizeModelMode1(0).param1());
 		//First model: Contant
 		strCommandMode2 = strCommand + " -c "
-				+ std::to_string(this->getPacketSizeModelMode2_next().param1());
+				+ std::to_string(this->getPacketSizeModelMode2(0).param1());
 
 		/// Generate C string
 

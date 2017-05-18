@@ -16,6 +16,7 @@
 
 NetworkFlow* NetworkFlow::make_flow(const string& choise)
 {
+	/*
 	if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
 	{
 		return new DitgFlow;
@@ -43,6 +44,9 @@ NetworkFlow* NetworkFlow::make_flow(const string& choise)
 	{
 		return new DummyFlow;
 	}
+	*/
+	return new DummyFlow;
+
 }
 
 NetworkFlow::NetworkFlow()
@@ -335,7 +339,56 @@ void NetworkFlow::setTransportProtocol(protocol transportProtocol)
 	transport_protocol = transportProtocol;
 }
 
-StochasticModelFit NetworkFlow::getInterDepertureTimeModel_next()
+/*
+ StochasticModelFit NetworkFlow::getInterDepertureTimeModel_next()
+ {
+
+ StochasticModelFit themodel;
+ unsigned int i = 0;
+
+ if (ptr_interArrivalModelList == NULL)
+ {
+ themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
+ ptr_interArrivalModelList->push_back(themodel);
+
+ cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
+ << "Trying to get a StochasticModelFit, but no model was set.\n"
+ << "NO_MODEL set as default" << endl;
+ }
+ else
+ {
+
+ for (list<StochasticModelFit>::iterator it =
+ ptr_interArrivalModelList->begin();
+ it != ptr_interArrivalModelList->end(); it++)
+ {
+ if (i >= interDepertureTimeModel_counter)
+ {
+
+ themodel = *it;
+ break;
+ }
+ else
+ {
+ i++;
+ }
+
+ }
+
+ }
+
+ if ((ptr_interArrivalModelList->size() - 1)
+ > interDepertureTimeModel_counter)
+ {
+ interDepertureTimeModel_counter++;
+ }
+
+ return (themodel);
+
+ }
+ */
+StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
+		unsigned int position)
 {
 
 	StochasticModelFit themodel;
@@ -344,7 +397,7 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel_next()
 	if (ptr_interArrivalModelList == NULL)
 	{
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
-		ptr_interArrivalModelList->push_back(themodel);
+		//ptr_interArrivalModelList->push_back(themodel);
 
 		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
 				<< "Trying to get a StochasticModelFit, but no model was set.\n"
@@ -352,30 +405,24 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel_next()
 	}
 	else
 	{
+		list<StochasticModelFit>::iterator it;
 
-		for (list<StochasticModelFit>::iterator it =
-				ptr_interArrivalModelList->begin();
+		for (it = ptr_interArrivalModelList->begin();
 				it != ptr_interArrivalModelList->end(); it++)
 		{
-			if (i >= interDepertureTimeModel_counter)
+			if (i == position)
 			{
 
 				themodel = *it;
 				break;
 			}
-			else
-			{
-				i++;
-			}
-
+			i++;
+		}
+		if (position > i)
+		{
+			themodel = *it;
 		}
 
-	}
-
-	if ((ptr_interArrivalModelList->size() - 1)
-			> interDepertureTimeModel_counter)
-	{
-		interDepertureTimeModel_counter++;
 	}
 
 	return (themodel);
@@ -449,70 +496,147 @@ time_sec NetworkFlow::getSessionOffTime_next()
 	return (theTime);
 }
 
-StochasticModelFit NetworkFlow::getPacketSizeModelMode1_next()
+StochasticModelFit NetworkFlow::getPacketSizeModelMode1(unsigned int position)
 {
 	StochasticModelFit themodel;
+	unsigned int i = 0;
+
 	if (ptr_psMode1 == NULL)
 	{
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
-		ptr_psMode1->push_back(themodel);
+		//ptr_psMode1->push_back(themodel);
+
+		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
+				<< "Trying to get a StochasticModelFit, but no model was set.\n"
+				<< "NO_MODEL set as default" << endl;
 	}
 	else
 	{
-		counter i = 0;
-		for (list<StochasticModelFit>::iterator it = ptr_psMode1->begin();
-				it != ptr_psMode1->end(); it++)
+		list<StochasticModelFit>::iterator it;
+
+		for (it = ptr_psMode1->begin(); it != ptr_psMode1->end(); it++)
 		{
-			if (i == packetSizeModel1_counter)
+			if (i == position)
 			{
+
 				themodel = *it;
 				break;
 			}
 			i++;
-
 		}
-	}
+		if (position > i)
+		{
+			themodel = *it;
+		}
 
-	if (ptr_psMode1->size() > packetSizeModel1_counter)
-	{
-		packetSizeModel1_counter++;
 	}
 
 	return (themodel);
 }
 
-StochasticModelFit NetworkFlow::getPacketSizeModelMode2_next()
+StochasticModelFit NetworkFlow::getPacketSizeModelMode2(unsigned int position)
 {
 	StochasticModelFit themodel;
+	unsigned int i = 0;
+
 	if (ptr_psMode2 == NULL)
 	{
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
-		ptr_psMode2->push_back(themodel);
+		//ptr_psMode2->push_back(themodel);
+
+		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
+				<< "Trying to get a StochasticModelFit, but no model was set.\n"
+				<< "NO_MODEL set as default" << endl;
 	}
 	else
 	{
-		counter i = 0;
-		for (list<StochasticModelFit>::iterator it = ptr_psMode2->begin();
-				it != ptr_psMode2->end(); it++)
+		list<StochasticModelFit>::iterator it;
+
+		for (it = ptr_psMode2->begin(); it != ptr_psMode2->end(); it++)
 		{
-			if (i == packetSizeModel2_counter)
+			if (i == position)
 			{
+
 				themodel = *it;
 				break;
 			}
 			i++;
-
 		}
-	}
+		if (position > i)
+		{
+			themodel = *it;
+		}
 
-	if (ptr_psMode2->size() > packetSizeModel2_counter)
-	{
-		packetSizeModel2_counter++;
 	}
 
 	return (themodel);
-
 }
+/*
+ StochasticModelFit NetworkFlow::getPacketSizeModelMode1_next()
+ {
+ StochasticModelFit themodel;
+ if (ptr_psMode1 == NULL)
+ {
+ themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
+ ptr_psMode1->push_back(themodel);
+ }
+ else
+ {
+ counter i = 0;
+ for (list<StochasticModelFit>::iterator it = ptr_psMode1->begin();
+ it != ptr_psMode1->end(); it++)
+ {
+ if (i == packetSizeModel1_counter)
+ {
+ themodel = *it;
+ break;
+ }
+ i++;
+
+ }
+ }
+
+ if (ptr_psMode1->size() > packetSizeModel1_counter)
+ {
+ packetSizeModel1_counter++;
+ }
+
+ return (themodel);
+ }
+
+ StochasticModelFit NetworkFlow::getPacketSizeModelMode2_next()
+ {
+ StochasticModelFit themodel;
+ if (ptr_psMode2 == NULL)
+ {
+ themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
+ ptr_psMode2->push_back(themodel);
+ }
+ else
+ {
+ counter i = 0;
+ for (list<StochasticModelFit>::iterator it = ptr_psMode2->begin();
+ it != ptr_psMode2->end(); it++)
+ {
+ if (i == packetSizeModel2_counter)
+ {
+ themodel = *it;
+ break;
+ }
+ i++;
+
+ }
+ }
+
+ if (ptr_psMode2->size() > packetSizeModel2_counter)
+ {
+ packetSizeModel2_counter++;
+ }
+
+ return (themodel);
+
+ }
+ */
 
 void NetworkFlow::setPacketSizeModel(list<StochasticModelFit>* modelVet1,
 		list<StochasticModelFit>* modelVet2, long int nkbytesMode1,
@@ -688,6 +812,8 @@ inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
 	freeifaddrs(ifaddr);
 	return (0);
 }
+
+
 
 //DEBUG
 void NetworkFlow::printModels()

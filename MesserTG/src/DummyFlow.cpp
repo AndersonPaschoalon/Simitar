@@ -101,6 +101,9 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	////////////////////////////////////////////////////////////////////////////
 	/// Link-layer protocol
 	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Link[" + Protocol(this->getLinkProtocol()).str() + "]";
+
+/*
 	flow_str_print += " Link[";
 	prt = this->getLinkProtocol();
 	if (prt == PROTOCOL__ETHERNET)
@@ -112,11 +115,13 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 		flow_str_print += "Ethernet";
 	}
 	flow_str_print += "]";
-
+*/
 	////////////////////////////////////////////////////////////////////////////
 	/// Network-layer protocol
 	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Network[" + Protocol(this->getNetworkProtocol()).str() + "]";
 
+/*
 	flow_str_print += " Network[";
 	prt = this->getNetworkProtocol();
 	if (prt == PROTOCOL__IPV4)
@@ -133,11 +138,12 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	}
 	flow_str_print += this->getNetworkSrcAddr() + " > "
 			+ this->getNetworkDstAddr() + "]";
-
+*/
 	////////////////////////////////////////////////////////////////////////////
 	/// Transport-layer protocol
 	////////////////////////////////////////////////////////////////////////////
-
+	flow_str_print += " Transport[" + Protocol(this->getTransportProtocol()).str() + "]";
+/*
 	flow_str_print += " Transport[";
 	prt = this->getTransportProtocol();
 	if (prt == PROTOCOL__TCP)
@@ -177,16 +183,17 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	}
 	flow_str_print += ": " + std::to_string(this->getTransportSrcPort()) + " > "
 			+ std::to_string(this->getTransportDstPort()) + "]";
-
+*/
 	// Application protocol
-	flow_str_print += " Application[no-protocol] ";
+	flow_str_print += " Application[" + Protocol(this->getApplicationProtocol()).str() + "]";
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Inter-deperture model
 	////////////////////////////////////////////////////////////////////////////
-
+	flow_str_print += " Inter-deperture["+ this->getInterDepertureTimeModel(0).strModelName() + "]";
+/*
 	flow_str_print += " Inter-deperture[";
-	themodel = this->getInterDepertureTimeModel_next();
+	themodel = this->getInterDepertureTimeModel(0);
 	flow_str_print += themodel.strModelName();
 
 	if (themodel.modelName() == WEIBULL)
@@ -237,14 +244,17 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 
 	flow_str_print += " ("
 			+ std::to_string(getNumberOfInterdepertureTimeModels()) + ")";
-
+*/
 	////////////////////////////////////////////////////////////////////////////
 	/// Packet-size model
 	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Packet-size-Mode1[" + this->getPacketSizeModelMode1(0).strModelName() + "]";
+	flow_str_print += " Packet-size-Mode2[" + this->getPacketSizeModelMode2(0).strModelName() + "]";
 
+	/*
 	flow_str_print += " Packet-size-Mode1[";
 
-	themodel = this->getPacketSizeModelMode1_next();
+	themodel = this->getPacketSizeModelMode1(0);
 	flow_str_print += themodel.strModelName();
 
 	if (themodel.modelName() == WEIBULL)
@@ -293,7 +303,7 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 
 	flow_str_print += " Packet-size-Mode2[";
 
-	themodel = this->getPacketSizeModelMode2_next();
+	themodel = this->getPacketSizeModelMode2(0);
 	flow_str_print += themodel.strModelName();
 
 	if (themodel.modelName() == WEIBULL)
@@ -351,7 +361,8 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 		errno = EAGAIN;
 		exit(EXIT_FAILURE);
 	}
-
+*/
+	const char* flow_print = flow_str_print.c_str();
 	pthread_mutex_t lock;
 	pthread_mutex_init(&lock, NULL);
 	pthread_mutex_lock(&lock);

@@ -19,11 +19,37 @@
 //Mutex example
 // http://www.thegeekstuff.com/2012/05/c-mutex-examples/?refcom
 
-
 #define REGRESSION_TESTS 1
 
 void unity_regression_tests();
-
+/*
+ Usage:
+ ./simitar --sniffer/-s <interface> --out/-o <cdt-xml-name> (--verbose/-vr)
+ ./simitar --trafic-gen/-tg <traffic-gen-label> -in/-i <cdt-xml-name> (--bind/-b <interface>)  (--dst-ip-mac/-d <ipaddr>@<mac>)||(--dst-file-ip-mac/-fm <file>)||((--dst-file-ip/-fi <file>)) (--verbose/-vr)
+ ./simitar --pkt-injection/-pi <packet-injector-label> -in/-i <cdt-xml-name> (--bind/-b <interface>) (--verbose/-vr)
+ ./simitar --server/-sv <traffic-gen-label> --bind/-b <interface> (--verbose/-vr)
+ ./simitar --help/-h
+ ./simitar --version/-v
+ ./simitar --test/-t
+ ./simitar --list/-l
+Options:
+	-b/--bind				bind to an interface the output
+	-d/--dst-ip-mac			set unique dst mac and ip with the format <mac>@<ip>
+							if you want to omit, put *. Eg.: *@<ip>
+	-fi/--dst-file-ip		file with a list of dst <ip> addrs for destinations
+	-fm/--dst-file-ip-mac	file with a list of dst <mac>@<ip> addrs  addrs for
+							destinations
+	-h/--help				print a help output
+	-i/--in					in CDT file
+	-l/list					lists: availabe cdt files, supported traffic
+							generators(ditg, iperf), supported pacekt injectors
+							(tcpreplay, libtins, scrapy).
+	-o/--out				out CDT file (for sniffer)
+	-s/--sniffer			works as a sniffer
+	-sv/--server			works as a server for tg
+	-v/--version			--current version
+	-vr/--verbose			displays all outputs (Default: just erros)
+*/
 
 int main()
 {
@@ -48,10 +74,7 @@ int main()
 	MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
 	trace = new NetworkTrace();
 
-
-
 	dp.calculate(experimentName, &dbif, trace);
-
 
 	trace->setInfoTracename("teste-chapolin");
 	trace->setInfoCommentaries("este e um teste do compact trace descriptor");
@@ -59,12 +82,11 @@ int main()
 	trace->setInfoCaptureInterface("eth0");
 	trace->setInfoCaptureDate("07/04/2017");
 
-
 	trace->writeToFile("kkk.xml");
 	trace->writeToFile("data/regression-tests/test-trace.xml");
 
 	MESSER_NOTICE("Executing NetworkTrace: trace->exec(true) @<%s, %s>");
-	//trace->exec(true);
+	trace->exec(true);
 
 	//cout << "sleep before the next trace" << endl;
 	//sleep(160);
@@ -90,7 +112,8 @@ int main()
 	MESSER_DEBUG("trace->networkFlow[4]->getNetworkDstAddr() = %s @<%s, %s>",
 			trace->networkFlow[4]->getNetworkDstAddr().c_str());
 
-	MESSER_DEBUG("trace->networkFlow[6]->getTransportProtocol()  = %s @<%s, %s>",
+	MESSER_DEBUG(
+			"trace->networkFlow[6]->getTransportProtocol()  = %s @<%s, %s>",
 			Protocol(trace->networkFlow[6]->getTransportProtocol()).str().c_str());
 
 	MESSER_DEBUG("trace->networkFlow[30]->getTransportDstPort() = %d @<%s, %s>",
@@ -99,8 +122,6 @@ int main()
 	MESSER_DEBUG("trace->getNumberOfFlows() = %d @<%s, %s>",
 			trace->getNumberOfFlows());
 	MESSER_DEBUG("<%s>");
-
-
 
 	//wait.wait_int();
 
@@ -132,8 +153,8 @@ int main()
 	return 0;
 }
 
-
-void unity_regression_tests(){
+void unity_regression_tests()
+{
 	//MESSER_LOG_INIT(INFO);
 	//MESSER_NOTICE("Starting Unitary tests... <%s, %s>");
 	RegressionTests rt;
@@ -152,8 +173,5 @@ void unity_regression_tests(){
 	//wait.wait_int("Finished tests, press any key...");
 	//MESSER_NOTICE("Finishing Unity tests...  @<%s, %s>");
 
-
-
 }
-
 

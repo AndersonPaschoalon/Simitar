@@ -122,7 +122,8 @@ public:
 	void setTransportProtocol(protocol transportProtocol);
 
 	void setInterDepertureTimeModels(list<StochasticModelFit>* modelList);
-	StochasticModelFit getInterDepertureTimeModel_next();
+//	StochasticModelFit getInterDepertureTimeModel_next();
+	StochasticModelFit getInterDepertureTimeModel(unsigned int position);
 	unsigned int getNumberOfInterdepertureTimeModels();
 
 	//void setInterFileTimeModel(list<StochasticModelFit>* modelList);
@@ -139,8 +140,10 @@ public:
 	vector<time_sec>* getSessionOnVector();
 	vector<time_sec>* getSessionOffVector();
 
-	StochasticModelFit getPacketSizeModelMode1_next();
-	StochasticModelFit getPacketSizeModelMode2_next();
+//	StochasticModelFit getPacketSizeModelMode1_next();
+//	StochasticModelFit getPacketSizeModelMode2_next();
+	StochasticModelFit getPacketSizeModelMode1(unsigned int i);
+	StochasticModelFit getPacketSizeModelMode2(unsigned int i);
 
 	void setPacketSizeModel(list<StochasticModelFit>* modelList1,
 			list<StochasticModelFit>* modelList2, long int nkbytesMode1,

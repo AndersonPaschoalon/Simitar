@@ -453,7 +453,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 
 		for (j = 0; j < nFittings; j++)
 		{
-			sf = networkFlow[i]->getInterDepertureTimeModel_next();
+			//sf = networkFlow[i]->getInterDepertureTimeModel_next();
+			sf = networkFlow[i]->getInterDepertureTimeModel(j);
 			sf.strModelName(fd[i].interPkt[j].name);
 			sprintf(fd[i].interPkt[j].aic, "%f", sf.aic());
 			sprintf(fd[i].interPkt[j].bic, "%f", sf.bic());
@@ -478,7 +479,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 		for (j = 0; j < nPsM1Fittings; j++)
 		{
-			sf = networkFlow[i]->getPacketSizeModelMode1_next();
+			//sf = networkFlow[i]->getPacketSizeModelMode1_next();
+			sf = networkFlow[i]->getPacketSizeModelMode1(j);
 			sf.strModelName(fd[i].psMode1[j].name);
 			sprintf(fd[i].psMode1[j].aic, "%f", sf.aic());
 			sprintf(fd[i].psMode1[j].bic, "%f", sf.bic());
@@ -499,7 +501,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		nPsM2Fittings = networkFlow[i]->getNumberOfPsMode2Models();
 		for (j = 0; j < nPsM2Fittings; j++)
 		{
-			sf = networkFlow[i]->getPacketSizeModelMode2_next();
+			//sf = networkFlow[i]->getPacketSizeModelMode2_next();
+			sf = networkFlow[i]->getPacketSizeModelMode2(j);
 			sf.strModelName(fd[i].psMode2[j].name);
 			sprintf(fd[i].psMode2[j].aic, "%f", sf.aic());
 			sprintf(fd[i].psMode2[j].bic, "%f", sf.bic());
