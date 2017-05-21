@@ -55,7 +55,7 @@ int DataProcessor::calculate(const string& experimentName,
 	long int nKbytesMode2 = 0;
 
 	///packetSize variables
-	list<long int> pslist;
+	list<unsigned int> pslist;
 	list<packet_size> psFirstMode;
 	list<packet_size> psSecondMode;
 
@@ -100,8 +100,8 @@ int DataProcessor::calculate(const string& experimentName,
 				pslist);
 
 		// Evaluate packet-size and number ob kbytes for each mode
-		for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
-				it++)
+		for (list<unsigned int>::iterator it = pslist.begin();
+				it != pslist.end(); it++)
 		{
 			if (*it <= PACKET_SIZE_MODE_CUT_VALUE)
 			{
@@ -171,7 +171,9 @@ int DataProcessor::calculate(const string& experimentName,
 		/// http://www.iana.org/assignments/ieee-802-numbers/ieee-802-numbers.xhtml
 
 		//DEBUG
-		unsigned int debugflag = 0;
+		//unsigned int debugflag = 0;
+		//unsigned int debugflag2 = 0;
+
 
 		databaseInterface->getFlowData(experimentName, fcounter, "eth__type",
 				&flowIntData);
@@ -183,13 +185,19 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setNetworkSrcAddr(flowStrData);
 
 			//DEBUG
-			if (flowStrData == "10.1.1.41")
-			{
-				debugflag = 33;
-			}
+			//if (flowStrData == "10.1.1.41")
+			//{
+			//	debugflag = 33;
+			//}
 
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__dst",
 					&flowStrData);
+
+			//DEBUG
+			//if(flowStrData ==  "64.233.190.189")
+			//{
+			//	debugflag2 = 34;
+			//}
 
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
@@ -221,14 +229,21 @@ int DataProcessor::calculate(const string& experimentName,
 			netFlow->setNetworkSrcAddr(flowStrData);
 
 			//DEBUG
-			if (flowStrData == "10.1.1.41")
-			{
-				//cout << "33\n";
-				debugflag = 33;
-			}
+			//if (flowStrData == "10.1.1.41")
+			//{
+			//	//cout << "33\n";
+			//	debugflag = 33;
+			//}
 
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__dst",
 					&flowStrData);
+
+			//DEBUG
+			//if(flowStrData ==  "64.233.190.189")
+			//{
+			//	debugflag2 = 34;
+			//}
+
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
 
@@ -320,27 +335,49 @@ int DataProcessor::calculate(const string& experimentName,
 				interArrival_list.size());
 
 		//DEBUG
-		if (debugflag == 33)
-		{
-			cout << debugflag << endl;
-			char delta[CHAR_LARGE_BUFFER];
-			char relative[CHAR_LARGE_BUFFER];
-			char arrival[CHAR_LARGE_BUFFER];
-			list2str(interArrival_list, delta);
-			list2str(relativeTime, relative);
-			list2str(arrival_list, arrival);
-			printf("arrivaltime of 10.1.1.41: %s\n", arrival);
-			printf("relativeTime of 10.1.1.41: %s\n", relative);
-			printf("interarrival of 10.1.1.41: %s\n", delta);
-			MESSER_DEBUG("interarrival of 10.1.1.41: %s <%s, %s>", delta);
-		}
+		//if (debugflag == 33)
+		//{
+		//	cout << debugflag << endl;
+		//	char delta[CHAR_LARGE_BUFFER];
+		//	char relative[CHAR_LARGE_BUFFER];
+		//	char arrival[CHAR_LARGE_BUFFER];
+		//	list2str(interArrival_list, delta);
+		//	list2str(relativeTime, relative);
+		//	list2str(arrival_list, arrival);
+		//	printf("arrivaltime of 10.1.1.41: %s\n", arrival);
+		//	printf("relativeTime of 10.1.1.41: %s\n", relative);
+		//	printf("interarrival of 10.1.1.41: %s\n", delta);
+		//	MESSER_DEBUG("interarrival of 10.1.1.41: %s <%s, %s>", delta);
+		//}
+		//DEBUG
+		//if (debugflag2 == 34)
+		//{
+		//	cout << debugflag2 << endl;
+		//	char delta[CHAR_LARGE_BUFFER];
+		//	char relative[CHAR_LARGE_BUFFER];
+		//	char arrival[CHAR_LARGE_BUFFER];
+		//	list2str(interArrival_list, delta);
+		//	list2str(relativeTime, relative);
+		//	list2str(arrival_list, arrival);
+		//	printf("arrivaltime of 64.233.190.189: %s\n", arrival);
+		//	printf("relativeTime of 64.233.190.189: %s\n", relative);
+		//	printf("interarrival of 64.233.190.189: %s\n", delta);
+		//	MESSER_DEBUG("interarrival of 64.233.190.189: %s <%s, %s>", delta);
+		//}
 
 		//Session Times
 		vector<time_sec>* onTimes = new vector<time_sec>;
 		vector<time_sec>* offTimes = new vector<time_sec>;
-		calcOnOff(interArrival_list, 7, 0.1, onTimes, offTimes);
+		vector<unsigned int>* pktCounter = new vector<unsigned int>;
+		vector<unsigned int>* fileSize = new vector<unsigned int>;
+		//calcOnOff(interArrival_list, 7, 0.1, onTimes, offTimes);
+
+		calcOnOff(interArrival_list, pslist, m_session_cut_time, m_min_on_time,
+				onTimes, offTimes, pktCounter, fileSize);
+
 		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
-		netFlow->setSessionTimesOnOff(onTimes, offTimes);
+		//netFlow->setSessionTimesOnOff(onTimes, offTimes);
+		netFlow->setSessionTimesOnOff(onTimes, offTimes, pktCounter, fileSize);
 
 		//DEBUG
 		//printf("duration:%f\n",  netFlow->getFlowDuration() );
@@ -1791,8 +1828,8 @@ bool DataProcessor::test_informationCriterion()
 	double weibull_aic = informationCriterion(interArrival, "weibull", paramVec,
 			"aic");
 
-	cout << "BIC: " << weibull_bic << " x " << ex_bic << endl;
-	cout << "AIC: " << weibull_aic << " x " << ex_aic << endl;
+	//cout << "BIC: " << weibull_bic << " x " << ex_bic << endl;
+	//cout << "AIC: " << weibull_aic << " x " << ex_aic << endl;
 	if (!compareDouble(weibull_bic, ex_bic, 0.001))
 		return (false);
 	else if (!compareDouble(weibull_aic, ex_aic, 0.001))
@@ -2588,6 +2625,167 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet,
 	unsigned int i = 0;
 	unsigned int j = 0;
 	list<packet_size>::iterator psList_it = psList.begin();
+
+	if (m == 0)
+	{
+		pktCounterSum++;
+		fileSizeSum = *psList_it;
+		onOff.push_back(min_on_time);
+		pktCounter->push_back(pktCounterSum);
+		fileSize->push_back(fileSizeSum);
+	}
+	else
+	{
+		for (i = 0; i < m; i++)
+		{
+			pktCounterSum++;
+			fileSizeSum = fileSizeSum + *psList_it;
+			psList_it++;
+			if (delta_time[i] > cut_time)
+			{
+				if (i == 0) // the first times is off
+				{
+					j++;
+					onOff.push_back(min_on_time);
+					j++;
+					onOff.push_back(delta_time[i]);
+					last_off = i;
+					// packet counter and file size
+					pktCounter->push_back(pktCounterSum);
+					fileSize->push_back(fileSizeSum);
+					pktCounterSum = 0;
+					fileSizeSum = 0;
+					MESSER_DEBUG("the first times is off @ <%s, %s>");
+				}
+				else
+				{
+					if (j == 0) // base first case
+					{
+						j++;
+						onOff.push_back(arrival_time[i - 1]);
+						j++;
+						onOff.push_back(delta_time[i]);
+						last_off = i;
+						// packet counter and file size
+						pktCounter->push_back(pktCounterSum);
+						fileSize->push_back(fileSizeSum);
+						pktCounterSum = 0;
+						fileSizeSum = 0;
+					}
+					else // base case
+					{
+						j++;
+						timebuffer = arrival_time[i - 1]
+								- arrival_time[last_off];
+						if (timebuffer < min_on_time)
+						{
+							onOff.push_back(min_on_time);
+						}
+						else
+						{
+							onOff.push_back(timebuffer);
+						}
+						j++;
+						onOff.push_back(delta_time[i]);
+						last_off = i;
+						// packet counter and file size
+						pktCounter->push_back(pktCounterSum);
+						fileSize->push_back(fileSizeSum);
+						pktCounterSum = 0;
+						fileSizeSum = 0;
+					}
+
+				}
+
+			}
+		}
+
+		pktCounterSum++;
+		fileSizeSum = fileSizeSum + *psList_it;
+		pktCounter->push_back(pktCounterSum);
+		fileSize->push_back(fileSizeSum);
+		if (last_off == (m - 1)) //last is session-off
+		{
+			j++;
+			onOff.push_back(min_on_time);
+		}
+		else // base last case
+		{
+			j++;
+			if (last_off != 0)
+			{
+				onOff.push_back(arrival_time[m - 1] - arrival_time[last_off]);
+			}
+			else
+			{
+				onOff.push_back(arrival_time[m - 1]);
+			}
+
+		}
+
+	}
+
+	//DEBUG
+	char charList[CHAR_LARGE_BUFFER];
+	list2str(onOff, charList);
+	MESSER_DEBUG("onOff = %s @<%s, %s>", charList);
+	//RegressionTests rt;
+	//rt.wait_int();
+
+	MESSER_DEBUG("onOff.size() = %d @<%s, %s>", onOff.size());
+	m = onOff.size();
+	if (m == 0)
+	{
+		cerr << "Somenthing went wrong, onOff.size() is zero.";
+		MESSER_FATAL("Somenthing went wrong, onOff.size() is zero. @ <%s, %s>");
+	}
+
+	i = 0;
+	for (list<time_sec>::iterator it = onOff.begin(); it != onOff.end(); it++)
+	{
+		i++;
+		if ((i % 2) == 1)
+		{
+			onTimes->push_back(*it);
+		}
+		else
+		{
+			offTimes->push_back(*it);
+		}
+	}
+
+	MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
+	MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
+	delete_cvector(arrival_time);
+	delete_cvector(delta_time);
+}
+
+void DataProcessor::calcOnOff(list<time_sec>& deltaVet,
+		list<unsigned int>& psList, const time_sec cut_time,
+		const time_sec min_on_time, vector<time_sec>* onTimes,
+		vector<time_sec>* offTimes, vector<unsigned int>* pktCounter,
+		vector<unsigned int>* fileSize)
+{
+	// log
+	MESSER_LOG_INIT(ERROR);
+	MESSER_DEBUG("<%s, %s>");
+
+	// data structures
+	unsigned int m = deltaVet.size();
+	list<time_sec> arrivalVet;
+	cumulativeDistribution(deltaVet, &arrivalVet);
+	time_sec* arrival_time = list_to_cvector(&arrivalVet);
+	time_sec* delta_time = list_to_cvector(&deltaVet);
+	list<time_sec> onOff;
+
+	// vars inity
+	unsigned int pktCounterSum = 0;
+	double fileSizeSum = 0;
+	time_sec timebuffer = 0;
+	unsigned int last_off = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	list<unsigned int>::iterator psList_it = psList.begin();
 
 	if (m == 0)
 	{

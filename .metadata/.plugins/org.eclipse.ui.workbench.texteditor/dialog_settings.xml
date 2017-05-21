@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="mode" key="selection"/>
+		<item value="regression_tests" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="mode"/>
-			<item value="cumulative"/>
-			<item value="debugflag"/>
-			<item value="interfile"/>
+			<item value="regression_tests"/>
+			<item value="flowGenerate"/>
 			<item value="flowStart"/>
-			<item value="No more On times available on"/>
-			<item value="getSessionOnTime_next"/>
-			<item value="No more Off times available on the stack"/>
+			<item value="calcOnOff"/>
+			<item value="BIC:"/>
+			<item value="Gradient Descendent:"/>
+			<item value="test_readWrite2XML"/>
+			<item value="m_session_cut_time"/>
 		</list>
 		<list key="replacehistory">
+			<item value="uint"/>
 			<item value=""/>
 		</list>
 	</section>

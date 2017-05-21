@@ -33,7 +33,8 @@ public:
 	 *
 	 */
 	void flowGenerate(const counter& flowId, const time_sec& onTime,
-			const unsigned int& npackets, const string& netInterface)
+			const unsigned int& npackets, const uint& nbytes,
+			const string& netInterface)
 	{
 		//TODO Criar um metodo que retorna o IP de eth0 (default) da maquina atual
 		char host[] = "10.1.1.48";
@@ -117,12 +118,11 @@ public:
 
 		/// Inter-departure time options
 		unsigned int i = 0;
-		for (;;i++)
+		for (;; i++)
 		{
 			//StochasticModelFit idtModel =
 			//		this->getInterDepertureTimeModel_next();
-			StochasticModelFit idtModel =
-					this->getInterDepertureTimeModel(i);
+			StochasticModelFit idtModel = this->getInterDepertureTimeModel(i);
 
 			if ((idtModel.modelName() == WEIBULL)
 					|| (idtModel.modelName() == NORMAL)

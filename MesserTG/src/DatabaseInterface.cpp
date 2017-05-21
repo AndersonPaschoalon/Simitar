@@ -395,6 +395,63 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
+		string label, list<unsigned int>& value_list)
+{
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	int rc = 0; 							//control output flag
+	int experimentID;
+	int value; 								//rows values
+	char strFlowId[INT_BUFFER_SIZE]; 		//FlowID string
+	char strExperimentId[INT_BUFFER_SIZE]; 	//FlowID string
+	char* sql = NULL; 						//SQL char[] query
+	string string_sql; 						//SQL string query
+	sqlite3_stmt *res;						//database handle
+
+	this->getTraceData(experimentName, "experimentName", &experimentID);
+	//convert flowID and experimentID to string
+	snprintf(strFlowId, sizeof(strFlowId), "%d", flowID);
+	snprintf(strExperimentId, sizeof(strExperimentId), "%d", experimentID);
+
+	//create SQL query
+	string_sql = "select " + label + " from " + capture_table
+			+ " where  FlowID=\"" + strFlowId + "\" and experimentID=\""
+			+ strExperimentId + "\";";
+	sql = new char[string_sql.length() + 1];
+	strcpy(sql, string_sql.c_str());
+
+	//create SQL statement definition
+	rc = sqlite3_prepare_v2(db, sql, -1, &res, 0);
+	if (rc != SQLITE_OK)
+	{
+		errno = ENOENT;
+		fprintf(stderr, "Failed to fetch data: %s\n", sqlite3_errmsg(db));
+		sqlite3_close(db);
+		databaseInterface_error = 2;
+		return (1);
+	}
+
+	//capture values until the table finishes
+	while (true)
+	{
+		rc = sqlite3_step(res);
+		if (rc != SQLITE_ROW)
+		{
+			break;
+		}
+		//TODO replace obsolete function atoi()
+		value = unsigned(atoi((const char*) sqlite3_column_text(res, 0)));
+		value_list.push_back(value);
+	}
+
+	//free allocated memory
+	delete[] sql;
+	sqlite3_finalize(res);
+
+	return (0);
+}
+
+
+int DatabaseInterface::getFlowData(string experimentName, int flowID,
 		string label, list<double>& value_list)
 {
 	int rc = 0; 							//control output flag

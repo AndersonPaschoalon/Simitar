@@ -37,10 +37,10 @@ void vector2str(vector<long int> theVec, char* str)
 	list2str(theList, str);
 
 }
-void vector2str(vector<unsigned int> theVec, char* str)
+void vector2str(vector<uint> theVec, char* str)
 {
 
-	list<unsigned int> theList;
+	list<uint> theList;
 	std::copy(theVec.begin(), theVec.end(), std::back_inserter(theList));
 	list2str(theList, str);
 
@@ -112,11 +112,11 @@ void list2str(list<long int> theList, char* str)
 
 }
 
-void list2str(list<unsigned int> theList, char* str)
+void list2str(list<uint> theList, char* str)
 {
 	str[0] = '\0';
 	char buffer[CHAR_BUFFER] = "\0";
-	for (list<unsigned int>::iterator it = theList.begin(); it != theList.end();
+	for (list<uint>::iterator it = theList.begin(); it != theList.end();
 			)
 	{
 		//string val = to_string(*it);
@@ -154,7 +154,7 @@ void list2str(list<unsigned long int> theList, char* str)
 }
 
 
-void charvet2type(const char* vetc, unsigned int& v)
+void charvet2type(const char* vetc, uint& v)
 {
 	sscanf(vetc, "%d", &v);
 }
@@ -293,6 +293,42 @@ void charvet2type(const char* vetc, list<long int>& theList)
 
 }
 
+void charvet2type(const char* vetc, list<uint>& theList)
+{
+
+	char buffer[CHAR_BUFFER];
+	long int val_buffer = 0;
+
+	int buffer_conter = 0;
+	int in_conter = 0;
+	int out_conter = 0;
+
+	while (1)
+	{
+		if (delimiter(vetc[in_conter]) || (vetc[in_conter] == '\0'))
+		{
+			buffer[buffer_conter] = '\0';
+			buffer_conter = 0;
+			sscanf(buffer, "%d", &val_buffer);
+			theList.push_back(unsigned(val_buffer));
+			out_conter++;
+			buffer[0] = '\0';
+		}
+		else
+		{
+
+			buffer[buffer_conter] = vetc[in_conter];
+			buffer_conter++;
+		}
+
+		if (vetc[in_conter] == '\0')
+			break;
+		else
+			in_conter++;
+	}
+
+}
+
 void charvet2type(const char* vetc, vector<long int>& theVector)
 {
 	list<long int> theList;
@@ -311,15 +347,22 @@ void charvet2type(const char* vetc, vector<int>& theVector)
 	charvet2type(vetc, theList);
 	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 }
-//void charvet2type(const char* vetc, vector<unsigned int>& theVector)
+//void charvet2type(const char* vetc, vector<uint>& theVector)
 //{
-//	list<unsigned int> theList;
+//	list<uint> theList;
 //	charvet2type(vetc, theList);
 //	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 //}
 void charvet2type(const char* vetc, vector<double>& theVector)
 {
 	list<double> theList;
+	charvet2type(vetc, theList);
+	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
+}
+
+void charvet2type(const char* vetc, vector<uint>& theVector)
+{
+	list<uint> theList;
 	charvet2type(vetc, theList);
 	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 }
@@ -375,7 +418,7 @@ void printList(list<double>& theList)
  template<typename T>
  void cumulativeDistribution(list<T>& dataSample, list<T>* cumulativeDat)
  {
- unsigned int i = 0;
+ uint i = 0;
  T cVal = 0;
 
  for (typename list<T>::iterator it = dataSample.begin();
@@ -400,7 +443,7 @@ void printList(list<double>& theList)
 void cumulativeDistribution(list<double>& dataSample,
 		list<double>* cumulativeDat)
 {
-	unsigned int i = 0;
+	uint i = 0;
 	double cVal = 0;
 
 	for (list<double>::iterator it = dataSample.begin(); it != dataSample.end();
@@ -418,6 +461,66 @@ void cumulativeDistribution(list<double>& dataSample,
 			cumulativeDat->push_back(cVal);
 		}
 	}
+}
+
+
+bool isFileEmpty(std::ifstream& pFile)
+{
+	return pFile.peek() == std::ifstream::traits_type::eof();
+}
+
+char** str_split(char* a_str, const char a_delim)
+{
+    char** result    = 0;
+    size_t count     = 0;
+    char* tmp        = a_str;
+    char* last_comma = 0;
+    char delim[2];
+    delim[0] = a_delim;
+    delim[1] = 0;
+
+    /* Count how many elements will be extracted. */
+    while (*tmp)
+    {
+        if (a_delim == *tmp)
+        {
+            count++;
+            last_comma = tmp;
+        }
+        tmp++;
+    }
+
+    /* Add space for trailing token. */
+    count += last_comma < (a_str + strlen(a_str) - 1);
+
+    /* Add space for terminating null string so caller
+       knows where the list of returned strings ends. */
+    count++;
+
+    result = (char**)malloc(sizeof(char*) * count);
+    if(result == NULL)
+    {
+    	errno = ENOMEM;
+    	perror("*Error*: Memory allocation failed @ str_split()");
+    	exit(-1);
+    }
+
+    if (result)
+    {
+        size_t idx  = 0;
+        char* token = strtok(a_str, delim);
+
+        while (token)
+        {
+            assert(idx < count);
+            *(result + idx++) = strdup(token);
+            token = strtok(0, delim);
+        }
+        assert(idx == count - 1);
+        *(result + idx) = 0;
+    }
+
+    return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -526,7 +629,7 @@ bool test_charvet2type()
 //printList(aListN);
 
 //double
-	unsigned int i = 0;
+	uint i = 0;
 	for (list<double>::iterator it = aList.begin(); it != aList.end(); it++)
 	{
 		//cout << vd[i] << ":" << *it << endl;

@@ -1,0 +1,25 @@
+
+- Instalar Opendaylight
+https://blinkingnetwork.wordpress.com/2016/08/03/install-opendaylight-ubuntu-16/
+
+- Instalar do github
+
+- Rodar o Opendaylignht
+cd ~/distribution-karaf-0.4.0-Beryllium
+./bin/karaf 
+
+- Intarface web do Opendaylight
+http://localhost:8181/dlux/index.html
+
+- Clean up mininet
+sudo mn -c
+
+- Rodar topologia do mininet
+
+- fazer o Opendaylight descobrir todos os hosts
+mininet> pingall
+
+- dois testes no mininet: simple-topo-test.py  tree-topo-test.py. Executar como root. 
+  O controlador precisa estar ativo.
+
+

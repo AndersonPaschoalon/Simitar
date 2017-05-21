@@ -86,7 +86,7 @@ int main()
 	trace->writeToFile("data/regression-tests/test-trace.xml");
 
 	MESSER_NOTICE("Executing NetworkTrace: trace->exec(true) @<%s, %s>");
-	trace->exec(true);
+	//trace->exec(true);
 
 	//cout << "sleep before the next trace" << endl;
 	//sleep(160);
@@ -127,6 +127,8 @@ int main()
 
 	delete trace;
 
+
+/*
 	//MESSER_DEBUG("<%s, %s>");
 
 	NetworkTrace* tracetest = NULL;
@@ -140,12 +142,12 @@ int main()
 	tracetest->setInfoCaptureInterface("eth0");
 	tracetest->setInfoCaptureDate("07/04/2017");
 	tracetest->writeToFile("copia-kjjjjj.xml");
-	tracetest->writeToFile("data/regression-tests/copy-test-trace.xml");
+	//tracetest->writeToFile("data/regression-tests/copy-test-trace.xml");
 
 	tracetest->regression_tests();
 
 	delete tracetest;
-
+*/
 	MESSER_DEBUG(" @<%s, %s>");
 
 	MESSER_LOG_END();
@@ -164,11 +166,13 @@ void unity_regression_tests()
 	NetworkTrace unity_nt;
 	StochasticModelFit unity_smf = StochasticModelFit();
 
+
 	unity_dp.regression_tests();
 	unity_nt.regression_tests();
 	unity_proto.regression_tests();
 	unity_smf.unity_tests();
 	cfunctions_unitytests();
+	unity_nt.regression_tests();
 
 	//wait.wait_int("Finished tests, press any key...");
 	//MESSER_NOTICE("Finishing Unity tests...  @<%s, %s>");

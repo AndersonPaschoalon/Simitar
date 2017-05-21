@@ -202,7 +202,8 @@ private:
 	/**
 	 * Default value of cut time (SESSION_CUT_TIME) for sections
 	 */
-	double m_session_cut_time = DEFAULT_SESSION_CUT_TIME;
+	double m_session_cut_time = 4;
+	//double m_session_cut_time = DEFAULT_SESSION_CUT_TIME;
 
 
 	/**
@@ -605,6 +606,20 @@ private:
 	void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
 			const time_sec min_on_time, vector<time_sec>* onTimes,
 			vector<time_sec>* offTimes, vector<unsigned int>* pktCounter, vector<double>* fileSize);
+
+
+	/**
+	 * @brief
+	 *
+	 * @param deltaVet
+	 * @param cut_time
+	 * @param min_on_time
+	 * @param onTimes
+	 * @param offTimes
+	 */
+	void calcOnOff(list<time_sec>& deltaVet, list<unsigned int>& psList, const time_sec cut_time,
+			const time_sec min_on_time, vector<time_sec>* onTimes,
+			vector<time_sec>* offTimes, vector<unsigned int>* pktCounter, vector<unsigned int>* fileSize);
 
 	/**
 	 *

@@ -89,6 +89,7 @@ functio install_libtins
 {
 	print_header "Libtins"
 	sudo apt-get install libpcap-dev libssl-dev cmake
+	sudo apt-get install libtins-dev libtins3.4
 }
 
 function main()

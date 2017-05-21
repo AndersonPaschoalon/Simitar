@@ -393,3 +393,2661 @@ make: Nothing to be done for 'all'.
 21:54:31 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
 make: Nothing to be done for 'all'.
+19:35:18 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+10:32:03 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:14:25: fatal error: NemesisFlow.h: Arquivo ou diretório não encontrado
+ #include "NemesisFlow.h"
+                         ^
+compilation terminated.
+make: *** [src/NetworkFlow.o] Error 1
+src/subdir.mk:45: recipe for target 'src/NetworkFlow.o' failed
+10:33:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:14:25: fatal error: NemesisFlow.h: Arquivo ou diretório não encontrado
+ #include "NemesisFlow.h"
+                         ^
+compilation terminated.
+src/subdir.mk:45: recipe for target 'src/NetworkFlow.o' failed
+make: *** [src/NetworkFlow.o] Error 1
+10:33:36 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:480:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:741:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:780:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+10:51:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:346:60: error: no matching function for call to ‘DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<long int>&, double&, double&, std::vector<double>*&, std::vector<double>*&, std::vector<unsigned int>*&, std::vector<double>*&)’
+      m_min_on_time, onTimes, offTimes, pktCounter, fileSize);
+                                                            ^
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:592:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:592:7: note:   candidate expects 5 arguments, 8 provided
+../src/DataProcessor.h:606:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:606:7: note:   no known conversion for argument 2 from ‘std::__cxx11::list<long int>’ to ‘std::__cxx11::list<double>&’
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+10:52:30 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:103:50: error: conversion from ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ to non-scalar type ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ requested
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                      ~~~~~~~~~~~~^~
+../src/DataProcessor.cpp:103:57: error: no match for ‘operator!=’ (operand types are ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ and ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’)
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                      ~~~^~~~~~~~~~~~~~~
+In file included from /usr/include/c++/6/list:63:0,
+                 from ../src/DataProcessor.h:22,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_list.h:194:7: note: candidate: bool std::_List_iterator< <template-parameter-1-1> >::operator!=(const _Self&) const [with _Tp = long int; std::_List_iterator< <template-parameter-1-1> >::_Self = std::_List_iterator<long int>]
+       operator!=(const _Self& __x) const _GLIBCXX_NOEXCEPT
+       ^~~~~~~~
+/usr/include/c++/6/bits/stl_list.h:194:7: note:   no known conversion for argument 1 from ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ to ‘const _Self& {aka const std::_List_iterator<long int>&}’
+In file included from /usr/include/armadillo:294:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:18:13: note: candidate: bool arma::operator!=(const arma::gmm_dist_mode&, const arma::gmm_dist_mode&)
+ inline bool operator!=(const gmm_dist_mode& a, const gmm_dist_mode& b) { return (a.id != b.id); }
+             ^~~~~~~~
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:18:13: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const arma::gmm_dist_mode&’
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:33:13: note: candidate: bool arma::operator!=(const arma::gmm_seed_mode&, const arma::gmm_seed_mode&)
+ inline bool operator!=(const gmm_seed_mode& a, const gmm_seed_mode& b) { return (a.id != b.id); }
+             ^~~~~~~~
+/usr/include/armadillo_bits/gmm_diag_bones.hpp:33:13: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const arma::gmm_seed_mode&’
+In file included from /usr/include/armadillo:401:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_relational.hpp:123:1: note: candidate: template<class T1, class T2> typename arma::enable_if2<(arma::is_arma_type<T1>::value && arma::is_arma_type<T2>::value), const arma::mtGlue<long long unsigned int, T1, T2, arma::glue_rel_noteq> >::result arma::operator!=(const T1&, const T2&)
+ operator!=
+ ^~~~~~~~
+/usr/include/armadillo_bits/operator_relational.hpp:123:1: note:   template argument deduction/substitution failed:
+/usr/include/armadillo_bits/operator_relational.hpp: In substitution of ‘template<class T1, class T2> typename arma::enable_if2<(arma::is_arma_type<T1>::value && arma::is_arma_type<T2>::value), const arma::mtGlue<long long unsigned int, T1, T2, arma::glue_rel_noteq> >::result arma::operator!=(const T1&, const T2&) [with T1 = std::_List_iterator<long int>; T2 = std::_List_iterator<int>]’:
+../src/DataProcessor.cpp:103:71:   required from here
+/usr/include/armadillo_bits/operator_relational.hpp:123:1: error: no type named ‘result’ in ‘struct arma::enable_if2<false, const arma::mtGlue<long long unsigned int, std::_List_iterator<long int>, std::_List_iterator<int>, arma::glue_rel_noteq> >’
+/usr/include/armadillo_bits/operator_relational.hpp:363:1: note: candidate: template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_noteq> >::result arma::operator!=(typename T1::elem_type, const T1&)
+ operator!=
+ ^~~~~~~~
+/usr/include/armadillo_bits/operator_relational.hpp:363:1: note:   template argument deduction/substitution failed:
+/usr/include/armadillo_bits/operator_relational.hpp: In substitution of ‘template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_noteq> >::result arma::operator!=(typename T1::elem_type, const T1&) [with T1 = std::_List_iterator<int>]’:
+../src/DataProcessor.cpp:103:71:   required from here
+/usr/include/armadillo_bits/operator_relational.hpp:363:1: error: no type named ‘result’ in ‘struct arma::enable_if2<false, const arma::mtOp<long long unsigned int, std::_List_iterator<int>, arma::op_rel_noteq> >’
+/usr/include/armadillo_bits/operator_relational.hpp:381:1: note: candidate: template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_noteq> >::result arma::operator!=(const T1&, typename T1::elem_type)
+ operator!=
+ ^~~~~~~~
+/usr/include/armadillo_bits/operator_relational.hpp:381:1: note:   template argument deduction/substitution failed:
+/usr/include/armadillo_bits/operator_relational.hpp: In substitution of ‘template<class T1> typename arma::enable_if2<arma::is_arma_type<T1>::value, const arma::mtOp<long long unsigned int, T1, arma::op_rel_noteq> >::result arma::operator!=(const T1&, typename T1::elem_type) [with T1 = std::_List_iterator<long int>]’:
+../src/DataProcessor.cpp:103:71:   required from here
+/usr/include/armadillo_bits/operator_relational.hpp:381:1: error: no type named ‘result’ in ‘struct arma::enable_if2<false, const arma::mtOp<long long unsigned int, std::_List_iterator<long int>, arma::op_rel_noteq> >’
+In file included from /usr/include/armadillo:408:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_cube_relational.hpp:95:1: note: candidate: template<class T1, class T2> const arma::mtGlueCube<long long unsigned int, T1, T2, arma::glue_rel_noteq> arma::operator!=(const arma::BaseCube<typename T1::elem_type, T1>&, const arma::BaseCube<typename T1::elem_type, T2>&)
+ operator!=
+ ^~~~~~~~
+/usr/include/armadillo_bits/operator_cube_relational.hpp:95:1: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const arma::BaseCube<typename T1::elem_type, T1>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:408:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_cube_relational.hpp:270:1: note: candidate: template<class T1> const arma::mtOpCube<long long unsigned int, T1, arma::op_rel_noteq> arma::operator!=(typename T1::elem_type, const arma::BaseCube<typename T1::elem_type, T1>&)
+ operator!=
+ ^~~~~~~~
+/usr/include/armadillo_bits/operator_cube_relational.hpp:270:1: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const arma::BaseCube<typename T1::elem_type, T1>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:408:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/armadillo_bits/operator_cube_relational.hpp:283:1: note: candidate: template<class T1> const arma::mtOpCube<long long unsigned int, T1, arma::op_rel_noteq> arma::operator!=(const arma::BaseCube<typename T1::elem_type, T1>&, typename T1::elem_type)
+ operator!=
+ ^~~~~~~~
+/usr/include/armadillo_bits/operator_cube_relational.hpp:283:1: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const arma::BaseCube<typename T1::elem_type, T1>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/iterator:66:0,
+                 from /usr/include/rapidxml/rapidxml_print.hpp:14,
+                 from ../src/NetworkTrace.h:25,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stream_iterator.h:137:5: note: candidate: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator!=(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator!=(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stream_iterator.h:137:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from ../src/NetworkTrace.h:21:0,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/thread:234:3: note: candidate: bool std::operator!=(std::thread::id, std::thread::id)
+   operator!=(thread::id __x, thread::id __y) noexcept
+   ^~~~~~~~
+/usr/include/c++/6/thread:234:3: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘std::thread::id’
+In file included from /usr/include/c++/6/memory:82:0,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/shared_ptr.h:363:5: note: candidate: template<class _Tp> bool std::operator!=(std::nullptr_t, const std::shared_ptr<_Tp1>&)
+     operator!=(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/bits/shared_ptr.h:363:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const std::shared_ptr<_Tp1>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/memory:82:0,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/shared_ptr.h:358:5: note: candidate: template<class _Tp> bool std::operator!=(const std::shared_ptr<_Tp1>&, std::nullptr_t)
+     operator!=(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/bits/shared_ptr.h:358:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::shared_ptr<_Tp1>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/memory:82:0,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/shared_ptr.h:352:5: note: candidate: template<class _Tp1, class _Tp2> bool std::operator!=(const std::shared_ptr<_Tp1>&, const std::shared_ptr<_Tp2>&)
+     operator!=(const shared_ptr<_Tp1>& __a,
+     ^~~~~~~~
+/usr/include/c++/6/bits/shared_ptr.h:352:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::shared_ptr<_Tp1>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/6/memory:82,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/shared_ptr_base.h:1213:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator!=(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator!=(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/bits/shared_ptr_base.h:1213:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/6/memory:82,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/shared_ptr_base.h:1208:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator!=(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator!=(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/bits/shared_ptr_base.h:1208:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/6/memory:82,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/shared_ptr_base.h:1202:5: note: candidate: template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator!=(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator!=(const __shared_ptr<_Tp1, _Lp>& __a,
+     ^~~~~~~~
+/usr/include/c++/6/bits/shared_ptr_base.h:1202:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/unique_ptr.h:674:5: note: candidate: template<class _Tp, class _Dp> bool std::operator!=(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator!=(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/bits/unique_ptr.h:674:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/unique_ptr.h:669:5: note: candidate: template<class _Tp, class _Dp> bool std::operator!=(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator!=(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/bits/unique_ptr.h:669:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/memory:81:0,
+                 from /usr/include/c++/6/thread:40,
+                 from ../src/NetworkTrace.h:21,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/unique_ptr.h:663:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator!=(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator!=(const unique_ptr<_Tp, _Dp>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/unique_ptr.h:663:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/set:62:0,
+                 from /usr/include/log4cpp/Appender.hh:16,
+                 from /usr/include/log4cpp/Category.hh:14,
+                 from ../src/MesserLog.h:11,
+                 from ../src/Protocol.h:15,
+                 from ../src/DatabaseInterface.h:27,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_multiset.h:847:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator!=(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_multiset.h:847:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/set:61:0,
+                 from /usr/include/log4cpp/Appender.hh:16,
+                 from /usr/include/log4cpp/Category.hh:14,
+                 from ../src/MesserLog.h:11,
+                 from ../src/Protocol.h:15,
+                 from ../src/DatabaseInterface.h:27,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_set.h:864:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator!=(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator!=(const set<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_set.h:864:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/map:62:0,
+                 from /usr/include/log4cpp/Appender.hh:15,
+                 from /usr/include/log4cpp/Category.hh:14,
+                 from ../src/MesserLog.h:11,
+                 from ../src/Protocol.h:15,
+                 from ../src/DatabaseInterface.h:27,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_multimap.h:996:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_multimap.h:996:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/map:61:0,
+                 from /usr/include/log4cpp/Appender.hh:15,
+                 from /usr/include/log4cpp/Category.hh:14,
+                 from ../src/MesserLog.h:11,
+                 from ../src/Protocol.h:15,
+                 from ../src/DatabaseInterface.h:27,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_map.h:1331:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator!=(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator!=(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_map.h:1331:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/map:60:0,
+                 from /usr/include/log4cpp/Appender.hh:15,
+                 from /usr/include/log4cpp/Category.hh:14,
+                 from ../src/MesserLog.h:11,
+                 from ../src/Protocol.h:15,
+                 from ../src/DatabaseInterface.h:27,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_tree.h:1302:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator!=(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator!=(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_tree.h:1302:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/map:60:0,
+                 from /usr/include/log4cpp/Appender.hh:15,
+                 from /usr/include/log4cpp/Category.hh:14,
+                 from ../src/MesserLog.h:11,
+                 from ../src/Protocol.h:15,
+                 from ../src/DatabaseInterface.h:27,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_tree.h:334:5: note: candidate: template<class _Val> bool std::operator!=(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator!=(const _Rb_tree_iterator<_Val>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_tree.h:334:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::_Rb_tree_iterator<_Tp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:58:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/functional:2226:5: note: candidate: template<class _Res, class ... _Args> bool std::operator!=(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)
+     operator!=(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/functional:2226:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:58:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/functional:2220:5: note: candidate: template<class _Res, class ... _Args> bool std::operator!=(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)
+     operator!=(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+     ^~~~~~~~
+/usr/include/c++/6/functional:2220:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/functional:55:0,
+                 from /usr/include/armadillo:58,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/tuple:1363:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator!=(const std::tuple<_Elements ...>&, const std::tuple<_Elements ...>&)
+     operator!=(const tuple<_TElements...>& __t,
+     ^~~~~~~~
+/usr/include/c++/6/tuple:1363:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::tuple<_Elements ...>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:5841:5: note: candidate: template<class _RealType> bool std::operator!=(const std::piecewise_linear_distribution<_RealType>&, const std::piecewise_linear_distribution<_RealType>&)
+     operator!=(const std::piecewise_linear_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:5841:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::piecewise_linear_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:5571:5: note: candidate: template<class _RealType> bool std::operator!=(const std::piecewise_constant_distribution<_RealType>&, const std::piecewise_constant_distribution<_RealType>&)
+     operator!=(const std::piecewise_constant_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:5571:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::piecewise_constant_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:5304:5: note: candidate: template<class _IntType> bool std::operator!=(const std::discrete_distribution<_IntType>&, const std::discrete_distribution<_IntType>&)
+     operator!=(const std::discrete_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:5304:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::discrete_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:5044:5: note: candidate: template<class _RealType> bool std::operator!=(const std::extreme_value_distribution<_RealType>&, const std::extreme_value_distribution<_RealType>&)
+     operator!=(const std::extreme_value_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:5044:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::extreme_value_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:4841:5: note: candidate: template<class _RealType> bool std::operator!=(const std::weibull_distribution<_RealType>&, const std::weibull_distribution<_RealType>&)
+     operator!=(const std::weibull_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:4841:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::weibull_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:4638:5: note: candidate: template<class _RealType> bool std::operator!=(const std::exponential_distribution<_RealType>&, const std::exponential_distribution<_RealType>&)
+     operator!=(const std::exponential_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:4638:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::exponential_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:4460:5: note: candidate: template<class _IntType> bool std::operator!=(const std::poisson_distribution<_IntType>&, const std::poisson_distribution<_IntType>&)
+     operator!=(const std::poisson_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:4460:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::poisson_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:4244:5: note: candidate: template<class _IntType> bool std::operator!=(const std::negative_binomial_distribution<_IntType>&, const std::negative_binomial_distribution<_IntType>&)
+     operator!=(const std::negative_binomial_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:4244:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::negative_binomial_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:3999:5: note: candidate: template<class _IntType> bool std::operator!=(const std::geometric_distribution<_IntType>&, const std::geometric_distribution<_IntType>&)
+     operator!=(const std::geometric_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:3999:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::geometric_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:3830:5: note: candidate: template<class _IntType> bool std::operator!=(const std::binomial_distribution<_IntType>&, const std::binomial_distribution<_IntType>&)
+     operator!=(const std::binomial_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:3830:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::binomial_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:3564:3: note: candidate: bool std::operator!=(const std::bernoulli_distribution&, const std::bernoulli_distribution&)
+   operator!=(const std::bernoulli_distribution& __d1,
+   ^~~~~~~~
+/usr/include/c++/6/bits/random.h:3564:3: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const std::bernoulli_distribution&’
+/usr/include/c++/6/bits/random.h:3388:5: note: candidate: template<class _RealType> bool std::operator!=(const std::student_t_distribution<_RealType>&, const std::student_t_distribution<_RealType>&)
+     operator!=(const std::student_t_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:3388:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::student_t_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:3175:5: note: candidate: template<class _RealType> bool std::operator!=(const std::fisher_f_distribution<_RealType>&, const std::fisher_f_distribution<_RealType>&)
+     operator!=(const std::fisher_f_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:3175:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::fisher_f_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:2919:5: note: candidate: template<class _RealType> bool std::operator!=(const std::cauchy_distribution<_RealType>&, const std::cauchy_distribution<_RealType>&)
+     operator!=(const std::cauchy_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:2919:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::cauchy_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:2752:5: note: candidate: template<class _RealType> bool std::operator!=(const std::chi_squared_distribution<_RealType>&, const std::chi_squared_distribution<_RealType>&)
+     operator!=(const std::chi_squared_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:2752:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::chi_squared_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:2542:6: note: candidate: template<class _RealType> bool std::operator!=(const std::gamma_distribution<_RealType>&, const std::gamma_distribution<_RealType>&)
+      operator!=(const std::gamma_distribution<_RealType>& __d1,
+      ^~~~~~~~
+/usr/include/c++/6/bits/random.h:2542:6: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::gamma_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:2322:5: note: candidate: template<class _RealType> bool std::operator!=(const std::lognormal_distribution<_RealType>&, const std::lognormal_distribution<_RealType>&)
+     operator!=(const std::lognormal_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:2322:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::lognormal_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:2118:5: note: candidate: template<class _RealType> bool std::operator!=(const std::normal_distribution<_RealType>&, const std::normal_distribution<_RealType>&)
+     operator!=(const std::normal_distribution<_RealType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:2118:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::normal_distribution<_RealType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:1869:5: note: candidate: template<class _IntType> bool std::operator!=(const std::uniform_real_distribution<_IntType>&, const std::uniform_real_distribution<_IntType>&)
+     operator!=(const std::uniform_real_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:1869:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::uniform_real_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:1660:5: note: candidate: template<class _IntType> bool std::operator!=(const std::uniform_int_distribution<_IntType>&, const std::uniform_int_distribution<_IntType>&)
+     operator!=(const std::uniform_int_distribution<_IntType>& __d1,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:1660:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::uniform_int_distribution<_IntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:1502:5: note: candidate: template<class _RandomNumberEngine, long unsigned int __k> bool std::operator!=(const std::shuffle_order_engine<_RandomNumberEngine, __k>&, const std::shuffle_order_engine<_RandomNumberEngine, __k>&)
+     operator!=(const std::shuffle_order_engine<_RandomNumberEngine,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:1502:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::shuffle_order_engine<_RandomNumberEngine, __k>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:1250:5: note: candidate: template<class _RandomNumberEngine, long unsigned int __w, class _UIntType> bool std::operator!=(const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>&, const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>&)
+     operator!=(const std::independent_bits_engine<_RandomNumberEngine, __w,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:1250:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:1054:5: note: candidate: template<class _RandomNumberEngine, long unsigned int __p, long unsigned int __r> bool std::operator!=(const std::discard_block_engine<_RandomNumberEngine, __p, __r>&, const std::discard_block_engine<_RandomNumberEngine, __p, __r>&)
+     operator!=(const std::discard_block_engine<_RandomNumberEngine, __p,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:1054:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::discard_block_engine<_RandomNumberEngine, __p, __r>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:832:5: note: candidate: template<class _UIntType, long unsigned int __w, long unsigned int __s, long unsigned int __r> bool std::operator!=(const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>&, const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>&)
+     operator!=(const std::subtract_with_carry_engine<_UIntType, __w,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:832:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:636:5: note: candidate: template<class _UIntType, long unsigned int __w, long unsigned int __n, long unsigned int __m, long unsigned int __r, _UIntType __a, long unsigned int __u, _UIntType __d, long unsigned int __s, _UIntType __b, long unsigned int __t, _UIntType __c, long unsigned int __l, _UIntType __f> bool std::operator!=(const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>&, const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>&)
+     operator!=(const std::mersenne_twister_engine<_UIntType, __w, __n, __m,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:636:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/random:49:0,
+                 from /usr/include/armadillo:57,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/random.h:404:5: note: candidate: template<class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m> bool std::operator!=(const std::linear_congruential_engine<_UIntType, __a, __c, __m>&, const std::linear_congruential_engine<_UIntType, __a, __c, __m>&)
+     operator!=(const std::linear_congruential_engine<_UIntType, __a,
+     ^~~~~~~~
+/usr/include/c++/6/bits/random.h:404:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::linear_congruential_engine<_UIntType, __a, __c, __m>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:29:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/complex:486:5: note: candidate: template<class _Tp> constexpr bool std::operator!=(const _Tp&, const std::complex<_Tp>&)
+     operator!=(const _Tp& __x, const complex<_Tp>& __y)
+     ^~~~~~~~
+/usr/include/c++/6/complex:486:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const std::complex<_Tp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:29:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/complex:481:5: note: candidate: template<class _Tp> constexpr bool std::operator!=(const std::complex<_Tp>&, const _Tp&)
+     operator!=(const complex<_Tp>& __x, const _Tp& __y)
+     ^~~~~~~~
+/usr/include/c++/6/complex:481:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::complex<_Tp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/armadillo:29:0,
+                 from ../src/DataProcessor.h:28,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/complex:476:5: note: candidate: template<class _Tp> constexpr bool std::operator!=(const std::complex<_Tp>&, const std::complex<_Tp>&)
+     operator!=(const complex<_Tp>& __x, const complex<_Tp>& __y)
+     ^~~~~~~~
+/usr/include/c++/6/complex:476:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::complex<_Tp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from ../src/DataProcessor.h:24:0,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/array:246:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator!=(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator!=(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+     ^~~~~~~~
+/usr/include/c++/6/array:246:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::array<_Tp, _Nm>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/vector:64:0,
+                 from ../src/DataProcessor.h:23,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_vector.h:1533:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator!=(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator!=(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_vector.h:1533:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/list:63:0,
+                 from ../src/DataProcessor.h:22,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_list.h:1894:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator!=(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)
+     operator!=(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_list.h:1894:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/list:63:0,
+                 from ../src/DataProcessor.h:22,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_list.h:293:5: note: candidate: template<class _Val> bool std::operator!=(const std::_List_iterator<_Tp>&, const std::_List_const_iterator<_Tp>&)
+     operator!=(const _List_iterator<_Val>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_list.h:293:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<int>::iterator {aka std::_List_iterator<int>}’ is not derived from ‘const std::_List_const_iterator<_Tp>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/6/bits/basic_ios.h:37,
+                 from /usr/include/c++/6/ios:44,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/streambuf_iterator.h:210:5: note: candidate: template<class _CharT, class _Traits> bool std::operator!=(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator!=(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^~~~~~~~
+/usr/include/c++/6/bits/streambuf_iterator.h:210:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/ios_base.h:46:0,
+                 from /usr/include/c++/6/ios:42,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/system_error:323:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_condition&)
+   operator!=(const error_condition& __lhs,
+   ^~~~~~~~
+/usr/include/c++/6/system_error:323:3: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const std::error_condition&’
+/usr/include/c++/6/system_error:319:3: note: candidate: bool std::operator!=(const std::error_condition&, const std::error_code&)
+   operator!=(const error_condition& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/usr/include/c++/6/system_error:319:3: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const std::error_condition&’
+/usr/include/c++/6/system_error:315:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_condition&)
+   operator!=(const error_code& __lhs, const error_condition& __rhs) noexcept
+   ^~~~~~~~
+/usr/include/c++/6/system_error:315:3: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const std::error_code&’
+/usr/include/c++/6/system_error:311:3: note: candidate: bool std::operator!=(const std::error_code&, const std::error_code&)
+   operator!=(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/usr/include/c++/6/system_error:311:3: note:   no known conversion for argument 1 from ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ to ‘const std::error_code&’
+In file included from /usr/include/c++/6/string:52:0,
+                 from /usr/include/c++/6/bits/locale_classes.h:40,
+                 from /usr/include/c++/6/bits/ios_base.h:41,
+                 from /usr/include/c++/6/ios:42,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/basic_string.h:5122:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/6/bits/basic_string.h:5122:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/string:52:0,
+                 from /usr/include/c++/6/bits/locale_classes.h:40,
+                 from /usr/include/c++/6/bits/ios_base.h:41,
+                 from /usr/include/c++/6/ios:42,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/basic_string.h:5110:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const _CharT* __lhs,
+     ^~~~~~~~
+/usr/include/c++/6/bits/basic_string.h:5110:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   mismatched types ‘const _CharT*’ and ‘std::_List_iterator<long int>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/string:52:0,
+                 from /usr/include/c++/6/bits/locale_classes.h:40,
+                 from /usr/include/c++/6/bits/ios_base.h:41,
+                 from /usr/include/c++/6/ios:42,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/basic_string.h:5097:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator!=(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator!=(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/usr/include/c++/6/bits/basic_string.h:5097:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/string:41:0,
+                 from /usr/include/c++/6/bits/locale_classes.h:40,
+                 from /usr/include/c++/6/bits/ios_base.h:41,
+                 from /usr/include/c++/6/ios:42,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/allocator.h:151:5: note: candidate: template<class _Tp> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator!=(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^~~~~~~~
+/usr/include/c++/6/bits/allocator.h:151:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::allocator<_CharT>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/string:41:0,
+                 from /usr/include/c++/6/bits/locale_classes.h:40,
+                 from /usr/include/c++/6/bits/ios_base.h:41,
+                 from /usr/include/c++/6/ios:42,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/allocator.h:145:5: note: candidate: template<class _T1, class _T2> bool std::operator!=(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator!=(const allocator<_T1>&, const allocator<_T2>&)
+     ^~~~~~~~
+/usr/include/c++/6/bits/allocator.h:145:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::allocator<_CharT>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/6/bits/char_traits.h:39,
+                 from /usr/include/c++/6/ios:40,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_iterator.h:1131:5: note: candidate: template<class _Iterator> bool std::operator!=(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator!=(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_iterator.h:1131:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/6/bits/char_traits.h:39,
+                 from /usr/include/c++/6/ios:40,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_iterator.h:1125:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator!=(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_iterator.h:1125:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/6/bits/char_traits.h:39,
+                 from /usr/include/c++/6/ios:40,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_iterator.h:361:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator!=(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_iterator.h:361:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/6/bits/char_traits.h:39,
+                 from /usr/include/c++/6/ios:40,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_iterator.h:304:5: note: candidate: template<class _Iterator> bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator!=(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_iterator.h:304:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/6/bits/char_traits.h:39,
+                 from /usr/include/c++/6/ios:40,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/stl_pair.h:444:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator!=(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator!=(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/usr/include/c++/6/bits/stl_pair.h:444:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::pair<_T1, _T2>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+In file included from /usr/include/c++/6/iosfwd:40:0,
+                 from /usr/include/c++/6/ios:38,
+                 from /usr/include/c++/6/ostream:38,
+                 from /usr/include/c++/6/iostream:39,
+                 from ../src/DataProcessor.h:20,
+                 from ../src/DataProcessor.cpp:8:
+/usr/include/c++/6/bits/postypes.h:221:5: note: candidate: template<class _StateT> bool std::operator!=(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator!=(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^~~~~~~~
+/usr/include/c++/6/bits/postypes.h:221:5: note:   template argument deduction/substitution failed:
+../src/DataProcessor.cpp:103:71: note:   ‘std::__cxx11::list<long int>::iterator {aka std::_List_iterator<long int>}’ is not derived from ‘const std::fpos<_StateT>’
+   for (list<long int>::iterator it = pslist.begin(); it != pslist.end();
+                                                                       ^
+../src/DataProcessor.cpp:346:60: error: no matching function for call to ‘DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<int>&, double&, double&, std::vector<double>*&, std::vector<double>*&, std::vector<unsigned int>*&, std::vector<double>*&)’
+      m_min_on_time, onTimes, offTimes, pktCounter, fileSize);
+                                                            ^
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:592:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:592:7: note:   candidate expects 5 arguments, 8 provided
+../src/DataProcessor.h:606:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:606:7: note:   no known conversion for argument 2 from ‘std::__cxx11::list<int>’ to ‘std::__cxx11::list<double>&’
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+10:52:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:346:60: error: no matching function for call to ‘DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<int>&, double&, double&, std::vector<double>*&, std::vector<double>*&, std::vector<unsigned int>*&, std::vector<double>*&)’
+      m_min_on_time, onTimes, offTimes, pktCounter, fileSize);
+                                                            ^
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:592:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:592:7: note:   candidate expects 5 arguments, 8 provided
+../src/DataProcessor.h:606:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:606:7: note:   no known conversion for argument 2 from ‘std::__cxx11::list<int>’ to ‘std::__cxx11::list<double>&’
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+10:54:30 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:100:11: error: no matching function for call to ‘DatabaseInterface::getFlowData(const string&, long int&, const char [11], std::__cxx11::list<unsigned int>&)’
+     pslist);
+           ^
+In file included from ../src/DataProcessor.h:32:0,
+                 from ../src/DataProcessor.cpp:8:
+../src/DatabaseInterface.h:127:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, long int*)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:127:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘long int*’
+../src/DatabaseInterface.h:133:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, double*)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:133:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘double*’
+../src/DatabaseInterface.h:139:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, std::__cxx11::string*)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:139:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘std::__cxx11::string* {aka std::__cxx11::basic_string<char>*}’
+../src/DatabaseInterface.h:145:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, std::__cxx11::list<long int>&)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:145:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘std::__cxx11::list<long int>&’
+../src/DatabaseInterface.h:151:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, std::__cxx11::list<int>&)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:151:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘std::__cxx11::list<int>&’
+../src/DatabaseInterface.h:157:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, std::__cxx11::list<double>&)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:157:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘std::__cxx11::list<double>&’
+../src/DatabaseInterface.h:163:6: note: candidate: int DatabaseInterface::getFlowData(std::__cxx11::string, int, std::__cxx11::string, std::__cxx11::list<std::__cxx11::basic_string<char> >&)
+  int getFlowData(string experimentName, int flowID, string label,
+      ^~~~~~~~~~~
+../src/DatabaseInterface.h:163:6: note:   no known conversion for argument 4 from ‘std::__cxx11::list<unsigned int>’ to ‘std::__cxx11::list<std::__cxx11::basic_string<char> >&’
+../src/DataProcessor.cpp:346:60: error: no matching function for call to ‘DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<unsigned int>&, double&, double&, std::vector<double>*&, std::vector<double>*&, std::vector<unsigned int>*&, std::vector<double>*&)’
+      m_min_on_time, onTimes, offTimes, pktCounter, fileSize);
+                                                            ^
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:592:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:592:7: note:   candidate expects 5 arguments, 8 provided
+../src/DataProcessor.h:606:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:606:7: note:   no known conversion for argument 2 from ‘std::__cxx11::list<unsigned int>’ to ‘std::__cxx11::list<double>&’
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+10:54:44 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:346:60: error: no matching function for call to ‘DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<int>&, double&, double&, std::vector<double>*&, std::vector<double>*&, std::vector<unsigned int>*&, std::vector<double>*&)’
+      m_min_on_time, onTimes, offTimes, pktCounter, fileSize);
+                                                            ^
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:592:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:592:7: note:   candidate expects 5 arguments, 8 provided
+../src/DataProcessor.h:606:7: note: candidate: void DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<double>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<double>*)
+  void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
+       ^~~~~~~~~
+../src/DataProcessor.h:606:7: note:   no known conversion for argument 2 from ‘std::__cxx11::list<int>’ to ‘std::__cxx11::list<double>&’
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+10:59:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:341:25: warning: unused variable ‘pktCounter’ [-Wunused-variable]
+   vector<unsigned int>* pktCounter = new vector<unsigned int>;
+                         ^~~~~~~~~~
+../src/DataProcessor.cpp:342:19: warning: unused variable ‘fileSize’ [-Wunused-variable]
+   vector<double>* fileSize = new vector<double>;
+                   ^~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:480:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:741:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:780:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+10:59:43 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:13:44 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:341:25: warning: unused variable ‘pktCounter’ [-Wunused-variable]
+   vector<unsigned int>* pktCounter = new vector<unsigned int>;
+                         ^~~~~~~~~~
+../src/DataProcessor.cpp:342:19: warning: unused variable ‘fileSize’ [-Wunused-variable]
+   vector<double>* fileSize = new vector<double>;
+                   ^~~~~~~~
+../src/DataProcessor.cpp: In member function ‘void DataProcessor::calcOnOff(std::__cxx11::list<double>&, std::__cxx11::list<unsigned int>&, time_sec, time_sec, std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<double>*)’:
+../src/DataProcessor.cpp:2757:54: error: conversion from ‘std::__cxx11::list<unsigned int>::iterator {aka std::_List_iterator<unsigned int>}’ to non-scalar type ‘std::__cxx11::list<double>::iterator {aka std::_List_iterator<double>}’ requested
+  list<packet_size>::iterator psList_it = psList.begin();
+                                          ~~~~~~~~~~~~^~
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+11:17:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:341:25: warning: unused variable ‘pktCounter’ [-Wunused-variable]
+   vector<unsigned int>* pktCounter = new vector<unsigned int>;
+                         ^~~~~~~~~~
+../src/DataProcessor.cpp:342:19: warning: unused variable ‘fileSize’ [-Wunused-variable]
+   vector<double>* fileSize = new vector<double>;
+                   ^~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+11:18:15 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:47:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+11:47:43 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+11:52:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:349:50: error: no matching function for call to ‘NetworkFlow::setSessionTimesOnOff(std::vector<double>*&, std::vector<double>*&)’
+   netFlow->setSessionTimesOnOff(onTimes, offTimes);
+                                                  ^
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/DataProcessor.h:33,
+                 from ../src/DataProcessor.cpp:8:
+../src/NetworkFlow.h:136:7: note: candidate: void NetworkFlow::setSessionTimesOnOff(std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<unsigned int>*)
+  void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
+       ^~~~~~~~~~~~~~~~~~~~
+../src/NetworkFlow.h:136:7: note:   candidate expects 4 arguments, 2 provided
+src/subdir.mk:45: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+11:52:46 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:483:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:744:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:783:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:174:50: error: no matching function for call to ‘NetworkFlow::setSessionTimesOnOff(std::vector<double>*&, std::vector<double>*&)’
+   netFlow->setSessionTimesOnOff(onTimes, offTimes);
+                                                  ^
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h:136:7: note: candidate: void NetworkFlow::setSessionTimesOnOff(std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<unsigned int>*)
+  void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
+       ^~~~~~~~~~~~~~~~~~~~
+../src/NetworkFlow.h:136:7: note:   candidate expects 4 arguments, 2 provided
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/NetworkTrace.o' failed
+make: *** [src/NetworkTrace.o] Error 1
+11:55:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:490:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:751:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:790:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:174:50: error: no matching function for call to ‘NetworkFlow::setSessionTimesOnOff(std::vector<double>*&, std::vector<double>*&)’
+   netFlow->setSessionTimesOnOff(onTimes, offTimes);
+                                                  ^
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h:136:7: note: candidate: void NetworkFlow::setSessionTimesOnOff(std::vector<double>*, std::vector<double>*, std::vector<unsigned int>*, std::vector<unsigned int>*)
+  void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
+       ^~~~~~~~~~~~~~~~~~~~
+../src/NetworkFlow.h:136:7: note:   candidate expects 4 arguments, 2 provided
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+src/subdir.mk:45: recipe for target 'src/NetworkTrace.o' failed
+make: *** [src/NetworkTrace.o] Error 1
+12:06:58 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:490:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:751:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:790:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:312:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:531:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+17:11:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:490:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:761:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:800:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:04:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DummyFlow.cpp:81:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:83:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:85:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/LibtinsFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/LibtinsFlow.d" -MT"src/LibtinsFlow.o" -o "src/LibtinsFlow.o" "../src/LibtinsFlow.cpp"
+In file included from ../src/LibtinsFlow.h:11:0,
+                 from ../src/LibtinsFlow.cpp:8:
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’ used but never defined
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+Finished building: ../src/LibtinsFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:490:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const string&)’:
+../src/DitgFlow.h:42:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:44:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:761:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:800:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:312:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:531:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:04:50 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:14:30 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:14:39 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:18:20 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:18:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:38:19 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:38:30 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:39:21 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:39:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:44:54 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:45:03 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:46:29 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:50:30 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘void unity_regression_tests()’:
+../src/Main.cpp:168:15: error: redeclaration of ‘NetworkTrace unity_nt’
+  NetworkTrace unity_nt;
+               ^~~~~~~~
+../src/Main.cpp:166:15: note: ‘NetworkTrace unity_nt’ previously declared here
+  NetworkTrace unity_nt;
+               ^~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+18:50:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘void unity_regression_tests()’:
+../src/Main.cpp:168:15: error: redeclaration of ‘NetworkTrace unity_nt’
+  NetworkTrace unity_nt;
+               ^~~~~~~~
+../src/Main.cpp:166:15: note: ‘NetworkTrace unity_nt’ previously declared here
+  NetworkTrace unity_nt;
+               ^~~~~~~~
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+18:51:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘void unity_regression_tests()’:
+../src/Main.cpp:168:15: error: redeclaration of ‘NetworkTrace unity_nt’
+  NetworkTrace unity_nt = NetworkTrace();
+               ^~~~~~~~
+../src/Main.cpp:166:15: note: ‘NetworkTrace unity_nt’ previously declared here
+  NetworkTrace unity_nt;
+               ^~~~~~~~
+make: *** [src/Main.o] Error 1
+src/subdir.mk:45: recipe for target 'src/Main.o' failed
+18:51:47 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:51:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:53:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/LibtinsFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:53:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+01:27:04 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: At global scope:
+../src/DummyFlow.cpp:83:58: error: conflicting declaration ‘const uint& nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                                          ^~~~~~
+../src/DummyFlow.cpp:83:38: note: previous declaration as ‘uint nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                      ^~~~~~
+../src/DummyFlow.cpp:82:6: error: prototype for ‘void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, uint, const string&)’ does not match any in class ‘DummyFlow’
+ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+      ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:14: error: candidate is: virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)’ used but never defined
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+01:28:37 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: At global scope:
+../src/DummyFlow.cpp:83:58: error: conflicting declaration ‘const uint& nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                                          ^~~~~~
+../src/DummyFlow.cpp:83:38: note: previous declaration as ‘uint nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                      ^~~~~~
+../src/DummyFlow.cpp:82:13: error: prototype for ‘void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, uint, const string&)’ does not match any in class ‘DummyFlow’
+ inline void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+             ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:14: error: candidate is: virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+01:28:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: At global scope:
+../src/DummyFlow.cpp:83:58: error: conflicting declaration ‘const uint& nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                                          ^~~~~~
+../src/DummyFlow.cpp:83:38: note: previous declaration as ‘uint nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                      ^~~~~~
+../src/DummyFlow.cpp:82:13: error: prototype for ‘void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, uint, const string&)’ does not match any in class ‘DummyFlow’
+ inline void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+             ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:14: error: candidate is: virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)’ used but never defined
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+make: *** [src/DummyFlow.o] Error 1
+01:28:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: At global scope:
+../src/DummyFlow.cpp:83:58: error: conflicting declaration ‘const uint& nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                                          ^~~~~~
+../src/DummyFlow.cpp:83:38: note: previous declaration as ‘uint nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                      ^~~~~~
+../src/DummyFlow.cpp:82:13: error: prototype for ‘void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, uint, const string&)’ does not match any in class ‘DummyFlow’
+ inline void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+             ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:14: error: candidate is: virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)
+  inline void flowGenerate(const counter& flowId, const time_sec& onTime,
+              ^~~~~~~~~~~~
+../src/DummyFlow.h:50:14: warning: inline function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)’ used but never defined
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+01:30:42 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: At global scope:
+../src/DummyFlow.cpp:83:58: error: conflicting declaration ‘const uint& nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                                          ^~~~~~
+../src/DummyFlow.cpp:83:38: note: previous declaration as ‘uint nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                      ^~~~~~
+../src/DummyFlow.cpp:82:6: error: prototype for ‘void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, uint, const string&)’ does not match any in class ‘DummyFlow’
+ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+      ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:7: error: candidate is: virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)
+  void flowGenerate(const counter& flowId, const time_sec& onTime,
+       ^~~~~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+make: *** [src/DummyFlow.o] Error 1
+01:31:04 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: At global scope:
+../src/DummyFlow.cpp:83:58: error: conflicting declaration ‘const uint& nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                                          ^~~~~~
+../src/DummyFlow.cpp:83:38: note: previous declaration as ‘uint nbytes’
+   const unsigned int& npackets, uint nbytes, const uint& nbytes,
+                                      ^~~~~~
+../src/DummyFlow.cpp:82:6: error: prototype for ‘void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, uint, const string&)’ does not match any in class ‘DummyFlow’
+ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+      ^~~~~~~~~
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:7: error: candidate is: virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)
+  void flowGenerate(const counter& flowId, const time_sec& onTime,
+       ^~~~~~~~~~~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+01:32:36 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:7: error: extra qualification ‘DummyFlow::’ on member ‘flowGenerate’ [-fpermissive]
+  void DummyFlow::flowGenerate(const counter& flowId,
+       ^~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:89:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:91:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:93:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+make: *** [src/DummyFlow.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+01:34:18 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+In file included from ../src/DummyFlow.cpp:9:0:
+../src/DummyFlow.h:50:7: error: extra qualification ‘DummyFlow::’ on member ‘flowGenerate’ [-fpermissive]
+  void DummyFlow::flowGenerate(const counter& flowId,
+       ^~~~~~~~~
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:89:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:91:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:93:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+src/subdir.mk:42: recipe for target 'src/DummyFlow.o' failed
+make: *** [src/DummyFlow.o] Error 1
+01:36:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:89:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:91:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:93:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:490:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)’:
+../src/DitgFlow.h:43:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:45:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:761:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:800:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+01:36:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:19:43 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_OnOffSizes()’:
+../src/NetworkTrace.cpp:982:50: warning: for increment expression has no effect [-Wunused-value]
+  for (i = 0; i < tempTrace.networkFlow.size(); i < 0)
+                                                ~~^~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:19:59 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:23:22 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_OnOffSizes()’:
+../src/NetworkTrace.cpp:982:50: warning: for increment expression has no effect [-Wunused-value]
+  for (i = 0; i < tempTrace.networkFlow.size(); i < 0)
+                                                ~~^~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:23:29 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:24:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_OnOffSizes()’:
+../src/NetworkTrace.cpp:982:50: warning: for increment expression has no effect [-Wunused-value]
+  for (i = 0; i < tempTrace.networkFlow.size(); i < 0)
+                                                ~~^~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:24:47 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:25:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_OnOffSizes()’:
+../src/NetworkTrace.cpp:982:50: warning: for increment expression has no effect [-Wunused-value]
+  for (i = 0; i < tempTrace.networkFlow.size(); i < 0)
+                                                ~~^~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:25:24 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:27:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_OnOffSizes()’:
+../src/NetworkTrace.cpp:982:50: warning: for increment expression has no effect [-Wunused-value]
+  for (i = 0; i < tempTrace.networkFlow.size(); i < 0)
+                                                ~~^~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:27:16 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:27:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘bool NetworkTrace::test_OnOffSizes()’:
+../src/NetworkTrace.cpp:982:50: warning: for increment expression has no effect [-Wunused-value]
+  for (i = 0; i < tempTrace.networkFlow.size(); i < 0)
+                                                ~~^~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:28:03 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+02:28:45 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+02:28:51 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:17:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.h:33:0,
+                 from ../src/DataProcessor.cpp:8:
+../src/NetworkTrace.h:248:7: error: extra qualification ‘NetworkTrace::’ on member ‘getHostIpMac’ [-fpermissive]
+  int  NetworkTrace::getHostIpMac(int& counter, const char* filename, char* ipAddr, char* MacAddr);
+       ^~~~~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+14:18:41 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:26:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:89:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:91:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:93:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+../src/NetworkFlow.cpp:490:1: warning: multi-line comment [-Wcomment]
+ //    "No more Off times available on the stack. The last was the \
+ ^
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const unsigned int&, const uint&, const string&)’:
+../src/DitgFlow.h:43:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/DitgFlow.h:45:7: warning: unused variable ‘userOption’ [-Wunused-variable]
+   int userOption;
+       ^~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:761:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:800:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:312:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:591:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:19:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
+../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+In file included from ../src/NetworkTrace.h:43:0,
+                 from ../src/NetworkTrace.cpp:8:
+../src/NetworkFlow.h: At global scope:
+../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
+  inline virtual std::thread flowThread() = 0;
+                             ^~~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 

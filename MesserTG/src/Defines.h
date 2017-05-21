@@ -10,6 +10,17 @@
 //#include <string>
 using namespace std;
 
+/**
+Alguns tutoriais importantes:
+Select ao inves de sleep:
+http://stackoverflow.com/questions/3125645/why-use-select-instead-of-sleep
+Current time thread safe:
+http://stackoverflow.com/questions/3220224/is-the-gettimeofday-function-thread-safe-in-linux
+http://stackoverflow.com/questions/18348383/time-related-functions-and-multiple-threads
+http://stackoverflow.com/questions/10894504/is-there-any-stdchrono-thread-safety-guaranty-even-with-multicore-context
+http://stackoverflow.com/questions/3220224/is-the-gettimeofday-function-thread-safe-in-linux
+http://en.cppreference.com/w/cpp/chrono/system_clock/now
+ */
 
 #define DEBUG_NetworkTrace_writeToFile 1
 

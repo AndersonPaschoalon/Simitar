@@ -11,40 +11,40 @@
 #include "PrintCharFlow.h"
 #include "IperfFlow.h"
 #include "OstinatoFlow.h"
-#include "NemesisFlow.h"
+//#include "NemesisFlow.h"
 #include "LibtinsFlow.h"
 
 NetworkFlow* NetworkFlow::make_flow(const string& choise)
 {
 	/*
-	if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
-	{
-		return new DitgFlow;
-	}
-	else if ((choise == "iperf") || (choise == "Iperf") || (choise == "IPERF"))
-	{
-		return new IperfFlow;
-	}
-	else if ((choise == "ostinato") || (choise == "Ostinato")
-			|| (choise == "OSTINATO"))
-	{
-		return new OstinatoFlow;
-	}
-	else if ((choise == "Nemesis") || (choise == "nemesis")
-			|| (choise == "NEMESIS"))
-	{
-		return new NemesisFlow;
-	}
-	else if ((choise == "Libtins") || (choise == "libtins")
-			|| (choise == "LIBTINS"))
-	{
-		return new LibtinsFlow;
-	}
-	else
-	{
-		return new DummyFlow;
-	}
-	*/
+	 if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
+	 {
+	 return new DitgFlow;
+	 }
+	 else if ((choise == "iperf") || (choise == "Iperf") || (choise == "IPERF"))
+	 {
+	 return new IperfFlow;
+	 }
+	 else if ((choise == "ostinato") || (choise == "Ostinato")
+	 || (choise == "OSTINATO"))
+	 {
+	 return new OstinatoFlow;
+	 }
+	 else if ((choise == "Nemesis") || (choise == "nemesis")
+	 || (choise == "NEMESIS"))
+	 {
+	 return new NemesisFlow;
+	 }
+	 else if ((choise == "Libtins") || (choise == "libtins")
+	 || (choise == "LIBTINS"))
+	 {
+	 return new LibtinsFlow;
+	 }
+	 else
+	 {
+	 return new DummyFlow;
+	 }
+	 */
 	return new DummyFlow;
 
 }
@@ -79,9 +79,11 @@ NetworkFlow::NetworkFlow()
 
 	/// Interarrival
 	ptr_interArrivalModelList = NULL;
-	interDepertureTimeModel_counter = 0;
+	//interDepertureTimeModel_counter = 0;
 	ptr_session_onTimes = NULL;
 	ptr_session_offTimes = NULL;
+	ptr_session_nBytes = NULL;
+	ptr_session_nPackets = NULL;
 	sessionOnTimes_counter = 0;
 	sessionOffTimes_counter = 0;
 
@@ -92,8 +94,8 @@ NetworkFlow::NetworkFlow()
 	nkbytes_mode2 = 0;
 	npacket_mode1 = 0;
 	npackets_mode2 = 0;
-	packetSizeModel1_counter = 0;
-	packetSizeModel2_counter = 0;
+	//packetSizeModel1_counter = 0;
+	//packetSizeModel2_counter = 0;
 
 }
 
@@ -103,8 +105,11 @@ NetworkFlow::~NetworkFlow()
 	//MESSER_DEBUG("@ <%s, %s>");
 
 	ptr_interArrivalModelList->clear();
+
 	ptr_session_onTimes->clear();
 	ptr_session_offTimes->clear();
+	ptr_session_nBytes->clear();
+	ptr_session_nPackets->clear();
 
 	ptr_psMode1->clear();
 	ptr_psMode2->clear();
@@ -120,6 +125,8 @@ NetworkFlow::~NetworkFlow()
 
 	delete ptr_session_onTimes;
 	delete ptr_session_offTimes;
+	delete ptr_session_nBytes;
+	delete ptr_session_nPackets;
 
 	/// packet-size data structures
 	delete ptr_psMode1;
@@ -434,14 +441,17 @@ void NetworkFlow::setInterDepertureTimeModels(
 {
 
 	ptr_interArrivalModelList = modelList;
-	interDepertureTimeModel_counter = 0;
+	//interDepertureTimeModel_counter = 0;
 }
 
 void NetworkFlow::setSessionTimesOnOff(vector<time_sec>* onTimesVec,
-		vector<time_sec>* offTimesVec)
+		vector<time_sec>* offTimesVec, vector<unsigned int>* pktCounter,
+		vector<unsigned int>* fileSize)
 {
 	ptr_session_onTimes = onTimesVec;
 	ptr_session_offTimes = offTimesVec;
+	ptr_session_nPackets = pktCounter;
+	ptr_session_nBytes = fileSize;
 }
 
 time_sec NetworkFlow::getSessionOnTime_next()
@@ -494,6 +504,16 @@ time_sec NetworkFlow::getSessionOffTime_next()
 	}
 
 	return (theTime);
+}
+
+uint NetworkFlow::getSessionOnTime_nPackets() const
+{
+	return(ptr_session_nPackets->at(sessionOnTimes_counter));
+}
+
+uint NetworkFlow::getSessionOnTime_nBytes() const
+{
+	return(ptr_session_nBytes->at(sessionOnTimes_counter));
 }
 
 StochasticModelFit NetworkFlow::getPacketSizeModelMode1(unsigned int position)
@@ -644,8 +664,8 @@ void NetworkFlow::setPacketSizeModel(list<StochasticModelFit>* modelVet1,
 {
 	ptr_psMode1 = modelVet1;
 	ptr_psMode2 = modelVet2;
-	packetSizeModel1_counter = 0;
-	packetSizeModel2_counter = 0;
+	//packetSizeModel1_counter = 0;
+	//packetSizeModel2_counter = 0;
 	nkbytes_mode1 = nkbytesMode1;
 	nkbytes_mode2 = nkbytesMode2;
 	npacket_mode1 = nPacketsMode1;
@@ -728,11 +748,11 @@ const string& NetworkFlow::getMacDstAddr()
 
 void NetworkFlow::resetCounters()
 {
-	interDepertureTimeModel_counter = 0;
+	//interDepertureTimeModel_counter = 0;
 	sessionOnTimes_counter = 0;
 	sessionOffTimes_counter = 0;
-	packetSizeModel1_counter = 0;
-	packetSizeModel2_counter = 0;
+	//packetSizeModel1_counter = 0;
+	//packetSizeModel2_counter = 0;
 }
 
 inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
@@ -836,6 +856,16 @@ vector<time_sec> *NetworkFlow::getSessionOnVector()
 vector<time_sec> *NetworkFlow::getSessionOffVector()
 {
 	return (ptr_session_offTimes);
+}
+
+vector<uint>* NetworkFlow::getSessionOnPacketsVector()
+{
+	return(ptr_session_nPackets);
+}
+
+vector<uint>* NetworkFlow::getSessionOnBytesVector()
+{
+	return(ptr_session_nBytes);
 }
 
 //DEBUG ERASE IT

@@ -180,11 +180,10 @@ public:
 		m_trafficGenEngine = trafficGenEngine;
 	}
 
-
 	inline int setDstIP(const string& dstIpAddr);
 
-	inline int setDstNetwork(const string& dstIpPrefix, const string& dstNetmask);
-
+	inline int setDstNetwork(const string& dstIpPrefix,
+			const string& dstNetmask);
 
 	void regression_tests();
 
@@ -230,6 +229,8 @@ private:
 	static const char * LABEL_SESSION;
 	static const char * LABEL_SESSION_ON;
 	static const char * LABEL_SESSION_OFF;
+	static const char * LABEL_SESSION_NPACKETS;
+	static const char * LABEL_SESSION_NBYTES;
 	static const char * LABEL_PACKETSIZES;
 	static const char * LABEL_PSMODE1;
 	static const char * LABEL_PSMODE2;
@@ -243,12 +244,15 @@ private:
 	static const char * LABEL_NKBYTES;
 
 	//methods
+	int getHostIpMac(int& counter, const char* filename, char* ipAddr,
+			char* MacAddr);
+
 	void string2charvet(const string s, char* vetc) const;
 
 	//
 	bool test_string2charvet();
 	bool test_readWrite2XML();
-
+	bool test_OnOffSizes();
 };
 
 struct model_data_struct
@@ -266,6 +270,8 @@ struct flow_data_struct
 
 	char session_OnTimes[CHAR_LARGE_BUFFER];
 	char session_OffTimes[CHAR_LARGE_BUFFER];
+	char session_nPackets[CHAR_LARGE_BUFFER];
+	char session_nBytes[CHAR_LARGE_BUFFER];
 
 	unsigned int n_interFileModels;
 	modelData* interFileOn;

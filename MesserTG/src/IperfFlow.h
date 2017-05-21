@@ -23,7 +23,8 @@ public:
 	}
 
 	inline void flowGenerate(const counter& flowId, const time_sec& onTime,
-			const unsigned int& npackets, const string& netInterface)
+			const unsigned int& npackets, const uint& nbytes,
+			const string& netInterface)
 	{
 	}
 };

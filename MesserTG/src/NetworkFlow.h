@@ -57,8 +57,9 @@ public:
 	static NetworkFlow *make_flow(const string& choise);
 
 	inline virtual std::thread flowThread() = 0;
-	inline virtual void flowGenerate(const counter& flowId,
-			const time_sec& onTime, const unsigned int& npackets,
+
+	virtual void flowGenerate(const counter& flowId,
+			const time_sec& onTime, const uint& npackets, const uint& nbytes,
 			const string& netInterface) = 0;
 
 	inline int getLocalIfIp(char* interface, char* ipaddr);
@@ -82,8 +83,8 @@ public:
 	int randTranportPort();
 	protocol getApplicationProtocol() const;
 	void setApplicationProtocol(protocol applicationProtocol);
-	unsigned int getFlowDsByte() const;
-	void setFlowDsByte(unsigned int flowDsByte);
+	uint getFlowDsByte() const;
+	void setFlowDsByte(uint flowDsByte);
 	double getFlowDuration() const;
 	void setFlowDuration(time_sec flowDuration);
 	double getFlowStartDelay() const;
@@ -103,47 +104,120 @@ public:
 	void setNetworkProtocol(protocol networkProtocol);
 	const string& getNetworkSrcAddr() const;
 	void setNetworkSrcAddr(const string& networkSrcAddr);
-	unsigned int getNetworkTtl() const;
-	void setNetworkTtl(unsigned int networkTtl);
+	uint getNetworkTtl() const;
+	void setNetworkTtl(uint networkTtl);
 	unsigned long int getNumberOfKbytes() const;
 	void setNumberOfKbytes(unsigned long int numberOfKbytes);
 	unsigned long int getNumberOfPackets() const;
 	void setNumberOfPackets(unsigned long int numberOfPackets);
 
-	unsigned int getTransportDstPort() const;
-	void setTransportDstPort(unsigned int transportDstPort);
-	unsigned int getTransportSctpAssociationId() const;
-	void setTransportSctpAssociationId(unsigned int transportSctpAssociationId);
-	unsigned int getTransportSctpMaxStreams() const;
-	void setTransportSctpMaxStreams(unsigned int transportSctpMaxStreams);
-	unsigned int getTransportSrcPort() const;
-	void setTransportSrcPort(unsigned int transportSrcPort);
+	uint getTransportDstPort() const;
+	void setTransportDstPort(uint transportDstPort);
+	uint getTransportSctpAssociationId() const;
+	void setTransportSctpAssociationId(uint transportSctpAssociationId);
+	uint getTransportSctpMaxStreams() const;
+	void setTransportSctpMaxStreams(uint transportSctpMaxStreams);
+	uint getTransportSrcPort() const;
+	void setTransportSrcPort(uint transportSrcPort);
 	protocol getTransportProtocol() const;
 	void setTransportProtocol(protocol transportProtocol);
 
 	void setInterDepertureTimeModels(list<StochasticModelFit>* modelList);
 //	StochasticModelFit getInterDepertureTimeModel_next();
-	StochasticModelFit getInterDepertureTimeModel(unsigned int position);
-	unsigned int getNumberOfInterdepertureTimeModels();
+	StochasticModelFit getInterDepertureTimeModel(uint position);
+	uint getNumberOfInterdepertureTimeModels();
 
 	//void setInterFileTimeModel(list<StochasticModelFit>* modelList);
 	//StochasticModelFit getInterFileTimeModel_next();
 	//time_sec getInterFileTime();
-	//unsigned int getNumberOfInterfileTimeModels();
+	//uint getNumberOfInterfileTimeModels();
 
+//	void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
+//			vector<time_sec>* offTimesVec);
 	void setSessionTimesOnOff(vector<time_sec>* onTimesVec,
-			vector<time_sec>* offTimesVec);
+			vector<time_sec>* offTimesVec, vector<uint>* pktCounter,
+			vector<uint>* fileSize);
+
+	/**
+	 * @brief Returns ON times of the traffic bursts sessions.
+	 * Returns ON times of the traffic bursts sessions in a sequential order.
+	 * When the available session ON values are over, it reset its counters,
+	 * and starts to return the first value.
+	 *
+	 * @return ON times of the traffic bursts sessions
+	 */
 	time_sec getSessionOnTime_next();
+
+	/**
+	 * @brief Returns OFF times of the traffic bursts sessions.
+	 * Returns OFF times of the traffic bursts sessions in a sequential order.
+	 * When the available session ON values are over, since the size of this
+	 * vector is (n-1), where n is the size of the Session On times vector,
+	 * it returns 0. Then, it starts sending the first values again. It is
+	 * implemented in that way, to be possible in a loop  to easely know when
+	 * the Session values are.
+	 * Example of usage: prints all on off times:
+	 * time_sec off_time;
+	 * for(;;){
+	 *     std::cout << "on: " << getSessionOnTime_next()  << std::endl;
+	 *     off_time = getSessionOffTime_next;
+	 *     if(off_time == 0)
+	 *         break;
+	 *     else
+	 *   	   std::cout << "off: " << off_time << endl;
+	 * }
+	 *
+	 * @return OFF times of the traffic bursts sessions
+	 */
 	time_sec getSessionOffTime_next();
-//	void getSessionOfOffVectors(vector<time_sec>* onTimes,
-//			vector<time_sec>* offTimes);
+
+	/**
+	 * @brief Returns number of packets of the current session refereed by the
+	 * last call of getSessionOnTime_next.
+	 * Example of usage: prints all on off times, and number of packets:
+	 * time_sec off_time;
+	 * for(;;){
+	 *     std::cout << "on: " << getSessionOnTime_next() ;
+	 *     std::cout << ", npkts:" << getSessionOnTime_nPackets << std::endl;
+	 *     off_time = getSessionOffTime_next;
+	 *     if(off_time == 0)
+	 *         break;
+	 *     else
+	 *   	   std::cout << "off: " << off_time << endl;
+	 * }
+	 *
+	 * @return Number of packets of the current session
+	 */
+	uint getSessionOnTime_nPackets() const;
+
+	/**
+	 * @brief Returns number of bytes of the current session refereed by the
+	 * last call of getSessionOnTime_next.
+	 * Example of usage: prints all on off times, and number of packets:
+	 * time_sec off_time;
+	 * for(;;){
+	 *     std::cout << "on: " << getSessionOnTime_next() ;
+	 *     std::cout << ", nbytes:" << getSessionOnTime_nBytes << std::endl;
+	 *     off_time = getSessionOffTime_next;
+	 *     if(off_time == 0)
+	 *         break;
+	 *     else
+	 *   	   std::cout << "off: " << off_time << endl;
+	 * }
+	 *
+	 * @return Number of bytes of the current session
+	 */
+	uint getSessionOnTime_nBytes() const;
+
 	vector<time_sec>* getSessionOnVector();
 	vector<time_sec>* getSessionOffVector();
+	vector<uint>* getSessionOnPacketsVector();
+	vector<uint>* getSessionOnBytesVector();
 
 //	StochasticModelFit getPacketSizeModelMode1_next();
 //	StochasticModelFit getPacketSizeModelMode2_next();
-	StochasticModelFit getPacketSizeModelMode1(unsigned int i);
-	StochasticModelFit getPacketSizeModelMode2(unsigned int i);
+	StochasticModelFit getPacketSizeModelMode1(uint i);
+	StochasticModelFit getPacketSizeModelMode2(uint i);
 
 	void setPacketSizeModel(list<StochasticModelFit>* modelList1,
 			list<StochasticModelFit>* modelList2, long int nkbytesMode1,
@@ -154,18 +228,18 @@ public:
 	long int getNpacketsMode1() const;
 	long int getNpacketsMode2() const;
 
-	unsigned int getNumberOfPsMode2Models() const;
-	unsigned int getNumberOfPsMode1Models() const;
+	uint getNumberOfPsMode2Models() const;
+	uint getNumberOfPsMode1Models() const;
 
 	//DEBUG
 	void printModels();
 
-	unsigned int getFlowId() const
+	uint getFlowId() const
 	{
 		return flowId;
 	}
 
-	void setFlowId(unsigned int flowId)
+	void setFlowId(uint flowId)
 	{
 		this->flowId = flowId;
 	}
@@ -180,10 +254,10 @@ private:
 
 	time_sec flow_duration;
 	time_sec flow_start_delay;
-	unsigned int flow_ds_byte;
+	uint flow_ds_byte;
 	unsigned long int number_of_packets;
 	unsigned long int number_of_kbytes;
-	unsigned int flowId;
+	uint flowId;
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Protocol stack options
@@ -195,18 +269,18 @@ private:
 	string mac_dst;
 
 	/// L3: Network Layer
-	unsigned int network_ttl;
+	uint network_ttl;
 	protocol network_protocol;
 	string network_dst_addr;
 	string network_src_addr;
 	int network_hostList_conter;
 
 	///L4: Transport Layer
-	unsigned int transport_dst_port;
-	unsigned int transport_src_port;
+	uint transport_dst_port;
+	uint transport_src_port;
 	protocol transport_protocol;
-	unsigned int transport_sctp_association_id;
-	unsigned int transport_sctp_max_streams;
+	uint transport_sctp_association_id;
+	uint transport_sctp_max_streams;
 
 	/// L5: Application Layer
 	protocol application_protocol;
@@ -217,10 +291,16 @@ private:
 
 	/// Interarrival
 	list<StochasticModelFit>* ptr_interArrivalModelList; //file interdeperture time
-	counter interDepertureTimeModel_counter = 0; //counter of for model get method
+	//counter interDepertureTimeModel_counter = 0; //counter of for model get method
 	/// Session on/off
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Session model
+	////////////////////////////////////////////////////////////////////////////
 	vector<time_sec>* ptr_session_onTimes;
 	vector<time_sec>* ptr_session_offTimes;
+	vector<uint>* ptr_session_nPackets;
+	vector<uint>* ptr_session_nBytes;
 	counter sessionOnTimes_counter = 0;
 	counter sessionOffTimes_counter = 0;
 
@@ -234,8 +314,8 @@ private:
 	long int nkbytes_mode2;
 	long int npacket_mode1;
 	long int npackets_mode2;
-	counter packetSizeModel1_counter;
-	counter packetSizeModel2_counter;
+	//counter packetSizeModel1_counter;
+	//counter packetSizeModel2_counter;
 
 };
 

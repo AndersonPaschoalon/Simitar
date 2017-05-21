@@ -165,13 +165,26 @@ NetworkTrace::NetworkTrace(const string& fileName)
 		vector<time_sec>* onTimes = new vector<time_sec>;
 		vector<time_sec>* offTimes = new vector<time_sec>;
 
+		//new 19/5
+		vector<unsigned int>* pktCounter = new vector<unsigned int>;
+		vector<unsigned int>* fileSize = new vector<unsigned int>;
+
 		charvet2type(session_node->first_attribute(LABEL_SESSION_ON)->value(),
 				*onTimes);
 		charvet2type(session_node->first_attribute(LABEL_SESSION_OFF)->value(),
 				*offTimes);
 
+		//new 19/5
+		charvet2type(
+				session_node->first_attribute(LABEL_SESSION_NPACKETS)->value(),
+				*pktCounter);
+		charvet2type(
+				session_node->first_attribute(LABEL_SESSION_NBYTES)->value(),
+				*fileSize);
+
 		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
-		netFlow->setSessionTimesOnOff(onTimes, offTimes);
+		//new 19/5
+		netFlow->setSessionTimesOnOff(onTimes, offTimes, pktCounter, fileSize);
 
 		/// Packet sizes
 		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
@@ -470,6 +483,13 @@ int NetworkTrace::writeToFile(const string& fileName) const
 				fd[i].session_OnTimes);
 		vector2str(*networkFlow[i]->getSessionOffVector(),
 				fd[i].session_OffTimes);
+
+		//new 20/5
+		vector2str(*networkFlow[i]->getSessionOnBytesVector(),
+				fd[i].session_nBytes);
+		vector2str(*networkFlow[i]->getSessionOnPacketsVector(),
+				fd[i].session_nPackets);
+
 		MESSER_DEBUG(
 				"fd[%d].session_OnTimes=[%s], fd[%d].session_OffTimes=[%s]", i,
 				fd[i].session_OnTimes, i, fd[i].session_OffTimes);
@@ -638,6 +658,14 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		sessionOnOffTimes->append_attribute(
 				doc.allocate_attribute(LABEL_SESSION_OFF,
 						fd[i].session_OffTimes));
+
+		sessionOnOffTimes->append_attribute(
+				doc.allocate_attribute(LABEL_SESSION_NPACKETS,
+						fd[i].session_nPackets));
+		sessionOnOffTimes->append_attribute(
+				doc.allocate_attribute(LABEL_SESSION_NBYTES,
+						fd[i].session_nBytes));
+
 		flow->append_node(sessionOnOffTimes);
 
 		//Packet Size models
@@ -816,6 +844,79 @@ void NetworkTrace::string2charvet(const string s, char* vetc) const
 
 }
 
+int  NetworkTrace::getHostIpMac(int& counter, const char* filename, char* ipAddr, char* MacAddr)
+{
+	int filePosition = 0;
+	char strLine[50];
+	char** tokens = NULL;
+	if(counter == 0)
+		counter = 1;
+
+	//ifstream hostIpList("hostIpList.txt", ios::in);
+	ifstream hostIpList(filename, ios::in);
+	if(!hostIpList || isFileEmpty(hostIpList))
+	{
+		fprintf(stderr,"*Warning*: hostIpList.txt file is empty or do not exist.\nUsing default IP address 127.0.0.1\n");
+		strcpy(ipAddr, "127.0.0.1");
+		return (-1);
+	}
+	else{ //no empty file
+
+		hostIpList >> strLine;
+		filePosition++;
+
+		while( !hostIpList.eof() )
+		{
+			if( filePosition < counter)
+			{
+				hostIpList >> strLine;
+				filePosition++;
+			}
+			else
+			{
+				(counter)++;
+				break;
+			}
+		}
+		if(hostIpList.eof())
+		{
+			//EOF reached
+			hostIpList >> strLine;
+			hostIpList.clear();
+			hostIpList.seekg(0);
+			//hostIpList >> ipAddr;
+			counter = 1;
+		}
+	}
+
+	tokens = str_split(strLine, '@');
+	if(tokens)
+	{
+        int i;
+        for (i = 0; *(tokens + i); i++)
+        {
+        	if(i == 0)
+        	{
+        		strcpy(ipAddr, *(tokens + i));
+        	}
+        	else if(i == 1)
+        	{
+        		strcpy(MacAddr, *(tokens + i));
+        	}
+            free(*(tokens + i));
+        }
+        free(tokens);
+	}
+	else
+	{
+		fprintf(stderr,"*Error*: failed to break string into tokens");
+		return(-2);
+	}
+
+	return(0);
+}
+
+
 void NetworkTrace::regression_tests()
 {
 	RegressionTests rt = RegressionTests();
@@ -823,7 +924,8 @@ void NetworkTrace::regression_tests()
 	rt.printHeader("class NetworkTrace");
 	rt.printTestResult("string2charvet", test_string2charvet());
 	rt.printTestResult("Read and Write to the XML", test_readWrite2XML());
-
+	rt.printTestResult("test On/Off Vector sizes consistency",
+			test_OnOffSizes());
 }
 
 bool NetworkTrace::test_string2charvet()
@@ -881,6 +983,8 @@ const char * NetworkTrace::LABEL_INTERSESSION = "inter_session_times";
 const char * NetworkTrace::LABEL_SESSION = "session_times";
 const char * NetworkTrace::LABEL_SESSION_ON = "on_times";
 const char * NetworkTrace::LABEL_SESSION_OFF = "off_times";
+const char * NetworkTrace::LABEL_SESSION_NPACKETS = "n_packets";
+const char * NetworkTrace::LABEL_SESSION_NBYTES = "n_bytes";
 const char * NetworkTrace::LABEL_PACKETSIZES = "packet_sizes";
 const char * NetworkTrace::LABEL_PSMODE1 = "ps_mode1";
 const char * NetworkTrace::LABEL_PSMODE2 = "ps_mode2";
@@ -896,14 +1000,14 @@ const char * NetworkTrace::LABEL_NKBYTES = "n_kbytes";
 inline int NetworkTrace::setDstIP(const string& dstIpAddr)
 {
 	//TODO
-	return(0);
+	return (0);
 }
 
 inline int NetworkTrace::setDstNetwork(const string& dstIpPrefix,
 		const string& dstNetmask)
 {
 	//TODO
-	return(0);
+	return (0);
 }
 
 bool NetworkTrace::test_readWrite2XML()
@@ -912,18 +1016,23 @@ bool NetworkTrace::test_readWrite2XML()
 	FILE* in;
 	char buff[CHAR_BUFFER];
 	const char command[] =
-			"diff data/regression-tests/test-trace.xml data/regression-tests/test-trace.xml";
+			"diff data/regression-tests/test-trace.xml data/regression-tests/copy2-test-trace.xml";
 	//const char command[] = "ls -lahn data/regression-tests/";
 	const char mode[] = "r";
 
+	NetworkTrace tempTrace = NetworkTrace(
+			"data/regression-tests/test-trace.xml");
+	tempTrace.writeToFile("data/regression-tests/copy2-test-trace.xml");
 
 	if (!(in = popen(command, mode)))
 	{
 		return (false);
 	}
+	// If there is any differerence captured by diff, it prints in the
+	// stdout, and exists indicating test failed
 	while (fgets(buff, sizeof(buff), in) != NULL)
 	{
-		if ( strcmp(buff, "") != 0)
+		if (strcmp(buff, "") != 0)
 		{
 			fprintf(stderr, "diff:%s", buff);
 			noError = false;
@@ -933,3 +1042,47 @@ bool NetworkTrace::test_readWrite2XML()
 
 	return (noError);
 }
+
+bool NetworkTrace::test_OnOffSizes()
+{
+	NetworkTrace tempTrace = NetworkTrace(
+			"data/regression-tests/test-trace.xml");
+	uint i = 0;
+	vector<time_sec>* onvector;
+	vector<time_sec>* offvector;
+	vector<uint>* pktvector;
+	vector<uint>* bytesvector;
+
+	for (i = 0; i < tempTrace.networkFlow.size(); i++)
+	{
+
+		onvector = tempTrace.networkFlow[i]->getSessionOnVector();
+		offvector = tempTrace.networkFlow[i]->getSessionOffVector();
+		pktvector = tempTrace.networkFlow[i]->getSessionOnPacketsVector();
+		bytesvector = tempTrace.networkFlow[i]->getSessionOnBytesVector();
+
+		if (onvector->size() != pktvector->size())
+		{
+			cout << "flow[" << i << "]: OnVector.size()=" << onvector->size()
+					<< " OnPacketsVector.size()=" << pktvector->size() << endl;
+			return (false);
+		}
+		if (onvector->size() != bytesvector->size())
+		{
+			cout << "flow[" << i << "]: OnVector.size()=" << onvector->size()
+					<< " OnBytesVector.size()=" << bytesvector->size() << endl;
+			return (false);
+		}
+		if (unsigned(onvector->size() - 1) != unsigned(offvector->size()))
+		{
+			cout << "flow[" << i << "]: OnVector.size()=" << onvector->size()
+					<< " OffVector.size()=" << offvector->size() << endl;
+			return (false);
+		}
+
+	}
+
+	return (true);
+
+}
+

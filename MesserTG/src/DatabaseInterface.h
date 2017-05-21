@@ -155,6 +155,12 @@ public:
 	 * Retrieve a
 	 */
 	int getFlowData(string experimentName, int flowID, string label,
+			list<unsigned int>& value_list);
+
+	/**
+	 * Retrieve a
+	 */
+	int getFlowData(string experimentName, int flowID, string label,
 			list<double>& value_list);
 
 	/**

@@ -45,10 +45,18 @@ public:
 
 	/**
 	 *
-	 * @return
+	 * @param flowId
+	 * @param onTime
+	 * @param npackets
+	 * @param nbytes
+	 * @param netInterface
 	 */
-	inline void flowGenerate(const counter& flowId, const time_sec& onTime,
-			const unsigned int& npackets, const string& netInterface);
+	void flowGenerate(const counter& flowId,
+				const time_sec& onTime, const uint& npackets, const uint& nbytes,
+				const string& netInterface);
+//	void flowGenerate(const counter& flowId, const time_sec& onTime,
+//			const unsigned int& npackets, const uint& nbytes,
+//			const string& netInterface);
 
 	void flowStart();
 

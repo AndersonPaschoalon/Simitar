@@ -8,11 +8,15 @@
 #ifndef CFUNCTIONS_H_
 #define CFUNCTIONS_H_
 
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
 #include <string.h>
+#include <iostream>
 #include <string>
 #include <list>
 #include <armadillo>
+
 
 using std::list;
 using std::string;
@@ -54,7 +58,7 @@ void vector2str(vector<long int> theVec, char* str);
  * @param theVec
  * @param str
  */
-void vector2str(vector<unsigned int> theVec, char* str);
+void vector2str(vector<uint> theVec, char* str);
 
 /**
  * @brief
@@ -106,7 +110,7 @@ void list2str(list<long int> theList, char* str);
  * @param theList
  * @param str
  */
-void list2str(list<unsigned int> theList, char* str);
+void list2str(list<uint> theList, char* str);
 
 /**
  *
@@ -138,7 +142,7 @@ void charvet2type(const char* vetc, int& v);
  * @param vetc
  * @param v
  */
-void charvet2type(const char* vetc, unsigned int& v);
+void charvet2type(const char* vetc, uint& v);
 
 /**
  * @brief Convert a integer written in a C string format to long int type.
@@ -194,11 +198,23 @@ void charvet2type(const char* vetc, list<int>& theList);
  */
 void charvet2type(const char* vetc, list<long int>& theList);
 
+/**
+ * @brief Convert a list of integer in CSV format to a std::list<uint>
+ * Takes as input a C string list of integers in CSV format (numbers separated
+ * by comma ) and converts it to a std::list<unsigned  int>
+ *
+ * @param vetc		C string of integers in CSV format
+ * @param theList	an empty list in the format std::list<long int>
+ */
+void charvet2type(const char* vetc, list<uint>& theList);
+
+
 
 void charvet2type(const char* vetc, vector<long int>& theVector);
 //void charvet2type(const char* vetc, vector<unsigned long int>& theVector);
 void charvet2type(const char* vetc, vector<int>& theVector);
-//void charvet2type(const char* vetc, vector<unsigned int>& theVector);
+void charvet2type(const char* vetc, vector<uint>& theVector);
+//void charvet2type(const char* vetc, vector<uint>& theVector);
 void charvet2type(const char* vetc, vector<double>& theVector);
 
 /**
@@ -247,6 +263,23 @@ bool delimiter(char c, const char& d);
  */
 void cumulativeDistribution(list<double>& dataSample,
 		list<double>* cumulativeDat);
+
+/**
+ * @brief Test if the text file being read is empty
+ *
+ * @param pFile text file
+ * @return true if it is empty, false otherwise
+ */
+bool isFileEmpty(std::ifstream& pFile);
+
+
+/**
+ * @brief  Split a C string into tokens
+ * @param a_str
+ * @param a_delim
+ * @return
+ */
+char** str_split(char* a_str, const char a_delim);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Tests
