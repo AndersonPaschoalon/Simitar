@@ -16,35 +16,30 @@
 
 NetworkFlow* NetworkFlow::make_flow(const string& choise)
 {
-	/*
-	 if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
-	 {
-	 return new DitgFlow;
-	 }
-	 else if ((choise == "iperf") || (choise == "Iperf") || (choise == "IPERF"))
-	 {
-	 return new IperfFlow;
-	 }
-	 else if ((choise == "ostinato") || (choise == "Ostinato")
-	 || (choise == "OSTINATO"))
-	 {
-	 return new OstinatoFlow;
-	 }
-	 else if ((choise == "Nemesis") || (choise == "nemesis")
-	 || (choise == "NEMESIS"))
-	 {
-	 return new NemesisFlow;
-	 }
-	 else if ((choise == "Libtins") || (choise == "libtins")
-	 || (choise == "LIBTINS"))
-	 {
-	 return new LibtinsFlow;
-	 }
-	 else
-	 {
-	 return new DummyFlow;
-	 }
-	 */
+
+	if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
+	{
+		return new DitgFlow;
+	}
+	else if ((choise == "iperf") || (choise == "Iperf") || (choise == "IPERF"))
+	{
+		return new IperfFlow;
+	}
+	else if ((choise == "ostinato") || (choise == "Ostinato")
+			|| (choise == "OSTINATO"))
+	{
+		return new OstinatoFlow;
+	}
+	else if ((choise == "Libtins") || (choise == "libtins")
+			|| (choise == "LIBTINS"))
+	{
+		return new LibtinsFlow;
+	}
+	else
+	{
+		return new DummyFlow;
+	}
+
 	return new DummyFlow;
 
 }
@@ -84,8 +79,9 @@ NetworkFlow::NetworkFlow()
 	ptr_session_offTimes = NULL;
 	ptr_session_nBytes = NULL;
 	ptr_session_nPackets = NULL;
-	sessionOnTimes_counter = 0;
-	sessionOffTimes_counter = 0;
+	//sessionOnTimes_counter = 0;
+	sessionOnTimes_counter = -1;
+	sessionOffTimes_counter = -1;
 
 	/// Packet size parameters
 	ptr_psMode1 = NULL;
@@ -222,6 +218,16 @@ protocol NetworkFlow::getLinkProtocol() const
 void NetworkFlow::setLinkProtocol(protocol linkProtocol)
 {
 	link_protocol = linkProtocol;
+}
+
+void NetworkFlow::setMacSrcAddr(const string& macSrc)
+{
+	mac_src = macSrc;
+}
+
+void NetworkFlow::setMacDstAddr(const string& macDst)
+{
+	mac_dst = macDst;
 }
 
 const string& NetworkFlow::getNetworkDstAddr() const
@@ -456,64 +462,99 @@ void NetworkFlow::setSessionTimesOnOff(vector<time_sec>* onTimesVec,
 
 time_sec NetworkFlow::getSessionOnTime_next()
 {
-	//MESSER_LOG_INIT(NOTICE);
-	time_sec theTime = 0;
-
-	//MESSER_DEBUG("ptr_session_onTimes->size()=%d", ptr_session_onTimes->size());
-
+	sessionOnTimes_counter++;
 	if (sessionOnTimes_counter >= ptr_session_onTimes->size())
 	{
-		//MESSER_DEBUG(
-		//		"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
-		//		sessionOnTimes_counter);
 		sessionOnTimes_counter = 0;
-		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
-
 	}
-	else
-	{
-		theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
-		sessionOnTimes_counter++;
-	}
+	return (ptr_session_onTimes->at(sessionOnTimes_counter));
 
-	return (theTime);
+	/*
+	 //MESSER_LOG_INIT(NOTICE);
+	 time_sec theTime = 0;
+
+	 //MESSER_DEBUG("ptr_session_onTimes->size()=%d", ptr_session_onTimes->size());
+
+	 if (sessionOnTimes_counter >= ptr_session_onTimes->size())
+	 {
+	 //MESSER_DEBUG(
+	 //		"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
+	 //		sessionOnTimes_counter);
+	 sessionOnTimes_counter = 0;
+	 theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
+
+	 }
+	 else
+	 {
+	 theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
+	 sessionOnTimes_counter++;
+	 }
+	 */
+
 }
 
 time_sec NetworkFlow::getSessionOffTime_next()
 {
-	MESSER_LOG_INIT(NOTICE);
-	time_sec theTime = 0;
-
+	sessionOffTimes_counter++;
 	if (sessionOffTimes_counter >= ptr_session_offTimes->size())
 	{
-//		MESSER_DEBUG(
-//				"No more Off times available on the stack. The last was the \
+		sessionOffTimes_counter = -1;
+		return (.0);
+	}
+	return (ptr_session_offTimes->at(sessionOffTimes_counter));
+
+	/*
+	 MESSER_LOG_INIT(NOTICE);
+	 time_sec theTime = 0;
+
+	 if (sessionOffTimes_counter >= ptr_session_offTimes->size())
+	 {
+	 //		MESSER_DEBUG(
+	 //				"No more Off times available on the stack. The last was the \
 //%dth value. Now, it will return 0, and than will be reseted. This is because, \
 //the On/Off times should aways start with a On. After that, it will be reseted  @ <%s, %s>",
-//				sessionOffTimes_counter);
+	 //				sessionOffTimes_counter);
 
-		//theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
-		theTime = 0;
-		sessionOffTimes_counter = 0;
+	 //theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
+	 theTime = 0;
+	 sessionOffTimes_counter = 0;
 
-	}
-	else
-	{
-		theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
-		sessionOffTimes_counter++;
-	}
+	 }
+	 else
+	 {
+	 theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
+	 sessionOffTimes_counter++;
+	 }
 
-	return (theTime);
+	 return (theTime);
+	 */
 }
 
 uint NetworkFlow::getSessionOnTime_nPackets() const
 {
-	return(ptr_session_nPackets->at(sessionOnTimes_counter));
+
+	//char debugStr[1000];
+	//MESSER_LOG_INIT(DEBUG);
+	//MESSER_DEBUG(
+	//		"flowId:%d> ptr_session_nPackets->size()=%d, sessionOnTimes_counter=%d @ <%s, %s>",
+	//		flowId, ptr_session_nPackets->size(), sessionOnTimes_counter);
+	//MESSER_DEBUG(
+	//		"flowId:%d> ptr_session_nPackets->at(sessionOnTimes_counter)=%d @ <%s, %s>",
+	//		flowId, ptr_session_nPackets->at(sessionOnTimes_counter));
+	//
+	//vector2str(*ptr_session_nPackets, debugStr);
+	//MESSER_DEBUG("flowId:%d> npackets %s @ <%s, %s>", flowId, debugStr);
+	//cout << "flowId:<<" << flowId
+	//		<< ">ptr_session_nPackets->at(sessionOnTimes_counter)"
+	//		<< ptr_session_nPackets->at(sessionOnTimes_counter) << endl;
+
+	//return (0);
+	return (ptr_session_nPackets->at(sessionOnTimes_counter));
 }
 
 uint NetworkFlow::getSessionOnTime_nBytes() const
 {
-	return(ptr_session_nBytes->at(sessionOnTimes_counter));
+	return (ptr_session_nBytes->at(sessionOnTimes_counter));
 }
 
 StochasticModelFit NetworkFlow::getPacketSizeModelMode1(unsigned int position)
@@ -730,6 +771,7 @@ long int NetworkFlow::getNpacketsMode2() const
 {
 	return npackets_mode2;
 }
+
 void NetworkFlow::setMacAddr(const string& macSrc, const string& macDst)
 {
 	mac_src = macSrc;
@@ -833,8 +875,6 @@ inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
 	return (0);
 }
 
-
-
 //DEBUG
 void NetworkFlow::printModels()
 {
@@ -860,12 +900,12 @@ vector<time_sec> *NetworkFlow::getSessionOffVector()
 
 vector<uint>* NetworkFlow::getSessionOnPacketsVector()
 {
-	return(ptr_session_nPackets);
+	return (ptr_session_nPackets);
 }
 
 vector<uint>* NetworkFlow::getSessionOnBytesVector()
 {
-	return(ptr_session_nBytes);
+	return (ptr_session_nBytes);
 }
 
 //DEBUG ERASE IT

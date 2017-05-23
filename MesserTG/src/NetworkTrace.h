@@ -70,7 +70,9 @@ public:
 	/**
 	 * Contructor, autoset from a file
 	 */
-	NetworkTrace(const string& fileName);
+	NetworkTrace(const string& fileName, const string& trafficGenEngine);
+
+	//NetworkTrace(const string& fileName);
 
 	/**
 	 * Destructor. Free any stored memory
@@ -185,6 +187,8 @@ public:
 	inline int setDstNetwork(const string& dstIpPrefix,
 			const string& dstNetmask);
 
+	void setFileIpMac(const char* filename);
+
 	void regression_tests();
 
 private:
@@ -244,15 +248,16 @@ private:
 	static const char * LABEL_NKBYTES;
 
 	//methods
-	int getHostIpMac(int& counter, const char* filename, char* ipAddr,
+	int getDstIpMac(uint& counter, const char* filename, char* ipAddr,
 			char* MacAddr);
 
-	void string2charvet(const string s, char* vetc) const;
+	//void string2charvet(const string s, char* vetc) const;
 
 	//
-	bool test_string2charvet();
+	//bool test_string2charvet();
 	bool test_readWrite2XML();
 	bool test_OnOffSizes();
+	bool test_setFlowIpMac();
 };
 
 struct model_data_struct

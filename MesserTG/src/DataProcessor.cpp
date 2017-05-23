@@ -30,7 +30,7 @@ string DataProcessor::toString(void)
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
-	MESSER_LOG_INIT(DEBUG);
+	MESSER_LOG_INIT(INFO);
 
 	///iterator variables
 	long int fcounter = 0;
@@ -173,7 +173,6 @@ int DataProcessor::calculate(const string& experimentName,
 		//DEBUG
 		//unsigned int debugflag = 0;
 		//unsigned int debugflag2 = 0;
-
 
 		databaseInterface->getFlowData(experimentName, fcounter, "eth__type",
 				&flowIntData);

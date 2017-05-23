@@ -33,27 +33,20 @@ public:
 	 *
 	 */
 	void flowGenerate(const counter& flowId, const time_sec& onTime,
-			const unsigned int& npackets, const uint& nbytes,
+			const uint& npackets, const uint& nbytes,
 			const string& netInterface)
 	{
 		//TODO Criar um metodo que retorna o IP de eth0 (default) da maquina atual
-		char host[] = "10.1.1.48";
-
-		//Argumentos para serem passados como argumento do flowGenerate
-		char ethernetInterface[] = "eth0";
-		int fileTimeout = int(this->getFlowDuration() * 1000);
-		int userOption;
+		char host[] = "10.0.0.1";
+		char ethernetInterface[] = "h1-eth0";
 
 		////////////////////////////////////////////////////////////////////////////
 		///Initialization
 		////////////////////////////////////////////////////////////////////////////
 
-		string strCommand = "";
-		string strCommandMode1 = "";
-		string strCommandMode2 = "";
-		char* command = NULL;
-		char* commandMode1 = NULL;
-		char* commandMode2 = NULL;
+		string strCommand;
+		char command[CHAR_BUFFER];
+
 		int rc = 0;
 
 		////////////////////////////////////////////////////////////////////////////
@@ -63,32 +56,32 @@ public:
 		/// Flow-level settings
 
 		//duration
-		if (fileTimeout == 0)
-			fileTimeout = 1;
-		strCommand += " -t " + std::to_string(fileTimeout);
+		strCommand += " -t " + std::to_string(onTime);
+		strCommand += " -z " + std::to_string(npackets);
+		strCommand += " -k " + std::to_string(nbytes / 1024);
 		//DS byte
-		strCommand += " -b " + std::to_string(this->getFlowDsByte());
+		strCommand += " -b " + std::to_string(getFlowDsByte());
 		//Guarantee the mean packet rate
 		strCommand += " -j 1";
 
 		/// Network-layer settings
-		strCommand += " -f " + std::to_string(this->getNetworkTtl());
+		strCommand += " -f " + std::to_string(getNetworkTtl());
 		//destination and sources IPv4/IPv6 address
-		strCommand += " -a " + this->getNetworkDstAddr();
-		strCommand += " -sa " + this->getNetworkSrcAddr();
+		strCommand += " -a " + getNetworkDstAddr();
+		//strCommand += " -sa " + getNetworkSrcAddr();
 
 		/// Transport-layer settings
 		if (this->getTransportProtocol() == PROTOCOL__TCP)
 		{
 			strCommand += " -T TCP -D ";
-			strCommand += " -rp " + std::to_string(this->getTransportDstPort());
-			strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
+			strCommand += " -rp " + std::to_string(getTransportDstPort());
+			strCommand += " -sp " + std::to_string(getTransportSrcPort());
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__UDP)
 		{
 			strCommand += " -T UDP ";
-			strCommand += " -rp " + std::to_string(this->getTransportDstPort());
-			strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
+			strCommand += " -rp " + std::to_string(getTransportDstPort());
+			strCommand += " -sp " + std::to_string(getTransportSrcPort());
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__ICMP)
 		{
@@ -97,17 +90,11 @@ public:
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__SCTP)
 		{
-			//TODO Set D-ITG compile file to support SCTP
-			// To enable this option D-ITG has to be compiled with"sctp" option enabled (i.e.  make sctp=on).
 			strCommand += " -T SCTP "
-					+ std::to_string(this->getTransportSctpAssociationId())
-					+ " " + std::to_string(this->getTransportSctpMaxStreams())
-					+ " ";
+					+ std::to_string(getTransportSctpAssociationId());
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__DCCP)
 		{
-			//TODO Set D-ITG compile file to support DCCP
-			//To enable this option D-ITG has to be compiled with "dccp" option enabled (i.e.  make dccp=on).
 			strCommand += " -T DCCP ";
 		}
 		else
@@ -158,15 +145,30 @@ public:
 				{
 					//idtModel.param1 = alpha (shape)
 					//idtModel.param2 = xm (scale)
+					double param2;
+					if (idtModel.param2() < 0.000001)
+						param2 = 0.000001;
+					else
+						param2 = idtModel.param2();
+
 					strCommand += " -V " + std::to_string(idtModel.param1())
-							+ " " + std::to_string(idtModel.param2());
+							+ " " + std::to_string(param2);
 				}
 				else if (idtModel.modelName() == CAUCHY)
 				{
 					//idtModel.param1 = gamma (scale)
 					//idtModel.param2 = xm (shape - location)
+					double param1;
+					if (idtModel.param1() < 0.000001)
+						param1 = 0.000001;
+					else
+						param1 = idtModel.param1();
+
 					strCommand += " -Y " + std::to_string(idtModel.param2())
-							+ " " + std::to_string(idtModel.param1());
+							+ " " + std::to_string(param1);
+
+					//strCommand += " -Y " + std::to_string(idtModel.param2())
+					//		+ " " + std::to_string(idtModel.param1());
 				}
 				else //CONSTANT
 				{
@@ -185,61 +187,76 @@ public:
 		//strCommandMode2 = strCommand + " -c "
 		//		+ std::to_string(this->getPacketSizeModelMode2_next().param1());
 
-		strCommandMode1 = strCommand + " -c "
-				+ std::to_string(this->getPacketSizeModelMode1(0).param1());
+		//if(getPacketSizeModelMode2(0).modelName())
+		//
+		//strCommandMode1 = strCommand + " -c "
+		//		+ std::to_string(this->getPacketSizeModelMode1(0).param1());
 		//First model: Contant
-		strCommandMode2 = strCommand + " -c "
-				+ std::to_string(this->getPacketSizeModelMode2(0).param1());
+		//strCommandMode2 = strCommand + " -c "
+		//		+ std::to_string(this->getPacketSizeModelMode2(0).param1());
 
 		/// Generate C string
 
-		command = new char[strCommand.length() + 1];
-		strcpy(command, strCommand.c_str());
+		//command = new char[strCommand.length() + 1];
+		//strcpy(command, strCommand.c_str());
 
-		commandMode1 = new char[strCommandMode1.length() + 1];
-		strcpy(commandMode1, strCommandMode1.c_str());
+		//commandMode1 = new char[strCommandMode1.length() + 1];
+		//strcpy(commandMode1, strCommandMode1.c_str());
 
-		commandMode2 = new char[strCommandMode2.length() + 1];
-		strcpy(commandMode2, strCommandMode2.c_str());
+		//commandMode2 = new char[strCommandMode2.length() + 1];
+		//strcpy(commandMode2, strCommandMode2.c_str());
 
 		////////////////////////////////////////////////////////////////////////////
 		/// D-ITG: generatte flow
 		////////////////////////////////////////////////////////////////////////////
 
-		if (this->getNpacketsMode1() > 0)
+		strcpy(command, strCommand.c_str());
+		cout << "flow" << flowId << ">" << "command" << strCommand.c_str()
+				<< endl;
+		rc = DITGsend(host, command);
+		if (rc != 0)
 		{
-			//send mode one
-			rc = DITGsend(host, commandMode1);
-			if (rc != 0)
-			{
-				perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
-				printf("\nDITGsend() return value was %d\n", rc);
-				errno = EAGAIN;
-				exit(EXIT_FAILURE);
-			}
-
-		}
-		if (this->getNpacketsMode2() > 0)
-		{
-			//send mode two
-			rc = DITGsend(host, commandMode2);
-			if (rc != 0)
-			{
-				perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
-				printf("\nDITGsend() return value was %d\n", rc);
-				errno = EAGAIN;
-				exit(EXIT_FAILURE);
-			}
-
+			perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
+			printf("\nDITGsend() return value was %d\n", rc);
+			errno = EAGAIN;
+			exit(EXIT_FAILURE);
 		}
 
+		/*
+		 if (this->getNpacketsMode1() > 0)
+		 {
+		 //send mode one
+		 rc = DITGsend(host, commandMode1);
+		 if (rc != 0)
+		 {
+		 perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
+		 printf("\nDITGsend() return value was %d\n", rc);
+		 errno = EAGAIN;
+		 exit(EXIT_FAILURE);
+		 }
+
+		 }
+		 if (this->getNpacketsMode2() > 0)
+		 {
+		 //send mode two
+		 rc = DITGsend(host, commandMode2);
+		 if (rc != 0)
+		 {
+		 perror("Error on  DITGsend() @ DummyFlow::flowGenerate()");
+		 printf("\nDITGsend() return value was %d\n", rc);
+		 errno = EAGAIN;
+		 exit(EXIT_FAILURE);
+		 }
+
+		 }
+
+		 */
 		////////////////////////////////////////////////////////////////////////////
 		/// Ending
 		////////////////////////////////////////////////////////////////////////////
-		delete[] command;
-		delete[] commandMode1;
-		delete[] commandMode2;
-
+		//delete[] command;
+		//delete[] commandMode1;
+		//delete[] commandMode2;
 #ifdef DEBUG
 		cout << "D-ITG command: " << command << endl;
 #endif

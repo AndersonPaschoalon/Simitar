@@ -19,7 +19,8 @@ NetworkTrace::NetworkTrace()
 	MESSER_DEBUG("Constructor NetworkTrace()  @<%s, %s>");
 }
 
-NetworkTrace::NetworkTrace(const string& fileName)
+
+NetworkTrace::NetworkTrace(const string& fileName, const string& trafficGenEngine)
 {
 	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
@@ -73,7 +74,7 @@ NetworkTrace::NetworkTrace(const string& fileName)
 	{
 
 		/// Create flow
-		NetworkFlow* netFlow = NetworkFlow::make_flow(m_trafficGenEngine);
+		NetworkFlow* netFlow = NetworkFlow::make_flow(trafficGenEngine);
 		//NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 		//MESSER_DEBUG("netFlow[%d]  @<%s, %s>", fcounter);
 
@@ -837,14 +838,13 @@ int NetworkTrace::exec(bool verbose)
 
 }
 
-void NetworkTrace::string2charvet(const string s, char* vetc) const
-{
-	strncpy(vetc, s.c_str(), sizeof(char) * CHAR_BUFFER);
-	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
+//void NetworkTrace::string2charvet(const string s, char* vetc) const
+//{
+//	strncpy(vetc, s.c_str(), sizeof(char) * CHAR_BUFFER);
+//	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
+//}
 
-}
-
-int  NetworkTrace::getHostIpMac(int& counter, const char* filename, char* ipAddr, char* MacAddr)
+int  NetworkTrace::getDstIpMac(uint& counter, const char* filename, char* ipAddr, char* MacAddr)
 {
 	int filePosition = 0;
 	char strLine[50];
@@ -916,18 +916,36 @@ int  NetworkTrace::getHostIpMac(int& counter, const char* filename, char* ipAddr
 	return(0);
 }
 
+void NetworkTrace::setFileIpMac(const char* filename)
+{
+	uint nflows = uint(getNumberOfFlows());
+	uint i = 0;
+	uint conter = 0;
+	char macAddr[CHAR_BUFFER];
+	char ipAddr[CHAR_BUFFER];
+
+	for(i = 0; i < nflows; i++)
+	{
+		getDstIpMac(conter, filename, ipAddr, macAddr);
+		networkFlow[i]->setNetworkDstAddr(ipAddr);
+		networkFlow[i]->setMacDstAddr(macAddr);
+	}
+}
+
 
 void NetworkTrace::regression_tests()
 {
 	RegressionTests rt = RegressionTests();
 
 	rt.printHeader("class NetworkTrace");
-	rt.printTestResult("string2charvet", test_string2charvet());
+	//rt.printTestResult("string2charvet", test_string2charvet());
 	rt.printTestResult("Read and Write to the XML", test_readWrite2XML());
 	rt.printTestResult("test On/Off Vector sizes consistency",
 			test_OnOffSizes());
+	rt.printTestResult("FileIpMac", test_setFlowIpMac());
 }
 
+/*
 bool NetworkTrace::test_string2charvet()
 {
 	string anotherStrangerMe =
@@ -951,6 +969,7 @@ bool NetworkTrace::test_string2charvet()
 
 	return (true);
 }
+*/
 
 const char * NetworkTrace::LABEL_TRACE = "trace";
 const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";
@@ -1021,7 +1040,7 @@ bool NetworkTrace::test_readWrite2XML()
 	const char mode[] = "r";
 
 	NetworkTrace tempTrace = NetworkTrace(
-			"data/regression-tests/test-trace.xml");
+			"data/regression-tests/test-trace.xml", "D-ITG");
 	tempTrace.writeToFile("data/regression-tests/copy2-test-trace.xml");
 
 	if (!(in = popen(command, mode)))
@@ -1043,10 +1062,12 @@ bool NetworkTrace::test_readWrite2XML()
 	return (noError);
 }
 
+
+
 bool NetworkTrace::test_OnOffSizes()
 {
 	NetworkTrace tempTrace = NetworkTrace(
-			"data/regression-tests/test-trace.xml");
+			"data/regression-tests/test-trace.xml", "D-ITG");
 	uint i = 0;
 	vector<time_sec>* onvector;
 	vector<time_sec>* offvector;
@@ -1086,3 +1107,11 @@ bool NetworkTrace::test_OnOffSizes()
 
 }
 
+bool NetworkTrace::test_setFlowIpMac()
+{	NetworkTrace tempTrace = NetworkTrace(
+		"data/regression-tests/test-trace.xml", "D-ITG");
+
+	tempTrace.setFileIpMac("data/regression-tests/ipmac.txt");
+	tempTrace.writeToFile("changed-ips-macs-trace.xml");
+	return(true);
+}

@@ -65,8 +65,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
-    <option name="y" value="-2136" />
+    <option name="x" value="-5707" />
+    <option name="y" value="24" />
     <option name="width" value="1867" />
     <option name="height" value="1056" />
   </component>
@@ -327,6 +327,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3ff90261-8d70-432d-8412-cc514a1fc85c" name="Default" comment="" />
@@ -338,7 +341,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="-2136" width="1867" height="1056" extended-state="6" />
+    <frame x="-5707" y="24" width="1867" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />

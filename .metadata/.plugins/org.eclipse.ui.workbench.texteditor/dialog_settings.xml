@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="regression_tests" key="selection"/>
+		<item value=" -sa" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="regression_tests"/>
-			<item value="flowGenerate"/>
-			<item value="flowStart"/>
-			<item value="calcOnOff"/>
-			<item value="BIC:"/>
-			<item value="Gradient Descendent:"/>
-			<item value="test_readWrite2XML"/>
-			<item value="m_session_cut_time"/>
+			<item value=" -sa"/>
+			<item value="m_trafficGenEngine"/>
+			<item value="NetworkFlow"/>
+			<item value="pos_"/>
+			<item value="sessionOffTimes_counter"/>
+			<item value="pos_sessionOffTimes"/>
+			<item value="getSessionOffTime"/>
+			<item value="_next"/>
 		</list>
 		<list key="replacehistory">
+			<item value="pos_sessionOnOffTimes"/>
+			<item value="pos_sessionOffTimes"/>
 			<item value="uint"/>
 			<item value=""/>
 		</list>
@@ -26,7 +28,7 @@
 		<item value="322" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="425" key="DIALOG_HEIGHT"/>
-		<item value="1103" key="DIALOG_X_ORIGIN"/>
-		<item value="339" key="DIALOG_Y_ORIGIN"/>
+		<item value="1147" key="DIALOG_X_ORIGIN"/>
+		<item value="371" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -22,6 +22,8 @@ void DummyFlow::print()
 
 void DummyFlow::flowStart()
 {
+	//MESSER_LOG_INIT(DEBUG);
+
 	/// Statistical vars
 	counter flowId = 0;
 	string netInterface = "";
@@ -42,22 +44,16 @@ void DummyFlow::flowStart()
 	usec_startDelay = time_t(sec_startDelay * 1.0e6);
 
 	int fid = int(getFlowId());
-	//int fid = 0;
-
-	//DEBUG
-	//clock_gettime(CLOCK_MONOTONIC_RAW, &start);
-
-	//cout << sec_startDelay << endl;
 
 	usleep(usec_startDelay);
 	while (1)
 	{
+
 		sec_onTime = getSessionOnTime_next();
 		npackets = getSessionOnTime_nPackets();
 		nbytes = getSessionOnTime_nBytes();
 
 		flowGenerate(fid, sec_onTime, npackets, nbytes, netInterface);
-		//resetCounters();
 
 		sec_offTime = getSessionOffTime_next();
 		if (sec_offTime == 0)
@@ -69,22 +65,13 @@ void DummyFlow::flowStart()
 
 	}
 
-	////DEBUG
-	//clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-
-	//delta_us = (end.tv_sec - start.tv_sec) * 1000000
-	//		+ (end.tv_nsec - start.tv_nsec) / 1000;
-	//
-	//printf("FlowDuration[actual/expected] = (%0.5d, %0.5d)", (delta_us / 1.0e6),
-	//		getFlowDuration());
 }
 
 //void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 //		const unsigned int& npackets, uint nbytes, const uint& nbytes,
 //		const string& netInterface)
-void DummyFlow::flowGenerate(const counter& flowId,
-			const time_sec& onTime, const uint& npackets, const uint& nbytes,
-			const string& netInterface)
+void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+		const uint& npackets, const uint& nbytes, const string& netInterface)
 {
 	int rc = 0;
 

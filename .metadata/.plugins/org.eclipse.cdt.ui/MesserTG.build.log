@@ -1,35 +1,6 @@
-14:19:27 **** Incremental Build of configuration Debug for project MesserTG ****
+02:05:18 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
-Building file: ../src/DataProcessor.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
-Finished building: ../src/DataProcessor.cpp
- 
-Building file: ../src/Main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
-Finished building: ../src/Main.cpp
- 
-Building file: ../src/NetworkTrace.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
-../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&)’:
-../src/NetworkTrace.cpp:27:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
-  long int fcounter = 0;
-           ^~~~~~~~
-In file included from ../src/NetworkTrace.h:43:0,
-                 from ../src/NetworkTrace.cpp:8:
-../src/NetworkFlow.h: At global scope:
-../src/NetworkFlow.h:59:29: warning: inline function ‘virtual std::thread NetworkFlow::flowThread()’ used but never defined
-  inline virtual std::thread flowThread() = 0;
-                             ^~~~~~~~~~
-Finished building: ../src/NetworkTrace.cpp
- 
-Building target: MesserTG
-Invoking: GCC C++ Linker
-g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
-Finished building target: MesserTG
- 
+make: Nothing to be done for 'all'.
 
-14:19:41 Build Finished (took 13s.790ms)
+02:05:18 Build Finished (took 68ms)
 
