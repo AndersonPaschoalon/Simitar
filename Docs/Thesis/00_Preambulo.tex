@@ -1,0 +1,163 @@
+\documentclass[12pt,oneside,a4paper,brazil,english,sumario=tradicional,]{abntex2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{minted}
+\usepackage{morewrites}
+%\DisemulatePackage{index}
+\usepackage[table]{xcolor}
+%\usepackage[subfigure]{tocloft} 
+\usepackage{subfig} 
+\usepackage{nth}
+\usepackage{pifont}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cmap}
+\usepackage{mathptmx}
+%\usepackage{lmodern}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+%--------------
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial	
+\usepackage[T1]{fontenc}
+%\usepackage{uarial}
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage{indentfirst}
+\usepackage{framed}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{amsfonts}
+\usepackage{tcolorbox}
+\renewcommand{\thepage}{\roman{page}}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage[referable]{threeparttablex}
+\usepackage{lipsum}
+\usepackage{blindtext}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{bbm}
+%\usepackage[chapter]{algorithm}
+%\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{eurosym}
+\usepackage{pdfpages}
+\usepackage[acronym,toc]{glossaries}
+\makeglossaries
+\input{00_Acronyms}
+%\usepackage[USenglish,hyperpageref]{backref} %NÚMERO DA PÁGINA DE UMA CITAÇÃO APARECENDO NAS REFERÊNCIAS 
+\usepackage[alf,abnt-etal-cite=2,abnt-etal-list=0,abnt-etal-text=emph]{abntex2cite}	% 
+\usepackage{unicamp}
+%\graphicspath{{./eps/}}
+%\DeclareGraphicsExtensions{.eps}
+\newcommand{\mb}[1]{\mathbf{#1}}
+\newtheorem{mydef}{Defini\c{c}\~{a}o}[chapter]
+\newtheorem{lemm}{Lema}[chapter]
+\newtheorem{theorem}{Teorema}[chapter]
+%\floatname{algorithm}{Pseudoc\'{o}digo}
+%\renewcommand{\listalgorithmname}{Lista de Pseudoc\'{o}digos}
+
+%New packages-----------------------------------
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{comment}
+\usepackage{breakurl}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+%\usepackage{subfig}
+%\usepackage{titling}
+\usepackage{pdfpages}
+\usepackage{environ}
+\usepackage{setspace}
+\usepackage{minted}
+%Trecho de código para realizar a listagem de código fonte
+% Definindo novas cores
+\definecolor{verde}{rgb}{0,0.5,0}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  stringstyle=\color{verde},
+  commentstyle=\color{red},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true,
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt,
+}
+
+\usepackage{tabularx}
+
+
+%\renewcommand{\backrefpagesname}{Citado na(s) p\'{a}gina(s):~}
+%\renewcommand{\backref}{}
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma cita\c{c}\~{a}o no texto.%
+%	\or
+%		Citado na p\'{a}gina #2.%
+%	\else
+%		Citado #1 vezes nas p\'{a}ginas #2.%
+%	\fi}%
+
+\definecolor{blue}{RGB}{41,5,195}
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title},
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acad\^{e}mico},
+		hidelinks,					% desabilita as bordas dos links
+		colorlinks=false,       	% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      	% color of file links
+		urlcolor=blue,
+%		linkbordercolor={1 1 1},	% set to white
+		bookmarksdepth=4
+}
+\makeatother
+\setlength{\parindent}{2cm}
+
+% Controle do espa\c{c}amento entre um par\'{a}grafo e outro:
+\setlength{\parskip}{0.2cm}
+
+\orientador{Prof. Dr. Christian Rodolfo Esteve Rothenberg}
+\instituicao{%
+    UNIVERSIDADE ESTADUAL DE CAMPINAS
+    \par
+    Faculdade de Engenharia El\'{e}trica e de Computa\c{c}\~{a}o	
+    }
+\tipotrabalho{Disserta\c{c}\~{a}o (Mestrado)}
+\preambulo{Dissertation presented to the Faculty of Electrical and Computer Engineering of the University of Campinas in partial fulfillment of the requirements for the degree of Master in Electrical Engineering, in the area of Computer Engineering. \vspace{0.4cm} \\
+Disserta\c{c}\~{a}o apresentada à Faculdade de Engenharia Elétrica e Computa\c{c}\~{a}o da Universidade Estadual de Campinas como parte dos requisitos exigidos para a obten\c{c}\~{a}o do título de Mestre em Engenharia Eletrica, na Àrea de Engenharia de Computa\c{c}\~{a}o.}
+% --- 
+
+%\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+

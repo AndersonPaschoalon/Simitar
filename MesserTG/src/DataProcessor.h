@@ -202,7 +202,7 @@ private:
 	/**
 	 * Default value of cut time (SESSION_CUT_TIME) for sections
 	 */
-	double m_session_cut_time = 4;
+	double m_session_cut_time = 30;
 	//double m_session_cut_time = DEFAULT_SESSION_CUT_TIME;
 
 

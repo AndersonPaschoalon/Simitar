@@ -49,8 +49,15 @@ PLOT_DATA_EXT = ".dat";
 M = load(DATAFILE_NAME);
 %interArrival = sort(M(:,4)) + min_time;
 %interArrival = abs(sort(M)) + min_time;
+
+%%Change scale
+scale = 1000;
+
 interArrival = abs(sort(M));
 interArrival(interArrival == 0) =  min_time;
+
+interArrival = interArrival*scale
+
 max_time = max(interArrival);
 interArrivalCdf = empiricalCdf(interArrival);
 m = length(interArrival);

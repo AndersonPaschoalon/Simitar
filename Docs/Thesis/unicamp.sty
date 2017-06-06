@@ -1,0 +1,129 @@
+%%
+%% Customiza\c{c}\~{o}es do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade Estadua de Campinas - Unicamp
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Daniel Guerreiro e Silva, Filipe Ieda Fazanaro e Marcos Covre,
+%% daniel.guerreiro@gmail.com
+%%
+%% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%%
+
+% ---
+% INICIO DAS CUSTOMIZACOES PARA A UNICAMP
+% ---
+
+%CUSTOMIZACAO DA NUMERACAO
+\renewcommand{\pretextual}{%
+  \aliaspagestyle{titlingpage}{plain}%mostrar num. na capa
+  \aliaspagestyle{chapter}{plain}% customizing chapter pagestyle
+  \pagestyle{plain}
+  \aliaspagestyle{cleared}{plain}% mostrar num. em pag. em branco, coloque plain, c.c. empty
+  \aliaspagestyle{part}{empty}
+}
+
+
+
+% CUSTOMIZACA DA CAPA
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+
+%    \ABNTEXchapterfont\Large UNIVERSIDADE QUE TORNA OS DOCUMENTOS AINDA MAIS ESTRANHOS
+
+    %\vspace*{1cm}
+    \begin{minipage}{.2\textwidth}
+	\includegraphics[width=1.5cm]{unicamp.eps}
+    \end{minipage}
+    \hspace*{\fill}
+	\begin{minipage}{.62\textwidth}
+%	{\ABNTEXchapterfont\large\imprimirinstituicao}
+%{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+	\end{minipage}
+\vspace{1.2cm}		
+    	\center
+{\ABNTEXchapterfont\large\imprimirinstituicao} \\
+\vspace{1.2cm}	
+{\ABNTEXchapterfont\large\imprimirautor} \\
+%%\vspace*{\fill}\vspace*{\fill}
+\vspace{2cm}
+\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+\vfill
+    \large\imprimirlocal
+
+    \large\imprimirdata
+
+    \vspace*{1cm}
+  \end{capa}
+}
+
+
+%CUSTOMIZACAO DA FOLHA DE ROSTO
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+
+\begin{center}
+{\ABNTEXchapterfont\LARGE\imprimirautor}
+
+\vspace*{\fill}\vspace*{\fill}
+\vspace{0.5cm}
+\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+\end{center}
+
+\vspace*{\fill}
+\vspace*{0.1cm}
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.4\textwidth}
+  \begin{minipage}{.5\textwidth}
+  \SingleSpacing
+  \imprimirpreambulo
+  \end{minipage}%
+  \vspace*{\fill}
+}%
+
+\vspace*{0.8cm}
+
+\noindent
+{\imprimirorientadorRotulo~\imprimirorientador\par}
+\noindent
+\abntex@ifnotempty{\imprimircoorientador}{%
+  {\imprimircoorientadorRotulo~\imprimircoorientador}%
+}%
+
+\vspace*{0.2cm}
+
+\noindent
+\begin{minipage}{.4\textwidth}\SingleSpacing		
+Este exemplar corresponde \`{a} vers\~{a}o final da disserta\c{c}\~{a}o defendida pelo
+	aluno \imprimirautor , e orientada pelo \imprimirorientador \\[4mm]
+	 \hfill
+\end{minipage}
+
+\vspace*{\fill}
+
+%{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+
+\begin{center}
+{\large\imprimirlocal}
+
+\par
+
+{\large\imprimirdata}
+\vspace*{1cm}
+\end{center}
+}
+
+\makeatother
+
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA A UNICAMP
+% ---

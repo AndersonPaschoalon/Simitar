@@ -1,4 +1,4 @@
 #/bin/bash
 interface=$1
-ifconfig $interface up
-ifconfig $interface promisc
+sudo ifconfig $interface up
+sudo ifconfig $interface promisc

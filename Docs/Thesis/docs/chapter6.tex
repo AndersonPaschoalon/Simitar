@@ -1,0 +1,65 @@
+\chapter{Conclusion and Future Work}
+\label{ch:conclusion}
+
+\section{Future Work}
+
+\subsection{Melhorando resultados}
+
+\subsection{Calibração das ferramentas}
+
+Para extensão do trafego gerado, é necessário um estudo da melhor calibração para cada ferramente, como o D-ITG, Iperf, Libtins, o que pode melhorar os resultados
+
+\subsection{Melhorar Modelagem}
+\subsubsection{Machine learning classification de aplicações}
+\subsubsection{Modelagem de payload}
+usando payloads pre-definidos em strings
+\subsubsection{Modelagem de de windows size, e flags tcp}
+
+
+
+\subsection{Improoving performance}
+
+\subsubsection{Improving database storage}
+
+basicamente eu vou aqui propor um novo modelo de database mais eficiente, no qual menos dados serão arnmazenados
+
+\subsubsection{Improving DataProcessor Performance}
+
+Melhorar os algoritimos adicionando técnicas adicionais de modelagem, como condição de parada para o algoritimo gradient descendent, stochastic gradient descendent, entre outros
+
+
+\subsubsection{Sniffer baseado em SDN Switch}
+Isso mudaria o tipo de dado adiquirido, porém os algorítimos implementados ainda poderiam ser utilizados, já que eles trabalham com qualquer tipo de dado. Haveriam mudanças em como eles seriam tratados pelo data processor
+
+
+\subsubsection{Implementação}
+
+- Sniffer em C++ para melhorar a performance
+- Network Trace com uma API em Python
+
+
+\subsubsection{Kernel bypass usando o DPDK}
+
+Automatizar a criação de KKNI interfaces pelo FlowGenerator, o que possibilitaria kernel bypass na geração do trafego, melhorando a performance
+
+\subsection{Novos trabalhos}
+
+\subsubsection{PcapGen}
+
+Mininet+TCPdump+LibtinsFlow=> possibilidade de captura de trafego gerado em uma interface virtual, gerando portante traces sintéticos.
+Isso possibilitaria a criação de uma biblioteca de traces, para aplicações de banchmark como o NFPA.
+
+\subsubsection{Extender para novas ferramentas e bibliotecas}
+
+Ampliar para o moongen, ostinato, Seagull, NetFPGA, etc
+
+\subsection{Benchmarking}
+
+Oferecer a possibilidade de automatização de medições e testes extendendo a ferramenta
+
+\section{Software Engineering process and Lessons Leaned}
+
+\section{Conclusion}
+
+
+

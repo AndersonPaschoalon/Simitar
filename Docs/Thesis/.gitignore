@@ -1,0 +1,15 @@
+_minted-MSc_Thesis
+*.aux
+*.bbl
+*.blg
+*.glo
+*.idx
+*.lof
+*.log
+*.lot
+*.synctex.gz
+*.toc
+*.acn
+*.ist
+*.mw
+*.gz

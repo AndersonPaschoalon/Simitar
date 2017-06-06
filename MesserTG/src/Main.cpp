@@ -55,7 +55,7 @@ int main()
 {
 	MESSER_LOG_INIT(DEBUG);
 	//bool regressionTests = false;
-	bool testDummy = false;
+	bool testDummy = true;
 	bool testDitg = true;
 
 #ifdef REGRESSION_TESTS
@@ -90,7 +90,7 @@ int main()
 		trace->writeToFile("kkk.xml");
 		trace->writeToFile("data/regression-tests/test-trace.xml");
 
-		trace->exec(true);
+		//trace->exec(true);
 		delete trace;
 	}
 	if (testDitg == true)
@@ -106,8 +106,8 @@ int main()
 		////dp.calculate(experimentName, &dbif, trace);
 		//trace->setTrafficGenEngine("D-ITG");
 		//trace->exec(true);
-		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "D-ITG");
-		NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
+		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "D-ITG");
+		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
 		traceCdt.exec(true);
 
 	}

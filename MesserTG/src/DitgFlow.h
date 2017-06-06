@@ -56,9 +56,15 @@ public:
 		/// Flow-level settings
 
 		//duration
-		strCommand += " -t " + std::to_string(onTime);
+		uint duration_ms = uint(onTime*1000);
+
+		//isso não deveria acontecer
+		if(duration_ms < 100)
+			duration_ms = 100;
+
+		strCommand += " -t " + std::to_string(duration_ms);
 		strCommand += " -z " + std::to_string(npackets);
-		strCommand += " -k " + std::to_string(nbytes / 1024);
+		//strCommand += " -k " + std::to_string(nbytes / 1024);
 		//DS byte
 		strCommand += " -b " + std::to_string(getFlowDsByte());
 		//Guarantee the mean packet rate
@@ -67,7 +73,8 @@ public:
 		/// Network-layer settings
 		strCommand += " -f " + std::to_string(getNetworkTtl());
 		//destination and sources IPv4/IPv6 address
-		strCommand += " -a " + getNetworkDstAddr();
+		//strCommand += " -a " + getNetworkDstAddr();
+		strCommand += " -a 10.0.0.2";
 		//strCommand += " -sa " + getNetworkSrcAddr();
 
 		/// Transport-layer settings
@@ -75,13 +82,13 @@ public:
 		{
 			strCommand += " -T TCP -D ";
 			strCommand += " -rp " + std::to_string(getTransportDstPort());
-			strCommand += " -sp " + std::to_string(getTransportSrcPort());
+			//strCommand += " -sp " + std::to_string(getTransportSrcPort());
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__UDP)
 		{
 			strCommand += " -T UDP ";
 			strCommand += " -rp " + std::to_string(getTransportDstPort());
-			strCommand += " -sp " + std::to_string(getTransportSrcPort());
+			//strCommand += " -sp " + std::to_string(getTransportSrcPort());
 		}
 		else if (this->getTransportProtocol() == PROTOCOL__ICMP)
 		{
@@ -100,9 +107,10 @@ public:
 		else
 		{
 			strCommand += " -T UDP -rp "
-					+ std::to_string(this->randTranportPort());
+					+ std::to_string(randTranportPort());
 		}
 
+		/*
 		/// Inter-departure time options
 		unsigned int i = 0;
 		for (;; i++)
@@ -177,6 +185,7 @@ public:
 				break;
 			}
 		}
+		*/
 
 		/// Packet size options
 
@@ -211,7 +220,7 @@ public:
 		////////////////////////////////////////////////////////////////////////////
 
 		strcpy(command, strCommand.c_str());
-		cout << "flow" << flowId << ">" << "command" << strCommand.c_str()
+		cout << "DITG:" << flowId << ">" << "command" << strCommand.c_str()
 				<< endl;
 		rc = DITGsend(host, command);
 		if (rc != 0)
