@@ -2,59 +2,87 @@
 
 \section{Introduction}
 
-As discussed before, there is many works devoted on studding the nature of the Ethernet traffic \cite{selfsimilar-ethernet}. Classic Ethernet models used Poisson related process to express generation of traffic. In a first look it makes sense,  sense, since a Poisson process represents the probability of events occur with a known average rate, and independently of the time since the last event\cite{selfsimilar-ethernet} \cite{book-poisson}. But studies made by Leland et al.\cite{selfsimilar-ethernet} showed that the Ethernet traffic has a self-similar and fractal nature. Even if they are able to represent the randomness of an Ethernet traffic, simple Poisson processes can't express the presence of "burstiness" in a long-term time scale, such as traffic "spikes" on long-range "ripples".  This is an indicative of the fractal and self-similar nature of the traffic.
+%2nd-review
+There are many works devoted to studying the nature of the Ethernet traffic\cite{selfsimilar-ethernet}. Classic Ethernet models used Poisson related processes to express generation of traffic. Initially, it makes sense since a Poisson process represents the probability of events occur with a known average rate, and independently of the last occurence\cite{selfsimilar-ethernet} \cite{book-poisson}. But studies made by Leland et al.\cite{selfsimilar-ethernet} showed that the Ethernet traffic has a self-similar and fractal nature. Even if they are able to represent the randomness of an Ethernet traffic, simple Poisson processes can't express traffic "burstiness" in a long-term time scale, such as traffic "spikes" on long-range "ripples". This is an indicative of the fractal and self-similar nature of the traffic, that usually we express by distributions with infinite variance, called heavy-tailed. Heavy-tail means that a stochastic distribution is not exponentially bounded\cite{sourcesonoff-paper}. Examples of heavy-tailed functions are Weibull, Pareto, Cauchy.  But heavy-tailed function may guarantee self-similarity, but not necessarily they will ensure other features like good correlation and same mean packet rate.
 
-Stochastic process that respects this characteristic have infinite variance, said to be heavy-tailed. Heavy-tail means that a stochastic distribution is not exponentially bounded\cite{sourcesonoff-paper}. Examples of heavy-tailed functions are Weibull, Pareto, Cauchy. But not many works on the literature deal with a process for parameterization of different stochastic models for Ethernet traffic. Also, a heavy-tailed function may guarantee self-similarity, but not necessarily they would guarantee other features like good correlation and same mean packet rate and dispersion.
+%2nd-review
+There many consolidate works that investigate the nature of the internet traffic\cite{selfsimilar-ethernet}\cite{analysis-self-similar}\cite{stochartic-selfsimilar}\cite{selfsimilar-highvariability}\cite{multi-player-online-game-self-similarity}, and many others on the modelling of stochastic functions for specific scenarios\cite{estimation-renewal-function-ethernet-traffic}\cite{modelling-of-self-similar}\cite{empirical-interarrival-study}\cite{modeling-concurrent-heavy-tailed}\cite{optimal-scheduling-of-heavy-tailed-traffic}\cite{modelling-of-self-similar}. But not as many on model choice automatization\cite{sourcesonoff-paper}.
 
-In this chapter we proposed an unified and simple method for modeling inter packet times, and choose the best fit automatically, without having to generate random data. We estimate many stochastic functions through many methodologies, and select the best model through the AIC computation. Since generating random can be computationally cost an have a bias, depending of the seed generator, an analytical method for selecting the best fitting eliminate these problems.
+%2nd-review
+In this chapter, we propose a method that may be implemented by  software. We estimate many stochastic functions through many methodologies and select the best model through the AIC computation\cite{bic-aic-comparision}. Since generating random can be cost and have a bias, depending on the seed generator, we cut these problems since our method is analytical. 
 
-We made a brief bibliographic review on some works related works. Then, we will present the traffic traces we are going to use in this chapter, and in the rest of the work. After we present or selected methodology for parameterization selection of the best fitting. To evaluate the quality of this selection criteria, we define a methodology for evaluate if our model selection is good or not. 
+%2nd-review
+We made a brief bibliographic review of some works related works on this topic. Then, we will present the traffic traces we are going to use in this chapter, and in the rest of our work. After we present or selected method for parameterization and fitting choice. To test our criteria quality, we define a validation method, based on cross-validations made by simulations.
 
 \section{Related Works}
 
-There are plenty of works on the literature which proposes new processes and methodologies foe generation on inter-packet times.
+%2nd-review
+There are plenty of works on the literature which proposes new processes and methodologies for modeling times between packets and packet trains.
 
+%2nd-review
 Fiorini \cite{modeling-concurrent-heavy-tailed} presents a heavy-tailed ON/OFF model, which tries to represent a traffic generated by many sources. The model emulates a multiple source power-tail Markov-Modulated (PT-MMPP) ON/OFF process, where the ON times are power-tail distributed. They achieve analytical performance measurements using Linear Algebra Queueing Theory.
 
-Kreban and Clearwater\cite{hierarchical-dynamics-interarrival-times} presents a model for times between job submissions of multiple users on a super computer. They show in their job that the Weibull probability functions is able to express well small and high values of inter-job submission times. They also tested exponential, lognormal and Pareto(called there power law) distributions. Exponential distribution couldn't  represent long-range values because it fell off too fast and Pareto was too slow. Lognormal fit well small values, but was poor on larger ones.    
+%2nd-review
+Kreban and Clearwater\cite{hierarchical-dynamics-interarrival-times} presents a model for times between job submissions of multiple users over a super computer. They show that the Weibull probability functions are able to express well small and high values of inter-job submission times. They also tested exponential, lognormal and Pareto distributions. Exponential distribution couldn't  represent long-range values because it fell off too fast and Pareto was too slow. Lognormal fit well small values, but was poor on larger ones.    
 
-Kronewitter\cite{optimal-scheduling-of-heavy-tailed-traffic} presents a models of scheduler of heavy-tailed traffic of multiple sources. On his work, he uses multiple Pareto sources to represent the traffic. To estimate the shape parameter $\alpha$ they use linear regression.
+%2nd-review
+Kronewitter\cite{optimal-scheduling-of-heavy-tailed-traffic} presents a model of scheduling traffic of many heavy-tail sources. On his work, he uses many Pareto sources to represent the traffic. To estimate the shape parameter $\alpha$ they use linear regression.
 
+% \cite{bivariate-gamma-distribution-arrival}
+% \cite{bic-aic-comparision}
+% \cite{sourcesonoff-paper}
+% \cite{modelling-of-self-similar}
+% \cite{realtime-detection-dos}
+% \cite{traffic-modelling-matlab}
+% \cite{trasmission-failure}
+% \cite{improvement-approaches-modeling}
 
 
 
 
 \section{Methodology}
 
-We will start defining the datasets we are going to use in this evaluation, and in the rest of this work as well. We define our criteria of parameterization and model selection, and a methodology for measure the quality of our choices. 
+%2nd-review
+We will start defining the datasets we are going to use in the rest of this work. Then, we define our criteria of parameterization and model choice and a methodology for measure the quality of method. 
 
 
 %In this chapter we will evaluate our proposed method for data modeling of inter-packet times.  We will present curves obtained by our prototype (implemented in Gnu Octave\footnote{\href{https://www.gnu.org/software/octave/}{https://www.gnu.org/software/octave/}}) that shows in detail how each step works. After explaining this process, we will present an evaluation method of our results, analyzing to analyze its quality. After this, we give some details of how we convert code from Octave to C++ and its benefits on time execution. All code used in this section is available on our GitHub page.%, on the directory \texttt{Prototypes}. 
 
 \subsection{Datasets}
 
+%2nd-review
 We start defining also define the \textit{pcaps} datasets we are going to use in the rest of this text. We will use for datasets, and for reproduction purposes, three are public available. 
-The first is a light weight Skype capture, found at Wireshark wiki\footnote{https://wiki.wireshark.org/}, and can be found at \href{https://wiki.wireshark.org/SampleCaptures}{https://wiki.wireshark.org/SampleCaptures}. The file name is \texttt{SkypeIRC.cap}. 
+The first is a lightweight Skype capture, found in  Wireshark wiki\footnote{https://wiki.wireshark.org/}, and can be found at \href{https://wiki.wireshark.org/SampleCaptures}{https://wiki.wireshark.org/SampleCaptures}. The file name is \texttt{SkypeIRC.cap}, and we call it \textit{skype-pcap}.
 
-The second is a CAIDA\footnote{http://www.caida.org/home/}{http://www.caida.org/home/} capture, and can be found at  \href{https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC}{https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC}. Access to this file need login, so you will have to create an account and wait for approval first. The pcap's file name is \texttt{equinix-chicago.dirB.20160121-135641.UTC.anon.pcap.gz}. 
+%2nd-review
+The second is a CAIDA\footnote{http://www.caida.org/home/}{http://www.caida.org/home/} capture, and can be found at  \href{https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC}{https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC}. Access to this file need login, so you will have to create an account and wait for approval first. The pcap's file name is \texttt{equinix-chicago.dirB.20160121-135641.UTC.anon.pcap.gz}. We call it \textit{wan-pcap}.
 
-The third we capture in our laboratory LAN, through a period of 24 hours. It was captured in the firewall gateway between our local and external network. Along with other tests, We intend to verify diurnal behavior on it. That means, a high demand of packets during the day, an a small in the night. The fourth is a capture of a busy private network's access point to the Internet, available on-line on TCPreplay\cite{web-tcpreplay} website \footnote{ http://tcpreplay.appneta.com/wiki/captures.html}, and is called \texttt{bigFlows.pcap}. We will refer to these \textit{pcaps} as \textit{skype-pcap}, \textit{wan-pcap}, \textit{lan-diurnal-pcap}, and \textit{bigflows-pcap} respectivaly. Along with these datasets, we will use two subpcaps from the originals. The first, \textit{skype-flowburst-pcap}, is a burst of a single HTTP flow from \textit{skype-pcap}. It can be obtained from Wireshark using the filter \texttt{(ip.src\_host==172.16.133.25) \&\& (ip.dst\_host==74.125.170.42) \&\& (tcp.dstport==80) \&\& (tcp.srcport==63378) \&\& (frame.time\_relative>30.0) \&\&( frame.time\_relative<50.0)}. The second, \textit{caida1s-pcap} is a trace with the first second from \texttt{wan-pcap}.
+%2nd-review
+The third we capture in our laboratory LAN, through a period of 24 hours. It was captured in the firewall gateway between our local and external network. Along with other tests, We intend to verify diurnal behavior on it. That means a high demand of packets during the day and a small in the night. We call it \textit{lan-diurnal-pcap}.
+
+%2nd-review
+The fourth is a capture of a busy private network access point to the Internet, available on-line on TCPreplay\cite{web-tcpreplay} website \footnote{ http://tcpreplay.appneta.com/wiki/captures.html}, and is called \texttt{bigFlows.pcap}. We will refer to it \textit{bigflows-pcap}.
+
+%Along with these datasets, we will use two subpcaps from the originals. The first, \textit{skype-flowburst-pcap}, is a burst of a single HTTP flow from \textit{skype-pcap}. It can be obtained from Wireshark using the filter \texttt{(ip.src\_host==172.16.133.25) \&\& (ip.dst\_host==74.125.170.42) \&\& (tcp.dstport==80) \&\& (tcp.srcport==63378) \&\& (frame.time\_relative>30.0) \&\&( frame.time\_relative<50.0)}. The second, \textit{caida1s-pcap} is a trace with the first second from \texttt{wan-pcap}.
 
 
-\subsection{Modelling Inter-Packet times and Packet Sizes: Proposed Process}
+\subsection{Modelling Inter-Packet times and Packet Sizes}
 
-We summarize our process of modeling inter packet times at the figure~\ref{fig:model-parameterization}. We collect a set of inter-packet times from a actual traffic capture. Then, we estimate a set of parameters for stochastic functions, using different methodologies. Then, from these parametrized models, we estimate which best represent our data set, using the measure of quality AIC (Akaike information criterion). We also calculate another measure of quality called BIC(Bayesian information criterion), for comparison of results. In this chapter, we present our results obtained on our prototype implemented  in Octave.
+%2nd-review
+We summarize our process of modeling inter-packet times at the figure~\ref{fig:model-parameterization}. We collect a set of inter-packet times from an actual traffic capture. Then, we estimate a set of parameters for stochastic functions, using different methodologies. Then, from these parametrized models, we estimate which best represent our data set, using the measure of quality AIC (Akaike information criterion). We also calculate another measure of quality called BIC(Bayesian information criterion), for comparison of results. In this chapter, we present our results obtained on our prototype implemented in Octave.
 
-Currently we are modeling:
+%2nd-review
+Currently, we are modeling:
 
+%2nd-review
 \begin{itemize}
-\item Weibull distribution, using linear regression, through the Gradient descendant algorithm;
-\item Normal distribution, using direct estimation the mean and the standard deviation of the dataset;
-\item Exponential distribution, using linear regression, through the Gradient descendant algorithm. We refer to this distribution as Exponential(LR);
-\item Exponential distribution, using direct estimation of the dataset mean. We refer to this distribution as Exponential(Me);
-\item Pareto distribution, using linear regression, through the Gradient descendant algorithm. We refer to this distribution as Pareto(LR);
-\item Pareto distribution, using the maximum likelihood method. We refer to this distribution as Pareto(MLH);
-\item Cauchy distribution, using linear regression, through the Gradient descendant algorithm;
+	\item Weibull distribution, using linear regression, through the Gradient descendant algorithm;
+	\item Normal distribution, using direct estimation the mean and the standard deviation of the dataset;
+	\item Exponential distribution, using linear regression, through the Gradient descendant algorithm. We refer to this distribution as Exponential(LR);
+	\item Exponential distribution, using a direct estimation of the dataset mean. We refer to this distribution as Exponential(Me);
+	\item Pareto distribution, using linear regression, through the Gradient descendant algorithm. We refer to this distribution as Pareto(LR);
+	\item Pareto distribution, using the maximum likelihood method. We refer to this distribution as Pareto(MLH);
+	\item Cauchy distribution, using linear regression, through the Gradient descendant algorithm;
 \end{itemize}
 
 
@@ -65,34 +93,37 @@ Currently we are modeling:
 
 % In probability theory and statistics, the exponential distribution (a.k.a. negative exponential distribution) is the probability distribution that describes the time between events in a Poisson process, i.e. a process in which events occur continuously and independently at a constant average rate. It is a particular case of the gamma distribution. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless. In addition to being used for the analysis of Poisson processes, it is found in various other contexts.
 
+%2nd-review
+Now we will give a brief explanation our three procedures: Linear Regression (with the  Gradient descendant algorithm), direct estimation, and maximum likelihood. We go deep into details explaining the methods on the appendix ~\ref{ap:revision-probability}, and present the mathematical demonstrations on appendix~\ref{ap:mathematical-modeling}. 
 
-Now we will give a brief explanation our three procedures: Linear Regression (with the  Gradient descendant algorithm), direct estimation, and maximum likelihood. We go deep in details on the explanation of the methods on the appendix ~\ref{ap:revision-probability}, and present the mathematical demonstrations on appendix~\ref{ap:mathematical-modeling}. 
+%2nd-review
+Some observations must be made. Since the time samples resolution used were of $10^{-6}$s, all values equal to zero were set to  $5\cdot10^{-8}$s, to avoid division by zero. To avoid divergence on tangent operation on the linearization the Cauchy function, the inter-packets CDF function values were floor-limited and upper-limited to  $10^{-6}$ and $0.999999$ respectively.
 
-Some observations must be made. Since the resolution of the time samples used were of $10^{-6}$s, all values equals to zero were set to  $5\cdot10^{-8}$s, to avoid division by zero. To avoid divergence on tangent operation on the linearization the Cauchy function, the inter packets CDF function values were floor-limited and upper-limited to  $10^{-6}$ and $0.999999$ respectively.
-
-We implemented this prototype using Octave. Its code is located on GitHub, for reproduction purposes\footnote{github-link-aqui}
-
+%2nd-review
+We implemented this prototype using Octave. We upload the code on GitHub, for reproduction purposes\footnote{github-link-aqui}
 
 \subsubsection{Linear regression (Gradient descendant)}
 
-Linear regression is a method for estimating the best linear curve
+%2nd-review
+Linear regression is a method for estimating the best linear curve in the format:
 
 \begin{equation}
 y = ax + b
 \end{equation}
 
+%2nd-review
 to fit a given data set. We can use linear regression to estimate parameters of a non-linear curve expressing it on a linear format. For example, the Weibull CDF for $t > 0$ is:
 
 \begin{equation}
-F(t; \alpha, \beta) = F(t) = 1 - e^{-(t/\beta)^{\alpha}}
+F(t|\alpha, \beta) = F(t) = 1 - e^{-(t/\beta)^{\alpha}}
 \end{equation}
 
-manipuling it, we can found:
+Manipuling the equation:
 \begin{equation}
 \alpha\ln{(t)} - \alpha\ln{(\beta)} = \ln{-\ln{1 - F(t)}}
 \end{equation}
 
-%corrigir erro
+%%2nd-review
 If we call $x = \ln{(t)}$ and $y = \ln{(-\ln{(1 - F(t))})}$, we found a linear equation, where $a = \alpha$ and $b = -\alpha\ln{(\beta)}$. Having in hands a estimation of the empirical CDF of our data samples, we apply the $x$ and $y$ definitions to linearize the data. Using the gradient descendant, we are able to find a estimation of the linear coefficients $\hat{a}$ and $\hat{b}$. Using the inverse function of the definition of linear coefficients, we are able to find the estimated parameters $\hat{\alpha}$ and $\hat{\beta}$.
 
 \begin{equation}
@@ -103,11 +134,13 @@ If we call $x = \ln{(t)}$ and $y = \ln{(-\ln{(1 - F(t))})}$, we found a linear e
 \beta = e^{-(b/a)}
 \end{equation}
 
-We present examples of linearized data, and the linear approximation achieved, as well the cost convergence of the gradient descendant algorithm in the appendix ~\ref{ap:mathematical-modeling}.
+%2nd-review
+We present examples of linearized data, and the linear approximation achieved, as well the cost convergence of the gradient descendant algorithm in the appendix ~\ref{ap:revision-probability}.
 
-
+%2nd-review
 Applying the inverse equations of the linear coefficients ($\hat{\alpha} = \hat{a}$ and $\hat{\beta} = e^{-(\hat{b}/\hat{a})}$) (the symbol stands for the estimated parameters). So we are able to estimate the Weibull distribution parameters.
 
+%2nd-review
 We can summarize this procedure, in these steps:
 \begin{enumerate}
 \item Linearize the stochastic CDF function F(t).
@@ -116,27 +149,32 @@ We can summarize this procedure, in these steps:
 \item Apply the inverse equation of the linear coefficients, to determine the stochastic function parameters.
 \end{enumerate}
 
+%2nd-review
 In the parameters estimation, there is an exception, since the Pareto scale ($t_{m}$) is defined by the minimum time. 
 
+%2nd-review
 In the table~\ref{tab:linearization-sumary} we present a summary of the used equations in the procedure. In this notation, the subscript $i$ means that it must be applied on every empirical value measured. The hat( $\widehat{}$ ) indicates an estimated value for a parameter.
 
+%2nd-review
 In the figure~\ref{fig:linearization} we presente the linearized 
 
+%2nd-review
 \begin{table}[h!]
-\centering
-\caption{My caption}
-\label{tab:linearization-sumary}
-\begin{tabular}{llllll}
-\hline
-Function    & Linearized $x$     & Linearized $y$                    & \multicolumn{2}{l}{Parameters}                                                        &  \\
-\hline
-Cauchy      & $x_i = t_i$        & $y_i = \tan{(\pi(F(t_i) - 1/2))}$ & $\hat{\gamma} = \frac{1}{a}$ & $\hat{\hat{t_0}} = - \frac{b}{a}$                      &  \\
-Exponential & $x_i = t_i$        & $y_i = \ln{(1 - F(t_i))})$        & \multicolumn{2}{l}{$\hat{\lambda} = -a$}                                              &  \\
-Pareto      & $x_i = \ln{(t_i)}$ & $y_i = \ln{(1 = F(t_i))}$         & $\alpha = -a $         & $\hat{x_{m}} = \min_{i = 0, ..., m}\{x_{i}\}$ &  \\
-Weibull     & $x = \ln{(t)}$     & $y = \ln{(-\ln{(1 - F(t))})}$     & $\alpha = a$                 & $\beta = e^{-(b/a)}$                                   & \\
-\hline
-\end{tabular}
+	\centering
+	\caption{Linearized functions, and parameters estimators, used by the linear regression}
+	\label{tab:linearization-sumary}
+	\begin{tabular}{llllll}
+		\hline
+		Function    & Linearized $x$     & Linearized $y$                    & \multicolumn{2}{l}{Parameters Estimator}      						 &  \\
+		\hline
+		Cauchy      & $x_i = t_i$        & $y_i = \tan{(\pi(F(t_i) - 1/2))}$ & $\hat{\gamma} = \frac{1}{\hat{a}}$ & $\hat{t_0} = - \frac{\hat{b}}{\hat{a}}$                      &  \\
+		Exponential & $x_i = t_i$        & $y_i = \ln{(1 - F(t_i))})$        & \multicolumn{2}{l}{$\hat{\lambda} = -\hat{a}$}                                              &  \\
+		Pareto      & $x_i = \ln{(t_i)}$ & $y_i = \ln{(1 = F(t_i))}$         & $\hat{\alpha} = -\hat{a} $         & $\hat{x_{m}} = \min_{i = 0, ..., m}\{x_{i}\}$ &  \\
+		Weibull     & $x = \ln{(t)}$     & $y = \ln{(-\ln{(1 - F(t))})}$     & $\hat{\alpha} = \hat{a}$                 & $\hat{\beta} = e^{-(\hat{b}/\hat{a})}$                                   & \\
+		\hline
+	\end{tabular}
 \end{table}
+
 
 
 \begin{figure}[ht!]
@@ -155,19 +193,18 @@ Weibull     & $x = \ln{(t)}$     & $y = \ln{(-\ln{(1 - F(t))})}$     & $\alpha =
 
 
 
-
-
 \subsubsection{Direct Estimation}
 
-%corrigir error
-The expected value $E(X)$ and and variance $Var(X)$ of a random variable $X$ of some distributions are close related with its parameters. Since the mean $\bar{\mu}$ and the standard deviation $\bar{\sigma}$ are in general good approximations for the expected value and variance, we may estimate we may use them to estimate parameters.
-%corrigir error
+%2nd-review
+The expected value $E(X)$ and variance $Var(X)$ of a random variable $X$ of some distributions are close related with its parameters. Since the mean $\bar{\mu}$ and its standard deviation $\bar{\sigma}$ are in general good approximations for the expected value and variance, we use them to estimate parameters.
+
+%2nd-review
 Following the notation presented at table~\ref{tab:distributions-equations}, we have for the normal distribution:
 \begin{equation}
 (\hat{\mu}, \hat{\sigma} = (\bar{\mu}, \bar{\sigma})
 \end{equation}
 
-
+%2nd-review
 For the exponential distribution $E(X) = \frac{1}{\lambda}$, therefore:
 \begin{equation}
 \hat{\lambda} = \frac{1}{\hat{\mu}}
@@ -175,7 +212,9 @@ For the exponential distribution $E(X) = \frac{1}{\lambda}$, therefore:
 
 \subsubsection{Maximum Likelihood}
 
+%2nd-review
 The maximum likelihood estimation, is a method for estimation of parameters, winch maximizes the likelihood function. We explain in details this subject in the Appendix A. Using this method for the Pareto distribution, it is possible to derive the following equations the its parameters:
+
 \begin{equation}
 \hat{x_{m}} = \min_{i = 0, ..., m}\{x_{i}\}
 \end{equation} 
@@ -189,7 +228,8 @@ where $m$ is the sample size.
 
 \subsubsection{AIC and BIC}
 
-Suppose that we have an statistical model $M$ of soma dataset ${\boldsymbol{x} = (x_1, ..., x_n)}$, with $n$ independent and identically distributed observations of a random variable $X$. This model can be expressed by a PDF $f(x, \boldsymbol{\theta})$, where $\boldsymbol{\theta}$ a vector of parameter of the PDF, $\boldsymbol{\theta} \in \mathbb{R}^{k}$ ($k$ is the number of parameters). The  likelihood function  of this model $M$ is given by:
+%2nd-review
+ Suppose that we have an statistical model $M$ of soma dataset ${\boldsymbol{x} = (x_1, ..., x_n)}$, with $n$ independent and identically distributed observations of a random variable $X$. This model can be expressed by a PDF $f(x, \boldsymbol{\theta})$, where $\boldsymbol{\theta}$ a vector of parameter of the PDF, $\boldsymbol{\theta} \in \mathbb{R}^{k}$ ($k$ is the number of parameters). The  likelihood function  of this model $M$ is given by:
 
 \begin{equation}
 L(\boldsymbol{\theta}|\boldsymbol{x} ) =  f(x_1|\boldsymbol{\theta})...f(x_n|\boldsymbol{\theta}) = \prod_{i = 1}^{n}f(x_i|\boldsymbol{\theta})
@@ -212,9 +252,11 @@ In both cases, the preferred model $M_i$, is the one with the smaller value of $
 
 \subsubsection{Validation}
 
+%2nd-review
 To see if our criterion of parameter selection is actually is able to find which is the best model, we define a validation methodology. 
 We generate a vector with the same size form the original, with random generated data through our model estimation. Then we compare it with the original sample, trough four different metrics, all with a confidence interval of 95\%:
 
+%2nd-review
 \begin{itemize}
 \item Correlation between the sample data and the estimated model;
 \item Hurst exponent;
@@ -222,15 +264,29 @@ We generate a vector with the same size form the original, with random generated
 \item Standard deviation of inter packet times.
 \end{itemize}
 
-The Pearson's product-moment coefficient, or simply correlation coefficient,  is an expression of the dependence or association between two datasets. Its value goes from -1 to +1. +1 means a perfect direct linear correlation. -1 indicates perfect inverse linear correlation. 0 means no linear correlation. So, as close the result reach 1, more similar are the inter packet times to the original values. To estimate it, we use the Octave's function \texttt{corr()}.
+%2nd-review
+The Pearson's product-moment coefficient, or simply correlation coefficient,  is an expression of the dependence or association between two datasets. Its value goes from -1 to +1. +1 means a perfect direct linear correlation. -1 indicates perfect inverse linear correlation. 0 means no linear correlation. So, as close the result reach 1, more similar are the inter-packet times to the original values. To estimate it, we use the Octave's function \texttt{corr()}.
+
+%2nd-review
+As explained before in the chapter~\ref{ch:literature-review}, the Hurst exponent is meter self-similarity and indicates the fractal level of the inter-packet times. As close the result is from the original, more similar is the fractal level of the estimated samples from the original.To estimate this value we use the function \texttt{hurst()} from Octave, which uses rescaled range method.
+Finally we measure the mean and the standard deviation (as a measure of the dispersion), using the Octave's functions \texttt{mean()} and \texttt{std()}. We also present some \textit{QQplots}, to visually compare the random-generated data and the original dataset. 
+
+%2nd-review
+As close the correlation, Hurst exponent, mean and the standard deviation is from the original dataset, the better is model fitting. Also, analyzing the mean, we can see if a certain modeling procedure tends to be more penalized for the values close, or far from zero. This means that if the mean inter-packet time tends to be smaller or higher compared to the original. 
+
+%2nd-review
+With these results in hands, we can see if AIC and BIC are good criteria for model selection for inter-packet times. To quantitatively check it, we define a cost function based on the correlation, Hurst exponent and mean. We exclude the standard deviation, because the Hurst exponent being a meter of the fractal level, also capture information about the desired dispersion of the data. So, for comparing all these results, we defined a cost function $J$, based on the randomly generated data values.
+
+%2nd-review
+Being $Cr$ the vector of correlations ordered from the greater to the smaller. Let $Me$ and $Hr$ defined by the absolute difference between mean and hurt exponent of the estimated values and the original dataset. Both are ordered from the smaller to the greatest values. Letting $\phi(V, M)$ be an operator wich gives the position of a model $M$ in a vector $V$, we define the cost function $J$ as:
 
 
-As explained before in the chapter~\ref{ch:literature-review}, the Hurst exponent is a measurer of self-similarity, and indicates the fractal level of the inter packet times. As close the result is from the original, more similar is the fractal level of the estimated samples from the original.To estimate this value we use the function \texttt{hurst()} from Octave, which uses rescaled range method.
+\begin{equation}
+J(M) = \phi(Cr, M) + \phi(Me, M) + \phi(Hr, M)
+\end{equation}
 
-Finally we measure the mean and the standard deviation (as a measure of the dispersion), using the Octave's functions \texttt{mean()} and \texttt{std()}. We also present some \textit{QQplots}, to visually compare the random-generated data and the actual dataset. 
-
-
-As close the correlation, Hurst exponent, mean and the standard deviation is from the original dataset, the better is model fitting. Also, analyzing the mean, we can see if a certain modeling procedure tend to be more penalized for the values close, or far from zero. That means, if the mean inter-packet time tends to be smaller or higher compared to the original. With these results in hands, we can see if AIC and BIC are actually good criterion on model selection for inter-packet times.
+%2nd-review
+The smaller is the cost $J$, the best is the model. Then we compare the results achieved by AIC and BIC, and $J$.
 
 \section{Results}
 
@@ -240,28 +296,44 @@ As close the correlation, Hurst exponent, mean and the standard deviation is fro
 \centering
 \caption{Results of the octave prototype, include BIC and AIC values, para estimated parameters for two of our pcap traces: \textit{skype-pcap }and \textit{bigflows-pcap}. \textit{bigflows-pcap} is much larger, and has a much much smaller mean inter-packet time}
 \label{tab:prototype-results1}
-\scalebox{0.70}{ 
-\begin{tabular}{lllllllll}
+\scalebox{0.75}{ 
+\begin{tabular}{lcccccccc}
 \hline
                 & \multicolumn{8}{c}{Trace} \\ \cline{2-9} 
-Function		& AIC        & BIC        & \multicolumn{2}{c}{Parameters}              & AIC        & BIC        & \multicolumn{2}{c}{Parameters}                \\ \cline{2-9}
-        & \multicolumn{4}{c}{skype-pcap}                                        & \multicolumn{4}{c}{bigflows-pcap}                                       \\ \hline 
-Cauchy          & $ 21.8\cdot10^3 $  & $21.9\cdot10^3$  & $\gamma:0.000259 $ & $x_0:0.104891 $    & $ 7.2\cdot10^6 $   & $7.2\cdot10^6$   & $ \gamma:1.935833 $ & $x_0:-7.245697 $    \\
-Exponential(LR) & $-4.3\cdot10^3$  & $ -4.3\cdot10^3 $  & \multicolumn{2}{l}{$\lambda:1.861121 $}   & $7.3\cdot10^6$   & $7.3\cdot10^6$   & \multicolumn{2}{l}{$ \lambda:0.009752 $}    \\
-Exponential(Me) & $-1.6\cdot10^3$  & $-1.6\cdot10^3$  & \multicolumn{2}{l}{$\lambda:7.011624 $}   & $-10.9\cdot10^6$ & $-10.9\cdot10^6$ & \multicolumn{2}{l}{$ \lambda:2638.706529 $} \\
-Normal          & $3.3\cdot10^3$   & $3.3\cdot10^3$   & $\mu:0.142620 $    & $\sigma:0.500698 $ & $-9.4\cdot10^6$  & $-9.4\cdot10^6$  & $ \mu:0.000379$     & $ \sigma:0.000660 $ \\
-Pareto(LR)      & $-8.3\cdot10^3$  & $-8.3\cdot10^3$  & $\alpha:0.252367 $ & $x_m:0.000000 $    & $-10.3\cdot10^6$  & $-10.3\cdot10^6$  & $ \alpha:0.148862 $ & $ x_m:0.000000 $    \\
-Pareto(MLH)     & $-11.6\cdot10^3$ & $-11.6\cdot10^3$ & $\alpha:0.092060 $ & $x_m:0.000000 $    & $-10.3\cdot10^6$  & $-10.3\cdot10^6$  & $ \alpha:0.136193 $ & $ x_m:0.000000 $    \\
-Weibull         & $-14.6\cdot10^3$ & $-14.6\cdot10^3$ & $\alpha:0.319808 $ & $\beta:0.015244 $  & $-11.0\cdot10^6$ & $-11.0\cdot10^6$ & $ \alpha:0.281189 $ & $ \beta:0.000554 $  \\ \hline
-
-				& \multicolumn{4}{c}{skype-pcap}                                        & \multicolumn{4}{l}{bigflows-pcap}                                       \\ \hline
-Cauchy          & $ 21.8\cdot10^3 $  & $21.9\cdot10^3$  & $\gamma:0.000259 $ & $x_0:0.104891 $    & $ 7.2\cdot10^6 $   & $7.2\cdot10^6$   & $ \gamma:1.935833 $ & $x_0:-7.245697 $    \\
-Exponential(LR) & $-4.3\cdot10^3$  & $ -4.3\cdot10^3 $  & \multicolumn{2}{l}{$\lambda:1.861121 $}   & $7.3\cdot10^6$   & $7.3\cdot10^6$   & \multicolumn{2}{l}{$ \lambda:0.009752 $}    \\
-Exponential(Me) & $-1.6\cdot10^3$  & $-1.6\cdot10^3$  & \multicolumn{2}{l}{$\lambda:7.011624 $}   & $-10.9\cdot10^6$ & $-10.9\cdot10^6$ & \multicolumn{2}{l}{$ \lambda:2638.706529 $} \\
-Normal          & $3.3\cdot10^3$   & $3.3\cdot10^3$   & $\mu:0.142620 $    & $\sigma:0.500698 $ & $-9.4\cdot10^6$  & $-9.4\cdot10^6$  & $ \mu:0.000379$     & $ \sigma:0.000660 $ \\
-Pareto(LR)      & $-8.3\cdot10^3$  & $-8.3\cdot10^3$  & $\alpha:0.252367 $ & $x_m:0.000000 $    & $-10.3\cdot10^6$  & $-10.3\cdot10^6$  & $ \alpha:0.148862 $ & $ x_m:0.000000 $    \\
-Pareto(MLH)     & $-11.6\cdot10^3$ & $-11.6\cdot10^3$ & $\alpha:0.092060 $ & $x_m:0.000000 $    & $-10.3\cdot10^6$  & $-10.3\cdot10^6$  & $ \alpha:0.136193 $ & $ x_m:0.000000 $    \\
-Weibull         & $-14.6\cdot10^3$ & $-14.6\cdot10^3$ & $\alpha:0.319808 $ & $\beta:0.015244 $  & $-11.0\cdot10^6$ & $-11.0\cdot10^6$ & $ \alpha:0.281189 $ & $ \beta:0.000554 $  \\ \hline
+Function		& AIC  & BIC  & \multicolumn{2}{c}{Parameters}  
+				& AIC & BIC  & \multicolumn{2}{c}{Parameters} \\ \hline 
+				
+				& \multicolumn{4}{c}{skype-pcap}  & \multicolumn{4}{c}{lan-diurnal-pcap}   \\ \hline 
+Cauchy          & $2.18e4$    & $2.19e4$    & $\gamma:2.59e-4$ & $x_0:1.05e-1$    
+				& $-2.85e7$   & $-2.85e7$   & $\gamma:9.63e-3$ & $x_0:-3.61e-3$    \\
+Exponential(LR) & $-1.61e3$   & $-1.60e3$   & \multicolumn{2}{c}{$\lambda:1.86$}   
+				& $1.79e6$    & $1.79e6$    & \multicolumn{2}{c}{$\lambda:8.51e-1$}    \\
+Exponential(Me) & $-4.29e3$   & $-4.28e3$   & \multicolumn{2}{c}{$\lambda:7.01$}   
+				& $-3.12e7$   & $-3.12e7$   & \multicolumn{2}{c}{$ \lambda:58.78$} \\
+Normal          & $3.29e3$    & $3.31e3$    & $\mu:1.43e-1 $    & $\sigma:5.01e-1$ 
+				& $Inf$       & $Inf$       & $\mu:1.70e-2$     & $\sigma:8.56e-2$ \\
+Pareto(LR)      & $-8.28e3$   & $-8.27e3$   & $\alpha:2.52e-1$ & $x_m:5e-8$    
+				& $-4.60e7$   & $-4.60e7$   & $\alpha:2.55e-1$ & $ x_m:5e-8$    \\
+Pareto(MLH)     & $-1.16e4$   & $-1.16e4$   & $\alpha:9.21e-2$ & $x_m:5e-8$    
+				& $-5.03e7$   & $-5.03e7$   & $\alpha:1.15e-1$ & $ x_m:5e-8$    \\
+Weibull         & $-1.46e4$   & $ -1.46e4$  & $\alpha:3.20e-1$ & $\beta:1.52e-2$  
+				& $-5.60e7$   & $-5.60e7$   & $\alpha:3.34e-1$ & $\beta:1.83e-3$  \\ \hline
+				
+				& \multicolumn{4}{c}{bigFlows-pcap} & \multicolumn{4}{c}{wan-pcap}  \\ \hline
+Cauchy          & $7.14e6$    & $7.14e6$   & $\gamma:1.94e0$ &$x_0:-7.25$    
+				& $5.99e7$    & $5.99e7$   & $ \gamma:8.28e2$ &$x_0:-4.52e3$    \\
+Exponential(LR) & $7.33e6$    & $7.33e6$   & \multicolumn{2}{c}{$\lambda:1.489e-1$}   
+				& $5.68e7$    & $ 5.68e7$  & \multicolumn{2}{c}{$\lambda:2.2e-5$}   \\
+Exponential(Me) & $-1.09e7$   & $-1.09e7$  & \multicolumn{2}{c}{$\lambda:2.64e3$}   
+				& $-6.58e7$   & $-6.58e7$  & \multicolumn{2}{c}{$\lambda:6.58e5$} \\
+Normal          & $-9.35e6$   & $-9.35e6$  & $\mu:3.79e-4$   &$\sigma:6.60e-4$ 
+				& $-6.39e7$   & $-6.39e7$  & $\mu:2e-6$     & $\sigma:1e-6$ \\
+Pareto(LR)      & $-1.02e7$   & $-1.02e7$  & $\alpha:1.489e-1 $ & $x_m:5e-8 $    
+				& $-5.31e7$   & $-5.31e7$  & $\alpha:NaN$ & $x_m:5e-8 $    \\
+Pareto(MLH)     & $-1.03e7$   & $-1.03e7$  & $\alpha:1.362e-1$ & $x_m:5e-8 $    
+				& $-6.25e7$   & $-6.25e7$  & $\alpha:3.39e-1$ & $x_m:5e-8 $    \\
+Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$  
+				& $-5.46e7$   & $-5.46e7$  & $\alpha:7.64e-2$ & $\beta:1e-6$  \\ \hline
 
 \end{tabular}
 }
@@ -301,6 +373,38 @@ Weibull         & $-14.6\cdot10^3$ & $-14.6\cdot10^3$ & $\alpha:0.319808 $ & $\b
 \end{figure}
 
 
+\begin{figure}[ht!]
+	\centering
+	\label{fig:aproximation-original-cdf-skype}
+	\subfloat[Chauchy]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Cauchy}
+	}
+	\subfloat[Exponential(LR)]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Exponential(LR)}
+	}
+	\hspace{0mm}
+	\subfloat[Exponential(Me)]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Exponential(Me)}
+	}
+	\subfloat[Normal]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Normal}
+	}
+	\hspace{0mm}
+	\subfloat[Pareto(LR)]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Pareto(LR)}
+	}
+	\subfloat[Pareto(MLH)]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Pareto(MLH)}
+	}
+	\hspace{0mm}
+	\subfloat[Weibull]{
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Weibull}
+	}
+	\caption{CDF functions for the approximations of \textit{skype-pcap} inter  packet times, of many stochastic functions.}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%
 % Skype correlation
 \begin{figure}[h!]
@@ -326,45 +430,31 @@ Weibull         & $-14.6\cdot10^3$ & $-14.6\cdot10^3$ & $\alpha:0.319808 $ & $\b
 \caption{Statistical parameters of \textit{skype-pcap} and its approximations}
 \end{figure}
 
-%%%%%%%%%%%%%%
-% BigFlows correlation
-\begin{figure}[ht!]
-\centering
-\label{fig:correlation-hurst-big-flows-pcap}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/bigFlows_Correlation}
-  \label{correlation-skype-pcap}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/bigFlows_Hurst_Exponent}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/bigFlows_Mean}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/bigFlows_Standard_Deviation}
-  \label{hurst-skype-pcap}
-}
-\caption{Statistical parameters of \textit{bigflows-pcap} and its approximations}
-\end{figure}
 
-
-% BigFlows correlation
+%validation Cost function
 \begin{figure}[ht!]
-\centering
-\label{fig:correlation-hurst-big-flows-pcap}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_QQplot_-_Weibull_dat}
-  \label{correlation-skype-pcap}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_QQplot_-_Cauchy}
-}
-\caption{Statistical parameters of \textit{bigflows-pcap} and its approximations}
+	\centering
+	\label{fig:cost-function}
+	\subfloat[\textit{skype-pcap}]{
+		\includegraphics[width=75mm]{figures/ch4/Skype_costFunction}
+		\label{cost-skype-pcap}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{bigFlows-pcap}]{
+		\includegraphics[width=75mm]{figures/ch4/bigFlows_costFunction}
+		\label{cost-bigFlows-pcap}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{lan-diurnal-pcap}]{
+		\includegraphics[width=75mm]{figures/ch4/Lan_costFunction}
+		\label{cost-lan-pcap}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{wan-pcap}]{
+		\includegraphics[width=75mm]{figures/ch4/Wan_costFunction}
+		\label{cost-wan-pcap}
+	}
+	\caption{Cost function for each one of the datasets used in this validation process}
 \end{figure}
 
 The results for the parameters estimation and AIC and BIC for \textit{skype-pcap} and \textit{bigflows-pcap} are at the table~\ref{tab:prototype-results1}.  The results for \textit{wan-pcap} and \textit{lan-diurnal-pcap} are on the table ~\ref{tab:prototype-results2}. The difference between the values of BIC and AIC in all simulations were very small. Much smaller then the difference between the values found for each distribution. This is an indication that for our type of dataset, using AIC or BIC should will not influence significantly the results. 
@@ -378,53 +468,9 @@ Analyzing the quality of AIC and BIC as criterion of choose on \textit{skype-pca
 
 The trace \textit{bigflows-pcap} has a much higher inter packet rate, and a smaller dispersion. Weibull is the model chosen by AIC/BIC, and it is the second best on correlation and self-similarity (Exponential(Me) and Cauchy are the best respectively). Exponential(Me) chooses as the second preferable, has the closest to the original mean and standard deviation. Comparing the plots of the CDF function, the Weibull seams to express well both small and larger values of inter packet times, while Exponential(Me) is preciser on the mean values, as we can see at figure ~\ref{fig:aproximation-originalbigflows-cdf}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%
-% Logscale bigFlows
-\begin{figure}[ht!]
-\centering
-\subfloat[]{
-  \includegraphics[width=80mm]{figures/ch4/bigFlows_Logscale_-_Exponential_aproximation__mean__vs_Original_set}
-  \label{correlation-skype-pcap}
-}
-%\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=80mm]{figures/ch4/bigFlows_Logscale_-_Weibull_aproximation_vs_Original_set}
-}
-\label{fig:aproximation-originalbigflows-cdf}
-\end{figure}
 
 
-On \textit{lan-firewall-pcap}
 
-On \textit{wan-pcap}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%
-% Prototype results
-%%%%%%%%%%%%%%
-% BigFlows correlation
-\begin{figure}[ht!]
-\centering
-\label{fig:correlation-hurst-big-flows-pcap}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_costFunction}
-  \label{correlation-skype-pcap}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/bigFlows_costFunction}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/Lan_costFunction}
-}
-\hspace{0mm}
-\subfloat[]{
-  \includegraphics[width=75mm]{figures/ch4/Wan_costFunction}
-  \label{hurst-skype-pcap}
-}
-\caption{Statistical parameters of \textit{bigflows-pcap} and its approximations}
-\end{figure}
 
 
 
@@ -456,7 +502,7 @@ On \textit{wan-pcap}
 
 \subsection{On/Off Times estimation}
 
-\begin{algorithm}
+\begin{algorithm}[ht!]
 \caption{calcOnOff}
 \begin{algorithmic}[1]
 	\Function{calcOnOff}{$arrivalTime, deltaTime, cutTime, minOnTime$}%\Comment{Where A - array, p - left, q - middle, r - right}
