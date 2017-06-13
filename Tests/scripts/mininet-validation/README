@@ -8,6 +8,14 @@ https://blinkingnetwork.wordpress.com/2016/08/03/install-opendaylight-ubuntu-16/
 cd ~/distribution-karaf-0.4.0-Beryllium
 ./bin/karaf 
 
+- Instalar features
+
+
+feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core
+feature:install odl-dlux-all odl-openflowplugin-flow-services-ui
+feature:install  odl-dlux-core odl-dlux-node odl-dlux-yangui odl-dlux-yangvisualizer
+
+
 - Intarface web do Opendaylight
 http://localhost:8181/dlux/index.html
 http://localhost:8181/index.html

@@ -5,9 +5,10 @@
 
 \section{Future Work}
 
-In this section we present some ideas for future works and implementation for SIMITAR. On the first section "Improoving results", we suggest approaches for improving the current results. They include calibration of some constants, finer controll of packet injection, and performance improovments. 
+%2nd review
+In this section we present some ideas for future works and implementation for SIMITAR. On the first section "improving results" we point some approaches for improving the current results. They include calibration of constants, finer control of packet injection, and performance improvement.
 
-\subsection{Improoving results}
+\subsection{Improving results}
 
 \subsubsection{Tool calibration}
 
@@ -27,7 +28,7 @@ Others parameters and change of approaches may change the performance for any ty
 
 	\item \texttt{DataProcessor::m\_min\_on\_time}: this value controls the small ON time that a \textit{file} can have. This value we can change de precission of the generated traffic. Currently this value is $0.1$s. 
 	
-	\item \texttt{DataProcessor::m\_session\_cut\_time}:  this member is responsible for defining whaterver a file transfecence still active or has ended. It defines the minimum OFF timme acceptable.
+	\item \texttt{DataProcessor::m\_session\_cut\_time}:  this member is responsible for defining whaterver a file transfecence still active or has ended. Baically it define the ON and OFF times. 
 	
 	\item \textit{Control a minimum number of pacekts required for a flow be created}: This would reduce the number of flows created. Since each flow is menaged by a different thread, it can imporrove the performance, reducing overheads. This action should not heavely impact negativally on the throughtput and scalling characteristics, but can increase the precision of the most significant flows. This apply for all underlying traffic-gen engines.
 	
