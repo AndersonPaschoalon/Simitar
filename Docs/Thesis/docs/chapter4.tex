@@ -1,6 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Modeling and Algorithms}\label{ch:modeling-evaluation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
+
+\section{Inter Packet Times Modelling}
+
+\subsection{Introduction}
 
 %2nd-review
 There are many works devoted to studying the nature of the Ethernet traffic\cite{selfsimilar-ethernet}. Classic Ethernet models used Poisson related processes to express generation of traffic. Initially, it makes sense since a Poisson process represents the probability of events occur with a known average rate, and independently of the last occurence\cite{selfsimilar-ethernet} \cite{book-poisson}. But studies made by Leland et al.\cite{selfsimilar-ethernet} showed that the Ethernet traffic has a self-similar and fractal nature. Even if they are able to represent the randomness of an Ethernet traffic, simple Poisson processes can't express traffic "burstiness" in a long-term time scale, such as traffic "spikes" on long-range "ripples". This is an indicative of the fractal and self-similar nature of the traffic, that usually we express by distributions with infinite variance, called heavy-tailed. Heavy-tail means that a stochastic distribution is not exponentially bounded\cite{sourcesonoff-paper}. Examples of heavy-tailed functions are Weibull, Pareto, Cauchy.  But heavy-tailed function may guarantee self-similarity, but not necessarily they will ensure other features like good correlation and same mean packet rate.
@@ -14,7 +19,7 @@ In this chapter, we propose a method that may be implemented by  software. We es
 %2nd-review
 We made a brief bibliographic review of some works related works on this topic. Then, we will present the traffic traces we are going to use in this chapter, and in the rest of our work. After we present or selected method for parameterization and fitting choice. To test our criteria quality, we define a validation method, based on cross-validations made by simulations.
 
-\section{Related Works}
+\subsection{Related Works}
 
 %2nd-review
 There are plenty of works on the literature which proposes new processes and methodologies for modeling times between packets and packet trains.
@@ -40,7 +45,7 @@ Kronewitter\cite{optimal-scheduling-of-heavy-tailed-traffic} presents a model of
 
 
 
-\section{Methodology}
+\subsection{Methodology}
 
 %2nd-review
 We will start defining the datasets we are going to use in the rest of this work. Then, we define our criteria of parameterization and model choice and a methodology for measure the quality of method. 
@@ -66,7 +71,7 @@ The fourth is a capture of a busy private network access point to the Internet, 
 %Along with these datasets, we will use two subpcaps from the originals. The first, \textit{skype-flowburst-pcap}, is a burst of a single HTTP flow from \textit{skype-pcap}. It can be obtained from Wireshark using the filter \texttt{(ip.src\_host==172.16.133.25) \&\& (ip.dst\_host==74.125.170.42) \&\& (tcp.dstport==80) \&\& (tcp.srcport==63378) \&\& (frame.time\_relative>30.0) \&\&( frame.time\_relative<50.0)}. The second, \textit{caida1s-pcap} is a trace with the first second from \texttt{wan-pcap}.
 
 
-\subsection{Modelling Inter-Packet times and Packet Sizes}
+\subsection{Methodology}
 
 %2nd-review
 We summarize our process of modeling inter-packet times at the figure~\ref{fig:model-parameterization}. We collect a set of inter-packet times from an actual traffic capture. Then, we estimate a set of parameters for stochastic functions, using different methodologies. Then, from these parametrized models, we estimate which best represent our data set, using the measure of quality AIC (Akaike information criterion). We also calculate another measure of quality called BIC(Bayesian information criterion), for comparison of results. In this chapter, we present our results obtained on our prototype implemented in Octave.
@@ -94,7 +99,7 @@ Currently, we are modeling:
 % In probability theory and statistics, the exponential distribution (a.k.a. negative exponential distribution) is the probability distribution that describes the time between events in a Poisson process, i.e. a process in which events occur continuously and independently at a constant average rate. It is a particular case of the gamma distribution. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless. In addition to being used for the analysis of Poisson processes, it is found in various other contexts.
 
 %2nd-review
-Now we will give a brief explanation our three procedures: Linear Regression (with the  Gradient descendant algorithm), direct estimation, and maximum likelihood. We go deep into details explaining the methods on the appendix ~\ref{ap:revision-probability}, and present the mathematical demonstrations on appendix~\ref{ap:mathematical-modeling}. 
+Now we will give a brief explanation our three procedures: Linear Regression (with the  Gradient descendant algorithm), direct estimation, and maximum likelihood. We go deep into details explaining the methods on the appendix ~\ref{ap:revision-probability}, and present the mathematical demonstrations on appendix~\ref{ap:revision-probability}. 
 
 %2nd-review
 Some observations must be made. Since the time samples resolution used were of $10^{-6}$s, all values equal to zero were set to  $5\cdot10^{-8}$s, to avoid division by zero. To avoid divergence on tangent operation on the linearization the Cauchy function, the inter-packets CDF function values were floor-limited and upper-limited to  $10^{-6}$ and $0.999999$ respectively.
@@ -288,60 +293,12 @@ J(M) = \phi(Cr, M) + \phi(Me, M) + \phi(Hr, M)
 %2nd-review
 The smaller is the cost $J$, the best is the model. Then we compare the results achieved by AIC and BIC, and $J$.
 
-\section{Results}
+\subsection{Results}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-% Prototype results
-\begin{table}[h!]
-\centering
-\caption{Results of the octave prototype, include BIC and AIC values, para estimated parameters for two of our pcap traces: \textit{skype-pcap }and \textit{bigflows-pcap}. \textit{bigflows-pcap} is much larger, and has a much much smaller mean inter-packet time}
-\label{tab:prototype-results1}
-\scalebox{0.75}{ 
-\begin{tabular}{lcccccccc}
-\hline
-                & \multicolumn{8}{c}{Trace} \\ \cline{2-9} 
-Function		& AIC  & BIC  & \multicolumn{2}{c}{Parameters}  
-				& AIC & BIC  & \multicolumn{2}{c}{Parameters} \\ \hline 
-				
-				& \multicolumn{4}{c}{skype-pcap}  & \multicolumn{4}{c}{lan-diurnal-pcap}   \\ \hline 
-Cauchy          & $2.18e4$    & $2.19e4$    & $\gamma:2.59e-4$ & $x_0:1.05e-1$    
-				& $-2.85e7$   & $-2.85e7$   & $\gamma:9.63e-3$ & $x_0:-3.61e-3$    \\
-Exponential(LR) & $-1.61e3$   & $-1.60e3$   & \multicolumn{2}{c}{$\lambda:1.86$}   
-				& $1.79e6$    & $1.79e6$    & \multicolumn{2}{c}{$\lambda:8.51e-1$}    \\
-Exponential(Me) & $-4.29e3$   & $-4.28e3$   & \multicolumn{2}{c}{$\lambda:7.01$}   
-				& $-3.12e7$   & $-3.12e7$   & \multicolumn{2}{c}{$ \lambda:58.78$} \\
-Normal          & $3.29e3$    & $3.31e3$    & $\mu:1.43e-1 $    & $\sigma:5.01e-1$ 
-				& $Inf$       & $Inf$       & $\mu:1.70e-2$     & $\sigma:8.56e-2$ \\
-Pareto(LR)      & $-8.28e3$   & $-8.27e3$   & $\alpha:2.52e-1$ & $x_m:5e-8$    
-				& $-4.60e7$   & $-4.60e7$   & $\alpha:2.55e-1$ & $ x_m:5e-8$    \\
-Pareto(MLH)     & $-1.16e4$   & $-1.16e4$   & $\alpha:9.21e-2$ & $x_m:5e-8$    
-				& $-5.03e7$   & $-5.03e7$   & $\alpha:1.15e-1$ & $ x_m:5e-8$    \\
-Weibull         & $-1.46e4$   & $ -1.46e4$  & $\alpha:3.20e-1$ & $\beta:1.52e-2$  
-				& $-5.60e7$   & $-5.60e7$   & $\alpha:3.34e-1$ & $\beta:1.83e-3$  \\ \hline
-				
-				& \multicolumn{4}{c}{bigFlows-pcap} & \multicolumn{4}{c}{wan-pcap}  \\ \hline
-Cauchy          & $7.14e6$    & $7.14e6$   & $\gamma:1.94e0$ &$x_0:-7.25$    
-				& $5.99e7$    & $5.99e7$   & $ \gamma:8.28e2$ &$x_0:-4.52e3$    \\
-Exponential(LR) & $7.33e6$    & $7.33e6$   & \multicolumn{2}{c}{$\lambda:1.489e-1$}   
-				& $5.68e7$    & $ 5.68e7$  & \multicolumn{2}{c}{$\lambda:2.2e-5$}   \\
-Exponential(Me) & $-1.09e7$   & $-1.09e7$  & \multicolumn{2}{c}{$\lambda:2.64e3$}   
-				& $-6.58e7$   & $-6.58e7$  & \multicolumn{2}{c}{$\lambda:6.58e5$} \\
-Normal          & $-9.35e6$   & $-9.35e6$  & $\mu:3.79e-4$   &$\sigma:6.60e-4$ 
-				& $-6.39e7$   & $-6.39e7$  & $\mu:2e-6$     & $\sigma:1e-6$ \\
-Pareto(LR)      & $-1.02e7$   & $-1.02e7$  & $\alpha:1.489e-1 $ & $x_m:5e-8 $    
-				& $-5.31e7$   & $-5.31e7$  & $\alpha:NaN$ & $x_m:5e-8 $    \\
-Pareto(MLH)     & $-1.03e7$   & $-1.03e7$  & $\alpha:1.362e-1$ & $x_m:5e-8 $    
-				& $-6.25e7$   & $-6.25e7$  & $\alpha:3.39e-1$ & $x_m:5e-8 $    \\
-Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$  
-				& $-5.46e7$   & $-5.46e7$  & $\alpha:7.64e-2$ & $\beta:1e-6$  \\ \hline
 
-\end{tabular}
-}
-\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Logscale Skype
-
 \begin{figure}[ht!]
 \centering
 \label{fig:aproximation-original-cdf}
@@ -375,26 +332,26 @@ Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:aproximation-original-cdf-skype}
+	\label{fig:qq-skype}
 	\subfloat[Chauchy]{
 		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Cauchy}
 	}
 	\subfloat[Exponential(LR)]{
-		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Exponential(LR)}
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Exponential_LR}
 	}
 	\hspace{0mm}
 	\subfloat[Exponential(Me)]{
-		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Exponential(Me)}
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Exponential_Me}
 	}
 	\subfloat[Normal]{
 		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Normal}
 	}
 	\hspace{0mm}
 	\subfloat[Pareto(LR)]{
-		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Pareto(LR)}
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Pareto_LR}
 	}
 	\subfloat[Pareto(MLH)]{
-		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Pareto(MLH)}
+		\includegraphics[width=78mm]{figures/ch4/skype_QQplot_-_Pareto_MLH}
 	}
 	\hspace{0mm}
 	\subfloat[Weibull]{
@@ -404,37 +361,100 @@ Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$
 \end{figure}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%
+% Prototype results
+\begin{table}[h!]
+	\centering
+	\caption{Results of the octave prototype, include BIC and AIC values, para estimated parameters for two of our pcap traces: \textit{skype-pcap }and \textit{bigflows-pcap}. \textit{bigflows-pcap} is much larger, and has a much much smaller mean inter-packet time}
+	\label{tab:prototype-results}
+	\scalebox{0.75}{ 
+		\begin{tabular}{lcccccccc}
+			\hline
+			& \multicolumn{8}{c}{Trace} \\ \cline{2-9} 
+			Function		& AIC  & BIC  & \multicolumn{2}{c}{Parameters}  
+			& AIC & BIC  & \multicolumn{2}{c}{Parameters} \\ \hline 
+			
+			& \multicolumn{4}{c}{skype-pcap}  & \multicolumn{4}{c}{lan-diurnal-pcap}   \\ \hline 
+			Cauchy          & $2.18e4$    & $2.19e4$    & $\gamma:2.59e-4$ & $x_0:1.05e-1$    
+			& $-2.85e7$   & $-2.85e7$   & $\gamma:9.63e-3$ & $x_0:-3.61e-3$    \\
+			Exponential(LR) & $-1.61e3$   & $-1.60e3$   & \multicolumn{2}{c}{$\lambda:1.86$}   
+			& $1.79e6$    & $1.79e6$    & \multicolumn{2}{c}{$\lambda:8.51e-1$}    \\
+			Exponential(Me) & $-4.29e3$   & $-4.28e3$   & \multicolumn{2}{c}{$\lambda:7.01$}   
+			& $-3.12e7$   & $-3.12e7$   & \multicolumn{2}{c}{$ \lambda:58.78$} \\
+			Normal          & $3.29e3$    & $3.31e3$    & $\mu:1.43e-1 $    & $\sigma:5.01e-1$ 
+			& $Inf$       & $Inf$       & $\mu:1.70e-2$     & $\sigma:8.56e-2$ \\
+			Pareto(LR)      & $-8.28e3$   & $-8.27e3$   & $\alpha:2.52e-1$ & $x_m:5e-8$    
+			& $-4.60e7$   & $-4.60e7$   & $\alpha:2.55e-1$ & $ x_m:5e-8$    \\
+			Pareto(MLH)     & $-1.16e4$   & $-1.16e4$   & $\alpha:9.21e-2$ & $x_m:5e-8$    
+			& $-5.03e7$   & $-5.03e7$   & $\alpha:1.15e-1$ & $ x_m:5e-8$    \\
+			Weibull         & $-1.46e4$   & $ -1.46e4$  & $\alpha:3.20e-1$ & $\beta:1.52e-2$  
+			& $-5.60e7$   & $-5.60e7$   & $\alpha:3.34e-1$ & $\beta:1.83e-3$  \\ \hline	
+			& \multicolumn{4}{c}{bigFlows-pcap} & \multicolumn{4}{c}{wan-pcap}  \\ \hline
+			Cauchy          & $7.14e6$    & $7.14e6$   & $\gamma:1.94e0$ &$x_0:-7.25$    
+			& $5.99e7$    & $5.99e7$   & $ \gamma:8.28e2$ &$x_0:-4.52e3$    \\
+			Exponential(LR) & $7.33e6$    & $7.33e6$   & \multicolumn{2}{c}{$\lambda:1.489e-1$}   
+			& $5.68e7$    & $ 5.68e7$  & \multicolumn{2}{c}{$\lambda:2.2e-5$}   \\
+			Exponential(Me) & $-1.09e7$   & $-1.09e7$  & \multicolumn{2}{c}{$\lambda:2.64e3$}   
+			& $-6.58e7$   & $-6.58e7$  & \multicolumn{2}{c}{$\lambda:6.58e5$} \\
+			Normal          & $-9.35e6$   & $-9.35e6$  & $\mu:3.79e-4$   &$\sigma:6.60e-4$ 
+			& $-6.39e7$   & $-6.39e7$  & $\mu:2e-6$     & $\sigma:1e-6$ \\
+			Pareto(LR)      & $-1.02e7$   & $-1.02e7$  & $\alpha:1.489e-1 $ & $x_m:5e-8 $    
+			& $-5.31e7$   & $-5.31e7$  & $\alpha:NaN$ & $x_m:5e-8 $    \\
+			Pareto(MLH)     & $-1.03e7$   & $-1.03e7$  & $\alpha:1.362e-1$ & $x_m:5e-8 $    
+			& $-6.25e7$   & $-6.25e7$  & $\alpha:3.39e-1$ & $x_m:5e-8 $    \\
+			Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$  
+			& $-5.46e7$   & $-5.46e7$  & $\alpha:7.64e-2$ & $\beta:1e-6$  \\ \hline
+		\end{tabular}
+	}
+\end{table}
+
+Here in this chapter we only discuss the plots achived obtained by the pcap \textit{skype-pcap} for simplicity. The other plots are provided and commented on the appendix ~\ref{ap:aditional-plots}. In the figure ~\ref{fig:aproximation-original-cdf} we present all estimated CDF functions along with the empirical CDF, for the trace \textit{skype-pcap}. They are on logscale, wich provide a better visualization for small time scales. In the case of the normal function, all values smaller than zero, were set to zero on the plot. Is possible to see different accuracies and types of fittings on each plot. Visually, the best fit seems to be the Weibull trough linear regression. 
+
+Analyzing the plots, and what they would mean, our Cauchy fitting would impose an almost contant traffic , with the inter packet time close to the mean. On the trace \textit{skype-pcap} the exponential plots seems to not represent well the small values of inter packet times. This is due fact that an exponential process is good at representing values close to the mean. But, it fails to represent values too small and higher. On the other hand, a self-similar process like Weibull and Pareto are better representing inter packet times with higher dispersion. Pareto(MLH) has a slow convergence, wich means this distribution may genarate values of inter-packet times too large. 
+
+Analyzing the QQplots, we may observe that in most of the distribution, the samples (original data) has a much havier-tail effect than in the estimated data. This is verified by the almost blue horizontal lines formed by the "exes". But, the Weibull distribution follow much closer the original data. Also is possible to see that the sample has a right skew compared to the estimation on Exponential(LR), Exponential(Me), Normal, and Pareto(MLH). This means that this estimation would not represent so well small values of time in this case. On the other hand, Pareto(LR) and Weibull would not suffer from this problem.
+
+The results for the AIC, BIC and parameters of all four traces are at the table~\ref{tab:prototype-results1}.  The results for \textit{wan-pcap} and \textit{lan-diurnal-pcap} are on the table ~\ref{tab:prototype-results}. The difference between BIC and AIC values in all simulations are very small. Much smaller then the difference between its values between the distributions. This is an indication that for inter packet times, using AIC or BIC should will not influence significantly the results. 
+
+On our previsions, Weibull and Pareto(MLH and LR) are the best options. This was expected, since both are heavy-tailed functions. But, Cauchy, on most of the tests, even being a heavy-tailed distribution seems to no present a good fitting. This is effect of the fast divergence of tangent function, when we linearize our data. 
+
+Analyzing the quality of AIC and BIC as criterion of choose on \textit{skype-pcap},based on the results form figure ~\ref{fig:correlation-hurst-skype-pcap} we see that in therms of Correlation and Self-similarity it picket the right model: Weibull. Also in therms of mean packet rate and dispersion it is still one of the best choises (along with Exponential(Me), Pareto(LR) and Cauchy). The third and the fourth choices (Pareto(LR)) and Exponential(LR) also are good options in most of these metrics. But, Pareto(MLH) is presented as the second best choice, and it had poor results in comparison to the others, especially on mean, correlation and dispersion. 
+
+All these results are abstracted by the cost function $J$. As we can see, on all pcaps, the best function selected by BI and AIC~\ref{tab:prototype-results} also had the small cost~\ref{fig:cost-function}. 
+
+Another important observation is the fact that exponential function was able to provide the best fitting for the \textit{wan-pcap}. The reasons for this behavior are both result of a much intense traffic with no long-range gaps, and the precision of the measurement.
 
 %%%%%%%%%%%%%%
-% Skype correlation
+% Skype correlation, Hurst, Mean Standard Deviation
 \begin{figure}[h!]
-\centering
-\label{fig:correlation-hurst-skype-pcap}
-\subfloat[Correlation]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_Correlation}
-  \label{correlation-skype-pcap}
-}
-\hspace{0mm}
-\subfloat[Hust Exponent]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_Hurst_Exponent}
-}
-\hspace{0mm}
-\subfloat[Mean]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_Mean}
-}
-\hspace{0mm}
-\subfloat[Standard Deviation]{
-  \includegraphics[width=75mm]{figures/ch4/Skype_Standard_Deviation}
-  \label{hurst-skype-pcap}
-}
-\caption{Statistical parameters of \textit{skype-pcap} and its approximations}
+	\centering
+	\subfloat[Correlation]{
+		\includegraphics[width=75mm]{figures/ch4/Skype_Correlation}
+		\label{correlation-skype}
+	}
+	\hspace{0mm}
+	\subfloat[Hust Exponent]{
+		\includegraphics[width=75mm]{figures/ch4/Skype_Hurst_Exponent}
+		\label{hurst-skype}
+	}
+	\hspace{0mm}
+	\subfloat[Mean]{
+		\includegraphics[width=75mm]{figures/ch4/Skype_Mean}
+		\label{mean-skype}
+	}
+	\hspace{0mm}
+	\subfloat[Standard Deviation]{
+		\includegraphics[width=75mm]{figures/ch4/Skype_Standard_Deviation}
+		\label{std-skype}
+	}
+	\caption{Statistical parameters of \textit{skype-pcap} and its approximations}
+	\label{fig:correlation-hurst-skype-pcap}
 \end{figure}
 
 
 %validation Cost function
 \begin{figure}[ht!]
 	\centering
-	\label{fig:cost-function}
 	\subfloat[\textit{skype-pcap}]{
 		\includegraphics[width=75mm]{figures/ch4/Skype_costFunction}
 		\label{cost-skype-pcap}
@@ -455,112 +475,107 @@ Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$
 		\label{cost-wan-pcap}
 	}
 	\caption{Cost function for each one of the datasets used in this validation process}
+	\label{fig:cost-function}
 \end{figure}
 
-The results for the parameters estimation and AIC and BIC for \textit{skype-pcap} and \textit{bigflows-pcap} are at the table~\ref{tab:prototype-results1}.  The results for \textit{wan-pcap} and \textit{lan-diurnal-pcap} are on the table ~\ref{tab:prototype-results2}. The difference between the values of BIC and AIC in all simulations were very small. Much smaller then the difference between the values found for each distribution. This is an indication that for our type of dataset, using AIC or BIC should will not influence significantly the results. 
 
-On our previsions, Weibull followed Pareto are the functions more indicated as good options. This was expected, since both are heavy-tailed functions. But, Cauchy, on most of the tests, seems to no present a good fitting. This is effect of the fast divergence of tangent function, when we linearize our data. Not letting the CDF values be so close to zero or avoided divergence, but still through linear regression the penalty was heavy. 
+\subsection{Conclusion}
 
+Also the order of the stochastic function tend to not differ much. We are able to conclude that using AIC or BIC as criteria for choosing models for inter-packet times is a good choise.
 
-In the figure ~\ref{fig:aproximation-original-cdf} we present all estimated CDF functions along with the empirical CDF, for the trace \textit{skype-pcap}. In the case of the normal function, all values smaller than zero, were set to zero on the plot. Is possible to see different accuracies on each plot, and types of fittings. Visually, the best fit seems to be the Weibull trough linear regression. In the figure ~\ref{fig:aproximation-originalbigflows-cdf} we present the fittings with higher BIC and AIC values for the \textit{bigflows-pcap}. On our previsions. Analyzing the plots, and what they would mean, our Cauchy fitting would impose an almost contant traffic , with the inter packet time close to the mean. On the trace \textit{skype-pcap} the exponential plots seems to not represent well the small values of inter packet times. On the other hand, on \textit{bigflows-pcap} they are expressed much well. This is due fact that an exponential process is good at representing values close to the mean. But, it fails to represent values too small and too higher. The \textit{bigflows-pcap}  has a much smaller dispersion. On the other hand, a self-similar process like Weibull and Pareto are better representing inter packet times with higher dispersion. 
+Also, except by the Pareto function modeled using the Maximum likelyhood method, have comparative results between the simulations and the AIC/BIC gess. The best fittings according to the AIC/BIC usually  returned very acurate models, with close mean and fractal level, and correlation close to one. The models selected as the worsts usually returned poor results.
 
-Analyzing the quality of AIC and BIC as criterion of choose on \textit{skype-pcap}, we see that in therms of Correlation and Self-similarity it picket the right model: Weibull. Also in therms of mean packet rate and dispersion, is still a good choice, since it is still one of the best choices. The third and the fourth choices (Pareto(LR)) and Exponential(LR) also are good options in most of these metrics. But, Pareto(MLH) is presented as the second best choice, and it had poor results in comparison to the others, especially on mean, correlation and dispersion. In this example, we illustrate it at the table ~\ref{tab:skype-evaluation}.
+Also, it is important to notice that in some cases, some stochastic functions may perform poorly, and in other provide an accurante fitting, what justify the application of the criteria in all new experiment. 
 
-The trace \textit{bigflows-pcap} has a much higher inter packet rate, and a smaller dispersion. Weibull is the model chosen by AIC/BIC, and it is the second best on correlation and self-similarity (Exponential(Me) and Cauchy are the best respectively). Exponential(Me) chooses as the second preferable, has the closest to the original mean and standard deviation. Comparing the plots of the CDF function, the Weibull seams to express well both small and larger values of inter packet times, while Exponential(Me) is preciser on the mean values, as we can see at figure ~\ref{fig:aproximation-originalbigflows-cdf}. 
-
-
+We do not rely on only one type of parametrization. This turns our methodology more robust, since a linear regression may diverge. But aways there will be an packable model, since our estimations for Normal, Exponential(Me) and Pareto(MLH) cannot. Models wich the linear regression diverge, will not have god BIC/AIC estimations, and will not be pickedas primary options. 
 
 
+\section{Others Algorithms and Methods}
 
+In this section we breef present another methods used by the \textit{TraceAnalyzer} component. The first to calculate the session ON and OFF times. The second classify applications based on its tranport protocol and ports.
 
-
-
-
-%%%%%%%%%%%
-
-
-
-
-
-
-
-
-%\begin{figure}[ht!]
-%\centering
-%\subfloat[]{
-%  \includegraphics[width=80mm]{figures4/Skype_QQplot_-_Cauchy}
-%  \label{correlation-skype-pcap}
-%}
-%\hspace{0mm}
-%\subfloat[]{
-%  \includegraphics[width=80mm]{figures4/Skype_QQplot_-_Weibull_dat}
-%}
-%\label{correlation-hurst-skype-pcap}
-%\end{figure}
-
-\section{Others Algorithms}
 
 \subsection{On/Off Times estimation}
 
+
+	
 \begin{algorithm}[ht!]
-\caption{calcOnOff}
-\begin{algorithmic}[1]
-	\Function{calcOnOff}{$arrivalTime, deltaTime, cutTime, minOnTime$}%\Comment{Where A - array, p - left, q - middle, r - right}
-    \State $m = deltaTime.length() - 1$
-    \State $j = 0$
-    \State $lastOff = 0$
-    \State $pktCounterSum = 0$
-    \State $fileSizeSum = 0$
-	\For{$i = 0:m$}
-    	\State $pktCounterSum = pktCounterSum + 1$
+	\caption{calcOnOff}
+	\label{alg:calcOnOff}
+	\begin{algorithmic}[1]
+		\small
+		\Function{calcOnOff}{$arrivalTime, deltaTime, cutTime, minOnTime$}%\Comment{Where A - array, p - left, q - middle, r - right}
+		\State $m = deltaTime.length() - 1$
+		\State $j = 0$
+		\State $lastOff = 0$
+		\State $pktCounterSum = 0$
+		\State $fileSizeSum = 0$
+		\For{$i = 0:m$}
+		\State $pktCounterSum = pktCounterSum + 1$
 		\State $fileSizeSum = fileSizeSum + psSizeList[i, 1]$
-    	\If{$i == 1$} \Comment{if the first is session-off time}
-        	\State $j++$
-            \State $onTimes.push(minOnTime)$
-            \State $offTimes.push(deltaTime[i])$
-            	\State $pktCounter.push(pktCounterSum)$
-				\State $fileSize.push(fileSizeSum)$
-				\State $pktCounterSum = 0$
-				\State $fileSizeSum = 0$
-            \Else \Comment{base case} 
-            	\State $pktCounter.push(pktCounterSum)$
-				\State $fileSize.push(fileSizeSum)$
-				\State $pktCounterSum = 0$
-				\State $fileSizeSum = 0$
-            	\If{$j == 0$}
-                	\State $onTimes.push(arrivalTime[i - 1])$
-					\State $offTimes.push(deltaTime[i])$
-                \Else \Comment{others on times} 
-					\State  $onTimes.push(max(deltaTime[i-1] - deltaTime[lastOff], minOnTime))$ 
-					\State  $offTimes.push(deltaTime[i])$
-                \EndIf
-                \State $lastOff = i$
-            \EndIf        
-    \EndFor
-    \State $pktCounterSum = pktCounterSum + 1$
-	\State $fileSizeSum = fileSizeSum + psSizeList[m]$
-    \If{$lastOff == m - 1$} \Comment{ if last is session-off }
+		\If{$deltaTime[i] > cutTime$} 
+		\If{$i == 1$} \Comment{if the first is session-off time}
+		\State $j++$
+		\State $onTimes.push(minOnTime)$
+		\State $offTimes.push(deltaTime[i])$
+		\State $pktCounter.push(pktCounterSum)$
+		\State $fileSize.push(fileSizeSum)$
+		\State $pktCounterSum = 0$
+		\State $fileSizeSum = 0$
+		\Else \Comment{base case} 
+		\State $pktCounter.push(pktCounterSum)$
+		\State $fileSize.push(fileSizeSum)$
+		\State $pktCounterSum = 0$
+		\State $fileSizeSum = 0$
+		\If{$j == 0$}
+		\State $onTimes.push(arrivalTime[i - 1])$
+		\State $offTimes.push(deltaTime[i])$
+		\Else \Comment{others on times} 
+		\State  $onTimes.push(max(deltaTime[i-1] - deltaTime[lastOff], minOnTime))$ 
+		\State  $offTimes.push(deltaTime[i])$
+		\EndIf
+		\State $lastOff = i$
+		\EndIf 
+		\EndIf       
+		\EndFor
+		\State $pktCounterSum = pktCounterSum + 1$
+		\State $fileSizeSum = fileSizeSum + psSizeList[m]$
+		\If{$lastOff == m - 1$} \Comment{ if last is session-off }
 		\State $onTimes.push(minOnTime)$ % on time
-	\Else \Comment{ base last case}
+		\Else \Comment{ base last case}
 		\If{$lastOff \neq 0$}
 		\State $onTimes.push(arrivalTime[m] - arrivalTime[lastOff])$ 
 		\Else 
 		\State $onTimes.push(arrivalTime[m])$ \Comment{there was just on time}
 		\EndIf
-	\EndIf
-    \State $pktCounter.push(pktCounterSum)$
-	\State $fileSize.push(fileSizeSum)$
-    \EndFunction
-\end{algorithmic}
+		\EndIf
+		\State $pktCounter.push(pktCounterSum)$
+		\State $fileSize.push(fileSizeSum)$
+		\EndFunction
+	\end{algorithmic}
 \end{algorithm}
+
+
+We developed an algorithms to calculate the times between the ON and OFF times of the \textit{files}, and the number of packets and bytes as well. It uses a list of packet arrival times(relative to the first), time between packets and packet sizes. It defines a minimum time of ON acceptable. This times is used for two reasons:
+
+\begin{itemize}
+\item In case of a \textit{file} of just one packet, it will not produce a On time of zero
+\item It avoid a \textit{file} On time too small, wich may be less than acceptable for packet generator tools.
+\end{itemize}
+
+As explained in the previous chapter, a \textit{file} is defined by a large OFF time, we call $cutTime$. If a inter packet $deltaTime$ time is larger than the $cutTime$ it defines an OFF time, and the ON time is calculated base on the last OFF time recorded. 
+If the first $deltaTime$ defines an OFF time, or if it is the first ON time, its calculation is threated separetely. In the last ON time, it is not defined by an OFF time, so we deal with it after the loop. It keep counters to calc the number of bytes and packets within every defined ON time. It returns four vectors: $onTimes$, $offTimes$, $pktCounter$ and $fileSize$. Letting $n$ be the size of $onTimes$,  $offTimes$ has a size $n - 1$. The algorithm is presented in the Alforithm~\ref{alg:calcOnOff}.
 
 
 \subsection{Application classification}
 
-\begin{table}[]
+
+We also developed an simple test to guess the application protocol, based on the port numbers and the tranport protocol used by each flow. We currently are classifing the application protocols presented in the table ~\ref{tab:application-protocols}. If a flow matches the port number, and the transport protocol, it is classified as belongig to an application protocol.
+
+\begin{table}[h!]
 \centering
 \caption{Application classification table}
-\label{my-label}
+\label{tab:application-protocols}
 \begin{tabular}{lll}
 \hline
 Application Protocol & Transport Protocols & Transport Ports \\ \hline
@@ -580,19 +595,19 @@ TACACS              & UDP, TCP           & 49              \\ \hline
 
 
 
-\section{Implementation Details}
+%\section{Implementation Details}
 
-\subsection{Modeling Process}
+%\subsection{Modeling Process}
 
-\subsection{Matlab prototyping and C++ Implementation}
+%\subsection{Matlab prototyping and C++ Implementation}
 
-\subsection{Software Engineering process and Lessons Leaned}
+%\subsection{Software Engineering process and Lessons Leaned}
 
-\section{Conclusion}
+%\section{Conclusion}
 
-We can conclude by this evaluation, that our chosen methodology for selecting stochastic models for inter packet data is appropriated. The first thing to observe is that, for a high 
+%We can conclude by this evaluation, that our chosen methodology for selecting stochastic models for inter packet data is appropriated. The first thing to observe is that, for a high 
 
-First, we do not rely on only one type of parametrization. This turns our methodology more robust, since a linear regression may diverge. But aways there will be an packable model, since our estimations for Normal, Exponential(Me) and Pareto(MLH) cannot. Models wich the linear regression diverge, will not have god BIC/AIC estimations, and will not be picked. 
+%First, we do not rely on only one type of parametrization. This turns our methodology more robust, since a linear regression may diverge. But aways there will be an packable model, since our estimations for Normal, Exponential(Me) and Pareto(MLH) cannot. Models wich the linear regression diverge, will not have god BIC/AIC estimations, and will not be picked. 
 
 
 

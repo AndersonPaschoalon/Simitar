@@ -271,11 +271,11 @@ At the flow level, it controls each flow using the algorithm at figure~\ref{alg-
 It starts a \textit{thread} for each flow in the \textit{Compact Trace Descriptor}, then the thread sleeps its \texttt{start\_delay}. It is the time when the first flow packet was captured in the original capture. it then calls the underlying traffic generation method, passing to it the file ON time, number of packets and number of bytes to be sent (file size). Then it sleeps the next Session-OFF time from the stack until it ends. When the list of ON/OFF times is over, the thread ends. The thread scheduling/joining is implemented by the class \texttt{NetworkTrace} and its sleep/wake process by the class \texttt{DummyFlow}.
 
 
-\subsubsection{Packet-level Traffic Generation Operation}
+\subsubsection{Flow Generation Programming}
 
 %2nd-review
 At the packet level, it must use the expanded class of the \texttt{DummyFlow}. In this level, the job of our tool is to configure the underlying engine, to send a file. Therefore it uses the \textit{getters} available, and the passed parameters, defined by the operation described in the previous session. The implementation of this level should follow the flowchart presented in the figure ~\ref{fig:alg-traffic-engine-config}.
-Down below we present a simplistic code of how the D-ITG API can be used to generate packet-level traffic using our framework. A more complex configuration is possible, but it serves to illustrate the procedure. Its API documentation is available at on D-ITG web-site \footnote{\href{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}}. 
+Down below we present a simplistic code of how the D-ITG API can be used to generate packet-level traffic. We call this concept \textit{Flow Generation Programming} A more complex configuration is possible, but it serves to illustrate the procedure. Its API documentation is available at on D-ITG web-site \footnote{\href{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}}. 
 \begin{minted}[frame=single,
                framesep=3mm,
                linenos=true,
@@ -364,13 +364,13 @@ When operating as a server, it just start-up the traffic generator server, and w
                fontsize=\scriptsize, 
                breaklines=true]{bash}
 # Operation as a sniffer over a Ethernet interface named <ether-interface> 
-./simitar --sniffer -if <ether-interface> --out/-o <cdt-name>
+./simitar --sniffer --if <ether-interface> --out <cdt-name>
 # Operation as a client using the traffic generator D-ITG, using a list of destination hosts of a text file
 ./simitar --client ditg --in <cdt-xml-name> --dst-list-ip <ip-list-file> 
 # Operation as a packet injector with uses the Libtins library to craft packets
 ./simitar --pkt-injection libtins --in <cdt-xml-name> 
 # Operation as a server. just runs D-ITG in the server mode.
-./simitar --server/-sv ditg
+./simitar --server ditg
 
 \end{minted}
 

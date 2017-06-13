@@ -10,6 +10,7 @@ cd ~/distribution-karaf-0.4.0-Beryllium
 
 - Intarface web do Opendaylight
 http://localhost:8181/dlux/index.html
+http://localhost:8181/index.html
 
 - Clean up mininet
 sudo mn -c

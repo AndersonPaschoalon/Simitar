@@ -3,6 +3,8 @@
 
 \section{CDFs distributions}
 
+The trace \textit{bigflows-pcap} has a much higher inter packet rate, and a smaller dispersion. Weibull is the model chosen by AIC/BIC, and it is the second best on correlation and self-similarity (Exponential(Me) and Cauchy are the best respectively). Exponential(Me) chooses as the second preferable, has the closest to the original mean and standard deviation. Comparing the plots of the CDF function, the Weibull seams to express well both small and larger values of inter packet times, while Exponential(Me) is preciser on the mean values, as we can see at figure ~\ref{fig:aproximation-originalbigflows-cdf}. 
+
 
 \begin{figure}[ht!]
 	\centering
@@ -131,7 +133,7 @@
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:aproximation-original-cdf}
+	\label{fig:qq-bigFlows}
 	\subfloat[Chauchy]{
 		\includegraphics[width=78mm]{figures/apB/qq/bigFlows_QQplot_-_Cauchy}
 	}
@@ -163,7 +165,7 @@
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:aproximation-original-cdf-lan}
+	\label{fig:qq-lan}
 	\subfloat[Chauchy]{
 		\includegraphics[width=78mm]{figures/apB/qq/lan_QQplot_-_Cauchy}
 	}
@@ -195,7 +197,7 @@
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:aproximation-original-cdf-wan}
+	\label{fig:qq-wan}
 	\subfloat[Chauchy]{
 		\includegraphics[width=78mm]{figures/apB/qq/wan_QQplot_-_Cauchy}
 	}
@@ -231,7 +233,7 @@
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:correlation-hurst-bigflows-pcap}
+	\label{fig:correlation-hurst-bigflows}
 	\subfloat[]{
 		\includegraphics[width=75mm]{figures/apB/val/bigFlows_Correlation}
 		\label{correlation-skype-pcap}
@@ -254,7 +256,7 @@
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:correlation-hurst-lan-pcap}
+	\label{fig:correlation-hurst-lan}
 	\subfloat[]{
 		\includegraphics[width=75mm]{figures/apB/val/lan_Correlation}
 		\label{correlation-skype-pcap}
@@ -278,7 +280,7 @@
 
 \begin{figure}[ht!]
 	\centering
-	\label{fig:correlation-hurst-wan-pcap}
+	\label{fig:correlation-hurst-wan}
 	\subfloat[]{
 		\includegraphics[width=75mm]{figures/apB/val/wan_Correlation}
 		\label{correlation-skype-pcap}
