@@ -12,4 +12,10 @@
 		<section name="VariablePage">
 		</section>
 	</section>
+	<section name="OptInDialog">
+		<item value="Do you want to save your preferences on the Eclipse.org server so you can share them on other workstations?" key="DIALOG_MESSAGE"/>
+		<item value="406" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="261" key="DIALOG_HEIGHT"/>
+	</section>
 </section>
