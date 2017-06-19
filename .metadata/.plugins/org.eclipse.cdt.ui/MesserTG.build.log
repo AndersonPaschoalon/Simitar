@@ -1,20 +1,15 @@
-21:44:03 **** Incremental Build of configuration Debug for project MesserTG ****
+21:56:05 **** Incremental Build of configuration Debug for project MesserTG ****
 make all 
-Building file: ../src/DataProcessor.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
-Finished building: ../src/DataProcessor.cpp
- 
 Building file: ../src/Main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
 Finished building: ../src/Main.cpp
  
 Building target: MesserTG
 Invoking: GCC C++ Linker
-g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
 Finished building target: MesserTG
  
 
-21:44:12 Build Finished (took 8s.538ms)
+21:56:08 Build Finished (took 2s.273ms)
 

@@ -6,16 +6,16 @@
 		<transport_layer dst_port="908" src_port="2049">TCP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-19585.415927" bic="-19574.906157" param1="0.143876819134807" param2="0.000000050000000"/>
-			<stochastic_model name="pareto-lr" aic="-13302.027164" bic="-13291.517394" param1="0.005991376586482" param2="0.000000050000000"/>
-			<stochastic_model name="weibull" aic="-10164.491005" bic="-10153.981236" param1="0.005605637503009" param2="525069841131484183228806332416.000000000000000"/>
-			<stochastic_model name="exponential-me" aic="-3363.614894" bic="-3353.105125" param1="8.934944412419418" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="4227.934478" bic="4238.444247" param1="0.111920114310954" param2="1.076775768348784"/>
-			<stochastic_model name="exponential-lr" aic="5932.868960" bic="5943.378730" param1="0.124800475088247" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="136032.008564" bic="136042.518333" param1="0.000000000000896" param2="-14625.880262030268568"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.111920114310954" param2="0.000000000000000"/>
+			<stochastic_model name="weibull" aic="1103.580412" bic="1114.090182" param1="0.120355000000000" param2="0.001629000000000"/>
+			<stochastic_model name="pareto-ml" aic="1804.012401" bic="1814.522170" param1="0.072353174376976" param2="0.000000050000000"/>
+			<stochastic_model name="pareto-lr" aic="2738.280761" bic="2748.790531" param1="0.028286261819880" param2="0.000000050000000"/>
+			<stochastic_model name="cauchy" aic="14428.482767" bic="14438.992537" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-me" aic="16185.331282" bic="16195.841052" param1="0.008934948400091" param2="0.000000000000000"/>
+			<stochastic_model name="exponential-lr" aic="16196.488413" bic="16206.998183" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="23776.881917" bic="23787.391687" param1="111.920064360953930" param2="1076.775768348783913"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="111.920064360953930" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="8.10742600,10.23241100,10.26137900,0.77834600,10.70248600,0.10000000,0.19810100,5.38138700,0.10000000,10.32355600,3.99875800" off_times="5.00719900,4.76010900,7.99962600,7.22157000,8.15617800,13.79708400,5.80260900,4.62801700,10.98878600,30.02076200" n_packets="37,163,315,47,642,10,42,60,5,89,6" n_bytes="20138,164730,373886,29914,738776,1844,27244,49116,922,61942,848"/>
+		<session_times on_times="124.34737100,3.99875800" off_times="30.02076200" n_packets="1410,6" n_bytes="1468512,848"/>
 		<packet_sizes n_packets="1416" n_kbytes="1434">
 			<ps_mode1 n_packets="487" n_kbytes="88">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="186.772074" param2="0.000000"/>
@@ -35,16 +35,16 @@
 		<transport_layer dst_port="2049" src_port="908">TCP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-8741.351360" bic="-8731.691772" param1="0.160955974382090" param2="0.000001049999997"/>
-			<stochastic_model name="pareto-lr" aic="-7025.199196" bic="-7015.539609" param1="0.027839117236947" param2="0.000001049999997"/>
-			<stochastic_model name="weibull" aic="-4861.674278" bic="-4852.014690" param1="0.022492542003867" param2="25155247.910440996289253"/>
-			<stochastic_model name="exponential-me" aic="-1411.028691" bic="-1401.369103" param1="5.840873591995291" param2="0.000000000000000"/>
-			<stochastic_model name="exponential-lr" aic="3144.047082" bic="3153.706670" param1="0.189203967425317" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="3155.273230" bic="3164.932818" param1="0.171207266216215" param2="1.329752643565401"/>
-			<stochastic_model name="cauchy" aic="8412.362233" bic="8422.021820" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.171207266216215" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="4051.640359" bic="4061.299947" param1="0.159712756231482" param2="0.001000049997475"/>
+			<stochastic_model name="pareto-lr" aic="4438.341300" bic="4448.000887" param1="0.077397392628762" param2="0.001000049997475"/>
+			<stochastic_model name="cauchy" aic="9909.654391" bic="9919.313978" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="weibull" aic="10124.055279" bic="10133.714867" param1="0.006851060847232" param2="339933292917208285229243321861275648.000000000000000"/>
+			<stochastic_model name="exponential-me" aic="11368.318036" bic="11377.977623" param1="0.005840875296080" param2="0.000000000000000"/>
+			<stochastic_model name="exponential-lr" aic="11658.806971" bic="11668.466558" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="15934.620496" bic="15944.280084" param1="171.207216266216165" param2="1329.752643565400149"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="171.207216266216165" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="8.10720800,10.23195000,10.26088000,0.73814400,10.66265800,0.10000000,0.15999300,5.34359100,0.10000000,10.32312500,3.99841100" off_times="5.00761900,4.76065200,8.00004900,7.26169200,8.19599100,13.79754600,5.84068700,4.66580100,10.98920600,30.02111300" n_packets="28,122,192,39,391,6,37,43,3,62,3" n_bytes="4480,42148,29268,6774,56850,908,6482,15334,454,9780,582"/>
+		<session_times on_times="124.34715100,3.99841100" off_times="30.02111300" n_packets="923,3" n_bytes="172478,582"/>
 		<packet_sizes n_packets="926" n_kbytes="168">
 			<ps_mode1 n_packets="896" n_kbytes="127">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="145.535714" param2="0.000000"/>
@@ -64,16 +64,16 @@
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="exponential-me" aic="292.809295" bic="297.937991" param1="0.603979466691265" param2="0.000000000000000"/>
-			<stochastic_model name="pareto-ml" aic="486.302419" bic="491.431116" param1="0.094631490122124" param2="0.000011050000001"/>
-			<stochastic_model name="normal" aic="498.297573" bic="503.426269" param1="1.655685424999999" param2="3.192282968105832"/>
-			<stochastic_model name="weibull" aic="512.652859" bic="517.781556" param1="0.120355000000000" param2="0.001629000000000"/>
-			<stochastic_model name="pareto-lr" aic="708.496423" bic="713.625119" param1="0.012486938421449" param2="0.000011050000001"/>
-			<stochastic_model name="exponential-lr" aic="896.114393" bic="901.243090" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="8788.254681" bic="8793.383377" param1="0.000000000000090" param2="-1456.930830948511584"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="1.655685424999999" param2="0.000000000000000"/>
+			<stochastic_model name="exponential-me" aic="1619.098303" bic="1624.226999" param1="0.000603979484913" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="1812.628967" bic="1817.757663" param1="0.094592841277996" param2="0.011000050000649"/>
+			<stochastic_model name="normal" aic="1824.586586" bic="1829.715283" param1="1655.685375050000175" param2="3192.282968105831515"/>
+			<stochastic_model name="pareto-lr" aic="1942.695161" bic="1947.823858" param1="0.022396981100174" param2="0.011000050000649"/>
+			<stochastic_model name="weibull" aic="2189.214418" bic="2194.343115" param1="0.120355000000000" param2="0.001629000000000"/>
+			<stochastic_model name="cauchy" aic="2589.554489" bic="2594.683185" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="3993.093120" bic="3998.221816" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="1655.685375050000175" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="10.05933600,1.99760000,4.99989800,0.10000000,26.64538500,4.99991200,17.26717600,4.99772800,4.99995700" off_times="7.58715400,8.29103800,10.12483000,15.94598500,5.28929800,22.84881400,7.60006800,5.29160500" n_packets="16,3,6,2,28,6,22,6,8" n_bytes="942,180,360,102,1644,360,1284,360,462"/>
+		<session_times on_times="158.94579600" off_times="" n_packets="97" n_bytes="5694"/>
 		<packet_sizes n_packets="97" n_kbytes="5">
 			<ps_mode1 n_packets="97" n_kbytes="5">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="58.701031" param2="0.000000"/>
@@ -91,16 +91,16 @@
 		<transport_layer dst_port="443" src_port="44583">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="103.249332" bic="105.765525" param1="0.103321449584232" param2="0.000016049999988"/>
-			<stochastic_model name="weibull" aic="121.252080" bic="123.768273" param1="0.081404284880887" param2="26.817103686069466"/>
-			<stochastic_model name="pareto-lr" aic="127.596065" bic="130.112258" param1="0.237843185856551" param2="0.000016049999988"/>
-			<stochastic_model name="exponential-me" aic="149.133674" bic="151.649867" param1="0.166787922234539" param2="0.000000000000000"/>
-			<stochastic_model name="exponential-lr" aic="156.060213" bic="158.576406" param1="0.268280462072424" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="176.315741" bic="178.831935" param1="5.995637973076922" param2="6.780538308728415"/>
-			<stochastic_model name="cauchy" aic="286.684708" bic="289.200901" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="5.995637973076922" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="462.451422" bic="464.967615" param1="0.103291519238415" param2="0.016000049988026"/>
+			<stochastic_model name="weibull" aic="480.550168" bic="483.066362" param1="0.081197640214602" param2="26882.450185431913269"/>
+			<stochastic_model name="pareto-lr" aic="486.852892" bic="489.369085" param1="0.237966462720999" param2="0.016000049988026"/>
+			<stochastic_model name="exponential-me" aic="508.336948" bic="510.853142" param1="0.000166787923624" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="535.519016" bic="538.035209" param1="5995.637923126922942" param2="6780.538308728415359"/>
+			<stochastic_model name="cauchy" aic="707.468286" bic="709.984479" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="3285.186683" bic="3287.702877" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="5995.637923126922942" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="4.04386100,0.10000000,1.11719700,0.10000000,0.37520100,0.10000000,0.10000000,0.10000000,1.22712600,0.10000000,0.10000000,0.10000000" off_times="15.07715200,9.54132700,15.00119500,10.28757500,14.82306400,10.94863300,15.07899200,14.89179500,14.85443500,13.54113200,15.07790100" n_packets="6,1,3,1,5,1,1,1,5,1,1,1" n_bytes="484,77,230,74,402,74,82,74,402,74,82,74"/>
+		<session_times on_times="155.88658600" off_times="" n_packets="27" n_bytes="2129"/>
 		<packet_sizes n_packets="27" n_kbytes="2">
 			<ps_mode1 n_packets="27" n_kbytes="2">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="78.851852" param2="0.000000"/>
@@ -118,16 +118,16 @@
 		<transport_layer dst_port="44583" src_port="443">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="exponential-me" aic="126.116232" bic="128.107697" param1="0.128361368675685" param2="0.000000000000000"/>
-			<stochastic_model name="pareto-ml" aic="133.959713" bic="135.951177" param1="0.281060809026539" param2="0.075915049999998"/>
-			<stochastic_model name="normal" aic="136.122885" bic="138.114350" param1="7.790505899999999" param2="6.747240411890139"/>
-			<stochastic_model name="exponential-lr" aic="143.081039" bic="145.072504" param1="0.285342145216400" param2="0.000000000000000"/>
-			<stochastic_model name="weibull" aic="143.120064" bic="145.111528" param1="0.254667860299237" param2="9.514656666139814"/>
-			<stochastic_model name="pareto-lr" aic="164.858527" bic="166.849991" param1="0.787883632051663" param2="0.075915049999998"/>
-			<stochastic_model name="cauchy" aic="232.520417" bic="234.511882" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.790505899999999" param2="0.000000000000000"/>
+			<stochastic_model name="exponential-me" aic="402.426443" bic="404.417907" param1="0.000128361369499" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="410.269926" bic="412.261391" param1="0.281060765134375" param2="75.915000049998397"/>
+			<stochastic_model name="normal" aic="412.433096" bic="414.424561" param1="7790.505850049999935" param2="6747.240411890138603"/>
+			<stochastic_model name="pareto-lr" aic="424.692485" bic="426.683949" param1="0.591568355609415" param2="75.915000049998397"/>
+			<stochastic_model name="weibull" aic="441.840164" bic="443.831629" param1="0.135313844438716" param2="19277.624576642534521"/>
+			<stochastic_model name="cauchy" aic="655.530853" bic="657.522318" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="3228.131837" bic="3230.123302" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="7790.505850049999935" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="4.06924200,0.10000000,1.09160600,0.10000000,0.37395000,0.10000000,0.10000000,0.10000000,1.22698700,0.10000000,0.10000000,0.10000000" off_times="14.97540000,9.64316900,14.92522600,10.36484200,14.74729200,11.05026700,14.97683600,14.96831000,14.77829200,13.64288500,14.97581300" n_packets="4,1,3,1,3,1,1,1,3,1,1,1" n_bytes="636,66,245,66,536,66,83,66,533,66,83,66"/>
+		<session_times on_times="155.81011700" off_times="" n_packets="21" n_bytes="2512"/>
 		<packet_sizes n_packets="21" n_kbytes="2">
 			<ps_mode1 n_packets="21" n_kbytes="2">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="119.619048" param2="0.000000"/>
@@ -145,14 +145,14 @@
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="normal" aic="-1348.638009" bic="-1343.924591" param1="1.999270947435896" param2="0.000041771981457"/>
-			<stochastic_model name="pareto-lr" aic="182.397059" bic="187.110476" param1="0.637144163919726" param2="1.999180049999999"/>
-			<stochastic_model name="exponential-me" aic="268.074084" bic="272.787501" param1="0.500182329604959" param2="0.000000000000000"/>
-			<stochastic_model name="exponential-lr" aic="268.654088" bic="273.367506" param1="0.544562624534132" param2="0.000000000000000"/>
-			<stochastic_model name="weibull" aic="676.026863" bic="680.740280" param1="0.120355000000000" param2="0.001629000000000"/>
-			<stochastic_model name="cauchy" aic="6147.241461" bic="6151.954879" param1="0.000000000000000" param2="-0.500177740045420"/>
-			<stochastic_model name="pareto-ml" aic="inf" bic="inf" param1="21994.404499144438887" param2="1.999180049999999"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="1.999270947435896" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="-271.028185" bic="-266.314768" param1="1999.270897485897194" param2="0.041771981456791"/>
+			<stochastic_model name="exponential-me" aic="1345.683903" bic="1350.397321" param1="0.000500182342102" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-lr" aic="1460.665442" bic="1465.378860" param1="0.176038396881433" param2="1999.180000049999080"/>
+			<stochastic_model name="weibull" aic="2100.004792" bic="2104.718210" param1="0.120355000000000" param2="0.001629000000000"/>
+			<stochastic_model name="cauchy" aic="2452.030706" bic="2456.744123" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="3767.838938" bic="3772.552356" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="inf" bic="inf" param1="21994.403949598665349" param2="1999.180000049999080"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="1999.270897485897194" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="155.94313000" off_times="" n_packets="79" n_bytes="4740"/>
 		<packet_sizes n_packets="79" n_kbytes="4">
@@ -172,16 +172,16 @@
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="229.515200" bic="233.924585" param1="0.100062674201167" param2="0.000009049999999"/>
-			<stochastic_model name="pareto-lr" aic="243.468001" bic="247.877386" param1="0.061065000000000" param2="0.000009049999999"/>
-			<stochastic_model name="exponential-me" aic="251.910821" bic="256.320206" param1="0.427380417717646" param2="0.000000000000000"/>
-			<stochastic_model name="weibull" aic="378.071982" bic="382.481367" param1="0.036738714276485" param2="138130.634078301023692"/>
-			<stochastic_model name="normal" aic="521.118196" bic="525.527581" param1="2.339835796268656" param2="11.560743366382747"/>
-			<stochastic_model name="exponential-lr" aic="627.515529" bic="631.924915" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="6261.134149" bic="6265.543534" param1="0.000000000000234" param2="-3762.619757635248334"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="2.339835796268656" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="1155.204157" bic="1159.613542" param1="0.100008947564586" param2="0.009000049998593"/>
+			<stochastic_model name="pareto-lr" aic="1169.128922" bic="1173.538307" param1="0.061065000000000" param2="0.009000049998593"/>
+			<stochastic_model name="exponential-me" aic="1177.550026" bic="1181.959411" param1="0.000427380426841" param2="0.000000000000000"/>
+			<stochastic_model name="weibull" aic="1335.908842" bic="1340.318227" param1="0.028763233354692" param2="4246346794.677174568176270"/>
+			<stochastic_model name="normal" aic="1446.757403" bic="1451.166788" param1="2339.835746318656675" param2="11560.743366382748718"/>
+			<stochastic_model name="cauchy" aic="1559.897982" bic="1564.307368" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="inf" bic="inf" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="2339.835746318656675" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="5.07269600,0.10000000,8.84869700,5.98350000,0.10000000,5.69485900" off_times="4.00792000,16.55089700,13.52057700,4.00866500,93.08118400" n_packets="9,1,29,9,1,19" n_bytes="818,70,2494,778,70,1634"/>
+		<session_times on_times="57.99295200,5.69485900" off_times="93.08118400" n_packets="49,19" n_bytes="4230,1634"/>
 		<packet_sizes n_packets="68" n_kbytes="5">
 			<ps_mode1 n_packets="68" n_kbytes="5">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="86.235294" param2="0.000000"/>
@@ -199,16 +199,16 @@
 		<transport_layer dst_port="68" src_port="67">UDP</transport_layer>
 		<application_layer>DHCP</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="135.616361" bic="137.887350" param1="0.718298522667258" param2="1.148178050000001"/>
-			<stochastic_model name="exponential-me" aic="138.229121" bic="140.500110" param1="0.146896888353884" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="166.059913" bic="168.330902" param1="6.807496136956520" param2="8.379952067009039"/>
-			<stochastic_model name="pareto-lr" aic="206.914511" bic="209.185500" param1="0.061065000000000" param2="1.148178050000001"/>
-			<stochastic_model name="exponential-lr" aic="220.046801" bic="222.317790" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="weibull" aic="227.038033" bic="229.309021" param1="0.104157151407105" param2="130.323450671490150"/>
-			<stochastic_model name="cauchy" aic="2046.652064" bic="2048.923052" param1="0.000000000000025" param2="-386.206488490522929"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="6.807496136956520" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="453.373104" bic="455.644093" param1="0.718298507282950" param2="1148.178000050001401"/>
+			<stochastic_model name="exponential-me" aic="455.985864" bic="458.256852" param1="0.000146896889432" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="483.816656" bic="486.087645" param1="6807.496087006520611" param2="8379.952067009042366"/>
+			<stochastic_model name="pareto-lr" aic="488.410766" bic="490.681754" param1="0.152565770354672" param2="1148.178000050001401"/>
+			<stochastic_model name="weibull" aic="683.564910" bic="685.835898" param1="0.120355000000000" param2="0.001629000000000"/>
+			<stochastic_model name="cauchy" aic="802.761445" bic="805.032433" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="3270.781297" bic="3273.052286" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="6807.496087006520611" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="2.93190700,0.10000000,8.46682800,0.10000000,2.36731200,0.10000000,7.26823300,0.10000000,6.12006500,6.12007100,3.06001300" off_times="6.36422300,6.02536500,18.85906100,5.35784800,5.11222900,5.03117400,10.39155900,6.02625100,39.02442400,18.04584700" n_packets="2,1,4,1,2,1,4,1,3,3,2" n_bytes="684,342,2112,342,684,342,2112,342,1770,1770,1180"/>
+		<session_times on_times="90.32205500,27.22593100" off_times="39.02442400" n_packets="19,5" n_bytes="8730,2950"/>
 		<packet_sizes n_packets="24" n_kbytes="11">
 			<ps_mode1 n_packets="10" n_kbytes="3">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="342.000000" param2="0.000000"/>
@@ -228,7 +228,7 @@
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.005692050000004" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="30005.692000050003116" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000,0.10000000,0.10000000" off_times="30.00551800,30.00527800,30.00600200,30.00594800,30.00571400" n_packets="1,1,1,1,1,1" n_bytes="276,276,276,276,276,276"/>
 		<packet_sizes n_packets="6" n_kbytes="1">
@@ -248,7 +248,7 @@
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.005697649999995" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="30005.697600049996254" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000,0.10000000,0.10000000" off_times="30.00555300,30.00528000,30.00603700,30.00585900,30.00575900" n_packets="1,1,1,1,1,1" n_bytes="276,276,276,276,276,276"/>
 		<packet_sizes n_packets="6" n_kbytes="1">
@@ -268,16 +268,16 @@
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="104.905712" bic="107.708107" param1="0.252574491055508" param2="0.009528049999996"/>
-			<stochastic_model name="weibull" aic="106.208023" bic="109.010418" param1="0.321981251255181" param2="1.746658417459306"/>
-			<stochastic_model name="exponential-me" aic="143.046700" bic="145.849094" param1="0.267818707285790" param2="0.000000000000000"/>
-			<stochastic_model name="exponential-lr" aic="164.013884" bic="166.816279" param1="0.558001433907996" param2="0.000000000000000"/>
-			<stochastic_model name="pareto-lr" aic="199.915244" bic="202.717638" param1="1.000105849136025" param2="0.009528049999996"/>
-			<stochastic_model name="normal" aic="208.349662" bic="211.152057" param1="3.733869116666667" param2="7.415377134262255"/>
-			<stochastic_model name="cauchy" aic="307.714281" bic="310.516676" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="3.733869116666667" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="519.371060" bic="522.173455" param1="0.252574197735025" param2="9.528000049995985"/>
+			<stochastic_model name="weibull" aic="529.147568" bic="531.949962" param1="0.256818408046278" param2="1971.872729585458956"/>
+			<stochastic_model name="exponential-me" aic="557.512015" bic="560.314410" param1="0.000267818710869" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-lr" aic="593.972351" bic="596.774746" param1="0.882636512581752" param2="9.528000049995985"/>
+			<stochastic_model name="normal" aic="622.814979" bic="625.617374" param1="3733.869066716666566" param2="7415.377134262255822"/>
+			<stochastic_model name="cauchy" aic="788.114288" bic="790.916682" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="2466.578442" bic="2469.380836" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="3733.869066716666566" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="7.05318900,0.10000000,0.10000000,7.00558800,0.10000000,0.10000000,0.10000000" off_times="8.00834300,16.00867700,17.89077300,8.00343400,16.01447200,32.03159600" n_packets="13,1,1,13,1,1,1" n_bytes="3069,107,107,3069,107,107,107"/>
+		<session_times on_times="79.98447600,0.10000000" off_times="32.03159600" n_packets="30,1" n_bytes="6566,107"/>
 		<packet_sizes n_packets="31" n_kbytes="6">
 			<ps_mode1 n_packets="31" n_kbytes="6">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="215.258065" param2="0.000000"/>
@@ -295,7 +295,7 @@
 		<transport_layer dst_port="33776" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.086666716666663" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45086.666666716664622" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000" off_times="45.14802800,45.05597200,45.05600000" n_packets="1,1,1,1" n_bytes="66,66,66,66"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
@@ -315,7 +315,7 @@
 		<transport_layer dst_port="443" src_port="33776">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.086652049999998" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45086.652000049994967" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000" off_times="45.14806800,45.05616100,45.05572700" n_packets="1,1,1,1" n_bytes="66,66,66,66"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
@@ -335,7 +335,7 @@
 		<transport_layer dst_port="50296" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.055994383333335" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45055.994333383328922" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000" off_times="45.05602400,45.05597300,45.05598600" n_packets="1,1,1,1" n_bytes="66,66,66,66"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
@@ -355,7 +355,7 @@
 		<transport_layer dst_port="443" src_port="50296">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.056002049999996" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45056.002000050008064" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000" off_times="45.05605000,45.05597500,45.05598100" n_packets="1,1,1,1" n_bytes="66,66,66,66"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
@@ -375,14 +375,14 @@
 		<transport_layer dst_port="50301" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-95.542588" bic="-93.876161" param1="0.138958932603870" param2="0.000002049999999"/>
-			<stochastic_model name="weibull" aic="-85.388284" bic="-83.721857" param1="0.138093274845644" param2="0.021345788270603"/>
-			<stochastic_model name="pareto-lr" aic="-11.579298" bic="-9.912872" param1="0.708474319357069" param2="0.000002049999999"/>
-			<stochastic_model name="exponential-me" aic="108.499221" bic="110.165648" param1="0.125744086145510" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="148.940977" bic="150.607404" param1="7.952660285294117" param2="17.697849903526745"/>
-			<stochastic_model name="exponential-lr" aic="164.066466" bic="165.732893" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="180.819691" bic="182.486117" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.952660285294117" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="139.348751" bic="141.015178" param1="0.138528190497961" param2="0.002000049998503"/>
+			<stochastic_model name="weibull" aic="149.416384" bic="151.082811" param1="0.137976668112352" param2="21.278168753063746"/>
+			<stochastic_model name="pareto-lr" aic="223.813721" bic="225.480147" param1="0.708819848154888" param2="0.002000049998503"/>
+			<stochastic_model name="cauchy" aic="279.034452" bic="280.700879" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-me" aic="343.362900" bic="345.029327" param1="0.000125744086935" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="383.804657" bic="385.471084" param1="7952.660235344117609" param2="17697.849903526741400"/>
+			<stochastic_model name="exponential-lr" aic="2798.277267" bic="2799.943694" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="7952.660235344117609" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.06660600,0.10000000,0.10000000,0.10000000" off_times="45.01667700,45.05599700,45.05594400" n_packets="15,1,1,1" n_bytes="3238,66,66,66"/>
 		<packet_sizes n_packets="18" n_kbytes="2">
@@ -404,14 +404,14 @@
 		<transport_layer dst_port="443" src_port="50301">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-53.025956" bic="-51.747841" param1="0.125256218165372" param2="0.000002049999999"/>
-			<stochastic_model name="weibull" aic="-47.895661" bic="-46.617547" param1="0.146026345716551" param2="0.028240389945275"/>
-			<stochastic_model name="pareto-lr" aic="31.912169" bic="33.190284" param1="0.725178507836344" param2="0.000002049999999"/>
-			<stochastic_model name="exponential-me" aic="95.494535" bic="96.772649" param1="0.103554010858128" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="125.434753" bic="126.712867" param1="9.656796407142858" param2="19.177375205013501"/>
-			<stochastic_model name="exponential-lr" aic="136.284767" bic="137.562882" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="153.735920" bic="155.014035" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="9.656796407142858" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="140.399398" bic="141.677512" param1="0.124909109413429" param2="0.002000049998503"/>
+			<stochastic_model name="weibull" aic="145.470393" bic="146.748508" param1="0.145840960460485" param2="28.204965623503870"/>
+			<stochastic_model name="pareto-lr" aic="225.615441" bic="226.893555" param1="0.724667232642690" param2="0.002000049998503"/>
+			<stochastic_model name="cauchy" aic="251.766783" bic="253.044897" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-me" aic="288.911683" bic="290.189797" param1="0.000103554011394" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="318.851901" bic="320.130015" param1="9656.796357192859432" param2="19177.375205013500818"/>
+			<stochastic_model name="exponential-lr" aic="2770.494107" bic="2771.772222" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="9656.796357192859432" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.06652800,0.10000000,0.10000000,0.10000000" off_times="45.01668500,45.05601300,45.05592300" n_packets="12,1,1,1" n_bytes="1391,66,66,66"/>
 		<packet_sizes n_packets="15" n_kbytes="1">
@@ -431,7 +431,7 @@
 		<transport_layer dst_port="50084" src_port="443">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.021052999999998" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="21.052999999998434" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000" off_times="" n_packets="2" n_bytes="1474"/>
 		<packet_sizes n_packets="2" n_kbytes="1">
@@ -449,7 +449,7 @@
 		<transport_layer dst_port="443" src_port="50084">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.016375000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="16.375000000000028" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000" off_times="" n_packets="2" n_bytes="2784"/>
 		<packet_sizes n_packets="2" n_kbytes="2">
@@ -469,7 +469,7 @@
 		<transport_layer dst_port="47813" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="13.340931494444446" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="13340.931444494446623" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.00066300,0.10000000,0.10000000,0.10000000,0.00013300" off_times="30.01761600,30.00946500,30.02258300,30.01595800" n_packets="2,2,2,2,2" n_bytes="574,574,574,574,574"/>
 		<packet_sizes n_packets="10" n_kbytes="2">
@@ -489,7 +489,7 @@
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.010827299999999" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="30010.827250049998838" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000,0.10000000" off_times="30.01025800,30.00974400,30.00985400,30.01345300" n_packets="1,1,1,1,1" n_bytes="286,286,286,286,286"/>
 		<packet_sizes n_packets="5" n_kbytes="1">
@@ -509,7 +509,7 @@
 		<transport_layer dst_port="17500" src_port="17500">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="30.010820550000002" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="30010.820500050002011" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000,0.10000000" off_times="30.01028800,30.00968200,30.00989600,30.01341600" n_packets="1,1,1,1,1" n_bytes="286,286,286,286,286"/>
 		<packet_sizes n_packets="5" n_kbytes="1">
@@ -529,7 +529,7 @@
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="125.442631999999989" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="125442.631999999983236" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000" off_times="125.44263200" n_packets="1,1" n_bytes="60,60"/>
 		<packet_sizes n_packets="2" n_kbytes="0">
@@ -549,7 +549,7 @@
 		<transport_layer dst_port="33775" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.056009050000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45056.009000049998576" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000" off_times="45.05604100,45.05597700" n_packets="1,1,1" n_bytes="66,66,66"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
@@ -569,7 +569,7 @@
 		<transport_layer dst_port="443" src_port="33775">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.056031550000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45056.031500050004979" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000" off_times="45.05599500,45.05606800" n_packets="1,1,1" n_bytes="66,66,66"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
@@ -589,7 +589,7 @@
 		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="124.788645999999986" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="124788.645999999978812" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000" off_times="124.78864600" n_packets="1,1" n_bytes="60,60"/>
 		<packet_sizes n_packets="2" n_kbytes="0">
@@ -645,7 +645,7 @@
 		<transport_layer dst_port="35987" src_port="443">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.118609383333333" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="118.609333383332967" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="1.06748400" off_times="" n_packets="10" n_bytes="5516"/>
 		<packet_sizes n_packets="10" n_kbytes="5">
@@ -667,14 +667,14 @@
 		<transport_layer dst_port="34683" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-24.738412" bic="-23.768599" param1="0.152500524612205" param2="0.000024050000003"/>
-			<stochastic_model name="weibull" aic="-16.155977" bic="-15.186164" param1="0.130469107098031" param2="0.063433369086366"/>
-			<stochastic_model name="pareto-lr" aic="49.322192" bic="50.292005" param1="0.892551148108768" param2="0.000024050000003"/>
-			<stochastic_model name="exponential-me" aic="76.776570" bic="77.746383" param1="0.131026317153354" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="105.882623" bic="106.852436" param1="7.632054549999999" param2="17.598918053235813"/>
-			<stochastic_model name="exponential-lr" aic="116.913056" bic="117.882870" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="128.406532" bic="129.376345" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.632054549999999" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="141.047000" bic="142.016814" param1="0.152459181926759" param2="0.024000050003355"/>
+			<stochastic_model name="weibull" aic="149.624947" bic="150.594760" param1="0.130456345559796" param2="63.402072806962835"/>
+			<stochastic_model name="pareto-lr" aic="215.141822" bic="216.111635" param1="0.892571329819472" param2="0.024000050003355"/>
+			<stochastic_model name="cauchy" aic="238.010050" bic="238.979863" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-me" aic="242.562696" bic="243.532510" param1="0.000131026318011" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="271.668750" bic="272.638563" param1="7632.054500049998751" param2="17598.918053235815023"/>
+			<stochastic_model name="exponential-lr" aic="1901.393881" bic="1902.363694" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="7632.054500049998751" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.96856400,0.10000000,0.10000000" off_times="45.30807900,45.30801100" n_packets="11,1,1" n_bytes="1650,66,66"/>
 		<packet_sizes n_packets="13" n_kbytes="1">
@@ -694,9 +694,9 @@
 		<transport_layer dst_port="34684" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.675646799999999" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="7675.646750049999355" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.97657800,0.10000000,0.10000000" off_times="44.96005600,15.46854000" n_packets="7,1,1" n_bytes="1203,66,66"/>
+		<session_times on_times="0.97657800,15.46854000" off_times="44.96005600" n_packets="7,2" n_bytes="1203,132"/>
 		<packet_sizes n_packets="9" n_kbytes="0">
 			<ps_mode1 n_packets="8" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="94.000000" param2="0.000000"/>
@@ -714,9 +714,9 @@
 		<transport_layer dst_port="34685" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="13.908316799999998" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="13908.316750050000337" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.61267500,0.10000000,0.10000000" off_times="10.01297400,45.00761800" n_packets="3,1,1" n_bytes="206,66,66"/>
+		<session_times on_times="10.62564900,0.10000000" off_times="45.00761800" n_packets="4,1" n_bytes="272,66"/>
 		<packet_sizes n_packets="5" n_kbytes="0">
 			<ps_mode1 n_packets="5" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="67.600000" param2="0.000000"/>
@@ -734,14 +734,14 @@
 		<transport_layer dst_port="443" src_port="34683">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-13.830913" bic="-13.225743" param1="0.137094184994224" param2="0.000014049999993"/>
-			<stochastic_model name="weibull" aic="-7.278850" bic="-6.673680" param1="0.121203973069686" param2="0.046507425276607"/>
-			<stochastic_model name="pareto-lr" aic="55.739738" bic="56.344908" param1="0.866801966156635" param2="0.000014049999993"/>
-			<stochastic_model name="exponential-me" aic="68.293559" bic="68.898729" param1="0.109188675241046" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="90.323574" bic="90.928744" param1="9.158458950000000" param2="19.053297260761184"/>
-			<stochastic_model name="exponential-lr" aic="98.391924" bic="98.997094" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="110.349551" bic="110.954721" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="9.158458950000000" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="124.319763" bic="124.924934" param1="0.137038999047748" param2="0.014000049993075"/>
+			<stochastic_model name="weibull" aic="130.868351" bic="131.473521" param1="0.121167546052189" param2="46.482248709933586"/>
+			<stochastic_model name="pareto-lr" aic="193.913374" bic="194.518544" param1="0.866639911140806" param2="0.014000049993075"/>
+			<stochastic_model name="exponential-me" aic="206.448664" bic="207.053834" param1="0.000109188675837" param2="0.000000000000000"/>
+			<stochastic_model name="cauchy" aic="212.760596" bic="213.365766" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="normal" aic="228.478680" bic="229.083850" param1="9158.458900050000011" param2="19053.297260761184589"/>
+			<stochastic_model name="exponential-lr" aic="1882.871482" bic="1883.476652" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="9158.458900050000011" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.96759300,0.10000000,0.10000000" off_times="45.30897300,45.30802300" n_packets="9,1,1" n_bytes="906,66,66"/>
 		<packet_sizes n_packets="11" n_kbytes="1">
@@ -761,14 +761,14 @@
 		<transport_layer dst_port="443" src_port="35987">UDP</transport_layer>
 		<application_layer>NULL</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="-44.755454" bic="-44.150284" param1="0.149728641882086" param2="0.000006049999999"/>
-			<stochastic_model name="pareto-lr" aic="-38.660984" bic="-38.055814" param1="0.061065000000000" param2="0.000006049999999"/>
-			<stochastic_model name="weibull" aic="-38.032382" bic="-37.427212" param1="0.120355000000000" param2="0.001629000000000"/>
-			<stochastic_model name="exponential-me" aic="-27.610284" bic="-27.005114" param1="13.203926055373264" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="-14.231766" bic="-13.626596" param1="0.075735050000000" param2="0.102230334263150"/>
-			<stochastic_model name="exponential-lr" aic="96.620429" bic="97.225599" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="805.420988" bic="806.026158" param1="0.000000000000000" param2="-5.396170012280763"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.075735050000000" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="93.402735" bic="94.007905" param1="0.149564147891518" param2="0.006000049999062"/>
+			<stochastic_model name="pareto-lr" aic="99.484192" bic="100.089362" param1="0.061065000000000" param2="0.006000049999062"/>
+			<stochastic_model name="exponential-me" aic="110.544808" bic="111.149978" param1="0.013203934763845" param2="0.000000000000000"/>
+			<stochastic_model name="exponential-lr" aic="111.377012" bic="111.982182" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="weibull" aic="115.839438" bic="116.444608" param1="0.120355000000000" param2="0.001629000000000"/>
+			<stochastic_model name="normal" aic="123.923340" bic="124.528510" param1="75.735000050000238" param2="102.230334263149771"/>
+			<stochastic_model name="cauchy" aic="156.036984" bic="156.642155" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="75.735000050000238" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.75735000" off_times="" n_packets="11" n_bytes="7636"/>
 		<packet_sizes n_packets="11" n_kbytes="6">
@@ -790,7 +790,7 @@
 		<transport_layer dst_port="443" src_port="34684">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="7.656086716666668" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="7656.086666716667423" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.62453200,0.10000000" off_times="45.31198800" n_packets="6,1" n_bytes="670,66"/>
 		<packet_sizes n_packets="7" n_kbytes="0">
@@ -810,9 +810,9 @@
 		<transport_layer dst_port="443" src_port="34685">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="18.544432716666662" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="18544.432666716664244" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.30067100,0.10000000,0.10000000" off_times="10.01296000,45.31966700" n_packets="2,1,1" n_bytes="148,66,60"/>
+		<session_times on_times="10.31363100,0.10000000" off_times="45.31966700" n_packets="3,1" n_bytes="214,60"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="68.500000" param2="0.000000"/>
@@ -830,7 +830,7 @@
 		<transport_layer dst_port="51457" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.039996549999998" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45039.996500049994211" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000" off_times="45.02407000,45.05592300" n_packets="1,1,1" n_bytes="66,66,66"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
@@ -850,7 +850,7 @@
 		<transport_layer dst_port="443" src_port="51457">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.040009550000001" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45040.009500050000497" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000" off_times="45.02413600,45.05588300" n_packets="1,1,1" n_bytes="66,66,66"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
@@ -870,7 +870,7 @@
 		<transport_layer dst_port="45833" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.055977049999996" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45055.977000049999333" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000" off_times="45.05600300,45.05595100" n_packets="1,1,1" n_bytes="66,66,66"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
@@ -890,7 +890,7 @@
 		<transport_layer dst_port="443" src_port="45833">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="45.055934049999991" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="45055.934000049994211" param2="0.000000000000000"/>
 		</inter_packet_times>
 		<session_times on_times="0.10000000,0.10000000,0.10000000" off_times="45.05590100,45.05596700" n_packets="1,1,1" n_bytes="66,66,66"/>
 		<packet_sizes n_packets="3" n_kbytes="0">
@@ -910,9 +910,9 @@
 		<transport_layer dst_port="37578" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="17.250831049999999" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="17250.831000049998693" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000" off_times="15.18543400,5.03860300,31.52845600" n_packets="1,1,1,1" n_bytes="66,66,66,66"/>
+		<session_times on_times="20.22403700,0.10000000" off_times="31.52845600" n_packets="3,1" n_bytes="198,66"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="66.000000" param2="0.000000"/>
@@ -930,9 +930,9 @@
 		<transport_layer dst_port="443" src_port="37578">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="17.250818383333328" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="17250.818333383329445" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.10000000,0.10000000,0.10000000,0.10000000" off_times="15.00562500,4.99893800,31.74789200" n_packets="1,1,1,1" n_bytes="66,97,66,66"/>
+		<session_times on_times="20.00456300,0.10000000" off_times="31.74789200" n_packets="3,1" n_bytes="229,66"/>
 		<packet_sizes n_packets="4" n_kbytes="0">
 			<ps_mode1 n_packets="4" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="73.750000" param2="0.000000"/>
@@ -1184,16 +1184,16 @@
 		<transport_layer dst_port="37585" src_port="443">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="pareto-ml" aic="5.129281" bic="5.734451" param1="0.149399110093924" param2="0.000072050000003"/>
-			<stochastic_model name="weibull" aic="9.533132" bic="10.138303" param1="0.152461057695062" param2="0.110757645535127"/>
-			<stochastic_model name="pareto-lr" aic="47.989171" bic="48.594341" param1="0.700383137151011" param2="0.000072050000003"/>
-			<stochastic_model name="exponential-me" aic="61.712434" bic="62.317604" param1="0.151734696677676" param2="0.000000000000000"/>
-			<stochastic_model name="normal" aic="84.617681" bic="85.222852" param1="6.590450449999999" param2="14.324130082495268"/>
-			<stochastic_model name="exponential-lr" aic="97.891059" bic="98.496229" param1="0.009752000000000" param2="0.000000000000000"/>
-			<stochastic_model name="cauchy" aic="108.792313" bic="109.397483" param1="1.935832000000000" param2="-7.245692000000000"/>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="6.590450449999999" param2="0.000000000000000"/>
+			<stochastic_model name="pareto-ml" aic="143.283384" bic="143.888554" param1="0.149386616796878" param2="0.072000050002959"/>
+			<stochastic_model name="weibull" aic="147.687891" bic="148.293061" param1="0.152434800945875" param2="110.687155033153843"/>
+			<stochastic_model name="pareto-lr" aic="186.149236" bic="186.754407" param1="0.700381173854179" param2="0.072000050002959"/>
+			<stochastic_model name="exponential-me" aic="199.867539" bic="200.472710" param1="0.000151734697828" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="222.772787" bic="223.377957" param1="6590.450400049999189" param2="14324.130082495266834"/>
+			<stochastic_model name="cauchy" aic="228.087651" bic="228.692821" param1="1.935832000000000" param2="-7.245692000000000"/>
+			<stochastic_model name="exponential-lr" aic="1382.007104" bic="1382.612274" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="6590.450400049999189" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.60847700,0.10000000,0.10000000,0.10000000" off_times="44.96002800,15.29946600,5.03653300" n_packets="8,1,1,1" n_bytes="2901,66,66,66"/>
+		<session_times on_times="0.60847700,20.33599900" off_times="44.96002800" n_packets="8,3" n_bytes="2901,198"/>
 		<packet_sizes n_packets="11" n_kbytes="2">
 			<ps_mode1 n_packets="9" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="111.333333" param2="0.000000"/>
@@ -1213,9 +1213,9 @@
 		<transport_layer dst_port="443" src_port="37585">TCP</transport_layer>
 		<application_layer>HTTPS</application_layer>
 		<inter_packet_times>
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="9.383431335714286" param2="0.000000000000000"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="9383.431285764288987" param2="0.000000000000000"/>
 		</inter_packet_times>
-		<session_times on_times="0.38659600,0.10000000,0.10000000,0.10000000" off_times="45.18189900,15.11534700,5.00017700" n_packets="5,1,1,1" n_bytes="1006,66,97,66"/>
+		<session_times on_times="0.38659600,20.11552400" off_times="45.18189900" n_packets="5,3" n_bytes="1006,229"/>
 		<packet_sizes n_packets="8" n_kbytes="0">
 			<ps_mode1 n_packets="7" n_kbytes="0">
 				<stochastic_model name="constant" aic="inf" bic="inf" param1="91.142857" param2="0.000000"/>

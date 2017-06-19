@@ -1,0 +1,148 @@
+//============================================================================
+// Name        : CompactTraceDescriptor.cpp
+// Author      : Anderson Paschoalon
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "DatabaseInterface.h"
+#include "DataProcessor.h"
+#include "DummyFlow.h"
+#include "NetworkTrace.h"
+#include "Defines.h"
+#include "Protocol.h"
+#include "cfunctions.h"
+#include "MesserLog.h"
+
+//Mutex example
+// http://www.thegeekstuff.com/2012/05/c-mutex-examples/?refcom
+
+#define REGRESSION_TESTS 1
+
+void unity_regression_tests();
+/*
+ Usage:
+ ./simitar --sniffer/-s <interface> --out/-o <cdt-xml-name> (--verbose/-vr)
+ ./simitar --trafic-gen/-tg <traffic-gen-label> -in/-i <cdt-xml-name> (--bind/-b <interface>)  (--dst-ip-mac/-d <ipaddr>@<mac>)||(--dst-file-ip-mac/-fm <file>)||((--dst-file-ip/-fi <file>)) (--verbose/-vr)
+ ./simitar --pkt-injection/-pi <packet-injector-label> -in/-i <cdt-xml-name> (--bind/-b <interface>) (--verbose/-vr)
+ ./simitar --server/-sv <traffic-gen-label> --bind/-b <interface> (--verbose/-vr)
+ ./simitar --help/-h
+ ./simitar --version/-v
+ ./simitar --test/-t
+ ./simitar --list/-l
+ Options:
+ -b/--bind				bind to an interface the output
+ -d/--dst-ip-mac			set unique dst mac and ip with the format <mac>@<ip>
+ if you want to omit, put *. Eg.: *@<ip>
+ -fi/--dst-file-ip		file with a list of dst <ip> addrs for destinations
+ -fm/--dst-file-ip-mac	file with a list of dst <mac>@<ip> addrs  addrs for
+ destinations
+ -h/--help				print a help output
+ -i/--in					in CDT file
+ -l/list					lists: availabe cdt files, supported traffic
+ generators(ditg, iperf), supported pacekt injectors
+ (tcpreplay, libtins, scrapy).
+ -o/--out				out CDT file (for sniffer)
+ -s/--sniffer			works as a sniffer
+ -sv/--server			works as a server for tg
+ -v/--version			--current version
+ -vr/--verbose			displays all outputs (Default: just erros)
+ */
+
+//TODO criar uma classe "configuration"
+
+int main()
+{
+	MESSER_LOG_INIT(DEBUG);
+	//bool regressionTests = false;
+	bool testDummy = true;
+	bool testDitg = false;
+
+#ifdef REGRESSION_TESTS
+	unity_regression_tests();
+#endif
+
+	if (testDummy == true)
+	{
+		string experimentName = "live_background-traffic-1";
+		DataProcessor dp = DataProcessor(miliseconds, 0.1, 30.0, 30,"aic");
+		DatabaseInterface dbif;
+		long int nflows = 0;
+		NetworkTrace* trace = NULL;
+
+		//Create Network Trace from database
+		//TODO: the data object structure do not have to change.. I just want a
+		// constructor that uses a experiment name and a database interface pointer
+		// as input.
+		dbif.getNumberOfFlows(experimentName, &nflows);
+		//MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
+		trace = new NetworkTrace();
+
+		dp.calculate(experimentName, &dbif, trace);
+
+
+
+		trace->setInfoTracename("teste-chapolin");
+		trace->setInfoCommentaries(
+				"este e um teste do compact trace descriptor");
+		trace->setTrafficGenEngine("D-ITG");
+		trace->setInfoCaptureInterface("eth0");
+		trace->setInfoCaptureDate("07/04/2017");
+
+		//trace->writeToFile("ms-kkk.xml");
+		/*
+		trace->writeToFile("data/regression-tests/test-trace.xml");
+
+*/
+		//trace->exec(true);
+		delete trace;
+	}
+	if (testDitg == true)
+	{
+		//string experimentName = "live_background-traffic-1";
+		//DataProcessor dp;
+		//DatabaseInterface dbif;
+		//long int nflows = 0;
+		//NetworkTrace* trace = NULL;
+		//dbif.getNumberOfFlows(experimentName, &nflows);
+		//MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
+		//trace = new NetworkTrace();
+		////dp.calculate(experimentName, &dbif, trace);
+		//trace->setTrafficGenEngine("D-ITG");
+		//trace->exec(true);
+		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "D-ITG");
+		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
+		traceCdt.exec(true);
+
+	}
+
+	MESSER_LOG_END();
+
+	return 0;
+}
+
+void unity_regression_tests()
+{
+	//MESSER_LOG_INIT(INFO);
+	//MESSER_NOTICE("Starting Unitary tests... <%s, %s>");
+	RegressionTests rt;
+
+	DataProcessor unity_dp = DataProcessor();
+	Protocol unity_proto = Protocol();
+	NetworkTrace unity_nt;
+	StochasticModelFit unity_smf = StochasticModelFit();
+
+	unity_dp.regression_tests();
+	unity_nt.regression_tests();
+	unity_proto.regression_tests();
+	unity_smf.unity_tests();
+	cfunctions_unitytests();
+	unity_nt.regression_tests();
+
+	//wait.wait_int("Finished tests, press any key...");
+	//MESSER_NOTICE("Finishing Unity tests...  @<%s, %s>");
+
+}
+

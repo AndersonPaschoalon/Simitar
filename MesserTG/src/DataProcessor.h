@@ -44,6 +44,11 @@ using namespace arma;
 
 #define DEBUG_StochasticModelFit 1
 
+enum time_scale
+{
+	miliseconds, seconds
+};
+
 //TODO: this class must be static... or not
 class DataProcessor
 {
@@ -55,23 +60,31 @@ public:
 	DataProcessor();
 
 	/**
-	 * Default constructor
+	 * @brief
+	 *
+	 * @param timeScale
+	 * @param minOnTime
+	 * @param sessionCutTime
+	 * @param criterion
 	 */
-	DataProcessor(time_sec sessionCutTime, time_sec filCutTime);
+	DataProcessor(time_scale timeScale, time_sec minOnTime,
+			time_sec sessionCutTime, uint minNumberOfPackets, const string& criterion);
+
+	/**
+	 * @brief
+	 *
+	 * @param timeScale
+	 * @param minOnTime
+	 * @param sessionCutTime
+	 * @param criterion
+	 */
+	void getConfiguration(time_scale timeScale, string& timeScaleStr, time_sec& minOnTime,
+			time_sec& sessionCutTime, string& criterion);
 
 	/**
 	 * Destructor. Clean any allocated memory
 	 */
 	virtual ~DataProcessor();
-
-	/**
-	 * @brief  Returns a string information about the class
-	 * Returns a string information about the class
-	 *
-	 * @param void
-	 * @return string
-	 */
-	string toString(void);
 
 	/**
 	 * @brief This method parameterize a network trace.
@@ -92,23 +105,7 @@ public:
 	int calculate(const string& experimentName,
 			DatabaseInterface* databaseInterface, NetworkTrace* netTrace);
 
-	/**
-	 * @brief Set the information criterion.
-	 * May be setted as "aic" or "bic". If any other string is used as input,
-	 * it prints an error message, and set "aic" as default.
-	 *
-	 * @param criterion
-	 */
-	void setInformationCriterion(const string& criterion);
 
-	/**
-	 * @brief Returns the information criterion.
-	 * Returns the information criterion string setted in the DataProcessor
-	 * class. The default value is "aic".
-	 *
-	 * @return
-	 */
-	const string& getInformationCriterion();
 
 	/**
 	 * Run regression tests for the methods of this class
@@ -120,7 +117,7 @@ private:
 	/**
 	 * Minimum amount of packets to be processed by the dataProcessor algorithm
 	 */
-	int minimumAmountOfPackets = 10;
+	int minimumAmountOfPackets;
 
 	/**
 	 * A time smaller than the min_time resolution. Once the current resolution
@@ -197,14 +194,55 @@ private:
 	/**
 	 * Minimum value possible on Session On/Off times
 	 */
-	double m_min_on_time = 0.1;
+	double m_min_on_time;
 
 	/**
 	 * Default value of cut time (SESSION_CUT_TIME) for sections
 	 */
-	double m_session_cut_time = 30;
+	double m_session_cut_time;
+	//double m_session_cut_time = 30;
+
 	//double m_session_cut_time = DEFAULT_SESSION_CUT_TIME;
 
+	double m_time_scale;
+
+	/**
+	 * @brief Set the information criterion.
+	 * May be setted as "aic" or "bic". If any other string is used as input,
+	 * it prints an error message, and set "aic" as default.
+	 *
+	 * @param criterion
+	 */
+	//void setInformationCriterion(const string& criterion);
+
+	/**
+	 * @brief Returns the information criterion.
+	 * Returns the information criterion string setted in the DataProcessor
+	 * class. The default value is "aic".
+	 *
+	 * @return
+	 */
+	const string& getInformationCriterion();
+
+	/**
+	 * @brief
+	 * @param timeScale
+	 * @param minOnTime
+	 * @param sessionCutTime
+	 */
+	//void configure(time_scale timeScale, time_sec minOnTime,
+	//		time_sec sessionCutTime);
+
+	/**
+	 * @brief
+	 *
+	 * @param timeScale
+	 * @param minOnTime
+	 * @param sessionCutTime
+	 * @param criterion
+	 */
+	//void configure(time_scale timeScale, time_sec minOnTime,
+	//		time_sec sessionCutTime, const string& criterion);
 
 	/**
 	 * calculate the most frequent element from a list
@@ -212,7 +250,6 @@ private:
 	 * @return
 	 */
 	//long int mode(list<long int>& thelist);
-
 	/**
 	 * 	ACTUAL FUNCTIONS
 	 */
@@ -593,6 +630,19 @@ private:
 			const time_sec min_on_time, vector<time_sec>* onTimes,
 			vector<time_sec>* offTimes);
 
+	/**
+	 * @brief
+	 *
+	 * @param deltaVet
+	 * @param cut_time
+	 * @param min_on_time
+	 * @param onTimes
+	 * @param offTimes
+	 */
+	void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList,
+			const time_sec cut_time, const time_sec min_on_time,
+			vector<time_sec>* onTimes, vector<time_sec>* offTimes,
+			vector<unsigned int>* pktCounter, vector<double>* fileSize);
 
 	/**
 	 * @brief
@@ -603,23 +653,10 @@ private:
 	 * @param onTimes
 	 * @param offTimes
 	 */
-	void calcOnOff(list<time_sec>& deltaVet, list<packet_size>& psList, const time_sec cut_time,
-			const time_sec min_on_time, vector<time_sec>* onTimes,
-			vector<time_sec>* offTimes, vector<unsigned int>* pktCounter, vector<double>* fileSize);
-
-
-	/**
-	 * @brief
-	 *
-	 * @param deltaVet
-	 * @param cut_time
-	 * @param min_on_time
-	 * @param onTimes
-	 * @param offTimes
-	 */
-	void calcOnOff(list<time_sec>& deltaVet, list<unsigned int>& psList, const time_sec cut_time,
-			const time_sec min_on_time, vector<time_sec>* onTimes,
-			vector<time_sec>* offTimes, vector<unsigned int>* pktCounter, vector<unsigned int>* fileSize);
+	void calcOnOff(list<time_sec>& deltaVet, list<unsigned int>& psList,
+			const time_sec cut_time, const time_sec min_on_time,
+			vector<time_sec>* onTimes, vector<time_sec>* offTimes,
+			vector<unsigned int>* pktCounter, vector<unsigned int>* fileSize);
 
 	/**
 	 *

@@ -13,6 +13,7 @@
 #include <assert.h>
 #include <string.h>
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <list>
 #include <armadillo>
@@ -281,6 +282,15 @@ bool isFileEmpty(std::ifstream& pFile);
  */
 char** str_split(char* a_str, const char a_delim);
 
+
+void scalar_product(list<double>& theList, double scalar);
+
+bool isEquals(double a, double b, double epsilon = 0.001);
+
+//void printList(list<double>& theList, uint precision = 10);
+
+
+
 ////////////////////////////////////////////////////////////////////////////////
 /// Tests
 ////////////////////////////////////////////////////////////////////////////////
@@ -313,5 +323,13 @@ bool test_cumulativeDistribution();
  * @return true if succed
  */
 bool test_list2str();
+
+/**
+ * Unity test function
+ * @return true if succed
+ */
+bool test_scalar_prod();
+
+
 
 #endif /* CFUNCTIONS_H_ */

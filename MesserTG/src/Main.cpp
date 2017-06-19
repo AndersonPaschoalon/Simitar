@@ -51,12 +51,15 @@ void unity_regression_tests();
  -vr/--verbose			displays all outputs (Default: just erros)
  */
 
+//TODO criar uma classe "configuration"
+
 int main()
 {
 	MESSER_LOG_INIT(DEBUG);
 	//bool regressionTests = false;
 	bool testDummy = true;
-	bool testDitg = true;
+	bool testDitg = false;
+	bool testSetIPAddrs = false;
 
 #ifdef REGRESSION_TESTS
 	unity_regression_tests();
@@ -65,7 +68,7 @@ int main()
 	if (testDummy == true)
 	{
 		string experimentName = "live_background-traffic-1";
-		DataProcessor dp;
+		DataProcessor dp = DataProcessor(miliseconds, 0.1, 30.0, 2,"aic");
 		DatabaseInterface dbif;
 		long int nflows = 0;
 		NetworkTrace* trace = NULL;
@@ -80,6 +83,8 @@ int main()
 
 		dp.calculate(experimentName, &dbif, trace);
 
+
+
 		trace->setInfoTracename("teste-chapolin");
 		trace->setInfoCommentaries(
 				"este e um teste do compact trace descriptor");
@@ -87,11 +92,18 @@ int main()
 		trace->setInfoCaptureInterface("eth0");
 		trace->setInfoCaptureDate("07/04/2017");
 
-		trace->writeToFile("kkk.xml");
+		trace->writeToFile("ms-kkk.xml");
+		/*
 		trace->writeToFile("data/regression-tests/test-trace.xml");
 
+*/
 		//trace->exec(true);
 		delete trace;
+	}
+	if(testSetIPAddrs == true)
+	{
+		string ipAddrList = "data/";
+		NetworkTrace traceChangeIps =  NetworkTrace("kkk.xml", "D-ITG");
 	}
 	if (testDitg == true)
 	{

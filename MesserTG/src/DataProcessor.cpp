@@ -9,7 +9,45 @@
 
 DataProcessor::DataProcessor()
 {
-	//nothing to do at all
+	m_time_scale = seconds;
+	m_min_on_time = 0.1;
+	m_session_cut_time = 30.0;
+	informationCriterionParam = "aic";
+	minimumAmountOfPackets = 30;
+}
+
+DataProcessor::DataProcessor(time_scale timeScale, time_sec minOnTime,
+		time_sec sessionCutTime, uint minNumberOfPackets,
+		const string& criterion)
+{
+	if (timeScale == miliseconds)
+	{
+		m_min_on_time = 1000 * minOnTime;
+		m_session_cut_time = 1000 * sessionCutTime;
+		m_time_scale = 1000.0;
+		min_time = min_time * m_time_scale;
+	}
+	else
+	{
+		m_min_on_time = minOnTime;
+		m_session_cut_time = sessionCutTime;
+		m_time_scale = 1.0;
+	}
+	if (criterion == "aic")
+	{
+		informationCriterionParam = criterion;
+	}
+	else if (criterion == "bic")
+	{
+		informationCriterionParam = criterion;
+	}
+	else
+	{
+		cerr << "\nInvalid criterion or no criterion selected: " << criterion
+				<< endl << "Selecting default criterion: AIC\n";
+		informationCriterionParam = "aic";
+	}
+	minimumAmountOfPackets = minNumberOfPackets;
 }
 
 DataProcessor::~DataProcessor()
@@ -17,19 +55,37 @@ DataProcessor::~DataProcessor()
 	//nothing to do at all
 }
 
-string DataProcessor::toString(void)
+void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr,
+		time_sec& minOnTime, time_sec& sessionCutTime, string& criterion)
 {
-	string dataProcessor;
 
-	dataProcessor =
-			"Used to calculate parameters of network flows; has no state.";
-
-	return (dataProcessor);
+	if (int(m_time_scale) == 1000)
+	{
+		timeScaleStr = "miliseconds";
+		timeScale = miliseconds;
+	}
+	else if (int(m_time_scale) == 1)
+	{
+		timeScaleStr = "seconds";
+		timeScale = seconds;
+	}
+	else
+	{
+		cerr << "Some problem ocurred getting the time scalle\n"
+				<< "m_timeScale=" << m_time_scale
+				<< ", but it should be 1 or 1000" << endl;
+		timeScaleStr = "seconds";
+		timeScale = seconds;
+	}
+	minOnTime = m_min_on_time;
+	sessionCutTime = m_session_cut_time;
+	criterion = informationCriterionParam;
 }
 
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
+
 	MESSER_LOG_INIT(INFO);
 
 	///iterator variables
@@ -62,7 +118,7 @@ int DataProcessor::calculate(const string& experimentName,
 	///inter-deperture time variables
 	list<time_sec> arrival_list;
 	list<time_sec> interArrival_list; // list of inter arrival times of a flow
-	//list<time_sec> interArrival_fileStack;
+	list<time_sec> interArrival_fileStack;
 	//list<time_sec> interArrival_interFileStack;
 	//vector<time_sec>* interArrival_sessionOnTimes;
 	//vector<time_sec>* interArrival_sessionOffTimes;
@@ -72,6 +128,7 @@ int DataProcessor::calculate(const string& experimentName,
 
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
+
 		///new network flow
 		NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 
@@ -90,7 +147,7 @@ int DataProcessor::calculate(const string& experimentName,
 		psSecondMode.clear();
 		arrival_list.clear();
 		interArrival_list.clear();
-		//interArrival_fileStack.clear();
+		interArrival_fileStack.clear();
 		//interArrival_interFileStack.clear();
 //		interArrival_sessionOnTimes->clear();
 //		interArrival_sessionOffTimes->clear();
@@ -121,6 +178,7 @@ int DataProcessor::calculate(const string& experimentName,
 		// the experiment
 		databaseInterface->getFlowData(experimentName, fcounter,
 				"frame__time_relative", relativeTime);
+		scalar_product(relativeTime, m_time_scale);
 
 		// Evaluate interarriaval  times
 		for (list<time_sec>::iterator it = relativeTime.begin();
@@ -140,10 +198,34 @@ int DataProcessor::calculate(const string& experimentName,
 			}
 		}
 
+		// Separate file inter packet times
+		for (list<time_sec>::iterator it = interArrival_list.begin();
+				it != interArrival_list.end(); it++)
+		{
+			if (*it < m_session_cut_time)
+			{
+				interArrival_fileStack.push_back(*it);
+			}
+		}
+
+		//debub
+		/*
+		 if(fcounter == 0){
+
+		 cout << "relativeTime =";
+		 printList(relativeTime);
+
+		 cout << "interArrival_list =";
+		 printList(interArrival_list);
+
+		 cout << "arrival_list =";
+		 printList(arrival_list);
+		 }
+		 */
+
 		////////////////////////////////////////////////////////////////////////
 		/// Flow-level Options
 		////////////////////////////////////////////////////////////////////////
-
 		startDalay = relativeTime.front();
 		netFlow->setFlowStartDelay(startDalay);
 
@@ -327,11 +409,32 @@ int DataProcessor::calculate(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 
 		/// Inter-packet times
+
+		//if (fcounter == 0)
+		//	printList(interArrival_list);
+
+		//scalar_product(interArrival_list, timeScale);
+
+		//if (fcounter == 0)
+		//	printList(interArrival_list);
+
+		//netFlow->setInterDepertureTimeModels(
+		//		fitModelsInterArrival(interArrival_list,
+		//				informationCriterionParam));
+
+		cout << "interArrival_fileStack(" << interArrival_fileStack.size()
+				<< ") = ";
+		printList(interArrival_fileStack);
+
+		cout << "fconter/nFlows::" << fcounter << "::" << nflows << endl;
 		netFlow->setInterDepertureTimeModels(
-				fitModelsInterArrival(interArrival_list,
-						getInformationCriterion()));
+				fitModelsInterArrival(interArrival_fileStack,
+						informationCriterionParam));
+
 		MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
 				interArrival_list.size());
+
+		//scalar_product(interArrival_list, 1 / timeScale);
 
 		//DEBUG
 		//if (debugflag == 33)
@@ -528,30 +631,6 @@ protocol DataProcessor::aplicationProtocol(protocol transportProtocol,
 
 }
 
-void DataProcessor::setInformationCriterion(const string& criterion)
-{
-	if (criterion == "aic")
-	{
-		informationCriterionParam = criterion;
-	}
-	else if (criterion == "bic")
-	{
-		informationCriterionParam = criterion;
-	}
-	else
-	{
-		cerr << "\nInvalid criterion or no criterion selected: " << criterion
-				<< endl << "Selecting default criterion: AIC\n";
-		informationCriterionParam = "aic";
-	}
-
-}
-
-const string& DataProcessor::getInformationCriterion()
-{
-	return (informationCriterionParam);
-}
-
 list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		list<double>& empiricalData, const string& criterion)
 {
@@ -568,11 +647,13 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 	{
 		smf.set(SINGLE_PACKET, 0, 0, datum::inf, datum::inf);
 		modelList->push_back(smf);
+
 	}
 	else if (m == 1)
 	{
 		smf.set(CONSTANT, *empiricalData.begin(), 0, datum::inf, datum::inf);
 		modelList->push_back(smf);
+
 	}
 	else if (m < minimumAmountOfPackets)
 	{
@@ -590,6 +671,7 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		constantFitting(interArrival, paramVec, infoCriterion);
 		smf.set(CONSTANT, paramVec(0), paramVec(1), infoCriterion(0),
 				infoCriterion(1));
+
 		modelList->push_back(smf);
 	}
 	else
@@ -675,9 +757,11 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 		}
 
 		delete interArrivalCdf;
+
+		modelList->sort();
 	}
 
-	modelList->sort();
+	//modelList->sort();
 
 	return (modelList);
 }
@@ -2587,10 +2671,6 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 	MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
 	delete_cvector(arrival_time);
 	delete_cvector(delta_time);
-}
-
-DataProcessor::DataProcessor(time_sec sessionCutTime, time_sec filCutTime)
-{
 }
 
 void DataProcessor::setSessionOnOffTimes(list<time_sec>& interArrivalTimes)

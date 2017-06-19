@@ -27,12 +27,11 @@ http://en.cppreference.com/w/cpp/chrono/system_clock/now
 /**
  * Length of a standard C string vector
  */
+#define CHAR_SMALL_BUFFER 50
 #define CHAR_BUFFER 120
-
-/**
- * Length of a large C string vector
- */
-#define CHAR_LARGE_BUFFER 10000
+#define CHAR_MEDIUM_BUFFER 500
+#define CHAR_LARGE_BUFFER 1000
+#define CHAR_HUGE_BUFFER 10000
 
 /**
  * Macro for  \f$ 10^6 \f$.

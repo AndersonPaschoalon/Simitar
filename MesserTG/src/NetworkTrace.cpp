@@ -19,8 +19,8 @@ NetworkTrace::NetworkTrace()
 	MESSER_DEBUG("Constructor NetworkTrace()  @<%s, %s>");
 }
 
-
-NetworkTrace::NetworkTrace(const string& fileName, const string& trafficGenEngine)
+NetworkTrace::NetworkTrace(const string& fileName,
+		const string& trafficGenEngine)
 {
 	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
@@ -345,7 +345,10 @@ int NetworkTrace::writeToFile(void) const
 
 int NetworkTrace::writeToFile(const string& fileName) const
 {
-	MESSER_LOG_INIT(NOTICE);
+	MESSER_LOG_INIT(ERROR);
+
+	MESSER_DEBUG("Executing method writeToFile(), fileName=%s @  @<%s, %s>",
+			fileName.c_str());
 
 	unsigned int nPsM1Fittings = 3;
 	unsigned int nPsM2Fittings = 3;
@@ -491,13 +494,17 @@ int NetworkTrace::writeToFile(const string& fileName) const
 		vector2str(*networkFlow[i]->getSessionOnPacketsVector(),
 				fd[i].session_nPackets);
 
-		MESSER_DEBUG(
-				"fd[%d].session_OnTimes=[%s], fd[%d].session_OffTimes=[%s]", i,
-				fd[i].session_OnTimes, i, fd[i].session_OffTimes);
+		//MESSER_DEBUG(
+		//		"fd[%d].session_OnTimes=[%s], fd[%d].session_OffTimes=[%s]", i,
+		//		fd[i].session_OnTimes, i, fd[i].session_OffTimes);
 		//networkFlow[i]->logOnOff();
 
 		//Packet size mode1
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
+
+		//MESSER_DEBUG("networkFlow[i]->getNumberOfPsMode1Models()=%d @<%s, %s>",
+		//		networkFlow[i]->getNumberOfPsMode1Models());
+
 		for (j = 0; j < nPsM1Fittings; j++)
 		{
 			//sf = networkFlow[i]->getPacketSizeModelMode1_next();
@@ -542,11 +549,15 @@ int NetworkTrace::writeToFile(const string& fileName) const
 
 		//Reset data structure conters
 		networkFlow[i]->resetCounters();
+
+		//MESSER_DEBUG("end loop @<%s, %s>");
 	}
 
 	// => Create XML
 	for (i = 0; i < nFlows; i++)
 	{
+		//MESSER_DEBUG("Creating XML @<%s, %s>");
+
 		xml_node<>* flow = doc.allocate_node(node_element, LABEL_FLOW);
 
 		// flow
@@ -769,6 +780,8 @@ int NetworkTrace::writeToFile(const string& fileName) const
 	file_stored.close();
 	doc.clear();
 
+	MESSER_DEBUG("Free memory @<%s, %s>");
+
 	//Free memory allocated
 	for (i = 0; i < nFlows; i++)
 	{
@@ -844,30 +857,43 @@ int NetworkTrace::exec(bool verbose)
 //	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
 //}
 
-int  NetworkTrace::getDstIpMac(uint& counter, const char* filename, char* ipAddr, char* MacAddr)
+/**
+ * @brief This method returns the the IP and MAC addresses of a file
+ * This method returns the the IP and MAC addresses of an input file at the
+ * line counter. Each line of this file follow this format: <IPaddr>@<MACaddr>.
+ * @param counter
+ * @param filename
+ * @param ipAddr
+ * @param MacAddr
+ * @return
+ */
+int NetworkTrace::getDstIpMac(uint& counter, const char* filename, char* ipAddr,
+		char* MacAddr)
 {
 	int filePosition = 0;
-	char strLine[50];
+	char strLine[CHAR_SMALL_BUFFER];
 	char** tokens = NULL;
-	if(counter == 0)
+	if (counter == 0)
 		counter = 1;
 
 	//ifstream hostIpList("hostIpList.txt", ios::in);
 	ifstream hostIpList(filename, ios::in);
-	if(!hostIpList || isFileEmpty(hostIpList))
+	if (!hostIpList || isFileEmpty(hostIpList))
 	{
-		fprintf(stderr,"*Warning*: hostIpList.txt file is empty or do not exist.\nUsing default IP address 127.0.0.1\n");
+		fprintf(stderr,
+				"*Warning*: hostIpList.txt file is empty or do not exist.\nUsing default IP address 127.0.0.1\n");
 		strcpy(ipAddr, "127.0.0.1");
 		return (-1);
 	}
-	else{ //no empty file
+	else
+	{ //no empty file
 
 		hostIpList >> strLine;
 		filePosition++;
 
-		while( !hostIpList.eof() )
+		while (!hostIpList.eof())
 		{
-			if( filePosition < counter)
+			if (filePosition < counter)
 			{
 				hostIpList >> strLine;
 				filePosition++;
@@ -878,7 +904,7 @@ int  NetworkTrace::getDstIpMac(uint& counter, const char* filename, char* ipAddr
 				break;
 			}
 		}
-		if(hostIpList.eof())
+		if (hostIpList.eof())
 		{
 			//EOF reached
 			hostIpList >> strLine;
@@ -890,48 +916,130 @@ int  NetworkTrace::getDstIpMac(uint& counter, const char* filename, char* ipAddr
 	}
 
 	tokens = str_split(strLine, '@');
-	if(tokens)
+	if (tokens)
 	{
-        int i;
-        for (i = 0; *(tokens + i); i++)
-        {
-        	if(i == 0)
-        	{
-        		strcpy(ipAddr, *(tokens + i));
-        	}
-        	else if(i == 1)
-        	{
-        		strcpy(MacAddr, *(tokens + i));
-        	}
-            free(*(tokens + i));
-        }
-        free(tokens);
+		int i;
+		for (i = 0; *(tokens + i); i++)
+		{
+			if (i == 0)
+			{
+				strcpy(ipAddr, *(tokens + i));
+			}
+			else if (i == 1)
+			{
+				strcpy(MacAddr, *(tokens + i));
+			}
+			free(*(tokens + i));
+		}
+		free(tokens);
 	}
 	else
 	{
-		fprintf(stderr,"*Error*: failed to break string into tokens");
-		return(-2);
+		fprintf(stderr, "*Error*: failed to break string into tokens");
+		return (-2);
 	}
 
-	return(0);
+	return (0);
+}
+
+void NetworkTrace::clientServerIps(const char* filename,
+		const char* etherInterface, bool mac)
+{
+
+}
+
+inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
+{
+	struct ifaddrs *ifaddr, *ifa;
+	int family, s;
+	char host[NI_MAXHOST];
+
+	if (getifaddrs(&ifaddr) == -1)
+	{
+		perror("getifaddrs");
+		return (-1);
+	}
+
+	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
+	{
+
+		if (ifa->ifa_addr == NULL)
+			continue;
+
+		s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host,
+		NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
+
+		if ((strcmp(ifa->ifa_name, "lo") != 0)
+				&& (ifa->ifa_addr->sa_family == AF_INET))
+		{
+			if (s != 0)
+			{
+				printf("getnameinfo() failed: %s\n", gai_strerror(s));
+				return (-2);
+			}
+			strcpy(interface, ifa->ifa_name);
+			strcpy(ipaddr, host);
+			break;
+		}
+	}
+
+	freeifaddrs(ifaddr);
+	return (0);
+}
+
+inline int NetworkTrace::getLocalIp(const char* interface, char* ipaddr)
+{
+	struct ifaddrs *ifaddr, *ifa;
+	int family, s;
+	char host[NI_MAXHOST];
+
+	if (getifaddrs(&ifaddr) == -1)
+	{
+		perror("getifaddrs");
+		return (-1);
+	}
+
+	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
+	{
+
+		if (ifa->ifa_addr == NULL)
+			continue;
+
+		s = getnameinfo(ifa->ifa_addr, sizeof(struct sockaddr_in), host,
+		NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
+
+		if ((strcmp(ifa->ifa_name, interface) == 0)
+				&& (ifa->ifa_addr->sa_family == AF_INET))
+		{
+			if (s != 0)
+			{
+				printf("getnameinfo() failed: %s\n", gai_strerror(s));
+				return (-2);
+			}
+
+			strcpy(ipaddr, host);
+			break;
+		}
+	}
+
+	freeifaddrs(ifaddr);
+	return (0);
 }
 
 void NetworkTrace::setFileIpMac(const char* filename)
 {
 	uint nflows = uint(getNumberOfFlows());
 	uint i = 0;
-	uint conter = 0;
 	char macAddr[CHAR_BUFFER];
 	char ipAddr[CHAR_BUFFER];
 
-	for(i = 0; i < nflows; i++)
+	for (i = 0; i < nflows; i++)
 	{
-		getDstIpMac(conter, filename, ipAddr, macAddr);
+		getDstIpMac(i, filename, ipAddr, macAddr);
 		networkFlow[i]->setNetworkDstAddr(ipAddr);
 		networkFlow[i]->setMacDstAddr(macAddr);
 	}
 }
-
 
 void NetworkTrace::regression_tests()
 {
@@ -946,30 +1054,30 @@ void NetworkTrace::regression_tests()
 }
 
 /*
-bool NetworkTrace::test_string2charvet()
-{
-	string anotherStrangerMe =
-			"Sin of doubt It exists and it grows A glimpse of life From somewhere deep within";
-	char charVet[CHAR_BUFFER];
+ bool NetworkTrace::test_string2charvet()
+ {
+ string anotherStrangerMe =
+ "Sin of doubt It exists and it grows A glimpse of life From somewhere deep within";
+ char charVet[CHAR_BUFFER];
 
-	string2charvet(anotherStrangerMe, charVet);
+ string2charvet(anotherStrangerMe, charVet);
 
-	for (unsigned int i = 0; i < anotherStrangerMe.size(); i++)
-	{
-		if (charVet[i] != anotherStrangerMe[i])
-			return (false);
-	}
-	int i = 0;
-	while (charVet[i] != '\0')
-	{
-		if (charVet[i] != anotherStrangerMe[i])
-			return (false);
-		i++;
-	}
+ for (unsigned int i = 0; i < anotherStrangerMe.size(); i++)
+ {
+ if (charVet[i] != anotherStrangerMe[i])
+ return (false);
+ }
+ int i = 0;
+ while (charVet[i] != '\0')
+ {
+ if (charVet[i] != anotherStrangerMe[i])
+ return (false);
+ i++;
+ }
 
-	return (true);
-}
-*/
+ return (true);
+ }
+ */
 
 const char * NetworkTrace::LABEL_TRACE = "trace";
 const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";
@@ -1016,18 +1124,7 @@ const char * NetworkTrace::LABEL_BIC = "bic";
 const char * NetworkTrace::LABEL_NPACKETS = "n_packets";
 const char * NetworkTrace::LABEL_NKBYTES = "n_kbytes";
 
-inline int NetworkTrace::setDstIP(const string& dstIpAddr)
-{
-	//TODO
-	return (0);
-}
 
-inline int NetworkTrace::setDstNetwork(const string& dstIpPrefix,
-		const string& dstNetmask)
-{
-	//TODO
-	return (0);
-}
 
 bool NetworkTrace::test_readWrite2XML()
 {
@@ -1061,8 +1158,6 @@ bool NetworkTrace::test_readWrite2XML()
 
 	return (noError);
 }
-
-
 
 bool NetworkTrace::test_OnOffSizes()
 {
@@ -1107,11 +1202,13 @@ bool NetworkTrace::test_OnOffSizes()
 
 }
 
+
 bool NetworkTrace::test_setFlowIpMac()
-{	NetworkTrace tempTrace = NetworkTrace(
-		"data/regression-tests/test-trace.xml", "D-ITG");
+{
+	NetworkTrace tempTrace = NetworkTrace(
+			"data/regression-tests/test-trace.xml", "D-ITG");
 
 	tempTrace.setFileIpMac("data/regression-tests/ipmac.txt");
 	tempTrace.writeToFile("changed-ips-macs-trace.xml");
-	return(true);
+	return (true);
 }

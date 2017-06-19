@@ -116,8 +116,7 @@ void list2str(list<uint> theList, char* str)
 {
 	str[0] = '\0';
 	char buffer[CHAR_BUFFER] = "\0";
-	for (list<uint>::iterator it = theList.begin(); it != theList.end();
-			)
+	for (list<uint>::iterator it = theList.begin(); it != theList.end();)
 	{
 		//string val = to_string(*it);
 		sprintf(buffer, "%d", *it);
@@ -152,7 +151,6 @@ void list2str(list<unsigned long int> theList, char* str)
 	}
 
 }
-
 
 void charvet2type(const char* vetc, uint& v)
 {
@@ -190,10 +188,10 @@ void charvet2type(const char* vetc, list<double>& theList)
 	int in_conter = 0;
 	int out_conter = 0;
 
-	if( strcmp(vetc, "") == 0 ){
+	if (strcmp(vetc, "") == 0)
+	{
 		return;
 	}
-
 
 	while (1)
 	{
@@ -391,27 +389,40 @@ bool delimiter(char c, const char& d)
 template<typename T>
 void printList(list<T>& theList)
 {
-
 	cout << "[";
-	for (typename list<T>::iterator it = theList.begin(); it != theList.end();
+	for (typename list<int>::iterator it = theList.begin(); it != theList.end();
 			it++)
 	{
 		cout << *it << ", ";
 	}
 	cout << "]" << endl;
-
 }
+
+/*
+ void printList(list<double>& theList, uint precision = 10)
+ {
+ cout << "[";
+ for (list<double>::iterator it = theList.begin(); it != theList.end(); it++)
+ {
+ cout << std::setprecision(precision) << *it << ", ";
+ }
+ cout << "]" << endl;
+ }
+ */
 
 void printList(list<double>& theList)
 {
-
 	cout << "[";
 	for (list<double>::iterator it = theList.begin(); it != theList.end(); it++)
 	{
-		cout << *it << ", ";
+		cout << std::setprecision(10) << *it << ", ";
 	}
 	cout << "]" << endl;
+}
 
+bool isEqual(double a, double b, double epsilon = 0.001)
+{
+	return std::abs(a - b) < epsilon;
 }
 
 /*
@@ -463,7 +474,6 @@ void cumulativeDistribution(list<double>& dataSample,
 	}
 }
 
-
 bool isFileEmpty(std::ifstream& pFile)
 {
 	return pFile.peek() == std::ifstream::traits_type::eof();
@@ -471,56 +481,65 @@ bool isFileEmpty(std::ifstream& pFile)
 
 char** str_split(char* a_str, const char a_delim)
 {
-    char** result    = 0;
-    size_t count     = 0;
-    char* tmp        = a_str;
-    char* last_comma = 0;
-    char delim[2];
-    delim[0] = a_delim;
-    delim[1] = 0;
+	char** result = 0;
+	size_t count = 0;
+	char* tmp = a_str;
+	char* last_comma = 0;
+	char delim[2];
+	delim[0] = a_delim;
+	delim[1] = 0;
 
-    /* Count how many elements will be extracted. */
-    while (*tmp)
-    {
-        if (a_delim == *tmp)
-        {
-            count++;
-            last_comma = tmp;
-        }
-        tmp++;
-    }
+	/* Count how many elements will be extracted. */
+	while (*tmp)
+	{
+		if (a_delim == *tmp)
+		{
+			count++;
+			last_comma = tmp;
+		}
+		tmp++;
+	}
 
-    /* Add space for trailing token. */
-    count += last_comma < (a_str + strlen(a_str) - 1);
+	/* Add space for trailing token. */
+	count += last_comma < (a_str + strlen(a_str) - 1);
 
-    /* Add space for terminating null string so caller
-       knows where the list of returned strings ends. */
-    count++;
+	/* Add space for terminating null string so caller
+	 knows where the list of returned strings ends. */
+	count++;
 
-    result = (char**)malloc(sizeof(char*) * count);
-    if(result == NULL)
-    {
-    	errno = ENOMEM;
-    	perror("*Error*: Memory allocation failed @ str_split()");
-    	exit(-1);
-    }
+	result = (char**) malloc(sizeof(char*) * count);
+	if (result == NULL)
+	{
+		errno = ENOMEM;
+		perror("*Error*: Memory allocation failed @ str_split()");
+		exit(-1);
+	}
 
-    if (result)
-    {
-        size_t idx  = 0;
-        char* token = strtok(a_str, delim);
+	if (result)
+	{
+		size_t idx = 0;
+		char* token = strtok(a_str, delim);
 
-        while (token)
-        {
-            assert(idx < count);
-            *(result + idx++) = strdup(token);
-            token = strtok(0, delim);
-        }
-        assert(idx == count - 1);
-        *(result + idx) = 0;
-    }
+		while (token)
+		{
+			assert(idx < count);
+			*(result + idx++) = strdup(token);
+			token = strtok(0, delim);
+		}
+		assert(idx == count - 1);
+		*(result + idx) = 0;
+	}
 
-    return result;
+	return result;
+}
+
+void scalar_product(list<double>& theList, double scalar)
+{
+
+	for (list<double>::iterator it = theList.begin(); it != theList.end(); it++)
+	{
+		*it = (*it) * scalar;
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -537,6 +556,7 @@ void cfunctions_unitytests()
 	rt.printTestResult("test_list2str", test_list2str());
 	rt.printTestResult("test_cumulativeDistribution",
 			test_cumulativeDistribution());
+	rt.printTestResult("scalar_product", test_scalar_prod());
 
 }
 
@@ -712,6 +732,48 @@ bool test_list2str()
 	if (strcmp(istr, "1,2,3,4,5,6,7,8,9,0") != 0)
 	{
 		return (false);
+	}
+
+	return (true);
+}
+
+bool test_scalar_prod()
+{
+	list<double> aList =
+	{ 1, 2, 3, 4, 5, 17, 8, 7 };
+	vector<double> aListdot7 =
+	{ 7, 14, 21, 28, 35, 119, 56, 49 };
+	vector<double> aList7_116 =
+	{ 8.1200, 16.2400, 24.3600, 32.4800, 40.6000, 138.0400, 64.9600, 56.8400 };
+
+	//printList(aList);
+	scalar_product(aList, 7);
+	//printList(aList);
+
+	uint i = 0;
+	for (list<double>::iterator it = aList.begin(); it != aList.end(); it++)
+	{
+		if (aListdot7[i] != *it)
+		{
+			return (false);
+		}
+		i++;
+	}
+
+	scalar_product(aList, 1.16);
+	//printList(aList);
+	i = 0;
+	for (list<double>::iterator it = aList.begin(); it != aList.end(); it++)
+	{
+
+		if (!isEqual(aList7_116[i], *it))
+		{
+			printList(aList);
+			cout << "aList7_116[" << i << "]:" << aList7_116[i] << " != "
+					<< "aList." << *it << endl;
+			return (false);
+		}
+		i++;
 	}
 
 	return (true);

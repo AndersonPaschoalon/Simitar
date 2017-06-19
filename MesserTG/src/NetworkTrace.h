@@ -182,13 +182,30 @@ public:
 		m_trafficGenEngine = trafficGenEngine;
 	}
 
-	inline int setDstIP(const string& dstIpAddr);
+	/**
+	 * Sets a list of IP and MAC addresses provided in a file filename as
+	 * destinations of all flows in the NetworkTrace, and the local IP
+	 * as source IP. The local IP is defined based on the local Ethernet
+	 * interface provided as argument. If the interface is not specified,
+	 * it uses the first Ethernet interface active.
+	 * @param filename
+	 * @param etherInterface
+	 * @param mac
+	 */
+	void clientServerIps(const char* filename, const char* etherInterface = "",
+			bool mac = false);
 
-	inline int setDstNetwork(const string& dstIpPrefix,
-			const string& dstNetmask);
-
+	/**
+	 * Sets a list of IP and MAC addresses provided in a file filename as
+	 * destinations of all flows in the NetworkTrace.
+	 *
+	 * @param filename
+	 */
 	void setFileIpMac(const char* filename);
 
+	/**
+	 * Run regression tests of this class.
+	 */
 	void regression_tests();
 
 private:
@@ -247,14 +264,13 @@ private:
 	static const char * LABEL_NPACKETS;
 	static const char * LABEL_NKBYTES;
 
-	//methods
 	int getDstIpMac(uint& counter, const char* filename, char* ipAddr,
 			char* MacAddr);
+	inline int getLocalIfIp(char* interface, char* ipaddr);
+	inline int getLocalIp(const char* interface, char* ipaddr);
 
-	//void string2charvet(const string s, char* vetc) const;
+	// tests
 
-	//
-	//bool test_string2charvet();
 	bool test_readWrite2XML();
 	bool test_OnOffSizes();
 	bool test_setFlowIpMac();

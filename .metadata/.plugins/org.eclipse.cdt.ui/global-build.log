@@ -5392,3 +5392,3280 @@ Invoking: GCC C++ Linker
 g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
 Finished building target: MesserTG
  
+23:09:31 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:12:00 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+12:28:22 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+12:36:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+12:46:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:870:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if( filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:312:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:603:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+12:49:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:312:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:603:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+12:53:28 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:600:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+12:57:22 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:600:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+../src/cfunctions.cpp: In function ‘bool test_scalar_prod()’:
+../src/cfunctions.cpp:753:7: error: redeclaration of ‘uint i’
+  uint i = 0;
+       ^
+../src/cfunctions.cpp:742:7: note: ‘uint i’ previously declared here
+  uint i = 0;
+       ^
+make: *** [src/cfunctions.o] Error 1
+src/subdir.mk:42: recipe for target 'src/cfunctions.o' failed
+12:57:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:600:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+12:57:36 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+12:58:00 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:600:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:03:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:870:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if( filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:601:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:04:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:601:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:06:32 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:601:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:06:46 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:601:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:10:02 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:606:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+13:11:02 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:606:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+../src/cfunctions.cpp: In function ‘bool test_scalar_prod()’:
+../src/cfunctions.cpp:759:17: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+  printList(aList);
+                 ^
+../src/cfunctions.cpp:390:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList)
+      ^~~~~~~~~
+In file included from ../src/cfunctions.cpp:8:0:
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.cpp:404:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10)
+      ^~~~~~~~~
+../src/cfunctions.cpp:770:17: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+  printList(aList);
+                 ^
+../src/cfunctions.cpp:390:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList)
+      ^~~~~~~~~
+In file included from ../src/cfunctions.cpp:8:0:
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.cpp:404:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10)
+      ^~~~~~~~~
+make: *** [src/cfunctions.o] Error 1
+src/subdir.mk:42: recipe for target 'src/cfunctions.o' failed
+13:13:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:153:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(relativeTime);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:156:31: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(interArrival_list);
+                               ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:159:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(arrival_list);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+13:14:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:153:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(relativeTime);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:234:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:291:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:156:31: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(interArrival_list);
+                               ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:234:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:291:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:159:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(arrival_list);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:234:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:291:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+13:15:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:153:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(relativeTime);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:156:31: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(interArrival_list);
+                               ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:159:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(arrival_list);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+14:14:16 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:153:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(relativeTime);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:156:31: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(interArrival_list);
+                               ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:159:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(arrival_list);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+14:14:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:153:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(relativeTime);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:156:31: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(interArrival_list);
+                               ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:159:26: error: call of overloaded ‘printList(std::__cxx11::list<double>&)’ is ambiguous
+    printList(arrival_list);
+                          ^
+In file included from ../src/DatabaseInterface.h:28:0,
+                 from ../src/DataProcessor.h:32,
+                 from ../src/DataProcessor.cpp:8:
+../src/cfunctions.h:226:6: note: candidate: void printList(std::__cxx11::list<T>&) [with T = double]
+ void printList(list<T>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:233:6: note: candidate: void printList(std::__cxx11::list<double>&)
+ void printList(list<double>& theList);
+      ^~~~~~~~~
+../src/cfunctions.h:290:6: note: candidate: void printList(std::__cxx11::list<double>&, uint)
+ void printList(list<double>& theList, uint precision = 10);
+      ^~~~~~~~~
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+14:15:21 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:34:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:870:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if( filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:613:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:47:24 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:50:02 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:613:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:50:08 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:50:21 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:613:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:50:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:28:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:28:42 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:31:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:32:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:35:20 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:36:35 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:38:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:40:15 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:40:20 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:40:43 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:40:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:42:35 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:42:47 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:43:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:43:35 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:45:17 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:45:33 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:47:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:48:04 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:48:22 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:48:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:57:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:57:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:58:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:58:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:59:12 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:59:22 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+22:28:26 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+../src/DataProcessor.h:81:54: error: conflicting declaration ‘std::__cxx11::string& timeScale’
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+                                                      ^~~~~~~~~
+../src/DataProcessor.h:81:35: note: previous declaration as ‘time_scale timeScale’
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+                                   ^~~~~~~~~
+../src/DataProcessor.cpp: In constructor ‘DataProcessor::DataProcessor()’:
+../src/DataProcessor.cpp:12:30: error: ‘configure’ was not declared in this scope
+  configure(seconds, 0.1, 30.0);
+                              ^
+../src/DataProcessor.cpp:13:31: error: ‘setInformationCriterion’ was not declared in this scope
+  setInformationCriterion("aic");
+                               ^
+../src/DataProcessor.cpp: At global scope:
+../src/DataProcessor.cpp:52:6: error: prototype for ‘void DataProcessor::getConfiguration(time_scale, std::__cxx11::string&, time_sec&, time_sec&, std::__cxx11::string&)’ does not match any in class ‘DataProcessor’
+ void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr, time_sec& minOnTime,
+      ^~~~~~~~~~~~~
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:81:7: error: candidate is: void DataProcessor::getConfiguration(time_scale, time_sec&, time_sec&, std::__cxx11::string&)
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+       ^~~~~~~~~~~~~~~~
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:407:31: error: ‘getInformationCriterion’ was not declared in this scope
+       getInformationCriterion()));
+                               ^
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+22:31:59 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+../src/DataProcessor.h:81:54: error: conflicting declaration ‘std::__cxx11::string& timeScale’
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+                                                      ^~~~~~~~~
+../src/DataProcessor.h:81:35: note: previous declaration as ‘time_scale timeScale’
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+                                   ^~~~~~~~~
+../src/DataProcessor.cpp: In constructor ‘DataProcessor::DataProcessor()’:
+../src/DataProcessor.cpp:12:30: error: ‘configure’ was not declared in this scope
+  configure(seconds, 0.1, 30.0);
+                              ^
+../src/DataProcessor.cpp:13:31: error: ‘setInformationCriterion’ was not declared in this scope
+  setInformationCriterion("aic");
+                               ^
+../src/DataProcessor.cpp: At global scope:
+../src/DataProcessor.cpp:52:6: error: prototype for ‘void DataProcessor::getConfiguration(time_scale, std::__cxx11::string&, time_sec&, time_sec&, std::__cxx11::string&)’ does not match any in class ‘DataProcessor’
+ void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr,
+      ^~~~~~~~~~~~~
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:81:7: error: candidate is: void DataProcessor::getConfiguration(time_scale, time_sec&, time_sec&, std::__cxx11::string&)
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+       ^~~~~~~~~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+22:35:08 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+../src/DataProcessor.h:81:54: error: conflicting declaration ‘std::__cxx11::string& timeScale’
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+                                                      ^~~~~~~~~
+../src/DataProcessor.h:81:35: note: previous declaration as ‘time_scale timeScale’
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+                                   ^~~~~~~~~
+../src/DataProcessor.cpp:54:6: error: prototype for ‘void DataProcessor::getConfiguration(time_scale, std::__cxx11::string&, time_sec&, time_sec&, std::__cxx11::string&)’ does not match any in class ‘DataProcessor’
+ void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr,
+      ^~~~~~~~~~~~~
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:81:7: error: candidate is: void DataProcessor::getConfiguration(time_scale, time_sec&, time_sec&, std::__cxx11::string&)
+  void getConfiguration(time_scale timeScale, string& timeScale, time_sec& minOnTime,
+       ^~~~~~~~~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+22:35:59 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+In file included from ../src/Main.cpp:11:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+22:36:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+22:38:18 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:31:46 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+../src/DataProcessor.h:202:9: error: expected ‘;’ at end of member declaration
+  double m_session_cut_time
+         ^~~~~~~~~~~~~~~~~~
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:86:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+23:32:32 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:47:1: warning: ‘typedef’ was ignored in this declaration
+ typedef enum time_scale
+ ^~~~~~~
+../src/DataProcessor.h:202:9: error: expected ‘;’ at end of member declaration
+  double m_session_cut_time
+         ^~~~~~~~~~~~~~~~~~
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:86:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+23:33:15 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+In file included from ../src/DataProcessor.cpp:8:0:
+../src/DataProcessor.h:202:9: error: expected ‘;’ at end of member declaration
+  double m_session_cut_time
+         ^~~~~~~~~~~~~~~~~~
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:86:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+23:35:14 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:86:9: warning: unused variable ‘timeScale’ [-Wunused-variable]
+  double timeScale = 1000;
+         ^~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:35:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:35:44 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:38:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:39:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:39:32 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:39:52 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:39:58 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:40:29 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:40:35 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:41:20 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:41:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:45:55 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:49:06 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:51:24 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:51:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+23:53:14 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:56:53 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:70:65: error: no matching function for call to ‘DataProcessor::DataProcessor(time_scale, double, double, const char [4])’
+   DataProcessor dp = DataProcessor(miliseconds, 0.1, 30.0, "aic");
+                                                                 ^
+In file included from ../src/Main.cpp:11:0:
+../src/DataProcessor.h:70:2: note: candidate: DataProcessor::DataProcessor(time_scale, time_sec, time_sec, uint, const string&)
+  DataProcessor(time_scale timeScale, time_sec minOnTime,
+  ^~~~~~~~~~~~~
+../src/DataProcessor.h:70:2: note:   candidate expects 5 arguments, 4 provided
+../src/DataProcessor.h:60:2: note: candidate: DataProcessor::DataProcessor()
+  DataProcessor();
+  ^~~~~~~~~~~~~
+../src/DataProcessor.h:60:2: note:   candidate expects 0 arguments, 4 provided
+../src/DataProcessor.h:53:7: note: candidate: DataProcessor::DataProcessor(const DataProcessor&)
+ class DataProcessor
+       ^~~~~~~~~~~~~
+../src/DataProcessor.h:53:7: note:   candidate expects 1 argument, 4 provided
+src/subdir.mk:42: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+23:57:10 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+../src/Main.cpp: In function ‘int main()’:
+../src/Main.cpp:70:65: error: no matching function for call to ‘DataProcessor::DataProcessor(time_scale, double, double, const char [4])’
+   DataProcessor dp = DataProcessor(miliseconds, 0.1, 30.0, "aic");
+                                                                 ^
+In file included from ../src/Main.cpp:11:0:
+../src/DataProcessor.h:70:2: note: candidate: DataProcessor::DataProcessor(time_scale, time_sec, time_sec, uint, const string&)
+  DataProcessor(time_scale timeScale, time_sec minOnTime,
+  ^~~~~~~~~~~~~
+../src/DataProcessor.h:70:2: note:   candidate expects 5 arguments, 4 provided
+../src/DataProcessor.h:60:2: note: candidate: DataProcessor::DataProcessor()
+  DataProcessor();
+  ^~~~~~~~~~~~~
+../src/DataProcessor.h:60:2: note:   candidate expects 0 arguments, 4 provided
+../src/DataProcessor.h:53:7: note: candidate: DataProcessor::DataProcessor(const DataProcessor&)
+ class DataProcessor
+       ^~~~~~~~~~~~~
+../src/DataProcessor.h:53:7: note:   candidate expects 1 argument, 4 provided
+src/subdir.mk:42: recipe for target 'src/Main.o' failed
+make: *** [src/Main.o] Error 1
+23:57:32 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+23:57:39 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+00:04:03 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp:876:11: warning: character constant too long for its type
+   cout << 'kkkkkkkkkkk<<<<<<<<\n'
+           ^~~~~~~~~~~~~~~~~~~~~~~
+../src/DataProcessor.cpp: In member function ‘void DataProcessor::weibullFitting(const vec&, const vec&, arma::vec&, arma::vec&)’:
+../src/DataProcessor.cpp:877:3: error: expected ‘;’ before ‘paramVec’
+   paramVec(0) = default_weibullAlpha;
+   ^~~~~~~~
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Error 1
+00:04:12 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp:876:11: warning: character constant too long for its type
+   cout << 'kkkkkkkkkkk<<<<<<<<\n';
+           ^~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:06:37 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:06:45 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+00:09:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+00:09:20 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:426:3: error: expected ‘;’ before ‘netFlow’
+   netFlow->setInterDepertureTimeModels(
+   ^~~~~~~
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+00:09:24 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+../src/DataProcessor.cpp: In member function ‘int DataProcessor::calculate(const string&, DatabaseInterface*, NetworkTrace*)’:
+../src/DataProcessor.cpp:426:3: error: expected ‘;’ before ‘netFlow’
+   netFlow->setInterDepertureTimeModels(
+   ^~~~~~~
+make: *** [src/DataProcessor.o] Error 1
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+00:09:32 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:09:41 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+00:10:40 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:10:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+00:11:12 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+00:13:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+00:15:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:26:51 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:27:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:27:13 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:27:23 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:27:29 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:28:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:28:06 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+14:31:28 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+14:31:37 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:30:19 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+15:30:28 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+15:36:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:15:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:15:26 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:22:53 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:25:01 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:26:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:26:36 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:31:21 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:31:44 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+18:34:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:872:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if( filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:37:28 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:876:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+18:37:37 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:33:47 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:876:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:33:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:39:30 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:876:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:39:37 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:43:56 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:876:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:00:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:880:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:00:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:04:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:880:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:04:12 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:04:23 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:880:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:04:31 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:05:42 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:882:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:05:48 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:08:52 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:884:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:09:57 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++  -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:13:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:26:35 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:26:38 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:06:33 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:07:00 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:07:03 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:34:49 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:34:58 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:37:06 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+19:37:10 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:51:27 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:51:46 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:51:59 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+19:52:02 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:54:02 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:54:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:54:14 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+19:54:18 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O2 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:55:09 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:55:14 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+19:55:16 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:56:54 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O1 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+19:57:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:57:41 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:57:46 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+19:57:52 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+19:57:54 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:32:22 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:32:33 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:33:42 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+20:33:43 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:34:07 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:35:55 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:37:43 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:37:51 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:39:10 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+20:45:42 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+20:45:52 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+20:45:52 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:886:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+21:05:10 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Terminado
+Command canceled
+21:28:42 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘void NetworkTrace::setFileIpMac(const char*)’:
+../src/NetworkTrace.cpp:949:7: warning: unused variable ‘conter’ [-Wunused-variable]
+  uint conter = 0;
+       ^~~~~~
+../src/NetworkTrace.cpp: At global scope:
+../src/NetworkTrace.cpp:1044:58: error: no ‘int NetworkTrace::setDstIP(const string&)’ member function declared in class ‘NetworkTrace’
+ inline int NetworkTrace::setDstIP(const string& dstIpAddr)
+                                                          ^
+../src/NetworkTrace.cpp:1051:27: error: no ‘int NetworkTrace::setDstNetwork(const string&, const string&)’ member function declared in class ‘NetworkTrace’
+   const string& dstNetmask)
+                           ^
+make: *** [src/NetworkTrace.o] Error 1
+src/subdir.mk:42: recipe for target 'src/NetworkTrace.o' failed
+21:38:28 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+21:38:28 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+src/subdir.mk:42: recipe for target 'src/DataProcessor.o' failed
+make: *** [src/DataProcessor.o] Terminado
+Command canceled
+21:38:44 **** Clean-only build of configuration Debug for project MesserTG ****
+make clean 
+rm -rf  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o  ./src/DataProcessor.d ./src/DatabaseInterface.d ./src/DummyFlow.d ./src/Main.d ./src/NetworkFlow.d ./src/NetworkTrace.d ./src/RegressionTests.d ./src/StochasticModelFit.d ./src/cfunctions.d  MesserTG
+ 
+21:38:44 **** Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/DatabaseInterface.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DatabaseInterface.d" -MT"src/DatabaseInterface.o" -o "src/DatabaseInterface.o" "../src/DatabaseInterface.cpp"
+Finished building: ../src/DatabaseInterface.cpp
+ 
+Building file: ../src/DummyFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DummyFlow.d" -MT"src/DummyFlow.o" -o "src/DummyFlow.o" "../src/DummyFlow.cpp"
+../src/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../src/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../src/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../src/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../src/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Finished building: ../src/DummyFlow.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkFlow.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkFlow.d" -MT"src/NetworkFlow.o" -o "src/NetworkFlow.o" "../src/NetworkFlow.cpp"
+In file included from ../src/NetworkFlow.cpp:10:0:
+../src/DitgFlow.h: In member function ‘virtual void DitgFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../src/DitgFlow.h:41:8: warning: unused variable ‘ethernetInterface’ [-Wunused-variable]
+   char ethernetInterface[] = "h1-eth0";
+        ^~~~~~~~~~~~~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../src/NetworkFlow.cpp:803:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../src/NetworkFlow.cpp:842:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkFlow.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘void NetworkTrace::setFileIpMac(const char*)’:
+../src/NetworkTrace.cpp:949:7: warning: unused variable ‘conter’ [-Wunused-variable]
+  uint conter = 0;
+       ^~~~~~
+../src/NetworkTrace.cpp: At global scope:
+../src/NetworkTrace.cpp:1044:58: error: no ‘int NetworkTrace::setDstIP(const string&)’ member function declared in class ‘NetworkTrace’
+ inline int NetworkTrace::setDstIP(const string& dstIpAddr)
+                                                          ^
+../src/NetworkTrace.cpp:1051:27: error: no ‘int NetworkTrace::setDstNetwork(const string&, const string&)’ member function declared in class ‘NetworkTrace’
+   const string& dstNetmask)
+                           ^
+src/subdir.mk:42: recipe for target 'src/NetworkTrace.o' failed
+make: *** [src/NetworkTrace.o] Error 1
+21:39:45 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘void NetworkTrace::setFileIpMac(const char*)’:
+../src/NetworkTrace.cpp:949:7: warning: unused variable ‘conter’ [-Wunused-variable]
+  uint conter = 0;
+       ^~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building file: ../src/RegressionTests.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/RegressionTests.d" -MT"src/RegressionTests.o" -o "src/RegressionTests.o" "../src/RegressionTests.cpp"
+Finished building: ../src/RegressionTests.cpp
+ 
+Building file: ../src/StochasticModelFit.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/StochasticModelFit.d" -MT"src/StochasticModelFit.o" -o "src/StochasticModelFit.o" "../src/StochasticModelFit.cpp"
+Finished building: ../src/StochasticModelFit.cpp
+ 
+Building file: ../src/cfunctions.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/cfunctions.d" -MT"src/cfunctions.o" -o "src/cfunctions.o" "../src/cfunctions.cpp"
+../src/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../src/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../src/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../src/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+Finished building: ../src/cfunctions.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+21:50:16 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/DataProcessor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/DataProcessor.d" -MT"src/DataProcessor.o" -o "src/DataProcessor.o" "../src/DataProcessor.cpp"
+Finished building: ../src/DataProcessor.cpp
+ 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIfIp(char*, char*)’:
+../src/NetworkTrace.cpp:953:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIp(const char*, char*)’:
+../src/NetworkTrace.cpp:992:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+21:54:34 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/NetworkTrace.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/NetworkTrace.d" -MT"src/NetworkTrace.o" -o "src/NetworkTrace.o" "../src/NetworkTrace.cpp"
+../src/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../src/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../src/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIfIp(char*, char*)’:
+../src/NetworkTrace.cpp:954:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../src/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIp(const char*, char*)’:
+../src/NetworkTrace.cpp:993:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+Finished building: ../src/NetworkTrace.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
+21:55:25 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+make: Nothing to be done for 'all'.
+21:56:05 **** Incremental Build of configuration Debug for project MesserTG ****
+make all 
+Building file: ../src/Main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -fmessage-length=0 -std=c++11 -MMD -MP -MF"src/Main.d" -MT"src/Main.o" -o "src/Main.o" "../src/Main.cpp"
+Finished building: ../src/Main.cpp
+ 
+Building target: MesserTG
+Invoking: GCC C++ Linker
+g++ -p -pg -ftest-coverage -fprofile-arcs -o "MesserTG"  ./src/DataProcessor.o ./src/DatabaseInterface.o ./src/DummyFlow.o ./src/Main.o ./src/NetworkFlow.o ./src/NetworkTrace.o ./src/RegressionTests.o ./src/StochasticModelFit.o ./src/cfunctions.o   -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG
+Finished building target: MesserTG
+ 
