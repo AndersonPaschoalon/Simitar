@@ -610,6 +610,18 @@ TACACS              & UDP, TCP           & 49              \\ \hline
 \end{table}
 
 
+\begin{table}[!ht]
+\begin{tabular}{@{}|l|l|@{}}
+\toprule
+Link                                & \multirow{3}{*}{\textit{headers data}} \\ \cmidrule(r){1-1}
+Network                             &                                        \\ \cmidrule(r){1-1}
+Transport                           &                                        \\ \midrule
+Application                         & appClassification                      \\ \midrule
+\multirow{2}{*}{Inter Packet Times} & calcOnOff                              \\ \cmidrule(l){2-2} 
+                                    & stochasticFitting                      \\ \midrule
+Packet Size                         & stochasticFitting                      \\ \bottomrule
+\end{tabular}
+\end{table}
 
 
 %\section{Implementation Details}

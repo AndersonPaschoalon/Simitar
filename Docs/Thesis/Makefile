@@ -1,7 +1,7 @@
 default: pdf
 
 pdf:
-	- pdflatex  -shell-escape -synctex=1 -interaction=nonstopmode "MSc_Thesis".tex -shell-scape
+	- pdflatex  -shell-escape -synctex=1 -interaction=nonstopmode "MSc_Thesis".tex -shell-scape 
 
 clean:
 	- rm -rfv *.aux
