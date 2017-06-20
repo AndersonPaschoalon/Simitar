@@ -91,96 +91,7 @@ Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-tru
 \textbf{Hardware traffic generators}: This open-source traffic generators implementations are implemented in hardware description language (VHDL/Verilog), and work on NetFPGAs. Some examples of implementations are: PacketGenerator \cite{web-netfpgapacketgenerator}, Caliper \cite{web-caliper}, and OSNT Packet Generator \cite{web-osnt}.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Open-source and free traffic generator tools}
 
-
-In this section we will presented a short review of many open-source tools available for synthetic traffic generation and benchmark. The goal in this section is to present both the most mentioned tools in the literature, and the most recent and advanced ones. On table~\ref{tab:trafficgen-list1} is presented a short review of some of the main features of such tools, such as support for Operational systems, protocols, stochastic functions available for traffic generation, available interfaces, and traffic generator class. Some free, but not open-source traffic generators are listed as well. 
-
-Before present our survey, we will refer to some tools mentioned in literature, but we couldn't found source code and manual. \textbf{BRUNO}\cite{bruno-paper} is traffic generator implemented aiming performance and accuracy on timings. It has many configurable parameters that allow emulation of many web server scenarios. \textbf{Divide and conquer}\cite{validate-trafficgen}: Divide and conquer is replay engine that works in a distributed manner. It is able to split traces among multiple commodity PCs, and reply packets, to produce realistic traffic. Some others mentioned tools\cite{web-ditg} we weren't able to find any reference of available features are: \textbf{UDPgen}, \textbf{Network Traffic Generator}, \textbf{Packet Shell}, \textbf{Real-Time Voice Traffic Generator}, \textbf{PIM-SM Protocol Independent Multicast Packet Generator}, \textbf{TTCP}, \textbf{SPAK, Packet Generator}, \textbf{TfGen}, \textbf{TrafGen} and \textbf{Mtools}.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Packet-crafting libraries}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Packet-level traffic generators}
-
-
-\textbf{D-ITG}\cite{ditg-paper}\cite{web-ditg}: D-ITG(Distributed Internet Traffic Generator) is a platform capable to produce IPv4 and IPv6 traffic defined by IDT and PS probabilistic distributions such as constant, uniform, Pareto, Cauch, Normal, Poisson, Gamma, Weibull, and On/Off; both configurable and pre-defined for many applications, from Telnet, through online games. It provide many flow-level options of customization, like duration, start delay and number of packets, support to many link-layer and transport-layer protocols, options, sources and destinations addresses/ports. If has support for NAT traversal, so it is possible to make experiments between two different networks separated by the cloud. D-ITG can be also used to measure packet loss, jitter, and throughput. D-ITG may be used through a CLI, scripts, or a C API, that can be use to create applications and remotely control another hosts through a daemon. The code may be downloaded on its official website. 
-
-
-\textbf{Ostinato}\cite{web-ostinato}: Ostinato is a packet crafter, network traffic generator and analyzer with a friendly GUI(“wireshark in reverse” as the documentation says) and a Python API. This tool permits craft and send packets of different protocols  at different rates. Support Server/Client communication, and a huge variety of protocols, from the link layer(such as 802.3 and VLAN) to the application layer (such HTTP and SIP). It is also possible to add any unimplemented protocols, through scripts defined by the user. The code may be downloaded on its official website (http://ostinato.org/downloads).
-
-
-\textbf{Seagull}\cite{wp-seagull}\cite{web-seagull}: Seagull is a traffic generator and test open-source tool, released by HP. It has support of many protocols, from link layer to application layer, and it support is easily extended, via XML dictionaries. As the documentation argues, the protocol extension flexibility is one of the main features. It support high speeds, and is reliable, being tested through hundreds of hours. It can also generate traffic using three statistical models: uniform(constant), best-effort and Poisson.The code may be downloaded on its official website.
-
-
-\textbf{BRUTE}\cite{web-brute}: Is a traffic generator that operates on the top of  Linux 2.4-6 and 2.6.x, not currently being supported on newer versions. It also support some stochastic functions(constant, poisson, trimodal) for departure time brust, and is able to simulate VoIP traffic. The source code(old release) may me fond on official website and on google code repository (\href{https://code.google.com/archive/p/brute/}{https://code.google.com/archive/p/brute/}).
-
-
-\textbf{PackETH} \cite{web-packeth}: PackETH is GUI and CLI stateless packet generator tool for ethernet.It support many adjustments of parameters, and many protocols as well, ans can set MAC addresses. The download link may be found on it official website.
-
-
-\textbf{Iperf}\cite{web-iperf}: Ipef is network traffic generator tools, designed for the measure of the maximum achievable bandwidth on IP networks, for both TCP and UDP traffic, bu can evaluate delay, windows size, and packet loss.  Although it is, originally, a command line tool, some developers have created a GUI interface, called Jperf\cite{web-jperf}. There is also a Java API, for automating tests\cite{jperf-git}. Support IPv4 and IPv6. The source code can be found on their offical website.
-
-
-\textbf{NetPerf}\cite{web-netperf}: Netperf is a benchmark tools that can be used to measure performance of many types of networks, providing tests for both unidirectional throughput, and end-to-end latency. It uses a command line interface, and has support to TCP, UDP and SCTP, both over IPv4 and IPv6. The source code can be downloaded at website homepage.
-
-
-\textbf{sourcesOnOff}\cite{sourcesonoff-paper} \cite{web-sourcesonoff}: sourcesOnOff is a recent traffic generator released on 2014, that aims to generate realistic synthetic traffic using probabilistic models to controll on and off time of traffic flows. As shown on the paper, it is able to guarantee self-similatiry, an has support to many probabilistic distributions for the on/off times: Weibull, Pareto, Exponential  and Gaussian. Supports TCP and UDP over IPv4. The source code can be found on the author personal page.
-
-
-\textbf{TG}\cite{web-tg}: TG is a traffic generator that is able to generate and receive one-way packet streams transmitted from the UNIX user level process between source and traffic sink nodes. It is controlled by a simple specification language, that enables the craft of different lengths and interarrival times distributions, such as Constant, uniform, exponential and on/off(markov2).
-
-
-\footnote{not open-source}\textbf{MGEN}\cite{web-mgen}: MGEN (Multi-Generator) is a traffic generator developed by the Naval Research Laboratory (NRL) PROTocol Engineering Advanced Networking (PROTEAN) Research Group. It uses as input can be used to emulate the traffic patterns of unicast and/or multicast UDP and TCP IP applications. It support many different types of stochastic functions, nominated periodic, Poisson, burst jitter and clone which are able to control inter departure times and packet size.
-
-
-\textbf{KUTE}\cite{web-kute}: KUTE is a kernel level packet generator, designed to have a maximum performance traffic generator, and receiver mainly for use with Gigabit Ethernet. It works in the kernel level, sending packets as fast as possible, direct to the hardware driver, bypassing the stack. But KUTE works only on Linux 2.6, and has only be tested on Ethernet Hardware. Also, it only supports constant UDP traffic. The source code of the tools is available on its homepage.
-
-
-\textbf{RUDE \& CRUDE}\cite{web-rude-crude}: RUDE(Real-time UDP Data Emitter) and CRUDE(Collector for RUDE), are small and flexible programs which runs on user-level. It has a GUI called GRUDE. It works in a similar way MGEN does, but has a higher time resolution. But it works only with UDP. The source code can be found on its homepage.
-
-
-\footnote{not open-source}\textbf{NetSpec}\cite{web-netspec}: NetSpec is tool designed to do network tests, as opposed to doing point to point testing. NetSpec provides a framework that allows a user to control multiple processes across multiple hosts from a central point of control, using daemons that implement traffic sources and sinks, along with measurement tools. Also, it is able to model many different traffic patterns and applications, such as host maximum rate; Constant Bit Rate (CBR) at user level; WWW, World Wide Web; FTP, File Transfer Protocol; telnet; MPEG video; voice and video teleconference. This source and application wasn't available anymore on its webpage.
-
-
-\textbf{Nping}\cite{web-nping}: active hosts, as a traffic generator for network stack stress testing, ARP poisoning, Denial of Service attacks, route tracing, etc. Nping CLI permits the users control over protocols headers. To source code can be downloaded on its website.
-
-
-\textbf{TCPreplay}\cite{web-tcpreplay}: TCPreplay is a user-level replay engine, that can use pcap files as input, and then forward, packets in a network interface. It can modify some header parameters as well. The source code of TCPreplay can be found on github \href{https://github.com/synfinatic/tcpreplay}{https://github.com/synfinatic/tcpreplay}.
-
-
-\textbf{TCPivo}\cite{tcpivo-paper}\cite{web-tcpivo}: TCPivo is a high-speed traffic replay engine that is able to read traffic traces, and replay packets in a network interface, working at kernel level. Until the present data, it is not currently supported kernel versions greater than 2.6. The source code can be fond on its official website.
-
-
-
-\textbf{NetFPGA PacketGenerator}\cite{web-netfpgapacketgenerator}: NetFPGA PacketGenerator is a hardware-based traffic generator and capture tool, build over the NetFPGA 1G, and open FPGA platform with 4 ethernet interfaces of 1 Gigabit of bandwidth each. It is a replay engine tool which uses as input \textit{pcap} files. It is able to accurately control the delay between the frames, with the default delay being the same in the pcap file. It is also able to capture packets, and report statistics of the traffic. The code can be downloaded on github.
-
-
-\textbf{NetFPGA Caliper}\cite{web-caliper}:  is a hardware-based traffic generator, build on NetFPGA 1G, built over NetThreads platform, a FPGA microprocessor which support threads programing. Different form NetFPGA PacketGenerator, Caliper is able to produce live packets. It is written in C.  The code can be downloaded on github.
-
-
-\textbf{NetFPGA OSNT}\cite{web-osnt}: OSNT(Open Source Network Tester) is hardware based network traffic generator built over the NetFPGA 10G. As NetFPGA 1G, NetFPGA 10G is a FPGA platform with 4 ethernet interfaces, but with 10 Gigabits of bandwidth.  OSNT is a replay engine, and is loaded with pcap traces. OSNT Source Network Test code can be found on github.
-
-
-\textbf{Dpdk Pktgen}\cite{web-dpdk-pktgen}: Pktgen is a traffic generator measurer built over DPDK. DPDK is a development kit, a set of libraries and drivers for fast packet processing. DPDK was designed to run on any processor, but has some limitation on terms of supported NICs, that can be found on its website.
-
-
-\textbf{MoonGen}\cite{moongen-paper}\cite{web-moongen} : MoonGen is a scriptable high-speed packet generator built over DPDK and LuaJIT. It is able to send packets at 10 Gbit/s, even with 64 bytes packets on a single CPU core. MoonGen can achieve this rate even if each packet is modified by a Lua script. Also, it provides accurate timestamping and rate control. It is able to generate traffic using several protocols ( IPv4, IPv6, IPsec, ARP, ICMP, UDP, and  TCP), and can generate different inter-departure times, like a Poisson process and burst traffic. This project can be found on github. 
-
-\textbf{gen\_send/gen\_recv}\cite{web-gensend-genrecv}: gen\_send and gen\_recv are simple UDP traffic generator applications. It uses UDP sockets, and  gen\_send is able to control features like desired data rate, packet size and inter packet time. You can find their source at \href{http://www.citi.umich.edu/projects/qbone/generator.html}{http://www.citi.umich.edu/projects/qbone/generator.html}. 
-
-
-\textbf{mxtraf}\cite{web-mxtraf}: mxtraf enables that a small number of hosts to saturate a network, with a tunable mixture of TCP and UDP traffic. You can found the source code at \href{http://mxtraf.sourceforge.net/}{http://mxtraf.sourceforge.net/}. 
-
-\textbf{Jigs Traffic Generator (JTG)}\cite{web-jtg}: is a simple, accurate traffic generator. JTG process only sends one stream of traffic, and steam characteristics are defined only by command line arguments. It also supports IPv6. You can find the code at \href{http://www.netlab.tkk.fi/~jmanner/jtg/}{http://www.netlab.tkk.fi/~jmanner/jtg/}. 
-
-
-\textbf{*Poisson Traffic Generator}:
 
 
 %Tabela: revisao dos principais geradores de trafego
@@ -272,7 +183,7 @@ Before present our survey, we will refer to some tools mentioned in literature, 
 \end{footnotesize}
 \end{center}
 \end{table} 
-
+\clearpage
 
 \begin{table}[t!]
 \caption{Review of features of some open-source traffic generators}
@@ -404,6 +315,7 @@ Before present our survey, we will refer to some tools mentioned in literature, 
 \end{footnotesize}
 \end{center}
 \end{table} 
+\clearpage
 
 \begin{table}[t!]
 \caption{Review of features of some open-source traffic generators}
@@ -538,48 +450,8 @@ Before present our survey, we will refer to some tools mentioned in literature, 
 \end{footnotesize}
 \end{center}
 \end{table} 
+\clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Application-level/Special-scenarios traffic generators}
-
-
-\footnote{not open-source}\textbf{ParaSynTG}\cite{parasyntg-paper}: application-level traffic generator configurable by input parameters, which considers most of the observes www traffic workload properties. 
-
-
-\footnote{not open-source}\textbf{EAR}\cite{validate-trafficgen}: traffic generator that uses a technique called “Event Reproduction Ratio”  to mimic wireless IEEE 802.11 protocol behavior.
-
-
-\footnote{not open-source}\textbf{GenSyn}\cite{web-gensyn}: network traffic generator implemented in Java, that mimic TCP and UDP connections, based on user behavior. 
-
-
-\textbf{Surge}\cite{surge-paper}: Surge is an application level workload generator which emulates a set of real users accessing a web server. It matches many empirical measurements of real traffic, like server file distribution, request size distribution, relative file popularity, idle periods of users and other characteristics. Its source code can be  found at \href{http://cs-www.bu.edu/faculty/crovella/surge_1.00a.tar.gz}{http://cs-www.bu.edu/faculty/crovella/surge\_1.00a.tar.gz}. 
-
-\textbf{Httperf}\cite{web-httperf}: Is an application lever traffic generator to measure web server performance. It uses the protocol HTTP (HTTP/1.0 and HTTP/1.1), and offer many types of workloads while keeping track of statistics related to the generated traffic. Its most basic operation is to generate a set of HTTP GET requests and measure the number of replies and response rate.  You can found its source code on GitHub \href{https://github.com/httperf/httperf}{https://github.com/httperf/httperf}. 
-
-\textbf{VoIP Traffic Generator}: it is a traffic generator written in Perl, and creates multiple streams of traffic,  aiming to simulate VoIP traffic. You can found its code at \href{
-https://sourceforge.net/projects/voiptg/}{
-https://sourceforge.net/projects/voiptg/}.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Flow-level and Closed-loop and multi-level traffic generators}
-
-\textbf{Harpoon}\cite{harpoon-paper}: Harpoon is a flow based traffic generator, that is able to 
-automatically extract form Netflow traces parameters, in order to generate flows that exhibit the same statistical characteristics measured before, including temporal and spatial characteristics. The source code of Harpoon can be found on github (\href{https://github.com/jsommers/harpoon}{https://github.com/jsommers/harpoon}).
-
-\textbf{Swing}\cite{swing-paper} \cite{web-swing}: Swing is a closed-loop multi-layer, and network responsive generator. It is able to read capture traces, and captures the packet interactions of many applications, being able to models distributions for user, application, and network behavior, stochastic and responsively. As mentioned in the previous section, Swing is able to model user behavior, REEs, connection, packets, and network. The code may be downloaded on its official website.
-
-
-\footnote{not open-source}\textbf{LiTGen}(Lightweight Traffic Generator)\cite{litgen-paper} is a open-loop, multilevel traffic generator. It is able to model wireless network traffic in a peer user and application basis. This tool models the traffic in three different levels: packet level, object level (smaller parts of an application session), and session level.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Others traffic generation tools}
-
-
-\textbf{NFPA}\cite{nfpa-paper}: NFPA is a benchmark tools based on DPDK Pkgen, specialized on executing and automatize performance measurements over network functions. It works being directly connected to an specific device under tests. It uses built-in and user defined traffic traces, and Lua scripts control and collect information of DPDK Pktgen. It has an command line and Web interface, and automatically plot the results.
-
-\textbf{LegoTG}\cite{legotg-paper}: LegoTG is a modular framework for composing custom traffic generation. It aims to simplify the combination on the use of different traffic generators and modulators on different testbeds, automatizing the process of installation, execution, resource allocation and synchronization via a centralized orchestrator, which uses a software repository. It already has support to many tools, and to add support to new tools is necessary to add and edit two files, called TGblock, and ExFile.
 
 
 
