@@ -136,12 +136,16 @@ automatically extract form Netflow traces parameters, in order to generate flows
 
 \textbf{LegoTG}\cite{legotg-paper}: LegoTG is a modular framework for composing custom traffic generation. It aims to simplify the combination on the use of different traffic generators and modulators on different testbeds, automatizing the process of installation, execution, resource allocation and synchronization via a centralized orchestrator, which uses a software repository. It already has support to many tools, and to add support to new tools is necessary to add and edit two files, called TGblock, and ExFile.
 
+\sloppy
 \begin{table}[ht!]
 \centering
+\sloppy
 \caption{My caption}
 \label{my-label}
-\begin{tabular}{@{}ll@{}}
+%\begin{tabular}{@{}ll@{}}
+\begin{tabularx}{\textwidth}{@{}ll@{} p{10.0cm}}
 \toprule
+\sloppy
 Traffic Generator       & Repository                                                                                                                                                                                                                \\ \midrule
 D-ITG                   & \href{http://traffic.comics.unina.it/software/ITG/}{http://traffic.comics.unina.it/software/ITG/}                                                                                                                         \\
 Ostinato                & \href{http://ostinato.org/}{http://ostinato.org/}                                                                                                                                                                         \\
@@ -176,6 +180,7 @@ Harpoon                 & \href{http://cs.colgate.edu/~jsommers/harpoon/}{http:/
 Swing                   & \href{http://cseweb.ucsd.edu/~kvishwanath/Swing/}{http://cseweb.ucsd.edu/~kvishwanath/Swing/}                                                                                                                             \\
 NFPA                    &                                                                                                                                                                                                                           \\
 LegoTG                  &                                                                                                                                                                                                                           \\ \bottomrule
-\end{tabular}
+\end{tabularx}
+%\end{tabular}
 \end{table}
 

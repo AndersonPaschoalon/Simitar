@@ -443,7 +443,7 @@ Another important observation is the fact that exponential function was able to 
 
 %%%%%%%%%%%%%%
 % Skype correlation, Hurst, Mean Standard Deviation
-\begin{figure}[h!]
+\begin{figure}[t!]
 	\centering
 	\subfloat[Correlation]{
 		\includegraphics[width=75mm]{figures/ch4/Skype_Correlation}
@@ -468,9 +468,8 @@ Another important observation is the fact that exponential function was able to 
 	\label{fig:correlation-hurst-skype-pcap}
 \end{figure}
 
-
 %validation Cost function
-\begin{figure}[ht!]
+\begin{figure}[t!]
 	\centering
 	\subfloat[\textit{skype-pcap}]{
 		\includegraphics[width=75mm]{figures/ch4/Skype_costFunction}
@@ -495,8 +494,33 @@ Another important observation is the fact that exponential function was able to 
 	\label{fig:cost-function}
 \end{figure}
 
+\begin{algorithm}[ht!]
+	\caption{stochasticModelFitting}
+	\label{alg:stochasticModelFitting}
+	\begin{algorithmic}[1]
+		\small		\Function{stochasticModelFitting}{$interArrivalData, criterion$}
+		\State $m = interArrivalData.size$
+		\State $interArrivalData = interArrivalData + MIN\_TIME$
+		\If{$m < MINIMUM\_AMOUNT\_OF\_PACKETS$}
+		\State $model\_list = \{constant\}$
+		\Else
+		\State $model\_list = \{weibull, pareto\_lr, pareto\_mlh, exponential\_me, exponential\_lr, normal,$
+		\State $cauchy, constant\}$
+		\EndIf
+		
+		\For{$model$ \textbf{in} $model\_list$}
+		\State $model.fitting\_model(interArrivalData)$
+		\EndFor
+		\State $model\_list.sort(criterion)$
+		\State \textbf{return} $model\_list$
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
 
 \subsection{Conclusion}
+
+
 
 Also the order of the stochastic function tend to not differ much. We are able to conclude that using AIC or BIC as criteria for choosing models for inter-packet times is a good choise.
 
@@ -506,13 +530,6 @@ Also, it is important to notice that in some cases, some stochastic functions ma
 
 We do not rely on only one type of parametrization. This turns our methodology more robust, since a linear regression may diverge. But aways there will be an packable model, since our estimations for Normal, Exponential(Me) and Pareto(MLH) cannot. Models wich the linear regression diverge, will not have god BIC/AIC estimations, and will not be pickedas primary options. 
 
-
-\section{Others Algorithms and Methods}
-
-In this section we breef present another methods used by the \textit{TraceAnalyzer} component. The first to calculate the session ON and OFF times. The second classify applications based on its tranport protocol and ports.
-
-
-\subsection{On/Off Times estimation}
 
 
 	
@@ -568,9 +585,38 @@ In this section we breef present another methods used by the \textit{TraceAnalyz
 		\EndIf
 		\State $pktCounter.push(pktCounterSum)$
 		\State $fileSize.push(fileSizeSum)$
+		\State \textbf{return} $onTimes, offTimes, pktCounter, fileSize$
 		\EndFunction
 	\end{algorithmic}
 \end{algorithm}
+	
+\begin{table}[ht!]
+	\centering
+	\caption{Application matach table}
+	\label{tab:application-protocols}
+	\begin{tabular}{lll}
+		\hline
+		Application Protocol & Transport Protocols & Transport Ports \\ \hline
+		HTTPS               & TCP                & 443             \\
+		FTP                 & TCP                & 20, 21          \\
+		HTTP                & TCP                & 80              \\
+		BGP                 & TCP                & 179             \\
+		DHCP                & UDP                & 67, 68          \\
+		SNMP                & UDP, TCP           & 161             \\
+		DNS                 & UDP, TCP           & 53              \\
+		SSH                 & UDP, TCP           & 22              \\
+		Telnet              & UDP, TCP           & 23              \\
+		TACACS              & UDP, TCP           & 49              \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\section{Others Algorithms and Methods}
+
+In this section we breef present another methods used by the \textit{TraceAnalyzer} component. The first to calculate the session ON and OFF times. The second classify applications based on its tranport protocol and ports.
+
+
+\subsection{On/Off Times estimation}
 
 
 We developed an algorithms to calculate the times between the ON and OFF times of the \textit{files}, and the number of packets and bytes as well. It uses a list of packet arrival times(relative to the first), time between packets and packet sizes. It defines a minimum time of ON acceptable. This times is used for two reasons:
@@ -589,38 +635,21 @@ If the first $deltaTime$ defines an OFF time, or if it is the first ON time, its
 
 We also developed an simple test to guess the application protocol, based on the port numbers and the tranport protocol used by each flow. We currently are classifing the application protocols presented in the table ~\ref{tab:application-protocols}. If a flow matches the port number, and the transport protocol, it is classified as belongig to an application protocol.
 
-\begin{table}[h!]
-\centering
-\caption{Application classification table}
-\label{tab:application-protocols}
-\begin{tabular}{lll}
-\hline
-Application Protocol & Transport Protocols & Transport Ports \\ \hline
-HTTPS               & TCP                & 443             \\
-FTP                 & TCP                & 20, 21          \\
-HTTP                & TCP                & 80              \\
-BGP                 & TCP                & 179             \\
-DHCP                & UDP                & 67, 68          \\
-SNMP                & UDP, TCP           & 161             \\
-DNS                 & UDP, TCP           & 53              \\
-SSH                 & UDP, TCP           & 22              \\
-Telnet              & UDP, TCP           & 23              \\
-TACACS              & UDP, TCP           & 49              \\ \hline
-\end{tabular}
-\end{table}
 
-
-\begin{table}[!ht]
-\begin{tabular}{@{}|l|l|@{}}
-\toprule
-Link                                & \multirow{3}{*}{\textit{headers data}} \\ \cmidrule(r){1-1}
-Network                             &                                        \\ \cmidrule(r){1-1}
-Transport                           &                                        \\ \midrule
-Application                         & appClassification                      \\ \midrule
-\multirow{2}{*}{Inter Packet Times} & calcOnOff                              \\ \cmidrule(l){2-2} 
-                                    & stochasticFitting                      \\ \midrule
-Packet Size                         & stochasticFitting                      \\ \bottomrule
-\end{tabular}
+\begin{table}[ht!]
+	\centering
+	\caption{My caption}
+	\label{tab:mehtods}
+	\begin{tabular}{|l|l|}
+		\hline
+		Link Layer                          & \multirow{3}{*}{header data} \\ \cline{1-1}
+		Network Layer                       &                                       \\ \cline{1-1}
+		Transport Layer                     &                                       \\ \hline
+		Application Layer                   & Application Match Table                    \\ \hline
+		\multirow{2}{*}{Inter Packet Times} & $calcOnOff$                             \\ \cline{2-2} 
+		& $stochasticModelFitting$                    \\ \hline
+		Packet Sizes                        & $stochasticModelFitting$                    \\ \hline
+	\end{tabular}
 \end{table}
 
 

@@ -1,8 +1,10 @@
 default: pdf
 
 pdf:
-	- pdflatex  -shell-escape -synctex=1 -interaction=nonstopmode "MSc_Thesis".tex -shell-scape 
-
+	- pdflatex -shell-escape -synctex=1 -interaction=nonstopmode "MSc_Thesis".tex
+	- bibtex MSc_Thesis
+	- pdflatex -shell-escape -synctex=1 -interaction=nonstopmode "MSc_Thesis".tex
+	- pdflatex -shell-escape -synctex=1 -interaction=nonstopmode "MSc_Thesis".tex
 clean:
 	- rm -rfv *.aux
 	- rm -rfv docs/*.aux
