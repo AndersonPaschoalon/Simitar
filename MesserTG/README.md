@@ -15,6 +15,7 @@ sudo apt-get install wireshark
 Pyshark is a python wrapper for tshark, wich allows python packet parsing, using tshark dissectors. To install it:
 ```
 sudo pip install pyshark
+sudo pip install rstr
 ```
 ### Octave
 Octave is a free open-souce platform and scientific programming language, compatible with Matlab. To install, type on terminal:
