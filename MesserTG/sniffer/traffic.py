@@ -6,20 +6,6 @@ import ProtocolConstants as header
 import time
 
 DEBUG_PacketInfo = False
-verbose = True
-# capture_method = "--live-test"
-capture_method = "--live"
-internetIf = 'enp3s0'
-
-
-# internetIf='wlan0'
-
-
-# file_name = '/home/anderson/ProjetoMestrado/Pcap/tese/lan_diurnalFirewallCapture.pcap'
-# filebasename = os.path.basename(file_name)
-# file_log_name = 'fileCapture_' + filebasename + '.log'
-# logging.basicConfig(filename=file_log_name, format='[%(levelname)s] (%(threadName)-10s) %(message)s',level=logging.INFO)
-
 
 
 class Print:
@@ -28,6 +14,11 @@ class Print:
 
 
 class PacketInfo:
+    '''
+    Class Responsible for collecting packet information form live captures. The flow field is not automatically set.
+    It also can return a flow string characterization
+    '''
+
     def __init__(self, pkt, reference_time=0):
         self.flowID = 0
         actual_time = float(pkt.sniff_timestamp) - float(reference_time)
@@ -148,8 +139,7 @@ class PacketInfo:
 
     def flow_str(self):
         return (
-            self.prot_link + str(self.prot_network) + self.ip_src + self.ip_dst + str(self.transport) + str(
-                self.port_src) + str(
+            str(self.prot_network) + self.ip_src + self.ip_dst + str(self.transport) + str(self.port_src) + str(
                 self.port_dst))
 
     def setFlowId(self, fid=0):
@@ -157,14 +147,24 @@ class PacketInfo:
 
 
 class Trace:
-    def __init__(self, traceName="trace-name", commentaries="no-comment"):
+    def __init__(self, traceName="trace-name", commentaries="none", captureType='none', captureTarget='none',
+                 traceID=0):
         self.captureDate = time.strftime("%H:%M:%S") + ", " + time.strftime("%d/%m/%Y")
         self.traceName = traceName
         self.commentaries = commentaries
+        self.captureType = captureType
+        self.captureTarget = captureTarget
+        self.traceID = traceID
+
+    def __repr__(self):
+        return ('\n(traceName:' + self.traceName + ' traceID:' + str(self.traceID) + ' captureType:' + self.captureType
+                + ' captureTarget:' + self.captureTarget + ' captureDate:' + self.captureDate + ' commentaries:' +
+                self.commentaries)
+
 
 class Flow:
-    def __init__(self, flowId=0, protocolLink="", protocolNet=header.ETHERTYPE_NONE, protocolTransport=0, macSrc="", macDst="",
-                 netSrc="" , netDst="", portSrc=0, portDst=0):
+    def __init__(self, flowId=0, protocolLink="", protocolNet=header.ETHERTYPE_NONE, protocolTransport=0, macSrc="",
+                 macDst="", netSrc="", netDst="", portSrc=0, portDst=0, traceID=0):
         self.flowId = flowId
         self.protocolLink = protocolLink
         self.protocolNet = protocolNet
@@ -175,14 +175,52 @@ class Flow:
         self.netDst = netDst
         self.portSrc = portSrc
         self.portDst = portDst
+        self.traceID = traceID
+
+    def __init__(self, pktInfo, traceID=0):
+        self.flowId = pktInfo.flowID
+        self.protocolLink = pktInfo.prot_link
+        self.protocolNet = pktInfo.prot_network
+        self.protocolTransport = pktInfo.transport
+        self.macSrc = pktInfo.mac_src
+        self.macDst = pktInfo.mac_dst
+        self.netSrc = pktInfo.ip_src
+        self.netDst = pktInfo.ip_dst
+        self.portSrc = pktInfo.port_src
+        self.portDst = pktInfo.port_dst
+        self.traceID = traceID
+
+    def __repr__(self):
+        return ('\n(' + 'traceID:' + str(self.traceID) + ' flowId:' + str(self.flowId) + ' protocolLink:' +
+                self.protocolLink + ' protocolNet:' + str(self.protocolNet) + ' protocolTransport:' +
+                str(self.protocolTransport) + ' macSrc:' + self.macSrc + ' macDst:' + self.macDst +
+                ' netSrc:' + self.netSrc + ' netDst:' + self.netDst + ' portSrc:' + str(self.portSrc) +
+                ' portDst:' + str(self.portDst) + ')')
+
 
 class Packet:
-    def __init__(self,seq=0, arrivalTime=0, pktSize=0, ttl=0, winSize=0):
+    def __init__(self, seq=0, arrivalTime=0, pktSize=0, ttl=0, winSize=0, flowID=0, traceID=0):
         self.seq = seq
         self.arrivalTime = arrivalTime
         self.pktSize = pktSize
         self.ttl = ttl
         self.winSize = winSize
+        self.flowID = flowID
+        self.traceID = traceID
+
+    def __init__(self, pktInfo, traceID=0):
+        self.seq = pktInfo.number
+        self.arrivalTime = pktInfo.time
+        self.pktSize = pktInfo.length
+        self.ttl = pktInfo.ttl
+        self.winSize = 0
+        self.flowID = pktInfo.flowID
+        self.traceID = traceID
+
+    def __repr__(self):
+        return ('\n(seq:' + str(self.seq) + ' arrivalTime:' + str(self.arrivalTime) + ' pktSize:' + str(
+            self.pktSize) + ' ttl:' + str(self.ttl) + ' winSize:' + str(self.winSize) + ' flowID:' + str(
+            self.flowID) + ' traceID:' + str(self.traceID) + ')')
 
 
 if DEBUG_PacketInfo == True:

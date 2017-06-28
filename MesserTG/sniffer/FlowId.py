@@ -1,4 +1,5 @@
 from fnvhash import fnv1a_32
+from fnvhash import fnv1a_64
 import collections
 
 class OrderedSet(collections.MutableSet):
@@ -78,7 +79,8 @@ class FlowId:
         :param flow_string: concatenation of ether_type|ip_src|ip_dst|ip_proto|src_port|dst_port
         :return: current number of flows
         '''
-        flow_hash = fnv1a_32(bytes(flow_string, 'ascii'))
+        #flow_hash = fnv1a_32(bytes(flow_string, 'ascii'))
+        flow_hash = fnv1a_64(bytes(flow_string, 'ascii'))
         self._set_flow_hashes.add(flow_hash);
         return len(self._set_flow_hashes)
 
@@ -92,7 +94,8 @@ class FlowId:
         :param flow_string: concatenation of ether_type|ip_src|ip_dst|ip_proto|src_port|dst_port
         :return:
         """
-        flow_hash = fnv1a_32(bytes(flow_string, 'ascii'))
+        #flow_hash = fnv1a_32(bytes(flow_string, 'ascii'))
+        flow_hash = fnv1a_64(bytes(flow_string, 'ascii'))
         self._set_flow_hashes.add(flow_hash);
         return self._set_flow_hashes.index(flow_hash)
 
