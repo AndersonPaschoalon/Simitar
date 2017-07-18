@@ -14,7 +14,7 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
-		<item value="/home/anderson/ProjetoMestrado/Components/nemesis-1.4/src" key="OUTSIDE_LOCATION"/>
+		<item value="/home/anderson/ProjetoMestrado/SIMITAR" key="OUTSIDE_LOCATION"/>
 	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.cdt.ui.wizards.NewMakeFromExisting" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
