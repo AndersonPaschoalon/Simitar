@@ -1,12 +1,20 @@
-#!/usr/bin/python3
+#!/usr/bin/python3.5
 import argparse
 import re
 import sys
 import os
+from termcolor import colored
 from SnifferManager import SnifferManager
 
-# Constant
-DATABASE_NAME = 'trace.db'
+# Constants
+WORKSPACE = '..'
+DATABASE_NAME = WORKSPACE + '/' + 'data/db/trace.db'
+#try:
+#    DATABASE_NAME = WORKSPACE + '/' + os.environ["SIMITAR_DATABASE"]
+#except KeyError:
+#    print(colored('Error: enviroment variable SIMITAR_DATABASE not defined. Creating database in the local directory',
+#                  'red'))
+#    DATABASE_NAME = 'trace.db'
 
 
 def livepcap_regex_type(s, pat=re.compile(r"(pcap|live)$")):
