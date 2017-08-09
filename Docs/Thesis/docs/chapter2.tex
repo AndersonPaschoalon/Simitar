@@ -2,14 +2,11 @@
 \chapter{Literature Review}\label{ch:literature-review}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%2nd-review
-In this chapter, we will review some topics from the literature that serve as a base for this whole work. First of all, we will define what is a traffic generator tool, and introduce a taxonomy that distinguishes them. After this, we will present a survey of many available open-source and free traffic generators. We introduce each tool and present a feature comparison between each of them. As far as we know, this is the extensible features comparison of traffic generators available so far in the literature. The first two sections are devoted for this topic.
+In this chapter, we will review some topics from the literature that serve as a base for this whole work. We will define what is a traffic generator tool, and introduce a taxonomy that distinguishes them. After, we will present a survey of many available open-source and free traffic generators. We introduce each tool and then present a feature comparison between each of them. As far as we know, this is the extensible features comparison of traffic generators available so far in the literature. The first two sections are devoted to this topic.
 
-%2nd-review
-We also will overview network traffic modeling and realistic traffic generation. We will discuss stochastic models that used to describe the Internet traffic. Based on that we will discuss what features a realistic traffic should have and highlight important features needed to control to achieve it.  We can count self-similarity and burstiness,  header fields, packet size and flow features.
+In the third section we will overview network traffic modeling and realistic traffic generation. We will discuss stochastic models that used to describe the Internet traffic. Based on that we will discuss features a realistic traffic should have.  We can count self-similarity and burstiness,  header fields, packet size and flow features.
 
-%2nd-review
-In the following section, we will make a brief discussion on validation of traffic generator tools. First, presenting the main approaches of validation made on literature. Then, we will discuss some validation study cases of related works, always introducing new concepts when needed.
+In the following section, we will make a discussion on validation of traffic generator tools. First, presenting the main approaches of validation made on literature. Then, we will discuss some validation study cases of related works, always introducing new concepts when needed.
 
 %Finally, we will present a short overview of new arriving network technologies: SDN and NFV. We will use them as use cases at the chapter ~\ref{ch:use-cases}. Also, we will present our motivations for this choice. 
 
@@ -17,16 +14,16 @@ In the following section, we will make a brief discussion on validation of traff
 \section{Traffic generator tools}
 
 %2nd-review
-A traffic generator tool is a system capable of creating and injecting packets into a computer network in a controlled way to generate a synthetic traffic \cite{validate-trafficgen}.  there is a huge variety of traffic generation tools described on the literature \cite{validate-trafficgen} \cite{ditg-paper} and available i the open-source community\footnote{\href{http://www.icir.org/models/trafficgenerators.html}{http://www.icir.org/models/trafficgenerators.html}}. In fact, as exposed in the chapter~\ref{ch:introduction} it is a hard task to find what is the best tool for your needs. This is a cause of many  different approaches and methodologies available to network traffic generator's developers \cite{validate-trafficgen}.
+A traffic generator tool is a system capable of creating and injecting packets into a computer network in a controlled way to generate a synthetic traffic \cite{validate-trafficgen}.  there is a huge variety of traffic generation tools described on the literature \cite{validate-trafficgen} \cite{ditg-paper} and available in the open-source community\footnote{\href{http://www.icir.org/models/trafficgenerators.html}{http://www.icir.org/models/trafficgenerators.html}}. This is a cause of many  different approaches and methodologies available to network traffic generator's developers \cite{validate-trafficgen}.
 
 %2nd-review
 %Also, previous research such as Oliver et al. \cite{flow-level-ip} have demonstrated that one unique statistical law cannot express all complexity of an original Internet trace (an Internet trace is an Internet traffic capture made over a network interface). So, just selecting a stochastic process for a traffic generator, do not guarantee realism.
 
 %2nd-review
-New network generators development is directly related with to the current needs of network environment, applications sets, and purpose of use \cite{validate-trafficgen}. According to the context, you may want to send as many packets as possible through an interface to  equipment stress . So, in this case, a maximum throughput traffic generator is more interesting. In others situations, you may want a stochastically realist profile. Or even a traffic generator that reflect a special scenario such as a specific application; for example a client and server exchanging data\cite{surge-paper}. In this case, the target would be to stress a server, not an equipment. Another possibility a huge variety of protocols available, or even support of new protocols.
+New network generators development is directly related with to the current needs of network environment, applications sets, and purpose of use \cite{validate-trafficgen}. According to the context, you may want to send as many packets as possible through an interface to  equipment stress . So, in this case, a maximum throughput traffic generator is more interesting. In others situations, you may want a stochastically realist profile. Or even a traffic generator that reflect a special scenario such as a specific application; for example a client and server exchanging data\cite{surge-paper}. In this case, the target would be to stress a server. Another possibility a huge variety of protocols available, or even support of new protocols.
 
 %2nd-review
-Alongside with the traffic generators, there are many APIs available. There are low-level APIs which enables direct packet injection and capture, such as \textit{libpcap}\cite{web-tcpdump}, \textit{libtins}\cite{web-libtins}, DPDK\cite{web-dpdk} and the GNU C socket library\cite{web-socket}. And there are high-level APIs, provided by traffic generator tools, such as D-ITG\cite{ditg-paper}, Ostinato\cite{web-ostinato} and MoonGen\cite{moongen-paper}. In this case they enable an easy custom traffic generation and statistics. Also, there are implementations of hardware-based traffic generators using NetFPGAs\footnote{\href{http://netfpga.org/site/\#/}{http://netfpga.org/site/\#/}}.
+Alongside with the traffic generators, there are many APIs available. There are low-level APIs which enables direct packet injection, such as \textit{libpcap}\cite{web-tcpdump}, \textit{libtins}\cite{web-libtins}, DPDK\cite{web-dpdk} and the GNU C socket library\cite{web-socket}. And there are high-level APIs, provided by traffic generator tools, such as D-ITG\cite{ditg-paper}, Ostinato\cite{web-ostinato} and MoonGen\cite{moongen-paper}. In this case they enable an easy custom traffic generation and statistics. Also, there are implementations of hardware-based traffic generators using NetFPGAs\footnote{\href{http://netfpga.org/site/\#/}{http://netfpga.org/site/\#/}}.
 
 %2nd-review
 In the literature there are many classifications of traffic generators\cite{sourcesonoff-paper}\cite{hybrid-traffic-gen}\cite{validate-trafficgen}\cite{do-you-trust}. Some tools may have some features compatible with one or more classes. But classify them it is an efficient way to distinguish the difference between these tools. We will give two different taxonomies:
@@ -42,20 +39,19 @@ In the literature there are many classifications of traffic generators\cite{sour
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Classes of traffic generator tools}
 
-The most common traffic generator taxonomy found is  according to its abstraction level\cite{do-you-trust}. They are: Application-level/Special-scenarios, flow-level, packet-level and Closed-loop and multi-level traffic generators. We present a diagram  ilustrating its concept at figure ~\ref{fig:layers-workload-tools}.
+The most common traffic generator taxonomy in the literature is about its abstraction level\cite{do-you-trust}. There are four groups: Application-level, flow-level, packet-level and multi-level traffic generators. We present a diagram  ilustrating its concept at figure ~\ref{fig:layers-workload-tools}.
 
 
 \subsubsection{According to its abstraction level}
 
-\textbf{Application-level/Special-scenarios traffic generators}: they try to emulate the behavior of network applications, simulating real workloads stochastically, responsively \footnote{Responsiveness refers to the property of capacity of response over time of the workload tool. That means, the behavior of the output may change according to what packets have arrived in the network interface} or both. As examples we have Surge\cite{surge-paper} able to emulate the behavior of web clients and services. The behavior of such applications is, in general, based on request-response exchanges models.
+\textbf{Application-level traffic generators}: they try to emulate the behavior of network applications, simulating real workloads stochastically and/or responsively \footnote{Responsiveness refers to the property of capacity of response over time of the workload tool. That means, the behavior of the output may change according to what packets have arrived in the network interface}. As examples we have Surge\cite{surge-paper} able to emulate the behavior of web clients and services. The behavior of such applications is, in general, based on request-response exchanges models.
 
+\textbf{Flow-level traffic generators}: they are able to configure and reproduce features of flows\cite{do-you-trust}\cite{sourcesonoff-paper}, such as flow duration, start times distributions, and temporal (diurnal) traffic volumes\cite{do-you-trust}. Harpoon \cite{harpoon-paper} is able to extract these parameters from Cisco NetFlow data, collected from live routers.
 
+\textbf{Packet-level traffic generators}: most traffic generators available fall in this class. They are able to craft packets and inject into the network, and controll features like inter departure times (IDT), packet size(PS), throughput and packets per second\cite{validate-trafficgen}. \cite{validate-trafficgen} classify them as replay engines, maximum throughput generators, and model based generators. Traffic Replay engines, such TCPreplay\cite{web-tcpreplay}, are  able to read packet capture files (\textit{pcap} files), and inject copies on a network interface. Model-based generators, such D-ITG \cite{ditg-paper}, TG\cite{web-tg}, may have PS and IDT configured by the user. They can configure IDT  either by constant values (defining the packet rate or bandwidth) or by stochastic models. Maximum throughput engines like Ostinato and Seagull are tools that the main goal is to perform end-to-end stress testing. Are included in this category generators that are able to craft packets from the link layer, like Brute, KUTE, and pktgen.
 
-\textbf{Flow-level traffic generators}: they are able to configure and reproduce precisely features at the flow level\cite{do-you-trust}\cite{sourcesonoff-paper}, such as flow duration, start times distributions, and temporal (diurnal) traffic volumes\cite{do-you-trust}. Harpoon \cite{harpoon-paper} is able to extract these parameters from Cisco NetFlow data, collected from live routers.
+\textbf{Multi-level traffic generators}: this is a more recent class of network traffic generator, and its proposal is to take into account existing interaction among each layer of the network stack, to create background network traffic as close as possible from reality. One of the most relevant tools we can found is Swing \cite{swing-paper}. Swing take into account many points of each layer, using an approach based on randomness and responsiveness \cite{swing-paper}. That means, it uses PS and IDT stochastic models, but also take into account flow and application layer behavior. Swing is able to model things like\cite{swing-paper}: 
 
-\textbf{Packet-level traffic generators}: most traffic generators available fall in this class. They are able to craft packets and inject them into the network based on Inter departure times (IDT) and packet size(PS). \cite{validate-trafficgen} classify them as replay engines, maximum throughput generators, and model based generators. Traffic Replay engines, such TCPreplay\cite{web-tcpreplay}, are  able to read packet capture files (\textit{pcap} files), and inject copies on a network interface. Model-based generators, such D-ITG \cite{ditg-paper}, TG\cite{web-tg}, may have PS and IDT configured by the user. They can configure IDT  either by constant values (defining the packet rate or bandwidth) or by stochastic models. Maximum throughput engines like Ostinato and Seagull are tools that the main goal is to perform end-to-end stress testing. Are included in this category generators that are able to craft packets from the link layer, like Brute\cite{web-brute}, KUTE\cite{web-brute}, and pktgen\cite{web-pktgen}.
-
-\textbf{Closed-loop and multi-level traffic generators}: this is a more recent class of network traffic generator, and its proposal is to take into account existing interaction among each layer of the network stack, to create background network traffic as close as possible from reality. One of the most relevant tools we can found is Swing \cite{swing-paper}. Swing take into account many points of each layer, using an approach based on randomness and responsiveness \cite{swing-paper}. That means, it uses PS and IDT stochastic models, but also take into account flow and application layer behavior. Swing is able to model things like\cite{swing-paper}: 
 \begin{itemize}
 
 \item User behavior: Number of request and responses, time between requests and responses;
@@ -71,8 +67,7 @@ The most common traffic generator taxonomy found is  according to its abstractio
 
 \end{itemize}
 
-Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-trust} argues that due its complexity, they are rarely used to conduct experimental researchers. Also, we can  justify due its overheads, since the performance of such complex traffic generator is limited\cite{legotg-paper}. The authors Vishwanat et al. \cite{swing-paper} cite that they have generated traces of about of 200 Mbps, about the same result found by \cite{legotg-paper}. In the other hand, D-ITG reached 9808 Mbps\cite{comparative-trafficgen-tools} in a link of 10 Gbps, but operating as a maximum throughput generator.g1
-
+Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-trust} argues that due its complexity, they are rarely used to conduct experimental researchers. Also, we can  justify due its overheads, since the performance of such complex traffic generator is limited\cite{legotg-paper}. The authors Vishwanat et al. \cite{swing-paper} cite that they have generated traces of about of 200 Mbps, about the same result found by \cite{legotg-paper}. In the other hand, D-ITG reached 9808 Mbps\cite{comparative-trafficgen-tools} in a link of 10 Gbps, but operating as a maximum throughput generator.
 
 
 \begin{figure}[!ht]
@@ -528,11 +523,11 @@ Distribution & PDF Equation & CDF Equation & Parameters & Heavy-tailed\\ \hline
 Function                             & Definition \\ 
 \hline
 \\
-Regularized Incomplete beta function & $ I_{x}(a, b) = \frac{B(x; a, b)}{B(a, b)} $           \\
+Regularized Incomplete beta function & $ I_{x}(a, b) = \frac{B(x| a, b)}{B(a, b)} $           \\
 \\
-Incomplete beta function             & $ B(x; a, b) = \int_{0}^{x} t^{a - 1} (1 - t)^{(b - 1)} \text{d}t $           \\
+Incomplete beta function             & $ B(x| a, b) = \int_{0}^{x} t^{a - 1} (1 - t)^{(b - 1)} \text{d}t $           \\
 \\
-Beta function                        & $ B(x; a, b) = \int_{0}^{1} t^{a - 1} (1 - t)^{(b - 1)} \text{d}t $           \\
+Beta function                        & $ B(x| a, b) = \int_{0}^{1} t^{a - 1} (1 - t)^{(b - 1)} \text{d}t $           \\
 \\
 Error function                       & $ \text{erf}(x) = \frac{1}{\sqrt[]{\pi}}\int_{x}^{-x} e^{-t^{2}} \text{d}t $           \\ 
 \\
