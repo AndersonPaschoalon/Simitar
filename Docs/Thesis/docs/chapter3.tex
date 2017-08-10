@@ -1,10 +1,12 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{System architecture and Methods}\label{ch:architecture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%3nd-review
+In this chapter, we will present our tool which aims to solve the issues addressed in the chapter ~\ref{ch:introduction}, called SIMITAR (SnIffing, ModellIng and TrAffic geneRation), and how it works. It aims to generate a platform-agnostic traffic, which can be extended to any traffic engine, including traffic generators tools and APIs. SIMITAR creates a  model in XML, configured using actual traces (from \textit{pcaps} or real-time sniffing), we call Compact Trace Descritor (CTD). 
 
 
-%2nd-review
-In this chapter, we will present developed tool, called SIMITAR: SnIffing, ModellIng and TrAffic geneRation, and how it works. First, we will discuss its architecture and components. Then we will present a brief tutorial of how to expand its support for a traffic generator engine. 
 
-%2nd-review
 We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows. It uses this data to generate a set of parameters for our traffic models, using a set of algorithms. Finally, it provides these parameters to a traffic generator engine and controls its packets injection.
 
 % cycle of operation
@@ -48,15 +50,15 @@ This component collects network traffic data and classifies it into flows, stori
     \label{fig:sniffer}
 \end{figure*}
 
-%2nd-review
-The first version of this component was implemented in Shell Script (Bash).  Tsahrk\footnote{\href{https://www.wireshark.org/docs/man-pages/tshark.html}{https://www.wireshark.org/docs/man-pages/tshark.html}} was used to extract header fields, and Awk to match the flows, and Sed/Awk to create the Sqlite queries. This version was too slow to operate in real time on Ethernet interfaces. On the other hand, was fast to implement, and enable the implementation of the other components, before this final version was released.
 
-%2nd-review
-The second version was implemented using Python. This version used Pyshark\footnote{\href{https://pypi.python.org/pypi/pyshark}{https://pypi.python.org/pypi/pyshark}} as sniffer library. The flow classification is made by a class called FlowId. It contains class we developed called OrderedSet. A set is a list of elements with no repetition, but do not keep track of the insertion order. But our OrderedSet does. Also, it make use of a  32 bits hash function of the family FNV. The listed header fields are inputs for a hash function, its value is set on the ordered set, and its order is returned. This value is set as a packet flowID.  
+The first version of this component was implemented in Shell Script (Bash).  Tsahrk\footnote{\href{https://www.wireshark.org/docs/man-pages/tshark.html}{https://www.wireshark.org/docs/man-pages/tshark.html}} was used to extract header fields, and Awk to match the flows, and Sed/Awk to create the Sqlite queries. This version was too slow to operate in real time on Ethernet interfaces. On the other hand, was fast to implement, and enable the implementation of the other components, before this last version was released.
+
+
+The second version was implemented using Python. This version used Pyshark\footnote{\href{https://pypi.python.org/pypi/pyshark}{https://pypi.python.org/pypi/pyshark}} as sniffer library. The flow classification is made by a class called FlowId. It has class we developed called OrderedSet. A set is a list of elements with no repetition but do not keep track of the insertion order. Our OrderedSet does. Also, it make use of a  64 bits hash function of the family FNV\footnote{The collision probability of a good 64 bits hash function in a table with 10000 items is about of $2.71e-12$.}. The listed header fields are inputs for a hash function, its value is set on the ordered set, and its order is returned. This value is set as a packet flowID.  
 
 %c++ http://ideone.com/F0V42m
 %2nd-review
-As future improvements for this component, we propose a more efficient implementation in C++ and data visualization for the collected data. We discuss this in deeper details in the chapter~\ref{ch:conclusion}
+As future improvements for this component, we propose a more efficient implementation in C++ and data visualization for the collected data. We discuss this in deeper details in the chapter~\ref{ch:conclusion}.
 
 
 
@@ -71,22 +73,22 @@ As future improvements for this component, we propose a more efficient implement
     \label{fig:simitar-database}
 \end{figure*}
 
-%2nd-review
-The database will store the collected raw data for further analysis. It is responsible for storing data from different traces in different tables.  The \textit{Sniffer} and the \textit{TraceAnalyzer}  can access the database. 
 
-%2nd-review
+The database stores the collected raw data  from the traces for further analysis. The \textit{Sniffer} and the \textit{TraceAnalyzer} can access the database. 
+
+
 We choose an SQLite database, because according to the SQLite specifications\footnote{\href{https://www.sqlite.org/whentouse.html}{https://www.sqlite.org/whentouse.html}}, it is the best option for our database. It is simple and well-suitable for an amount of data smaller than terabytes.
 
-%2nd-review
-In the figure ~\ref{fig:simitar-database} we present the relational model of our database, which stores a set of features extracted from the packets, along with the FlowID calculated by the sniffer component. 
 
+In the figure ~\ref{fig:simitar-database} we present the relational model of our database, which stores a set of features extracted from packets, along with the FlowID calculated by the sniffer component. 
 
+%3nd-review
 \subsection{Trace Analyzer}
 
-%2nd-review
-This module is the core of our project. It creates a compact trace descriptor via the analysis of the collected data. We define here a Compact Trace Descriptor (CTD) as a human and machine readable file, which describes an original traffic trace trough a set of flows, each of them described by a set of parameters, like header information and analytical models. 
 
-%2nd-review
+This module is the core of our project. It creates a trace model via the analysis of the collected data. We define here a Compact Trace Descriptor (CTD) as a human and machine readable file, which describes an original traffic trace trough a set of flows, each of them described by a set of parameters, like header information and analytical models. 
+
+
 Therefore, the Trace Analyze learns the features from raw data of traces (stored in the SQLite database) and write them in an XML file.  In the figure~\ref{fig:CTD-diagram} we show a directory diagram of a CDT file. It has many of many flow fields, and each one contains each parameter estimated. 
 
 %\begin{figure*}[!ht]
@@ -129,13 +131,16 @@ Some features are unique per flow and can be directly measured from the data. Th
 
 %2nd-review
 \begin{itemize}
-\item Flow-level properties like duration of flow, start delay, number of packets per flow, number of KBytes per flow;
-\item Packet-level QoS metrics like bit rate and packet rate; 
-\item Header fields, like protocols (IPv4, IPv6, TCP, UDP, ICMP, DCCP, SCTP, etc), QoS fields, ports, and addresses.
+\item Flow-level properties like duration of flow, start delay, number of packets per flow, number of KBytes per flow; 
+\item Header fields, like protocols, QoS fields, ports, and addresses.
 \end{itemize}
 
 %2nd-review
 Each one of these parameters is unique per flow. Other features like PSD (packet size distribution) e IPT (Inter-packet time), have a more complex behavior.  To represent these characteristics, we will use sets of stochastic-based models.  
+
+%%%%%%%
+%%%%% parei aqui
+%%%%%
 
 \subsubsection{Inter Packet Times}
 
