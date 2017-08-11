@@ -110,7 +110,7 @@ Therefore, the Trace Analyze learns the features from raw data of traces (stored
 %height=2.5in
 %
 
-%2nd-review
+
 \begin{figure}
 \centering
 \subfloat[first]{
@@ -123,25 +123,23 @@ Therefore, the Trace Analyze learns the features from raw data of traces (stored
 \label{fig:CTD-diagram}
 \end{figure}
 
-
+%3nd-review
 \subsubsection{Flow features}
 
-%2nd-review
+
 Some features are unique per flow and can be directly measured from the data. They are:  
 
-%2nd-review
+
 \begin{itemize}
 \item Flow-level properties like duration of flow, start delay, number of packets per flow, number of KBytes per flow; 
 \item Header fields, like protocols, QoS fields, ports, and addresses.
 \end{itemize}
 
-%2nd-review
+
 Each one of these parameters is unique per flow. Other features like PSD (packet size distribution) e IPT (Inter-packet time), have a more complex behavior.  To represent these characteristics, we will use sets of stochastic-based models.  
 
-%%%%%%%
-%%%%% parei aqui
-%%%%%
 
+%3nd-review
 \subsubsection{Inter Packet Times}
 
 \begin{figure*}[ht!]
@@ -151,23 +149,22 @@ Each one of these parameters is unique per flow. Other features like PSD (packet
     \label{fig:modified-harpoon-model}
 \end{figure*}
 
-%2nd-review
-To represent IPT, we adopt a simplified version of the Harpoon traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Here, we will explain our simplified version, which is illustrated at figure~\ref{fig:modified-harpoon-model}. 
+To represent inter packet times, we adopt a simplified version of the Harpoon traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Here, we will explain our simplified version, which is illustrated at figure~\ref{fig:modified-harpoon-model}. 
 
-%2nd-review
-Harpoon uses a more conventional definition of each level, based on the measurement of SYN and ACK TCP flags. Harpoons use TCP flags (SYN) to classify packets in different levels (named there: file, session and user level). Since we are just modeling inter-packet times, we choose to estimate these values, based on inter-packet times. Since we want to generalize this approach for any protocol, the distinction will be made based on the time delay between packets.
 
-%2nd-review
-In our version of the algorithm, we define (as Harpoon does) three different layers of data transference to model and control: file, session, and flow. 
+Harpoon uses a more conventional definition of each level, based on the measurement of SYN and ACK TCP flags. It use TCP flags (SYN) to classify packets in different levels, named there file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets.
 
-%2nd-review
+
+In our algorithm simplified version, we define (as Harpoon does) three different layers of data transference to model and control: file, session, and flow. 
+
+
 For SIMITAR, a file is just a sequence of consecutive packets transmitted continuously, without large interruption of traffic. It can be, for example, packets transmitted downloading a file, of UDP packets of a connection or a single ICMP echo packet. The session-layer refers to a sequence of multiple files transmitted between a source and a destination, belonging to the same flow.  And the flow level refers to the conjunct of flow classified by the Sniffer.  
 
-%2nd-review
+
 \textbf{Flow-layer}: The Trace Analyzer loads the flow arrival times from the database, and calculates the inter-packet times within the flow context. 
 
-%2nd-review
-\textbf{Session-layer}: At the session layer, we use a deterministic approach for evaluating times between transferred files (OFF times) and the actual file transference (ON times). It is basically a deterministic ON/OFF model. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the on times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. We did this, first because ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Second, because in the case of just one packet, the ON time would be zero. OFF times, on the other hand, are defined by the constant \texttt{m\_session\_cut\_time}. If the time between packets of the same flow is larger than this, we consider it belonging to a different file, so it is a Session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} (30 seconds) \textcolor{red}{<<<<pode mudar, calibrar>>>>}.
+
+\textbf{Session-layer}: At the session layer, we use a deterministic approach for evaluating times between files and the actual file transference, the OFF and ON times of a packet train model, respectivaly. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the on times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. We did this, first because ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Second, because in the case of just one packet, the ON time would be zero. OFF times, on the other hand, are defined by the constant \texttt{m\_session\_cut\_time}. If the time between packets of the same flow is larger than this, we consider it belonging to a different file, so it is a Session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} (30 seconds) \textcolor{red}{<<<<pode mudar, calibrar>>>>}.
 The control of ON/OFF periods is made by the \texttt{NetworkFlow} class.
 
 %2nd-review
@@ -176,7 +173,7 @@ The control of ON/OFF periods is made by the \texttt{NetworkFlow} class.
 %2nd-review
 \begin{figure*}[ht!]
     \centering
-    \includegraphics[height=1.6in]{figures/ch3/ipt-modeling}
+    \includegraphics[height=0.9in]{figures/ch3/simitar-parametrization}
     \caption{Diagram of parameterization and model selection for inter-packet times and inter-file times.}
     \label{fig:model-parameterization}
 \end{figure*}
@@ -194,10 +191,9 @@ The control of ON/OFF periods is made by the \texttt{NetworkFlow} class.
 Our approach for the packet size is much simpler. Since the majority of packet size distribution found on real measurements are bi-modal \cite{packet-distribution-model}\cite{sourcesonoff-paper}\cite{udp-flows-model}, we first sort all packet sizes of flow in two modes. We define a packet size mode cut value of 750 bytes, same value adopted by \cite{udp-flows-model}. 
 
 %2nd-review
-We first know how much packets each mode has, and then we fit a model for it. We use three stochastic models: constant, exponential and normal. Since self-similarity is not a requirement, we prefer to use just simple models. But, when there is no packet we set a flag NO\_MODEL, and when there is just a single packet we just use the constant model.  We then calculate the BIC and AIC for each of them and sort according to the AIC value by default, but we decide to set the constant model as the first.
+We know how much packets each mode has, and then we fit a model for it. We use three stochastic models: constant, exponential and normal. Since self-similarity do not make sense for packet-sizes, we prefer to use just the simpler models. When there is no packet for a model, we set a flag NO\_MODEL, and when there is just a single packet we just use the constant model. Then calculate the BIC and AIC for each, but we decide to set the constant model as the first.
 
-%2nd-review
-As is possible to see on many studies \cite{packet-distribution-model}\cite{udp-flows-model}, since the standard deviation of each mode is small, constant fittings use to give good approximations. Also, it is computationally cheaper than the others models, since no calculation is a need for each packet sent. Since both AIC and BIC criteria always will select the constant model as the worst, we decide to ignore this indicator for the constant model.
+As is possible to see in many works \cite{packet-distribution-model} \cite{udp-flows-model}, since the standard deviation of each mode tends to be small, constant fittings use to give good approximations. Also, it is computationally cheaper for the traffic generated than the other models, since no calculation is a need for each packet sent. Since both AIC and BIC criteria always will select the constant model as the worst, we decide to ignore this
 
 \subsubsection{Compact Trace Descriptor}
 
@@ -241,7 +237,7 @@ An example of the final result of all the methods is presented in the XML code d
 \end{minted}
 
 %2nd-review
-The current version of our tool, do not intrinsically supports responsiveness. The underlying traffic generator API can support it (such as Seagull\cite{web-seagull}), but we do not generate any mathematical model for this purpose, and this may also stand as a future work we discuss on chapter ~\ref{ch:conclusion}. 
+%The current version of our tool, do not intrinsically supports responsiveness. The underlying traffic generator API can support it (such as Seagull\cite{web-seagull}), but we do not generate any mathematical model for this purpose, and this may also stand as a future work we discuss on chapter ~\ref{ch:conclusion}. 
 
 \subsection{Flow Generator}
 
@@ -251,9 +247,8 @@ The current version of our tool, do not intrinsically supports responsiveness. T
     \caption{Simplified-harpoon emission algorithm}
     \label{fig:alg-simplified-harpoon}
 \end{figure*}
-
-%2nd-review
-The Flow Generator handles the data on the CTD file, and use it as parameters for the traffic generation. It crafts and controls each flow in a separated thread. 
+0
+The Flow Generator handles the data on the CTD file, and use to retrieve parameters for traffic generation. It crafts and controls each flow in a separated thread. 
 
 %2nd-review
 We first implemented it using the D-ITG API. But our Flow Generator can use any traffic generator with API, CLI or script interface as well. To easily expand this component, we use the design pattern factory. If the user wants to introduce support for a new traffic generator, he just has to expand the class \texttt{DummyFlow} and add the support on the method \texttt{make\_flow()} of the class \texttt{NetworkFlow}. We will discuss this deeper in the next section.
