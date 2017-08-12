@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Modeling and Algorithms}\label{ch:modeling-evaluation}
+\chapter{Traffic Modeling and Algorithms}\label{ch:modeling-evaluation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In this chapter we are going to go in deep details on some implementations and modelling approaches mentioned in the last chapter.
@@ -31,10 +31,10 @@ There are many works devoted to studying the nature of the Ethernet traffic\cite
 There many consolidate works that investigate the nature of the internet traffic\cite{selfsimilar-ethernet}\cite{analysis-self-similar}\cite{stochartic-selfsimilar}\cite{selfsimilar-highvariability}\cite{multi-player-online-game-self-similarity}, and many others on the modelling of stochastic functions for specific scenarios\cite{estimation-renewal-function-ethernet-traffic}\cite{modelling-of-self-similar}\cite{empirical-interarrival-study}\cite{modeling-concurrent-heavy-tailed}\cite{optimal-scheduling-of-heavy-tailed-traffic}\cite{modelling-of-self-similar}. But not as many on model choice automatization\cite{sourcesonoff-paper}.
 
 %2nd-review
-In this chapter, we propose a method that may be implemented by  software. We estimate many stochastic functions through many methodologies and select the best model through the AIC computation\cite{bic-aic-comparision}. Since generating random can be cost and have a bias, depending on the seed generator, we cut these problems since our method is analytical. 
+In this chapter, we propose a method automatizable by  software. We estimate many stochastic functions through many methodologies and select the best model through the AIC computation\cite{bic-aic-comparision}. Since generating random can be cost and have a bias, depending on the seed generator, we avoid these problems since our method is analytical. 
 
 %2nd-review
-We made a brief bibliographic review of some works related works on this topic. Then, we will present the traffic traces we are going to use in this chapter, and in the rest of our work. After we present or selected method for parameterization and fitting choice. To test our criteria quality, we define a validation method, based on cross-validations made by simulations.
+We made a brief bibliographic review of some related works on this topic. Then, we will present the traffic traces we are going to use in this chapter, and in the rest of our work. After we present or selected method for parameterization and fitting choice. To test our criteria quality, we define a validation method, based on cross-validations made by simulations.
 
 \subsection{Related Works}
 
@@ -80,10 +80,10 @@ The first is a lightweight Skype capture, found in  Wireshark wiki\footnote{http
 The second is a CAIDA\footnote{http://www.caida.org/home/}{http://www.caida.org/home/} capture, and can be found at  \href{https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC}{https://data.caida.org/datasets/passive-2016/equinix-chicago/20160121-130000.UTC}. Access to this file need login, so you will have to create an account and wait for approval first. The pcap's file name is \texttt{equinix-chicago.dirB.20160121-135641.UTC.anon.pcap.gz}. We call it \textit{wan-pcap}.
 
 %2nd-review
-The third we capture in our laboratory LAN, through a period of 24 hours. It was captured in the firewall gateway between our local and external network. Along with other tests, We intend to verify diurnal behavior on it. That means a high demand of packets during the day and a small in the night. We call it \textit{lan-diurnal-pcap}.
+The third we capture in our laboratory LAN, through a period of 24 hours. It was captured irewall gateway between our local and external network. Along with other tests, We intend to verify diurnal behavior on it. That means a high demand of packets during the day and a small in the night. We call it \textit{lan-diurnal-pcap}.
 
 %2nd-review
-The fourth is a capture of a busy private network access point to the Internet, available on-line on TCPreplay\cite{web-tcpreplay} website \footnote{ http://tcpreplay.appneta.com/wiki/captures.html}, and is called \texttt{bigFlows.pcap}. We will refer to it \textit{bigflows-pcap}.
+The fourth is a capture of a busy private network access point to the Internet, available on-line on TCPreplay website \footnote{ \href{http://tcpreplay.appneta.com/wiki/captures.html}{http://tcpreplay.appneta.com/wiki/captures.html}}, and is called \texttt{bigFlows.pcap}. We will refer to it \textit{bigflows-pcap}.
 
 %Along with these datasets, we will use two subpcaps from the originals. The first, \textit{skype-flowburst-pcap}, is a burst of a single HTTP flow from \textit{skype-pcap}. It can be obtained from Wireshark using the filter \texttt{(ip.src\_host==172.16.133.25) \&\& (ip.dst\_host==74.125.170.42) \&\& (tcp.dstport==80) \&\& (tcp.srcport==63378) \&\& (frame.time\_relative>30.0) \&\&( frame.time\_relative<50.0)}. The second, \textit{caida1s-pcap} is a trace with the first second from \texttt{wan-pcap}.
 
@@ -91,7 +91,7 @@ The fourth is a capture of a busy private network access point to the Internet, 
 \subsection{Methodology}
 
 %2nd-review
-We summarize our process of modeling inter-packet times at the figure~\ref{fig:model-parameterization}. We collect a set of inter-packet times from an actual traffic capture. Then, we estimate a set of parameters for stochastic functions, using different methodologies. Then, from these parametrized models, we estimate which best represent our data set, using the measure of quality AIC (Akaike information criterion). We also calculate another measure of quality called BIC(Bayesian information criterion), for comparison of results. In this chapter, we present our results obtained on our prototype implemented in Octave.
+We summarize our process of modeling inter-packet times at the figure~\ref{fig:model-parameterization}. We collect a set of inter-packet times from an actual traffic capture. Then, we estimate a set of parameters for stochastic functions, using different methodologies. Then, from these parametrized models, we estimate which best represent our data set, using the measure of quality AIC (Akaike information criterion). We also calculate another measure of quality called BIC(Bayesian information criterion), for comparison of results. In this chapter, we present our results obtained on our prototype implemented in Octave\footnote{ \href{https://www.gnu.org/software/octave/}{https://www.gnu.org/software/octave/}}. 
 
 %2nd-review
 Currently, we are modeling:
@@ -116,13 +116,12 @@ Currently, we are modeling:
 % In probability theory and statistics, the exponential distribution (a.k.a. negative exponential distribution) is the probability distribution that describes the time between events in a Poisson process, i.e. a process in which events occur continuously and independently at a constant average rate. It is a particular case of the gamma distribution. It is the continuous analogue of the geometric distribution, and it has the key property of being memoryless. In addition to being used for the analysis of Poisson processes, it is found in various other contexts.
 
 %2nd-review
-Now we will give a brief explanation our three procedures: Linear Regression (with the  Gradient descendant algorithm), direct estimation, and maximum likelihood. We go deep into details explaining the methods on the appendix ~\ref{ap:revision-probability}, and present the mathematical demonstrations on appendix~\ref{ap:revision-probability}. 
+Now we will give a brief explanation our three procedures: Linear Regression (with the  Gradient descendant algorithm), direct estimation, and maximum likelihood. Some observations must be made. Since the time samples resolution used were of $10^{-6}$s, all values equal to zero were set to  $5\cdot10^{-8}$s, to avoid division by zero. To avoid divergence on tangent operation on the linearization the Cauchy function, the inter-packets CDF function values were floor-limited and upper-limited to  $10^{-6}$ and $0.999999$ respectively. We implemented this prototype using Octave. We upload the code on GitHub, for reproduction purposes\footnote{\textcolor{red}{github-link-aqui}}
 
-%2nd-review
-Some observations must be made. Since the time samples resolution used were of $10^{-6}$s, all values equal to zero were set to  $5\cdot10^{-8}$s, to avoid division by zero. To avoid divergence on tangent operation on the linearization the Cauchy function, the inter-packets CDF function values were floor-limited and upper-limited to  $10^{-6}$ and $0.999999$ respectively.
 
-%2nd-review
-We implemented this prototype using Octave. We upload the code on GitHub, for reproduction purposes\footnote{github-link-aqui}
+%We go deep into details explaining the methods on the appendix ~\ref{ap:revision-probability}, and present the mathematical demonstrations on appendix~\ref{ap:revision-probability}. 
+
+
 
 \subsubsection{Linear regression (Gradient descendant)}
 
@@ -142,11 +141,13 @@ F(t|\alpha, \beta) = F(t) = 1 - e^{-(t/\beta)^{\alpha}}
 
 Manipuling the equation:
 \begin{equation}
-\alpha\ln{(t)} - \alpha\ln{(\beta)} = \ln{-\ln{1 - F(t)}}
+\alpha\ln{(t)} - \alpha\ln{(\beta)} = \ln{(-\ln{(1 - F(t))})}
 \end{equation}
 
 %%2nd-review
-If we call $x = \ln{(t)}$ and $y = \ln{(-\ln{(1 - F(t))})}$, we found a linear equation, where $a = \alpha$ and $b = -\alpha\ln{(\beta)}$. Having in hands a estimation of the empirical CDF of our data samples, we apply the $x$ and $y$ definitions to linearize the data. Using the gradient descendant, we are able to find a estimation of the linear coefficients $\hat{a}$ and $\hat{b}$. Using the inverse function of the definition of linear coefficients, we are able to find the estimated parameters $\hat{\alpha}$ and $\hat{\beta}$.
+If we call $x = \ln{(t)}$ and $y = \ln{(-\ln{(1 - F(t))})}$, we found a linear equation, where $a = \alpha$ and $b = -\alpha\ln{(\beta)}$. Having in hands a estimation of the empirical CDF of our data samples, we apply the $x$ and $y$ definitions to linearize the data. 
+
+Using the gradient descendant, we find a estimation of the linear coefficients $\hat{a}$ and $\hat{b}$. Using the inverse function of linear coefficients, we find the weibull estimated parameters $\hat{\alpha}$ and $\hat{\beta}$.
 
 \begin{equation}
 \alpha = a
@@ -156,14 +157,9 @@ If we call $x = \ln{(t)}$ and $y = \ln{(-\ln{(1 - F(t))})}$, we found a linear e
 \beta = e^{-(b/a)}
 \end{equation}
 
-%2nd-review
-We present examples of linearized data, and the linear approximation achieved, as well the cost convergence of the gradient descendant algorithm in the appendix ~\ref{ap:revision-probability}.
+The gradient descendent consists in minimizing a cost function $J(\theta)$. We explain this procedure in the appendix ~\ref{ap:revision-probability}. In the figure~\ref{fig:linearization} we present as examples, the linearized data for the inter arrivals from the \textit{skype-pcap}, and in the figure ~\ref{fig:linearization-cost} the cost convergence. In the appendix ~\ref{ap:aditional-plots}, a complete set of these figures is presented.
 
-%2nd-review
-Applying the inverse equations of the linear coefficients ($\hat{\alpha} = \hat{a}$ and $\hat{\beta} = e^{-(\hat{b}/\hat{a})}$) (the symbol stands for the estimated parameters). So we are able to estimate the Weibull distribution parameters.
-
-%2nd-review
-We can summarize this procedure, in these steps:
+Applying the inverse equations of the linear coefficients ($\hat{\alpha} = \hat{a}$ and $\hat{\beta} = e^{-(\hat{b}/\hat{a})}$) \footnote{The hat symbol ( $ \widehat{} $ ) for the estimated parameters}, we are able to estimate the Weibull distribution parameters. We can summarize this procedure, in these steps:
 \begin{enumerate}
 \item Linearize the stochastic CDF function F(t).
 \item Apply the linearized $y = y(F(t))$ and  $x = x(t)$ on the empirical CDF and times datasets, respectively. 
@@ -172,13 +168,7 @@ We can summarize this procedure, in these steps:
 \end{enumerate}
 
 %2nd-review
-In the parameters estimation, there is an exception, since the Pareto scale ($t_{m}$) is defined by the minimum time. 
-
-%2nd-review
-In the table~\ref{tab:linearization-sumary} we present a summary of the used equations in the procedure. In this notation, the subscript $i$ means that it must be applied on every empirical value measured. The hat( $\widehat{}$ ) indicates an estimated value for a parameter.
-
-%2nd-review
-In the figure~\ref{fig:linearization} we presente the linearized 
+In the parameters estimation (step 4), there is an exception, since the Pareto scale ($t_{m}$) is defined by the minimum time. In the table~\ref{tab:linearization-sumary} we present a summary of the used equations in the procedure. In this notation, the subscript $i$ means that it must be applied on every empirical value measured. The hat( $\widehat{}$ ) indicates an estimated value for a parameter. 
 
 %2nd-review
 \begin{table}[h!]
@@ -191,7 +181,7 @@ In the figure~\ref{fig:linearization} we presente the linearized
 		\hline
 		Cauchy      & $x_i = t_i$        & $y_i = \tan{(\pi(F(t_i) - 1/2))}$ & $\hat{\gamma} = \frac{1}{\hat{a}}$ & $\hat{t_0} = - \frac{\hat{b}}{\hat{a}}$                      &  \\
 		Exponential & $x_i = t_i$        & $y_i = \ln{(1 - F(t_i))})$        & \multicolumn{2}{l}{$\hat{\lambda} = -\hat{a}$}                                              &  \\
-		Pareto      & $x_i = \ln{(t_i)}$ & $y_i = \ln{(1 = F(t_i))}$         & $\hat{\alpha} = -\hat{a} $         & $\hat{x_{m}} = \min_{i = 0, ..., m}\{x_{i}\}$ &  \\
+		Pareto      & $x_i = \ln{(t_i)}$ & $y_i = \ln{(1 - F(t_i))}$         & $\hat{\alpha} = -\hat{a} $         & $\hat{x_{m}} = \min_{i = 0, ..., m}\{x_{i}\}$ &  \\
 		Weibull     & $x = \ln{(t)}$     & $y = \ln{(-\ln{(1 - F(t))})}$     & $\hat{\alpha} = \hat{a}$                 & $\hat{\beta} = e^{-(\hat{b}/\hat{a})}$                                   & \\
 		\hline
 	\end{tabular}
@@ -201,16 +191,17 @@ In the figure~\ref{fig:linearization} we presente the linearized
 
 \begin{figure}[ht!]
 \centering
-\subfloat[c]{
+\subfloat[Linearized interarrival data]{
   \includegraphics[height=50mm]{figures/ch4/Skype_Weibull_-_Linearized_data_and_linear_fitting}
   \label{fig:linearization}
 }
 %\hspace{0mm}
-\subfloat[c]{
+\subfloat[Cost function of the linear regression]{
   \includegraphics[height=50mm]{figures/ch4/Skype_Weibull_-_Cost_J_iterations__convergence}
   \label{fig:cost}
 }
 \label{fig:linearization-cost}
+\caption{Linearized data and cost function of weibull linear regression}
 \end{figure}
 
 
@@ -227,7 +218,7 @@ Following the notation presented at table~\ref{tab:distributions-equations}, we 
 \end{equation}
 
 %2nd-review
-For the exponential distribution $E(X) = \frac{1}{\lambda}$, therefore:
+For the exponential distribution $E(X) = \frac{1}{\lambda}$, therefore we have:
 \begin{equation}
 \hat{\lambda} = \frac{1}{\hat{\mu}}
 \end{equation} 
@@ -248,28 +239,7 @@ The maximum likelihood estimation, is a method for estimation of parameters, win
 where $m$ is the sample size.
 
 
-\subsubsection{AIC and BIC}
-
-%2nd-review
- Suppose that we have an statistical model $M$ of soma dataset ${\boldsymbol{x} = (x_1, ..., x_n)}$, with $n$ independent and identically distributed observations of a random variable $X$. This model can be expressed by a PDF $f(x, \boldsymbol{\theta})$, where $\boldsymbol{\theta}$ a vector of parameter of the PDF, $\boldsymbol{\theta} \in \mathbb{R}^{k}$ ($k$ is the number of parameters). The  likelihood function  of this model $M$ is given by:
-
-\begin{equation}
-L(\boldsymbol{\theta}|\boldsymbol{x} ) =  f(x_1|\boldsymbol{\theta})...f(x_n|\boldsymbol{\theta}) = \prod_{i = 1}^{n}f(x_i|\boldsymbol{\theta})
-\end{equation}
-
-Now, suppose we are trying to estimate the best statistical model, from a set ${M_1, ..., M_n}$, each one whit an estimated vector of parameters  ${\boldsymbol{\hat{\theta_1}}}, ..., {\boldsymbol{\hat{\theta_n}}}$. $AIC$ and $BIC$ are defined by:
-
-\begin{equation}
-AIC = 2k - \ln(L(\boldsymbol{\hat{\theta}}|\boldsymbol{x}))
-\end{equation}
-
-\begin{equation}
-BIC = k\ln(n) - \ln(L(\boldsymbol{\hat{\theta}}|\boldsymbol{x}))
-\end{equation}
-
-In both cases, the preferred model $M_i$, is the one with the smaller value of $AIC_i$ or $BIC_i$.
-
-
+%\subsubsection{AIC and BIC}
 
 
 \subsubsection{Validation}
@@ -280,7 +250,7 @@ We generate a vector with the same size form the original, with random generated
 
 %2nd-review
 \begin{itemize}
-\item Correlation between the sample data and the estimated model;
+\item Correlation between the sample data and the estimated model (Pearson's product-moment coefficient);
 \item Hurst exponent;
 \item Mean inter packet time;
 \item Standard deviation of inter packet times.
@@ -383,7 +353,7 @@ The smaller is the cost $J$, the best is the model. Then we compare the results 
 \begin{table}[h!]
 	\centering
 	\caption{Results of the octave prototype, include BIC and AIC values, para estimated parameters for two of our pcap traces: \textit{skype-pcap }and \textit{bigflows-pcap}. \textit{bigflows-pcap} is much larger, and has a much much smaller mean inter-packet time}
-	\label{tab:prototype-results}
+	
 	\scalebox{0.75}{ 
 		\begin{tabular}{lcccccccc}
 			\hline
@@ -422,6 +392,7 @@ The smaller is the cost $J$, the best is the model. Then we compare the results 
 			Weibull         & $-1.10e7$   & $-1.10e7$  & $\alpha:2.81e-1$ & $\beta:5.54e-4$  
 			& $-5.46e7$   & $-5.46e7$  & $\alpha:7.64e-2$ & $\beta:1e-6$  \\ \hline
 		\end{tabular}
+	\label{tab:prototype-results}
 	}
 \end{table}
 
@@ -431,13 +402,13 @@ Analyzing the plots, and what they would mean, our Cauchy fitting would impose a
 
 Analyzing the QQplots, we may observe that in most of the distribution, the samples (original data) has a much havier-tail effect than in the estimated data. This is verified by the almost blue horizontal lines formed by the "exes". But, the Weibull distribution follow much closer the original data. Also is possible to see that the sample has a right skew compared to the estimation on Exponential(LR), Exponential(Me), Normal, and Pareto(MLH). This means that this estimation would not represent so well small values of time in this case. On the other hand, Pareto(LR) and Weibull would not suffer from this problem.
 
-The results for the AIC, BIC and parameters of all four traces are at the table~\ref{tab:prototype-results1}.  The results for \textit{wan-pcap} and \textit{lan-diurnal-pcap} are on the table ~\ref{tab:prototype-results}. The difference between BIC and AIC values in all simulations are very small. Much smaller then the difference between its values between the distributions. This is an indication that for inter packet times, using AIC or BIC should will not influence significantly the results. 
+The results for the AIC, BIC and parameters of all four traces are at the table~\ref{tab:prototype-results}.  The results for \textit{wan-pcap} and \textit{lan-diurnal-pcap} are on the table ~\ref{tab:prototype-results}. The difference between BIC and AIC values in all simulations are very small. Much smaller then the difference of these values between the distributions. This is an indication that for inter packet times, using AIC or BIC should will not influence significantly the results. 
 
-On our previsions, Weibull and Pareto(MLH and LR) are the best options. This was expected, since both are heavy-tailed functions. But, Cauchy, on most of the tests, even being a heavy-tailed distribution seems to no present a good fitting. This is effect of the fast divergence of tangent function, when we linearize our data. 
+On our previsions, Weibull and Pareto(MLH and LR) are the best options. This was expected, since both are heavy-tailed functions. But Cauchy on most of the tests, even being a heavy-tailed distribution, seems to no present a good fitting. This is effect of the fast divergence of tangent function, when we linearize our data. 
 
 Analyzing the quality of AIC and BIC as criterion of choose on \textit{skype-pcap},based on the results form figure ~\ref{fig:correlation-hurst-skype-pcap} we see that in therms of Correlation and Self-similarity it picket the right model: Weibull. Also in therms of mean packet rate and dispersion it is still one of the best choises (along with Exponential(Me), Pareto(LR) and Cauchy). The third and the fourth choices (Pareto(LR)) and Exponential(LR) also are good options in most of these metrics. But, Pareto(MLH) is presented as the second best choice, and it had poor results in comparison to the others, especially on mean, correlation and dispersion. 
 
-All these results are abstracted by the cost function $J$. As we can see, on all pcaps, the best function selected by BI and AIC~\ref{tab:prototype-results} also had the small cost~\ref{fig:cost-function}. 
+All these results are abstracted by the cost function $J$. As we can see, on all pcaps, the best function selected by BIC and AIC~\ref{tab:prototype-results} also had the small cost~\ref{fig:cost-function}. 
 
 Another important observation is the fact that exponential function was able to provide the best fitting for the \textit{wan-pcap}. The reasons for this behavior are both result of a much intense traffic with no long-range gaps, and the precision of the measurement.
 
@@ -524,11 +495,11 @@ Another important observation is the fact that exponential function was able to 
 
 Also the order of the stochastic function tend to not differ much. We are able to conclude that using AIC or BIC as criteria for choosing models for inter-packet times is a good choise.
 
-Also, except by the Pareto function modeled using the Maximum likelyhood method, have comparative results between the simulations and the AIC/BIC gess. The best fittings according to the AIC/BIC usually  returned very acurate models, with close mean and fractal level, and correlation close to one. The models selected as the worsts usually returned poor results.
+Also, except by the Pareto function modeled using the Maximum likelihood method, have comparative results between the simulations and the AIC/BIC goes. The best fittings according to the AIC/BIC usually returned very accurate models, with a small error between the mean and fractal level, and correlation close to one. The models selected as the worsts usually returned poor results.
 
-Also, it is important to notice that in some cases, some stochastic functions may perform poorly, and in other provide an accurante fitting, what justify the application of the criteria in all new experiment. 
+Also, it is important to notice that in some cases, some stochastic functions may perform poorly, and in other provide an accurate fitting, what justify the application of the criteria in all new experiments. For example, Weibull usually performs pretty well, but in some cases, perform poorly, and in others may even diverge. 
 
-We do not rely on only one type of parametrization. This turns our methodology more robust, since a linear regression may diverge. But aways there will be an packable model, since our estimations for Normal, Exponential(Me) and Pareto(MLH) cannot. Models wich the linear regression diverge, will not have god BIC/AIC estimations, and will not be pickedas primary options. 
+We do not rely on only one type of parameterization. This turns our methodology more robust, since a linear regression may diverge. But always there will be a peaceable model, since our estimations for Normal, Exponential (Me) and Pareto (MLH) cannot. Models which the linear regression diverges, will have very high and positive BIC/AIC estimations, and will not stand as primary options.
 
 
 
@@ -613,7 +584,7 @@ We do not rely on only one type of parametrization. This turns our methodology m
 
 \section{Others Algorithms and Methods}
 
-In this section we breef present another methods used by the \textit{TraceAnalyzer} component. The first to calculate the session ON and OFF times. The second classify applications based on its tranport protocol and ports.
+In this section we breef present another methods used by the \textit{TraceAnalyzer} component. The first to calculate the session ON and OFF times. The second classify applications based on its tranport protocol and ports. In the table ~\ref{tab:mehtods} we summarize the stack of models used to create the Compact Trace Descriptor (CTD file). 
 
 
 \subsection{On/Off Times estimation}
@@ -638,17 +609,18 @@ We also developed an simple test to guess the application protocol, based on the
 
 \begin{table}[ht!]
 	\centering
-	\caption{My caption}
+	\caption{Stack of models used to create the CTD file}
 	\label{tab:mehtods}
 	\begin{tabular}{|l|l|}
 		\hline
-		Link Layer                          & \multirow{3}{*}{header data} \\ \cline{1-1}
+		Link Layer                          & \multirow{3}{*}{Packets header's data} \\ \cline{1-1}
 		Network Layer                       &                                       \\ \cline{1-1}
 		Transport Layer                     &                                       \\ \hline
 		Application Layer                   & Application Match Table                    \\ \hline
-		\multirow{2}{*}{Inter Packet Times} & $calcOnOff$                             \\ \cline{2-2} 
-		& $stochasticModelFitting$                    \\ \hline
-		Packet Sizes                        & $stochasticModelFitting$                    \\ \hline
+		\multirow{2}{*}{Inter Packet Times} & Algorithm: $calcOnOff$                             \\ \cline{2-2} 
+		& 
+		Algorithm: $stochasticModelFitting$                    \\ \hline
+		Packet Sizes                        & Algorithm: $stochasticModelFitting$                    \\ \hline
 	\end{tabular}
 \end{table}
 

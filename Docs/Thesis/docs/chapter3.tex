@@ -68,7 +68,7 @@ As future improvements for this component, we propose a more efficient implement
 
 \begin{figure*}[ht!]
         \centering
-        \includegraphics[height=2.5in]{figures/ch3/database-relational-model}
+        \includegraphics[height=3.0in]{figures/ch3/database-relational-model}
         \caption{SIMITAR's SQLite database relational model}
     \label{fig:simitar-database}
 \end{figure*}
@@ -243,7 +243,7 @@ An example of the final result of all the methods is presented in the XML code d
 
 \begin{figure*}[ht!]
     \centering
-    \includegraphics[height=4.0in]{figures/ch3/alg-simplified-harpoon}
+    \includegraphics[height=4.5in]{figures/ch3/alg-simplified-harpoon}
     \caption{Simplified-harpoon emission algorithm}
     \label{fig:alg-simplified-harpoon}
 \end{figure*}
@@ -331,7 +331,7 @@ void flowGenerate(const counter& flowId, const time_sec& onTime, const uint& npa
 
 A network traffic generator software that should provide its API or script interface for the \textit{FlowGenerator} component. 
  
-Since \texttt{DITGsend()} is thread safe, no mutex is need. It would be needed if a lower level API, such Libtins or Libpcap was used. In that case, these APIs would permit control precisely each packet sent through the interface, but a mutex would be necessary. An scriptable application, such as Iperf can be used as well, using \texttt{fork()} or \texttt{popen()}.
+Since \texttt{DITGsend()} is thread safe, no mutex is need. It would be needed if a lower level API, such Libtins or Libpcap was used. In that case, these APIs would permit control precisely each packet sent through the interface, but a mutex would be necessary. An scriptable tool, such as Iperf can be used as well, using \texttt{fork()} or \texttt{popen()}.
 
 As we claimed before, this tools is simple of being expanded for almost any traffic generation API, since its modeling framework is not coupled to the traffic generation.
 The figure \ref{fig:network-trace-flow-class-diagram} illustrates it well. It presents three possibilities of different traffic generation engines, all being configured and scheduled in a platform-agnostic way.
@@ -347,15 +347,15 @@ The figure \ref{fig:network-trace-flow-class-diagram} illustrates it well. It pr
 \section{Usage and Use Cases}
 
 SIMITAR works in four different states: as a sniffer, packet injector, client or server. 
-When it working as a sniffer, is produces as output a Compact Trace Descriptor file. It may operate over a \textit{pcap} file or an Ethernet interface.
+When it working as a sniffer, is produces as output a Compact Trace Descriptor file. It may work over a \textit{pcap} file or an Ethernet interface.
 
-When it operates as a client or as packet injector, it is operating as a traffic generator. The difference is that as a client, the used traffic generator is connection-oriented. It needs to establish a connection with the destination host (the server), before start sending packets. It takes as an input a single destination in the command line, or list of many, in a text file passes as a parameter. Also, it uses the machine IP address as packet's source IP.
+When it operates as a client or as packet injector, it is operating as a traffic generator. The difference is that as a client, the used traffic generator is connection-oriented. It needs to establish a connection with the destination host (the server), before start sending packets. Operating as a client, it must take as an input a list of IP or MAC destination addresses, since they will not match with the ones in the original trace. It takes as an input a single destination in the command line, or list of many, in a text file passes as a parameter. Also, it uses the machine IP address as packet's source IP.
 
-Operating as a client, it must take as an input a list of IP or MAC destination addresses, since they will not match with the ones in the original trace. As a packet injector can generate packets on the output interface, without establishing a connection. It uses the original IP and MAC destination and source addresses. As a client, the reproduction of the trace is expected to be poor in the flow level metrics exposed in the chapter ~\ref{ch:literature-review}, since it will use new addresses values. 
+ As a packet injector can generate packets on the output interface, without establishing a connection. It uses the original IP and MAC destination and source addresses. As a client, the reproduction of the trace is expected to be poor in the flow level metrics exposed in the chapter ~\ref{ch:literature-review}, since it will use new addresses values. 
 
-The operation of packet injector is still under implementation, and we are using Libtins library. Currently, SIMITAR supports client mode with D-ITG, implemented using its C++ API. We intend to provide support for many others traffic generators, such Iperf and Ostinato.
+The operation of packet injector is still under implementation, and we are using Libtins API. Currently, SIMITAR supports client mode with D-ITG, implemented using its C++ API. We intend to provide support for many others traffic generators, such Iperf and Ostinato.
 
-When operating as a server, it just start-up the traffic generator server, and waits for server connections. Down bellow, we present simple examples of commands used to activate each operation mode.
+When operating as a server, it just start-up the traffic generator server, and waits forclient requests for connections. Down bellow, we present simple examples of commands used to activate each operation mode.
 
 \begin{minted}[frame=single,
                framesep=3mm,
@@ -378,6 +378,8 @@ When operating as a server, it just start-up the traffic generator server, and w
 As use cases, we can cite:
 
 \begin{itemize}
+
+\item Flow Generation Progamability: creation of custom synthetic traffic with a certain number of flows, in a traffic-generator independent way.
 
 \item Generate Background traffic with D-ITG: SIMITAR can work to generate background traffic over a network when it receives many addresses as input. If each destination is reachable, D-ITG will establish a connection with each destination, and recreate flows as described in the CDT file. 
 
