@@ -105,6 +105,10 @@ sudo -H pip install python-ostinato
 ```
 sudo apt-get install iperf
 ```
+### Tclap
+```
+sudo apt-get install libtclap-dev
+```
 
 ## About the releases names
 
