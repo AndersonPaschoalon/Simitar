@@ -1,3 +1,4 @@
+%#!/usr/bin/octave-cli -qf
 % constants 
 n_samples = 10000;
 SESSION_CUT_TIME = 2.90;

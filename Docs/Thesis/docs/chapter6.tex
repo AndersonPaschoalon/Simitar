@@ -2,6 +2,11 @@
 \chapter{Conclusion and Future Work}\label{ch:conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+TODO Limitations, future work
+
+TODO considerações, contrubuições, lições, boas idéias, mas idéias
+
 \section{Final Conclusions}
 
 \textcolor{red}{some text here}
@@ -112,8 +117,15 @@ Instead of each flow's thread control individually sleep and wake times, a bette
 \end{itemize}
 
 
+\subsection{Changing the Model, reusing the Architecture}
 
+Since the proposed architecture is model-independent, another future work is to use the same general concepts of compact trace descriptor and API agnostic modeling on different models and compare the results.
 
+Our proposed future work is to implement this idea using the Swing\cite{swing-paper} and the Harpoon Model\cite{harpoon-paper}.  We can create not just Simitar trace descriptors, but Swing and Harpoon trace descriptors as well. So, as here, we would have the same components: the Sniffer, the SQLite database, the DataProcessor, the flow generator, and the same interface based on an XML Compact Trace Descriptor. The FlowGenerator would abstract the traffic generation in based on the Swing and Harpoon model, in an API independent way as well. 
+
+These implementations can lead to a definitive and standardized model of realistic traffic generation. In this way, progresses on high-speed traffic generation would no more make old traffic generators and models obsolete. Also, would enable the comparison (ain a fair way) which model is actually the best since the same engine and technic for generating packets will be used.
+
+Also, the idea of a Compact Trace Descriptor, by itself separates the idea of traffic generation and the modeling. De development of new methodologies for modeling is  separated from the traffic generation. So a data-developer, using any compact trace descriptor interface may just "plug" his method of data modeling in the FlowGenerator. He has not to care about how the packets were going to be generated anymore nor in what programming language is being used to craft packets.
 
 
 
