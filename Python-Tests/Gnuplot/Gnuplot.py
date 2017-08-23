@@ -1,73 +1,110 @@
+import os
+
 
 class Gnuplot:
     def __init__(self):
-        self.__plot_dir='.'
+        self.__plot_dir=''
         self.__font='Helvetica,10'
         self.__xlabel='xlabel'
         self.__ylabel='ylabel'
         self.__title='title'
         self.__sizeratio='0'
-        self.__linestyle1='12'
-        self.__linestyle2='1'
-        self.__linestyle3='21'
-        self.__linestyle4='41'
+        self.__linestyle_1='r-'
+        self.__linestyle_2='b-'
+        self.__linestyle_3='g-'
+        self.__linestyle_4='v-'
+        self.__linestyle1=self.__map_line_style(self.__linestyle_1)
+        self.__linestyle2=self.__map_line_style(self.__linestyle_2)
+        self.__linestyle3=self.__map_line_style(self.__linestyle_3)
+        self.__linestyle4=self.__map_line_style(self.__linestyle_4)
         self.__legend1='legend1'
         self.__legend2='legend2'
         self.__legend3='legend3'
         self.__legend4='legend4'
         self.__type='lines'
+        self.__lw='2'
 
-    def plot_config(self, plot_dir='.', font='Helvetica,10', xlabel='xlabel', ylabel='ylabel', title='title', sizeratio='0',
-                    linestyle1='12', linestyle2='1', linestyle3='21', linestyle4='41', legend1='legend1',
-                    legend2='legend2', legend3='legend3', legend4='legend4', type='lines'):
+    def plot_config(self, plot_dir='', font='Helvetica,10', xlabel='xlabel', ylabel='ylabel', title='title', sizeratio='0',
+                    linestyle_1='r-', linestyle_2='b-', linestyle_3='g-', linestyle_4='v-', legend1='legend1',
+                    legend2='legend2', legend3='legend3', legend4='legend4', type='lines', line_width='2'):
         self.__plot_dir=plot_dir
         self.__font=font
         self.__xlabel=xlabel
         self.__ylabel=ylabel
         self.__title=title
         self.__sizeratio=sizeratio
-        self.__linestyle1=linestyle1
-        self.__linestyle2=linestyle2
-        self.__linestyle3=linestyle3
-        self.__linestyle4=linestyle4
+        self.__linestyle_1=linestyle_1
+        self.__linestyle_2=linestyle_2
+        self.__linestyle_3=linestyle_3
+        self.__linestyle_4=linestyle_4
+        self.__linestyle1=self.__map_line_style(self.__linestyle_1)
+        self.__linestyle2=self.__map_line_style(self.__linestyle_2)
+        self.__linestyle3=self.__map_line_style(self.__linestyle_3)
+        self.__linestyle4=self.__map_line_style(self.__linestyle_4)
         self.__legend1=legend1
         self.__legend2=legend2
         self.__legend3=legend3
         self.__legend4=legend4
         self.__type=type
+        self.__lw=line_width
 
     def plot_2f1error(self, filename="", datafile=""):
+        command = self.__plot_command('2f1error', filename, datafile)
+        os.system(command)
 
     def plot_2function(self, filename="", datafile=""):
+        command = self.__plot_command('2function', filename, datafile)
+        os.system(command)
 
     def plot_tickbar_label(self, filename="", datafile=""):
+        command = self.__plot_command('tickbar-label', filename, datafile)
+        os.system(command)
 
     def plot_2f2data(self, filename="", datafile=""):
+        command = self.__plot_command('2f2data', filename, datafile)
+        os.system(command)
 
     def plot_2functionxyxy(self, filename="", datafile=""):
+        command = self.__plot_command('2functionxyxy', filename, datafile)
+        os.system(command)
 
     def plot_ferror(self, filename="", datafile=""):
+        command = self.__plot_command('ferror', filename, datafile)
+        os.system(command)
 
     def plot_xtickerror(self, filename="", datafile=""):
+        command = self.__plot_command('xtickerror', filename, datafile)
+        os.system(command)
 
     def plot_2f2data_log2(self, filename="", datafile=""):
+        command = self.__plot_command('2f2data-log2', filename, datafile)
+        os.system(command)
 
     def plot_3function(self, filename="", datafile=""):
+        command = self.__plot_command('3function', filename, datafile)
+        os.system(command)
 
     def plot_function(self, filename="", datafile=""):
+        command = self.__plot_command('function', filename, datafile)
+        os.system(command)
 
     def plot_xtickerror_hline(self, filename="", datafile=""):
+        command = self.__plot_command('xtickerror-hline', filename, datafile)
+        os.system(command)
 
     def plot_2f2data_log(self, filename="", datafile=""):
+        command = self.__plot_command('2f2data-log', filename, datafile)
+        os.system(command)
 
     def plot_4function(self, filename="", datafile=""):
+        command = self.__plot_command('4function', filename, datafile)
+        os.system(command)
 
     def plot_tickbar(self, filename="", datafile=""):
+        command = self.__plot_command('tickbar', filename, datafile)
+        os.system(command)
 
-
-
-    @staticmethod
-    def __map_line_style(line_style):
+    def __map_line_style(self, line_style):
         # red
         if line_style == 'r-':
             line_style_code = 1
@@ -138,4 +175,8 @@ class Gnuplot:
         else:
             line_style_code = 1
         return line_style_code
+
+    def __plot_command(self, plot_type, filename="", datafile=""):
+        command = ""
+        return (command)
 
