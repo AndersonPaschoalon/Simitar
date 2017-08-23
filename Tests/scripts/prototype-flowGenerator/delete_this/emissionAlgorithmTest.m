@@ -1,4 +1,7 @@
 %#!/usr/bin/octave-cli -qf
+
+% this script intend to simulate the emission, but was not finished
+
 % constants 
 %n_samples = 10000;
 %FILE_CUT_TIME = 0.5;

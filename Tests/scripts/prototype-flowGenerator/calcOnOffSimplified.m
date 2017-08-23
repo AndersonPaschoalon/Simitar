@@ -22,6 +22,7 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-31
 
+%% calcOnOff algotithem simplified. Just calc on and off times
 function [onOff onTimes offTimes] = calcOnOffTimes (arrival_time, delta_time, cut_time, min_on_time)
 	m = length(delta_time); % in: number of inter packet times
 	last_off = 0; i = 0; j = 0;

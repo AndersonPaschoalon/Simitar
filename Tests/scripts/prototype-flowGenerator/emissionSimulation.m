@@ -22,6 +22,7 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-03
 
+% This functions show represent emission times of the traffic generator, but was not finished
 function [list_generated] = emissionSimulation (onTimes, offTimes, lambdaOnOffInterfile, lambdaFile)
 	list_generated = [0];
 	lambdaOn = lambdaOnOffInterfile(1);

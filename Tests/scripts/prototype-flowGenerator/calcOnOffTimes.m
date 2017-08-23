@@ -22,7 +22,8 @@
 ## Author: anderson <anderson@duvel-ThinkCentre-M93p>
 ## Created: 2017-05-03
 
-%function [onOff onTimes offTimes psCounter fileSize] = calcOnOffTimes (arrival_time, delta_time, psSize_list, cut_time, min_on_time)
+
+%% calcOnOff times complete
 function [onOff onTimes offTimes pktCounter fileSize] = calcOnOffTimes (arrival_time, delta_time, psSize_list, cut_time, min_on_time)
 	% in: number of inter packet times
 	m = length(delta_time);
