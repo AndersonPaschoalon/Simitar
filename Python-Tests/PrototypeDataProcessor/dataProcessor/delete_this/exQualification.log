@@ -1,0 +1,71 @@
+Ploting inter-arrival cumulative distribution
+
+*********************
+Weibull data fitting
+*********************
+Data linearization plot
+Running Gradient Descent ...
+Theta found by gradient descent: 1.660453 0.248811 
+Initial coast J(1) = 0.348177; Final coast J(end) = 0.083359 
+weibull_alpha =  0.24881
+weibull_betha =  0.0012639
+
+*********************
+Normal data fitting
+*********************
+Mean = 0.054792 
+Std = 0.205602 
+
+*********************
+Exponential data fitting 1: Linear Regression
+*********************
+Data linearization plot
+Running Gradient Descent ...
+Theta found by gradient descent: -0.911908 -2.023115 
+Initial coast J(1) = 1.146149; Final coast J(end) = 0.362445 
+exp_lambda = 2.023115 
+
+*********************
+Exponential data fitting 2: Mean evaluation
+*********************
+exp_lambdaMean = 18.250783 
+
+*********************
+Pareto data fitting 1: Linear regression LR
+*********************
+Data linearization plot
+Running Gradient Descent ...
+Theta found by gradient descent: -2.924649 -0.225451 
+Initial coast J(1) = 0.994926; Final coast J(end) = 0.193587 
+pareto_xmf =    4.3039e+05
+pareto_xm (formula) = 430388.076076 
+pareto_alpha = 0.225451 
+pareto_xm (estimation) = 0.000000 
+
+*********************
+Pareto data fitting 2: Maximum Likehood MLH
+*********************
+pareto_mlh_xm = 0.000000 
+pareto_mlh_alpha = 0.171674 
+
+*********************
+Cauchy data fitting
+*********************
+Data linearization plot
+Running Gradient Descent ...
+Theta found by gradient descent: -85.472359 14863.694928 
+Initial coast J(1) = 687025738.581170; Final coast J(end) = 671584175.384796 
+cauchy_gamma = 0.000067 
+cauchy_x0 = 0.005750 
+
++----------------+--------------+---------------+
+|Function        |AIC           |BIC            |
++----------------+--------------+---------------+
+|Weibull         |-33724.656739	|-33712.704235	|
+|Normal          |-945.263174	|-933.310670	|
+|Exponential(LR) |-3455.031125	|-3449.054873	|
+|Exponential(Me) |-11084.298901	|-11078.322649	|
+|Pareto(LR)      |-34233.903417	|-34221.950913	|
+|Pareto(MLH)     |-34471.116188	|-34459.163684	|
+|Cauchy          |8224.766652	|8236.719156	|
++----------------+--------------+---------------+
