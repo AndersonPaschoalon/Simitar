@@ -1,0 +1,6 @@
+15:49:54 **** Incremental Build of configuration Debug for project kkkkss ****
+make all 
+make: *** No rule to make target 'all'.  Pare.
+
+15:49:54 Build Finished (took 61ms)
+

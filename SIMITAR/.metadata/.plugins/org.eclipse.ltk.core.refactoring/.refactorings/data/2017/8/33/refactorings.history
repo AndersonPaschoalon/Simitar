@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;data/config/simitar-workspace.config.sh&apos; to &apos;simitar-workspace-config.sh&apos;" description="Rename resource &apos;simitar-workspace.config.sh&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="config/simitar-workspace.config.sh" name="simitar-workspace-config.sh" stamp="1502828011253" updateReferences="true"/>
+</session>

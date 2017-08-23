@@ -1,0 +1,3 @@
+RegressionTests.o: ../RegressionTests.cpp ../RegressionTests.h
+
+../RegressionTests.h:

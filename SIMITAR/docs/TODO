@@ -1,0 +1,57 @@
+[DOCUMENTATION]
+tomar nota disso
+sudo pip install argcomplete
+sudo activate-global-python-argcomplete
+
+
+[BUGS]
+
+[sniffer]
+when "sniffer-cli.py new <trace-name> live" is executed without root permission no error messege is displayed and a trace enty is added in the Traces table
+
+
+[LIBSIMITAR] 
+(DatabaseSqlite3)
+TODO 1: CHECHAR SE O TRACE EXISTE, SE NÃO SAIR COM MENSAGEM DE ERRO
+TODO 2: CHECAR SE FLOWS DO TRACE EXISTEM, SE NÃO SAIR COM MENSAGEM DE ERRO
+TODO 3: CHECAR SE AS LISTAS ESTÃO VAZIS ANTES DE USALAS. SE ISSO OCORRER É UM BUG, REPORTAR
+
+
+[IMPROOVMENTS]
+(1) Comando no build.py para gerar a documentação do doxygen em docs/doxygen
+(2) No build.py, criar links na pasta bin para os binarios da pasta apps/ do sniffer e do trace-analyzer
+(3) No build, script com a opção --install
+	* checar se os diretorios e arquivos das variaveis de ambiente existem
+	* automaticamente escrever e deletar as variaveis de ambiente no arquivo ~/.profile e equivalente do root
+	* instalar links dos binarios e apagados no diretorio /usr/bin/
+
+
+[simitar.py script:]
+ Usage:
+ ./simitar --sniffer/-s <interface> --out/-o <cdt-xml-name> (--verbose/-vr)
+ ./simitar --trafic-gen/-tg <traffic-gen-label> -in/-i <cdt-xml-name> (--bind/-b <interface>)  (--dst-ip-mac/-d <ipaddr>@<mac>)||(--dst-file-ip-mac/-fm <file>)||((--dst-file-ip/-fi <file>)) (--verbose/-vr)
+ ./simitar --pkt-injection/-pi <packet-injector-label> -in/-i <cdt-xml-name> (--bind/-b <interface>) (--verbose/-vr)
+ ./simitar --server/-sv <traffic-gen-label> --bind/-b <interface> (--verbose/-vr)
+ ./simitar --help/-h
+ ./simitar --version/-v
+ ./simitar --test/-t
+ ./simitar --list/-l
+ Options:
+ -b/--bind				bind to an interface the output
+ -d/--dst-ip-mac			set unique dst mac and ip with the format <mac>@<ip>
+ if you want to omit, put *. Eg.: *@<ip>
+ -fi/--dst-file-ip		file with a list of dst <ip> addrs for destinations
+ -fm/--dst-file-ip-mac	file with a list of dst <mac>@<ip> addrs  addrs for
+ destinations
+ -h/--help				print a help output
+ -i/--in					in CDT file
+ -l/list					lists: availabe cdt files, supported traffic
+ generators(ditg, iperf), supported pacekt injectors
+ (tcpreplay, libtins, scrapy).
+ -o/--out				out CDT file (for sniffer)
+ -s/--sniffer			works as a sniffer
+ -sv/--server			works as a server for tg
+ -v/--version			--current version
+ -vr/--verbose			displays all outputs (Default: just erros)
+
+

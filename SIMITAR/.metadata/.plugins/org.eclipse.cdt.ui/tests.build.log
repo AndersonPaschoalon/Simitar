@@ -1,0 +1,47 @@
+14:11:59 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+In file included from ../../libsimitar/SimitarWorkspace.h:18:0,
+                 from ../../libsimitar/DatabaseInterface.h:29,
+                 from ../../tests/integration/integration-tests.cpp:10:
+../../libsimitar/PlogMacros.h:20:0: warning: "PLOG_INIT" redefined
+ #define PLOG_INIT(logLevel)\
+ 
+In file included from ../../libsimitar/cfunctions.h:23:0,
+                 from ../../libsimitar/DatabaseInterface.h:28,
+                 from ../../tests/integration/integration-tests.cpp:10:
+../../libsimitar/Defines.h:323:0: note: this is the location of the previous definition
+ #define PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+	 Compile time: 00:00:02
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+	 Link time: 00:00:00
+make[1]: Leaving directory '/home/anderson/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/SIMITAR/tests/unity'
+
+* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
+In file included from ../../libsimitar/SimitarWorkspace.h:18:0,
+                 from ../../libsimitar/DatabaseInterface.h:29,
+                 from ../../tests/unity/unity-tests.cpp:10:
+../../libsimitar/PlogMacros.h:20:0: warning: "PLOG_INIT" redefined
+ #define PLOG_INIT(logLevel)\
+ 
+In file included from ../../libsimitar/cfunctions.h:23:0,
+                 from ../../libsimitar/DatabaseInterface.h:28,
+                 from ../../tests/unity/unity-tests.cpp:10:
+../../libsimitar/Defines.h:323:0: note: this is the location of the previous definition
+ #define PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+	 Compile time: 00:00:01
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+	 Link time: 00:00:01
+make[1]: Leaving directory '/home/anderson/SIMITAR/tests/unity'
+
+14:12:03 Build Finished (took 3s.955ms)
+

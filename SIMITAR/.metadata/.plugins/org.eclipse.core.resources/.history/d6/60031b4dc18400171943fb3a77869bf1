@@ -1,0 +1,133 @@
+//============================================================================
+// Name        : Main.cpp
+// Author      : Anderson Paschoalon
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <DatabaseInterface.h>
+#include <DataProcessor.h>
+#include <DummyFlow.h>
+#include <NetworkTrace.h>
+#include <Defines.h>
+#include <Protocol.h>
+#include <cfunctions.h>
+#include <SimitarWorkspace.h>
+//#include "MesserLog.h"
+
+//Mutex example
+// http://www.thegeekstuff.com/2012/05/c-mutex-examples/?refcom
+
+/*
+./trace-analyzer
+	--time-scale	string
+	--min-on		double
+	--min-off		double
+	--criterion		string
+	--min-pkts		int
+	--change-ip		string
+*/
+int main()
+{
+
+
+	return 0;
+}
+
+/*
+	//MESSER_LOG_INIT(DEBUG);
+	//bool regressionTests = false;
+	bool testDummy = false;
+	bool testDitg = false;
+	bool testSetIPAddrs = false;
+	bool testWorkspace = false;
+
+
+	SimitarWorkspace workspace = SimitarWorkspace();
+	char xml_dir[CHAR_BUFFER];
+
+	strcpy(xml_dir, workspace.dir_xml().c_str());
+
+	cout << "xml_dir:" <<xml_dir << endl;
+
+	//workspace.database_v1();
+	//workspace.test_uniform_times();
+	//c
+
+	//workspace.database_v1();
+
+	//cout << workspace.database_v1() << endl;
+	//
+	//cout << "xml_dir:" <<xml_dir << endl;
+
+	//workspace.test_();
+
+	if (testDummy == true)
+	{
+		string experimentName = "live_background-traffic-1";
+		DataProcessor dp = DataProcessor(miliseconds, 0.1, 30.0, 2,"aic");
+		DatabaseInterface dbif;
+		long int nflows = 0;
+		NetworkTrace* trace = NULL;
+
+		//Create Network Trace from database
+		//TODO: the data object structure do not have to change.. I just want a
+		// constructor that uses a experiment name and a database interface pointer
+		// as input.
+		dbif.getNumberOfFlows(experimentName, &nflows);
+		//MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
+		trace = new NetworkTrace();
+
+		dp.calculate(experimentName, &dbif, trace);
+
+
+
+		trace->setInfoTracename("teste-chapolin");
+		trace->setInfoCommentaries(
+				"este e um teste do compact trace descriptor");
+		trace->setTrafficGenEngine("D-ITG");
+		trace->setInfoCaptureInterface("eth0");
+		trace->setInfoCaptureDate("07/04/2017");
+
+		trace->writeToFile("ms-kkk.xml");
+
+		trace->writeToFile("data/regression-tests/test-trace.xml");
+
+
+		//trace->exec(true);
+		delete trace;
+	}
+	if(testSetIPAddrs == true)
+	{
+		string ipAddrList = "data/";
+		NetworkTrace traceChangeIps =  NetworkTrace("kkk.xml", "D-ITG");
+	}
+	if (testDitg == true)
+	{
+		//string experimentName = "live_background-traffic-1";
+		//DataProcessor dp;
+		//DatabaseInterface dbif;
+		//long int nflows = 0;
+		//NetworkTrace* trace = NULL;
+		//dbif.getNumberOfFlows(experimentName, &nflows);
+		//MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
+		//trace = new NetworkTrace();
+		////dp.calculate(experimentName, &dbif, trace);
+		//trace->setTrafficGenEngine("D-ITG");
+		//trace->exec(true);
+		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "D-ITG");
+		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
+		traceCdt.exec(true);
+
+	}
+	if(testWorkspace == true)
+	{
+		SimitarWorkspace simitar = SimitarWorkspace();
+
+	}
+
+	//MESSER_LOG_END();
+ */
+

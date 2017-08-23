@@ -1,0 +1,17 @@
+DatabaseInterface.o: ../DatabaseInterface.cpp ../DatabaseInterface.h \
+ ../Protocol.h ../RegressionTests.h ../cfunctions.h ../Defines.h \
+ ../SimitarWorkspace.h ../PlogMacros.h
+
+../DatabaseInterface.h:
+
+../Protocol.h:
+
+../RegressionTests.h:
+
+../cfunctions.h:
+
+../Defines.h:
+
+../SimitarWorkspace.h:
+
+../PlogMacros.h:

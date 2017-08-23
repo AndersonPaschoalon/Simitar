@@ -1,0 +1,46 @@
+/*
+ * test.cpp
+ *
+ *  Created on: 16 de ago de 2017
+ *      Author: anderson
+ */
+
+#include <iostream>
+#include "DatabaseInterface.h"
+#include "DataProcessor.h"
+#include "DummyFlow.h"
+#include "NetworkTrace.h"
+#include "Defines.h"
+#include "Protocol.h"
+#include "cfunctions.h"
+#include "SimitarWorkspace.h"
+
+void unity_regression_tests();
+
+int main()
+{
+	unity_regression_tests();
+	return(0);
+}
+
+
+void unity_regression_tests()
+{
+
+	RegressionTests rt;
+
+	DataProcessor unity_data_processor = DataProcessor();
+	SimitarWorkspace unity_simitarWorkspace = SimitarWorkspace();
+	Protocol unity_protocol = Protocol();
+	NetworkTrace unity_network_trace;
+	StochasticModelFit unity_stochastic_model = StochasticModelFit();
+	unity_data_processor.regression_tests();
+	unity_protocol.regression_tests();
+	unity_stochastic_model.unity_tests();
+	cfunctions_unitytests();
+	unity_network_trace.regression_tests();
+	unity_simitarWorkspace.test_();
+	//unity_network_trace.regression_tests();
+
+}
+

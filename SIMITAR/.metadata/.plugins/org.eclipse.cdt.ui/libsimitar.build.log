@@ -1,0 +1,46 @@
+14:11:54 **** Incremental Build of configuration Release for project libsimitar ****
+make all 
+
+* Compiling: ../libsimitar/DataProcessor.cpp -> ../libsimitar/obj/DataProcessor.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DataProcessor.o ../libsimitar/DataProcessor.cpp -I ../deps/ -I ../libsimitar/
+In file included from ../libsimitar/SimitarWorkspace.h:18:0,
+                 from ../libsimitar/DatabaseInterface.h:29,
+                 from ../libsimitar/DataProcessor.h:32,
+                 from ../libsimitar/DataProcessor.cpp:8:
+../libsimitar/PlogMacros.h:20:0: warning: "PLOG_INIT" redefined
+ #define PLOG_INIT(logLevel)\
+ 
+In file included from ../libsimitar/DataProcessor.h:31:0,
+                 from ../libsimitar/DataProcessor.cpp:8:
+../libsimitar/Defines.h:323:0: note: this is the location of the previous definition
+ #define PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+	 Compile time: 00:00:04
+
+* Compiling: ../libsimitar/TraceDbManager.cpp -> ../libsimitar/obj/TraceDbManager.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/TraceDbManager.o ../libsimitar/TraceDbManager.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/TraceDbManager.cpp: In member function ‘int TraceDbManager::check_if_trace_exists_or_not_empty(std::__cxx11::string)’:
+../libsimitar/TraceDbManager.cpp:135:12: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+   printf("");
+            ^
+	 Compile time: 00:00:00
+
+* Compiling: ../libsimitar/CsvFile.cpp -> ../libsimitar/obj/CsvFile.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/CsvFile.o ../libsimitar/CsvFile.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:00
+
+* Archiving: libsimitar.aar rvs   libsimitar.a  ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/obj/DummyFlow.o ../libsimitar/obj/DatabaseSqlite3.o ../libsimitar/obj/RegressionTests.o ../libsimitar/obj/NetworkTrace.o ../libsimitar/obj/cfunctions.o ../libsimitar/obj/NetworkFlow.o ../libsimitar/obj/DatabaseInterface.o ../libsimitar/obj/StochasticModelFit.o ../libsimitar/obj/DataProcessor.o ../libsimitar/obj/TraceDbManager.o ../libsimitar/obj/CsvFile.o 
+ar: criando libsimitar.a
+a - ../libsimitar/obj/SimitarWorkspace.o
+a - ../libsimitar/obj/DummyFlow.o
+a - ../libsimitar/obj/DatabaseSqlite3.o
+a - ../libsimitar/obj/RegressionTests.o
+a - ../libsimitar/obj/NetworkTrace.o
+a - ../libsimitar/obj/cfunctions.o
+a - ../libsimitar/obj/NetworkFlow.o
+a - ../libsimitar/obj/DatabaseInterface.o
+a - ../libsimitar/obj/StochasticModelFit.o
+a - ../libsimitar/obj/DataProcessor.o
+a - ../libsimitar/obj/TraceDbManager.o
+a - ../libsimitar/obj/CsvFile.o
+	 Link time: 00:00:00
+
+14:11:59 Build Finished (took 4s.330ms)
+

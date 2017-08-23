@@ -1,0 +1,205 @@
+//============================================================================
+// Name        : Main.cpp
+// Author      : Anderson Paschoalon
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+// Deps
+#include <iostream>
+#include <string>
+#include <iostream>
+#include <algorithm>
+#include <tclap/CmdLine.h>
+// Simitar
+#include <DatabaseInterface.h>
+#include <DataProcessor.h>
+#include <DummyFlow.h>
+#include <NetworkTrace.h>
+#include <Defines.h>
+#include <Protocol.h>
+#include <cfunctions.h>
+#include <SimitarWorkspace.h>
+
+
+//#include "MesserLog.h"
+
+//Mutex example
+// http://www.thegeekstuff.com/2012/05/c-mutex-examples/?refcom
+
+/*
+./trace-analyzer
+	--trace-name	string
+	--time-scale	string		opt
+	--min-on		double		opt
+	--min-off		double		opt
+	--criterion		string		opt
+	--min-pkts		int			opt
+*/
+int main(int argc, char** argv)
+{
+	try {
+		TCLAP::CmdLine cmd(
+				"SIMITAR trace-analyzer component. It take as input a measured trace from sniffer, " +
+				"and generate a Compact Trace Descriptor in the XML format. The Compact Trace" +
+				" Descriptor files are stored inside the SIMITAR workspace in the directory "
+				+ " `data/xml/`, and may be edited manually. ",
+				' ', "0.9");
+
+		TCLAP::ValueArg<std::string> nameArg("n", "name", "Name to print", false,
+				"", "string");
+		TCLAP::ValueArg<int> intArg("i", "int", "int arg", true, 10,
+				"int");
+		TCLAP::ValueArg<double> doubleArg("d", "double", "double arg",
+				false, 3.14, "double");
+		TCLAP::ValueArg<std::string> strArg("s", "str", "str arg", false, "ttt",
+				"string");
+		TCLAP::ValueArg<std::string> name2Arg("m", "name-name", "Name2 to print", false,
+				"homer2", "string");
+
+		cmd.add(nameArg);
+		cmd.add(intArg);
+		cmd.add(doubleArg);
+		cmd.add(strArg);
+		cmd.add(name2Arg);
+
+		TCLAP::SwitchArg boolflag("f", "flag", "bool flag", cmd, false);
+
+		cmd.parse(argc, argv);
+
+		std::string name = nameArg.getValue();
+		int intVal = intArg.getValue();
+		std::string strVal = strArg.getValue();
+		double doubleVal = doubleArg.getValue();
+		bool flag = boolflag.getValue();
+		std::string name2 = name2Arg.getValue();
+
+		// Do what you intend.
+
+		if(name == "")
+		{
+			std::cerr << "trace-analyzer Error: Missing argument trace name (--name)" 	<< std::endl;
+			return(-1);
+		}
+		if (flag) {
+			std::cout << "flag is active!\n";
+			std::cout << "intVal:" << intVal << std::endl;
+			std::cout << "strVal:" << strVal << std::endl;
+			std::cout << "doubleVal:" << doubleVal << std::endl;
+			std::cout << "flag:" << flag << std::endl;
+			std::cout << "name-name:" << name2 << std::endl;
+		} else{
+			std::cout << "flag is inative :( \n";
+			std::cout << "intVal:" << intVal << std::endl;
+			std::cout << "strVal:" << strVal << std::endl;
+			std::cout << "doubleVal:" << doubleVal << std::endl;
+			std::cout << "flag:" << flag << std::endl;
+			std::cout << "name-name:" << name2 << std::endl;
+		}
+
+	} catch (TCLAP::ArgException &e)  // catch any exceptions
+	{
+		std::cerr << "trace-analyzer Error: " << e.error() << " for arg " << e.argId()
+				<< std::endl;
+	}
+
+
+	return 0;
+}
+
+/*
+	//MESSER_LOG_INIT(DEBUG);
+	//bool regressionTests = false;
+	bool testDummy = false;
+	bool testDitg = false;
+	bool testSetIPAddrs = false;
+	bool testWorkspace = false;
+
+
+	SimitarWorkspace workspace = SimitarWorkspace();
+	char xml_dir[CHAR_BUFFER];
+
+	strcpy(xml_dir, workspace.dir_xml().c_str());
+
+	cout << "xml_dir:" <<xml_dir << endl;
+
+	//workspace.database_v1();
+	//workspace.test_uniform_times();
+	//c
+
+	//workspace.database_v1();
+
+	//cout << workspace.database_v1() << endl;
+	//
+	//cout << "xml_dir:" <<xml_dir << endl;
+
+	//workspace.test_();
+
+	if (testDummy == true)
+	{
+		string experimentName = "live_background-traffic-1";
+		DataProcessor dp = DataProcessor(miliseconds, 0.1, 30.0, 2,"aic");
+		DatabaseInterface dbif;
+		long int nflows = 0;
+		NetworkTrace* trace = NULL;
+
+		//Create Network Trace from database
+		//TODO: the data object structure do not have to change.. I just want a
+		// constructor that uses a experiment name and a database interface pointer
+		// as input.
+		dbif.getNumberOfFlows(experimentName, &nflows);
+		//MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
+		trace = new NetworkTrace();
+
+		dp.calculate(experimentName, &dbif, trace);
+
+
+
+		trace->setInfoTracename("teste-chapolin");
+		trace->setInfoCommentaries(
+				"este e um teste do compact trace descriptor");
+		trace->setTrafficGenEngine("D-ITG");
+		trace->setInfoCaptureInterface("eth0");
+		trace->setInfoCaptureDate("07/04/2017");
+
+		trace->writeToFile("ms-kkk.xml");
+
+		trace->writeToFile("data/regression-tests/test-trace.xml");
+
+
+		//trace->exec(true);
+		delete trace;
+	}
+	if(testSetIPAddrs == true)
+	{
+		string ipAddrList = "data/";
+		NetworkTrace traceChangeIps =  NetworkTrace("kkk.xml", "D-ITG");
+	}
+	if (testDitg == true)
+	{
+		//string experimentName = "live_background-traffic-1";
+		//DataProcessor dp;
+		//DatabaseInterface dbif;
+		//long int nflows = 0;
+		//NetworkTrace* trace = NULL;
+		//dbif.getNumberOfFlows(experimentName, &nflows);
+		//MESSER_NOTICE("Creating a NetworkTrace. (nflows = %d) @<%s, %s>", nflows);
+		//trace = new NetworkTrace();
+		////dp.calculate(experimentName, &dbif, trace);
+		//trace->setTrafficGenEngine("D-ITG");
+		//trace->exec(true);
+		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "D-ITG");
+		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
+		traceCdt.exec(true);
+
+	}
+	if(testWorkspace == true)
+	{
+		SimitarWorkspace simitar = SimitarWorkspace();
+
+	}
+
+	//MESSER_LOG_END();
+ */
+

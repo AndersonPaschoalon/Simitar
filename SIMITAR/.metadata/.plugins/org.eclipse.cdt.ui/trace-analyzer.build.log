@@ -1,0 +1,6 @@
+14:11:59 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+
+14:11:59 Build Finished (took 87ms)
+

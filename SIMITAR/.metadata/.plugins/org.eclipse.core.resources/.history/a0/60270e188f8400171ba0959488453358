@@ -1,0 +1,8 @@
+cfunctions.o: ../cfunctions.cpp ../cfunctions.h ../Defines.h \
+ ../RegressionTests.h
+
+../cfunctions.h:
+
+../Defines.h:
+
+../RegressionTests.h:

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.cdt.launch.applicationLaunchType">
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.AUTO_SOLIB" value="true"/>
+<listAttribute key="org.eclipse.cdt.dsf.gdb.AUTO_SOLIB_LIST"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="gdb"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_ON_FORK" value="false"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.GDB_INIT" value=".gdbinit"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.NON_STOP" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.REVERSE" value="false"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.REVERSE_MODE" value="UseSoftTrace"/>
+<listAttribute key="org.eclipse.cdt.dsf.gdb.SOLIB_PATH"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.TRACEPOINT_MODE" value="TP_NORMAL_ONLY"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.internal.ui.launching.LocalApplicationCDebuggerTab.DEFAULTS_SET" value="true"/>
+<intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="gdb"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="unity-tests; integration-tests"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="trace-analyzer"/>
+<booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value=""/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/trace-analyzer"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.environmentVariables">
+<mapEntry key="SIMITAR_CTD_XML_DIR" value="/home/anderson/SIMITAR/data/xml/"/>
+<mapEntry key="SIMITAR_DATABASE_V1" value="/home/anderson/SIMITAR/data/db/trace_v1.db"/>
+<mapEntry key="SIMITAR_DATABASE_V2" value="/home/anderson/SIMITAR/data/db/trace.db"/>
+<mapEntry key="SIMITAR_LOGFILE" value="/home/anderson/SIMITAR/data/log/simitar.log"/>
+<mapEntry key="SIMITAR_TEST_COPY2_CTD_XML" value="/home/anderson/SIMITAR/data/test/copy2-test-trace.xml"/>
+<mapEntry key="SIMITAR_TEST_COPY_CTD_XML" value="/home/anderson/SIMITAR/data/test/copy-test-trace.xml"/>
+<mapEntry key="SIMITAR_TEST_CTD_XML" value="/home/anderson/SIMITAR/data/test/test-trace.xml"/>
+<mapEntry key="SIMITAR_TEST_CTD_XML_IPMAC" value="/home/anderson/SIMITAR/data/test/changed-ips-macs-trace.xml"/>
+<mapEntry key="SIMITAR_TEST_DATABASE" value="/home/anderson/SIMITAR/data/test/regressiontests_trace.db"/>
+<mapEntry key="SIMITAR_TEST_DATA_DIR" value="/home/anderson/SIMITAR/data/test/"/>
+<mapEntry key="SIMITAR_TEST_EXPONENTIAL_TIMES" value="/home/anderson/SIMITAR/data/test/exp_interarrival_times.txt"/>
+<mapEntry key="SIMITAR_TEST_IPMAC" value="/home/anderson/SIMITAR/data/test/ipmac.csv"/>
+<mapEntry key="SIMITAR_TEST_UNIFORM_TIMES" value="/home/anderson/SIMITAR/data/test/rand_interarrival_times.txt"/>
+<mapEntry key="SIMITAR_WORKSPACE" value="/home/anderson/SIMITAR"/>
+</mapAttribute>
+<stringAttribute key="process_factory_id" value="org.eclipse.cdt.dsf.gdb.GdbProcessFactory"/>
+</launchConfiguration>

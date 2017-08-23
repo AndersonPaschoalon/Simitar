@@ -1,0 +1,63 @@
+/*
+ * SimitarWorkspace.h
+ *
+ *  Created on: 26 de jul de 2017
+ *      Author: anderson
+ */
+
+#ifndef SIMITARWORKSPACE_H_
+#define SIMITARWORKSPACE_H_
+
+#include "Defines.h"
+#include "PlogMacros.h"
+
+class SimitarWorkspace {
+public:
+public:
+	/**
+	 * Store environment variables of simitar framework.
+	 * The env variables must be set before using this class
+	 */
+	SimitarWorkspace(){
+
+		strcpy(m_path_database, std::getenv("SIMITAR_DATABASE"));
+		strcpy(m_dir_log, std::getenv("SIMITAR_LOG_DIR"));
+		strcpy(m_dir_test, std::getenv("SIMITAR_TEST_DATA_DIR"));
+		strcpy(m_dir_xml, std::getenv("SIMITAR_CTD_XML_DIR"));
+		//strcpy(m_dir_xml, std::getenv("kkkkktt"));
+
+		//if(strcmp(m_path_database, "" ))
+		//{
+		//	exit(0);
+		//}
+
+		std::cout << "SIMITAR_DATABASE:" << m_path_database << std::endl;
+		std::cout << "SIMITAR_LOG_DIR:" << m_dir_log << std::endl;
+		std::cout << "SIMITAR_TEST_DATA_DIR:" << m_dir_test << std::endl;
+		std::cout << "SIMITAR_CTD_XML_DIR:" << m_dir_xml<< std::endl;
+
+	}
+	virtual ~SimitarWorkspace(){
+
+	}
+	void path_database(char* dbStr){
+
+	}
+	void dir_log(char* logStr){
+
+	}
+	void dir_test(char* testStr){
+
+	}
+	void dir_xml(char* xmlStr){
+
+	}
+
+private:
+	char m_path_database[CHAR_BUFFER];
+	char m_dir_log[CHAR_BUFFER];
+	char m_dir_test[CHAR_BUFFER];
+	char m_dir_xml[CHAR_BUFFER];
+};
+
+#endif /* SIMITARWORKSPACE_H_ */

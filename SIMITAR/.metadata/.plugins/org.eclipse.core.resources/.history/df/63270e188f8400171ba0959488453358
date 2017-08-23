@@ -1,0 +1,21 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../obj/CsvFile.o \
+../obj/DataProcessor.o \
+../obj/DatabaseInterface.o \
+../obj/DummyFlow.o \
+../obj/NetworkFlow.o \
+../obj/NetworkTrace.o \
+../obj/RegressionTests.o \
+../obj/SimitarWorkspace.o \
+../obj/StochasticModelFit.o \
+../obj/cfunctions.o \
+../obj/test.o 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+

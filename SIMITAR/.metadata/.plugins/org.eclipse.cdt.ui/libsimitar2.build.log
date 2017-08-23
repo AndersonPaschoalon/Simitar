@@ -1,0 +1,12 @@
+11:03:51 **** Incremental Build of configuration Debug for project libsimitar2 ****
+make all 
+g++ -c ../*.cpp ../*.h
+g++: error: ../*.cpp: Arquivo ou diretório não encontrado
+g++: error: ../*.h: Arquivo ou diretório não encontrado
+g++: fatal error: no input files
+Makefile:14: recipe for target 'target' failed
+compilation terminated.
+make: *** [target] Error 1
+
+11:03:51 Build Finished (took 64ms)
+

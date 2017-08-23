@@ -1,0 +1,23 @@
+//============================================================================
+// Name        : tests.cpp
+// Author      : Anderson Paschoalon
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "DatabaseInterface.h"
+#include "DataProcessor.h"
+#include "DummyFlow.h"
+#include "NetworkTrace.h"
+#include "Defines.h"
+#include "Protocol.h"
+#include "cfunctions.h"
+#include "SimitarWorkspace.h"
+using namespace std;
+
+int main() {
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	return 0;
+}

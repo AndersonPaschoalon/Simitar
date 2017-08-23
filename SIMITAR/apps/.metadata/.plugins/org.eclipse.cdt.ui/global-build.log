@@ -1,0 +1,356 @@
+11:03:36 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+g++ -c ../libsimitar /*.cpp  -I ../deps/
+g++: error: /*.cpp: Arquivo ou diretório não encontrado
+make: *** [target] Error 1
+Makefile:14: recipe for target 'target' failed
+15:32:07 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+15:32:07 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+15:32:08 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make trace-analyzer
+make[1]: Entering directory '/home/anderson/SIMITAR/trace-analyzer'
+make[1]: 'trace-analyzer' is up to date.
+make[1]: Leaving directory '/home/anderson/SIMITAR/trace-analyzer'
+make clean-obj
+make[1]: Entering directory '/home/anderson/SIMITAR/trace-analyzer'
+rm -f ./src/*.o src/*.gch
+make[1]: Leaving directory '/home/anderson/SIMITAR/trace-analyzer'
+22:14:49 **** Clean-only build of configuration Debug for project ditg-flow ****
+make clean 
+rm -rf  ./src/ditg-flow.o  ./src/ditg-flow.d  ditg-flow
+ 
+22:14:49 **** Clean-only build of configuration Debug for project libsimitar ****
+make clean 
+rm -f *.o  *.gch
+rm -f obj/*
+rm -f *.a
+22:14:49 **** Clean-only build of configuration Default for project trace-analyzer ****
+make clean 
+rm -f *.o  *.gch
+rm -f obj/*
+rm -f *.a
+rm -f trace-analyzer
+22:14:51 **** Build of configuration Debug for project ditg-flow ****
+make all 
+Building file: ../src/ditg-flow.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/ditg-flow.o" -o "src/ditg-flow.o" "../src/ditg-flow.cpp"
+Finished building: ../src/ditg-flow.cpp
+ 
+Building target: ditg-flow
+Invoking: GCC C++ Linker
+g++  -o "ditg-flow"  ./src/ditg-flow.o   
+Finished building target: ditg-flow
+ 
+22:14:52 **** Build of configuration Debug for project libsimitar ****
+make all 
+echo ../deps/
+../deps/
+g++  -c ../libsimitar/DummyFlow.cpp ../libsimitar/RegressionTests.cpp ../libsimitar/NetworkTrace.cpp ../libsimitar/cfunctions.cpp ../libsimitar/NetworkFlow.cpp ../libsimitar/DatabaseInterface.cpp ../libsimitar/StochasticModelFit.cpp ../libsimitar/cfunctions.h ../libsimitar/NetworkFlow.h ../libsimitar/StochasticModelFit.h ../libsimitar/DatabaseInterface.h ../libsimitar/DummyFlow.h ../libsimitar/RegressionTests.h ../libsimitar/Defines.h ../libsimitar/Protocol.h ../libsimitar/PlogMacros.h ../libsimitar/NetworkTrace.h -I ../deps/
+../libsimitar/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../libsimitar/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+mv *.o ../libsimitar/obj
+ar rvs libsimitar.a  ../libsimitar/obj/*.o
+ar: criando libsimitar.a
+a - ../libsimitar/obj/DatabaseInterface.o
+a - ../libsimitar/obj/DummyFlow.o
+a - ../libsimitar/obj/NetworkFlow.o
+a - ../libsimitar/obj/NetworkTrace.o
+a - ../libsimitar/obj/RegressionTests.o
+a - ../libsimitar/obj/StochasticModelFit.o
+a - ../libsimitar/obj/cfunctions.o
+22:15:28 **** Build of configuration Default for project trace-analyzer ****
+make all 
+g++  -c ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h -I ../deps/ -I ../libsimitar/
+mv *.o ../trace-analyzer/src/obj
+g++   -o trace-analyzer ../trace-analyzer/src/obj/*.o  -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  -I ../deps/ -I ../libsimitar/
+#g++   -o trace-analyzer ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  -I ../deps/ -I ../libsimitar/
+#g++  -c ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h -I ../deps/ -I ../libsimitar/
+#mv *.o ../trace-analyzer/src/obj
+# -o trace-analyzer ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h
+#echo "target->" trace-analyzer
+#echo "deps->" ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h
+# g++   -o   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  -I ../deps/ -I ../libsimitar/   
+22:18:33 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:18:33 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+22:18:33 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+22:18:56 **** Clean-only build of configuration Debug for project libsimitar ****
+make clean 
+rm -f *.o  *.gch
+rm -f obj/*
+rm -f *.a
+22:19:04 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:19:04 **** Build of configuration Debug for project libsimitar ****
+make all 
+echo ../deps/
+../deps/
+g++  -c ../libsimitar/DummyFlow.cpp ../libsimitar/RegressionTests.cpp ../libsimitar/NetworkTrace.cpp ../libsimitar/cfunctions.cpp ../libsimitar/NetworkFlow.cpp ../libsimitar/DatabaseInterface.cpp ../libsimitar/StochasticModelFit.cpp ../libsimitar/cfunctions.h ../libsimitar/NetworkFlow.h ../libsimitar/StochasticModelFit.h ../libsimitar/DatabaseInterface.h ../libsimitar/DummyFlow.h ../libsimitar/RegressionTests.h ../libsimitar/Defines.h ../libsimitar/Protocol.h ../libsimitar/PlogMacros.h ../libsimitar/NetworkTrace.h -I ../deps/
+../libsimitar/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../libsimitar/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+mv *.o ../libsimitar/obj
+ar rvs libsimitar.a  ../libsimitar/obj/*.o
+ar: criando libsimitar.a
+a - ../libsimitar/obj/DatabaseInterface.o
+a - ../libsimitar/obj/DummyFlow.o
+a - ../libsimitar/obj/NetworkFlow.o
+a - ../libsimitar/obj/NetworkTrace.o
+a - ../libsimitar/obj/RegressionTests.o
+a - ../libsimitar/obj/StochasticModelFit.o
+a - ../libsimitar/obj/cfunctions.o
+22:19:37 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+22:19:46 **** Clean-only build of configuration Debug for project libsimitar ****
+make clean 
+rm -f *.o  *.gch
+rm -f obj/*
+rm -f *.a
+22:19:51 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:19:51 **** Build of configuration Debug for project libsimitar ****
+make all 
+echo ../deps/
+../deps/
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c ../libsimitar/DummyFlow.cpp ../libsimitar/RegressionTests.cpp ../libsimitar/NetworkTrace.cpp ../libsimitar/cfunctions.cpp ../libsimitar/NetworkFlow.cpp ../libsimitar/DatabaseInterface.cpp ../libsimitar/StochasticModelFit.cpp ../libsimitar/cfunctions.h ../libsimitar/NetworkFlow.h ../libsimitar/StochasticModelFit.h ../libsimitar/DatabaseInterface.h ../libsimitar/DummyFlow.h ../libsimitar/RegressionTests.h ../libsimitar/Defines.h ../libsimitar/Protocol.h ../libsimitar/PlogMacros.h ../libsimitar/NetworkTrace.h -I ../deps/
+../libsimitar/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../libsimitar/DummyFlow.cpp:27:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../libsimitar/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/DummyFlow.cpp:75:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../libsimitar/DummyFlow.cpp:77:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../libsimitar/DummyFlow.cpp:79:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+../libsimitar/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../libsimitar/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../libsimitar/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIfIp(char*, char*)’:
+../libsimitar/NetworkTrace.cpp:954:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIp(const char*, char*)’:
+../libsimitar/NetworkTrace.cpp:993:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../libsimitar/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../libsimitar/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../libsimitar/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+../libsimitar/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../libsimitar/NetworkFlow.cpp:805:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../libsimitar/NetworkFlow.cpp:844:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+mv *.o ../libsimitar/obj
+ar rvs libsimitar.a  ../libsimitar/obj/*.o
+ar: criando libsimitar.a
+a - ../libsimitar/obj/DatabaseInterface.o
+a - ../libsimitar/obj/DummyFlow.o
+a - ../libsimitar/obj/NetworkFlow.o
+a - ../libsimitar/obj/NetworkTrace.o
+a - ../libsimitar/obj/RegressionTests.o
+a - ../libsimitar/obj/StochasticModelFit.o
+a - ../libsimitar/obj/cfunctions.o
+22:20:29 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+23:24:51 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+23:24:51 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+23:24:52 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+23:25:01 **** Clean-only build of configuration Default for project trace-analyzer ****
+make clean 
+rm -f *.o  *.gch *gcno src/*.gch src/*.gcno
+rm -f obj/*
+rm -f *.a
+rm -f trace-analyzer
+23:25:11 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+23:25:11 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+23:25:11 **** Build of configuration Default for project trace-analyzer ****
+make all 
+g++  -p -pg -ftest-coverage -fprofile-arcs -o  trace-analyzer ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  -I ../deps/ -I ../libsimitar/ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall
+23:25:41 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+23:25:41 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+19:01:29 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+19:01:29 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+echo ../deps/
+../deps/
+g++ -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c  ../libsimitar/DummyFlow.cpp ../libsimitar/NetworkTrace.cpp ../libsimitar/cfunctions.cpp ../libsimitar/DatabaseInterface.cpp ../libsimitar/RegressionTests.cpp ../libsimitar/StochasticModelFit.cpp ../libsimitar/NetworkFlow.cpp ../libsimitar/cfunctions.h ../libsimitar/NetworkFlow.h ../libsimitar/StochasticModelFit.h ../libsimitar/DatabaseInterface.h ../libsimitar/DummyFlow.h ../libsimitar/RegressionTests.h ../libsimitar/Defines.h ../libsimitar/Protocol.h ../libsimitar/PlogMacros.h ../libsimitar/SimitarWorkspace.h ../libsimitar/NetworkTrace.h -I ../deps/ -fmessage-length=0 -std=c++11 
+../libsimitar/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../libsimitar/DummyFlow.cpp:28:10: warning: unused variable ‘flowId’ [-Wunused-variable]
+  counter flowId = 0;
+          ^~~~~~
+../libsimitar/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/DummyFlow.cpp:76:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../libsimitar/DummyFlow.cpp:78:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../libsimitar/DummyFlow.cpp:80:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+../libsimitar/NetworkTrace.cpp: In constructor ‘NetworkTrace::NetworkTrace(const string&, const string&)’:
+../libsimitar/NetworkTrace.cpp:28:11: warning: variable ‘fcounter’ set but not used [-Wunused-but-set-variable]
+  long int fcounter = 0;
+           ^~~~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getDstIpMac(uint&, const char*, char*, char*)’:
+../libsimitar/NetworkTrace.cpp:896:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if (filePosition < counter)
+        ~~~~~~~~~~~~~^~~~~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIfIp(char*, char*)’:
+../libsimitar/NetworkTrace.cpp:954:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIp(const char*, char*)’:
+../libsimitar/NetworkTrace.cpp:993:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../libsimitar/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../libsimitar/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../libsimitar/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+../libsimitar/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIfIp(char*, char*)’:
+../libsimitar/NetworkFlow.cpp:805:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/NetworkFlow.cpp: In member function ‘int NetworkFlow::getLocalIp(const char*, char*)’:
+../libsimitar/NetworkFlow.cpp:844:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+In file included from ../libsimitar/SimitarWorkspace.h:12:0:
+../libsimitar/PlogMacros.h:21:0: warning: "PLOG_INIT" redefined
+ #define PLOG_INIT(logLevel) plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+In file included from ../libsimitar/SimitarWorkspace.h:11:0:
+../libsimitar/Defines.h:323:0: note: this is the location of the previous definition
+ #define PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+In file included from ../libsimitar/SimitarWorkspace.h:12:0:
+../libsimitar/PlogMacros.h:25:0: warning: "PLOG_CONF" redefined
+ #define PLOG_CONF(logLevel, LogFileName, LogFileMaxSize, NLogFiles) plog::RollingFileAppender<plog::CsvFormatter> fileAppender(LogFileName, LogFileMaxSize, NLogFiles); \
+ 
+In file included from ../libsimitar/SimitarWorkspace.h:11:0:
+../libsimitar/Defines.h:327:0: note: this is the location of the previous definition
+ #define PLOG_CONF(LogFileName, LogFileMaxSize, NLogFiles) plog::RollingFileAppender<plog::CsvFormatter> fileAppender(LogFileName, LogFileMaxSize, NLogFiles); \
+ 
+../libsimitar/SimitarWorkspace.h: In constructor ‘SimitarWorkspace::SimitarWorkspace()’:
+../libsimitar/SimitarWorkspace.h:22:52: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_path_database  = std::getenv("SIMITAR_DATABASE");
+                                                    ^
+../libsimitar/SimitarWorkspace.h:23:45: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_dir_log  = std::getenv("SIMITAR_LOG_DIR");
+                                             ^
+../libsimitar/SimitarWorkspace.h:24:52: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_dir_test  = std::getenv("SIMITAR_TEST_DATA_DIR");
+                                                    ^
+../libsimitar/SimitarWorkspace.h:25:49: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_dir_xml  = std::getenv("SIMITAR_CTD_XML_DIR");
+                                                 ^
+make: *** [libsimitar.a] Error 1
+Makefile:25: recipe for target 'libsimitar.a' failed
+19:02:09 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+g++  -p -pg -ftest-coverage -fprofile-arcs -o  trace-analyzer ../trace-analyzer/src/Main.cpp ../trace-analyzer/src/DataProcessor.cpp ../trace-analyzer/src/DataProcessor.h -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  -I ../deps/ -I ../libsimitar/ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall
+In file included from ../libsimitar/SimitarWorkspace.h:12:0,
+                 from ../trace-analyzer/src/Main.cpp:17:
+../libsimitar/PlogMacros.h:21:0: warning: "PLOG_INIT" redefined
+ #define PLOG_INIT(logLevel) plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+In file included from ../libsimitar/cfunctions.h:28:0,
+                 from ../libsimitar/DatabaseInterface.h:28,
+                 from ../trace-analyzer/src/Main.cpp:10:
+../libsimitar/Defines.h:323:0: note: this is the location of the previous definition
+ #define PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+ 
+In file included from ../libsimitar/SimitarWorkspace.h:12:0,
+                 from ../trace-analyzer/src/Main.cpp:17:
+../libsimitar/PlogMacros.h:25:0: warning: "PLOG_CONF" redefined
+ #define PLOG_CONF(logLevel, LogFileName, LogFileMaxSize, NLogFiles) plog::RollingFileAppender<plog::CsvFormatter> fileAppender(LogFileName, LogFileMaxSize, NLogFiles); \
+ 
+In file included from ../libsimitar/cfunctions.h:28:0,
+                 from ../libsimitar/DatabaseInterface.h:28,
+                 from ../trace-analyzer/src/Main.cpp:10:
+../libsimitar/Defines.h:327:0: note: this is the location of the previous definition
+ #define PLOG_CONF(LogFileName, LogFileMaxSize, NLogFiles) plog::RollingFileAppender<plog::CsvFormatter> fileAppender(LogFileName, LogFileMaxSize, NLogFiles); \
+ 
+In file included from ../trace-analyzer/src/Main.cpp:17:0:
+../libsimitar/SimitarWorkspace.h: In constructor ‘SimitarWorkspace::SimitarWorkspace()’:
+../libsimitar/SimitarWorkspace.h:22:52: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_path_database  = std::getenv("SIMITAR_DATABASE");
+                                                    ^
+../libsimitar/SimitarWorkspace.h:23:45: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_dir_log  = std::getenv("SIMITAR_LOG_DIR");
+                                             ^
+../libsimitar/SimitarWorkspace.h:24:52: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_dir_test  = std::getenv("SIMITAR_TEST_DATA_DIR");
+                                                    ^
+../libsimitar/SimitarWorkspace.h:25:49: error: incompatible types in assignment of ‘char*’ to ‘char [120]’
+   m_dir_xml  = std::getenv("SIMITAR_CTD_XML_DIR");
+                                                 ^
+make: *** [trace-analyzer] Error 1
+Makefile:29: recipe for target 'trace-analyzer' failed
+19:31:56 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+make: Nothing to be done for 'all'.
+19:31:56 **** Incremental Build of configuration Debug for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+19:31:56 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.

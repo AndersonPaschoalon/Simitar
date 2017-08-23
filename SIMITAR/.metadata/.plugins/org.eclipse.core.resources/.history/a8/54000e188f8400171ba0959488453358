@@ -1,0 +1,8 @@
+SimitarWorkspace.o: ../SimitarWorkspace.cpp ../SimitarWorkspace.h \
+ ../Defines.h ../PlogMacros.h
+
+../SimitarWorkspace.h:
+
+../Defines.h:
+
+../PlogMacros.h:

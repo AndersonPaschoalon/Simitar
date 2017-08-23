@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;trace-analyzer/src/trace-analyzer.cpp&apos; to &apos;Main.cpp&apos;" description="Rename resource &apos;trace-analyzer.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/trace-analyzer.cpp" name="Main.cpp" stamp="1500405844732" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;trace-analyzer/Debug&apos; to &apos;bin&apos;" description="Rename resource &apos;Debug&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug" name="bin" stamp="1500587729457" updateReferences="true"/>
+</session>

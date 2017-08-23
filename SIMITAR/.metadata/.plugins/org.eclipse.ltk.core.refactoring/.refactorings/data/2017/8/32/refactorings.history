@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;data/test/ipmac.txt&apos; to &apos;ipmac.csv&apos;" description="Rename resource &apos;ipmac.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test/ipmac.txt" name="ipmac.csv" stamp="1502256374665" updateReferences="true"/>
+</session>

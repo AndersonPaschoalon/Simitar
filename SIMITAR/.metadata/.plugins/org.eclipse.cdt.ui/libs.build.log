@@ -1,0 +1,24 @@
+10:25:15 **** Incremental Build of configuration Default for project libs ****
+make all 
+g++ -c ../common/*.cpp ../common/*.h
+../common/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../common/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+ar rvs libsimitar.a   *.o
+ar: criando libsimitar.a
+a - DatabaseInterface.o
+a - DummyFlow.o
+a - NetworkFlow.o
+a - NetworkTrace.o
+a - RegressionTests.o
+a - StochasticModelFit.o
+a - cfunctions.o
+make clean
+make[1]: Entering directory '/home/anderson/SIMITAR/libs'
+rm -f *.o  *.gch
+rm -f *.a
+make[1]: Leaving directory '/home/anderson/SIMITAR/libs'
+
+10:25:43 Build Finished (took 27s.767ms)
+
