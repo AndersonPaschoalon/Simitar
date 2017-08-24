@@ -40,11 +40,11 @@ EVAL_REPETITIONS = 30;
 %data load
 %EXPERIMENT_NAME = "kkk"; %command line arg
 EXPERIMENT_NAME = arg_list{1};
-DATAFILE_NAME_PREFIX = "../data/matlab_data_";
-DATAFILE_NAME_EXT = ".txt";
+DATAFILE_NAME_PREFIX = "data/";
+DATAFILE_NAME_EXT = ".csv";
 DATAFILE_NAME = strcat(DATAFILE_NAME_PREFIX,EXPERIMENT_NAME, DATAFILE_NAME_EXT);
 PLOT_DIR = "../../plots/";
-PLOT_DATA_EXT = ".dat";
+PLOT_DATA_EXT = ".csv";
 %M = dlmread(DATAFILE_NAME, ' ' , 1, 0);
 M = load(DATAFILE_NAME);
 %interArrival = sort(M(:,4)) + min_time;

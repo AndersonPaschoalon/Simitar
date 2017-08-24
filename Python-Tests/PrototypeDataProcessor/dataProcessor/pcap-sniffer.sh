@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #files
-MATLAB_DATA="../data/matlab_data_";
+MATLAB_DATA="data/";
 OPT_TIME_CAP="--time-delta";
 OPT_TIME_FLOW="--flow-time-delta"
 

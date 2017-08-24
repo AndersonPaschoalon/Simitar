@@ -3,7 +3,7 @@
 arg_list = argv ();
 
 EXPERIMENT_NAME = arg_list{1};
-DATAFILE_NAME_PREFIX = './data/matlab_data_';
+DATAFILE_NAME_PREFIX = './data/';
 DATAFILE_NAME_EXT = '.txt';
 DATAFILE_NAME = strcat(DATAFILE_NAME_PREFIX,EXPERIMENT_NAME, DATAFILE_NAME_EXT);
 
