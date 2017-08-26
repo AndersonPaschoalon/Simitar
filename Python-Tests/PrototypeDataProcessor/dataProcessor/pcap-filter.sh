@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #files
-MATLAB_DATA="data/";
+MATLAB_DATA="data/data_";
 OPT_TIME_CAP="--time-delta";
 OPT_TIME_FLOW="--flow-time-delta"
 
@@ -28,7 +28,7 @@ main()
 		local flow_filter=$arg4
 		#flow_filter="'(ip.src==69.12.209.118)&&(ip.dst==153.193.117.110)&&(tcp.srcport==80)&&(tcp.dstport==58902)'";
 		tshark_flowTimeDelta $pcap_file $exName ${flow_filter}
-		./timerelative2timedelta.m $exName
+		${SOURCE_DIR}/timerelative2timedelta.m $exName
 
 	else
 		help_menu;

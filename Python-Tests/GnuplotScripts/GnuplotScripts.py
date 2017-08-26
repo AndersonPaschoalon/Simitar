@@ -1,10 +1,10 @@
 import os
 import string
 
-class Gnuplot:
+class GnuplotScripts:
     def __init__(self, plot_dir='', data_dir='', font='Helvetica,10', xlabel='xlabel', ylabel='ylabel', title='title',
                  sizeratio='0', linestyle_1='r-', linestyle_2='b-', linestyle_3='g-', linestyle_4='v-',
-                 legend1='legend1', legend2='legend2', legend3='legend3', legend4='legend4', type='lines',
+                 legend1='', legend2='', legend3='', legend4='', type='lines',
                  line_width='2'):
         self.__plot_dir = plot_dir
         self.__data_dir = data_dir
@@ -28,31 +28,48 @@ class Gnuplot:
         self.__type = type
         self.__lw = line_width
 
-    def plot_config(self, plot_dir='', data_dir='', font='Helvetica,10', xlabel='xlabel', ylabel='ylabel',
-                    title='title', sizeratio='0', linestyle_1='r-', linestyle_2='b-', linestyle_3='g-',
-                    linestyle_4='v-', legend1='legend1', legend2='legend2', legend3='legend3', legend4='legend4',
-                    type='lines', line_width='2'):
-        self.__plot_dir = plot_dir
-        self.__data_dir = data_dir
-        self.__font = font
-        self.__xlabel = xlabel
-        self.__ylabel = ylabel
-        self.__title = title
-        self.__sizeratio = sizeratio
-        self.__linestyle_1 = linestyle_1
-        self.__linestyle_2 = linestyle_2
-        self.__linestyle_3 = linestyle_3
-        self.__linestyle_4 = linestyle_4
-        self.__linestyle1 = self.__map_line_style(self.__linestyle_1)
-        self.__linestyle2 = self.__map_line_style(self.__linestyle_2)
-        self.__linestyle3 = self.__map_line_style(self.__linestyle_3)
-        self.__linestyle4 = self.__map_line_style(self.__linestyle_4)
-        self.__legend1 = legend1
-        self.__legend2 = legend2
-        self.__legend3 = legend3
-        self.__legend4 = legend4
-        self.__type = type
-        self.__lw = line_width
+    def plot_config(self, plot_dir='', data_dir='', font='', xlabel='', ylabel='',
+                    title='', sizeratio='', linestyle_1='', linestyle_2='', linestyle_3='',
+                    linestyle_4='', legend1='', legend2='', legend3='', legend4='',
+                    type='', line_width=''):
+        if(plot_dir != ''):
+            self.__plot_dir = plot_dir
+        if (data_dir != ''):
+            self.__data_dir = data_dir
+        if (font != ''):
+            self.__font = font
+        if (xlabel != ''):
+            self.__xlabel = xlabel
+        if (ylabel != ''):
+            self.__ylabel = ylabel
+        if (title != ''):
+            self.__title = title
+        if (sizeratio != ''):
+            self.__sizeratio = sizeratio
+        if (linestyle_1 != ''):
+            self.__linestyle_1 = linestyle_1
+            self.__linestyle1 = self.__map_line_style(self.__linestyle_1)
+        if (linestyle_2 != ''):
+            self.__linestyle_2 = linestyle_2
+            self.__linestyle2 = self.__map_line_style(self.__linestyle_2)
+        if (linestyle_3 != ''):
+            self.__linestyle_3 = linestyle_3
+            self.__linestyle3 = self.__map_line_style(self.__linestyle_3)
+        if (linestyle_4 != ''):
+            self.__linestyle_4 = linestyle_4
+            self.__linestyle4 = self.__map_line_style(self.__linestyle_4)
+        if (legend1 != ''):
+            self.__legend1 = legend1
+        if (legend2 != ''):
+            self.__legend2 = legend2
+        if (legend3 != ''):
+            self.__legend3 = legend3
+        if (legend4 != ''):
+            self.__legend4 = legend4
+        if (type != ''):
+            self.__type = type
+        if (line_width != ''):
+            self.__lw = line_width
 
     def plot_2f1error(self, filename="", datafile=""):
         command = self.__plot_command('2f1error', filename, datafile)
@@ -70,7 +87,8 @@ class Gnuplot:
         command = self.__plot_command('2f2data', filename, datafile1=datafile1, datafile2=datafile2)
         os.system(command)
 
-    def plot_2functionxyxy(self, filename="", datafile=""):
+    def plot_2functionxyxy(self, filename="", datafile="", type="lines-lines"):
+        self.__type = type
         command = self.__plot_command('2functionxyxy', filename, datafile)
         os.system(command)
 
@@ -211,10 +229,10 @@ class Gnuplot:
 
 if __name__ == "__main__":
 
-    gp = Gnuplot(plot_dir='plots', data_dir='data')
+    gp = GnuplotScripts(plot_dir='plots', data_dir='data')
     gp.plot_function(filename='test1', datafile='data1.csv')
     gp.plot_2function(filename='test2', datafile='data1.csv')
     gp.plot_3function(filename='test3', datafile='data1.csv')
     gp.plot_2f2data(filename='test2data1', datafile1='data1.csv', datafile2='data2.csv')
-    #gp.plot_2functionxyxy(filename='test4', datafile='data1.csv')
-    #gp.plot_3function(filename='test4', datafile='data1.csv')
+    gp.plot_2functionxyxy(filename='testxyxy1', datafile='data1.csv')
+    gp.plot_4function(filename='test4', datafile='data1.csv')

@@ -10,53 +10,52 @@
 %   mean, and standard deviation of packet rate
 % - Save all data in a gnuplot format
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Initialization and load data
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%inicialization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Initialization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 arg_list = argv ();
-%clear; clear all; 
+EXPERIMENT_NAME = arg_list{1};
 close all; clc; clf;
 pkg load statistics;
+
 graphics_toolkit ("gnuplot");
 set(0, 'DefaultLineLineWidth', 4);
 set(0,'defaulttextfontsize', 14);
-set(0,'DefaultAxesFontSize',12)
-set(0,'DefaultAxesFontName', 'Times New Roman')
+set(0,'DefaultAxesFontSize',12);
+set(0,'DefaultAxesFontName', 'Times New Roman');
+
 %configuration
 ALMOST_ONE = 0.999999;
 ALMOST_ZERO = 0.000001;
-%INFINITEZIMAL=10E-20;
 INFINITEZIMAL=4e-14
-%min_time = 0.00000005;
 min_time = 5e-8;
-#min_time = 0.0000005;
 WEIBULL_FITTING = 1;
 NORMAL_FITTING = 1;
 EXPONENTIAL_FITTING = 1; 
 PARETO_FITTING = 1;
 CAUCHY_FITTING = 1;
 EVAL_REPETITIONS = 30;
-%data load
-%EXPERIMENT_NAME = "kkk"; %command line arg
-EXPERIMENT_NAME = arg_list{1};
-DATAFILE_NAME_PREFIX = "data/";
-DATAFILE_NAME_EXT = ".csv";
+DATAFILE_NAME_PREFIX = "data/data_";
+DATAFILE_NAME_EXT = ".txt";
 DATAFILE_NAME = strcat(DATAFILE_NAME_PREFIX,EXPERIMENT_NAME, DATAFILE_NAME_EXT);
-PLOT_DIR = "../../plots/";
-PLOT_DATA_EXT = ".csv";
-%M = dlmread(DATAFILE_NAME, ' ' , 1, 0);
-M = load(DATAFILE_NAME);
-%interArrival = sort(M(:,4)) + min_time;
-%interArrival = abs(sort(M)) + min_time;
+DATA_DIR = "data/";
+PLOT_DIR = DATA_DIR
+PLOT_DATA_EXT = ".dat";
 
+%inicialization
+M = dlmread(DATAFILE_NAME, ' ' , 1, 0);
+M = load(DATAFILE_NAME);
 %%Change scale
 scale = 1000;
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Run
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 interArrival = abs(sort(M));
 interArrival(interArrival == 0) =  min_time;
 
-interArrival = interArrival*scale
+interArrival = interArrival*scale;
 
 max_time = max(interArrival);
 interArrivalCdf = empiricalCdf(interArrival);
@@ -116,7 +115,8 @@ if(WEIBULL_FITTING != 0)
         weibull_betha = abs(real(exp(-theta(1)/theta(2))));
 
         % Plot original data and aproximation fitting
-        cdfW = cdfWeibullPlot(weibull_alpha, weibull_betha, max_time,'Weibull aproximation vs Original set');
+        cdfW_temp = real(cdfWeibullPlot(weibull_alpha, weibull_betha, max_time,'Weibull aproximation vs Original set'));
+	cdfW = real(cdfW_temp);
         hold on;
         plot(interArrival, interArrivalCdf, '-r');
 	legend('aproximation', 'original', 'Location','southeast'  ,'Orientation','vertical');
@@ -136,7 +136,7 @@ if(WEIBULL_FITTING != 0)
 	title = "Weibull aproximation vs Original set";
 	labels = "W(x), W(CDF) ";
 	filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
-	matrix2File(cdfW, filename, title, labels);	
+	matrix2File(real(cdfW), filename, title, labels);	
 	
 	
 endif
