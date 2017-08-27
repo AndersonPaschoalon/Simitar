@@ -46,7 +46,8 @@ PLOT_DATA_EXT = ".dat";
 M = dlmread(DATAFILE_NAME, ' ' , 1, 0);
 M = load(DATAFILE_NAME);
 %%Change scale
-scale = 1000;
+%scale = 1000;
+scale = 1;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -61,7 +61,7 @@ set label font font
 set xlabel font font
 set ylabel font font
 set title font font
-set key font font
+#set key font font
 set tics  font font 
 set datafile separator ","
 

@@ -1,11 +1,11 @@
 import os
 import string
+import re
 
 class GnuplotScripts:
     def __init__(self, plot_dir='', data_dir='', font='Helvetica,10', xlabel='xlabel', ylabel='ylabel', title='title',
                  sizeratio='0', linestyle_1='r-', linestyle_2='b-', linestyle_3='g-', linestyle_4='v-',
-                 legend1='', legend2='', legend3='', legend4='', type='lines',
-                 line_width='2'):
+                 legend1='', legend2='', legend3='', legend4='', line_width='2', type=''):
         self.__plot_dir = plot_dir
         self.__data_dir = data_dir
         self.__font = font
@@ -30,8 +30,31 @@ class GnuplotScripts:
 
     def plot_config(self, plot_dir='', data_dir='', font='', xlabel='', ylabel='',
                     title='', sizeratio='', linestyle_1='', linestyle_2='', linestyle_3='',
-                    linestyle_4='', legend1='', legend2='', legend3='', legend4='',
-                    type='', line_width=''):
+                    linestyle_4='', legend1='', legend2='', legend3='', legend4='', line_width='', type=''):
+        """
+        Configure plot. Some notes:
+        (1) the type of curve must be configured by the  artuments linestyle_i an by the argument type. lynestyle_i
+        defines if the
+        :param plot_dir: directory whre the plots will be stored
+        :param data_dir: directory where the data used on the plots are
+        :param font: font configuration string using the format '<fontname>,<fontsize>'. For example: 'Helvetica,15'
+        :param xlabel: label of x axes
+        :param ylabel: label of y axes
+        :param title: title on the upper part of the plot
+        :param sizeratio: size ratio of the plot, default 0.
+        :param linestyle_1: stype of the  plot line.
+        :param linestyle_2:
+        :param linestyle_3:
+        :param linestyle_4:
+        :param legend1:
+        :param legend2:
+        :param legend3:
+        :param legend4:
+        :param type: possible values are ('lines'|'linespoints'|'points'), except for plots 2functionxyxy, whre the
+                values are ('points-points'|'points-lines'|'lines-lines'|'lines-points')
+        :param line_width:
+        :return:
+        """
         if(plot_dir != ''):
             self.__plot_dir = plot_dir
         if (data_dir != ''):
@@ -87,8 +110,7 @@ class GnuplotScripts:
         command = self.__plot_command('2f2data', filename, datafile1=datafile1, datafile2=datafile2)
         os.system(command)
 
-    def plot_2functionxyxy(self, filename="", datafile="", type="lines-lines"):
-        self.__type = type
+    def plot_2functionxyxy(self, filename="", datafile=""):
         command = self.__plot_command('2functionxyxy', filename, datafile)
         os.system(command)
 
@@ -200,9 +222,11 @@ class GnuplotScripts:
             line_style_code = 1
         return line_style_code
 
+
+
     @staticmethod
     def __var(var_name, var_value):
-        return " -e \"" + var_name + "=" + "\'" + var_value + "\'" + "\" "
+        return " -e \"" + var_name + "=" + "\'" + str(var_value) + "\'" + "\" "
 
     def __plot_command(self, plot_type, filename="", datafile="", datafile1="", datafile2=""):
         plot_script = os.path.dirname(os.path.abspath(__file__)) + '/gnuplot/' + plot_type + '.gnu'
@@ -217,13 +241,14 @@ class GnuplotScripts:
         command = "gnuplot " + self.__var("filename", full_filename) + self.__var("datafile", full_datafile) + \
                   self.__var('font', self.__font) + self.__var('xlabel', self.__xlabel) + \
                   self.__var('ylabel', self.__ylabel) + self.__var('title', self.__title) + \
-                  self.__var('sizeration', self.__sizeratio) + self.__var('linestyle1', self.__linestyle1) + \
-                  self.__var('linestyle2', self.__linestyle2) + self.__var('linestyle3',  self.__linestyle3) + \
-                  self.__var('linestyle4', self.__linestyle4) + self.__var('legend1', self.__legend1) + \
-                  self.__var('legend2', self.__legend2) + self.__var('legend3', self.__legend3) + \
-                  self.__var('legend4', self.__legend4) + self.__var('type', self.__type) + \
-                  self.__var('lw', self.__lw) + self.__var('datafile1', full_datafile1) + \
-                  self.__var('datafile2', full_datafile2)  + " " + plot_script
+                  self.__var('sizeration', self.__sizeratio) + self.__var('linestyle', self.__linestyle1)  + \
+                  self.__var('linestyle1', self.__linestyle1) + self.__var('linestyle2', self.__linestyle2) + \
+                  self.__var('linestyle3',  self.__linestyle3) + self.__var('linestyle4', self.__linestyle4) + \
+                  self.__var('legend1', self.__legend1) + self.__var('legend2', self.__legend2) + \
+                  self.__var('legend3', self.__legend3) + self.__var('legend4', self.__legend4) \
+                  + self.__var('type', self.__type) + self.__var('lw', self.__lw) + \
+                  self.__var('datafile1', full_datafile1) + self.__var('datafile2', full_datafile2) \
+                  + " " + plot_script
         return (command)
 
 
