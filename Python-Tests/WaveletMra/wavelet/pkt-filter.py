@@ -23,28 +23,22 @@ def print_error(args):
 	exit(-1)
 
 def main(args):
-	try:
-		exName = args[0]
-		pcap_file = args[1]
-	except:
-		print_error(args)
+	exName = args[0]
+	pcap_file = args[1]
 	
-	if (args[0] == "--help" or args[0] == "-h"):
-		print_help()
-		exit(0)	
+	#print('@ main() ex:' + exName + ' pcap:' + pcap_file)
+	#exit(0)	
 
-	print ("oiiiiiii")
-	exit(0)
 	os.system('cd ' +  os.path.dirname(os.path.abspath(__file__)))
 	os.system('mkdir -p ' + DATA_DIR)	
 
 	# load pcap and output files
 	pcap = pyshark.FileCapture(pcap_file, keep_packets=False)
 	datafile = open(DATA_DIR + 'packetsinfo_' + exName + '.csv', 'w')
-	datafile.write('#Experiment:' + exName + ' pcap: ' + filebasename + '>\n')  
+	datafile.write('#Experiment:' + exName + ' pcap: ' + pcap_file + '>\n')  
 	datafile.write('#frameNumber, flowID, frameLen, InterPacketTime, frameTime\n')
 	iptFile = open(DATA_DIR + 'interpackettime_' + exName + '.txt', 'w')
-	iptFile.write('#Experiment:' + exName + ' pcap: ' + filebasename + '>\n')
+	iptFile.write('#Experiment:' + exName + ' pcap: ' + pcap_file + '>\n')
 	iptFile.write('#InterPacketTime\n')
 
 	# config loop
@@ -66,13 +60,24 @@ def main(args):
 
 		if VERBOSITY is True:
 		    print(pktInfo)
-		# end loop
+	# end loop
 
 	datafile.close()
 	iptFile.close()
 
 
 if __name__ == '__main__':
-	main(sys.argv[1:])
-	#print_error("`no args`")
+	if( len(sys.argv) >= 3 ):
+		main(sys.argv[1:])
+	elif( len(sys.argv) == 2):
+		if( sys.argv[1] == '--help' or sys.argv[1] == '-h'):
+			print_help()
+			exit(0)
+		else:
+			print_error(sys.argv[1])
+	else:
+		print_error('`no args`')
+
+
+
 

@@ -59,7 +59,7 @@ TraceData = dlmread(SIMULATION_DATA, ' ' , 2, 0);
 
 granularity = 0.01; % 10 ms
 vetArrivalTimes = TraceData(:,5);
-logEnergy = traceWaveletMra(vetArrivalTimes, granularity);
+logEnergy = waveletMra(vetArrivalTimes, granularity);
 resolutionLen = length(logEnergy);
 res = 1:resolutionLen;
 

@@ -54,4 +54,5 @@ TODO 3: CHECAR SE AS LISTAS ESTÃO VAZIS ANTES DE USALAS. SE ISSO OCORRER É UM 
  -v/--version			--current version
  -vr/--verbose			displays all outputs (Default: just erros)
 
-
+[DEPENDENCIAS]
+- sudo pip3 install fnvhash
