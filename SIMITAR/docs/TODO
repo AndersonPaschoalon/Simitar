@@ -56,3 +56,7 @@ TODO 3: CHECAR SE AS LISTAS ESTÃO VAZIS ANTES DE USALAS. SE ISSO OCORRER É UM 
 
 [DEPENDENCIAS]
 - sudo pip3 install fnvhash
+- sudo apt-get install octave
+- sudo apt-get install 
+- octave> pkg -forge install io
+- octave> pkg -forge install statistics

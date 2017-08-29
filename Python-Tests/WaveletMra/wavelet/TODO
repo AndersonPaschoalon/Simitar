@@ -1,3 +1,4 @@
-./pkt-info.py <experiment-name> <pcap-file>
-./traceBandwidth.m  packetsinfo_wombat.csv packetsinfo_wombat2.csv 0.1
-./hustExponent.m packetsinfo_wombat.csv packetsinfo_wombat.csv
+./analysis-pkt-info.py <experiment-name> <pcap-file>
+./analysis-bandwidth.m  packetsinfo_wombat.csv packetsinfo_wombat2.csv 0.1
+./analysis-hustExponent.m packetsinfo_wombat.csv packetsinfo_wombat.csv
+./analysis-waveletMra.m packetsinfo_wombat.csv  packetsinfo_wombat2.csv  wombat

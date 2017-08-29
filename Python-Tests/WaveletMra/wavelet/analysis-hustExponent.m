@@ -1,5 +1,5 @@
 #!/usr/bin/octave-cli -qf
-% hurstExponent.m
+% analysis-hurstExponent.m
 %
 % Licensing:
 %
