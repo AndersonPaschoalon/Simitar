@@ -1,3 +1,4 @@
+#!/usr/bin/python3.5
 import os
 import time
 from GnuplotScripts.GnuplotScripts import GnuplotScripts

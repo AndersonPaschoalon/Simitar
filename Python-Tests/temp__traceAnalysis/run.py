@@ -6,7 +6,7 @@ from Cd.Cd import Cd
 
 PCAP_FILE1 = "../../Pcap/wireshark-wiki_http.pcap"
 PCAP_FILE2 = "../../Pcap/wireshark-wiki_ospf.pcap"
-TEST_NAME = "wombat"
+TEST_NAME = "lemur"
 
 
 def print_header(title):
@@ -16,25 +16,27 @@ def print_header(title):
     print('###############################################################################')
 
 def run_analyzis(pcap_file1, pcap_file2, test_name, plots_dir):
-    print_header("Analyzis for:" + test_name + " using pcaps: " + pcap_file1 + ' and ' + pcap_file2)
+    print_header("Analysis for:" + test_name + " using pcaps: " + pcap_file1 + ' and ' + pcap_file2)
     # clean sim dir
-    cd.cd('./analyzis/')
+    cd.cd('./analysis/')
+    os.system('mkdir -p ./data')
     os.system('rm -rf data/*')
     # filter packet data
-    print_header('Filter inter-pacekt data from pcaps ' + pcap_file1 + ' and ' +  pcap_file2)
-    os.system('./analysis-pkt-info.py ' + test_name + '1 ' + pcap_file1)
-    os.system('./analysis-pkt-info.py ' + test_name + '2 ' + pcap_file2)
+    print_header('Filter inter-pacekt data from pcap ' + pcap_file1 )
+    os.system('./analysis-pkt-filter.py ' + test_name + '1 ' + pcap_file1)
+    print_header('Filter inter-pacekt data from pcap ' + pcap_file2)
+    os.system('./analysis-pkt-filter.py ' + test_name + '2 ' + pcap_file2)
     datafiles = os.listdir('./data/')
     datafile1 = datafiles[0]
     datafile2 = datafiles[1]
-    os.system('./analysis-waveletMra.m ' + datafile1 + ' ' + datafile2 + test_name)
+    os.system('./analysis-waveletMra.m ' + datafile1 + ' ' + datafile2 + ' ' +test_name)
     os.system('./analysis-hustExponent.m  ' + datafile1 + ' ' + datafile2 )
     os.system('./analysis-bandwidth.m ' + datafile1 + ' ' + datafile2 + ' 1')
     cd.back()
     # creating plots dir
     os.system('rm -rf ' + plots_dir)
     os.system('mkdir -p ' + plots_dir)
-    os.system('mv analyzis/data/* ' + plots_dir)
+    os.system('mv analysis/data/* ' + plots_dir)
     str_about = 'Analysis:' + sym_name + " using pcaps " + pcap_file1 + ' and ' + pcap_file2 + ' '
     str_date = '@ ' + str(time.localtime().tm_mday) + '/' + str(time.localtime().tm_mon) + '/' + str(
         time.localtime().tm_year) + '-' + str(time.localtime().tm_hour) + ':' + str(
@@ -43,11 +45,13 @@ def run_analyzis(pcap_file1, pcap_file2, test_name, plots_dir):
     os.system('echo \"' + str_date + '\" >>' + plots_dir + '/about.log')
 
 
-
-
-
-def plot_data(pcap_file1, pcap_file2, analyzis_name, plots_dir):
-    print('TODO')
+def plot_data(trace_name1, trace_name2, analyzis_name, plots_dir):
+    font_config = 'Helvetica,15'
+    print_header("Plot for:" + sym_name + " using traces " + trace_name1 + ' and ' + trace_name2)
+    print('TOD')
+    gp = GnuplotScripts(data_dir=plots_dir, plot_dir=plots_dir, font=font_config, linestyle_1='b-', linestyle_2='r-',
+                        linestyle_3='g-', linestyle_4='v-')
+    gp = GnuplotScripts()
 
 if __name__ == "__main__":
     # input arguments
