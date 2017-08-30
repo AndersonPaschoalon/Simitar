@@ -37,9 +37,9 @@ def main(args):
 	datafile = open(DATA_DIR + 'packetsinfo_' + exName + '.csv', 'w')
 	datafile.write('#Experiment:' + exName + ' pcap: ' + pcap_file + '>\n')  
 	datafile.write('#frameNumber, flowID, frameLen, InterPacketTime, frameTime\n')
-	iptFile = open(DATA_DIR + 'interpackettime_' + exName + '.txt', 'w')
-	iptFile.write('#Experiment:' + exName + ' pcap: ' + pcap_file + '>\n')
-	iptFile.write('#InterPacketTime\n')
+	#iptFile = open(DATA_DIR + 'interpackettime_' + exName + '.txt', 'w')
+	#iptFile.write('#Experiment:' + exName + ' pcap: ' + pcap_file + '>\n')
+	#iptFile.write('#InterPacketTime\n')
 
 	# config loop
 	initial_time = 0
@@ -56,14 +56,14 @@ def main(args):
 		data_list_str += str(pktInfo.time_delta) + ', '
 		data_list_str += str(pktInfo.time)
 		datafile.write(data_list_str + '\n')
-		iptFile.write(str(pktInfo.time_delta) + '\n')
+		#iptFile.write(str(pktInfo.time_delta) + '\n')
 
 		if VERBOSITY is True:
 		    print(pktInfo)
 	# end loop
 
 	datafile.close()
-	iptFile.close()
+	#iptFile.close()
 
 
 if __name__ == '__main__':

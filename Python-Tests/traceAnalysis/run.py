@@ -30,6 +30,7 @@ def run_analyzis(pcap_file1, pcap_file2, test_name, plots_dir):
     os.system('./analysis-waveletMra.m ' + datafile1 + ' ' + datafile2 + test_name)
     os.system('./analysis-hustExponent.m  ' + datafile1 + ' ' + datafile2 )
     os.system('./analysis-bandwidth.m ' + datafile1 + ' ' + datafile2 + ' 1')
+    os.system('./analysis-flow.m ' + datafile1 + ' ' + datafile2 + ' 1')
     cd.back()
     # creating plots dir
     os.system('rm -rf ' + plots_dir)

@@ -32,6 +32,7 @@ def run_analyzis(pcap_file1, pcap_file2, test_name, plots_dir):
     os.system('./analysis-waveletMra.m ' + datafile1 + ' ' + datafile2 + ' ' +test_name)
     os.system('./analysis-hustExponent.m  ' + datafile1 + ' ' + datafile2 )
     os.system('./analysis-bandwidth.m ' + datafile1 + ' ' + datafile2 + ' 1')
+    os.system('./analysis-flow.m ' + datafile1 + ' ' + datafile2 + ' 1')
     cd.back()
     # creating plots dir
     os.system('rm -rf ' + plots_dir)
@@ -47,11 +48,28 @@ def run_analyzis(pcap_file1, pcap_file2, test_name, plots_dir):
 
 def plot_data(trace_name1, trace_name2, analyzis_name, plots_dir):
     font_config = 'Helvetica,15'
-    print_header("Plot for:" + sym_name + " using traces " + trace_name1 + ' and ' + trace_name2)
-    print('TOD')
+    print_header("Plots for:" + sym_name + " using traces " + trace_name1 + ' and ' + trace_name2)
     gp = GnuplotScripts(data_dir=plots_dir, plot_dir=plots_dir, font=font_config, linestyle_1='b-', linestyle_2='r-',
                         linestyle_3='g-', linestyle_4='v-')
-    gp = GnuplotScripts()
+
+    print('Ploting Wavelet Multiresolution Analisis')
+    gp.plot_config(xlabel='Time scale j', ylabel='log2(Energy(j))', legend1=trace_name1, legend2=trace_name2)
+    gp.plot_2functionxyxy(datafile='WaveletMREA.dat', filename='WaveletMREA')
+
+    print('Ploting Bandwidth')
+    gp.plot_config(xlabel='Time(seconds)', ylabel='bps', legend1=trace_name1, legend2=trace_name2)
+    gp.plot_2functionxyxy(datafile='Bandwidth.csv', filename='Bandwidth')
+
+    print('Ploting Bandwidth')
+    gp.plot_config(xlabel='Time(seconds)', ylabel='bps', legend1=trace_name1, legend2=trace_name2)
+    gp.plot_2functionxyxy(datafile='Bandwidth.csv', filename='Bandwidth')
+
+    print('Ploting Flow data (FlowPs and FlowCDF)')
+    gp.plot_config(xlabel='Time(seconds)', ylabel='Number of Flows', legend1=trace_name1, legend2=trace_name2)
+    gp.plot_2functionxyxy(datafile='FlowsPs.dat ', filename='FlowsPs')
+    gp.plot_config(xlabel='Time(seconds)', ylabel='Flow CDF function', legend1=trace_name1, legend2=trace_name2)
+    gp.plot_2functionxyxy(datafile='FlowCdf.dat', filename='FlowCdf')
+
 
 if __name__ == "__main__":
     # input arguments
@@ -65,3 +83,5 @@ if __name__ == "__main__":
     test_name = TEST_NAME
     run_analyzis(pcap_file1, pcap_file2, test_name, plots_dir)
 
+# TODO 1: conferir na parte de largura de banda, e adicionar a opção de escala nos dados para se plotar
+# TODO 2: fazer os scripts rodarem corretamente... dai eu acabo eles, e só irá faltar o final da implementação
