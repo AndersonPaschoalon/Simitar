@@ -1,8 +1,0 @@
-# Simulations for the calcOnOff algorithm and functions
-
-To run, execute:
-
-```
-./test_sessionOnOffTimes.m
-```
-
