@@ -29,12 +29,7 @@ mininet> pingall
 # 6. Start iperf-flow/ditg-flow (at SIMITAR/apps/) in the server mode on the destination hosts (h2, ..., hn) 
 ./ditg-flow --mode server
 
-# 7. Run script run.py (changings its constants) (at Tests/SimulationMininet/) inside h1. It will execute simitar apps, and record a pcap file.
+# 7. Edit run.py, changing is arguments, than execute sudo ./run.py inside mininet host h1. It will execute simitar app, and record a pcap file.
 
-# 
-
-
-- dois testes no mininet: simple-topo-test.py  tree-topo-test.py. Executar como root. 
-  O controlador precisa estar ativo.
 
 
