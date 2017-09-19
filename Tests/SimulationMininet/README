@@ -1,32 +1,38 @@
-
-- Instalar Opendaylight
+# 1. Install Opendaylight Beryllium on ~
+Follow this tutorial:
 https://blinkingnetwork.wordpress.com/2016/08/03/install-opendaylight-ubuntu-16/
 
-- Instalar do github
-
-- Rodar o Opendaylignht
+# 2. Run Opendaylight
 cd ~/distribution-karaf-0.4.0-Beryllium
 ./bin/karaf 
 
-- Instalar features
-
+# 3. Install features on Opendaylight
 
 feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core
 feature:install odl-dlux-all odl-openflowplugin-flow-services-ui
 feature:install  odl-dlux-core odl-dlux-node odl-dlux-yangui odl-dlux-yangvisualizer
 
+# 4. You may open the web interface of Opendaylight using:
 
-- Intarface web do Opendaylight
 http://localhost:8181/dlux/index.html
 http://localhost:8181/index.html
 
+# 5. Clean up mininet and run 
 - Clean up mininet
 sudo mn -c
-
-- Rodar topologia do mininet
-
-- fazer o Opendaylight descobrir todos os hosts
+- On Tests/SimulationMininet/ directory, run 
+sudo ./simple-topo-test.py or 
+sudo vim ./tree-topo-test.py
+On mininet, to check and to Opendaylight discover all hosts, run:
 mininet> pingall
+
+# 6. Start iperf-flow/ditg-flow (at SIMITAR/apps/) in the server mode on the destination hosts (h2, ..., hn) 
+./ditg-flow --mode server
+
+# 7. Run script run.py (changings its constants) (at Tests/SimulationMininet/) inside h1. It will execute simitar apps, and record a pcap file.
+
+# 
+
 
 - dois testes no mininet: simple-topo-test.py  tree-topo-test.py. Executar como root. 
   O controlador precisa estar ativo.
