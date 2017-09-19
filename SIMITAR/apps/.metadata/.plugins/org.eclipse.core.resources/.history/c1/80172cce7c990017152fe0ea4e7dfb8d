@@ -1,0 +1,24 @@
+/*
+ * NetworkFlowFactory.h
+ *
+ *  Created on: 14 de set de 2017
+ *      Author: anderson
+ */
+
+#ifndef NETWORKFLOWFACTORY_H_
+#define NETWORKFLOWFACTORY_H_
+
+#include <algorithm>
+#include "NetworkFlow.h"
+#include "DummyFlow.h"
+#include "IperfFlow.h"
+
+class NetworkFlowFactory
+{
+public:
+	NetworkFlow* make_flow(const string& choise);
+	NetworkFlowFactory();
+	virtual ~NetworkFlowFactory();
+};
+
+#endif /* NETWORKFLOWFACTORY_H_ */

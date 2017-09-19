@@ -1,0 +1,48 @@
+/*
+ * IperfFlow.h
+ *
+ *  Created on: 11 de set de 2017
+ *      Author: anderson
+ */
+
+#ifndef SRC_IPERFFLOW_H_
+#define SRC_IPERFFLOW_H_
+
+#include <DummyFlow.h>
+
+class IperfFlow: public DummyFlow
+{
+public:
+	/**
+	 *
+	 */
+	IperfFlow();
+
+	/**
+	 *
+	 */
+	virtual ~IperfFlow();
+
+	/**
+	 *
+	 * @return
+	 */
+	int server();
+
+	/**
+	 *
+	 * @param flowId
+	 * @param onTime
+	 * @param npackets
+	 * @param nbytes
+	 * @param netInterface
+	 */
+	void flowGenerate(const counter& flowId,
+					const time_sec& onTime, const uint& npackets, const uint& nbytes,
+					const string& netInterface);
+
+
+
+};
+
+#endif /* SRC_IPERFFLOW_H_ */

@@ -14,25 +14,23 @@
 //#include "NemesisFlow.h"
 //#include "LibtinsFlow.h"
 
+/*
 NetworkFlow* NetworkFlow::make_flow(const string& choise)
 {
-/*
 
-	if ((choise == "ditg") || (choise == "DITG") || (choise == "D-ITG"))
+	if ((choise == "ditg"))
 	{
 		return new DitgFlow;
 	}
-	else if ((choise == "iperf") || (choise == "Iperf") || (choise == "IPERF"))
+	else if ((choise == "iperf"))
 	{
 		return new IperfFlow;
 	}
-	else if ((choise == "ostinato") || (choise == "Ostinato")
-			|| (choise == "OSTINATO"))
+	else if ((choise == "ostinato"))
 	{
 		return new OstinatoFlow;
 	}
-	else if ((choise == "Libtins") || (choise == "libtins")
-			|| (choise == "LIBTINS"))
+	else if ((choise == "libtins") || (choise == "tins"))
 	{
 		return new LibtinsFlow;
 	}
@@ -40,11 +38,10 @@ NetworkFlow* NetworkFlow::make_flow(const string& choise)
 	{
 		return new DummyFlow;
 	}
-*/
 
 	return new DummyFlow;
-
 }
+*/
 
 NetworkFlow::NetworkFlow()
 {
@@ -134,7 +131,7 @@ NetworkFlow::~NetworkFlow()
 void NetworkFlow::print()
 {
 	//TODO
-	cout << "flow created" << endl;
+	std::cout << "flow created" << endl;
 }
 
 int NetworkFlow::randTranportPort()

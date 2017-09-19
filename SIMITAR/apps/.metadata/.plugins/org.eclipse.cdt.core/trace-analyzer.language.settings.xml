@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="cdt.managedbuild.toolchain.gnu.base.571438506" name="Default">
+	<configuration id="cdt.managedbuild.toolchain.gnu.base.1905314862" name="Default">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
-			<provider id="org.eclipse.cdt.managedbuilder.core.GCCBuildCommandParser">
-				<language id="org.eclipse.cdt.core.g++">
-					<resource project-relative-path="src/DataProcessor.cpp">
-						<entry kind="includePath" name="/home/anderson/SIMITAR/deps"/>
-						<entry kind="includePath" name="/libsimitar">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="libraryFile" name="libpthread.a"/>
-						<entry kind="libraryFile" name="liblog4cpp.a"/>
-						<entry kind="libraryFile" name="libsqlite3.a"/>
-						<entry kind="libraryFile" name="libarmadillo.a"/>
-						<entry kind="libraryFile" name="libITG.a"/>
-					</resource>
-				</language>
-			</provider>
 			<provider id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
 					<entry kind="includePath" name="/usr/lib/gcc/x86_64-linux-gnu/6/include">

@@ -8,10 +8,11 @@
 #ifndef CFUNCTIONS_H_
 #define CFUNCTIONS_H_
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cassert>
 #include <assert.h>
-#include <string.h>
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -19,15 +20,9 @@
 #include <armadillo>
 #include <vector>
 
-
 #include "Defines.h"
 #include "RegressionTests.h"
 
-//using std::list;
-//using std::vector;
-//using std::string;
-//using std::cout;
-//using std::endl;
 using namespace arma;
 
 #define _TESTS_FLAG 1

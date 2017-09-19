@@ -1,0 +1,138 @@
+/*
+ * DummyFlow.cpp
+ *
+ *  Created on: 14 de jun de 2016
+ *      Author: apaschoalon
+ */
+
+#include "Defines.h"
+#include "DummyFlow.h"
+
+DummyFlow::DummyFlow()
+{
+}
+
+DummyFlow::~DummyFlow()
+{
+}
+
+void DummyFlow::print()
+{
+}
+
+int DummyFlow::server()
+{
+	printf("[Server-mode operation]\n");
+	return (0);
+}
+
+void DummyFlow::flowStart()
+{
+	//MESSER_LOG_INIT(DEBUG);
+
+	/// Statistical vars
+	counter flowId = 0;
+	string netInterface = "";
+
+	/// On/Off time vars
+	//struct timespec start, end; // time probes
+	time_t usec_startDelay = 0; // time in useconds
+	//time_t usec_onTime = 0; // time in useconds
+	time_t usec_offTime = 0; // time in useconds
+	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
+	time_sec sec_onTime = 0;
+	time_sec sec_offTime = 0;
+	uint nbytes = 0;
+	uint npackets = 0;
+	//uint64_t delta_us; // calc delta times ?
+	//time_sec delta_s;
+
+	usec_startDelay = time_t(sec_startDelay * 1.0e6);
+
+	int fid = int(getFlowId());
+
+	usleep(usec_startDelay);
+	while (1)
+	{
+
+		sec_onTime = getSessionOnTime_next();
+		npackets = getSessionOnTime_nPackets();
+		nbytes = getSessionOnTime_nBytes();
+
+		flowGenerate(fid, sec_onTime, npackets, nbytes, netInterface);
+
+		sec_offTime = getSessionOffTime_next();
+		if (sec_offTime == 0)
+		{
+			break;
+		}
+		usec_offTime = time_t(sec_offTime * 1.0e6);
+		usleep(usec_offTime);
+
+	}
+
+}
+
+void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
+		const uint& npackets, const uint& nbytes, const string& netInterface)
+{
+	int rc = 0;
+
+	unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+	string flow_str_print = "";
+	protocol prt;
+	StochasticModelFit themodel;
+
+	/***************************************************************************
+	 * Dummy-parser
+	 **************************************************************************/
+
+	/**
+	 * Flow-level
+	 */
+	flow_str_print += "Flow" + std::to_string(flowId) + "> Duration:"
+			+ std::to_string(getFlowDuration()) + ", Start-delay:"
+			+ std::to_string(getFlowStartDelay()) + "s" + ", N.packets: "
+			+ std::to_string(getNumberOfPackets());
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Link-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Link[" + Protocol(this->getLinkProtocol()).str() + "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Network-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Network[" + Protocol(this->getNetworkProtocol()).str()
+			+ "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Transport-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Transport["
+			+ Protocol(this->getTransportProtocol()).str() + "]";
+
+	// Application protocol
+	flow_str_print += " Application["
+			+ Protocol(this->getApplicationProtocol()).str() + "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Inter-deperture model
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Inter-deperture["
+			+ this->getInterDepertureTimeModel(0).strModelName() + "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Packet-size model
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Packet-size-Mode1["
+			+ this->getPacketSizeModelMode1(0).strModelName() + "]";
+	flow_str_print += " Packet-size-Mode2["
+			+ this->getPacketSizeModelMode2(0).strModelName() + "]";
+
+	network_trace_iostream_mutex.lock();
+	printf("%s\n", flow_str_print.c_str());
+	network_trace_iostream_mutex.unlock();
+
+}
+

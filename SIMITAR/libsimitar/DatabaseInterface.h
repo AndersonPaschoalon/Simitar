@@ -12,18 +12,16 @@
 
 //include libraries
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sqlite3.h>
 #include <string>
 #include <array>
 #include <cstring>
-#include <string.h>
 #include <list>
 #include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sqlite3.h>
 
 //local includes
-//#include "MesserLog.h"
 #include "Protocol.h"
 #include "cfunctions.h"
 #include "SimitarWorkspace.h"

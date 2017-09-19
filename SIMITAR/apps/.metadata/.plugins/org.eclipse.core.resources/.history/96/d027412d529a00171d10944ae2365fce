@@ -1,0 +1,28 @@
+/*
+ * DitgFlow.h
+ *
+ *  Created on: 15 de set de 2017
+ *      Author: anderson
+ */
+
+#ifndef DITGFLOW_H_
+#define DITGFLOW_H_
+
+#include "DummyFlow.h"
+
+/**
+ *
+ */
+class DitgFlow: public DummyFlow
+{
+public:
+	/**
+	 *
+	 */
+	DitgFlow();
+	virtual ~DitgFlow();
+private:
+	std::string ditg_command();
+};
+
+#endif /* DITGFLOW_H_ */

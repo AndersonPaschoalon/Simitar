@@ -1,0 +1,10 @@
+#Standard Deviation
+#Distribution, StdDev, Error
+Original       ,0.205602,0.000000
+Weibull        ,0.136483,0.004234
+Normal         ,0.137716,0.000776
+Exponential(LR),0.716721,0.001895
+Exponential(Me),0.361039,0.004271
+Pareto(LR)     ,0.302549,0.004826
+Pareto(MLH)    ,0.643757,0.004433
+Cauchy         ,0.001623,0.002391

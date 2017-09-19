@@ -11,22 +11,17 @@
 //external libs
 //#include <cstring>
 #include <string.h>
-#include <stdio.h>
+#include <cstdio>
+#include <cstdlib>
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
-#include <errno.h>
-//#include <cstdlib>
 #include <thread>
-#include <unistd.h>
 #include <vector>
+#include <errno.h>
+#include <unistd.h>
 #include <rapidxml/rapidxml.hpp>
 #include <rapidxml/rapidxml_print.hpp>
 #include <rapidxml/rapidxml_iterators.hpp>
 #include <rapidxml/rapidxml_utils.hpp>
-
-//#include "rapidxml-1.13/rapidxml.hpp"
 
 using namespace rapidxml;
 using std::string;
@@ -38,17 +33,15 @@ using std::endl;
 using std::vector;
 
 //local libs
+#include "SimitarWorkspace.h"
+#include "CsvFile.h"
+#include "NetworkFlow.h"
+#include "NetworkFlowFactory.h"
+#include "Protocol.h"
 #include "Defines.h"
 #include "cfunctions.h"
-#include "NetworkFlow.h"
-#include "Protocol.h"
 #include "RegressionTests.h"
-#include "CsvFile.h"
-#include "SimitarWorkspace.h"
-//#include "MesserLog.h"
 
-//#define LOG_LEVEL INFO
-#define LOG_LEVEL_TRACE DEBUG
 
 //namespaces
 typedef struct flow_data_struct flowData;
@@ -164,7 +157,12 @@ public:
 	 * @param verbose
 	 * @return
 	 */
-	int exec(bool verbose);
+	int exec();
+
+	/**
+	 *
+	 */
+	void server();
 
 	/**
 	 *
@@ -191,11 +189,23 @@ public:
 	 * interface provided as argument. If the interface is not specified,
 	 * it uses the first Ethernet interface active.
 	 * @param filename
-	 * @param etherInterface
-	 * @param mac
+	 * @param etherInterface local interfaces names, as provided by `ifconfig` command
+	 * @param set_mac true sets the MAC destination addrs, false do not
 	 */
 	void clientServerIps(const char* filename, const char* etherInterface = "",
 			bool set_mac = false);
+
+	/**
+	 * Sets a list of IP and MAC addresses provided as string as
+	 * destinations of all flows in the NetworkTrace, and the local IP
+	 * as source IP. The local IP is defined based on the local Ethernet
+	 * interface provided as argument. If the interface is not specified,
+	 * it uses the first Ethernet interface active.
+	 * @param serverIpAddr
+	 * @param etherInterface
+	 */
+	void clientServerIps(const char* serverIpAddr, const char* serverMacAddr,
+			const char* etherInterface = "");
 
 	/**
 	 * Sets a list of IP and MAC addresses provided in a file filename as
@@ -203,7 +213,8 @@ public:
 	 *
 	 * @param filename
 	 */
-	void setFileIpMac(const char* filename, const char* localhost, bool set_mac);
+	void setFileIpMac(const char* filename, const char* localhost,
+			bool set_mac);
 	//void setFileIpMac(const char* filename, const char* localhost, bool set_mac);
 
 	/**
@@ -228,6 +239,7 @@ private:
 	static const char * LABEL_COMMENTARIES;
 	static const char * LABEL_NUMBER_OF_FLOWS;
 	static const char * LABEL_FLOW;
+	static const char * LABEL_FLOW_ID;
 	static const char * LABEL_FLOW_START_DELAY;
 	static const char * LABEL_FLOW_DURATION;
 	static const char * LABEL_FLOW_DS_BYTE;
@@ -318,6 +330,7 @@ struct flow_data_struct
 
 	//Flow
 
+	char flow_id[CHAR_BUFFER];
 	char flow_duration[CHAR_BUFFER];
 	char flow_start_delay[CHAR_BUFFER];
 	char flow_ds_byte[CHAR_BUFFER];

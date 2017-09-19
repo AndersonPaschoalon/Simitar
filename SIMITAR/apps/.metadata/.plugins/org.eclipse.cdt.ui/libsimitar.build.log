@@ -1,6 +1,26 @@
-19:31:56 **** Incremental Build of configuration Debug for project libsimitar ****
+17:22:21 **** Incremental Build of configuration Default for project libsimitar ****
 make all 
-make: Nothing to be done for 'all'.
 
-19:31:56 Build Finished (took 66ms)
+* Compiling: ../libsimitar/NetworkFlowFactory.cpp -> ../libsimitar/obj/NetworkFlowFactory.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/NetworkFlowFactory.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:02
+
+* Archiving: libsimitar.aar rvs   libsimitar.a  ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/obj/DummyFlow.o ../libsimitar/obj/DatabaseSqlite3.o ../libsimitar/obj/RegressionTests.o ../libsimitar/obj/NetworkTrace.o ../libsimitar/obj/cfunctions.o ../libsimitar/obj/IperfFlow.o ../libsimitar/obj/NetworkFlow.o ../libsimitar/obj/DatabaseInterface.o ../libsimitar/obj/StochasticModelFit.o ../libsimitar/obj/DataProcessor.o ../libsimitar/obj/TraceDbManager.o ../libsimitar/obj/CsvFile.o ../libsimitar/obj/DitgFlow.o 
+r - ../libsimitar/obj/NetworkFlowFactory.o
+r - ../libsimitar/obj/SimitarWorkspace.o
+r - ../libsimitar/obj/DummyFlow.o
+r - ../libsimitar/obj/DatabaseSqlite3.o
+r - ../libsimitar/obj/RegressionTests.o
+r - ../libsimitar/obj/NetworkTrace.o
+r - ../libsimitar/obj/cfunctions.o
+r - ../libsimitar/obj/IperfFlow.o
+r - ../libsimitar/obj/NetworkFlow.o
+r - ../libsimitar/obj/DatabaseInterface.o
+r - ../libsimitar/obj/StochasticModelFit.o
+r - ../libsimitar/obj/DataProcessor.o
+r - ../libsimitar/obj/TraceDbManager.o
+r - ../libsimitar/obj/CsvFile.o
+r - ../libsimitar/obj/DitgFlow.o
+	 Link time: 00:00:00
+
+17:22:23 Build Finished (took 2s.65ms)
 

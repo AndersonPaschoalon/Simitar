@@ -16,13 +16,13 @@ SHARED_LIB	:=
 WORKSPACE	:= ../..
 
 #
-SRC_DIR		:= $(WORKSPACE)/apps/hello-world/src
+SRC_DIR		:= $(WORKSPACE)/apps/$(EXEC_FILE)/src
 
 #
-HEADER_DIR	:= $(WORKSPACE)/apps/hello-world/src
+HEADER_DIR	:= $(WORKSPACE)/apps/$(EXEC_FILE)/src
 
 #
-OBJ_DIR		:= $(WORKSPACE)/apps/hello-world/src
+OBJ_DIR		:= $(WORKSPACE)/apps/$(EXEC_FILE)/obj
 
 # compiler default
 CC 			:= g++
@@ -66,7 +66,7 @@ LS_LIBS		:= -Wl,-Bstatic $(WORKSPACE)/libsimitar/libsimitar.a
 INCLUDES 	:= -I $(WORKSPACE)/deps/ -I $(WORKSPACE)/libsimitar/
 
 #
-TEMP_FILE	:= $(OBJ_FILES)/*.gcno
+TEMP_FILE	:= $(OBJ_FILES)/*.gcno $(OBJ_FILES)/*.gcda *.gcno *.gcda
 
 # Macros for timing compilation
 ifeq ($(UNAME_S),Darwin)

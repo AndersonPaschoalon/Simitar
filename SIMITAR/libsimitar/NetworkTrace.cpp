@@ -7,12 +7,6 @@
 
 #include "NetworkTrace.h"
 
-//NetworkTrace::NetworkTrace(long int nFlows)
-//{
-//	netFlow = new NetworkFlow[nFlows + 1];
-//	numberOfFlows = nFlows + 1;
-//}
-
 NetworkTrace::NetworkTrace()
 {
 	//MESSER_LOG_INIT(NOTICE);
@@ -25,7 +19,7 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
 
 	long int nflows = 0;
-	long int fcounter = 0;
+	//long int fcounter = 0;
 	string strBuffer;
 	unsigned int uintBuffer;
 	unsigned long int lintBuffer;
@@ -39,9 +33,9 @@ NetworkTrace::NetworkTrace(const string& fileName,
 
 	// Read the xml file into a vector
 	//ifstream theFile(fileName);
-	ifstream theFile(fileName); //TODO
-	vector<char> buffer((istreambuf_iterator<char>(theFile)),
-			istreambuf_iterator<char>());
+	std::ifstream theFile(fileName); //TODO
+	std::vector<char> buffer((std::istreambuf_iterator<char>(theFile)),
+			std::istreambuf_iterator<char>());
 	buffer.push_back('\0');
 
 	// Parse the buffer using the xml file parsing library into doc
@@ -68,13 +62,14 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	charvet2type(root_node->first_attribute("n_flows")->value(), nflows);
 	//for (fcounter = 0; fcounter < nflows; fcounter++)
 	//{
-	fcounter = 0;
+	//fcounter = 0;
 	for (xml_node<> * flow_node = root_node->first_node("flow"); flow_node;
 			flow_node = flow_node->next_sibling())
 	{
 
 		/// Create flow
-		NetworkFlow* netFlow = NetworkFlow::make_flow(trafficGenEngine);
+		//NetworkFlow* netFlow = NetworkFlow::make_flow(trafficGenEngine);
+		NetworkFlow* netFlow = NetworkFlowFactory::make_flow(trafficGenEngine);
 		//NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
 		//MESSER_DEBUG("netFlow[%d]  @<%s, %s>", fcounter);
 
@@ -822,7 +817,7 @@ int NetworkTrace::pushback_Netflow(NetworkFlow* vetNetFlow)
 	return (0);
 }
 
-int NetworkTrace::exec(bool verbose)
+int NetworkTrace::exec()
 {
 	//MESSER_LOG_INIT(NOTICE);
 
@@ -849,6 +844,11 @@ int NetworkTrace::exec(bool verbose)
 
 	return 0;
 
+}
+
+void NetworkTrace::server()
+{
+	networkFlow[0]->server();
 }
 
 //void NetworkTrace::string2charvet(const string s, char* vetc) const
@@ -962,6 +962,56 @@ void NetworkTrace::clientServerIps(const char* filename,
 
 	setFileIpMac(filename, localhost, set_mac);
 }
+
+void NetworkTrace::clientServerIps(const char* serverIpAddr,
+		const char* serverMacAddr, const char* etherInterface)
+{
+	uint nflows = uint(getNumberOfFlows());
+	char localhost[CHAR_BUFFER];
+	char ether[CHAR_BUFFER];
+	int is_if_empty_ether = strcmp(etherInterface, "");
+	int is_if_empty_mac = strcmp(serverMacAddr, "");
+
+	if (is_if_empty_ether == 0)
+	{
+		getLocalIfIp(ether, localhost);
+	}
+	else
+	{
+		getLocalIp(etherInterface, localhost);
+	}
+
+	for (uint i = 0; i < nflows;)
+	{
+		networkFlow[i]->setNetworkSrcAddr(localhost);
+		networkFlow[i]->setNetworkDstAddr(serverIpAddr);
+		if (is_if_empty_mac != 0)
+			networkFlow[i]->setMacDstAddr(serverMacAddr);
+
+	}
+
+}
+
+/*
+ for (uint i = 0; i < nflows;)
+ {
+ do
+ {
+ ip_addr = file_csv.column(0);
+ mac_addr = file_csv.column(1);
+ networkFlow[i]->setNetworkSrcAddr(localhost);
+ networkFlow[i]->setNetworkDstAddr(ip_addr);
+ if (set_mac == true)
+ networkFlow[i]->setMacDstAddr(mac_addr);
+ i++;
+
+ if(i >= nflows) break;
+ } while (file_csv.next_line());
+ file_csv.reset();
+ }
+
+
+ */
 
 inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
 {
@@ -1090,7 +1140,8 @@ void NetworkTrace::setFileIpMac(const char* filename, const char* localhost,
 				networkFlow[i]->setMacDstAddr(mac_addr);
 			i++;
 
-			if(i >= nflows) break;
+			if (i >= nflows)
+				break;
 		} while (file_csv.next_line());
 		file_csv.reset();
 	}
@@ -1142,6 +1193,7 @@ const char * NetworkTrace::LABEL_COMMENTARIES = "info_commentaries";
 const char * NetworkTrace::LABEL_TRAFFIC_ENGINE = "trafficGenEngine";
 const char * NetworkTrace::LABEL_NUMBER_OF_FLOWS = "n_flows";
 const char * NetworkTrace::LABEL_FLOW = "flow";
+const char * NetworkTrace::LABEL_FLOW_ID = "flow_id";
 const char * NetworkTrace::LABEL_FLOW_START_DELAY = "start_delay";
 const char * NetworkTrace::LABEL_FLOW_DURATION = "duration";
 const char * NetworkTrace::LABEL_FLOW_DS_BYTE = "ds_byte";
@@ -1187,20 +1239,18 @@ bool NetworkTrace::test_readWrite2XML()
 	FILE* in;
 	char buff[CHAR_BUFFER];
 	const char mode[] = "r";
-	std::string the_command = "diff " + workspace.test_ctd_xml() + " " + workspace.test_ctd_xml_copy2();
+	std::string the_command = "diff " + workspace.test_ctd_xml() + " "
+			+ workspace.test_ctd_xml_copy2();
 	char command[CHAR_LARGE_BUFFER];
 	strcpy(command, the_command.c_str());
 	//const char command[] =
 	//		"diff data/regression-tests/test-trace.xml data/regression-tests/copy2-test-trace.xml";
 	//const char command[] = "ls -lahn data/regression-tests/";
 
-
-
 	//NetworkTrace tempTrace = NetworkTrace(
 	//		"data/regression-tests/test-trace.xml", "D-ITG");
 	//tempTrace.writeToFile("data/regression-tests/copy2-test-trace.xml");
-	NetworkTrace tempTrace = NetworkTrace(
-			workspace.test_ctd_xml(), "D-ITG");
+	NetworkTrace tempTrace = NetworkTrace(workspace.test_ctd_xml(), "D-ITG");
 	tempTrace.writeToFile(workspace.test_ctd_xml_copy2());
 
 	if (!(in = popen(command, mode)))
@@ -1271,10 +1321,11 @@ bool NetworkTrace::test_setFileIpMac()
 	SimitarWorkspace workspace = SimitarWorkspace();
 	//NetworkTrace tempTrace = NetworkTrace(
 	//		"data/regression-tests/test-trace.xml", "D-ITG");
-	NetworkTrace tempTrace = NetworkTrace( workspace.test_ctd_xml(), "D-ITG");
+	NetworkTrace tempTrace = NetworkTrace(workspace.test_ctd_xml(), "D-ITG");
 
 	//tempTrace.setFileIpMac("data/regression-tests/ipmac.txt", "10.1.1.1", true);
-	tempTrace.setFileIpMac(workspace.test_ipmac_file().c_str(), "10.1.1.1", true);
+	tempTrace.setFileIpMac(workspace.test_ipmac_file().c_str(), "10.1.1.1",
+			true);
 
 	//tempTrace.writeToFile("changed-ips-macs-trace.xml");
 	tempTrace.writeToFile(workspace.test_ctd_ipmac());
@@ -1292,32 +1343,6 @@ bool NetworkTrace::test_getLocalIp()
 	cout << "localhost: " << local_host << endl;
 	cout << "ether: " << local_ether << endl;
 
-	return(true);
+	return (true);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

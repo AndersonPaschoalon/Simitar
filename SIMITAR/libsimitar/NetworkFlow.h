@@ -10,34 +10,35 @@
 
 //#define _GNU_SOURCE
 //external libraries
-#include <stdio.h>
+// default
 #include <iostream>
-#include <stdlib.h>
-#include <thread>
-#include <unistd.h>
-#include <string>
-#include <errno.h>
-#include <stdlib.h>
-#include <string.h>
-#include <cstdlib>
-#include <pthread.h>
 #include <string>
 #include <list>
-#include <ITGapi.h>
 #include <vector>
+#include <cstdlib>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+
+#include <thread>
+#include <unistd.h>
+#include <pthread.h>
+#include <mutex>
+
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <netdb.h>
 #include <ifaddrs.h>
 
 //local includes
-
 #include "Defines.h"
 #include "Protocol.h"
 #include "StochasticModelFit.h"
 #include "RegressionTests.h"
-//#include "MesserLog.h"
 #include "cfunctions.h"
+#include "SimitarWorkspace.h"
 
 //namespaces
 using std::string;
@@ -54,12 +55,14 @@ public:
 	//Create flow
 	NetworkFlow();
 	virtual ~NetworkFlow();
-	static NetworkFlow *make_flow(const string& choise);
+	//static NetworkFlow *make_flow(const string& choise);
 
 	virtual std::thread flowThread() = 0;
 
-	virtual void flowGenerate(const counter& flowId,
-			const time_sec& onTime, const uint& npackets, const uint& nbytes,
+	virtual int server() = 0;
+
+	virtual void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const uint& npackets, const uint& nbytes,
 			const string& netInterface) = 0;
 
 	inline int getLocalIfIp(char* interface, char* ipaddr);

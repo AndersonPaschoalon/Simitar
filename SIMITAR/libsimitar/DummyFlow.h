@@ -25,6 +25,11 @@
  } l2_addr;
  */
 
+typedef enum
+{
+	method_usleep, method_pooling, method_select
+} sleep_method;
+
 class DummyFlow: public NetworkFlow
 {
 public:
@@ -45,15 +50,21 @@ public:
 
 	/**
 	 *
+	 * @return
+	 */
+	int server();
+
+	/**
+	 *
 	 * @param flowId
 	 * @param onTime
 	 * @param npackets
 	 * @param nbytes
 	 * @param netInterface
 	 */
-	void flowGenerate(const counter& flowId,
-				const time_sec& onTime, const uint& npackets, const uint& nbytes,
-				const string& netInterface);
+	void flowGenerate(const counter& flowId, const time_sec& onTime,
+			const uint& npackets, const uint& nbytes,
+			const string& netInterface);
 //	void flowGenerate(const counter& flowId, const time_sec& onTime,
 //			const unsigned int& npackets, const uint& nbytes,
 //			const string& netInterface);
@@ -69,6 +80,13 @@ public:
 		{	flowStart();});
 	}
 
+private:
+
+	/**
+	 *
+	 * @param sleep_time
+	 */
+	void fsleep(time_sec sleep_time);
 };
 
 #endif /* DUMMYFLOW_H_ */

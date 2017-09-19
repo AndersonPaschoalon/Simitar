@@ -1,6 +1,14 @@
-19:31:56 **** Incremental Build of configuration Debug for project ditg-flow ****
+17:22:23 **** Incremental Build of configuration Debug for project ditg-flow ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/ditg-flow.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/ditg-flow.o" -o "src/ditg-flow.o" "../src/ditg-flow.cpp"
+../src/ditg-flow.cpp:13:26: fatal error: NetworkTrace.h: Arquivo ou diretório não encontrado
+ #include <NetworkTrace.h>
+                          ^
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/ditg-flow.o' failed
+make: *** [src/ditg-flow.o] Error 1
 
-19:31:56 Build Finished (took 76ms)
+17:22:23 Build Finished (took 112ms)
 

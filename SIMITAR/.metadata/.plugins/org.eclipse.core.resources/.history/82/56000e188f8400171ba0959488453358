@@ -1,8 +1,0 @@
-StochasticModelFit.o: ../StochasticModelFit.cpp ../StochasticModelFit.h \
- ../Defines.h ../RegressionTests.h
-
-../StochasticModelFit.h:
-
-../Defines.h:
-
-../RegressionTests.h:

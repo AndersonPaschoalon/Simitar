@@ -1,0 +1,58 @@
+/*
+ * IperfFlow.h
+ *
+ *  Created on: 11 de set de 2017
+ *      Author: anderson
+ */
+
+#ifndef SRC_IPERFFLOWT_H_
+#define SRC_IPERFFLOWT_H_
+
+// deps
+#include <string>
+// Simitar
+#include <DummyFlow.h>
+
+typedef enum {
+	bits, on_time, packets
+} enum_transmission_type;
+
+class IperfFlow_t: public DummyFlow
+{
+public:
+	/**
+	 *
+	 */
+	IperfFlow_t();
+
+	/**
+	 *
+	 */
+	virtual ~IperfFlow_t();
+
+	/**
+	 *
+	 * @return
+	 */
+	int server();
+
+	/**
+	 *
+	 * @param flowId
+	 * @param onTime
+	 * @param npackets
+	 * @param nbytes
+	 * @param netInterface
+	 */
+	void flowGenerate(const counter& flowId,
+					const time_sec& onTime, const uint& npackets, const uint& nbytes,
+					const string& netInterface);
+
+
+private:
+	std::string iperf_command(const time_sec& onTime, const uint& npackets, const uint& nbytes,
+			const string& netInterface);
+
+};
+
+#endif /* SRC_IPERFFLOWT_H_ */

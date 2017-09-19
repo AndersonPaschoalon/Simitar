@@ -10,12 +10,17 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <stdlib.h>
-#include <string.h>
 #include <string>
+#include <thread>         // std::thread
+#include <mutex>          // std::mutex
 
 #include "Defines.h"
 #include "PlogMacros.h"
+
+// generic iostream mutex
+extern std::mutex simitar_iostream_mutex;
+// ethernet interface mutex
+extern std::mutex simitar_eth_mutex;
 
 class SimitarWorkspace
 {
@@ -48,7 +53,6 @@ public:
 	 * @return
 	 */
 	std::string dir_xml();
-
 
 	std::string database_version();
 
@@ -123,7 +127,6 @@ public:
 	 * @return
 	 */
 	std::string version_name();
-
 
 	/**
 	 *

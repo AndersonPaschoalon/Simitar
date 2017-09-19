@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <thread>         // std::thread
+#include <mutex>          // std::mutex
+#include <algorithm>
+#include <tclap/CmdLine.h>
+#include "IperfFlow.h"
+
+void cli_error_messege(std::string arg, std::string arg_name,
+		std::string expected_values_msg);
+
+bool cli_check_val(std::string val, std::vector<std::string> expectedVals);
+
+int main()
+{
+	std::cout << "hello world" << std::endl;
+	return (0);
+}
+
+/**
+ * Print an error message if the input argument is an invalid balue
+ * @param arg input CLI argument
+ * @param arg_name argument name
+ * @param expected_values message with expected values
+ */
+void cli_error_messege(std::string arg, std::string arg_name,
+		std::string expected_values_msg)
+{
+	std::cerr << "trace-analyzer Error: invalid argument " << arg << " for "
+			<< arg_name << ". Expected " << expected_values_msg
+			<< ". Use --help for help." << std::endl;
+
+}
+
+/**
+ * Check if the CLI input argument is a valid value
+ * @param val input CLI argument.
+ * @param expectedVals vector with valid CLI arguments.
+ * @return
+ */
+bool cli_check_val(std::string val, std::vector<std::string> expectedVals)
+{
+	uint m = expectedVals.size();
+
+	for (uint i = 0; i < m; i++)
+		if (val == expectedVals[i])
+			return (true);
+
+	return (false);
+}
+

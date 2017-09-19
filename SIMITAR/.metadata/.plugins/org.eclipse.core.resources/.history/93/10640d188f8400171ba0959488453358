@@ -1,3 +1,0 @@
-CsvFile.o: ../CsvFile.cpp ../CsvFile.h
-
-../CsvFile.h:

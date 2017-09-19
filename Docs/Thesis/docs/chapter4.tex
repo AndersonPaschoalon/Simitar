@@ -611,16 +611,21 @@ We also developed an simple test to guess the application protocol, based on the
 	\centering
 	\caption{Stack of models used to create the CTD file}
 	\label{tab:mehtods}
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{|l|l|l|}
 		\hline
-		Link Layer                          & \multirow{3}{*}{Packets header's data} \\ \cline{1-1}
-		Network Layer                       &                                       \\ \cline{1-1}
-		Transport Layer                     &                                       \\ \hline
-		Application Layer                   & Application Match Table                    \\ \hline
-		\multirow{2}{*}{Inter Packet Times} & Algorithm: $calcOnOff$                             \\ \cline{2-2} 
-		& 
-		Algorithm: $stochasticModelFitting$                    \\ \hline
-		Packet Sizes                        & Algorithm: $stochasticModelFitting$                    \\ \hline
+		Layer & Method & Variables \\
+		\hline
+		Link Layer  & \multirow{3}{*}{Packets header's data} & \texttt{link\_layer}, \texttt{link\_layer.mac\_src}, \texttt{link\_layer.mac\_dst} \\ \cline{1-1}\cline{3-3}
+		
+		Network Layer & & \texttt{network\_layer}, \texttt{network\_layer.src\_ip}, \texttt{network\_layer.dst\_ip}, \texttt{network\_layer.ttl},\texttt{}\\ \cline{1-1}\cline{3-3}
+		
+		Transport Layer & & \texttt{transport\_layer}, \texttt{transport\_layer.dst\_port}, \texttt{transport\_layer.src\_port}\\ \hline
+		
+		Application Layer  & Application Match Table  & \texttt{application\_layer} \\ \hline
+		
+		\multirow{2}{*}{Inter Packet Times} & Algorithm: $calcOnOff$  & \texttt{inter\_packet\_times}\\ 
+		\cline{2-2}\cline{3-3}  & Algorithm: $stochasticModelFitting$                    &\\  \hline
+		Packet Sizes  & Algorithm: $stochasticModelFitting$ &\\ \hline
 	\end{tabular}
 \end{table}
 

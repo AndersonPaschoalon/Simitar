@@ -34,6 +34,7 @@
 #include "NetworkTrace.h"
 #include "StochasticModelFit.h"
 #include "RegressionTests.h"
+#include "NetworkFlowFactory.h"
 //#include "MesserLog.h"
 
 //namespaces

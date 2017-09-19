@@ -7,13 +7,12 @@
 
 #ifndef DEFINES_H_
 #define DEFINES_H_
-//#include <string>
-using namespace std;
+//using namespace std;
 
-#include <plog/Init.h>
-#include <plog/Log.h>
-#include <plog/Appenders/ColorConsoleAppender.h>
-#include <plog/Appenders/RollingFileAppender.h>
+//#include <plog/Init.h>
+//#include <plog/Log.h>
+//#include <plog/Appenders/ColorConsoleAppender.h>
+//#include <plog/Appenders/RollingFileAppender.h>
 
 /**
 Alguns tutoriais importantes:
@@ -318,9 +317,10 @@ typedef enum information_criterion_enum
 
  */
 
+/*
 
 // Log macros
-#define PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
+#define SIMITAR_PLOG_INIT() plog::RollingFileAppender<plog::CsvFormatter> fileAppender("MultiAppender.csv", 8000, 3); \
 		plog::ColorConsoleAppender<plog::TxtFormatter> colorConsoleAppender; \
 		plog::init(plog::debug, &colorConsoleAppender).addAppender(&fileAppender);
 
@@ -336,6 +336,6 @@ typedef enum information_criterion_enum
 #define PLOG_DEBUG LOG_DEBUG  << "[" << __FILE__ << "] "
 #define PLOG_VERBOSE LOG_VERBOSE  << "[" << __FILE__ << "] "
 
-
+*/
 
 #endif /* DEFINES_H_ */

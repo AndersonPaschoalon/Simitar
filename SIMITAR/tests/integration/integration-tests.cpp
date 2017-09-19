@@ -72,9 +72,9 @@ int main() {
 		////dp.calculate(experimentName, &dbif, trace);
 		//trace->setTrafficGenEngine("D-ITG");
 		//trace->exec(true);
-		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "D-ITG");
+		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "dummy");
 		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
-		traceCdt.exec(true);
+		traceCdt.exec();
 
 	}
 

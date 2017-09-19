@@ -3,6 +3,7 @@
 	<name>ditg-flow</name>
 	<comment></comment>
 	<projects>
+		<project>libsimitar</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -20,6 +20,12 @@ void DummyFlow::print()
 {
 }
 
+int DummyFlow::server()
+{
+	printf("[Server-mode operation]\n");
+	return (0);
+}
+
 void DummyFlow::flowStart()
 {
 	//MESSER_LOG_INIT(DEBUG);
@@ -67,9 +73,6 @@ void DummyFlow::flowStart()
 
 }
 
-//void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
-//		const unsigned int& npackets, uint nbytes, const uint& nbytes,
-//		const string& netInterface)
 void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 		const uint& npackets, const uint& nbytes, const string& netInterface)
 {
@@ -97,89 +100,18 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Link[" + Protocol(this->getLinkProtocol()).str() + "]";
 
-	/*
-	 flow_str_print += " Link[";
-	 prt = this->getLinkProtocol();
-	 if (prt == PROTOCOL__ETHERNET)
-	 {
-	 flow_str_print += "Ethernet";
-	 }
-	 else
-	 {
-	 flow_str_print += "Ethernet";
-	 }
-	 flow_str_print += "]";
-	 */
 	////////////////////////////////////////////////////////////////////////////
 	/// Network-layer protocol
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Network[" + Protocol(this->getNetworkProtocol()).str()
 			+ "]";
 
-	/*
-	 flow_str_print += " Network[";
-	 prt = this->getNetworkProtocol();
-	 if (prt == PROTOCOL__IPV4)
-	 {
-	 flow_str_print += "IPv4: ";
-	 }
-	 else if (prt == PROTOCOL__IPV6)
-	 {
-	 flow_str_print += "IPv6: ";
-	 }
-	 else
-	 {
-	 flow_str_print += std::to_string(prt) + ": ";
-	 }
-	 flow_str_print += this->getNetworkSrcAddr() + " > "
-	 + this->getNetworkDstAddr() + "]";
-	 */
 	////////////////////////////////////////////////////////////////////////////
 	/// Transport-layer protocol
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Transport["
 			+ Protocol(this->getTransportProtocol()).str() + "]";
-	/*
-	 flow_str_print += " Transport[";
-	 prt = this->getTransportProtocol();
-	 if (prt == PROTOCOL__TCP)
-	 {
-	 flow_str_print += "TCP";
-	 }
-	 else if (prt == PROTOCOL__UDP)
-	 {
-	 flow_str_print += "UDP";
-	 }
-	 else if (prt == PROTOCOL__ICMP)
-	 {
-	 flow_str_print += "ICMP";
-	 }
-	 else if (prt == PROTOCOL__ICMPV6)
-	 {
-	 flow_str_print += "ICMPv6";
-	 }
 
-	 else if (prt == PROTOCOL__SCTP)
-	 {
-	 flow_str_print += "SCTP";
-	 }
-
-	 else if (prt == PROTOCOL__DCCP)
-	 {
-	 flow_str_print += "";
-	 }
-
-	 else if (prt == PROTOCOL__GRE)
-	 {
-	 flow_str_print += "GRE";
-	 }
-	 else
-	 {
-	 flow_str_print += std::to_string(prt);
-	 }
-	 flow_str_print += ": " + std::to_string(this->getTransportSrcPort()) + " > "
-	 + std::to_string(this->getTransportDstPort()) + "]";
-	 */
 	// Application protocol
 	flow_str_print += " Application["
 			+ Protocol(this->getApplicationProtocol()).str() + "]";
@@ -189,60 +121,7 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Inter-deperture["
 			+ this->getInterDepertureTimeModel(0).strModelName() + "]";
-	/*
-	 flow_str_print += " Inter-deperture[";
-	 themodel = this->getInterDepertureTimeModel(0);
-	 flow_str_print += themodel.strModelName();
 
-	 if (themodel.modelName() == WEIBULL)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", betha=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == NORMAL)
-	 {
-	 flow_str_print += ": mu=" + std::to_string(themodel.param1())
-	 + ", sigma=" + std::to_string(themodel.param2());
-	 }
-	 else if ((themodel.modelName() == EXPONENTIAL_LINEAR_REGRESSION)
-	 || (themodel.modelName() == EXPONENTIAL_MEAN))
-	 {
-	 flow_str_print += ": lambda=" + std::to_string(themodel.param1());
-	 }
-	 else if ((themodel.modelName() == PARETO_LINEAR_REGRESSION)
-	 || (themodel.modelName() == PARETO_MAXIMUM_LIKEHOOD))
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", xm=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == CAUCHY)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", x0=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == CONSTANT)
-	 {
-	 flow_str_print += ": mean=" + std::to_string(themodel.param1());
-	 }
-	 else if ((themodel.modelName() == SINGLE_PACKET)
-	 || (themodel.modelName() == NO_MODEL))
-	 {
-	 //do nothing
-	 }
-	 else
-	 {
-
-	 cerr << "Error @" << __PRETTY_FUNCTION__
-	 << "No model selected for Inter-deperture model\n" << "Hint: "
-	 << " this->getInterDepertureTimeModel_next() = "
-	 << themodel.strModelName() << endl;
-	 }
-
-	 flow_str_print += "] ";
-
-	 flow_str_print += " ("
-	 + std::to_string(getNumberOfInterdepertureTimeModels()) + ")";
-	 */
 	////////////////////////////////////////////////////////////////////////////
 	/// Packet-size model
 	////////////////////////////////////////////////////////////////////////////
@@ -251,124 +130,49 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	flow_str_print += " Packet-size-Mode2["
 			+ this->getPacketSizeModelMode2(0).strModelName() + "]";
 
-	/*
-	 flow_str_print += " Packet-size-Mode1[";
-
-	 themodel = this->getPacketSizeModelMode1(0);
-	 flow_str_print += themodel.strModelName();
-
-	 if (themodel.modelName() == WEIBULL)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", betha=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == NORMAL)
-	 {
-	 flow_str_print += ": mu=" + std::to_string(themodel.param1())
-	 + ", sigma=" + std::to_string(themodel.param2());
-	 }
-	 else if ((themodel.modelName() == EXPONENTIAL_LINEAR_REGRESSION)
-	 || (themodel.modelName() == EXPONENTIAL_MEAN))
-	 {
-	 flow_str_print += ": lambda=" + std::to_string(themodel.param1());
-	 }
-	 else if ((themodel.modelName() == PARETO_LINEAR_REGRESSION)
-	 || (themodel.modelName() == PARETO_MAXIMUM_LIKEHOOD))
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", xm=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == CAUCHY)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", x0=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == CONSTANT)
-	 {
-	 flow_str_print += ": mean=" + std::to_string(themodel.param1());
-	 }
-	 else if (themodel.modelName() == NO_MODEL)
-	 {
-	 //flow_str_print += ": mean=" + std::to_string(themodel.param1);
-	 }
-	 else
-	 {
-	 cerr << "Error @ " << __PRETTY_FUNCTION__
-	 << "No model selected for Packet-size Mode1 model\n" << endl;
-	 cerr << "Hint: " << " getPacketSizeModelMode1_next = "
-	 << themodel.strModelName() << endl;
-	 errno = EINVAL;
-	 }
-	 flow_str_print += "] ";
-
-	 flow_str_print += " Packet-size-Mode2[";
-
-	 themodel = this->getPacketSizeModelMode2(0);
-	 flow_str_print += themodel.strModelName();
-
-	 if (themodel.modelName() == WEIBULL)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", betha=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == NORMAL)
-	 {
-	 flow_str_print += ": mu=" + std::to_string(themodel.param1())
-	 + ", sigma=" + std::to_string(themodel.param2());
-	 }
-	 else if ((themodel.modelName() == EXPONENTIAL_LINEAR_REGRESSION)
-	 || (themodel.modelName() == EXPONENTIAL_MEAN))
-	 {
-	 flow_str_print += ": lambda=" + std::to_string(themodel.param1());
-	 }
-	 else if ((themodel.modelName() == PARETO_LINEAR_REGRESSION)
-	 || (themodel.modelName() == PARETO_MAXIMUM_LIKEHOOD))
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", xm=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == CAUCHY)
-	 {
-	 flow_str_print += ": alpha=" + std::to_string(themodel.param1())
-	 + ", x0=" + std::to_string(themodel.param2());
-	 }
-	 else if (themodel.modelName() == CONSTANT)
-	 {
-	 flow_str_print += ": mean=" + std::to_string(themodel.param1());
-	 }
-	 else if (themodel.modelName() == NO_MODEL)
-	 {
-	 //flow_str_print += ": mean=" + std::to_string(themodel.param1);
-	 }
-	 else
-	 {
-	 perror(
-	 "Error @ DummyFlow::flowGenerate(). No model selected for Packet-size Mode2 model\n");
-	 cerr << "Hint: " << " getPacketSizeModelMode2_next = "
-	 << themodel.strModelName() << endl;
-	 errno = EINVAL;
-	 }
-	 flow_str_print += "] ";
-
-	 //convert the cpp flow-string to a c flow string, in order to atomize the printing
-	 const char* flow_print = flow_str_print.c_str();
-
-	 //rc = usleep(usecs);
-	 if (rc != 0)
-	 {
-	 perror(
-	 "Impossible to execute usleep() sleep at void DummyFlow::printFlow()\n");
-	 errno = EAGAIN;
-	 exit(EXIT_FAILURE);
-	 }
-	 */
-	const char* flow_print = flow_str_print.c_str();
-	pthread_mutex_t lock;
-	pthread_mutex_init(&lock, NULL);
-	pthread_mutex_lock(&lock);
-	printf("%s\n", flow_print);
-	pthread_mutex_unlock(&lock);
-	pthread_mutex_destroy(&lock);
+	simitar_iostream_mutex.lock();
+	printf("%s\n", flow_str_print.c_str());
+	simitar_iostream_mutex.unlock();
 
 }
 
+void DummyFlow::fsleep(time_sec sleep_time)
+{
+	sleep_method sleepMethod = method_usleep;
+
+	if (sleepMethod == method_select)
+	{
+		struct timeval tv;
+		tv.tv_sec = int(sleep_time);
+		tv.tv_usec = int( (sleep_time - floor(sleep_time)) * 1e6);
+		int ret;
+		do {
+			ret = select(1, NULL, NULL, NULL, &tv);
+		} while ((ret == -1) && (errno == EINTR)); //select is interruped too
+
+	}
+	else if (sleepMethod == method_pooling)
+	{
+		uint64_t delta_us;
+		struct timespec start, end;
+		uint64_t wait_us = time_t(sleep_time * 1.0e6);
+		for (;;) {
+			clock_gettime(CLOCK_MONOTONIC_RAW, &end);
+			delta_us = (end.tv_sec - start.tv_sec) * 1000000
+					+ (end.tv_nsec - start.tv_nsec) / 1000;
+			if (delta_us < wait_us) {
+				continue;
+			} else {
+				break;
+			}
+		}
+
+	}
+	else // method_usleep
+	{
+		time_t usec_delay = 0;
+		usec_delay = time_t(sleep_time * 1.0e6);
+		usleep(usec_delay);
+	}
+
+}
