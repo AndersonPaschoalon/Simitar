@@ -2,19 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="NetworkTrace" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="bind"/>
-			<item value="npackets"/>
-			<item value="timescaleSufix"/>
-			<item value="dpTimeScale"/>
-			<item value="server()"/>
-			<item value="version_name"/>
-			<item value="server"/>
+			<item value="NetworkTrace"/>
+			<item value="timeSca"/>
+			<item value="LABEL_TIME_SCALE"/>
+			<item value="TimeScale"/>
+			<item value="setTimeScale"/>
+			<item value="flowThread"/>
+			<item value="pushback_Netflow"/>
+			<item value="DEBUG_StochasticModelFit"/>
 		</list>
 		<list key="replacehistory">
 		</list>
