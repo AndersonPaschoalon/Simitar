@@ -9,7 +9,7 @@ reset
 if (!exists("font")) font= 'Helvetica,10'
 #if (!exists("xlabel")) xlabel='xlabel'
 if (!exists("ylabel")) ylabel='ylabel'
-if (!exists("title")) title='title'
+#if (!exists("title")) title='title'
 if (!exists("sizeratio")) sizeratio= '0'
 if (!exists("linestyle1")) linestyle1 = '1'
 if (!exists("linestyle2")) linestyle2 = '12'
@@ -21,7 +21,7 @@ set style fill solid 1.00 border 0
 set style data histogram
 set xtics rotate by -45
 set grid ytics
-set title title
+#set title title
 set ylabel ylabel
 #set xlabel xlabel
 if( sizeratio == '0'){

@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage{eadca-template}
+\usepackage[plain]{algorithm}
+
+\usepackage[brazil,english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx,url}
+\usepackage[hang]{subfigure}
+\usepackage{psfrag}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+
+% new packages
+\usepackage{enumitem}
+\usepackage{balance}
+%\usepackage[showframe]{geometry}
+%\usepackage{lipsum}
+%\usepackage{subfig}
+%\usepackage{float}
+%\usepackage{subfigure}
+%\usepackage{graphicx}
+%\usepackage[showframe=true]{geometry}
+
+\sloppy
+
+\title{Using BIC and AIC for Ethernet traffic model selection. Is it worth?}
+
+\author{Anderson dos Santos Paschoalon \and Christian Esteve Rothenberg}
+
+\address{Departamento de Engenharia de Computa\c{c}\~{a}o e Automa\c{c}\~{a}o Industrial (DCA) \\
+  Faculdade de Engenharia El\'{e}trica e de Computa\c{c}\~{a}o (FEEC) \\
+  Universidade Estadual de Campinas (Unicamp)\\
+  Caixa Postal 6101, 13083-970 -- Campinas, SP, Brasil
+  \email{\{apaschoalon,chesteve\}@dca.fee.unicamp.br}}
+
+\hyphenation{}
+\pagestyle{fancy}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[
+\maketitle
+\thispagestyle{fancy}
+\selectlanguage{english}
+
+   \begin{abstract}
+ In this work, we aim to evaluate how good are the information criterion AIC and BIC inferring which is the best stochastic process to describe Ethernet inter-packet times. Also, we check if there is a practical difference between using AIC or BIC. To do so, we use a set of stochastic distributions to represent inter-packet of a traffic trace and calculate AIC and BIC. To test the quality of  BIC and AIC guesses,  we define a cost function, based on the comparison of significant stochastic properties for internet traffic modeling, such as correlation, fractal-level and mean. Then, we compare both results.  In this short paper, we present just the results of a public free Skype-application packet capture, but we source as reference further analyzes on different traces. We conclude that for most of the cases AIC and BIC can guess right the best fitting, according to the standards of Ethernet traffic modeling. 
+
+   \end{abstract}
+
+  \keywords{BIC, AIC, stochastic function, inter-packet times, correlation, Hurst exponent, heavy-tailed distribution, fractal-level, burstiness, linear-regression, weibull, pareto, exponential, normal, poison, maximum likelihood, Ethernet traffic, traffic modeling, fractal-level, pcap file, Skype traffic}
+]
+
+\selectlanguage{English}
+
+\balance
+\input{body}
+
+\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+\bibliographystyle{unsrt}
+
+\bibliography{bibliography}
+
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{eadca-template}
+\usepackage[plain]{algorithm}
+\usepackage{auto-pst-pdf}
+\usepackage[brazil,english]{babel}
+%\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lipsum} 
+\usepackage{graphicx,url}
+\usepackage[hang]{subfigure}
+\usepackage{psfrag}
+
+%New packages-----------------------------------
+\setlength{\headheight}{13.2pt}
+\usepackage{mathtools}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{amssymb}
+\usepackage{cite}
+%\usepackage{hyperref}
+\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+%\usepackage{subfig}
+%\usepackage{titling}
+\usepackage{pdfpages}
+%Trecho de código para realizar a listagem de código fonte
+% Definindo novas cores
+\definecolor{verde}{rgb}{0,0.5,0}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  stringstyle=\color{verde},
+  commentstyle=\color{red},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true,
+  backgroundcolor=\color{green!10},
+  breakautoindent=true,
+  captionpos=b,
+  xleftmargin=0pt,
+}
+\usepackage{tabularx}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+
+\sloppy
+
+
+\title{Towards a Flexible and Extensible Framework for Realistic Traffic Generation on Emerging Networking Scenarios}
+
+\author{Anderson dos Santos Paschoalon \and Christian Esteve Rothenberg}
+
+\address{Departamento de Engenharia de Computa\c{c}\~{a}o e Automa\c{c}\~{a}o Industrial (DCA) \\
+  Faculdade de Engenharia El\'{e}trica e de Computa\c{c}\~{a}o (FEEC) \\
+  Universidade Estadual de Campinas (Unicamp)\\
+  Caixa Postal 6101, 13083-970 -- Campinas, SP, Brasil
+  \email{\{pchoalon ,chesteve\}@dca.fee.unicamp.br}}
+
+\hyphenation{}
+\pagestyle{fancy}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[
+\maketitle
+\thispagestyle{fancy}
+\selectlanguage{english}
+
+   \begin{abstract}
+      \input{abstract}
+   \end{abstract}
+
+  \keywords{ 
+     \input{keywords} 
+  }
+]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{english}
+
+  \input{body}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \bibliographystyle{plain}
+  \bibliography{bib-template}
+
+\end{document}

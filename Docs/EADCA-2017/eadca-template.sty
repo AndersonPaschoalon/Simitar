@@ -1,0 +1,151 @@
+% Estilo LaTeX para as submissões para EADCA
+%
+% Criado por Wu Shin-Ting, Out/2007
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{eadca-template}[2007/10/23]
+
+% margem sup 3.5 cm: há 1,5 cm para header, + 2 cm para top
+% margem inf 2.5 cm: há 1,5 cm para foot, + 1 cm para bottom
+% margem esq 2,5cm
+% margem dir 2 cm
+%\RequirePackage[a4paper,twocolumn,top=3.5cm,left=2.5cm,right=2cm,bottom=2.5cm]{geometry}
+\RequirePackage[a4paper,twocolumn,top=3.0cm,left=2.3cm,right=2.3cm,bottom=2.17cm]{geometry}
+
+\parindent 1.27cm
+\parskip   6pt
+
+\flushbottom
+% headers and footers
+%\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\tiny Campinas, 26 e 27 de outubro de 2017\\Campinas, Brazil, October 26-27, 2017}
+\lhead{\tiny X Encontro de Alunos e Docentes do DCA/FEEC/UNICAMP (EADCA)\\X
+DCA/FEEC/University of Campinas (UNICAMP) Workshop (EADCA)}
+%\rfoot{Page \thepage}
+
+% set spacing between columns
+\setlength{\columnsep}{0.5cm}
+
+% captions
+\RequirePackage[bf,sf,footnotesize,indent]{caption2}
+%\setlength{\captionmargin}{0.8cm}
+\setlength{\captionmargin}{0.5cm}
+\renewcommand{\captionfont}{\sffamily\footnotesize\bfseries}
+\renewcommand{\captionlabeldelim}{.}
+
+% font
+\RequirePackage{times}
+
+\newcommand{\XIIPT}{\@setfontsize\xiipt{12}{15}}
+\newcommand{\XIIIPT}{\@setfontsize\xiiipt{13}{17}}
+\newcommand{\XVIPT}{\@setfontsize\xvipt{16}{20}}
+
+% new commands
+\newcounter{instn}
+\setcounter{instn}{1}
+\newcommand{\instnum}{\arabic{instn}}
+\newcommand{\inst}[1]{\ensuremath{^#1}}
+\newcommand{\nextinstitute}{\\\mbox{}\\[-6pt] \addtocounter{instn}{1}\inst{\instnum}}
+\newcommand{\email}[1]{\\\mbox{}\\[-6pt]\footnotesize\texttt{#1}}
+\renewcommand{\and}{, }
+
+% itens
+\setlength\leftmargini   {1.27cm}
+\setlength\leftmargin    {\leftmargini}
+\setlength\leftmarginii  {\leftmargini}
+\setlength\leftmarginiii {\leftmargini}
+\setlength\leftmarginiv  {\leftmargini}
+\setlength  \labelsep    {.5em}
+\setlength  \labelwidth  {\leftmargini}
+\addtolength\labelwidth  {-\labelsep}
+\def\@listI{\leftmargin\leftmargini
+            \parsep 0\p@ \@plus1\p@ \@minus\p@
+            \topsep 0\p@ \@plus2\p@ \@minus4\p@
+            \itemsep0\p@}
+\let\@listi\@listI
+\@listi
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep    0\p@ \@plus2\p@ \@minus\p@}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep    0\p@ \@plus\p@\@minus\p@
+              \parsep    \z@
+              \partopsep \p@ \@plus\z@ \@minus\p@}
+
+
+% sections
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+                       {-6\p@ \@plus -4\p@ \@minus -4\p@}%
+                       {0\p@ \@plus 4\p@ \@minus 4\p@}%
+                       {\normalfont\XIIIPT\bfseries\boldmath
+                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                       {-6\p@ \@plus -4\p@ \@minus -4\p@}%
+                       {0\p@ \@plus 4\p@ \@minus 4\p@}%
+                       {\normalfont\XIIPT\bfseries\boldmath
+                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
+
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
+\RequirePackage{titlesec}
+\titlelabel{\thetitle\hspace{1ex}}
+
+%first page
+\pagestyle{empty}
+
+\newcommand{\authortag}[1]{$^{#1}$}
+
+\def\address#1{\gdef\@address{#1}}
+
+\def\@maketitle{\newpage
+ %\null % isso dava um espaco extra antes do title
+ \begin{center}
+   %\vglue -6pt
+%   \vspace*{12pt}
+\vspace*{-.7cm}
+  {\XVIPT\bf\@title\par}
+   \vglue 6pt plus 3pt minus 3pt
+  {\normalsize
+   \textbf{\begin{tabular}[t]{c}\@author\end{tabular}}\par}
+   \vglue 6pt plus 3pt minus 3pt
+  {\normalsize
+   \begin{tabular}[t]{c}\@address\end{tabular}\par}
+   \vglue 6pt plus 3pt minus 3pt
+   \end{center}\par
+}
+
+% Multilanguage labels
+\def\keywordlabel{\iflanguage{english}{Keywords}{Palavras-chave}}
+
+% paragraph with argument to make a runaway title.
+\def\namedpar#1{\paragraph{\footnotesize\bfseries #1 --}}
+
+% redifine abstract
+\renewenvironment{abstract}{
+      \begin{center}
+        \begin{minipage}{5.75truein}
+          \footnotesize
+            \namedpar{\abstractname}
+    }{
+        \end{minipage}
+      \end{center}
+      \vskip 1ex \par
+    }
+
+%% Keywords
+\def\keywords#1{
+      \renewcommand{\abstractname}{\keywordlabel}
+      \begin{abstract}
+        #1
+      \end{abstract}
+      \vspace{6pt}
+}
