@@ -35,7 +35,6 @@
 #include "StochasticModelFit.h"
 #include "RegressionTests.h"
 #include "NetworkFlowFactory.h"
-//#include "MesserLog.h"
 
 //namespaces
 using std::string;
@@ -44,14 +43,7 @@ using std::isnan;
 using std::sort;
 using namespace arma;
 
-#define DEBUG_StochasticModelFit 1
 
-enum time_scale
-{
-	milliseconds, seconds
-};
-
-//TODO: this class must be static... or not
 class DataProcessor
 {
 public:

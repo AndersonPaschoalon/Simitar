@@ -52,14 +52,19 @@ using std::vector;
 class NetworkFlow
 {
 public:
-	//Create flow
+
 	NetworkFlow();
+
+
 	virtual ~NetworkFlow();
 	//static NetworkFlow *make_flow(const string& choise);
 
 	virtual std::thread flowThread() = 0;
 
 	virtual int server() = 0;
+
+	void setTimeScale(time_scale theTimeScale);
+	double timeScaleFactor();
 
 	virtual void flowGenerate(const counter& flowId, const time_sec& onTime,
 			const uint& npackets, const uint& nbytes,
@@ -249,9 +254,17 @@ public:
 		this->flowId = flowId;
 	}
 
-	//void logOnOff();
 
 private:
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Flow-level settings
+	////////////////////////////////////////////////////////////////////////////
+
+	std::string ether_interface;
+	time_scale flow_time_scale;
+	sleep_method flow_sleep_method;
+
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Flow-level options

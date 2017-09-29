@@ -7,10 +7,9 @@
 
 #include "IperfFlow.h"
 
-IperfFlow::IperfFlow() :
-		time_scale_factor(1.0)
+IperfFlow::IperfFlow()
 {
-	// nothing to do
+	setTimeScale(seconds);
 }
 
 IperfFlow::~IperfFlow()

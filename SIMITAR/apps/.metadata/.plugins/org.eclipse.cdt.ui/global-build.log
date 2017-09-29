@@ -290,3 +290,126 @@ make all
 Makefile:92: recipe for target 'trace-analyzer' failed
 g++: error: ../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
 make: *** [trace-analyzer] Error 1
+22:11:48 **** Incremental Build of configuration Default for project hello-world ****
+make all 
+make: Nothing to be done for 'all'.
+22:11:48 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+
+* Compiling: ../libsimitar/NetworkFlowFactory.cpp -> ../libsimitar/obj/NetworkFlowFactory.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/NetworkFlowFactory.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:04
+
+* Compiling: ../libsimitar/SimitarWorkspace.cpp -> ../libsimitar/obj/SimitarWorkspace.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/SimitarWorkspace.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:01
+
+* Compiling: ../libsimitar/DummyFlow.cpp -> ../libsimitar/obj/DummyFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DummyFlow.o ../libsimitar/DummyFlow.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/DummyFlow.cpp: In constructor ‘DummyFlow::DummyFlow()’:
+../libsimitar/DummyFlow.cpp:13:2: error: ‘time_scale NetworkFlow::flow_time_scale’ is private within this context
+  flow_time_scale = seconds;
+  ^~~~~~~~~~~~~~~
+In file included from ../libsimitar/DummyFlow.h:11:0,
+                 from ../libsimitar/DummyFlow.cpp:9:
+../libsimitar/NetworkFlow.h:264:13: note: declared private here
+  time_scale flow_time_scale;
+             ^~~~~~~~~~~~~~~
+../libsimitar/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../libsimitar/DummyFlow.cpp:40:9: warning: unused variable ‘usec_offTime’ [-Wunused-variable]
+  time_t usec_offTime = 0; // time in useconds
+         ^~~~~~~~~~~~
+../libsimitar/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/DummyFlow.cpp:74:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../libsimitar/DummyFlow.cpp:76:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../libsimitar/DummyFlow.cpp:78:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+Makefile:108: recipe for target '../libsimitar/obj/DummyFlow.o' failed
+make: *** [../libsimitar/obj/DummyFlow.o] Error 1
+22:11:56 **** Incremental Build of configuration Default for project iperf-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:11:56 **** Incremental Build of configuration Default for project dummy-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:11:56 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+Building file: ../src/ditg-flow.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/ditg-flow.o" -o "src/ditg-flow.o" "../src/ditg-flow.cpp"
+../src/ditg-flow.cpp:13:26: fatal error: NetworkTrace.h: Arquivo ou diretório não encontrado
+ #include <NetworkTrace.h>
+src/subdir.mk:18: recipe for target 'src/ditg-flow.o' failed
+                          ^
+compilation terminated.
+make: *** [src/ditg-flow.o] Error 1
+22:11:57 **** Incremental Build of configuration Default for project tests-integration ****
+make all 
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:03
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../integration-tests] Error 1
+Makefile:94: recipe for target '../integration-tests' failed
+22:12:00 **** Incremental Build of configuration Default for project tests-unity ****
+make all 
+
+* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/obj/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/obj/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:03
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../unity-tests] Error 1
+Makefile:96: recipe for target '../unity-tests' failed
+22:12:03 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Compiling: ../trace-analyzer/src/Main.cpp -> ../trace-analyzer/obj/Main.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../trace-analyzer/obj/Main.o ../trace-analyzer/src/Main.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:05
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+g++: error: ../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+Makefile:92: recipe for target 'trace-analyzer' failed
+make: *** [trace-analyzer] Error 1
+22:55:00 **** Incremental Build of configuration Default for project hello-world ****
+make all 
+make: Nothing to be done for 'all'.
+22:55:00 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+22:55:00 **** Incremental Build of configuration Default for project iperf-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:55:00 **** Incremental Build of configuration Default for project dummy-flow ****
+make all 
+make: Nothing to be done for 'all'.
+22:55:00 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+Building file: ../src/ditg-flow.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/ditg-flow.o" -o "src/ditg-flow.o" "../src/ditg-flow.cpp"
+../src/ditg-flow.cpp:13:26: fatal error: NetworkTrace.h: Arquivo ou diretório não encontrado
+ #include <NetworkTrace.h>
+                          ^
+compilation terminated.
+make: *** [src/ditg-flow.o] Error 1
+src/subdir.mk:18: recipe for target 'src/ditg-flow.o' failed
+22:55:01 **** Incremental Build of configuration Default for project tests-integration ****
+make all 
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+	 Link time: 00:00:01
+22:55:02 **** Incremental Build of configuration Default for project tests-unity ****
+make all 
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+	 Link time: 00:00:01
+22:55:03 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+	 Link time: 00:00:01

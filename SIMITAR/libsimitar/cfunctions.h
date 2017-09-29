@@ -19,13 +19,35 @@
 #include <list>
 #include <armadillo>
 #include <vector>
+#include <sys/wait.h>
 
 #include "Defines.h"
 #include "RegressionTests.h"
 
 using namespace arma;
 
+#define READ   0
+#define WRITE  1
+
 #define _TESTS_FLAG 1
+
+/**
+ *
+ * @param command
+ * @param type
+ * @param pid
+ * @return
+ */
+FILE * popen2(string command, string type, int & pid)
+
+
+/**
+ *
+ * @param fp
+ * @param pid
+ * @return
+ */
+int pclose2(FILE * fp, pid_t pid);
 
 /**
  * @brief

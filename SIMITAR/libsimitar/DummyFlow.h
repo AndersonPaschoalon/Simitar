@@ -25,10 +25,10 @@
  } l2_addr;
  */
 
-typedef enum
-{
-	method_usleep, method_pooling, method_select
-} sleep_method;
+//typedef enum
+//{
+//	method_usleep, method_pooling, method_select
+//} sleep_method;
 
 class DummyFlow: public NetworkFlow
 {
@@ -73,12 +73,6 @@ public:
 		return std::thread([=]
 		{	flowStart();});
 	}
-
-protected:
-	/**
-	 * Time scale factor
-	 */
-	double time_scale_factor;
 
 private:
 

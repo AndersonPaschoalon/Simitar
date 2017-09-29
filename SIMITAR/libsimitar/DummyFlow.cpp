@@ -8,9 +8,9 @@
 #include "Defines.h"
 #include "DummyFlow.h"
 
-DummyFlow::DummyFlow() :
-		time_scale_factor(1.0)
+DummyFlow::DummyFlow()
 {
+	setTimeScale(seconds);
 }
 
 DummyFlow::~DummyFlow()
@@ -43,7 +43,9 @@ void DummyFlow::flowStart()
 	uint nbytes = 0;
 	uint npackets = 0;
 
-	fsleep(sec_startDelay/time_scale_factor);
+
+	PLOG_INFO << "Time scale factor is " << timeScaleFactor();
+	fsleep(sec_startDelay/timeScaleFactor());
 	//usleep(usec_startDelay);
 	while (1)
 	{
@@ -60,7 +62,7 @@ void DummyFlow::flowStart()
 		}
 		//usec_offTime = time_t(sec_offTime * 1.0e6);
 		//usleep(usec_offTime);
-		fsleep(sec_offTime/time_scale_factor);
+		fsleep(sec_offTime/timeScaleFactor());
 
 	}
 

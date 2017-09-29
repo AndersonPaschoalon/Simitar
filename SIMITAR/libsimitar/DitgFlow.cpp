@@ -7,10 +7,12 @@
 
 #include "DitgFlow.h"
 
-DitgFlow::DitgFlow() :
-		time_scale_factor(1000.0)
+/**
+ * Must sett time scale factor
+ */
+DitgFlow::DitgFlow()
 {
-	// nothing to do
+	setTimeScale(milliseconds);
 }
 
 DitgFlow::~DitgFlow()

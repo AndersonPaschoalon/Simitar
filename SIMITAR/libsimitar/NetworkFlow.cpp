@@ -14,37 +14,12 @@
 //#include "NemesisFlow.h"
 //#include "LibtinsFlow.h"
 
-/*
-NetworkFlow* NetworkFlow::make_flow(const string& choise)
-{
-
-	if ((choise == "ditg"))
-	{
-		return new DitgFlow;
-	}
-	else if ((choise == "iperf"))
-	{
-		return new IperfFlow;
-	}
-	else if ((choise == "ostinato"))
-	{
-		return new OstinatoFlow;
-	}
-	else if ((choise == "libtins") || (choise == "tins"))
-	{
-		return new LibtinsFlow;
-	}
-	else
-	{
-		return new DummyFlow;
-	}
-
-	return new DummyFlow;
-}
-*/
-
 NetworkFlow::NetworkFlow()
 {
+	/// flow settings
+	ether_interface = "lo";
+	flow_time_scale = seconds;
+	flow_sleep_method = method_usleep;
 
 	///flow-level parameters initialization
 	flowId = 0;
@@ -92,6 +67,33 @@ NetworkFlow::NetworkFlow()
 	//packetSizeModel1_counter = 0;
 	//packetSizeModel2_counter = 0;
 
+}
+
+/**
+ * Time scale defined for the network Flow. This settings must be changed in the
+ * flow generator class constructor. The default scale is seconds.
+ * If the flow time scale is seconds, it returns 1.0. If it is milliseconds,
+ * returns 1000.0.
+ * @return
+ */
+double NetworkFlow::timeScaleFactor()
+{
+	PLOG_INIT(warning);
+
+	if (flow_time_scale == seconds)
+		return (1.0);
+	else if (flow_time_scale == milliseconds)
+		return (1000.0);
+
+	PLOG_ERROR << ERRORMSG_BAD_VALUE
+						<< " value `flow_time_scale` invalid definition:"
+						<< flow_time_scale;
+	exit(ERROR_BAD_VALUE);
+}
+
+void NetworkFlow::setTimeScale(time_scale theTimeScale)
+{
+	flow_time_scale = theTimeScale;
 }
 
 NetworkFlow::~NetworkFlow()
@@ -907,6 +909,7 @@ vector<uint>* NetworkFlow::getSessionOnBytesVector()
 {
 	return (ptr_session_nBytes);
 }
+
 
 //DEBUG ERASE IT
 //void NetworkFlow::logOnOff()

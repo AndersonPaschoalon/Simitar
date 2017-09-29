@@ -342,21 +342,16 @@ int DataProcessor::calculate_v2(const string& experimentName,
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
-	cout << "Creating Network Compact Trace descriptor: " << experimentName
-			<< ".xml" << std::endl;
-	cout << this->to_string();
-	cout << "Processng Flows ";
 
-//MESSER_LOG_INIT(INFO);
 
-///iterator variables
+
+	///iterator variables
 	long int fcounter = 0;
 	long int nflows = 0;
 	databaseInterface->getNumberOfFlows(experimentName, &nflows);
 
-//MESSER_DEBUG("Number of flows = %d @ <%s, %s>", nflows);
 
-///protocol variables
+	///protocol variables
 	string flowStrData = "";
 	long int flowIntData = 0;
 	time_sec startDalay = 0;		//time of the fist packet of the flow
@@ -364,25 +359,23 @@ int DataProcessor::calculate(const string& experimentName,
 	list<long int> ttlList;
 	int ttl = 0;
 
-///flow-level variables
+	///flow-level variables
 	list<time_sec> relativeTime;	//time relative to the 1st packet list
 	long int nbytesMode1 = 0;
 	long int nbytesMode2 = 0;
 	long int nKbytesMode1 = 0;		//Number of kbytes (bytes/1024) of the
 	long int nKbytesMode2 = 0;
 
-///packetSize variables
+	///packetSize variables
 	list<unsigned int> pslist;
 	list<packet_size> psFirstMode;
 	list<packet_size> psSecondMode;
 
-///inter-deperture time variables
+	///inter-deperture time variables
 	list<time_sec> arrival_list;
 	list<time_sec> interArrival_list; // list of inter arrival times of a flow
 	list<time_sec> interArrival_fileStack;
-//list<time_sec> interArrival_interFileStack;
-//vector<time_sec>* interArrival_sessionOnTimes;
-//vector<time_sec>* interArrival_sessionOffTimes;
+
 	time_sec idt_pivot = 0;
 	time_sec idt_next = 0;
 	time_sec idt_start = 0;
@@ -410,9 +403,6 @@ int DataProcessor::calculate(const string& experimentName,
 		arrival_list.clear();
 		interArrival_list.clear();
 		interArrival_fileStack.clear();
-		//interArrival_interFileStack.clear();
-//		interArrival_sessionOnTimes->clear();
-//		interArrival_sessionOffTimes->clear();
 
 		//load packet-size data
 		databaseInterface->getFlowData(experimentName, fcounter, "frame__len",
@@ -470,21 +460,6 @@ int DataProcessor::calculate(const string& experimentName,
 			}
 		}
 
-		//debub
-		/*
-		 if(fcounter == 0){
-
-		 cout << "relativeTime =";
-		 printList(relativeTime);
-
-		 cout << "interArrival_list =";
-		 printList(interArrival_list);
-
-		 cout << "arrival_list =";
-		 printList(arrival_list);
-		 }
-		 */
-
 		////////////////////////////////////////////////////////////////////////
 		/// Flow-level Options
 		////////////////////////////////////////////////////////////////////////
@@ -514,10 +489,6 @@ int DataProcessor::calculate(const string& experimentName,
 		/// reference :
 		/// http://www.iana.org/assignments/ieee-802-numbers/ieee-802-numbers.xhtml
 
-		//DEBUG
-		//unsigned int debugflag = 0;
-		//unsigned int debugflag2 = 0;
-
 		databaseInterface->getFlowData(experimentName, fcounter, "eth__type",
 				&flowIntData);
 		if (flowIntData == IPV4_CODE)
@@ -527,20 +498,8 @@ int DataProcessor::calculate(const string& experimentName,
 					&flowStrData);
 			netFlow->setNetworkSrcAddr(flowStrData);
 
-			//DEBUG
-			//if (flowStrData == "10.1.1.41")
-			//{
-			//	debugflag = 33;
-			//}
-
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__dst",
 					&flowStrData);
-
-			//DEBUG
-			//if(flowStrData ==  "64.233.190.189")
-			//{
-			//	debugflag2 = 34;
-			//}
 
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
@@ -571,21 +530,8 @@ int DataProcessor::calculate(const string& experimentName,
 					&flowStrData);
 			netFlow->setNetworkSrcAddr(flowStrData);
 
-			//DEBUG
-			//if (flowStrData == "10.1.1.41")
-			//{
-			//	//cout << "33\n";
-			//	debugflag = 33;
-			//}
-
 			databaseInterface->getFlowData(experimentName, fcounter, "ip__dst",
 					&flowStrData);
-
-			//DEBUG
-			//if(flowStrData ==  "64.233.190.189")
-			//{
-			//	debugflag2 = 34;
-			//}
 
 			netFlow->setNetworkDstAddr(flowStrData);
 		}
@@ -671,63 +617,9 @@ int DataProcessor::calculate(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 
 		/// Inter-packet times
-
-		//if (fcounter == 0)
-		//	printList(interArrival_list);
-
-		//scalar_product(interArrival_list, timeScale);
-
-		//if (fcounter == 0)
-		//	printList(interArrival_list);
-
-		//netFlow->setInterDepertureTimeModels(
-		//		fitModelsInterArrival(interArrival_list,
-		//				informationCriterionParam));
-
-		//cout << "interArrival_fileStack(" << interArrival_fileStack.size()
-		//		<< ") = ";
-		//printList(interArrival_fileStack);
-
-		//cout << "fconter/nFlows::" << fcounter << "::" << nflows << endl;
 		netFlow->setInterDepertureTimeModels(
 				fitModelsInterArrival(interArrival_fileStack,
 						informationCriterionParam));
-
-		//MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
-		//		interArrival_list.size());
-
-		//scalar_product(interArrival_list, 1 / timeScale);
-
-		//DEBUG
-		//if (debugflag == 33)
-		//{
-		//	cout << debugflag << endl;
-		//	char delta[CHAR_LARGE_BUFFER];
-		//	char relative[CHAR_LARGE_BUFFER];
-		//	char arrival[CHAR_LARGE_BUFFER];
-		//	list2str(interArrival_list, delta);
-		//	list2str(relativeTime, relative);
-		//	list2str(arrival_list, arrival);
-		//	printf("arrivaltime of 10.1.1.41: %s\n", arrival);
-		//	printf("relativeTime of 10.1.1.41: %s\n", relative);
-		//	printf("interarrival of 10.1.1.41: %s\n", delta);
-		//	MESSER_DEBUG("interarrival of 10.1.1.41: %s <%s, %s>", delta);
-		//}
-		//DEBUG
-		//if (debugflag2 == 34)
-		//{
-		//	cout << debugflag2 << endl;
-		//	char delta[CHAR_LARGE_BUFFER];
-		//	char relative[CHAR_LARGE_BUFFER];
-		//	char arrival[CHAR_LARGE_BUFFER];
-		//	list2str(interArrival_list, delta);
-		//	list2str(relativeTime, relative);
-		//	list2str(arrival_list, arrival);
-		//	printf("arrivaltime of 64.233.190.189: %s\n", arrival);
-		//	printf("relativeTime of 64.233.190.189: %s\n", relative);
-		//	printf("interarrival of 64.233.190.189: %s\n", delta);
-		//	MESSER_DEBUG("interarrival of 64.233.190.189: %s <%s, %s>", delta);
-		//}
 
 		//Session Times
 		vector<time_sec>* onTimes = new vector<time_sec>;
@@ -739,24 +631,7 @@ int DataProcessor::calculate(const string& experimentName,
 		calcOnOff(interArrival_list, pslist, m_session_cut_time, m_min_on_time,
 				onTimes, offTimes, pktCounter, fileSize);
 
-		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
-		//netFlow->setSessionTimesOnOff(onTimes, offTimes);
 		netFlow->setSessionTimesOnOff(onTimes, offTimes, pktCounter, fileSize);
-
-		//DEBUG
-		//printf("duration:%f\n",  netFlow->getFlowDuration() );
-		//for(counter banana_jaca = 0; banana_jaca < (netFlow->getSessionOffVector()->size() +1); banana_jaca++)
-		//{
-		//	time_sec time_on;
-		//	time_sec time_off;
-		//	time_on = netFlow->getSessionOnTime_next();
-		//	time_off = netFlow->getSessionOffTime_next();
-		//
-		//	printf("%d: on:%f, off:%f\n",banana_jaca,  time_on, time_off);
-		//
-		//}
-		//RegressionTests wait_in;
-		//wait_in.wait_int(">");
 
 		/// Packet size data
 		netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
@@ -770,41 +645,9 @@ int DataProcessor::calculate(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 		netTrace->pushback_Netflow(netFlow);
 
-		//logs
-		//MESSER_DEBUG("interArrival_list.size() = %d  @ <%s, %s>",
-		//		interArrival_list.size());
-		//MESSER_DEBUG("interArrival_fileStack.size() = %d, ",
-		//		interArrival_fileStack.size());
-		//MESSER_DEBUG("interArrival_sessionOnTimes->size() = %d @ <%s, %s>",
-		//		onTimes->size());
-		//MESSER_DEBUG("interArrival_sessionOffTimes->size() = %d @ <%s, %s>",
-		//		offTimes->size());
-		//string file1 = to_string(fcounter) + "fileStack";
-		//string file2 = to_string(fcounter) + "interFileStack";
-		//string file3 = to_string(fcounter) + "interSessionStack";
-		//save_data_on_file(file1, interArrival_fileStack);
-		//save_data_on_file(file2, interArrival_interFileStack);
-		//save_data_on_file(file3, interArrival_interSessionStack);
-
-		//MESSER_DEBUG("flow%d: startDalay=%f @ <%s, %s>", fcounter, startDalay);
-		//
-		//MESSER_DEBUG("flow%d: netFlow->getTransportProtocol()=%d  @ <%s, %s>",
-		//		fcounter, netFlow->getTransportProtocol());
-		//MESSER_DEBUG("flow%d: netFlow->getNetworkProtocol()=%d  @ <%s, %s>",
-		//		fcounter, netFlow->getNetworkProtocol());
-		//MESSER_DEBUG("flow%d: netFlow->getTransportDstPort()=%d  @ <%s, %s>",
-		//		fcounter, netFlow->getTransportDstPort());
-		//MESSER_DEBUG("flow%d: netFlow->getFlowDsByte()=%d  @ <%s, %s>",
-		//		fcounter, netFlow->getFlowDsByte());
-		//MESSER_DEBUG("flow%d: netFlow->getNetworkDstAddr()=%s @ <%s, %s>",
-		//		fcounter, netFlow->getNetworkDstAddr().c_str());
 
 	}
 
-//MESSER_DEBUG("netTrace->networkFlow.size()=%d",
-//		netTrace->networkFlow.size());
-//MESSER_DEBUG("netTrace->getNumberOfFlows()=%d",
-//		netTrace->getNumberOfFlows());
 	cout << " done" << std::endl;
 	return (0);
 }
