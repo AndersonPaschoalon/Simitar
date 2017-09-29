@@ -7,15 +7,15 @@
 
 #include "DitgFlow.h"
 
-DitgFlow::DitgFlow()
+DitgFlow::DitgFlow() :
+		time_scale_factor(1000.0)
 {
-	// TODO Auto-generated constructor stub
-
+	// nothing to do
 }
 
 DitgFlow::~DitgFlow()
 {
-	// TODO Auto-generated destructor stub
+	// nothing to do
 }
 
 int DitgFlow::server()
@@ -26,7 +26,8 @@ int DitgFlow::server()
 	//iperf args
 
 	char command[2048] = "ITGRecv ";
-	printf("NOTE: Use Compact Trace Descriptors parameterized in milliseconds (sufix .ms) in the client side.\n");
+	printf(
+			"NOTE: Use Compact Trace Descriptors parameterized in milliseconds (sufix .ms) in the client side.\n");
 
 	if (!(in = popen(command, "r")))
 	{
@@ -43,7 +44,7 @@ int DitgFlow::server()
 	}
 
 	pclose(in);
-	return(0);
+	return (0);
 }
 
 void DitgFlow::flowGenerate(const counter& flowId, const time_sec& onTime,

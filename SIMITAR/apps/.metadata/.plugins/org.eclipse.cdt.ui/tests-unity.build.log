@@ -1,6 +1,10 @@
-17:22:24 **** Incremental Build of configuration Default for project tests-unity ****
+19:02:11 **** Incremental Build of configuration Default for project tests-unity ****
 make all 
-make: Nothing to be done for 'all'.
 
-17:22:24 Build Finished (took 61ms)
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:96: recipe for target '../unity-tests' failed
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../unity-tests] Error 1
+
+19:02:11 Build Finished (took 87ms)
 

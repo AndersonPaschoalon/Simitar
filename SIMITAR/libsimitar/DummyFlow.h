@@ -65,20 +65,20 @@ public:
 	void flowGenerate(const counter& flowId, const time_sec& onTime,
 			const uint& npackets, const uint& nbytes,
 			const string& netInterface);
-//	void flowGenerate(const counter& flowId, const time_sec& onTime,
-//			const unsigned int& npackets, const uint& nbytes,
-//			const string& netInterface);
 
 	void flowStart();
 
 	std::thread flowThread()
 	{
-		//MESSER_LOG_INIT(INFO);
-		//MESSER_DEBUG("std::thread flowThread() ok! @<%s, %s>");
-
 		return std::thread([=]
 		{	flowStart();});
 	}
+
+protected:
+	/**
+	 * Time scale factor
+	 */
+	double time_scale_factor;
 
 private:
 
@@ -87,6 +87,7 @@ private:
 	 * @param sleep_time
 	 */
 	void fsleep(time_sec sleep_time);
+
 };
 
 #endif /* DUMMYFLOW_H_ */

@@ -7,12 +7,15 @@
 
 #include "IperfFlow.h"
 
-IperfFlow::IperfFlow()
+IperfFlow::IperfFlow() :
+		time_scale_factor(1.0)
 {
+	// nothing to do
 }
 
 IperfFlow::~IperfFlow()
 {
+	// nothing to do
 }
 
 int IperfFlow::server()
@@ -23,7 +26,8 @@ int IperfFlow::server()
 	//iperf args
 
 	char command[2048] = "iperf -s";
-	printf("NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
+	printf(
+			"NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
 	if (!(in = popen(command, "r")))
 	{
 		std::cerr << "IperfFlow error: cannot execute command `" << command
@@ -39,7 +43,7 @@ int IperfFlow::server()
 	}
 
 	pclose(in);
-	return(0);
+	return (0);
 }
 
 void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,

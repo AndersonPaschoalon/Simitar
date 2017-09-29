@@ -8,7 +8,8 @@
 #include "Defines.h"
 #include "DummyFlow.h"
 
-DummyFlow::DummyFlow()
+DummyFlow::DummyFlow() :
+		time_scale_factor(1.0)
 {
 }
 
@@ -28,33 +29,24 @@ int DummyFlow::server()
 
 void DummyFlow::flowStart()
 {
-	//MESSER_LOG_INIT(DEBUG);
+	PLOG_INIT(debug);
 
-	/// Statistical vars
-	counter flowId = 0;
-	string netInterface = "";
-
-	/// On/Off time vars
-	//struct timespec start, end; // time probes
-	time_t usec_startDelay = 0; // time in useconds
-	//time_t usec_onTime = 0; // time in useconds
-	time_t usec_offTime = 0; // time in useconds
+	/// flow-related vars
+	std::string netInterface = "";
 	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
+	//time_t usec_startDelay = time_t(sec_startDelay * 1.0e6); // time in useconds
+	uint fid = int(getFlowId());
+	/// loop vars
+	time_t usec_offTime = 0; // time in useconds
 	time_sec sec_onTime = 0;
 	time_sec sec_offTime = 0;
 	uint nbytes = 0;
 	uint npackets = 0;
-	//uint64_t delta_us; // calc delta times ?
-	//time_sec delta_s;
 
-	usec_startDelay = time_t(sec_startDelay * 1.0e6);
-
-	int fid = int(getFlowId());
-
-	usleep(usec_startDelay);
+	fsleep(sec_startDelay/time_scale_factor);
+	//usleep(usec_startDelay);
 	while (1)
 	{
-
 		sec_onTime = getSessionOnTime_next();
 		npackets = getSessionOnTime_nPackets();
 		nbytes = getSessionOnTime_nBytes();
@@ -66,8 +58,9 @@ void DummyFlow::flowStart()
 		{
 			break;
 		}
-		usec_offTime = time_t(sec_offTime * 1.0e6);
-		usleep(usec_offTime);
+		//usec_offTime = time_t(sec_offTime * 1.0e6);
+		//usleep(usec_offTime);
+		fsleep(sec_offTime/time_scale_factor);
 
 	}
 
@@ -138,15 +131,17 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 
 void DummyFlow::fsleep(time_sec sleep_time)
 {
+	// TODO initialize this value in the constructor
 	sleep_method sleepMethod = method_usleep;
 
 	if (sleepMethod == method_select)
 	{
 		struct timeval tv;
 		tv.tv_sec = int(sleep_time);
-		tv.tv_usec = int( (sleep_time - floor(sleep_time)) * 1e6);
+		tv.tv_usec = int((sleep_time - floor(sleep_time)) * 1e6);
 		int ret;
-		do {
+		do
+		{
 			ret = select(1, NULL, NULL, NULL, &tv);
 		} while ((ret == -1) && (errno == EINTR)); //select is interruped too
 
@@ -156,13 +151,17 @@ void DummyFlow::fsleep(time_sec sleep_time)
 		uint64_t delta_us;
 		struct timespec start, end;
 		uint64_t wait_us = time_t(sleep_time * 1.0e6);
-		for (;;) {
+		for (;;)
+		{
 			clock_gettime(CLOCK_MONOTONIC_RAW, &end);
 			delta_us = (end.tv_sec - start.tv_sec) * 1000000
 					+ (end.tv_nsec - start.tv_nsec) / 1000;
-			if (delta_us < wait_us) {
+			if (delta_us < wait_us)
+			{
 				continue;
-			} else {
+			}
+			else
+			{
 				break;
 			}
 		}
@@ -170,8 +169,7 @@ void DummyFlow::fsleep(time_sec sleep_time)
 	}
 	else // method_usleep
 	{
-		time_t usec_delay = 0;
-		usec_delay = time_t(sleep_time * 1.0e6);
+		time_t  usec_delay = time_t(sleep_time * 1.0e6);
 		usleep(usec_delay);
 	}
 

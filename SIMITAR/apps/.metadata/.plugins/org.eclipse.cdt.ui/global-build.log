@@ -100,3 +100,193 @@ make: Nothing to be done for 'all'.
 17:22:24 **** Incremental Build of configuration Default for project trace-analyzer ****
 make all 
 make: Nothing to be done for 'all'.
+19:00:13 **** Build of configuration Default for project hello-world ****
+make all 
+make: Nothing to be done for 'all'.
+19:00:14 **** Build of configuration Default for project libsimitar ****
+make all 
+
+* Compiling: ../libsimitar/NetworkFlowFactory.cpp -> ../libsimitar/obj/NetworkFlowFactory.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/NetworkFlowFactory.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:05
+
+* Compiling: ../libsimitar/SimitarWorkspace.cpp -> ../libsimitar/obj/SimitarWorkspace.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/SimitarWorkspace.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:01
+
+* Compiling: ../libsimitar/DummyFlow.cpp -> ../libsimitar/obj/DummyFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DummyFlow.o ../libsimitar/DummyFlow.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/DummyFlow.cpp: In member function ‘void DummyFlow::flowStart()’:
+../libsimitar/DummyFlow.cpp:40:9: warning: unused variable ‘usec_offTime’ [-Wunused-variable]
+  time_t usec_offTime = 0; // time in useconds
+         ^~~~~~~~~~~~
+../libsimitar/DummyFlow.cpp: In member function ‘virtual void DummyFlow::flowGenerate(const counter&, const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/DummyFlow.cpp:72:6: warning: unused variable ‘rc’ [-Wunused-variable]
+  int rc = 0;
+      ^~
+../libsimitar/DummyFlow.cpp:74:15: warning: unused variable ‘usecs’ [-Wunused-variable]
+  unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+               ^~~~~
+../libsimitar/DummyFlow.cpp:76:11: warning: unused variable ‘prt’ [-Wunused-variable]
+  protocol prt;
+           ^~~
+	 Compile time: 00:00:03
+
+* Compiling: ../libsimitar/DatabaseSqlite3.cpp -> ../libsimitar/obj/DatabaseSqlite3.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DatabaseSqlite3.o ../libsimitar/DatabaseSqlite3.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:02
+
+* Compiling: ../libsimitar/RegressionTests.cpp -> ../libsimitar/obj/RegressionTests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/RegressionTests.o ../libsimitar/RegressionTests.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:00
+
+* Compiling: ../libsimitar/NetworkTrace.cpp -> ../libsimitar/obj/NetworkTrace.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkTrace.o ../libsimitar/NetworkTrace.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIfIp(char*, char*)’:
+../libsimitar/NetworkTrace.cpp:1019:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+../libsimitar/NetworkTrace.cpp: In member function ‘int NetworkTrace::getLocalIp(const char*, char*)’:
+../libsimitar/NetworkTrace.cpp:1058:6: warning: unused variable ‘family’ [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+	 Compile time: 00:00:05
+
+* Compiling: ../libsimitar/cfunctions.cpp -> ../libsimitar/obj/cfunctions.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/cfunctions.o ../libsimitar/cfunctions.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/cfunctions.cpp: In function ‘void charvet2type(const char*, std::__cxx11::list<unsigned int>&)’:
+../libsimitar/cfunctions.cpp:310:36: warning: format ‘%d’ expects argument of type ‘int*’, but argument 3 has type ‘long int*’ [-Wformat=]
+    sscanf(buffer, "%d", &val_buffer);
+                                    ^
+../libsimitar/cfunctions.cpp: In function ‘bool test_charvet2type()’:
+../libsimitar/cfunctions.cpp:611:7: warning: unused variable ‘in_cstrN’ [-Wunused-variable]
+  char in_cstrN[CHAR_BUFFER] = "";
+       ^~~~~~~~
+	 Compile time: 00:00:03
+
+* Compiling: ../libsimitar/IperfFlow.cpp -> ../libsimitar/obj/IperfFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/IperfFlow.o ../libsimitar/IperfFlow.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/IperfFlow.cpp: In constructor ‘IperfFlow::IperfFlow()’:
+../libsimitar/IperfFlow.cpp:11:3: error: ‘double DummyFlow::time_scale_factor’ is private within this context
+   time_scale_factor(1.0)
+   ^~~~~~~~~~~~~~~~~
+In file included from ../libsimitar/IperfFlow.h:11:0,
+                 from ../libsimitar/IperfFlow.cpp:8:
+../libsimitar/DummyFlow.h:82:9: note: declared private here
+  double time_scale_factor;
+         ^~~~~~~~~~~~~~~~~
+../libsimitar/IperfFlow.cpp:11:3: error: class ‘IperfFlow’ does not have any field named ‘time_scale_factor’
+   time_scale_factor(1.0)
+   ^~~~~~~~~~~~~~~~~
+../libsimitar/IperfFlow.cpp: In member function ‘std::__cxx11::string IperfFlow::iperf_command(const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/IperfFlow.cpp:147:6: warning: unused variable ‘pps’ [-Wunused-variable]
+  int pps = this->getNumberOfPackets() / onTime;
+      ^~~
+../libsimitar/IperfFlow.cpp:149:6: warning: unused variable ‘nkbytes’ [-Wunused-variable]
+  int nkbytes = this->getNumberOfKbytes();
+      ^~~~~~~
+../libsimitar/IperfFlow.cpp:150:6: warning: unused variable ‘nkbits’ [-Wunused-variable]
+  int nkbits = this->getNumberOfKbytes() * 8;
+      ^~~~~~
+Makefile:108: recipe for target '../libsimitar/obj/IperfFlow.o' failed
+make: *** [../libsimitar/obj/IperfFlow.o] Error 1
+19:00:36 **** Build of configuration Default for project iperf-flow ****
+make all 
+make: Nothing to be done for 'all'.
+19:00:36 **** Build of configuration Default for project dummy-flow ****
+make all 
+make: Nothing to be done for 'all'.
+19:00:37 **** Build of configuration Debug for project ditg-flow ****
+make all 
+Building file: ../src/ditg-flow.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/ditg-flow.o" -o "src/ditg-flow.o" "../src/ditg-flow.cpp"
+../src/ditg-flow.cpp:13:26: fatal error: NetworkTrace.h: Arquivo ou diretório não encontrado
+ #include <NetworkTrace.h>
+                          ^
+compilation terminated.
+make: *** [src/ditg-flow.o] Error 1
+src/subdir.mk:18: recipe for target 'src/ditg-flow.o' failed
+19:00:37 **** Build of configuration Default for project tests-integration ****
+make all 
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:03
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:94: recipe for target '../integration-tests' failed
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../integration-tests] Error 1
+19:00:41 **** Build of configuration Default for project tests-unity ****
+make all 
+
+* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/obj/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/obj/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:03
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+Makefile:96: recipe for target '../unity-tests' failed
+make: *** [../unity-tests] Error 1
+19:00:45 **** Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Compiling: ../trace-analyzer/src/Main.cpp -> ../trace-analyzer/obj/Main.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../trace-analyzer/obj/Main.o ../trace-analyzer/src/Main.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:04
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:92: recipe for target 'trace-analyzer' failed
+g++: error: ../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [trace-analyzer] Error 1
+19:02:06 **** Incremental Build of configuration Default for project hello-world ****
+make all 
+make: Nothing to be done for 'all'.
+19:02:06 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+
+* Compiling: ../libsimitar/IperfFlow.cpp -> ../libsimitar/obj/IperfFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/IperfFlow.o ../libsimitar/IperfFlow.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/IperfFlow.cpp: In constructor ‘IperfFlow::IperfFlow()’:
+../libsimitar/IperfFlow.cpp:11:3: error: class ‘IperfFlow’ does not have any field named ‘time_scale_factor’
+   time_scale_factor(1.0)
+   ^~~~~~~~~~~~~~~~~
+../libsimitar/IperfFlow.cpp: In member function ‘std::__cxx11::string IperfFlow::iperf_command(const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/IperfFlow.cpp:147:6: warning: unused variable ‘pps’ [-Wunused-variable]
+  int pps = this->getNumberOfPackets() / onTime;
+      ^~~
+../libsimitar/IperfFlow.cpp:149:6: warning: unused variable ‘nkbytes’ [-Wunused-variable]
+  int nkbytes = this->getNumberOfKbytes();
+      ^~~~~~~
+../libsimitar/IperfFlow.cpp:150:6: warning: unused variable ‘nkbits’ [-Wunused-variable]
+  int nkbits = this->getNumberOfKbytes() * 8;
+      ^~~~~~
+Makefile:108: recipe for target '../libsimitar/obj/IperfFlow.o' failed
+make: *** [../libsimitar/obj/IperfFlow.o] Error 1
+19:02:09 **** Incremental Build of configuration Default for project iperf-flow ****
+make all 
+make: Nothing to be done for 'all'.
+19:02:10 **** Incremental Build of configuration Default for project dummy-flow ****
+make all 
+make: Nothing to be done for 'all'.
+19:02:11 **** Incremental Build of configuration Debug for project ditg-flow ****
+make all 
+../src/ditg-flow.cpp:13:26: fatal error: NetworkTrace.h: Arquivo ou diretório não encontrado
+ #include <NetworkTrace.h>
+                          ^
+compilation terminated.
+make: *** [src/ditg-flow.o] Error 1
+Building file: ../src/ditg-flow.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/ditg-flow.o" -o "src/ditg-flow.o" "../src/ditg-flow.cpp"
+src/subdir.mk:18: recipe for target 'src/ditg-flow.o' failed
+19:02:11 **** Incremental Build of configuration Default for project tests-integration ****
+make all 
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:94: recipe for target '../integration-tests' failed
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../integration-tests] Error 1
+19:02:11 **** Incremental Build of configuration Default for project tests-unity ****
+make all 
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:96: recipe for target '../unity-tests' failed
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../unity-tests] Error 1
+19:02:11 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:92: recipe for target 'trace-analyzer' failed
+g++: error: ../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [trace-analyzer] Error 1

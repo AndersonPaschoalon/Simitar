@@ -1,6 +1,10 @@
-17:22:23 **** Incremental Build of configuration Default for project tests-integration ****
+19:02:11 **** Incremental Build of configuration Default for project tests-integration ****
 make all 
-make: Nothing to be done for 'all'.
 
-17:22:24 Build Finished (took 62ms)
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+Makefile:94: recipe for target '../integration-tests' failed
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+make: *** [../integration-tests] Error 1
+
+19:02:11 Build Finished (took 199ms)
 

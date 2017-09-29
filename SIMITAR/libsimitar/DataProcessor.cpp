@@ -9,52 +9,27 @@
 
 DataProcessor::DataProcessor()
 {
-	m_time_scale = seconds;
+	//m_time_scale = seconds;
+	m_time_scale = 1.0;
 	m_min_on_time = 0.1;
 	m_session_cut_time = 30.0;
 	informationCriterionParam = "aic";
 	minimumAmountOfPackets = 30;
 }
 
-std::string DataProcessor::to_string()
-{
-	std::string theTimeScale =
-			(m_time_scale == seconds) ? "seconds" : "milliseconds";
-	return std::string(
-			"DataProcessor settings: \n\tm_time_scale:" + theTimeScale
-					+ "\n\tm_min_on_time:" + std::to_string(m_min_on_time)
-					+ "\n\tm_session_cut_time:"
-					+ std::to_string(m_session_cut_time)
-					+ "\n\tinformationCriterionParam:" + informationCriterionParam
-					+ "\n\tminimumAmountOfPackets:"
-					+ std::to_string(minimumAmountOfPackets) + "\n");
-}
-
 DataProcessor::DataProcessor(time_scale timeScale, time_sec minOnTime,
 		time_sec sessionCutTime, uint minNumberOfPackets,
-		const string& criterion)
+		const std::string& criterion)
 {
 	if (timeScale == milliseconds)
-	{
-		m_min_on_time = 1000 * minOnTime;
-		m_session_cut_time = 1000 * sessionCutTime;
 		m_time_scale = 1000.0;
-		min_time = min_time * m_time_scale;
-	}
 	else
-	{
-		m_min_on_time = minOnTime;
-		m_session_cut_time = sessionCutTime;
 		m_time_scale = 1.0;
-	}
+
 	if (criterion == "aic")
-	{
-		informationCriterionParam = criterion;
-	}
+		informationCriterionParam = "aic";
 	else if (criterion == "bic")
-	{
-		informationCriterionParam = criterion;
-	}
+		informationCriterionParam = "bic";
 	else
 	{
 		cerr << "\nInvalid criterion or no criterion selected: " << criterion
@@ -62,6 +37,9 @@ DataProcessor::DataProcessor(time_scale timeScale, time_sec minOnTime,
 		informationCriterionParam = "aic";
 	}
 	minimumAmountOfPackets = minNumberOfPackets;
+	m_min_on_time = m_time_scale * minOnTime;
+	m_session_cut_time = m_time_scale * sessionCutTime;
+	min_time = min_time * m_time_scale;
 }
 
 DataProcessor::~DataProcessor()
@@ -148,14 +126,12 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		interArrival_list.clear();
 		interArrival_fileStack.clear();
 
-
 		dbManager->getFlowPktData(experimentName, fcounter, "pktSize", pslist);
 		//databaseInterface->getFlowData(experimentName, fcounter, "frame__len",
 		//		pslist);
 
 		// Evaluate packet-size and number ob kbytes for each mode
-		for (list<uint>::iterator it = pslist.begin();
-				it != pslist.end(); it++)
+		for (list<uint>::iterator it = pslist.begin(); it != pslist.end(); it++)
 		{
 			if (*it <= PACKET_SIZE_MODE_CUT_VALUE)
 			{
@@ -173,7 +149,8 @@ int DataProcessor::calculate_v2(const string& experimentName,
 
 		// load time-relative data. The time values are relative to the begin of
 		// the experiment
-		dbManager->getFlowPktData(experimentName, fcounter, "arrivalTime", relativeTime);
+		dbManager->getFlowPktData(experimentName, fcounter, "arrivalTime",
+				relativeTime);
 		//databaseInterface->getFlowData(experimentName, fcounter,
 		//		"frame__time_relative", relativeTime);
 
@@ -238,7 +215,8 @@ int DataProcessor::calculate_v2(const string& experimentName,
 
 		//databaseInterface->getFlowData(experimentName, fcounter, "eth__type",
 		//		&flowIntData);
-		dbManager->getFlowData(experimentName, fcounter, "protocolNetwork", flowIntData);
+		dbManager->getFlowData(experimentName, fcounter, "protocolNetwork",
+				flowIntData);
 
 		if (flowIntData == IPV4_CODE)
 		{ /// IPv4
@@ -272,8 +250,8 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		/// L4 Protocols
 		/// reference: https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers
 
-
-		dbManager->getFlowData(experimentName, fcounter, "protocolTransport", flowIntData);
+		dbManager->getFlowData(experimentName, fcounter, "protocolTransport",
+				flowIntData);
 		if (flowIntData == ICMP_CODE)
 		{
 			netFlow->setTransportProtocol(PROTOCOL__ICMP);
@@ -307,9 +285,11 @@ int DataProcessor::calculate_v2(const string& experimentName,
 			netFlow->setTransportProtocol(PROTOCOL__NULL);
 		}
 
-		dbManager->getFlowData(experimentName, fcounter, "portSrc", flowIntData);
+		dbManager->getFlowData(experimentName, fcounter, "portSrc",
+				flowIntData);
 		netFlow->setTransportSrcPort(flowIntData);
-		dbManager->getFlowData(experimentName, fcounter, "portDst", flowIntData);
+		dbManager->getFlowData(experimentName, fcounter, "portDst",
+				flowIntData);
 		netFlow->setTransportDstPort(flowIntData);
 
 		/// Application protocol
@@ -3818,5 +3798,4 @@ bool DataProcessor::test_calcOnOff2()
 
 	return (true);
 }
-
 

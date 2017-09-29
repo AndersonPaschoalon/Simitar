@@ -70,7 +70,7 @@ public:
 	 * @param criterion
 	 */
 	DataProcessor(time_scale timeScale, time_sec minOnTime,
-			time_sec sessionCutTime, uint minNumberOfPackets, const string& criterion);
+			time_sec sessionCutTime, uint minNumberOfPackets, const std::string& criterion);
 
 	/**
 	 * @brief
@@ -80,8 +80,8 @@ public:
 	 * @param sessionCutTime
 	 * @param criterion
 	 */
-	void getConfiguration(time_scale timeScale, string& timeScaleStr, time_sec& minOnTime,
-			time_sec& sessionCutTime, string& criterion);
+	void getConfiguration(time_scale timeScale, std::string& timeScaleStr, time_sec& minOnTime,
+			time_sec& sessionCutTime, std::string& criterion);
 
 	/**
 	 * Destructor. Clean any allocated memory
@@ -104,7 +104,7 @@ public:
 	 * @param netTrace network trace class, which will be parameterized
 	 * @return returns 0 in success
 	 */
-	int calculate(const string& experimentName,
+	int calculate(const std::string& experimentName,
 			DatabaseInterface* databaseInterface, NetworkTrace* netTrace);
 
 	/**
@@ -124,10 +124,9 @@ public:
 	 * @param netTrace network trace class, which will be parameterized
 	 * @return returns 0 in success
 	 */
-	int calculate_v2(const string& experimentName,
+	int calculate_v2(const std::string& experimentName,
 			TraceDbManager* dbManager, NetworkTrace* netTrace);
 
-	std::string to_string();
 
 	/**
 	 * Run regression tests for the methods of this class
@@ -159,7 +158,7 @@ private:
 	 * Information Criterion used in the DataProcessor. May be AIC
 	 * (string "aic") or BIC (string "bic"). The default value is "aic".
 	 */
-	string informationCriterionParam = "aic";
+	std::string informationCriterionParam = "aic";
 
 	/**
 	 * Default Weibull alpha, in case a invalid value is estimated, since alpha > 0.
@@ -244,7 +243,7 @@ private:
 	 *
 	 * @return
 	 */
-	const string& getInformationCriterion();
+	const std::string& getInformationCriterion();
 
 	/**
 	 * @brief
@@ -403,8 +402,8 @@ private:
 	 * @param criterion
 	 * @return
 	 */
-	double informationCriterion(const vec& data, const string& functionName,
-			const vec& paramVet, const string& criterion);
+	double informationCriterion(const vec& data, const std::string& functionName,
+			const vec& paramVet, const std::string& criterion);
 
 	/**
 	 * @brief natural logarithm of likehood function
@@ -414,7 +413,7 @@ private:
 	 * @param paramVet
 	 * @return
 	 */
-	double logLikehood(const vec& data, const string& functionName,
+	double logLikehood(const vec& data, const std::string& functionName,
 			const vec& paramVet);
 	/**
 	 * @brief fit weibull alpha and betha using linear regression
@@ -623,9 +622,9 @@ private:
 	 */
 	//StochasticModelFit* fitModelsInterArrival(list<double>& empiricalData,
 	//		const string& criterion);
-	list<StochasticModelFit>* fitModelsInterArrival(list<double>& empiricalData,
-			const string& criterion);
-	list<StochasticModelFit>* fitModelsPsSize(list<double>& empiricalData);
+	list<StochasticModelFit>* fitModelsInterArrival(std::list<double>& empiricalData,
+			const std::string& criterion);
+	list<StochasticModelFit>* fitModelsPsSize(std::list<double>& empiricalData);
 
 	/**
 	 * Guess the application protocol, based on the transport protocol and
@@ -1103,10 +1102,10 @@ private:
 			0.061286, 0.019094, 0.083081, 0.000315, 1.3e-05, 0.171753, 0.072075,
 			0.152366, 0.031976, 0.46934, 0.197771, 0.036378 };
 
-	void save_data_on_file(const string& fileName, const mat& vet1,
+	void save_data_on_file(const std::string& fileName, const mat& vet1,
 			const mat& vet2);
-	void save_data_on_file(const string& fileName, list<double>& theList);
-	void printTestResult(string testName, bool result);
+	void save_data_on_file(const std::string& fileName, std::list<double>& theList);
+	void printTestResult(std::string testName, bool result);
 	bool compareDouble(double val1, double val2);
 	bool compareDouble(double val1, double val2, double acErr);
 	bool compareMat(mat& mat1, mat& mat2);
