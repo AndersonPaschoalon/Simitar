@@ -18,12 +18,8 @@
 #include <chrono>
 
 #include "Defines.h"
-//#include "MesserLog.h"
 #include "RegressionTests.h"
 
-#define LOG_LEVEL_SF INFO
-
-using std::string;
 using namespace arma;
 
 /**
@@ -139,7 +135,7 @@ public:
 		set(modelStr, param1, param2, aic, bic);
 	}
 
-	StochasticModelFit(const string& modelStr, double param1, double param2,
+	StochasticModelFit(const std::string& modelStr, double param1, double param2,
 			double aic, double bic)
 	{
 		set(modelStr, param1, param2, aic, bic);
@@ -157,9 +153,9 @@ public:
 	{
 		return (m_bic);
 	}
-	string strModelName() const
+	std::string strModelName() const
 	{
-		string strRet;
+		std::string strRet;
 
 		if (m_modelName == WEIBULL)
 		{
@@ -419,7 +415,7 @@ public:
 	int set(char* modelStr, double param1, double param2, double aic,
 			double bic)
 	{
-		int setRet = set(string(modelStr), param1, param2, aic, bic);
+		int setRet = set(std::string(modelStr), param1, param2, aic, bic);
 		return (setRet);
 	}
 
@@ -476,62 +472,57 @@ public:
 	 * 			(modelStr) has a invalid name. In this case, the parameters are
 	 * 			setted, and the model name is set to NO_MODEL.
 	 */
-	int set(const string& modelStr, double param1, double param2, double aic,
+	int set(const std::string& modelStr, double param1, double param2, double aic,
 			double bic)
 	{
-		//MESSER_LOG_INIT(LOG_LEVEL_SF);
 		stochastic_functions sf;
 		int setRet = 0;
 
-		//MESSER_DEBUG("\n\t charM1=%s, LABEL_CAUCHY=%s cmp=%d  @<%s, %s>",
-		//		modelStr.c_str(), LABEL_CAUCHY,
-		//		(modelStr == string(LABEL_CAUCHY)));
-
-		if (modelStr == string(LABEL_WEIBULL))
+		if (modelStr == std::string(LABEL_WEIBULL))
 		{
 			sf = WEIBULL;
 		}
-		else if (modelStr == string(LABEL_NORMAL))
+		else if (modelStr == std::string(LABEL_NORMAL))
 		{
 			sf = NORMAL;
 		}
-		else if (modelStr == string(LABEL_EXPONENTIAL))
+		else if (modelStr == std::string(LABEL_EXPONENTIAL))
 		{
 			sf = EXPONENTIAL;
 		}
-		else if (modelStr == string(LABEL_EXPONENTIAL_LINEAR_REGRESSION))
+		else if (modelStr == std::string(LABEL_EXPONENTIAL_LINEAR_REGRESSION))
 		{
 			sf = EXPONENTIAL_LINEAR_REGRESSION;
 		}
-		else if (modelStr == string(LABEL_EXPONENTIAL_MEAN))
+		else if (modelStr == std::string(LABEL_EXPONENTIAL_MEAN))
 		{
 			sf = EXPONENTIAL_MEAN;
 		}
-		else if (modelStr == string(LABEL_PARETO))
+		else if (modelStr == std::string(LABEL_PARETO))
 		{
 			sf = PARETO;
 		}
-		else if (modelStr == string(LABEL_PARETO_LINEAR_REGRESSION))
+		else if (modelStr == std::string(LABEL_PARETO_LINEAR_REGRESSION))
 		{
 			sf = PARETO_LINEAR_REGRESSION;
 		}
-		else if (modelStr == string(LABEL_PARETO_MAXIMUM_LIKEHOOD))
+		else if (modelStr == std::string(LABEL_PARETO_MAXIMUM_LIKEHOOD))
 		{
 			sf = PARETO_MAXIMUM_LIKEHOOD;
 		}
-		else if (modelStr == string(LABEL_CAUCHY))
+		else if (modelStr == std::string(LABEL_CAUCHY))
 		{
 			sf = CAUCHY;
 		}
-		else if (modelStr == string(LABEL_CONSTANT))
+		else if (modelStr == std::string(LABEL_CONSTANT))
 		{
 			sf = CONSTANT;
 		}
-		else if (modelStr == string(LABEL_SINGLE_PACKET))
+		else if (modelStr == std::string(LABEL_SINGLE_PACKET))
 		{
 			sf = SINGLE_PACKET;
 		}
-		else if (modelStr == string(LABEL_NO_MODEL))
+		else if (modelStr == std::string(LABEL_NO_MODEL))
 		{
 			sf = NO_MODEL;
 		}
@@ -540,15 +531,11 @@ public:
 			fprintf(stderr,
 					"Error: No valid stochastic model name `%s`. Setting default value: `%s`\n",
 					modelStr.c_str(), LABEL_NO_MODEL);
-			//MESSER_CRIT(
-			//		"Error: No valid stochastic model name `%s`. Setting default value: `%s`  @<%s, %s>",
-			//		modelStr.c_str(), LABEL_NO_MODEL);
 			setRet = -1;
 			sf = NO_MODEL;
 		}
 		set(sf, param1, param2, aic, bic);
 
-		//MESSER_LOG_END();
 		return (setRet);
 	}
 
@@ -785,10 +772,10 @@ private:
 		strcpy(charM2, LABEL_NO_MODEL);
 		char charM3[] = "Blind Guardian";
 		char charM4[] = "NO_MODEL";
-		string strM1 = LABEL_CAUCHY;
-		string strM2 = LABEL_NO_MODEL;
-		string strM3 = "Blind Guardian";
-		string strM4 = "NO_MODEL";
+		std::string strM1 = LABEL_CAUCHY;
+		std::string strM2 = LABEL_NO_MODEL;
+		std::string strM3 = "Blind Guardian";
+		std::string strM4 = "NO_MODEL";
 		char charM5[100];
 		char charM6[100];
 		char charM7[100];

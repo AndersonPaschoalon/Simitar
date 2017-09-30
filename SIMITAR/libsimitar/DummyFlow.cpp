@@ -29,8 +29,6 @@ int DummyFlow::server()
 
 void DummyFlow::flowStart()
 {
-	PLOG_INIT(debug);
-
 	/// flow-related vars
 	std::string netInterface = "";
 	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
@@ -44,7 +42,16 @@ void DummyFlow::flowStart()
 	uint npackets = 0;
 
 
+	PLOG_DEBUG << "getFlowStartDelay:" << this->getFlowStartDelay();
+	PLOG_DEBUG << "getTransportProtocol:" << this->getTransportProtocol();
+	PLOG_DEBUG << "getTransportDstPort:" << this->getTransportDstPort();
+	PLOG_DEBUG << "getNetworkDstAddr:" << this->getNetworkDstAddr();
+	PLOG_DEBUG << "getNetworkTtl:" << this->getNetworkTtl();
 	PLOG_INFO << "Time scale factor is " << timeScaleFactor();
+	PLOG_DEBUG << "flowID:" << this->getFlowId();
+
+
+
 	fsleep(sec_startDelay/timeScaleFactor());
 	//usleep(usec_startDelay);
 	while (1)
@@ -73,7 +80,9 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 {
 	int rc = 0;
 
-	unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
+	std::cout << "flowGenerate()\n";
+
+	//unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
 	string flow_str_print = "";
 	protocol prt;
 	StochasticModelFit themodel;

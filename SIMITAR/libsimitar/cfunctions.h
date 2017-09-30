@@ -38,7 +38,7 @@ using namespace arma;
  * @param pid
  * @return
  */
-FILE * popen2(string command, string type, int & pid)
+FILE * popen2(string command, string type, int & pid);
 
 
 /**

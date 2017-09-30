@@ -9,14 +9,14 @@
 
 NetworkTrace::NetworkTrace()
 {
-	//MESSER_LOG_INIT(NOTICE);
-	//MESSER_DEBUG("Constructor NetworkTrace()  @<%s, %s>");
+	PLOG_DEBUG << "NetworkTrace() constructor default";
 }
 
 NetworkTrace::NetworkTrace(const string& fileName,
 		const string& trafficGenEngine)
 {
-	//MESSER_LOG_INIT(LOG_LEVEL_TRACE);
+	PLOG_DEBUG << "NetworkTrace() constructor => args fileName:" << fileName
+						<< ", trafficGenEngine:" << trafficGenEngine;
 
 	long int nflows = 0;
 	//long int fcounter = 0;
@@ -26,13 +26,12 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	time_sec timeBuffer;
 	port_number portBuffer = 0;
 	Protocol pBuffer = Protocol();
-	list<StochasticModelFit>* modelList = NULL;
+	std::list<StochasticModelFit>* modelList = NULL;
 
 	xml_document<> doc;
 	xml_node<> * root_node;
 
 	// Read the xml file into a vector
-	//ifstream theFile(fileName);
 	std::ifstream theFile(fileName); //TODO
 	std::vector<char> buffer((std::istreambuf_iterator<char>(theFile)),
 			std::istreambuf_iterator<char>());
@@ -45,7 +44,6 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	root_node = doc.first_node(LABEL_TRACE);
 
 	info_tracename = root_node->first_attribute(LABEL_TRACE_NAME)->value();
-	//TODO: info_captureInterface = root_node->first_attribute(LABEL_CAPTURE_INTERFACE)->value();
 	info_commentaries = root_node->first_attribute(LABEL_COMMENTARIES)->value();
 	info_captureDate = root_node->first_attribute(LABEL_CAPTURE_DATE)->value();
 	m_trafficGenEngine =
@@ -60,18 +58,20 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	//		root_node->first_attribute("n_flows")->value());
 
 	charvet2type(root_node->first_attribute("n_flows")->value(), nflows);
-	//for (fcounter = 0; fcounter < nflows; fcounter++)
-	//{
-	//fcounter = 0;
+
+	int fcounter = 0;
 	for (xml_node<> * flow_node = root_node->first_node("flow"); flow_node;
 			flow_node = flow_node->next_sibling())
 	{
 
 		/// Create flow
-		//NetworkFlow* netFlow = NetworkFlow::make_flow(trafficGenEngine);
 		NetworkFlow* netFlow = NetworkFlowFactory::make_flow(trafficGenEngine);
-		//NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
-		//MESSER_DEBUG("netFlow[%d]  @<%s, %s>", fcounter);
+
+		// PLOG debug
+		PLOG_DEBUG << "Factoring flow[" << fcounter
+							<< "]: NetworkFlowFactory::make_flow("
+							<< trafficGenEngine << ")";
+		fcounter++;
 
 		/// Flow Settings
 		charvet2type(flow_node->first_attribute("start_delay")->value(),
@@ -270,16 +270,15 @@ NetworkTrace::NetworkTrace(const string& fileName,
 		//netFlow->print();
 	}
 
-	//MESSER_LOG_END();
+	PLOG_DEBUG << "NetworkTrace.getNumberOfFlows() = " << getNumberOfFlows();
+
 }
 
 NetworkTrace::~NetworkTrace()
 {
-	//MESSER_LOG_INIT(WARN);
+	PLOG_DEBUG << "Destructor ~NetworkTrace().networkFlow.size() = "
+						<< networkFlow.size();
 
-	//MESSER_DEBUG(
-	//		"Destructor ~NetworkTrace(). networkFlow.size() = %d  @<%s, %s>",
-	//		networkFlow.size());
 	for (unsigned int i = 0; i < networkFlow.size(); i++)
 	{
 		//MESSER_DEBUG("delete networkFlow[%d] @ <%s, %s>", i);
@@ -819,18 +818,20 @@ int NetworkTrace::pushback_Netflow(NetworkFlow* vetNetFlow)
 
 int NetworkTrace::exec()
 {
-	//MESSER_LOG_INIT(NOTICE);
-
 	int size = this->getNumberOfFlows();
 	int i = 0;
 	std::thread* th_flw = new std::thread[size];
 
-	//MESSER_DEBUG("NetworkTrace::exec(). this->getNumberOfFlows()=%d  @<%s, %s>",
-	//		this->getNumberOfFlows());
+	PLOG_DEBUG << "NetworkTrace::exec() >> this->getNumberOfFlows():"
+						<< this->getNumberOfFlows();
+	std::cout << "\nNetworkTrace::exec() >> this->getNumberOfFlows():"
+						<< this->getNumberOfFlows();
+	WAIT_KEY
 
 	for (i = 0; i < size; i++)
 	{
-		//TODO passar o tipo de flow(dummy, ostinado, ditg), e um contador indicando o numero da flow
+		PLOG_DEBUG << "Init flow thread networkFlow[" << i << "]->flowThread()";
+
 		th_flw[i] = networkFlow[i]->flowThread();
 		//dummy
 		//th_flw[i] = netFlow[i].flowThread2();
@@ -1016,7 +1017,7 @@ void NetworkTrace::clientServerIps(const char* serverIpAddr,
 inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
 {
 	struct ifaddrs *ifaddr, *ifa;
-	int family, s;
+	int s;
 	char host[NI_MAXHOST];
 
 	if (getifaddrs(&ifaddr) == -1)
@@ -1055,7 +1056,7 @@ inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
 inline int NetworkTrace::getLocalIp(const char* interface, char* ipaddr)
 {
 	struct ifaddrs *ifaddr, *ifa;
-	int family, s;
+	int s;
 	char host[NI_MAXHOST];
 
 	if (getifaddrs(&ifaddr) == -1)

@@ -20,8 +20,6 @@ TraceDbManager::~TraceDbManager()
 std::string TraceDbManager::getTraceData(std::string traceName,
 		std::string field, std::string& data)
 {
-	std::cout << "----1\n";
-
 	m_db.max(field, "Traces", "", "", "", "", "traceName=\"" + traceName + "\"",
 			data);
 	//std::cout << ">>>> "<<  data << std::endl;

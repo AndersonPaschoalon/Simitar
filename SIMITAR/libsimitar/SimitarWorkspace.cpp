@@ -39,7 +39,6 @@ SimitarWorkspace::~SimitarWorkspace()
 
 void SimitarWorkspace::get_env_var(char varDst[], const char varName[])
 {
-	PLOG_INIT(debug);
 	if (const char* env_p = std::getenv(varName))
 	{
 		strcpy(varDst, env_p);

@@ -74,4 +74,6 @@
 #define ERRORMSG_EACCES 								"Permission denied on performing operation: "
 #define ERRORMSG_GENERAL_OS_ERROR						"Operational system generic error: "
 
+#define WAIT_KEY printf("\npress ENTER to continue\n"); getchar();
+
 #endif /* PLOGMACROS_H_ */

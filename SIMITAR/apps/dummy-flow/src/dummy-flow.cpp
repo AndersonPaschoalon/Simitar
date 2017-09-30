@@ -27,6 +27,7 @@ bool cli_check_val(std::string val, std::vector<std::string> expectedVals);
 
 int main(int argc, char** argv)
 {
+	PLOG_INIT(debug);
 	try
 	{
 		///
@@ -95,6 +96,8 @@ int main(int argc, char** argv)
 			traceCdt.clientServerIps(dst_ip_str.c_str(), "",
 					eth_interface.c_str());
 		}
+
+		PLOG_DEBUG << " execution of traceCdt.exec()";
 
 		if(mode == "server")
 			traceCdt.server();

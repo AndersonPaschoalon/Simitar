@@ -19,7 +19,6 @@ NetworkFlowFactory::~NetworkFlowFactory()
 
 NetworkFlow* NetworkFlowFactory::make_flow(const string& choise)
 {
-	PLOG_INIT(debug);
 	std::string choise_lc;
 
 	// Allocate the destination space
@@ -29,26 +28,26 @@ NetworkFlow* NetworkFlowFactory::make_flow(const string& choise)
 
 	if (choise_lc == "dummy")
 	{
-		PLOG_DEBUG << "Creating DummyFlow";
+		//PLOG_DEBUG << "Creating DummyFlow";
 		return new DummyFlow;
 	}
 	else if(choise_lc == "ditg")
 	{
-		PLOG_DEBUG << "Creating DitgFlow";
+		//PLOG_DEBUG << "Creating DitgFlow";
 		return new DitgFlow;
 	}
 	else if(choise_lc == "iperf")
 	{
-		PLOG_DEBUG << "Creating IperfFlow";
+		//PLOG_DEBUG << "Creating IperfFlow";
 		return new IperfFlow;
 	}
 	else if((choise_lc == "tins") || (choise_lc == "libtins"))
 	{
-		PLOG_DEBUG << "Creating TinsFLow";
+		//PLOG_DEBUG << "Creating TinsFLow";
 		printf("TODO\n");
 	}
 	else if (choise_lc == "ostinato"){
-		PLOG_DEBUG << "Creating OstinatoFLow";
+		//PLOG_DEBUG << "Creating OstinatoFLow";
 		printf("TODO\n");
 	}
 

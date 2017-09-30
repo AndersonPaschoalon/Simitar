@@ -78,8 +78,6 @@ NetworkFlow::NetworkFlow()
  */
 double NetworkFlow::timeScaleFactor()
 {
-	PLOG_INIT(warning);
-
 	if (flow_time_scale == seconds)
 		return (1.0);
 	else if (flow_time_scale == milliseconds)
@@ -98,8 +96,6 @@ void NetworkFlow::setTimeScale(time_scale theTimeScale)
 
 NetworkFlow::~NetworkFlow()
 {
-	//MESSER_LOG_INIT(DEBUG);
-	//MESSER_DEBUG("@ <%s, %s>");
 
 	ptr_interArrivalModelList->clear();
 
@@ -110,12 +106,6 @@ NetworkFlow::~NetworkFlow()
 
 	ptr_psMode1->clear();
 	ptr_psMode2->clear();
-
-	//DEBUG
-	//MESSER_DEBUG("ptr_interArrivalModelList->size(): %d <%s, %s>",
-	//		ptr_interArrivalModelList->size());
-	//MESSER_DEBUG("ptr_psMode1->size():%d  <%s, %s>", ptr_psMode1->size());
-	//MESSER_DEBUG("ptr_psMode2->size(): %d <%s, %s>", ptr_psMode2->size());
 
 	/// interarrival data structs
 	delete ptr_interArrivalModelList;
