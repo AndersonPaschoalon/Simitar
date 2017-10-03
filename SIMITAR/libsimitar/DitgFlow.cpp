@@ -57,32 +57,31 @@ void DitgFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 			ditg_command(onTime, npackets, nbytes, netInterface).c_str());
 	simitar_iostream_mutex.unlock();
 
-	/*
-	 // popen args
-	 FILE *in;
-	 char buff[512];
-	 //iperf args
+	// popen args
+	FILE *in;
+	char buff[512];
+	//iperf args
 
-	 char command[2048];
-	 strcpy(command,
-	 ditg_command(onTime, npackets, nbytes, netInterface).c_str());
+	char command[2048];
+	strcpy(command,
+			ditg_command(onTime, npackets, nbytes, netInterface).c_str());
 
-	 if (!(in = popen(command, "r")))
-	 {
-	 std::cerr << "IperfFlow error: cannot execute command `" << command
-	 << "`" << std::endl;
-	 return;
-	 }
+	if (!(in = popen(command, "r")))
+	{
+		std::cerr << "IperfFlow error: cannot execute command `" << command
+				<< "`" << std::endl;
+		return;
+	}
 
-	 while (fgets(buff, sizeof(buff), in) != NULL)
-	 {
-	 simitar_iostream_mutex.lock();
-	 std::cout << buff;
-	 simitar_iostream_mutex.unlock();
-	 }
+	while (fgets(buff, sizeof(buff), in) != NULL)
+	{
+		simitar_iostream_mutex.lock();
+		std::cout << buff;
+		simitar_iostream_mutex.unlock();
+	}
 
-	 pclose(in);
-	 */
+	pclose(in);
+
 }
 
 std::string DitgFlow::ditg_command(const time_sec& onTime, const uint& npackets,

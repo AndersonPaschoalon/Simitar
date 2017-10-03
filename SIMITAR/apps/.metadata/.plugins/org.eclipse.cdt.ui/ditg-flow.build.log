@@ -1,4 +1,4 @@
-22:34:26 **** Incremental Build of configuration Debug for project ditg-flow ****
+15:13:43 **** Incremental Build of configuration Debug for project ditg-flow ****
 make all 
 Building file: ../src/ditg-flow.cpp
 Invoking: GCC C++ Compiler
@@ -7,8 +7,8 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/ditg-flow.d" -MT"src/di
  #include <NetworkTrace.h>
                           ^
 compilation terminated.
-make: *** [src/ditg-flow.o] Error 1
 src/subdir.mk:18: recipe for target 'src/ditg-flow.o' failed
+make: *** [src/ditg-flow.o] Error 1
 
-22:34:26 Build Finished (took 210ms)
+15:13:43 Build Finished (took 249ms)
 

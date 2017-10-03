@@ -30,7 +30,6 @@ NetworkFlow::NetworkFlow()
 	number_of_packets = 0;
 
 	///protocols parameters  initialization
-
 	link_protocol = PROTOCOL__ETHERNET; //default
 	mac_src = "";
 	mac_dst = "";
@@ -64,8 +63,6 @@ NetworkFlow::NetworkFlow()
 	nkbytes_mode2 = 0;
 	npacket_mode1 = 0;
 	npackets_mode2 = 0;
-	//packetSizeModel1_counter = 0;
-	//packetSizeModel2_counter = 0;
 
 }
 
@@ -120,10 +117,63 @@ NetworkFlow::~NetworkFlow()
 	delete ptr_psMode2;
 }
 
-void NetworkFlow::print()
+std::string NetworkFlow::print()
 {
-	//TODO
-	std::cout << "flow created" << endl;
+	string flow_str_print = "";
+	StochasticModelFit themodel;
+
+	/***************************************************************************
+	 * Dummy-parser
+	 **************************************************************************/
+
+	/**
+	 * Flow-level
+	 */
+	flow_str_print += "Flow" + std::to_string(flowId) + "> Duration:"
+			+ std::to_string(getFlowDuration()) + ", Start-delay:"
+			+ std::to_string(getFlowStartDelay()) + "s" + ", N.packets: "
+			+ std::to_string(getNumberOfPackets());
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Link-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Link[" + Protocol(this->getLinkProtocol()).str() + "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Network-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Network[" + Protocol(this->getNetworkProtocol()).str()
+			+ "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Transport-layer protocol
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Transport["
+			+ Protocol(this->getTransportProtocol()).str() + "]";
+
+	// Application protocol
+	flow_str_print += " Application["
+			+ Protocol(this->getApplicationProtocol()).str() + "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Inter-deperture model
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Inter-deperture["
+			+ this->getInterDepertureTimeModel(0).strModelName() + "]";
+
+	////////////////////////////////////////////////////////////////////////////
+	/// Packet-size model
+	////////////////////////////////////////////////////////////////////////////
+	flow_str_print += " Packet-size-Mode1["
+			+ this->getPacketSizeModelMode1(0).strModelName() + "]";
+	flow_str_print += " Packet-size-Mode2["
+			+ this->getPacketSizeModelMode2(0).strModelName() + "]";
+
+	simitar_iostream_mutex.lock();
+	printf("%s\n", flow_str_print.c_str());
+	simitar_iostream_mutex.unlock();
+
+	return(flow_str_print);
 }
 
 int NetworkFlow::randTranportPort()
@@ -133,6 +183,7 @@ int NetworkFlow::randTranportPort()
 
 //TODO implementar a lista de hosts -> catch these values from a list
 // useless
+/*
 string NetworkFlow::getHostIP()
 {
 	string dstIP;
@@ -155,7 +206,7 @@ string NetworkFlow::getHostIP()
 
 	return (dstIP);
 }
-
+*/
 unsigned int NetworkFlow::getFlowDsByte() const
 {
 	return flow_ds_byte;
@@ -344,54 +395,7 @@ void NetworkFlow::setTransportProtocol(protocol transportProtocol)
 	transport_protocol = transportProtocol;
 }
 
-/*
- StochasticModelFit NetworkFlow::getInterDepertureTimeModel_next()
- {
 
- StochasticModelFit themodel;
- unsigned int i = 0;
-
- if (ptr_interArrivalModelList == NULL)
- {
- themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
- ptr_interArrivalModelList->push_back(themodel);
-
- cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
- << "Trying to get a StochasticModelFit, but no model was set.\n"
- << "NO_MODEL set as default" << endl;
- }
- else
- {
-
- for (list<StochasticModelFit>::iterator it =
- ptr_interArrivalModelList->begin();
- it != ptr_interArrivalModelList->end(); it++)
- {
- if (i >= interDepertureTimeModel_counter)
- {
-
- themodel = *it;
- break;
- }
- else
- {
- i++;
- }
-
- }
-
- }
-
- if ((ptr_interArrivalModelList->size() - 1)
- > interDepertureTimeModel_counter)
- {
- interDepertureTimeModel_counter++;
- }
-
- return (themodel);
-
- }
- */
 StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 		unsigned int position)
 {
@@ -565,7 +569,7 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode1(unsigned int position)
 	}
 	else
 	{
-		list<StochasticModelFit>::iterator it;
+		std::list<StochasticModelFit>::iterator it;
 
 		for (it = ptr_psMode1->begin(); it != ptr_psMode1->end(); it++)
 		{
@@ -603,7 +607,7 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode2(unsigned int position)
 	}
 	else
 	{
-		list<StochasticModelFit>::iterator it;
+		std::list<StochasticModelFit>::iterator it;
 
 		for (it = ptr_psMode2->begin(); it != ptr_psMode2->end(); it++)
 		{
@@ -691,14 +695,12 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode2(unsigned int position)
  }
  */
 
-void NetworkFlow::setPacketSizeModel(list<StochasticModelFit>* modelVet1,
-		list<StochasticModelFit>* modelVet2, long int nkbytesMode1,
+void NetworkFlow::setPacketSizeModel(std::list<StochasticModelFit>* modelVet1,
+		std::list<StochasticModelFit>* modelVet2, long int nkbytesMode1,
 		long int nkbytesMode2, long int nPacketsMode1, long int nPacketsMode2)
 {
 	ptr_psMode1 = modelVet1;
 	ptr_psMode2 = modelVet2;
-	//packetSizeModel1_counter = 0;
-	//packetSizeModel2_counter = 0;
 	nkbytes_mode1 = nkbytesMode1;
 	nkbytes_mode2 = nkbytesMode2;
 	npacket_mode1 = nPacketsMode1;
@@ -782,11 +784,8 @@ const string& NetworkFlow::getMacDstAddr()
 
 void NetworkFlow::resetCounters()
 {
-	//interDepertureTimeModel_counter = 0;
 	sessionOnTimes_counter = 0;
 	sessionOffTimes_counter = 0;
-	//packetSizeModel1_counter = 0;
-	//packetSizeModel2_counter = 0;
 }
 
 inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)

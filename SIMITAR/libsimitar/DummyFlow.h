@@ -25,10 +25,7 @@
  } l2_addr;
  */
 
-//typedef enum
-//{
-//	method_usleep, method_pooling, method_select
-//} sleep_method;
+
 
 class DummyFlow: public NetworkFlow
 {
@@ -42,11 +39,6 @@ public:
 	 *
 	 */
 	virtual ~DummyFlow();
-
-	/**
-	 *
-	 */
-	void print();
 
 	/**
 	 *

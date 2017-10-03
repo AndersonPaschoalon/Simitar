@@ -1,6 +1,11 @@
-22:34:26 **** Incremental Build of configuration Default for project tests-integration ****
+15:13:43 **** Incremental Build of configuration Default for project tests-integration ****
 make all 
-make: Nothing to be done for 'all'.
 
-22:34:26 Build Finished (took 124ms)
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:03
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+	 Link time: 00:00:01
+
+15:13:47 Build Finished (took 3s.999ms)
 

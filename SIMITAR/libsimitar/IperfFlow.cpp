@@ -29,8 +29,8 @@ int IperfFlow::server()
 			"NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
 	if (!(in = popen(command, "r")))
 	{
-		std::cerr << "IperfFlow error: cannot execute command `" << command
-				<< "`" << std::endl;
+		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
+				<< "`";
 		return -1;
 	}
 
@@ -52,14 +52,16 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	FILE *in;
 	char buff[512];
 	//iperf args
-
 	char command[2048];
 	strcpy(command,
 			iperf_command(onTime, npackets, nbytes, netInterface).c_str());
 
+	PLOG_DEBUG << "iperf command: " << command;
+
+
 	if (!(in = popen(command, "r")))
 	{
-		std::cerr << "IperfFlow error: cannot execute command `" << command
+		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
 				<< "`" << std::endl;
 		return;
 	}
@@ -72,6 +74,7 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	}
 
 	pclose(in);
+
 }
 
 /**

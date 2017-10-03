@@ -17,9 +17,6 @@ DummyFlow::~DummyFlow()
 {
 }
 
-void DummyFlow::print()
-{
-}
 
 int DummyFlow::server()
 {
@@ -32,25 +29,12 @@ void DummyFlow::flowStart()
 	/// flow-related vars
 	std::string netInterface = "";
 	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
-	//time_t usec_startDelay = time_t(sec_startDelay * 1.0e6); // time in useconds
 	uint fid = int(getFlowId());
 	/// loop vars
-	time_t usec_offTime = 0; // time in useconds
 	time_sec sec_onTime = 0;
 	time_sec sec_offTime = 0;
 	uint nbytes = 0;
 	uint npackets = 0;
-
-
-	PLOG_DEBUG << "getFlowStartDelay:" << this->getFlowStartDelay();
-	PLOG_DEBUG << "getTransportProtocol:" << this->getTransportProtocol();
-	PLOG_DEBUG << "getTransportDstPort:" << this->getTransportDstPort();
-	PLOG_DEBUG << "getNetworkDstAddr:" << this->getNetworkDstAddr();
-	PLOG_DEBUG << "getNetworkTtl:" << this->getNetworkTtl();
-	PLOG_INFO << "Time scale factor is " << timeScaleFactor();
-	PLOG_DEBUG << "flowID:" << this->getFlowId();
-
-
 
 	fsleep(sec_startDelay/timeScaleFactor());
 	//usleep(usec_startDelay);
@@ -67,24 +51,14 @@ void DummyFlow::flowStart()
 		{
 			break;
 		}
-		//usec_offTime = time_t(sec_offTime * 1.0e6);
-		//usleep(usec_offTime);
 		fsleep(sec_offTime/timeScaleFactor());
-
 	}
-
 }
 
 void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 		const uint& npackets, const uint& nbytes, const string& netInterface)
 {
-	int rc = 0;
-
-	std::cout << "flowGenerate()\n";
-
-	//unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
 	string flow_str_print = "";
-	protocol prt;
 	StochasticModelFit themodel;
 
 	/***************************************************************************
