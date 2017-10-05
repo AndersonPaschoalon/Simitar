@@ -97,6 +97,9 @@ int main(int argc, char** argv)
 		// change IPs if --dst-list-ip or --dst-ip options are provided
 		if (flag_dst_list_file == true)
 		{
+			PLOG_DEBUG << "traceCdt.clientServerIps(" << dst_list_file.c_str()
+								<< ", " << eth_interface.c_str() << ")";
+			")";
 			traceCdt.clientServerIps(dst_list_file.c_str(),
 					eth_interface.c_str(), true);
 		}
@@ -119,8 +122,9 @@ int main(int argc, char** argv)
 
 	} catch (TCLAP::ArgException &e)  // catch any exceptions
 	{
-		PLOG_ERROR << ERRORMSG_INVALID_ASSIGNMENT << "dummy-flow Error: " << e.error() << " for arg "
-							<< e.argId() << std::endl;
+		PLOG_ERROR << ERRORMSG_INVALID_ASSIGNMENT << "dummy-flow Error: "
+							<< e.error() << " for arg " << e.argId()
+							<< std::endl;
 		exit(ERROR_INVALID_ASSIGNMENT);
 	}
 
@@ -130,9 +134,10 @@ int main(int argc, char** argv)
 void cli_error_messege(std::string arg, std::string arg_name,
 		std::string expected_values_msg)
 {
-	PLOG_ERROR << ERRORMSG_INVALID_ASSIGNMENT << "trace-analyzer Error: invalid argument " << arg << " for "
-						<< arg_name << ". Expected " << expected_values_msg
-						<< ". Use --help for help.";
+	PLOG_ERROR << ERRORMSG_INVALID_ASSIGNMENT
+						<< "trace-analyzer Error: invalid argument " << arg
+						<< " for " << arg_name << ". Expected "
+						<< expected_values_msg << ". Use --help for help.";
 }
 
 bool cli_check_val(std::string val, std::vector<std::string> expectedVals)
