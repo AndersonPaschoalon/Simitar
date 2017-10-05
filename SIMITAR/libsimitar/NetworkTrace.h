@@ -164,14 +164,6 @@ public:
 	 */
 	void server();
 
-	/**
-	 *
-	 * @return
-	 */
-	const string& getTrafficGenEngine() const
-	{
-		return m_trafficGenEngine;
-	}
 
 	/**
 	 *
@@ -225,11 +217,11 @@ public:
 private:
 
 	//atributes
-	string m_trafficGenEngine;
-	string info_tracename;
-	string info_captureInterface;
-	string info_captureDate;
-	string info_commentaries;
+	std::string m_trafficGenEngine;
+	std::string info_captureInterface;
+	std::string info_tracename;
+	std::string info_captureDate;
+	std::string info_commentaries;
 
 	//constants
 	static const char * LABEL_TRACE;

@@ -23,7 +23,7 @@ bool cli_check_val(std::string val, std::vector<std::string> expectedVals);
 
 int main(int argc, char** argv)
 {
-	PLOG_INIT(warning);
+	PLOG_INIT(debug);
 	try
 	{
 		///
@@ -83,26 +83,36 @@ int main(int argc, char** argv)
 		/// Actual execution
 		///
 
-		//TODO
+
+		PLOG_DEBUG << "NetworkTrace(" << input_xml.c_str() << ", iperf) ";
 		NetworkTrace netTrace = NetworkTrace(input_xml.c_str(), "iperf");
+
 
 		if(flag_dst_list_file == true)
 		{
+			PLOG_DEBUG << "netTrace.clientServerIps()";
 			netTrace.clientServerIps(dst_list_file.c_str(), eth_interface.c_str(), false);
 		}
 		else if (flag_dst_ip_str == true)
 		{
+			PLOG_DEBUG << "netTrace.clientServerIps()";
 			netTrace.clientServerIps(dst_ip_str.c_str(), "", eth_interface.c_str());
 		}
 
+
+
 		if (mode == "client")
 		{
+			PLOG_DEBUG << "netTrace.exec()";
 			netTrace.exec();
 		}
 		else
 		{
+			PLOG_DEBUG << "netTrace.server()";
 			netTrace.server();
 		}
+
+
 
 	} catch (TCLAP::ArgException &e)  // catch any exceptions
 	{

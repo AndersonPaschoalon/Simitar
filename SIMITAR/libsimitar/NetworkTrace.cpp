@@ -289,42 +289,43 @@ NetworkTrace::~NetworkTrace()
 
 }
 
-const string& NetworkTrace::getInfoCaptureDate() const
+const std::string& NetworkTrace::getInfoCaptureDate() const
 {
 	return info_captureDate;
 }
 
-void NetworkTrace::setInfoCaptureDate(const string& infoCaptureDate)
+void NetworkTrace::setInfoCaptureDate(const std::string& infoCaptureDate)
 {
 	info_captureDate = infoCaptureDate;
 }
 
-const string& NetworkTrace::getInfoCaptureInterface() const
+const std::string& NetworkTrace::getInfoCaptureInterface() const
 {
 	return info_captureInterface;
 }
 
-void NetworkTrace::setInfoCaptureInterface(const string& infoCaptureInterface)
+void NetworkTrace::setInfoCaptureInterface(
+		const std::string& infoCaptureInterface)
 {
 	info_captureInterface = infoCaptureInterface;
 }
 
-const string& NetworkTrace::getInfoCommentaries() const
+const std::string& NetworkTrace::getInfoCommentaries() const
 {
 	return info_commentaries;
 }
 
-void NetworkTrace::setInfoCommentaries(const string& infoCommentaries)
+void NetworkTrace::setInfoCommentaries(const std::string& infoCommentaries)
 {
 	info_commentaries = infoCommentaries;
 }
 
-const string& NetworkTrace::getInfoTracename() const
+const std::string& NetworkTrace::getInfoTracename() const
 {
 	return info_tracename;
 }
 
-void NetworkTrace::setInfoTracename(const string& infoTracename)
+void NetworkTrace::setInfoTracename(const std::string& infoTracename)
 {
 	info_tracename = infoTracename;
 }
@@ -338,7 +339,7 @@ int NetworkTrace::writeToFile(void) const
 	return returnFlag;
 }
 
-int NetworkTrace::writeToFile(const string& fileName) const
+int NetworkTrace::writeToFile(const std::string& fileName) const
 {
 	//MESSER_LOG_INIT(ERROR);
 
@@ -801,12 +802,10 @@ long int NetworkTrace::getNumberOfFlows() const
 	return (networkFlow.size());
 }
 
-const string NetworkTrace::toString() const
+const std::string NetworkTrace::toString() const
 {
-	string tostring = "";
-
-	tostring = info_tracename + info_captureInterface + info_captureDate
-			+ info_commentaries;
+	std::string tostring = info_tracename + info_captureInterface
+			+ info_captureDate + info_commentaries;
 
 	return (tostring);
 }
@@ -901,12 +900,21 @@ void NetworkTrace::clientServerIps(const char* serverIpAddr,
 		getLocalIp(etherInterface, localhost);
 	}
 
-	for (uint i = 0; i < nflows;)
+	PLOG_DEBUG << "Is interface empty? " << is_if_empty_ether;
+	PLOG_DEBUG << "Is MAC empty? " << is_if_empty_mac;
+
+	for (uint i = 0; i < nflows; i++)
 	{
+		PLOG_DEBUG << "Changing flow " << i;
+
 		networkFlow[i]->setNetworkSrcAddr(localhost);
 		networkFlow[i]->setNetworkDstAddr(serverIpAddr);
 		if (is_if_empty_mac != 0)
 			networkFlow[i]->setMacDstAddr(serverMacAddr);
+
+		PLOG_DEBUG << "Flow[" << i << "] IPsrc:"
+							<< networkFlow[i]->getNetworkSrcAddr() << "IPdst:"
+							<< networkFlow[i]->getNetworkDstAddr();
 	}
 
 }
@@ -1027,7 +1035,6 @@ void NetworkTrace::regression_tests()
 	rt.printTestResult("FileIpMac", test_setFileIpMac());
 	rt.printTestResult("Local IP", test_getLocalIp());
 }
-
 
 const char * NetworkTrace::LABEL_TRACE = "trace";
 const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";

@@ -105,6 +105,10 @@ int main(int argc, char** argv)
 		}
 		else if (flag_dst_ip_str == true)
 		{
+			PLOG_DEBUG << "traceCdt.clientServerIps(" << dst_ip_str.c_str()
+								<< ", " << eth_interface.c_str() << ")";
+			")";
+
 			traceCdt.clientServerIps(dst_ip_str.c_str(), "",
 					eth_interface.c_str());
 		}
