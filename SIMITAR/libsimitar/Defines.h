@@ -17,8 +17,6 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
-//#define DEBUG_NetworkTrace_writeToFile 1
-
 /**
  * Time scale enumeration used by NetworkFlow
  */
@@ -43,10 +41,6 @@ typedef enum
 #define CHAR_MEDIUM_BUFFER 500
 #define CHAR_LARGE_BUFFER 1000
 #define CHAR_HUGE_BUFFER 10000
-
-/**
- * Macro for  \f$ 10^6 \f$.
- */
 #define MEGA_POWER 1000000
 
 /**

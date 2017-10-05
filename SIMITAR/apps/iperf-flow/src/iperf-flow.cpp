@@ -85,6 +85,16 @@ int main(int argc, char** argv)
 
 		//TODO
 		NetworkTrace netTrace = NetworkTrace(input_xml.c_str(), "iperf");
+
+		if(flag_dst_list_file == true)
+		{
+			netTrace.clientServerIps(dst_list_file.c_str(), eth_interface.c_str(), false);
+		}
+		else if (flag_dst_ip_str == true)
+		{
+			netTrace.clientServerIps(dst_ip_str.c_str(), "", eth_interface.c_str());
+		}
+
 		if (mode == "client")
 		{
 			netTrace.exec();
@@ -100,7 +110,7 @@ int main(int argc, char** argv)
 				<< e.argId() << std::endl;
 	}
 
-	return (0);
+	return (SUCCESS);
 
 }
 

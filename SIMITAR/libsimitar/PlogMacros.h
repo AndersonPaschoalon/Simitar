@@ -17,23 +17,6 @@
 #include <plog/Appenders/ColorConsoleAppender.h>
 #include <plog/Appenders/RollingFileAppender.h>
 
-//#define PLOG_INIT(logLevel)\
-		char* _plog_logfile_env = std::getenv("SIMITAR_LOGFILE");\
-		char _fileName[500];\
-		if(_plog_logfile_env)\
-		{ \
-			strcpy(_fileName, _plog_logfile_env);\
-			static plog::RollingFileAppender<plog::CsvFormatter> fileAppender(_fileName,\
-					800000, 2);\
-			static plog::ColorConsoleAppender<plog::TxtFormatter> consoleAppender;\
-			plog::init(plog::debug, &fileAppender).addAppender(&consoleAppender); \
-		}\
-		else\
-		{\
-			static plog::ColorConsoleAppender<plog::TxtFormatter> consoleAppender;\
-			plog::init(plog::debug, &consoleAppender);\
-			LOG_ERROR  << "[" << __FILE__ << "] " << "Can't find env variable SIMITAR_LOGFILE";\
-		}
 
 
 /**

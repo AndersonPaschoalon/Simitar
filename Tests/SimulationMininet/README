@@ -22,7 +22,7 @@ http://localhost:8181/index.html
 sudo mn -c
 - On Tests/SimulationMininet/ directory, run 
 sudo ./simple-topo-test.py or 
-sudo vim ./tree-topo-test.py
+sudo ./tree-topo-test.py
 On mininet, to check and to Opendaylight discover all hosts, run:
 mininet> pingall
 

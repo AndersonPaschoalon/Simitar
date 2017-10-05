@@ -19,18 +19,58 @@ IperfFlow::~IperfFlow()
 
 int IperfFlow::server()
 {
+	printf(
+			"NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
+
+	std::thread th_server_1(iperf_server_tcp);
+	std::thread th_server_2(iperf_server_udp);
+
+	th_server_1.join();
+	th_server_2.join();
+
+	return(0);
+}
+
+int IperfFlow::iperf_server_tcp()
+{
 	// popen args
 	FILE *in;
 	char buff[512];
 	//iperf args
 
 	char command[2048] = "iperf -s";
-	printf(
-			"NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
+
 	if (!(in = popen(command, "r")))
 	{
 		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
-				<< "`";
+							<< "`";
+		return -1;
+	}
+
+	while (fgets(buff, sizeof(buff), in) != NULL)
+	{
+		simitar_iostream_mutex.lock();
+		std::cout << buff;
+		simitar_iostream_mutex.unlock();
+	}
+
+	pclose(in);
+	return (0);
+
+}
+
+int IperfFlow::iperf_server_udp()
+{
+	// popen args
+	FILE *in;
+	char buff[512];
+	//iperf args
+
+	char command[2048] = "iperf -s --udp";
+	if (!(in = popen(command, "r")))
+	{
+		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
+							<< "`";
 		return -1;
 	}
 
@@ -56,13 +96,12 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	strcpy(command,
 			iperf_command(onTime, npackets, nbytes, netInterface).c_str());
 
-	PLOG_DEBUG << "iperf command: " << command;
-
+	PLOG_INFO << "iperf command: " << command;
 
 	if (!(in = popen(command, "r")))
 	{
 		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
-				<< "`" << std::endl;
+							<< "`" << std::endl;
 		return;
 	}
 
@@ -201,3 +240,4 @@ std::string IperfFlow::iperf_command(const time_sec& onTime,
 
 	return (command_client);
 }
+
