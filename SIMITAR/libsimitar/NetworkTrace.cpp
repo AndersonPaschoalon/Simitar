@@ -824,7 +824,7 @@ int NetworkTrace::exec()
 
 	PLOG_DEBUG << "NetworkTrace::exec() >> this->getNumberOfFlows():"
 						<< this->getNumberOfFlows();
-	WAIT_KEY
+	//WAIT_KEY
 
 	for (i = 0; i < size; i++)
 	{

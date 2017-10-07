@@ -1,11 +1,6 @@
-15:13:47 **** Incremental Build of configuration Default for project tests-unity ****
+17:23:45 **** Incremental Build of configuration Default for project tests-unity ****
 make all 
+make: Nothing to be done for 'all'.
 
-* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/obj/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/obj/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
-	 Compile time: 00:00:03
-
-* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
-	 Link time: 00:00:00
-
-15:13:50 Build Finished (took 3s.408ms)
+17:23:45 Build Finished (took 119ms)
 

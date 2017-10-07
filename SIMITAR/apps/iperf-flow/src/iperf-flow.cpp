@@ -23,7 +23,7 @@ bool cli_check_val(std::string val, std::vector<std::string> expectedVals);
 
 int main(int argc, char** argv)
 {
-	PLOG_INIT(debug);
+	PLOG_INIT(verbose);
 	try
 	{
 		///
@@ -83,23 +83,21 @@ int main(int argc, char** argv)
 		/// Actual execution
 		///
 
-
 		PLOG_DEBUG << "NetworkTrace(" << input_xml.c_str() << ", iperf) ";
 		NetworkTrace netTrace = NetworkTrace(input_xml.c_str(), "iperf");
 
-
-		if(flag_dst_list_file == true)
+		if (flag_dst_list_file == true)
 		{
 			PLOG_DEBUG << "netTrace.clientServerIps()";
-			netTrace.clientServerIps(dst_list_file.c_str(), eth_interface.c_str(), false);
+			netTrace.clientServerIps(dst_list_file.c_str(),
+					eth_interface.c_str(), false);
 		}
 		else if (flag_dst_ip_str == true)
 		{
 			PLOG_DEBUG << "netTrace.clientServerIps()";
-			netTrace.clientServerIps(dst_ip_str.c_str(), "", eth_interface.c_str());
+			netTrace.clientServerIps(dst_ip_str.c_str(), "",
+					eth_interface.c_str());
 		}
-
-
 
 		if (mode == "client")
 		{
@@ -112,7 +110,7 @@ int main(int argc, char** argv)
 			netTrace.server();
 		}
 
-
+		PLOG_INFO << "** Execution finished **";
 
 	} catch (TCLAP::ArgException &e)  // catch any exceptions
 	{
@@ -120,6 +118,7 @@ int main(int argc, char** argv)
 				<< e.argId() << std::endl;
 	}
 
+	PLOG_INFO << "**return(SUCCESS)**";
 	return (SUCCESS);
 
 }

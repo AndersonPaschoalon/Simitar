@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="NetworkTrace" key="selection"/>
+		<item value="opt_transport_protocol" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="opt_transport_protocol"/>
+			<item value="opt_congestion_algorithm"/>
+			<item value="congestion_algorithm_name"/>
+			<item value="exec"/>
+			<item value="fid"/>
 			<item value="NetworkTrace"/>
 			<item value="timeSca"/>
 			<item value="LABEL_TIME_SCALE"/>
-			<item value="TimeScale"/>
-			<item value="setTimeScale"/>
-			<item value="flowThread"/>
-			<item value="pushback_Netflow"/>
-			<item value="DEBUG_StochasticModelFit"/>
 		</list>
 		<list key="replacehistory">
 		</list>

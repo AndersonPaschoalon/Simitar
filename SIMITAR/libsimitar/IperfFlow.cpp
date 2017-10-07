@@ -14,6 +14,7 @@ IperfFlow::IperfFlow()
 
 IperfFlow::~IperfFlow()
 {
+
 	// nothing to do
 }
 
@@ -28,7 +29,7 @@ int IperfFlow::server()
 	th_server_1.join();
 	th_server_2.join();
 
-	return(0);
+	return (0);
 }
 
 int IperfFlow::iperf_server_tcp()
@@ -88,6 +89,7 @@ int IperfFlow::iperf_server_udp()
 void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 		const uint& npackets, const uint& nbytes, const string& netInterface)
 {
+
 	// popen args
 	FILE *in;
 	char buff[512];
@@ -96,7 +98,7 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	strcpy(command,
 			iperf_command(onTime, npackets, nbytes, netInterface).c_str());
 
-	PLOG_INFO << "iperf command: " << command;
+	PLOG_INFO << "iperf flow[" << flowId << "]: " << command;
 
 	if (!(in = popen(command, "r")))
 	{
@@ -177,7 +179,7 @@ std::string IperfFlow::iperf_command(const time_sec& onTime,
 		const uint& npackets, const uint& nbytes, const string& netInterface)
 {
 	/// iperf running options. Traffic generation custom options
-	enum_transmission_type transmission_type = on_time;
+	enum_transmission_type transmission_type = packets;
 	std::string congestion_algorithm_name = "reno";
 	bool real_time = true;
 	bool congestion_algorithm = true;
@@ -217,16 +219,15 @@ std::string IperfFlow::iperf_command(const time_sec& onTime,
 				+ "pps";
 	}
 	std::string opt_format = " --format k "; // format to report: Kbits, Mbits, KBytes, MBytes
-	std::string opt_transport_protocol = (tcp == true) ? "" : " --udp ";
+	std::string opt_transport_protocol =
+			(tcp == true) ?
+					" --linux-congestion " + congestion_algorithm_name + " " :
+					" --udp ";
 	std::string opt_transport_port = std::string(" --bind ") + client_ip
 			+ std::string(":") + std::to_string(tranport_port);
 	std::string opt_real_time = (real_time == true) ? " --realtime " : "";
 	std::string opt_nodelay = " --nodelay ";
-	std::string opt_congestion_algorithm =
-			(congestion_algorithm == true) ?
-					std::string(" --linux-congestion ")
-							+ congestion_algorithm_name :
-					"";
+
 	std::string opt_ipv6 = (ipv6 == true) ? " --ipv6_domain " : "";
 	std::string opt_ttl = " --ttl " + std::to_string(ttlVal);
 	std::string opt_no_delay = (no_delay == true) ? " --nodelay " : "";
@@ -235,8 +236,7 @@ std::string IperfFlow::iperf_command(const time_sec& onTime,
 	std::string command_client = std::string("iperf -c ") + server_ip
 			+ opt_bandwidth + opt_tranmission + opt_format
 			+ opt_transport_protocol + opt_transport_port + opt_real_time
-			+ opt_nodelay + opt_congestion_algorithm + opt_ipv6 + opt_ttl
-			+ opt_no_delay;
+			+ opt_nodelay + opt_ipv6 + opt_ttl + opt_no_delay;
 
 	return (command_client);
 }

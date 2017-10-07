@@ -52,6 +52,8 @@ void DummyFlow::flowStart()
 		}
 		fsleep(sec_offTime / timeScaleFactor());
 	}
+
+	PLOG_DEBUG << "EndFlow[" << fid  << "]";
 }
 
 void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
