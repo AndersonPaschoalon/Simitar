@@ -61,14 +61,13 @@ void DitgFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	FILE *in;
 	char buff[512];
 	//iperf args
-
 	char command[2048];
 	strcpy(command,
 			ditg_command(onTime, npackets, nbytes, netInterface).c_str());
 
 	if (!(in = popen(command, "r")))
 	{
-		std::cerr << "IperfFlow error: cannot execute command `" << command
+		std::cerr << "DitgFlow error: cannot execute command `" << command
 				<< "`" << std::endl;
 		return;
 	}

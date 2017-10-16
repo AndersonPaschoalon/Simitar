@@ -52,7 +52,8 @@ OBJ_FILES 	:= $(addprefix $(OBJ_DIR)/,$(notdir $(CPP_FILES:.cpp=.o))) # do not c
 LD_FLAGS 	:= -p  -ftest-coverage -fprofile-arcs
 
 #
-CC_FLAGS 	:= -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall
+#CC_FLAGS 	:= -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall
+CC_FLAGS 	:= -fmessage-length=0 -std=c++11 -O0 -g3 -fprofile-arcs -Wall
 
 # dynamic lybrary argument: "-Wl,-Bdynamic -ldynamic-lib-name". Eg.: "-Wl,-Bdynamic -lpthread"
 # LD_LIBS 	:= -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG 
@@ -119,12 +120,14 @@ clean:
 	$(RM) $(OBJ_DIR)/*.o
 	$(RM) $(STATIC_LIB)
 	$(RM) $(SHARED_LIB)
+	$(RM) $(TEMP_FILE)
 	
 clean-all:
 	$(RM) $(OBJ_DIR)/*.o
 	$(RM) $(EXEC_FILE)
 	$(RM) $(STATIC_LIB)
 	$(RM) $(SHARED_LIB)
+	$(RM) $(TEMP_FILE)
 
 remake: clean  all
 
