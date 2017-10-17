@@ -74,7 +74,7 @@ public:
 
 	inline int getLocalIp(const char* interface, char* ipaddr);
 
-	virtual void print() = 0;
+	std::string print();
 
 	void resetCounters();
 
@@ -82,7 +82,7 @@ public:
 	///Return the next IP address form the destination-hosts file
 	///@return
 	///
-	string getHostIP();
+	//string getHostIP();
 
 	///
 	///returns a random transport port number

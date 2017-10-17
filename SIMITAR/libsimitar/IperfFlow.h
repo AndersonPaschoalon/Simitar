@@ -50,6 +50,9 @@ private:
 	std::string iperf_command(const time_sec& onTime, const uint& npackets,
 			const uint& nbytes, const string& netInterface);
 
+	static int iperf_server_tcp();
+	static int iperf_server_udp();
+
 };
 
 #endif /* IPERFFLOW_H_ */

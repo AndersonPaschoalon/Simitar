@@ -1,6 +1,6 @@
-22:34:26 **** Incremental Build of configuration Default for project tests-unity ****
+17:23:45 **** Incremental Build of configuration Default for project tests-unity ****
 make all 
 make: Nothing to be done for 'all'.
 
-22:34:27 Build Finished (took 102ms)
+17:23:45 Build Finished (took 119ms)
 

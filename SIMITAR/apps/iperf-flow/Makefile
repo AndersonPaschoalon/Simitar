@@ -115,13 +115,20 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@printf "\t Compile time: " 
 	@$(END_TIME)
 
-clean:
+clean-all:
 	$(RM) $(OBJ_DIR)/*.o
 	$(RM) $(EXEC_FILE)
 	$(RM) $(STATIC_LIB)
 	$(RM) $(SHARED_LIB)
 
-remake: clean  all
+clean:
+	$(RM) $(OBJ_DIR)/*.o
+	$(RM) $(STATIC_LIB)
+	$(RM) $(SHARED_LIB)
+
+
+
+remake: clean-all  all
 
 
 

@@ -15,7 +15,7 @@ NetworkTrace::NetworkTrace()
 NetworkTrace::NetworkTrace(const string& fileName,
 		const string& trafficGenEngine)
 {
-	PLOG_DEBUG << "NetworkTrace() constructor => args fileName:" << fileName
+	PLOG_DEBUG << "NetworkTrace() file constructor;  args fileName:" << fileName
 						<< ", trafficGenEngine:" << trafficGenEngine;
 
 	long int nflows = 0;
@@ -59,7 +59,7 @@ NetworkTrace::NetworkTrace(const string& fileName,
 
 	charvet2type(root_node->first_attribute("n_flows")->value(), nflows);
 
-	int fcounter = 0;
+	uint fcounter = 0;
 	for (xml_node<> * flow_node = root_node->first_node("flow"); flow_node;
 			flow_node = flow_node->next_sibling())
 	{
@@ -68,9 +68,10 @@ NetworkTrace::NetworkTrace(const string& fileName,
 		NetworkFlow* netFlow = NetworkFlowFactory::make_flow(trafficGenEngine);
 
 		// PLOG debug
-		PLOG_DEBUG << "Factoring flow[" << fcounter
+		PLOG_VERBOSE << "Factoring flow[" << fcounter
 							<< "]: NetworkFlowFactory::make_flow("
 							<< trafficGenEngine << ")";
+		netFlow->setFlowId(fcounter);
 		fcounter++;
 
 		/// Flow Settings
@@ -281,49 +282,50 @@ NetworkTrace::~NetworkTrace()
 
 	for (unsigned int i = 0; i < networkFlow.size(); i++)
 	{
-		//MESSER_DEBUG("delete networkFlow[%d] @ <%s, %s>", i);
+		PLOG_VERBOSE << "delete networkFlow[" << i << "]";
 		delete networkFlow[i];
 	}
 	networkFlow.clear();
 
 }
 
-const string& NetworkTrace::getInfoCaptureDate() const
+const std::string& NetworkTrace::getInfoCaptureDate() const
 {
 	return info_captureDate;
 }
 
-void NetworkTrace::setInfoCaptureDate(const string& infoCaptureDate)
+void NetworkTrace::setInfoCaptureDate(const std::string& infoCaptureDate)
 {
 	info_captureDate = infoCaptureDate;
 }
 
-const string& NetworkTrace::getInfoCaptureInterface() const
+const std::string& NetworkTrace::getInfoCaptureInterface() const
 {
 	return info_captureInterface;
 }
 
-void NetworkTrace::setInfoCaptureInterface(const string& infoCaptureInterface)
+void NetworkTrace::setInfoCaptureInterface(
+		const std::string& infoCaptureInterface)
 {
 	info_captureInterface = infoCaptureInterface;
 }
 
-const string& NetworkTrace::getInfoCommentaries() const
+const std::string& NetworkTrace::getInfoCommentaries() const
 {
 	return info_commentaries;
 }
 
-void NetworkTrace::setInfoCommentaries(const string& infoCommentaries)
+void NetworkTrace::setInfoCommentaries(const std::string& infoCommentaries)
 {
 	info_commentaries = infoCommentaries;
 }
 
-const string& NetworkTrace::getInfoTracename() const
+const std::string& NetworkTrace::getInfoTracename() const
 {
 	return info_tracename;
 }
 
-void NetworkTrace::setInfoTracename(const string& infoTracename)
+void NetworkTrace::setInfoTracename(const std::string& infoTracename)
 {
 	info_tracename = infoTracename;
 }
@@ -337,7 +339,7 @@ int NetworkTrace::writeToFile(void) const
 	return returnFlag;
 }
 
-int NetworkTrace::writeToFile(const string& fileName) const
+int NetworkTrace::writeToFile(const std::string& fileName) const
 {
 	//MESSER_LOG_INIT(ERROR);
 
@@ -774,7 +776,7 @@ int NetworkTrace::writeToFile(const string& fileName) const
 	file_stored.close();
 	doc.clear();
 
-	//MESSER_DEBUG("Free memory @<%s, %s>");
+	PLOG_DEBUG << "Free memory";
 
 	//Free memory allocated
 	for (i = 0; i < nFlows; i++)
@@ -800,12 +802,10 @@ long int NetworkTrace::getNumberOfFlows() const
 	return (networkFlow.size());
 }
 
-const string NetworkTrace::toString() const
+const std::string NetworkTrace::toString() const
 {
-	string tostring = "";
-
-	tostring = info_tracename + info_captureInterface + info_captureDate
-			+ info_commentaries;
+	std::string tostring = info_tracename + info_captureInterface
+			+ info_captureDate + info_commentaries;
 
 	return (tostring);
 }
@@ -824,20 +824,19 @@ int NetworkTrace::exec()
 
 	PLOG_DEBUG << "NetworkTrace::exec() >> this->getNumberOfFlows():"
 						<< this->getNumberOfFlows();
-	std::cout << "\nNetworkTrace::exec() >> this->getNumberOfFlows():"
-						<< this->getNumberOfFlows();
-	WAIT_KEY
+	//WAIT_KEY
 
 	for (i = 0; i < size; i++)
 	{
-		PLOG_DEBUG << "Init flow thread networkFlow[" << i << "]->flowThread()";
-
+		PLOG_VERBOSE << "Creating flow thread networkFlow[" << i
+							<< "]->flowThread()";
 		th_flw[i] = networkFlow[i]->flowThread();
-		//dummy
-		//th_flw[i] = netFlow[i].flowThread2();
+
 	}
 	for (i = 0; i < size; i++)
 	{
+		PLOG_VERBOSE << "Joining flow thread networkFlow[" << i
+							<< "]->flowThread()";
 		th_flw[i].join();
 	}
 
@@ -849,101 +848,20 @@ int NetworkTrace::exec()
 
 void NetworkTrace::server()
 {
-	networkFlow[0]->server();
+
+	if (this->getNumberOfFlows() >= 0)
+	{
+		PLOG_VERBOSE << "Executing networkFlow[0]->server()";
+		networkFlow[0]->server();
+	}
+	else
+	{
+		PLOG_ERROR << "Error while executing networkFlow[0]->server()."
+							<< "Number of flow is: "
+							<< this->getNumberOfFlows();
+		exit(ERROR_NULL_POINTER);
+	}
 }
-
-//void NetworkTrace::string2charvet(const string s, char* vetc) const
-//{
-//	strncpy(vetc, s.c_str(), sizeof(char) * CHAR_BUFFER);
-//	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
-//}
-
-/**
- * @brief This method returns the the IP and MAC addresses of a file
- * This method returns the the IP and MAC addresses of an input file at the
- * line counter. Each line of this file follow this format: <IPaddr>@<MACaddr>.
- * @param counter
- * @param filename
- * @param ipAddr
- * @param MacAddr
- * @return
- */
-/*
- int NetworkTrace::getDstIpMac(uint& counter, const char* filename, char* ipAddr,
- char* MacAddr)
- {
- int filePosition = 0;
- char strLine[CHAR_SMALL_BUFFER];
- char** tokens = NULL;
- if (counter == 0)
- counter = 1;
-
- //ifstream hostIpList("hostIpList.txt", ios::in);
- ifstream hostIpList(filename, ios::in);
- if (!hostIpList || isFileEmpty(hostIpList))
- {
- fprintf(stderr,
- "*Warning*: hostIpList.txt file is empty or do not exist.\nUsing default IP address 127.0.0.1\n");
- strcpy(ipAddr, "127.0.0.1");
- return (-1);
- }
- else
- { //no empty file
-
- hostIpList >> strLine;
- filePosition++;
-
- while (!hostIpList.eof())
- {
- if (filePosition < counter)
- {
- hostIpList >> strLine;
- filePosition++;
- }
- else
- {
- (counter)++;
- break;
- }
- }
- if (hostIpList.eof())
- {
- //EOF reached
- hostIpList >> strLine;
- hostIpList.clear();
- hostIpList.seekg(0);
- //hostIpList >> ipAddr;
- counter = 1;
- }
- }
-
- tokens = str_split(strLine, '@');
- if (tokens)
- {
- int i;
- for (i = 0; *(tokens + i); i++)
- {
- if (i == 0)
- {
- strcpy(ipAddr, *(tokens + i));
- }
- else if (i == 1)
- {
- strcpy(MacAddr, *(tokens + i));
- }
- free(*(tokens + i));
- }
- free(tokens);
- }
- else
- {
- fprintf(stderr, "*Error*: failed to break string into tokens");
- return (-2);
- }
-
- return (0);
- }
- */
 
 void NetworkTrace::clientServerIps(const char* filename,
 		const char* etherInterface, bool set_mac)
@@ -982,37 +900,24 @@ void NetworkTrace::clientServerIps(const char* serverIpAddr,
 		getLocalIp(etherInterface, localhost);
 	}
 
-	for (uint i = 0; i < nflows;)
+	PLOG_DEBUG << "Is interface empty? " << is_if_empty_ether;
+	PLOG_DEBUG << "Is MAC empty? " << is_if_empty_mac;
+
+	for (uint i = 0; i < nflows; i++)
 	{
+		PLOG_DEBUG << "Changing flow " << i;
+
 		networkFlow[i]->setNetworkSrcAddr(localhost);
 		networkFlow[i]->setNetworkDstAddr(serverIpAddr);
 		if (is_if_empty_mac != 0)
 			networkFlow[i]->setMacDstAddr(serverMacAddr);
 
+		PLOG_DEBUG << "Flow[" << i << "] IPsrc:"
+							<< networkFlow[i]->getNetworkSrcAddr() << "IPdst:"
+							<< networkFlow[i]->getNetworkDstAddr();
 	}
 
 }
-
-/*
- for (uint i = 0; i < nflows;)
- {
- do
- {
- ip_addr = file_csv.column(0);
- mac_addr = file_csv.column(1);
- networkFlow[i]->setNetworkSrcAddr(localhost);
- networkFlow[i]->setNetworkDstAddr(ip_addr);
- if (set_mac == true)
- networkFlow[i]->setMacDstAddr(mac_addr);
- i++;
-
- if(i >= nflows) break;
- } while (file_csv.next_line());
- file_csv.reset();
- }
-
-
- */
 
 inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
 {
@@ -1022,8 +927,8 @@ inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
 
 	if (getifaddrs(&ifaddr) == -1)
 	{
-		perror("getifaddrs");
-		return (-1);
+		PLOG_ERROR << "Error, cant execute getifaddrs()";
+		exit(ERROR_BAD_VALUE);
 	}
 
 	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
@@ -1061,8 +966,8 @@ inline int NetworkTrace::getLocalIp(const char* interface, char* ipaddr)
 
 	if (getifaddrs(&ifaddr) == -1)
 	{
-		perror("getifaddrs");
-		return (-1);
+		PLOG_ERROR << "Error, cant execute getifaddrs()";
+		exit(ERROR_BAD_VALUE);
 	}
 
 	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
@@ -1090,36 +995,6 @@ inline int NetworkTrace::getLocalIp(const char* interface, char* ipaddr)
 	freeifaddrs(ifaddr);
 	return (0);
 }
-
-/*
- void NetworkTrace::setFileIpMac(const char* filename)
- {
- uint nflows = uint(getNumberOfFlows());
- uint i = 0;
- char macAddr[CHAR_BUFFER];
- char ipAddr[CHAR_BUFFER];
-
- for (i = 0; i < nflows; i++)
- {
- getDstIpMac(i, filename, ipAddr, macAddr);
- networkFlow[i]->setNetworkDstAddr(ipAddr);
- networkFlow[i]->setMacDstAddr(macAddr);
- }
- }
- */
-/*
- std::ifstream ip_mac_file("ip-macs.csv");
- csv::csv_istream ipmacfile(ip_mac_file);
- std::string ipaddr, macaddr;
- std::string header1, header2;
- ipmacfile >> header1 >> header2;
- while (ipmacfile) {
- ipmacfile >> ipaddr >> macaddr;
- std::cout << header1 << ": " << ipaddr << ", " << header2 << ": "
- << macaddr << "\n";
- }
-
- */
 
 void NetworkTrace::setFileIpMac(const char* filename, const char* localhost,
 		bool set_mac)
@@ -1160,32 +1035,6 @@ void NetworkTrace::regression_tests()
 	rt.printTestResult("FileIpMac", test_setFileIpMac());
 	rt.printTestResult("Local IP", test_getLocalIp());
 }
-
-/*
- bool NetworkTrace::test_string2charvet()
- {
- string anotherStrangerMe =
- "Sin of doubt It exists and it grows A glimpse of life From somewhere deep within";
- char charVet[CHAR_BUFFER];
-
- string2charvet(anotherStrangerMe, charVet);
-
- for (unsigned int i = 0; i < anotherStrangerMe.size(); i++)
- {
- if (charVet[i] != anotherStrangerMe[i])
- return (false);
- }
- int i = 0;
- while (charVet[i] != '\0')
- {
- if (charVet[i] != anotherStrangerMe[i])
- return (false);
- i++;
- }
-
- return (true);
- }
- */
 
 const char * NetworkTrace::LABEL_TRACE = "trace";
 const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";

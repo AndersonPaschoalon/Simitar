@@ -295,7 +295,7 @@ void charvet2type(const char* vetc, std::list<uint>& theList)
 {
 
 	char buffer[CHAR_BUFFER];
-	long int val_buffer = 0;
+	int val_buffer = 0;
 
 	int buffer_conter = 0;
 	int in_conter = 0;
@@ -608,7 +608,7 @@ bool test_charvet2type()
 	std::list<double> aListN;
 	char in_cstrI[CHAR_BUFFER] = "1,223,3;4 5555 6";
 	char in_cstrD[CHAR_BUFFER] = "1.2,2.23,3.1;4.4 5.555 6.0";
-	char in_cstrN[CHAR_BUFFER] = "";
+	//char in_cstrN[CHAR_BUFFER] = "";
 
 	double vd[6];
 	int vi[6];

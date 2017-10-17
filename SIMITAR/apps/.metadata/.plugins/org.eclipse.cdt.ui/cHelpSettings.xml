@@ -21,4 +21,18 @@
 <book enabled="true" title="devhelp"/>
 </provider>
 </project>
+<project name="simitar">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="glibc library"/>
+<book enabled="true" title="devhelp"/>
+</provider>
+</project>
+<project name="dummy-flow">
+<provider id="org.eclipse.cdt.ui.provider1"/>
+<provider id="org.eclipse.linuxtools.cdt.libhover.provider">
+<book enabled="true" title="glibc library"/>
+<book enabled="true" title="devhelp"/>
+</provider>
+</project>
 </cHelpSettings>

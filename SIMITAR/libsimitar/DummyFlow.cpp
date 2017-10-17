@@ -17,10 +17,6 @@ DummyFlow::~DummyFlow()
 {
 }
 
-void DummyFlow::print()
-{
-}
-
 int DummyFlow::server()
 {
 	printf("[Server-mode operation]\n");
@@ -32,27 +28,14 @@ void DummyFlow::flowStart()
 	/// flow-related vars
 	std::string netInterface = "";
 	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
-	//time_t usec_startDelay = time_t(sec_startDelay * 1.0e6); // time in useconds
 	uint fid = int(getFlowId());
 	/// loop vars
-	time_t usec_offTime = 0; // time in useconds
 	time_sec sec_onTime = 0;
 	time_sec sec_offTime = 0;
 	uint nbytes = 0;
 	uint npackets = 0;
 
-
-	PLOG_DEBUG << "getFlowStartDelay:" << this->getFlowStartDelay();
-	PLOG_DEBUG << "getTransportProtocol:" << this->getTransportProtocol();
-	PLOG_DEBUG << "getTransportDstPort:" << this->getTransportDstPort();
-	PLOG_DEBUG << "getNetworkDstAddr:" << this->getNetworkDstAddr();
-	PLOG_DEBUG << "getNetworkTtl:" << this->getNetworkTtl();
-	PLOG_INFO << "Time scale factor is " << timeScaleFactor();
-	PLOG_DEBUG << "flowID:" << this->getFlowId();
-
-
-
-	fsleep(sec_startDelay/timeScaleFactor());
+	fsleep(sec_startDelay / timeScaleFactor());
 	//usleep(usec_startDelay);
 	while (1)
 	{
@@ -67,24 +50,16 @@ void DummyFlow::flowStart()
 		{
 			break;
 		}
-		//usec_offTime = time_t(sec_offTime * 1.0e6);
-		//usleep(usec_offTime);
-		fsleep(sec_offTime/timeScaleFactor());
-
+		fsleep(sec_offTime / timeScaleFactor());
 	}
 
+	PLOG_DEBUG << "EndFlow[" << fid  << "]";
 }
 
 void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 		const uint& npackets, const uint& nbytes, const string& netInterface)
 {
-	int rc = 0;
-
-	std::cout << "flowGenerate()\n";
-
-	//unsigned int usecs = (unsigned int) (this->getFlowStartDelay() * MEGA_POWER);
 	string flow_str_print = "";
-	protocol prt;
 	StochasticModelFit themodel;
 
 	/***************************************************************************
@@ -96,25 +71,33 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	 */
 	flow_str_print += "Flow" + std::to_string(flowId) + "> Duration:"
 			+ std::to_string(getFlowDuration()) + ", Start-delay:"
-			+ std::to_string(getFlowStartDelay()) + "s" + ", N.packets: "
-			+ std::to_string(getNumberOfPackets());
+			+ std::to_string(getFlowStartDelay()) + "s" + ", FlowPackets: "
+			+ std::to_string(getNumberOfPackets()) + " onTime:"
+			+ std::to_string(onTime) + " filePackets:"
+			+ std::to_string(npackets) + " nbytes:" + std::to_string(nbytes)
+			+ " ether:" + netInterface;
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Link-layer protocol
 	////////////////////////////////////////////////////////////////////////////
-	flow_str_print += " Link[" + Protocol(this->getLinkProtocol()).str() + "]";
+	flow_str_print += " Link[" + Protocol(this->getLinkProtocol()).str()
+			+ " src:" + this->getMacSrcAddr() + ", dst:" + this->getMacDstAddr()
+			+ "]";
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Network-layer protocol
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Network[" + Protocol(this->getNetworkProtocol()).str()
-			+ "]";
+			+ " src:" + this->getNetworkSrcAddr() + ", dst:"
+			+ this->getNetworkDstAddr() + "]";
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Transport-layer protocol
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Transport["
-			+ Protocol(this->getTransportProtocol()).str() + "]";
+			+ Protocol(this->getTransportProtocol()).str() + " src:"
+			+ std::to_string(this->getTransportSrcPort()) + " dst:"
+			+ std::to_string(this->getTransportSrcPort()) + "]";
 
 	// Application protocol
 	flow_str_print += " Application["
@@ -124,7 +107,11 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 	/// Inter-deperture model
 	////////////////////////////////////////////////////////////////////////////
 	flow_str_print += " Inter-deperture["
-			+ this->getInterDepertureTimeModel(0).strModelName() + "]";
+			+ this->getInterDepertureTimeModel(0).strModelName() + " param1:"
+			+ std::to_string(this->getInterDepertureTimeModel(0).param1())
+			+ ", param2:"
+			+ std::to_string(this->getInterDepertureTimeModel(0).param2())
+			+ "]";
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Packet-size model
@@ -180,7 +167,7 @@ void DummyFlow::fsleep(time_sec sleep_time)
 	}
 	else // method_usleep
 	{
-		time_t  usec_delay = time_t(sleep_time * 1.0e6);
+		time_t usec_delay = time_t(sleep_time * 1.0e6);
 		usleep(usec_delay);
 	}
 

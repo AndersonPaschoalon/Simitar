@@ -196,6 +196,15 @@ def plot_data(pcap_file, sym_name, plots_dir):
     gp.plot_config(title=theTitle)
     gp.plot_2functionxyxy(theTitle, theTitle + '.dat')
 
+    print('Plotting costFunction of:' + sym_name + ' from pcap:'
+          + os.path.basename(pcap_file))
+
+    gp.plot_config(ylabel='cost Function', xlabel='', legend1='',
+                   legend2='')
+    theTitle = 'costFunction'
+    gp.plot_tickbar_label(theTitle, theTitle + '.dat')
+
+
 
 if __name__ == "__main__":
     if (len(sys.argv) == 1) or (len(sys.argv) == 2):
