@@ -35,13 +35,9 @@ In both cases, the preferred model $M_i$, is the one with the smaller value of $
 We collect inter-packet times from the traffic capture we call \textit{skype-pcap}. Then, we estimate a set of parameters for stochastic processes, using a set of different methodologies, including linear-regression, maximum likelihood, and direct estimation. We are modeling: 
 
 \begin{itemize}
-    \item Weibull distribution, using linear regression, through the Gradient descendent algorithm;
-    \item Normal distribution, using direct estimation the mean and the standard deviation of the dataset;
-    \item Exponential distribution, using linear regression, through the Gradient descendent algorithm. We refer to this distribution as Exponential(LR);
-    \item Exponential distribution, using a direct estimation of the dataset mean. We refer to this distribution as Exponential(Me);
-    \item Pareto distribution, using linear regression, through the Gradient descendent algorithm. We refer to this distribution as Pareto(LR);
+ \item Weibull, exponential, Pareto and Cauchy distributions, using linear regression, through the Gradient descendent algorithm. We refer to these exponential and Pareto approximations as Exponential(LR) and Pareto(LR);
+    \item Normal and exponential distribution, using direct estimation the mean and the standard deviation of the dataset for the normal, and the mean for the exponential. We refer for to this exponential approximation as Exponential(Me) ;
     \item Pareto distribution, using the maximum likelihood method. We refer to this distribution as Pareto(MLH);
-    \item Cauchy distribution, using linear regression, through the Gradient descendent algorithm;
 \end{itemize}
 
 \begin{table*}[t]
@@ -149,11 +145,13 @@ In this work, we analyze how BIC and AIC perform being used as analytical select
 
 Here in this work, we analyze just inter-packet times of a single trace. But at \cite{projeto-github} we perform the same methodology on different types of traffic captures, finding similar results. Therefore we can conclude that BIC and AIC are healthy alternatives for model selection of Ethernet inter-packet times models, and we can be safely them. Finally, we must point some advantages of BIC and AIC instead of simulations. Since it is an analytical model, no generation of random data is necessary,  being computationally cheaper and easy to code. Also, since we do not use a single stochastic function and parameterization strategy, it is resilient to the fact that some methods like liner-regression over Weibull may diverge sometimes. If it happens, BIC or AIC will discard this guesses, and choose another automatically.
 
+Last but not least, to the best of our knowledge, this is the most comprehensive investigation of the actual quality of BIC and AIC as model selection criteria of for inter-packet times.
 %Also, except by the Pareto function modeled using the Maximum likelihood method, have comparative results between the simulations and the AIC/BIC goes. The best fittings according to the AIC/BIC usually returned very accurate models, with a small error between the mean and fractal level, and correlation close to one. The models selected as the worsts usually returned poor results.
 
 %Also, it is important to notice that in some cases, some stochastic functions may perform poorly, and in other provide an accurate fitting, what justify the application of the criteria in all new experiments. For example, Weibull usually performs pretty well, but in some cases, perform poorly, and in others may even diverge. 
 
 %We do not rely on only one type of parameterization. This turns our methodology more robust, since a linear regression may diverge. But always there will be a peaceable model, since our estimations for Normal, Exponential (Me) and Pareto (MLH) cannot. Models which the linear regression diverges, will have very high and positive BIC/AIC estimations, and will not stand as primary options.
+
 
 
 
