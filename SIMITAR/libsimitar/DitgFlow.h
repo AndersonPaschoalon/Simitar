@@ -16,14 +16,17 @@
 class DitgFlow: public DummyFlow
 {
 public:
+
 	/**
 	 *
 	 */
 	DitgFlow();
+
 	/**
 	 *
 	 */
 	virtual ~DitgFlow();
+
 	/**
 	 *
 	 * @return

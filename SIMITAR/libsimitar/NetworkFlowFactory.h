@@ -19,6 +19,7 @@
 #include "DummyFlow.h"
 #include "IperfFlow.h"
 #include "DitgFlow.h"
+#include "TinsFlow.h"
 
 /**
  *

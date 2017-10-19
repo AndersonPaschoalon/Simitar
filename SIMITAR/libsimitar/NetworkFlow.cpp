@@ -7,17 +7,10 @@
 
 #include "NetworkFlow.h"
 #include "DummyFlow.h"
-//#include "DitgFlow.h"
-//#include "PrintCharFlow.h"
-//#include "IperfFlow.h"
-//#include "OstinatoFlow.h"
-//#include "NemesisFlow.h"
-//#include "LibtinsFlow.h"
 
 NetworkFlow::NetworkFlow()
 {
 	/// flow settings
-	ether_interface = "lo";
 	flow_time_scale = seconds;
 	flow_sleep_method = method_usleep;
 
@@ -173,7 +166,7 @@ std::string NetworkFlow::print()
 	printf("%s\n", flow_str_print.c_str());
 	simitar_iostream_mutex.unlock();
 
-	return(flow_str_print);
+	return (flow_str_print);
 }
 
 int NetworkFlow::randTranportPort()
@@ -181,32 +174,6 @@ int NetworkFlow::randTranportPort()
 	return (rand() % (MAX_TRANSPORT_PORT_NUMBER + 1));
 }
 
-//TODO implementar a lista de hosts -> catch these values from a list
-// useless
-/*
-string NetworkFlow::getHostIP()
-{
-	string dstIP;
-	pthread_mutex_t lock;
-
-	pthread_mutex_init(&lock, NULL);
-	pthread_mutex_lock(&lock);
-	if (network_hostList_conter == 0)
-	{
-		dstIP = "172.16.0.1";
-		network_hostList_conter++;
-	}
-	else
-	{
-		dstIP = "172.16.0.2";
-		network_hostList_conter = 0;
-	}
-	pthread_mutex_unlock(&lock);
-	pthread_mutex_destroy(&lock);
-
-	return (dstIP);
-}
-*/
 unsigned int NetworkFlow::getFlowDsByte() const
 {
 	return flow_ds_byte;
@@ -395,7 +362,6 @@ void NetworkFlow::setTransportProtocol(protocol transportProtocol)
 	transport_protocol = transportProtocol;
 }
 
-
 StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 		unsigned int position)
 {
@@ -408,9 +374,9 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
 		//ptr_interArrivalModelList->push_back(themodel);
 
-		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
-				<< "Trying to get a StochasticModelFit, but no model was set.\n"
-				<< "NO_MODEL set as default" << endl;
+		PLOG_ERROR << ERRORMSG_BAD_VALUE << "Trying to get a StochasticModelFit,"
+							<< "but no model was set."
+							<< "NO_MODEL set as default";
 	}
 	else
 	{
@@ -563,9 +529,8 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode1(unsigned int position)
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
 		//ptr_psMode1->push_back(themodel);
 
-		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
-				<< "Trying to get a StochasticModelFit, but no model was set.\n"
-				<< "NO_MODEL set as default" << endl;
+		PLOG_ERROR << "Trying to get a StochasticModelFit, but"
+							<< "no model was set. NO_MODEL set as default";
 	}
 	else
 	{
@@ -796,8 +761,10 @@ inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
 
 	if (getifaddrs(&ifaddr) == -1)
 	{
-		perror("getifaddrs");
-		return (-1);
+		//perror("getifaddrs");
+		//return (-1);
+		PLOG_FATAL << ERRORMSG_GENERAL_IO_ERROR << "getifaddrs";
+		exit(ERROR_GENERAL_IO_ERROR);
 	}
 
 	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
@@ -814,8 +781,12 @@ inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
 		{
 			if (s != 0)
 			{
-				printf("getnameinfo() failed: %s\n", gai_strerror(s));
-				return (-2);
+				//printf("getnameinfo() failed: %s\n", gai_strerror(s));
+				//return (-2);
+				PLOG_FATAL << ERRORMSG_GENERAL_IO_ERROR
+									<< "getnameinfo() failed: "
+									<< gai_strerror(s);
+				exit(ERROR_GENERAL_IO_ERROR);
 			}
 			strcpy(interface, ifa->ifa_name);
 			strcpy(ipaddr, host);
@@ -835,8 +806,11 @@ inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
 
 	if (getifaddrs(&ifaddr) == -1)
 	{
-		perror("getifaddrs");
-		return (-1);
+		PLOG_FATAL << ERRORMSG_GENERAL_IO_ERROR << "getifaddrs"
+							<< "Check the ehternet interface:" << interface;
+		exit(ERROR_GENERAL_IO_ERROR);
+		//perror("getifaddrs");
+		//return (-1);
 	}
 
 	for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
@@ -853,8 +827,14 @@ inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
 		{
 			if (s != 0)
 			{
-				printf("getnameinfo() failed: %s\n", gai_strerror(s));
-				return (-2);
+				//printf("getnameinfo() failed: %s\n", gai_strerror(s));
+				//return (-2);
+				PLOG_FATAL << ERRORMSG_GENERAL_IO_ERROR
+									<< "getnameinfo() failed: "
+									<< gai_strerror(s)
+									<< "Check the ehternet interface:"
+									<< interface;
+				exit(ERROR_GENERAL_IO_ERROR);
 			}
 
 			strcpy(ipaddr, host);
@@ -866,17 +846,15 @@ inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
 	return (0);
 }
 
-//DEBUG
+// DEBUG
 void NetworkFlow::printModels()
 {
-
 	for (list<StochasticModelFit>::iterator it =
 			ptr_interArrivalModelList->begin();
 			it != ptr_interArrivalModelList->end(); it++)
 	{
 		it->print();
 	}
-
 }
 
 vector<time_sec> *NetworkFlow::getSessionOnVector()
@@ -899,15 +877,3 @@ vector<uint>* NetworkFlow::getSessionOnBytesVector()
 	return (ptr_session_nBytes);
 }
 
-
-//DEBUG ERASE IT
-//void NetworkFlow::logOnOff()
-//{
-//	MESSER_LOG_INIT(DEBUG);
-//
-//	char ontimes[CHAR_LARGE_BUFFER];
-//	char offtimes[CHAR_LARGE_BUFFER];
-//	vector2str(*ptr_session_onTimes, ontimes);
-//	vector2str(*ptr_session_offTimes, offtimes);
-//	MESSER_DEBUG("trace>> ontimes=[%s], offtimes=[%s]", ontimes, offtimes);
-//}

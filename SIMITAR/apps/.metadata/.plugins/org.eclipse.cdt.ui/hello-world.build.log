@@ -1,6 +1,6 @@
-17:23:38 **** Incremental Build of configuration Default for project hello-world ****
+22:32:43 **** Incremental Build of configuration Default for project hello-world ****
 make all 
 make: Nothing to be done for 'all'.
 
-17:23:38 Build Finished (took 103ms)
+22:32:45 Build Finished (took 1s.615ms)
 

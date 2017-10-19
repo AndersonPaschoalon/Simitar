@@ -3,10 +3,12 @@ import time
 import os
 
 # execution options
+operation_mode = "client" # client, server
 capture_name = "capture-name"
 ether_interface = "enp3s0"
-binary_command = "iperf-flow"  # from local directory, not blocking (using &)
-exec_time = 120
+binary_command_client = "iperf -c 10.0.0.2" 
+binary_command_server = "iperf -s " 
+exec_time = 10
 
 # constants
 CAPTURE_DIR = './pcaps/'
@@ -27,8 +29,12 @@ def main():
     print_header(' Tcpdump interface:' + ether_interface + ', pcap:' + capture_name)
     proc_tcpdump = subprocess.Popen(tcpdump_command, shell=True)
     # execute simitar app
-    print_header('Simitar-app command:' + binary_command)
-    os.system(binary_command + ' &')
+	if(operation_mode == "client"):
+    	print_header('Simitar-app command:' + binary_command_client)
+    	os.system(binary_command_client + ' &')	
+	else:
+		print_header('Simitar-app command:' + binary_command_server)
+		os.system(binary_command_server + ' &')
     # sleep until finishes
     time.sleep(exec_time + 1)  # <-- There's no time.wait, but time.sleep.
     # kill tcpdump

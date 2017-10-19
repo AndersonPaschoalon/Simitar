@@ -145,34 +145,37 @@ public:
 	/**
 	 *
 	 */
-	void setInfoTracename(const string& infoTracename);
+	void setInfoTracename(const std::string& infoTracename);
 
 	/**
 	 *
 	 */
 	long int getNumberOfFlows() const;
 
-	/**
-	 *
-	 * @param verbose
-	 * @return
-	 */
-	int exec();
 
 	/**
 	 *
+	 * @param networkInterface
+	 * @return
 	 */
-	void server();
+	int exec(const std::string&  networkInterface);
+
+
+	/**
+	 *
+	 * @param networkInterface
+	 */
+	void server(const std::string&  networkInterface);
 
 
 	/**
 	 *
 	 * @param trafficGenEngine
 	 */
-	void setTrafficGenEngine(const string& trafficGenEngine)
-	{
-		m_trafficGenEngine = trafficGenEngine;
-	}
+	//void setTrafficGenEngine(const string& trafficGenEngine)
+	//{
+	//	m_trafficGenEngine = trafficGenEngine;
+	//}
 
 	/**
 	 * Sets a list of IP and MAC addresses provided in a file filename as
@@ -217,8 +220,8 @@ public:
 private:
 
 	//atributes
-	std::string m_trafficGenEngine;
-	std::string info_captureInterface;
+	//std::string m_trafficGenEngine;
+	//std::string info_captureInterface;
 	std::string info_tracename;
 	std::string info_captureDate;
 	std::string info_commentaries;

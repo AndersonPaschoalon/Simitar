@@ -127,12 +127,12 @@ int main(int argc, char** argv)
 		if (mode == "server")
 		{
 			PLOG_VERBOSE << " execution of traceCdt.server()";
-			traceCdt.server();
+			traceCdt.server(eth_interface);
 		}
 		else
 		{
 			PLOG_VERBOSE << " execution of traceCdt.exec()";
-			traceCdt.exec();
+			traceCdt.exec(eth_interface);
 		}
 
 	} catch (TCLAP::ArgException &e)  // catch any exceptions

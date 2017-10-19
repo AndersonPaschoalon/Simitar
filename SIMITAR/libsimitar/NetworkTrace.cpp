@@ -46,8 +46,10 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	info_tracename = root_node->first_attribute(LABEL_TRACE_NAME)->value();
 	info_commentaries = root_node->first_attribute(LABEL_COMMENTARIES)->value();
 	info_captureDate = root_node->first_attribute(LABEL_CAPTURE_DATE)->value();
-	m_trafficGenEngine =
-			root_node->first_attribute(LABEL_TRAFFIC_ENGINE)->value();
+
+	// DEBUG - check it it works
+	//m_trafficGenEngine =
+	//		root_node->first_attribute(LABEL_TRAFFIC_ENGINE)->value();
 
 	//MESSER_INFO(
 	//		"Creating Trace: info_tracename=%s, trafficGenEngine=%s,info_captureDate=%s, info_commentaries=%s, n_flows=%s  @<%s, %s>",
@@ -299,16 +301,16 @@ void NetworkTrace::setInfoCaptureDate(const std::string& infoCaptureDate)
 	info_captureDate = infoCaptureDate;
 }
 
-const std::string& NetworkTrace::getInfoCaptureInterface() const
-{
-	return info_captureInterface;
-}
+//const std::string& NetworkTrace::getInfoCaptureInterface() const
+//{
+//	return info_captureInterface;
+//}
 
-void NetworkTrace::setInfoCaptureInterface(
-		const std::string& infoCaptureInterface)
-{
-	info_captureInterface = infoCaptureInterface;
-}
+//void NetworkTrace::setInfoCaptureInterface(
+//		const std::string& infoCaptureInterface)
+//{
+//	info_captureInterface = infoCaptureInterface;
+//}
 
 const std::string& NetworkTrace::getInfoCommentaries() const
 {
@@ -374,9 +376,9 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 	trace->append_attribute(
 			doc.allocate_attribute(LABEL_TRACE_NAME, tracename));
 
-	string2charvet(m_trafficGenEngine, tgengine);
-	trace->append_attribute(
-			doc.allocate_attribute(LABEL_TRAFFIC_ENGINE, tgengine));
+	//string2charvet(m_trafficGenEngine, tgengine);
+	//trace->append_attribute(
+	//		doc.allocate_attribute(LABEL_TRAFFIC_ENGINE, tgengine));
 
 	string2charvet(info_captureDate, capdate);
 	trace->append_attribute(
@@ -804,9 +806,11 @@ long int NetworkTrace::getNumberOfFlows() const
 
 const std::string NetworkTrace::toString() const
 {
-	std::string tostring = info_tracename + info_captureInterface
-			+ info_captureDate + info_commentaries;
+	//std::string tostring = info_tracename + info_captureInterface
+	//		+ info_captureDate + info_commentaries;
 
+	std::string tostring = info_tracename + info_captureDate
+			+ info_commentaries;
 	return (tostring);
 }
 
@@ -816,7 +820,7 @@ int NetworkTrace::pushback_Netflow(NetworkFlow* vetNetFlow)
 	return (0);
 }
 
-int NetworkTrace::exec()
+int NetworkTrace::exec(const std::string& networkInterface)
 {
 	int size = this->getNumberOfFlows();
 	int i = 0;
@@ -824,7 +828,6 @@ int NetworkTrace::exec()
 
 	PLOG_DEBUG << "NetworkTrace::exec() >> this->getNumberOfFlows():"
 						<< this->getNumberOfFlows();
-	//WAIT_KEY
 
 	for (i = 0; i < size; i++)
 	{
@@ -846,7 +849,7 @@ int NetworkTrace::exec()
 
 }
 
-void NetworkTrace::server()
+void NetworkTrace::server(const std::string& networkInterface)
 {
 
 	if (this->getNumberOfFlows() >= 0)

@@ -44,7 +44,7 @@ NetworkFlow* NetworkFlowFactory::make_flow(const string& choise)
 	else if((choise_lc == "tins") || (choise_lc == "libtins"))
 	{
 		PLOG_VERBOSE << "Creating TinsFLow";
-		printf("TODO\n");
+		return new TinsFlow;
 	}
 	else if (choise_lc == "ostinato"){
 		PLOG_VERBOSE << "Creating OstinatoFLow";

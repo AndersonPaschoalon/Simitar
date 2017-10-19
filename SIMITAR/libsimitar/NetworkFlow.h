@@ -261,7 +261,6 @@ private:
 	/// Flow-level settings
 	////////////////////////////////////////////////////////////////////////////
 
-	std::string ether_interface;
 	time_scale flow_time_scale;
 	sleep_method flow_sleep_method;
 
