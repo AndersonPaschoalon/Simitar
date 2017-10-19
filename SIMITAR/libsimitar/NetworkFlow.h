@@ -55,9 +55,7 @@ public:
 
 	NetworkFlow();
 
-
 	virtual ~NetworkFlow();
-	//static NetworkFlow *make_flow(const string& choise);
 
 	virtual std::thread flowThread() = 0;
 
@@ -254,7 +252,6 @@ public:
 		this->flowId = flowId;
 	}
 
-
 private:
 
 	////////////////////////////////////////////////////////////////////////////
@@ -263,7 +260,6 @@ private:
 
 	time_scale flow_time_scale;
 	sleep_method flow_sleep_method;
-
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Flow-level options

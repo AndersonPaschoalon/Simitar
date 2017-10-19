@@ -365,7 +365,6 @@ void NetworkFlow::setTransportProtocol(protocol transportProtocol)
 StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 		unsigned int position)
 {
-
 	StochasticModelFit themodel;
 	unsigned int i = 0;
 
@@ -397,7 +396,6 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 		{
 			themodel = *it;
 		}
-
 	}
 
 	return (themodel);
@@ -430,29 +428,6 @@ time_sec NetworkFlow::getSessionOnTime_next()
 		sessionOnTimes_counter = 0;
 	}
 	return (ptr_session_onTimes->at(sessionOnTimes_counter));
-
-	/*
-	 //MESSER_LOG_INIT(NOTICE);
-	 time_sec theTime = 0;
-
-	 //MESSER_DEBUG("ptr_session_onTimes->size()=%d", ptr_session_onTimes->size());
-
-	 if (sessionOnTimes_counter >= ptr_session_onTimes->size())
-	 {
-	 //MESSER_DEBUG(
-	 //		"No more On times available on the stack. The last was the %dth value. It will be reseted  @ <%s, %s>",
-	 //		sessionOnTimes_counter);
-	 sessionOnTimes_counter = 0;
-	 theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
-
-	 }
-	 else
-	 {
-	 theTime = ptr_session_onTimes->at(sessionOnTimes_counter);
-	 sessionOnTimes_counter++;
-	 }
-	 */
-
 }
 
 time_sec NetworkFlow::getSessionOffTime_next()
@@ -464,53 +439,10 @@ time_sec NetworkFlow::getSessionOffTime_next()
 		return (.0);
 	}
 	return (ptr_session_offTimes->at(sessionOffTimes_counter));
-
-	/*
-	 MESSER_LOG_INIT(NOTICE);
-	 time_sec theTime = 0;
-
-	 if (sessionOffTimes_counter >= ptr_session_offTimes->size())
-	 {
-	 //		MESSER_DEBUG(
-	 //				"No more Off times available on the stack. The last was the \
-//%dth value. Now, it will return 0, and than will be reseted. This is because, \
-//the On/Off times should aways start with a On. After that, it will be reseted  @ <%s, %s>",
-	 //				sessionOffTimes_counter);
-
-	 //theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
-	 theTime = 0;
-	 sessionOffTimes_counter = 0;
-
-	 }
-	 else
-	 {
-	 theTime = ptr_session_offTimes->at(sessionOffTimes_counter);
-	 sessionOffTimes_counter++;
-	 }
-
-	 return (theTime);
-	 */
 }
 
 uint NetworkFlow::getSessionOnTime_nPackets() const
 {
-
-	//char debugStr[1000];
-	//MESSER_LOG_INIT(DEBUG);
-	//MESSER_DEBUG(
-	//		"flowId:%d> ptr_session_nPackets->size()=%d, sessionOnTimes_counter=%d @ <%s, %s>",
-	//		flowId, ptr_session_nPackets->size(), sessionOnTimes_counter);
-	//MESSER_DEBUG(
-	//		"flowId:%d> ptr_session_nPackets->at(sessionOnTimes_counter)=%d @ <%s, %s>",
-	//		flowId, ptr_session_nPackets->at(sessionOnTimes_counter));
-	//
-	//vector2str(*ptr_session_nPackets, debugStr);
-	//MESSER_DEBUG("flowId:%d> npackets %s @ <%s, %s>", flowId, debugStr);
-	//cout << "flowId:<<" << flowId
-	//		<< ">ptr_session_nPackets->at(sessionOnTimes_counter)"
-	//		<< ptr_session_nPackets->at(sessionOnTimes_counter) << endl;
-
-	//return (0);
 	return (ptr_session_nPackets->at(sessionOnTimes_counter));
 }
 
