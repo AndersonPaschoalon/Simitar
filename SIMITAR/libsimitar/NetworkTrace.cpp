@@ -355,7 +355,7 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 	unsigned int i = 0;
 	unsigned int j = 0;
 	char tracename[CHAR_BUFFER] = "";
-	char tgengine[CHAR_BUFFER] = "";
+	//char tgengine[CHAR_BUFFER] = "";
 	char capdate[CHAR_BUFFER] = "";
 	char commentaries[CHAR_BUFFER] = "";
 	char charfileName[CHAR_BUFFER] = "";
@@ -833,7 +833,7 @@ int NetworkTrace::exec(const std::string& networkInterface)
 	{
 		PLOG_VERBOSE << "Creating flow thread networkFlow[" << i
 							<< "]->flowThread()";
-		th_flw[i] = networkFlow[i]->flowThread();
+		th_flw[i] = networkFlow[i]->flowThread(networkInterface);
 
 	}
 	for (i = 0; i < size; i++)
@@ -855,7 +855,7 @@ void NetworkTrace::server(const std::string& networkInterface)
 	if (this->getNumberOfFlows() >= 0)
 	{
 		PLOG_VERBOSE << "Executing networkFlow[0]->server()";
-		networkFlow[0]->server();
+		networkFlow[0]->server(networkInterface);
 	}
 	else
 	{

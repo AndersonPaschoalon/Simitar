@@ -130,7 +130,8 @@ int TraceDbManager::check_if_trace_exists_or_not_empty(std::string traceName)
 			"traceName=\"" + traceName + "\"", str_ret);
 	if (str_ret == "")
 	{
-		printf("");
+		PLOG_FATAL << ERRORMSG_GENERAL_IO_ERROR << " Database returned null std::string for the trace " << traceName;
+		exit(ERROR_GENERAL_IO_ERROR);
 	}
-	return (0);
+	return (SUCCESS);
 }

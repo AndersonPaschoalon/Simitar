@@ -14,6 +14,16 @@ class DummyFlow: public NetworkFlow
 {
 public:
 	/**
+	 * Sleep method used between packet trains and for inter-pacekt times, provided
+	 * by the fsleep() method (flow sleep).
+	 * method_usleep:
+	 */
+	typedef enum
+	{
+		method_usleep, method_pooling, method_select
+	} sleep_method;
+
+	/**
 	 *
 	 */
 	DummyFlow();
@@ -27,7 +37,7 @@ public:
 	 *
 	 * @return
 	 */
-	int server();
+	int server(const std::string& netInterface);
 
 	/**
 	 *
@@ -39,14 +49,14 @@ public:
 	 */
 	void flowGenerate(const counter& flowId, const time_sec& onTime,
 			const uint& npackets, const uint& nbytes,
-			const string& netInterface);
+			const std::string& netInterface);
 
-	void flowStart();
+	void flowStart(const std::string& netInterface);
 
-	std::thread flowThread()
+	std::thread flowThread(const std::string& netInterface)
 	{
 		return std::thread([=]
-		{	flowStart();});
+		{	flowStart(netInterface);});
 	}
 
 private:
@@ -55,7 +65,7 @@ private:
 	 *
 	 * @param sleep_time
 	 */
-	void fsleep(time_sec sleep_time);
+	void fsleep(time_sec sleep_time, sleep_method sleepMethod);
 
 };
 

@@ -9,20 +9,23 @@
 
 TinsFlow::TinsFlow()
 {
+	// nothing to do
 }
 
 TinsFlow::~TinsFlow()
 {
+	// nothing to do
 }
 
-int TinsFlow::server()
+int TinsFlow::server(const std::string& netInterface)
 {
-	printf("TODO: libtins server\n");
+	PLOG_WARN << "TODO: libtins server. Now exiting.";
 	return (0);
 }
 
 void TinsFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
-		const uint& npackets, const uint& nbytes, const string& netInterface)
+		const uint& npackets, const uint& nbytes,
+		const std::string& netInterface)
 {
 
 	uint npackets_mode1 = (uint) this->getNpacketsMode1();
@@ -41,12 +44,12 @@ void TinsFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 			getTransportProtocol(), getApplicationProtocol(), getMacSrcAddr(),
 			getMacDstAddr(), getNetworkSrcAddr(), getNetworkDstAddr(),
 			getNetworkTtl(), getTransportSrcPort(), getTransportDstPort(),
-			npackets_mode1, packetSize_mode1, "h1-eth0");
+			npackets_mode1, packetSize_mode1, netInterface);
 	this->sendPackets(flowId, getLinkProtocol(), getNetworkProtocol(),
 			getTransportProtocol(), getApplicationProtocol(), getMacSrcAddr(),
 			getMacDstAddr(), getNetworkSrcAddr(), getNetworkDstAddr(),
 			getNetworkTtl(), getTransportSrcPort(), getTransportDstPort(),
-			npackets_mode2, packetSize_mode2, "h1-eth0");
+			npackets_mode2, packetSize_mode2, netInterface);
 }
 
 void TinsFlow::sendPackets(uint flowID, protocol etherProtocol,
@@ -55,15 +58,25 @@ void TinsFlow::sendPackets(uint flowID, protocol etherProtocol,
 		std::string netDst, uint ttlNumber, uint portSrc, uint portDst,
 		uint npackets, uint pktSize, std::string networkInterface)
 {
+	if (npackets == 0)
+		return;
+
 	/// Packet crafter
 	PDU* flowPkt;
 	PacketSender::SocketType socket_type;
+
+	if (transportProtocol == PROTOCOL__TCP)
+	{
+		pktSize =
+				(pktSize < MAX_TCP_PACKET_SIZE) ? pktSize : MAX_TCP_PACKET_SIZE;
+	}
 	if (etherProtocol == PROTOCOL__ETHERNET)
 	{
 		if (netProtocol == PROTOCOL__IPV4)
 		{
 			if (transportProtocol == PROTOCOL__TCP)
 			{
+
 				if (application == PROTOCOL__DHCP)
 				{
 					PLOG_DEBUG << "[FlowId:" << flowID << "]: "
@@ -269,16 +282,91 @@ void TinsFlow::sendPackets(uint flowID, protocol etherProtocol,
 	PacketSender sender;
 	NetworkInterface iface(networkInterface);
 
-	sender.open_l2_socket(networkInterface);
-	sender.open_l3_socket(socket_type);
-	std::cout << std::endl << "[FlowId:" << flowID << "]: <";
-	for (uint i = 0; i < npackets; i++)
+	try
 	{
-		sender.send(*flowPkt, iface);
-		std::cout << i << ", ";
+		sender.open_l2_socket(networkInterface);
+		sender.open_l3_socket(socket_type);
+
+		std::cout << std::endl << "[FlowId:" << flowID << "]: <";
+		for (uint i = 0; i < npackets; i++)
+		{
+			sender.send(*flowPkt, iface);
+			std::cout << i << ", ";
+		}
+		std::cout << ">" << endl;
+		sender.close_socket(socket_type, networkInterface);
+
+	} catch (Tins::invalid_address &e)
+	{
+		PLOG_ERROR << ERRORMSG_GENERAL_EXECUTION_ERROR
+							<< " Tins::invalid_address: " << e.what();
+		PLOG_ERROR << "<Info>" " networkInterface:" << networkInterface
+							<< " FlowID:" << flowID << " etherProtocol:"
+							<< Protocol(etherProtocol).str() << " netProtocol"
+							<< Protocol(netProtocol).str() << " netDst:"
+							<< netDst << " netSrc:" << netSrc
+							<< " transportProtocol:"
+							<< Protocol(transportProtocol).str() << " portDst:"
+							<< portDst << " portSrc" << portSrc << " npackets:"
+							<< npackets << " pktSize:" << pktSize;
+
 	}
-	std::cout << ">" << endl;
-	sender.close_socket(socket_type, networkInterface);
+	catch (Tins::invalid_domain_name &e)
+	{
+		PLOG_ERROR << ERRORMSG_GENERAL_EXECUTION_ERROR
+							<< " Tins::invalid_domain_name: " << e.what();
+
+		PLOG_ERROR << "<Info>" " networkInterface:" << networkInterface
+							<< " FlowID:" << flowID << " etherProtocol:"
+							<< Protocol(etherProtocol).str() << " netProtocol"
+							<< Protocol(netProtocol).str() << " netDst:"
+							<< netDst << " netSrc:" << netSrc
+							<< " transportProtocol:"
+							<< Protocol(transportProtocol).str() << " portDst:"
+							<< portDst << " portSrc" << portSrc << " npackets:"
+							<< npackets << " pktSize:" << pktSize;
+	} catch (Tins::invalid_interface &e)
+	{
+		PLOG_ERROR << ERRORMSG_GENERAL_EXECUTION_ERROR
+							<< " Tins::invalid_interface: " << e.what();
+
+		PLOG_ERROR << "<Info>" " networkInterface:" << networkInterface
+							<< " FlowID:" << flowID << " etherProtocol:"
+							<< Protocol(etherProtocol).str() << " netProtocol"
+							<< Protocol(netProtocol).str() << " netDst:"
+							<< netDst << " netSrc:" << netSrc
+							<< " transportProtocol:"
+							<< Protocol(transportProtocol).str() << " portDst:"
+							<< portDst << " portSrc" << portSrc << " npackets:"
+							<< npackets << " pktSize:" << pktSize;
+
+	} catch (Tins::invalid_packet &e)
+	{
+		PLOG_ERROR << ERRORMSG_GENERAL_EXECUTION_ERROR
+							<< " Tins::invalid_packet: " << e.what();
+		PLOG_ERROR << "<Info>" " networkInterface:" << networkInterface
+							<< " FlowID:" << flowID << " etherProtocol:"
+							<< Protocol(etherProtocol).str() << " netProtocol"
+							<< Protocol(netProtocol).str() << " netDst:"
+							<< netDst << " netSrc:" << netSrc
+							<< " transportProtocol:"
+							<< Protocol(transportProtocol).str() << " portDst:"
+							<< portDst << " portSrc" << portSrc << " npackets:"
+							<< npackets << " pktSize:" << pktSize;
+	} catch (Tins::invalid_socket_type &e)
+	{
+		PLOG_ERROR << ERRORMSG_GENERAL_EXECUTION_ERROR
+							<< " Tins::invalid_socket_type: " << e.what();
+		PLOG_ERROR << "<Info>" " networkInterface:" << networkInterface
+							<< " FlowID:" << flowID << " etherProtocol:"
+							<< Protocol(etherProtocol).str() << " netProtocol"
+							<< Protocol(netProtocol).str() << " netDst:"
+							<< netDst << " netSrc:" << netSrc
+							<< " transportProtocol:"
+							<< Protocol(transportProtocol).str() << " portDst:"
+							<< portDst << " portSrc" << portSrc << " npackets:"
+							<< npackets << " pktSize:" << pktSize;
+	}
 
 	/// Free memory
 	delete flowPkt;

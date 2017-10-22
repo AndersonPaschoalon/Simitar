@@ -23,6 +23,7 @@ def clean():
 	os.system('make -C libsimitar/ clean')
 	os.system('make -C  trace-analyzer/ clean')
 	os.system('make -C  tests/ clean')
+	# os.system('rm -rf data/log/*.log')
 	# os.system('make -C clean apps/')
 
 

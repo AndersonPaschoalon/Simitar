@@ -25,16 +25,9 @@ typedef enum
 	milliseconds, seconds
 } time_scale;
 
-/**
- * Sleep method used by DummyFlow
- */
-typedef enum
-{
-	method_usleep, method_pooling, method_select
-} sleep_method;
 
 /**
- * Length of a standard C string vector
+ * Constants
  */
 #define CHAR_SMALL_BUFFER 50
 #define CHAR_BUFFER 120
@@ -42,6 +35,7 @@ typedef enum
 #define CHAR_LARGE_BUFFER 1000
 #define CHAR_HUGE_BUFFER 10000
 #define MEGA_POWER 1000000
+
 
 /**
  * Port number type
@@ -90,9 +84,10 @@ const time_sec DEFAULT_SESSION_CUT_TIME = 30;
  */
 const int PACKET_SIZE_MODE_CUT_VALUE = 500;
 
-/**
- * Max valid value for a port number
- */
 const port_number MAX_TRANSPORT_PORT_NUMBER = 65535;
+
+//const unsigned int MAX_TCP_PACKET_SIZE = 1518;
+const unsigned int MAX_TCP_PACKET_SIZE = 1000;
+
 
 #endif /* DEFINES_H_ */

@@ -20,7 +20,7 @@ DitgFlow::~DitgFlow()
 	// nothing to do
 }
 
-int DitgFlow::server()
+int DitgFlow::server(const std::string& netInterface)
 {
 	// popen args
 	FILE *in;

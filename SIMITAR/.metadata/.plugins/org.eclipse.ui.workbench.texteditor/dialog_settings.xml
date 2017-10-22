@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="dpTimeScale" key="selection"/>
+		<item value="milliseconds" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="milliseconds"/>
+			<item value="logLevel"/>
+			<item value="time_scale"/>
+			<item value="setTimeScale"/>
+			<item value="time_sca"/>
 			<item value="dpTimeScale"/>
 			<item value="nflows"/>
 			<item value="int2"/>
-			<item value="to_string"/>
-			<item value="m_time_scale"/>
-			<item value="fconter"/>
-			<item value="interArrival_fileStack"/>
-			<item value="time_scale"/>
 		</list>
 		<list key="replacehistory">
 			<item value="unity"/>
@@ -25,7 +25,7 @@
 		<item value="346" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="430" key="DIALOG_HEIGHT"/>
-		<item value="1203" key="DIALOG_X_ORIGIN"/>
-		<item value="321" key="DIALOG_Y_ORIGIN"/>
+		<item value="1456" key="DIALOG_X_ORIGIN"/>
+		<item value="261" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

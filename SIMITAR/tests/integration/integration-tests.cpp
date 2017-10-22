@@ -47,8 +47,8 @@ int main() {
 		trace->setInfoTracename("teste-chapolin");
 		trace->setInfoCommentaries(
 				"este e um teste do compact trace descriptor");
-		trace->setTrafficGenEngine("D-ITG");
-		trace->setInfoCaptureInterface("eth0");
+		//trace->setTrafficGenEngine("D-ITG");
+		//trace->setInfoCaptureInterface("eth0");
 		trace->setInfoCaptureDate("07/04/2017");
 
 		trace->writeToFile("xml/ms-kkk.xml");
@@ -74,7 +74,7 @@ int main() {
 		//trace->exec(true);
 		NetworkTrace traceCdt =  NetworkTrace("kkk.xml", "dummy");
 		//NetworkTrace traceCdt =  NetworkTrace("changed-ips-macs-trace.xml", "Dummy");
-		traceCdt.exec();
+		traceCdt.exec("stdout");
 
 	}
 

@@ -3,6 +3,7 @@
 	<name>libsimitar</name>
 	<comment></comment>
 	<projects>
+		<project>data</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

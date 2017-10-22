@@ -12,7 +12,7 @@ NetworkFlow::NetworkFlow()
 {
 	/// flow settings
 	flow_time_scale = seconds;
-	flow_sleep_method = method_usleep;
+//	flow_sleep_method = method_usleep;
 
 	///flow-level parameters initialization
 	flowId = 0;
@@ -373,7 +373,8 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
 		//ptr_interArrivalModelList->push_back(themodel);
 
-		PLOG_ERROR << ERRORMSG_BAD_VALUE << "Trying to get a StochasticModelFit,"
+		PLOG_ERROR << ERRORMSG_BAD_VALUE
+							<< "Trying to get a StochasticModelFit,"
 							<< "but no model was set."
 							<< "NO_MODEL set as default";
 	}
@@ -405,7 +406,6 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 void NetworkFlow::setInterDepertureTimeModels(
 		list<StochasticModelFit>* modelList)
 {
-
 	ptr_interArrivalModelList = modelList;
 	//interDepertureTimeModel_counter = 0;
 }
@@ -461,8 +461,8 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode1(unsigned int position)
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
 		//ptr_psMode1->push_back(themodel);
 
-		PLOG_ERROR << "Trying to get a StochasticModelFit, but"
-							<< "no model was set. NO_MODEL set as default";
+		PLOG_ERROR << ERRORMSG_BAD_VALUE
+							<< " Trying to get a StochasticModelFit, but no model was set. NO_MODEL set as default";
 	}
 	else
 	{
@@ -498,9 +498,8 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode2(unsigned int position)
 		themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
 		//ptr_psMode2->push_back(themodel);
 
-		cerr << "Error @ " << __PRETTY_FUNCTION__ << endl
-				<< "Trying to get a StochasticModelFit, but no model was set.\n"
-				<< "NO_MODEL set as default" << endl;
+		PLOG_ERROR << ERRORMSG_BAD_VALUE
+							<< " Trying to get a StochasticModelFit, but no model was set. NO_MODEL set as default";
 	}
 	else
 	{
@@ -525,72 +524,7 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode2(unsigned int position)
 
 	return (themodel);
 }
-/*
- StochasticModelFit NetworkFlow::getPacketSizeModelMode1_next()
- {
- StochasticModelFit themodel;
- if (ptr_psMode1 == NULL)
- {
- themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
- ptr_psMode1->push_back(themodel);
- }
- else
- {
- counter i = 0;
- for (list<StochasticModelFit>::iterator it = ptr_psMode1->begin();
- it != ptr_psMode1->end(); it++)
- {
- if (i == packetSizeModel1_counter)
- {
- themodel = *it;
- break;
- }
- i++;
 
- }
- }
-
- if (ptr_psMode1->size() > packetSizeModel1_counter)
- {
- packetSizeModel1_counter++;
- }
-
- return (themodel);
- }
-
- StochasticModelFit NetworkFlow::getPacketSizeModelMode2_next()
- {
- StochasticModelFit themodel;
- if (ptr_psMode2 == NULL)
- {
- themodel.set(NO_MODEL, 0, 0, datum::inf, datum::inf);
- ptr_psMode2->push_back(themodel);
- }
- else
- {
- counter i = 0;
- for (list<StochasticModelFit>::iterator it = ptr_psMode2->begin();
- it != ptr_psMode2->end(); it++)
- {
- if (i == packetSizeModel2_counter)
- {
- themodel = *it;
- break;
- }
- i++;
-
- }
- }
-
- if (ptr_psMode2->size() > packetSizeModel2_counter)
- {
- packetSizeModel2_counter++;
- }
-
- return (themodel);
-
- }
- */
 
 void NetworkFlow::setPacketSizeModel(std::list<StochasticModelFit>* modelVet1,
 		std::list<StochasticModelFit>* modelVet2, long int nkbytesMode1,
@@ -688,7 +622,8 @@ void NetworkFlow::resetCounters()
 inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
 {
 	struct ifaddrs *ifaddr, *ifa;
-	int family, s;
+	int s;
+	//int family, s;
 	char host[NI_MAXHOST];
 
 	if (getifaddrs(&ifaddr) == -1)
@@ -733,7 +668,8 @@ inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
 inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
 {
 	struct ifaddrs *ifaddr, *ifa;
-	int family, s;
+	int s;
+	//int family, s;
 	char host[NI_MAXHOST];
 
 	if (getifaddrs(&ifaddr) == -1)

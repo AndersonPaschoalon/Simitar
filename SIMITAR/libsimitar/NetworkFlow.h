@@ -57,11 +57,12 @@ public:
 
 	virtual ~NetworkFlow();
 
-	virtual std::thread flowThread() = 0;
+	virtual std::thread flowThread(const std::string& netInterface) = 0;
 
-	virtual int server() = 0;
+	virtual int server(const std::string& netInterface) = 0;
 
 	void setTimeScale(time_scale theTimeScale);
+
 	double timeScaleFactor();
 
 	virtual void flowGenerate(const counter& flowId, const time_sec& onTime,
@@ -259,7 +260,7 @@ private:
 	////////////////////////////////////////////////////////////////////////////
 
 	time_scale flow_time_scale;
-	sleep_method flow_sleep_method;
+	//sleep_method flow_sleep_method;
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Flow-level options

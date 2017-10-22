@@ -79,15 +79,7 @@ private:
 	CSVRow m_row;
 };
 
-/**
- CsvFile file_csv("plop.csv");
- for(;;)
- {
- std::cout << "4th Element(" << file_csv.column(3) << ")\n";
- if( !file_csv.next_line()) break;
- i++;
- }
- */
+
 class CsvFile
 {
 public:

@@ -18,7 +18,7 @@ IperfFlow::~IperfFlow()
 	// nothing to do
 }
 
-int IperfFlow::server()
+int IperfFlow::server(const std::string& netInterface)
 {
 	printf(
 			"NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
@@ -43,8 +43,9 @@ int IperfFlow::iperf_server_tcp()
 
 	if (!(in = popen(command, "r")))
 	{
-		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
-							<< "`";
+		PLOG_ERROR << ERRORMSG_CANNOT_CREATE_PROCESS
+							<< "IperfFlow error: cannot execute command `"
+							<< command << "`";
 		return -1;
 	}
 
@@ -70,8 +71,9 @@ int IperfFlow::iperf_server_udp()
 	char command[2048] = "iperf -s --udp";
 	if (!(in = popen(command, "r")))
 	{
-		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
-							<< "`";
+		PLOG_ERROR << ERRORMSG_CANNOT_CREATE_PROCESS
+							<< "IperfFlow error: cannot execute command `"
+							<< command << "`";
 		return -1;
 	}
 
@@ -102,7 +104,7 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 
 	if (!(in = popen(command, "r")))
 	{
-		PLOG_ERROR << "IperfFlow error: cannot execute command `" << command
+		PLOG_ERROR << ERRORMSG_CANNOT_CREATE_PROCESS << "IperfFlow error: cannot execute command `" << command
 							<< "`" << std::endl;
 		return;
 	}

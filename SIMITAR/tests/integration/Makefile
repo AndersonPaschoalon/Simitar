@@ -57,7 +57,7 @@ CC_FLAGS 	:= -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall
 
 # dynamic lybrary argument: "-Wl,-Bdynamic -ldynamic-lib-name". Eg.: "-Wl,-Bdynamic -lpthread"
 # LD_LIBS 	:= -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG 
-LD_LIBS 	:= -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG 
+LD_LIBS 	:= -Wl,-Bdynamic -lpthread  -lsqlite3 -larmadillo -ltins  
 
 # static lybrary argument: "-Wl,-Bstatic static-lib-name" 
 #LS_LIBS		:= -Wl,-Bstatic $(WORKSPACE)/libs/libsimitar.a

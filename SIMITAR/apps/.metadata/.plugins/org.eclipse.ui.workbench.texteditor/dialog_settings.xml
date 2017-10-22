@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="opt_transport_protocol" key="selection"/>
+		<item value="family" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="opt_transport_protocol"/>
-			<item value="opt_congestion_algorithm"/>
-			<item value="congestion_algorithm_name"/>
-			<item value="exec"/>
-			<item value="fid"/>
-			<item value="NetworkTrace"/>
-			<item value="timeSca"/>
-			<item value="LABEL_TIME_SCALE"/>
+			<item value="family"/>
+			<item value="networkInterface"/>
+			<item value="netInterface"/>
+			<item value="printf(&quot;&quot;)"/>
+			<item value="tgengine"/>
+			<item value=" NetworkFlow::flowThread("/>
+			<item value="flowStart"/>
+			<item value="flowThread"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -25,6 +25,6 @@
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="430" key="DIALOG_HEIGHT"/>
 		<item value="1340" key="DIALOG_X_ORIGIN"/>
-		<item value="252" key="DIALOG_Y_ORIGIN"/>
+		<item value="10" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

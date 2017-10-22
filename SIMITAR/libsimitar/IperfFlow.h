@@ -32,7 +32,7 @@ public:
 	 *
 	 * @return
 	 */
-	int server();
+	int server(const std::string& netInterface);
 
 	/**
 	 *

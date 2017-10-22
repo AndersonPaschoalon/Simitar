@@ -3057,3 +3057,1220 @@ In file included from ../../libsimitar/cfunctions.h:23:0,
 * Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
 	 Link time: 00:00:01
 make[1]: Leaving directory '/home/anderson/SIMITAR/tests/unity'
+20:48:43 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+20:48:43 **** Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+20:48:43 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+../libsimitar/libsimitar.a(TinsFlow.o): na função `TinsFlow::sendPackets(unsigned int, protocol_enum, protocol_enum, protocol_enum, protocol_enum, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:89: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:101: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+Makefile:92: recipe for target 'trace-analyzer' failed
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:112: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:111: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:130: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:141: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:152: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:151: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:165: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::ICMP::ICMP(Tins::ICMP::Flags)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:184: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:196: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:207: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:206: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:221: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:233: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:244: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:243: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:253: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::ICMPv6::ICMPv6(Tins::ICMPv6::Types)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::ARP::ARP(Tins::IPv4Address, Tins::IPv4Address, Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::DEFAULT_TIMEOUT'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::NetworkInterface::NetworkInterface()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::PacketSender(Tins::NetworkInterface const&, unsigned int, unsigned int)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:283: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::PacketSender::open_l2_socket(Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:288: referência indefinida para `Tins::PacketSender::open_l3_socket(Tins::PacketSender::SocketType)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:293: referência indefinida para `Tins::PacketSender::send(Tins::PDU&, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::PacketSender::close_socket(Tins::PacketSender::SocketType, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::BootP::~BootP()':
+/usr/include/tins/bootp.h:48: referência indefinida para `vtable for Tins::BootP'
+/usr/include/tins/bootp.h:48: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::EthernetII& Tins::operator/=<Tins::EthernetII>(Tins::EthernetII&, Tins::PDU const&)':
+/usr/include/tins/pdu.h:538: referência indefinida para `Tins::PDU::inner_pdu(Tins::PDU*)'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IP::~IP()':
+/usr/include/tins/ip.h:64: referência indefinida para `vtable for Tins::IP'
+/usr/include/tins/ip.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::TCP::~TCP()':
+/usr/include/tins/tcp.h:79: referência indefinida para `vtable for Tins::TCP'
+/usr/include/tins/tcp.h:79: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DHCP::~DHCP()':
+/usr/include/tins/dhcp.h:68: referência indefinida para `vtable for Tins::DHCP'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::RawPDU::~RawPDU()':
+/usr/include/tins/rawpdu.h:64: referência indefinida para `vtable for Tins::RawPDU'
+/usr/include/tins/rawpdu.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DNS::~DNS()':
+/usr/include/tins/dns.h:78: referência indefinida para `vtable for Tins::DNS'
+/usr/include/tins/dns.h:78: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::UDP::~UDP()':
+/usr/include/tins/udp.h:63: referência indefinida para `vtable for Tins::UDP'
+/usr/include/tins/udp.h:63: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMP::~ICMP()':
+/usr/include/tins/icmp.h:65: referência indefinida para `vtable for Tins::ICMP'
+/usr/include/tins/icmp.h:65: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IPv6::~IPv6()':
+/usr/include/tins/ipv6.h:55: referência indefinida para `vtable for Tins::IPv6'
+/usr/include/tins/ipv6.h:55: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMPv6::~ICMPv6()':
+/usr/include/tins/icmpv6.h:58: referência indefinida para `vtable for Tins::ICMPv6'
+/usr/include/tins/icmpv6.h:58: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ARP::~ARP()':
+/usr/include/tins/arp.h:50: referência indefinida para `vtable for Tins::ARP'
+/usr/include/tins/arp.h:50: referência indefinida para `Tins::PDU::~PDU()'
+collect2: error: ld returned 1 exit status
+make: *** [trace-analyzer] Error 1
+20:48:44 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+../../tests/integration/integration-tests.cpp: In function ‘int main()’:
+../../tests/integration/integration-tests.cpp:50:10: error: ‘class NetworkTrace’ has no member named ‘setTrafficGenEngine’
+   trace->setTrafficGenEngine("D-ITG");
+          ^~~~~~~~~~~~~~~~~~~
+../../tests/integration/integration-tests.cpp:77:17: error: no matching function for call to ‘NetworkTrace::exec()’
+   traceCdt.exec();
+                 ^
+In file included from ../../libsimitar/DataProcessor.h:34:0,
+                 from ../../tests/integration/integration-tests.cpp:11:
+../../libsimitar/NetworkTrace.h:161:6: note: candidate: int NetworkTrace::exec(const string&)
+  int exec(const std::string&  networkInterface);
+      ^~~~
+../../libsimitar/NetworkTrace.h:161:6: note:   candidate expects 1 argument, 0 provided
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+Makefile:4: recipe for target 'all' failed
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+20:49:53 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+20:49:53 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+20:49:53 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+../libsimitar/libsimitar.a(TinsFlow.o): na função `TinsFlow::sendPackets(unsigned int, protocol_enum, protocol_enum, protocol_enum, protocol_enum, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:89: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:101: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+Makefile:92: recipe for target 'trace-analyzer' failed
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:112: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:111: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:130: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:141: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:152: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:151: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:165: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::ICMP::ICMP(Tins::ICMP::Flags)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:184: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:196: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:207: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:206: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:221: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:233: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:244: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:243: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:253: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::ICMPv6::ICMPv6(Tins::ICMPv6::Types)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::ARP::ARP(Tins::IPv4Address, Tins::IPv4Address, Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::DEFAULT_TIMEOUT'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::NetworkInterface::NetworkInterface()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::PacketSender(Tins::NetworkInterface const&, unsigned int, unsigned int)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:283: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::PacketSender::open_l2_socket(Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:288: referência indefinida para `Tins::PacketSender::open_l3_socket(Tins::PacketSender::SocketType)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:293: referência indefinida para `Tins::PacketSender::send(Tins::PDU&, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::PacketSender::close_socket(Tins::PacketSender::SocketType, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::BootP::~BootP()':
+/usr/include/tins/bootp.h:48: referência indefinida para `vtable for Tins::BootP'
+/usr/include/tins/bootp.h:48: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::EthernetII& Tins::operator/=<Tins::EthernetII>(Tins::EthernetII&, Tins::PDU const&)':
+/usr/include/tins/pdu.h:538: referência indefinida para `Tins::PDU::inner_pdu(Tins::PDU*)'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IP::~IP()':
+/usr/include/tins/ip.h:64: referência indefinida para `vtable for Tins::IP'
+/usr/include/tins/ip.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::TCP::~TCP()':
+/usr/include/tins/tcp.h:79: referência indefinida para `vtable for Tins::TCP'
+/usr/include/tins/tcp.h:79: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DHCP::~DHCP()':
+/usr/include/tins/dhcp.h:68: referência indefinida para `vtable for Tins::DHCP'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::RawPDU::~RawPDU()':
+/usr/include/tins/rawpdu.h:64: referência indefinida para `vtable for Tins::RawPDU'
+/usr/include/tins/rawpdu.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DNS::~DNS()':
+/usr/include/tins/dns.h:78: referência indefinida para `vtable for Tins::DNS'
+/usr/include/tins/dns.h:78: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::UDP::~UDP()':
+/usr/include/tins/udp.h:63: referência indefinida para `vtable for Tins::UDP'
+/usr/include/tins/udp.h:63: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMP::~ICMP()':
+/usr/include/tins/icmp.h:65: referência indefinida para `vtable for Tins::ICMP'
+/usr/include/tins/icmp.h:65: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IPv6::~IPv6()':
+/usr/include/tins/ipv6.h:55: referência indefinida para `vtable for Tins::IPv6'
+/usr/include/tins/ipv6.h:55: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMPv6::~ICMPv6()':
+/usr/include/tins/icmpv6.h:58: referência indefinida para `vtable for Tins::ICMPv6'
+/usr/include/tins/icmpv6.h:58: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ARP::~ARP()':
+/usr/include/tins/arp.h:50: referência indefinida para `vtable for Tins::ARP'
+/usr/include/tins/arp.h:50: referência indefinida para `Tins::PDU::~PDU()'
+collect2: error: ld returned 1 exit status
+make: *** [trace-analyzer] Error 1
+20:49:54 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+../../tests/integration/integration-tests.cpp: In function ‘int main()’:
+../../tests/integration/integration-tests.cpp:50:10: error: ‘class NetworkTrace’ has no member named ‘setTrafficGenEngine’
+   trace->setTrafficGenEngine("D-ITG");
+          ^~~~~~~~~~~~~~~~~~~
+../../tests/integration/integration-tests.cpp:77:17: error: no matching function for call to ‘NetworkTrace::exec()’
+   traceCdt.exec();
+                 ^
+In file included from ../../libsimitar/DataProcessor.h:34:0,
+                 from ../../tests/integration/integration-tests.cpp:11:
+../../libsimitar/NetworkTrace.h:161:6: note: candidate: int NetworkTrace::exec(const string&)
+  int exec(const std::string&  networkInterface);
+      ^~~~
+../../libsimitar/NetworkTrace.h:161:6: note:   candidate expects 1 argument, 0 provided
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+Makefile:4: recipe for target 'all' failed
+20:57:31 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+20:57:31 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+20:57:31 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+../libsimitar/libsimitar.a(TinsFlow.o): na função `TinsFlow::sendPackets(unsigned int, protocol_enum, protocol_enum, protocol_enum, protocol_enum, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:89: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:101: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:112: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:111: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:130: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+Makefile:92: recipe for target 'trace-analyzer' failed
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:141: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:152: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:151: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:165: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::ICMP::ICMP(Tins::ICMP::Flags)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:184: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:196: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:207: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:206: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:221: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:233: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:244: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:243: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:253: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::ICMPv6::ICMPv6(Tins::ICMPv6::Types)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::ARP::ARP(Tins::IPv4Address, Tins::IPv4Address, Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::DEFAULT_TIMEOUT'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::NetworkInterface::NetworkInterface()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::PacketSender(Tins::NetworkInterface const&, unsigned int, unsigned int)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:283: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::PacketSender::open_l2_socket(Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:288: referência indefinida para `Tins::PacketSender::open_l3_socket(Tins::PacketSender::SocketType)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:293: referência indefinida para `Tins::PacketSender::send(Tins::PDU&, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::PacketSender::close_socket(Tins::PacketSender::SocketType, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::BootP::~BootP()':
+/usr/include/tins/bootp.h:48: referência indefinida para `vtable for Tins::BootP'
+/usr/include/tins/bootp.h:48: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::EthernetII& Tins::operator/=<Tins::EthernetII>(Tins::EthernetII&, Tins::PDU const&)':
+/usr/include/tins/pdu.h:538: referência indefinida para `Tins::PDU::inner_pdu(Tins::PDU*)'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IP::~IP()':
+/usr/include/tins/ip.h:64: referência indefinida para `vtable for Tins::IP'
+/usr/include/tins/ip.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::TCP::~TCP()':
+/usr/include/tins/tcp.h:79: referência indefinida para `vtable for Tins::TCP'
+/usr/include/tins/tcp.h:79: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DHCP::~DHCP()':
+/usr/include/tins/dhcp.h:68: referência indefinida para `vtable for Tins::DHCP'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::RawPDU::~RawPDU()':
+/usr/include/tins/rawpdu.h:64: referência indefinida para `vtable for Tins::RawPDU'
+/usr/include/tins/rawpdu.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DNS::~DNS()':
+/usr/include/tins/dns.h:78: referência indefinida para `vtable for Tins::DNS'
+/usr/include/tins/dns.h:78: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::UDP::~UDP()':
+/usr/include/tins/udp.h:63: referência indefinida para `vtable for Tins::UDP'
+/usr/include/tins/udp.h:63: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMP::~ICMP()':
+/usr/include/tins/icmp.h:65: referência indefinida para `vtable for Tins::ICMP'
+/usr/include/tins/icmp.h:65: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IPv6::~IPv6()':
+/usr/include/tins/ipv6.h:55: referência indefinida para `vtable for Tins::IPv6'
+/usr/include/tins/ipv6.h:55: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMPv6::~ICMPv6()':
+/usr/include/tins/icmpv6.h:58: referência indefinida para `vtable for Tins::ICMPv6'
+/usr/include/tins/icmpv6.h:58: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ARP::~ARP()':
+/usr/include/tins/arp.h:50: referência indefinida para `vtable for Tins::ARP'
+/usr/include/tins/arp.h:50: referência indefinida para `Tins::PDU::~PDU()'
+collect2: error: ld returned 1 exit status
+make: *** [trace-analyzer] Error 1
+20:57:32 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+../../tests/integration/integration-tests.cpp: In function ‘int main()’:
+../../tests/integration/integration-tests.cpp:50:10: error: ‘class NetworkTrace’ has no member named ‘setTrafficGenEngine’
+   trace->setTrafficGenEngine("D-ITG");
+          ^~~~~~~~~~~~~~~~~~~
+../../tests/integration/integration-tests.cpp:77:17: error: no matching function for call to ‘NetworkTrace::exec()’
+   traceCdt.exec();
+                 ^
+In file included from ../../libsimitar/DataProcessor.h:34:0,
+                 from ../../tests/integration/integration-tests.cpp:11:
+../../libsimitar/NetworkTrace.h:161:6: note: candidate: int NetworkTrace::exec(const string&)
+  int exec(const std::string&  networkInterface);
+      ^~~~
+../../libsimitar/NetworkTrace.h:161:6: note:   candidate expects 1 argument, 0 provided
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+Makefile:4: recipe for target 'all' failed
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+21:09:37 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+
+* Compiling: ../libsimitar/NetworkFlowFactory.cpp -> ../libsimitar/obj/NetworkFlowFactory.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/NetworkFlowFactory.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:05
+
+* Archiving: libsimitar.aar rvs   libsimitar.a  ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/obj/DummyFlow.o ../libsimitar/obj/DatabaseSqlite3.o ../libsimitar/obj/RegressionTests.o ../libsimitar/obj/TinsFlow.o ../libsimitar/obj/NetworkTrace.o ../libsimitar/obj/cfunctions.o ../libsimitar/obj/IperfFlow.o ../libsimitar/obj/NetworkFlow.o ../libsimitar/obj/DatabaseInterface.o ../libsimitar/obj/StochasticModelFit.o ../libsimitar/obj/DataProcessor.o ../libsimitar/obj/TraceDbManager.o ../libsimitar/obj/CsvFile.o ../libsimitar/obj/DitgFlow.o 
+r - ../libsimitar/obj/NetworkFlowFactory.o
+r - ../libsimitar/obj/SimitarWorkspace.o
+r - ../libsimitar/obj/DummyFlow.o
+r - ../libsimitar/obj/DatabaseSqlite3.o
+r - ../libsimitar/obj/RegressionTests.o
+r - ../libsimitar/obj/TinsFlow.o
+r - ../libsimitar/obj/NetworkTrace.o
+r - ../libsimitar/obj/cfunctions.o
+r - ../libsimitar/obj/IperfFlow.o
+r - ../libsimitar/obj/NetworkFlow.o
+r - ../libsimitar/obj/DatabaseInterface.o
+r - ../libsimitar/obj/StochasticModelFit.o
+r - ../libsimitar/obj/DataProcessor.o
+r - ../libsimitar/obj/TraceDbManager.o
+r - ../libsimitar/obj/CsvFile.o
+r - ../libsimitar/obj/DitgFlow.o
+	 Link time: 00:00:00
+21:09:42 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:09:42 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+../libsimitar/libsimitar.a(TinsFlow.o): na função `TinsFlow::sendPackets(unsigned int, protocol_enum, protocol_enum, protocol_enum, protocol_enum, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:89: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+Makefile:92: recipe for target 'trace-analyzer' failed
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:101: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:112: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:111: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:130: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:141: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:152: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:151: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:165: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::ICMP::ICMP(Tins::ICMP::Flags)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:184: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:196: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:207: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:206: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:221: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:233: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:244: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:243: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:253: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::ICMPv6::ICMPv6(Tins::ICMPv6::Types)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::ARP::ARP(Tins::IPv4Address, Tins::IPv4Address, Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::DEFAULT_TIMEOUT'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::NetworkInterface::NetworkInterface()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::PacketSender(Tins::NetworkInterface const&, unsigned int, unsigned int)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:283: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::PacketSender::open_l2_socket(Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:288: referência indefinida para `Tins::PacketSender::open_l3_socket(Tins::PacketSender::SocketType)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:293: referência indefinida para `Tins::PacketSender::send(Tins::PDU&, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::PacketSender::close_socket(Tins::PacketSender::SocketType, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::BootP::~BootP()':
+/usr/include/tins/bootp.h:48: referência indefinida para `vtable for Tins::BootP'
+/usr/include/tins/bootp.h:48: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::EthernetII& Tins::operator/=<Tins::EthernetII>(Tins::EthernetII&, Tins::PDU const&)':
+/usr/include/tins/pdu.h:538: referência indefinida para `Tins::PDU::inner_pdu(Tins::PDU*)'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IP::~IP()':
+/usr/include/tins/ip.h:64: referência indefinida para `vtable for Tins::IP'
+/usr/include/tins/ip.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::TCP::~TCP()':
+/usr/include/tins/tcp.h:79: referência indefinida para `vtable for Tins::TCP'
+/usr/include/tins/tcp.h:79: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DHCP::~DHCP()':
+/usr/include/tins/dhcp.h:68: referência indefinida para `vtable for Tins::DHCP'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::RawPDU::~RawPDU()':
+/usr/include/tins/rawpdu.h:64: referência indefinida para `vtable for Tins::RawPDU'
+/usr/include/tins/rawpdu.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DNS::~DNS()':
+/usr/include/tins/dns.h:78: referência indefinida para `vtable for Tins::DNS'
+/usr/include/tins/dns.h:78: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::UDP::~UDP()':
+/usr/include/tins/udp.h:63: referência indefinida para `vtable for Tins::UDP'
+/usr/include/tins/udp.h:63: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMP::~ICMP()':
+/usr/include/tins/icmp.h:65: referência indefinida para `vtable for Tins::ICMP'
+/usr/include/tins/icmp.h:65: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IPv6::~IPv6()':
+/usr/include/tins/ipv6.h:55: referência indefinida para `vtable for Tins::IPv6'
+/usr/include/tins/ipv6.h:55: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMPv6::~ICMPv6()':
+/usr/include/tins/icmpv6.h:58: referência indefinida para `vtable for Tins::ICMPv6'
+/usr/include/tins/icmpv6.h:58: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ARP::~ARP()':
+/usr/include/tins/arp.h:50: referência indefinida para `vtable for Tins::ARP'
+/usr/include/tins/arp.h:50: referência indefinida para `Tins::PDU::~PDU()'
+collect2: error: ld returned 1 exit status
+make: *** [trace-analyzer] Error 1
+21:09:43 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+../../tests/integration/integration-tests.cpp: In function ‘int main()’:
+../../tests/integration/integration-tests.cpp:50:10: error: ‘class NetworkTrace’ has no member named ‘setTrafficGenEngine’
+   trace->setTrafficGenEngine("D-ITG");
+          ^~~~~~~~~~~~~~~~~~~
+../../tests/integration/integration-tests.cpp:77:17: error: no matching function for call to ‘NetworkTrace::exec()’
+   traceCdt.exec();
+                 ^
+In file included from ../../libsimitar/DataProcessor.h:34:0,
+                 from ../../tests/integration/integration-tests.cpp:11:
+../../libsimitar/NetworkTrace.h:161:6: note: candidate: int NetworkTrace::exec(const string&)
+  int exec(const std::string&  networkInterface);
+      ^~~~
+../../libsimitar/NetworkTrace.h:161:6: note:   candidate expects 1 argument, 0 provided
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+Makefile:4: recipe for target 'all' failed
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+21:10:08 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+21:10:08 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:10:09 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+../libsimitar/libsimitar.a(TinsFlow.o): na função `TinsFlow::sendPackets(unsigned int, protocol_enum, protocol_enum, protocol_enum, protocol_enum, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+Makefile:92: recipe for target 'trace-analyzer' failed
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:89: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:101: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:112: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:111: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:130: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:141: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:152: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:151: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:165: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::ICMP::ICMP(Tins::ICMP::Flags)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:184: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:196: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:207: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:206: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:221: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:233: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:244: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:243: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:253: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::ICMPv6::ICMPv6(Tins::ICMPv6::Types)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::ARP::ARP(Tins::IPv4Address, Tins::IPv4Address, Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::DEFAULT_TIMEOUT'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::NetworkInterface::NetworkInterface()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::PacketSender(Tins::NetworkInterface const&, unsigned int, unsigned int)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:283: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::PacketSender::open_l2_socket(Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:288: referência indefinida para `Tins::PacketSender::open_l3_socket(Tins::PacketSender::SocketType)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:293: referência indefinida para `Tins::PacketSender::send(Tins::PDU&, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::PacketSender::close_socket(Tins::PacketSender::SocketType, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::BootP::~BootP()':
+/usr/include/tins/bootp.h:48: referência indefinida para `vtable for Tins::BootP'
+/usr/include/tins/bootp.h:48: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::EthernetII& Tins::operator/=<Tins::EthernetII>(Tins::EthernetII&, Tins::PDU const&)':
+/usr/include/tins/pdu.h:538: referência indefinida para `Tins::PDU::inner_pdu(Tins::PDU*)'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IP::~IP()':
+/usr/include/tins/ip.h:64: referência indefinida para `vtable for Tins::IP'
+/usr/include/tins/ip.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::TCP::~TCP()':
+/usr/include/tins/tcp.h:79: referência indefinida para `vtable for Tins::TCP'
+/usr/include/tins/tcp.h:79: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DHCP::~DHCP()':
+/usr/include/tins/dhcp.h:68: referência indefinida para `vtable for Tins::DHCP'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::RawPDU::~RawPDU()':
+/usr/include/tins/rawpdu.h:64: referência indefinida para `vtable for Tins::RawPDU'
+/usr/include/tins/rawpdu.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DNS::~DNS()':
+/usr/include/tins/dns.h:78: referência indefinida para `vtable for Tins::DNS'
+/usr/include/tins/dns.h:78: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::UDP::~UDP()':
+/usr/include/tins/udp.h:63: referência indefinida para `vtable for Tins::UDP'
+/usr/include/tins/udp.h:63: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMP::~ICMP()':
+/usr/include/tins/icmp.h:65: referência indefinida para `vtable for Tins::ICMP'
+/usr/include/tins/icmp.h:65: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IPv6::~IPv6()':
+/usr/include/tins/ipv6.h:55: referência indefinida para `vtable for Tins::IPv6'
+/usr/include/tins/ipv6.h:55: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMPv6::~ICMPv6()':
+/usr/include/tins/icmpv6.h:58: referência indefinida para `vtable for Tins::ICMPv6'
+/usr/include/tins/icmpv6.h:58: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ARP::~ARP()':
+/usr/include/tins/arp.h:50: referência indefinida para `vtable for Tins::ARP'
+/usr/include/tins/arp.h:50: referência indefinida para `Tins::PDU::~PDU()'
+collect2: error: ld returned 1 exit status
+make: *** [trace-analyzer] Error 1
+21:10:09 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+../../tests/integration/integration-tests.cpp: In function ‘int main()’:
+../../tests/integration/integration-tests.cpp:50:10: error: ‘class NetworkTrace’ has no member named ‘setTrafficGenEngine’
+   trace->setTrafficGenEngine("D-ITG");
+          ^~~~~~~~~~~~~~~~~~~
+../../tests/integration/integration-tests.cpp:77:17: error: no matching function for call to ‘NetworkTrace::exec()’
+   traceCdt.exec();
+                 ^
+In file included from ../../libsimitar/DataProcessor.h:34:0,
+                 from ../../tests/integration/integration-tests.cpp:11:
+../../libsimitar/NetworkTrace.h:161:6: note: candidate: int NetworkTrace::exec(const string&)
+  int exec(const std::string&  networkInterface);
+      ^~~~
+../../libsimitar/NetworkTrace.h:161:6: note:   candidate expects 1 argument, 0 provided
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+Makefile:4: recipe for target 'all' failed
+21:10:22 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+21:10:23 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:10:23 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG  
+../libsimitar/libsimitar.a(TinsFlow.o): na função `TinsFlow::sendPackets(unsigned int, protocol_enum, protocol_enum, protocol_enum, protocol_enum, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:89: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+Makefile:92: recipe for target 'trace-analyzer' failed
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:88: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:87: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:101: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:100: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:99: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:112: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:111: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:110: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:130: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:129: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:128: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:141: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:140: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:139: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:152: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:151: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:150: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:165: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::ICMP::ICMP(Tins::ICMP::Flags)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IPv4Address::IPv4Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::IP::IP(Tins::IPv4Address, Tins::IPv4Address)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:164: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:184: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:183: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:182: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:196: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:195: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:194: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:207: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:206: referência indefinida para `Tins::TCP::TCP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:205: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:221: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::DHCP::DHCP()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:220: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:219: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:233: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::DNS::DNS()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:232: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:231: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:244: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:243: referência indefinida para `Tins::UDP::UDP(unsigned short, unsigned short)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:242: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:253: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::ICMPv6::ICMPv6(Tins::ICMPv6::Types)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6Address::IPv6Address(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::IPv6::IPv6(Tins::IPv6Address, Tins::IPv6Address, Tins::PDU*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:252: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::IPv4Address::IPv4Address(char const*)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::ARP::ARP(Tins::IPv4Address, Tins::IPv4Address, Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:264: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::RawPDU::RawPDU(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:274: referência indefinida para `Tins::EthernetII::EthernetII(Tins::HWAddress<6ul, unsigned char> const&, Tins::HWAddress<6ul, unsigned char> const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::DEFAULT_TIMEOUT'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::NetworkInterface::NetworkInterface()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::PacketSender(Tins::NetworkInterface const&, unsigned int, unsigned int)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:283: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:287: referência indefinida para `Tins::PacketSender::open_l2_socket(Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:288: referência indefinida para `Tins::PacketSender::open_l3_socket(Tins::PacketSender::SocketType)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:293: referência indefinida para `Tins::PacketSender::send(Tins::PDU&, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::NetworkInterface::NetworkInterface(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:297: referência indefinida para `Tins::PacketSender::close_socket(Tins::PacketSender::SocketType, Tins::NetworkInterface const&)'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+/home/anderson/ProjetoMestrado/SIMITAR/libsimitar/../libsimitar/TinsFlow.cpp:282: referência indefinida para `Tins::PacketSender::~PacketSender()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::BootP::~BootP()':
+/usr/include/tins/bootp.h:48: referência indefinida para `vtable for Tins::BootP'
+/usr/include/tins/bootp.h:48: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::EthernetII& Tins::operator/=<Tins::EthernetII>(Tins::EthernetII&, Tins::PDU const&)':
+/usr/include/tins/pdu.h:538: referência indefinida para `Tins::PDU::inner_pdu(Tins::PDU*)'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IP::~IP()':
+/usr/include/tins/ip.h:64: referência indefinida para `vtable for Tins::IP'
+/usr/include/tins/ip.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::TCP::~TCP()':
+/usr/include/tins/tcp.h:79: referência indefinida para `vtable for Tins::TCP'
+/usr/include/tins/tcp.h:79: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DHCP::~DHCP()':
+/usr/include/tins/dhcp.h:68: referência indefinida para `vtable for Tins::DHCP'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::RawPDU::~RawPDU()':
+/usr/include/tins/rawpdu.h:64: referência indefinida para `vtable for Tins::RawPDU'
+/usr/include/tins/rawpdu.h:64: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::DNS::~DNS()':
+/usr/include/tins/dns.h:78: referência indefinida para `vtable for Tins::DNS'
+/usr/include/tins/dns.h:78: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::UDP::~UDP()':
+/usr/include/tins/udp.h:63: referência indefinida para `vtable for Tins::UDP'
+/usr/include/tins/udp.h:63: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMP::~ICMP()':
+/usr/include/tins/icmp.h:65: referência indefinida para `vtable for Tins::ICMP'
+/usr/include/tins/icmp.h:65: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::IPv6::~IPv6()':
+/usr/include/tins/ipv6.h:55: referência indefinida para `vtable for Tins::IPv6'
+/usr/include/tins/ipv6.h:55: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ICMPv6::~ICMPv6()':
+/usr/include/tins/icmpv6.h:58: referência indefinida para `vtable for Tins::ICMPv6'
+/usr/include/tins/icmpv6.h:58: referência indefinida para `Tins::PDU::~PDU()'
+../libsimitar/libsimitar.a(TinsFlow.o): na função `Tins::ARP::~ARP()':
+/usr/include/tins/arp.h:50: referência indefinida para `vtable for Tins::ARP'
+/usr/include/tins/arp.h:50: referência indefinida para `Tins::PDU::~PDU()'
+collect2: error: ld returned 1 exit status
+make: *** [trace-analyzer] Error 1
+21:10:24 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+../../tests/integration/integration-tests.cpp: In function ‘int main()’:
+../../tests/integration/integration-tests.cpp:50:10: error: ‘class NetworkTrace’ has no member named ‘setTrafficGenEngine’
+   trace->setTrafficGenEngine("D-ITG");
+          ^~~~~~~~~~~~~~~~~~~
+../../tests/integration/integration-tests.cpp:77:17: error: no matching function for call to ‘NetworkTrace::exec()’
+   traceCdt.exec();
+                 ^
+In file included from ../../libsimitar/DataProcessor.h:34:0,
+                 from ../../tests/integration/integration-tests.cpp:11:
+../../libsimitar/NetworkTrace.h:161:6: note: candidate: int NetworkTrace::exec(const string&)
+  int exec(const std::string&  networkInterface);
+      ^~~~
+../../libsimitar/NetworkTrace.h:161:6: note:   candidate expects 1 argument, 0 provided
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+Makefile:4: recipe for target 'all' failed
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+21:17:01 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:02 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:02 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:02 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+21:17:09 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:09 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:09 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:09 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+21:17:30 **** Clean-only build of configuration Debug for project tests ****
+make clean 
+make -C integration/ clean
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+rm -rf ../../tests/integration/obj/*.o
+rm -rf ../integration-tests
+rm -rf 
+rm -rf 
+rm -rf ../../tests/integration/obj/*.gcno ../../tests/integration/obj/*.out
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/ clean
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+rm -rf ../../tests/unity/obj/*.o
+rm -rf ../unity-tests
+rm -rf 
+rm -rf 
+rm -rf 
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+21:17:31 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:31 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:31 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+21:17:32 **** Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:04
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread  -lsqlite3 -larmadillo -ltins   
+	 Link time: 00:00:01
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+
+* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/obj/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/obj/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:04
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -lsqlite3 -larmadillo -ltins 
+	 Link time: 00:00:01
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+21:21:40 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+21:21:41 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+21:21:41 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+21:21:41 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'

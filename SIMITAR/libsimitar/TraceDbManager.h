@@ -13,6 +13,7 @@
 #include <list>
 
 #include "DatabaseSqlite3.h"
+#include "PlogMacros.h"
 
 /**
 TODO 1: CHECHAR SE O TRACE EXISTE, SE NÃO SAIR COM MENSAGEM DE ERRO

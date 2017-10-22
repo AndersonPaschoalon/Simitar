@@ -17,16 +17,16 @@ DummyFlow::~DummyFlow()
 {
 }
 
-int DummyFlow::server()
+int DummyFlow::server(const std::string& netInterface)
 {
-	printf("[Server-mode operation]\n");
+	printf("[Server-mode operation: nothing to do]\n");
 	return (0);
 }
 
-void DummyFlow::flowStart()
+void DummyFlow::flowStart(const std::string& netInterface)
 {
 	/// flow-related vars
-	std::string netInterface = "";
+	DummyFlow::sleep_method sleepMethod = DummyFlow::method_usleep;
 	time_sec sec_startDelay = getFlowStartDelay(); // times in seconds
 	uint fid = int(getFlowId());
 	/// loop vars
@@ -35,8 +35,7 @@ void DummyFlow::flowStart()
 	uint nbytes = 0;
 	uint npackets = 0;
 
-	fsleep(sec_startDelay / timeScaleFactor());
-	//usleep(usec_startDelay);
+	fsleep(sec_startDelay / timeScaleFactor(), sleepMethod);
 	while (1)
 	{
 		sec_onTime = getSessionOnTime_next();
@@ -50,7 +49,8 @@ void DummyFlow::flowStart()
 		{
 			break;
 		}
-		fsleep(sec_offTime / timeScaleFactor());
+
+		fsleep(sec_offTime / timeScaleFactor(), sleepMethod);
 	}
 
 	PLOG_DEBUG << "EndFlow[" << fid  << "]";
@@ -127,10 +127,10 @@ void DummyFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 
 }
 
-void DummyFlow::fsleep(time_sec sleep_time)
+void DummyFlow::fsleep(time_sec sleep_time, sleep_method sleepMethod)
 {
 	// TODO initialize this value in the constructor
-	sleep_method sleepMethod = method_usleep;
+	//sleep_method sleepMethod = method_usleep;
 
 	if (sleepMethod == method_select)
 	{

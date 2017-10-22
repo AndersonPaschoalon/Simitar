@@ -14,6 +14,7 @@ NetworkFlowFactory::NetworkFlowFactory()
 
 NetworkFlowFactory::~NetworkFlowFactory()
 {
+	PLOG_VERBOSE << "~NetworkFlowFactory()";
 }
 
 
