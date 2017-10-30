@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;iperf-flow/src/iperf-flow.cpp&apos; to &apos;Main.cpp&apos;" description="Rename resource &apos;iperf-flow.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/iperf-flow.cpp" name="Main.cpp" stamp="1505175095759" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;iperf-flow/src/iperf-flow.h&apos; to &apos;Main.h&apos;" description="Rename resource &apos;iperf-flow.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/iperf-flow.h" name="Main.h" stamp="1505175117749" updateReferences="true"/>
-</session>

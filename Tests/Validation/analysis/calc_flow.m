@@ -19,12 +19,12 @@ function [timeVector nFlowsVector flowCdfVector flowCumulativeVector] = calc_flo
 % Parameters:
 %
 %       Input vetDepertureTimes: deperture times of each packet
-%	Input vetPacketSizes: list of packet sizes
-%	Input sample_size: distance between each time intervall
+%	Input vetDepertureTimes: list of inter packet times for each packet
+%	Input vetFlows: list of flows ID of each packet
+%   Input sample_size: number of packets
 %	Output timeVector: vector of time intervalls
 %	Output nFlowsVector: vector of flow per sample_size
 %	Output flowCdfVector: flow cumulative distribution
-%	Output flowCumulativeVector: flow cumulative values
 %
 vetDepertureTimes = vetDepertureTimes(:);
 vetFlows = vetFlows(:);

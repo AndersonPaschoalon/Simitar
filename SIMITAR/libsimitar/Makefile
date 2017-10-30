@@ -87,6 +87,7 @@ endif
 all: $(STATIC_LIB)
 
 $(EXEC_FILE): $(OBJ_FILES)
+	mkdir -p $(OBJ_DIR)
 	@printf  "\n* Linking: $@"
 	@$(START_TIME)
 	$(CC) $(LD_FLAGS) -o $@ $^ $(INCLUDES) $(LD_LIBS) $(LS_LIBS)
@@ -94,6 +95,7 @@ $(EXEC_FILE): $(OBJ_FILES)
 	@$(END_TIME)
 
 $(STATIC_LIB): $(OBJ_FILES)
+	mkdir -p $(OBJ_DIR)
 	@printf  "\n* Archiving: $@"
 	@$(START_TIME)
 	$(AR) $@  $^ 
@@ -105,6 +107,7 @@ $(SHARED_LIB): $(OBJ_FILES)
 	#$(LD) $@  $^ 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	mkdir -p $(OBJ_DIR)
 	@printf  "\n* Compiling: $< -> $@"
 	@$(START_TIME)
 	$(CC) $(CC_FLAGS) -c -o $@ $< $(INCLUDES)

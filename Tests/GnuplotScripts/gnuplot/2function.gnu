@@ -18,39 +18,42 @@ if (!exists("sizeratio")) sizeratio= '0'
 if (!exists("linestyle1")) linestyle1 = '12'
 if (!exists("linestyle2")) linestyle2 = '1'
 if (!exists("type")) type = 'lines'
+if (!exists("lw")) lw = '2'
 
 #styles
-set style line 1 linecolor rgb "red" linetype 1 pointtype 1 #r-+
-set style line 2 linecolor rgb "red" linetype 1 pointtype 2 #r-x
-set style line 3 linecolor rgb "red" linetype 1 pointtype 3 #r-*
-set style line 4 linecolor rgb "red" linetype 1 pointtype 6 #r-o
-set style line 11 linecolor rgb "blue" linetype 1 pointtype 1 #b-+
-set style line 12 linecolor rgb "blue" linetype 1 pointtype 2 #b-x
-set style line 13 linecolor rgb "blue" linetype 10  pointtype 3 #b-*
-set style line 14 linecolor rgb "blue" linetype 1 pointtype 6 #b-o
-set style line 21 linecolor rgb "green" linetype 1 pointtype 1 #g-+
-set style line 22 linecolor rgb "green" linetype 1 pointtype 2 #g-x
-set style line 23 linecolor rgb "green" linetype 1 pointtype 3 #g-*
-set style line 24 linecolor rgb "green" linetype 1 pointtype 6 #g-o
-set style line 31 linecolor rgb "black" linetype 1 pointtype 1 #k-+
-set style line 32 linecolor rgb "black" linetype 1 pointtype 2 #k-x
-set style line 33 linecolor rgb "black" linetype 1 pointtype 3 #k-*
-set style line 34 linecolor rgb "black" linetype 1 pointtype 6 #k-o
-set style line 41 linecolor rgb "violet" linetype 1 pointtype 1 #v-+
-set style line 42 linecolor rgb "violet" linetype 1 pointtype 2 #v-x
-set style line 43 linecolor rgb "violet" linetype 1 pointtype 3 #v-*
-set style line 44 linecolor rgb "violet" linetype 1 pointtype 6 #v-o
-set style line 51 linecolor rgb "orange" linetype 1 pointtype 1 #v-+
-set style line 52 linecolor rgb "orange" linetype 1 pointtype 2 #v-x
-set style line 53 linecolor rgb "orange" linetype 1 pointtype 3 #v-*
-set style line 54 linecolor rgb "orange" linetype 1 pointtype 6 #v-o
+set style line 1 linecolor rgb "red" linetype 1 linewidth lw pointtype 1 #r-+
+set style line 2 linecolor rgb "red" linetype 1 linewidth lw  pointtype 2 #r-x
+set style line 3 linecolor rgb "red" linetype 1 linewidth lw  pointtype 3 #r-*
+set style line 4 linecolor rgb "red" linetype 1 linewidth lw  pointtype 6 #r-o
+set style line 11 linecolor rgb "blue" linetype 1 linewidth lw  pointtype 1 #b-+
+set style line 12 linecolor rgb "blue" linetype 1 linewidth lw  pointtype 2 #b-x
+set style line 13 linecolor rgb "blue" linetype 1 linewidth lw   pointtype 3 #b-*
+set style line 14 linecolor rgb "blue" linetype 1 linewidth lw  pointtype 6 #b-o
+set style line 21 linecolor rgb "green" linetype 1 linewidth lw  pointtype 1 #g-+
+set style line 22 linecolor rgb "green" linetype 1 linewidth lw  pointtype 2 #g-x
+set style line 23 linecolor rgb "green" linetype 1 linewidth lw  pointtype 3 #g-*
+set style line 24 linecolor rgb "green" linetype 1 linewidth lw  pointtype 6 #g-o
+set style line 31 linecolor rgb "black" linetype 1 linewidth lw  pointtype 1 #k-+
+set style line 32 linecolor rgb "black" linetype 1 linewidth lw  pointtype 2 #k-x
+set style line 33 linecolor rgb "black" linetype 1 linewidth lw  pointtype 3 #k-*
+set style line 34 linecolor rgb "black" linetype 1 linewidth lw  pointtype 6 #k-o
+set style line 41 linecolor rgb "violet" linetype 1 linewidth lw  pointtype 1 #v-+
+set style line 42 linecolor rgb "violet" linetype 1 linewidth lw  pointtype 2 #v-x
+set style line 43 linecolor rgb "violet" linetype 1 linewidth lw  pointtype 3 #v-*
+set style line 44 linecolor rgb "violet" linetype 1 linewidth lw  pointtype 6 #v-o
+set style line 51 linecolor rgb "orange" linetype 1 linewidth lw  pointtype 1 #v-+
+set style line 52 linecolor rgb "orange" linetype 1 linewidth lw  pointtype 2 #v-x
+set style line 53 linecolor rgb "orange" linetype 1 linewidth lw  pointtype 3 #v-*
+set style line 54 linecolor rgb "orange" linetype 1 linewidth lw  pointtype 6 #v-o
+
 
 # plot options
 set xtics font font
 set ytics font font
 set tics font font
 set grid
-set key box opaque vertical right bottom
+#set key opaque vertical right top outside
+set key outside horizontal center bottom
 set title title
 set ylabel ylabel
 set xlabel xlabel

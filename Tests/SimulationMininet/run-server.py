@@ -3,7 +3,7 @@
 import subprocess
 import time
 import os
-from config import *
+from config import config
 
 operation_mode = "server"
 
@@ -16,7 +16,7 @@ def print_header(title):
 
 def main():
 	# capture pcap
-	tcpdump_command = 'tcpdump -i ' + config.ether_interface_server  + ' -s 65535 -w ' + config.capture_dir + config.pcap_name + '.server.pcap'
+	tcpdump_command = 'tcpdump -i ' + config.ether_interface_server  + ' -s 65535 -w ' + config.capture_dir + config.pcap_name + "_" + config.ether_interface_server  +'.server.pcap'
 	os.system('mkdir -p ' + config.capture_dir)
 	print_header("Tcpdump")
 	print("> interface: " + config.ether_interface_server)
@@ -38,7 +38,7 @@ def main():
 		exit()
 	print("\nPress ctrl-C to finish")
 	os.system(script_server + ' &')
-	
+
 
 if __name__ == "__main__":
 	main()

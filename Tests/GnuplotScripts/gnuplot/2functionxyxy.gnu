@@ -51,7 +51,7 @@ set xtics font font
 set ytics font font
 set tics font font
 set grid
-set key box vertical right bottom
+set key box opaque vertical right bottom
 set title title
 set ylabel ylabel
 set xlabel xlabel

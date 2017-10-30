@@ -15,7 +15,7 @@ def print_header(title):
 def main():
 
 	# capture pcap
-	tcpdump_command = "tcpdump -i " + config.ether_interface_client + " -s 65535 -w " + config.capture_dir + config.pcap_name + ".client.pcap"
+	tcpdump_command = "tcpdump -i " + config.ether_interface_client + " -s 65535 -w " + config.capture_dir + config.pcap_name + "_" + config.ether_interface_client  + ".client.pcap"
 	os.system('mkdir -p ' + config.capture_dir)
 	print_header("Tcpdump")
 	print("> interface: " + config.ether_interface_client)

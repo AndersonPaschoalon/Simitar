@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;simitar/src/dummy-flow.cpp&apos; to &apos;simitar.cpp&apos;" description="Rename resource &apos;dummy-flow.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/dummy-flow.cpp" name="simitar.cpp" stamp="1507315025552" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;simitar/src/dummy-flow.cpp&apos; to &apos;simitar-app.cpp&apos;" description="Rename resource &apos;dummy-flow.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/dummy-flow.cpp" name="simitar-app.cpp" stamp="1507321410290" updateReferences="true"/>
-</session>

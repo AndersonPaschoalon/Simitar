@@ -1,3 +1,4 @@
 pcaps/*
+libsimitar/obj/*
 !pcaps/.gitkeep
 

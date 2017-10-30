@@ -23,8 +23,7 @@ def clean():
 	os.system('make -C libsimitar/ clean')
 	os.system('make -C  trace-analyzer/ clean')
 	os.system('make -C  tests/ clean')
-	# os.system('rm -rf data/log/*.log')
-	# os.system('make -C clean apps/')
+	os.system('rm -rf data/log/*.log')
 
 
 def build():
@@ -47,10 +46,10 @@ def print_header(component_name):
 	print("################################################################################")	
 
 
-def print_tutorial():
-	print_header("Tutorial")
-	print('(1) Now run, at the workspace dir (SIMITAR/), run:\n source data/config/simitar-workspace.config.sh\nIt will set the enviroment variables needed.')
-	print("(2) To install in the operational system runs:\n ./build --install \nIt will compile, save the enviroment variables in the .bashrc file, and create links to the binaries in the /usr/bin/ directory. So, there will be no need for running the simitar-workspace.config.sh script.")
+#def print_tutorial():
+#	print_header("Tutorial")
+#	print('(1) Now run, at the workspace dir (SIMITAR/), run:\n source data/config/simitar-workspace.config.sh\nIt will set the enviroment variables needed.')
+#	print("(2) To install in the operational system runs:\n ./build --install \nIt will compile, save the enviroment variables in the .bashrc file, and create links to the binaries in the /usr/bin/ directory. So, there will be no need for running the simitar-workspace.config.sh script.")
 
 
 def install():
@@ -103,12 +102,13 @@ if __name__ == '__main__':
 	parser.add_argument("--clean", help="Clean", action="store_true")
 	parser.add_argument("--install", help="TODO", action="store_true")
 	parser.add_argument("--unninstall", help="TODO", action="store_true")
+	parser.add_argument("--deps", help="TODO", action="store_true")
 	argcomplete.autocomplete(parser)
 	args = parser.parse_args()
 	if args.remake:
 		clean()
 		build()
-		print_tutorial()
+		#print_tutorial()
 	elif args.clean:
 		clean()
 	elif args.install:
@@ -118,8 +118,10 @@ if __name__ == '__main__':
 		unninstall()
 	elif args.build:
 		build()
+	elif args.deps:
+		deps()
 	else:
 		build()
-		print_tutorial()
+		#print_tutorial()
 
 

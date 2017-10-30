@@ -4274,3 +4274,134 @@ make -C unity/
 make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+20:53:10 **** Build of configuration Default for project libsimitar ****
+make all 
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/NetworkFlowFactory.cpp -> ../libsimitar/obj/NetworkFlowFactory.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/NetworkFlowFactory.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:06
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/SimitarWorkspace.cpp -> ../libsimitar/obj/SimitarWorkspace.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/SimitarWorkspace.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:01
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DummyFlow.cpp -> ../libsimitar/obj/DummyFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DummyFlow.o ../libsimitar/DummyFlow.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:05
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DatabaseSqlite3.cpp -> ../libsimitar/obj/DatabaseSqlite3.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DatabaseSqlite3.o ../libsimitar/DatabaseSqlite3.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:02
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/RegressionTests.cpp -> ../libsimitar/obj/RegressionTests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/RegressionTests.o ../libsimitar/RegressionTests.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:00
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/TinsFlow.cpp -> ../libsimitar/obj/TinsFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/TinsFlow.o ../libsimitar/TinsFlow.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:07
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/NetworkTrace.cpp -> ../libsimitar/obj/NetworkTrace.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkTrace.o ../libsimitar/NetworkTrace.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:06
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/cfunctions.cpp -> ../libsimitar/obj/cfunctions.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/cfunctions.o ../libsimitar/cfunctions.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:05
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/IperfFlow.cpp -> ../libsimitar/obj/IperfFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/IperfFlow.o ../libsimitar/IperfFlow.cpp -I ../deps/ -I ../libsimitar/
+../libsimitar/IperfFlow.cpp: In member function ‘std::__cxx11::string IperfFlow::iperf_command(const time_sec&, const uint&, const uint&, const string&)’:
+../libsimitar/IperfFlow.cpp:187:7: warning: unused variable ‘congestion_algorithm’ [-Wunused-variable]
+  bool congestion_algorithm = true;
+       ^~~~~~~~~~~~~~~~~~~~
+../libsimitar/IperfFlow.cpp:192:6: warning: unused variable ‘pps’ [-Wunused-variable]
+  int pps = this->getNumberOfPackets() / onTime;
+      ^~~
+../libsimitar/IperfFlow.cpp:194:6: warning: unused variable ‘nkbytes’ [-Wunused-variable]
+  int nkbytes = this->getNumberOfKbytes();
+      ^~~~~~~
+../libsimitar/IperfFlow.cpp:195:6: warning: unused variable ‘nkbits’ [-Wunused-variable]
+  int nkbits = this->getNumberOfKbytes() * 8;
+      ^~~~~~
+	 Compile time: 00:00:03
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/NetworkFlow.cpp -> ../libsimitar/obj/NetworkFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkFlow.o ../libsimitar/NetworkFlow.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:04
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DatabaseInterface.cpp -> ../libsimitar/obj/DatabaseInterface.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DatabaseInterface.o ../libsimitar/DatabaseInterface.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:04
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/StochasticModelFit.cpp -> ../libsimitar/obj/StochasticModelFit.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/StochasticModelFit.o ../libsimitar/StochasticModelFit.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:04
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DataProcessor.cpp -> ../libsimitar/obj/DataProcessor.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DataProcessor.o ../libsimitar/DataProcessor.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:08
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/TraceDbManager.cpp -> ../libsimitar/obj/TraceDbManager.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/TraceDbManager.o ../libsimitar/TraceDbManager.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:01
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/CsvFile.cpp -> ../libsimitar/obj/CsvFile.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/CsvFile.o ../libsimitar/CsvFile.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:00
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DitgFlow.cpp -> ../libsimitar/obj/DitgFlow.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DitgFlow.o ../libsimitar/DitgFlow.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:04
+mkdir -p ../libsimitar/obj
+
+* Archiving: libsimitar.aar rvs   libsimitar.a  ../libsimitar/obj/NetworkFlowFactory.o ../libsimitar/obj/SimitarWorkspace.o ../libsimitar/obj/DummyFlow.o ../libsimitar/obj/DatabaseSqlite3.o ../libsimitar/obj/RegressionTests.o ../libsimitar/obj/TinsFlow.o ../libsimitar/obj/NetworkTrace.o ../libsimitar/obj/cfunctions.o ../libsimitar/obj/IperfFlow.o ../libsimitar/obj/NetworkFlow.o ../libsimitar/obj/DatabaseInterface.o ../libsimitar/obj/StochasticModelFit.o ../libsimitar/obj/DataProcessor.o ../libsimitar/obj/TraceDbManager.o ../libsimitar/obj/CsvFile.o ../libsimitar/obj/DitgFlow.o 
+ar: criando libsimitar.a
+a - ../libsimitar/obj/NetworkFlowFactory.o
+a - ../libsimitar/obj/SimitarWorkspace.o
+a - ../libsimitar/obj/DummyFlow.o
+a - ../libsimitar/obj/DatabaseSqlite3.o
+a - ../libsimitar/obj/RegressionTests.o
+a - ../libsimitar/obj/TinsFlow.o
+a - ../libsimitar/obj/NetworkTrace.o
+a - ../libsimitar/obj/cfunctions.o
+a - ../libsimitar/obj/IperfFlow.o
+a - ../libsimitar/obj/NetworkFlow.o
+a - ../libsimitar/obj/DatabaseInterface.o
+a - ../libsimitar/obj/StochasticModelFit.o
+a - ../libsimitar/obj/DataProcessor.o
+a - ../libsimitar/obj/TraceDbManager.o
+a - ../libsimitar/obj/CsvFile.o
+a - ../libsimitar/obj/DitgFlow.o
+	 Link time: 00:00:00
+20:54:12 **** Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+20:54:12 **** Build of configuration Default for project trace-analyzer ****
+make all 
+
+* Compiling: ../trace-analyzer/src/Main.cpp -> ../trace-analyzer/obj/Main.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../trace-analyzer/obj/Main.o ../trace-analyzer/src/Main.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:06
+
+* Linking: trace-analyzerg++ -p -pg -ftest-coverage -fprofile-arcs -o trace-analyzer ../trace-analyzer/obj/Main.o -I ../deps/ -I ../libsimitar/   -Wl,-Bstatic ../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread  -lsqlite3 -larmadillo -lITG  -ltins 
+	 Link time: 00:00:02
+20:54:20 **** Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:06
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread  -lsqlite3 -larmadillo -ltins   
+	 Link time: 00:00:01
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+
+* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/obj/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/obj/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:04
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -lsqlite3 -larmadillo -ltins 
+	 Link time: 00:00:01
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;MesserTG/src/LibtinsFlow.cpp&apos;" deleteContents="false" description="Delete resource &apos;MesserTG/src/LibtinsFlow.cpp&apos;" element1="/MesserTG/src/LibtinsFlow.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1495340369751"/>
-</session>

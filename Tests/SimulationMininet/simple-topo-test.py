@@ -24,9 +24,9 @@ def createTopo():
 	return topo
 
 class MultiSwitch( OVSSwitch ):
-    "Custom Switch() subclass that connects to different controllers"
-    def start( self, controllers ):
-        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
+	"Custom Switch() subclass that connects to different controllers"
+	def start( self, controllers ):
+		return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
 setLogLevel( 'info' )
 cOdl = RemoteController( 'OpenDayLight', ip='127.0.0.1', port=6633 )
@@ -38,7 +38,7 @@ net.build()
 net.start()
 h1, h2  = net.hosts[0], net.hosts[1]
 #Running a command on host h1
-print h1.cmd('ifconfig')
+print(h1.cmd('ifconfig'))
 CLI( net )
 net.stop()
 os.system('mn -c')

@@ -1,8 +1,8 @@
 function [ v1 ] = regularizeVet(vet1, m)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Make a vector have a specified size. If the vector is larger, the larger 
-% index values will be discarted. If the vector is smaller, they will be filled 
-% with zeros. 
+% index values will be discarted. If the vector is smaller, the lest value will
+% be repeated with zeros.
 %
 % Licensing:
 %

@@ -65,15 +65,36 @@ vetFlow1 = TraceData1(:, 2);
 vetDepertureTimes2 = TraceData2(:, 5);
 vetFlow2 = TraceData2(:, 2);
 sample_size = GRANULARITY;
+
+
+
 [timeVector1 nFlows1 flowCdf1] = calc_flow(vetDepertureTimes1, vetFlow1, sample_size);
 [timeVector2 nFlows2 flowCdf2] = calc_flow(vetDepertureTimes2, vetFlow2, sample_size);
+
+%input ("DEBUG: Press any key to continue vetFlow")
+%[vetFlow1(1:30) vetFlow2(1:30)]
+%input ("DEBUG: Press any key to continue timeVector")
+%[ timeVector1(1:30) timeVector2(1:30) ]
+%input ("DEBUG: Press any key to continue nFlows")
+%[ nFlows1(1:30) nFlows2(1:30) ]
+%input ("DEBUG: Press any key to continue flowCdf")
+%[ flowCdf1(1:30) flowCdf2(1:30) ]
+%input ("DEBUG: Press any key to continue")
 
 m1 = min(timeVector1(end), timeVector2(end));
 m2 = max(timeVector1(end), timeVector2(end));
 
+%input ("DEBUG: Press any key to continue m1 m2")
+%m1
+%m2
+
 timeVector1 = regularizeVet(timeVector1, m1);
 vetFlow1 = regularizeVet(vetFlow1, m1);
 vetFlow2 = regularizeVet(vetFlow2, m1);
+%input ("DEBUG: Press any key to continue vetFlow")
+%size(vetFlow1)
+%size(vetFlow2)
+%[vetFlow1(1:30), vetFlow2(1:30)]
 
 flowCdf1 = regularizeVet(flowCdf1, m2);
 flowCdf2 = regularizeVet(flowCdf2, m2);
@@ -88,7 +109,7 @@ labels = 'time(x)(seconds) n.flows(y)1 n.flows(y)1';
 filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);
 matrix2File(Flow_Ps, filename, title, labels);
 
-Flow_CDF = [timeVector2 flowCdf2 flowCdf2];
+Flow_CDF = [timeVector2 flowCdf1 flowCdf2];
 title = 'FlowCdf';
 labels = 'time(x)(seconds) flowsCDF1 flowsCDF2';
 filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);

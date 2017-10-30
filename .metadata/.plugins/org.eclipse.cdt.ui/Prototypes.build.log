@@ -1,8 +1,0 @@
-18:41:19 **** Incremental Build of configuration Debug for project Prototypes ****
-make all 
-make: Warning: File 'Algorithms/subdir.mk' has modification time 148 s in the future
-make: warning:  Clock skew detected.  Your build may be incomplete.
-make: Nothing to be done for 'all'.
-
-18:41:20 Build Finished (took 111ms)
-
