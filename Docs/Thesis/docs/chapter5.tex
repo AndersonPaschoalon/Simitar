@@ -35,43 +35,93 @@ We will perform this testes using SIMITAR \textit{alpha} version, operation as a
 
 \subsection{Single hop SDN topology}
 
-We perform 
 
 
-\begin{figure}[!ht]
+\begin{figure}[t!]
 	\centering
-	\includegraphics[scale=0.75]{figures/ch5/iperfFlowsPs.pdf}
-	\caption{the caption}
-	\label{fig:iperfFlowsPs}
+	\subfloat[\textit{skype-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperfFlowsPs.pdf}
+		\label{fig:iperf-single-flowps}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{bigFlows-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperfBandwidth.pdf}
+		\label{fig:iperf-single-bw}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{lan-diurnal-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperfFlowCdf.pdf}
+		\label{fig:iperf-single-flowcdf}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{wan-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperfWaveletMREA.pdf}
+		\label{fig:iperf-single-wavelet}
+	}
+	\caption{caption}
+	\label{fig:iperf-single}
 \end{figure}
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.75]{figures/ch5/iperfFlowCdf.pdf}
-	\caption{the caption}
-	\label{fig:iperfFlowCdf}
-\end{figure}
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.75]{figures/ch5/iperfBandwidth.pdf}
-	\caption{the caption}
-	\label{fig:iperfBandwidth}
-\end{figure}
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.75]{figures/ch5/iperfWaveletMREA.pdf}
-	\caption{the caption}
-	\label{fig:iperfWaveletMREA}
-\end{figure}
 
 \subsection{Tree SDN topology}
+
+
+\begin{figure}[t!]
+	\centering
+	\subfloat[\textit{skype-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperftreeFlowsPs.pdf}
+		\label{fig:iperf-flowps}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{bigFlows-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperftreeBandwidth.pdf}
+		\label{fig:iperf-bw}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{lan-diurnal-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperftreeFlowCdf.pdf}
+		\label{fig:iperf-flowcdf}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{wan-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/iperftreeWaveletMREA.pdf}
+		\label{fig:iperf-tree-wavelet}
+	}
+	\caption{caption}
+	\label{fig:iperf-tree}
+\end{figure}
 
 
 \section{Simitar using D-ITG with skype-pcap}
 
 \section{Simitar using Libtins with skype-pcap}
+
+
+\begin{figure}[t!]
+	\centering
+	\subfloat[\textit{skype-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/tinsFlowsPs.pdf}
+		\label{fig:tins-single-flowps}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{bigFlows-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/tinsBandwidth.pdf}
+		\label{fig:tins-single-bw}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{lan-diurnal-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/tinsFlowCdf.pdf}
+		\label{fig:tins-single-flowcdf}
+	}
+	\hspace{0mm}
+	\subfloat[\textit{wan-pcap}]{
+		\includegraphics[width=77mm]{figures/ch5/tinsWaveletMREA.pdf}
+		\label{fig:tins-single-wavelet}
+	}
+	\caption{caption}
+	\label{fig:tins-single}
+\end{figure}
 
 
 \section{Simitar lanDiurnal-pcap/bigFlows-pcap}

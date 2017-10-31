@@ -27,7 +27,7 @@ def main():
     # making sure the program is being executed in the source location, so it can be executed from anyware
     cd = dir.Cd(os.path.dirname(os.path.abspath(__file__)))
     run_analyzis(pcap_file1=pcap_file1, pcap_name1=pcap_name1, pcap_file2=pcap_file2, pcap_name2=pcap_name2,
-                 pktfilter_prefix=config.pktfilter_prefix, analyzis_name=analyzis_name, plots_dir=plots_dir, cd=cd)
+                 pktfilter_prefix=config.pktfilter_prefix, analyzis_name=analyzis_name, plots_dir=plots_dir, cd=cd, comments=config.comments)
     plot_data(config.pcap1_type, config.pcap2_type, analyzis_name, plots_dir)
 
 def validation_help():
@@ -42,7 +42,7 @@ def print_header(title):
     print('###############################################################################')
 
 
-def run_analyzis(pcap_file1, pcap_name1, pcap_file2, pcap_name2, pktfilter_prefix, analyzis_name, plots_dir, cd):
+def run_analyzis(pcap_file1, pcap_name1, pcap_file2, pcap_name2, pktfilter_prefix, analyzis_name, plots_dir, cd, comments):
     # print info
     print_header("Analysis " + analyzis_name + " using pcaps: " + pcap_file1 + ' and ' + pcap_file2)
     print('> pcap_file1: ' + pcap_file1 )
@@ -79,6 +79,7 @@ def run_analyzis(pcap_file1, pcap_name1, pcap_file2, pcap_name2, pktfilter_prefi
         time.localtime().tm_min) + ':' + str(time.localtime().tm_sec)
     os.system('echo \"' + str_about + '\" >>' + plots_dir + '/about.log')
     os.system('echo \"' + str_date + '\" >>' + plots_dir + '/about.log')
+    os.system('echo \"' + 'comments: ' + comments + '\" >>' + plots_dir + '/about.log')
 
 
 def plot_data(trace_name1, trace_name2, analyzis_name, plots_dir):
