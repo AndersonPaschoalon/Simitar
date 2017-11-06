@@ -67,7 +67,7 @@ LS_LIBS		:= -Wl,-Bstatic $(WORKSPACE)/libsimitar/libsimitar.a
 INCLUDES 	:= -I $(WORKSPACE)/deps/ -I $(WORKSPACE)/libsimitar/
 
 #
-TEMP_FILES	:= $(OBJ_DIR)/*.gcno $(OBJ_DIR)/*.out
+TEMP_FILE	:= $(OBJ_DIR)/*.gcno $(OBJ_DIR)/*.gcda *.gcno *.gcda *.out $(OBJ_DIR)/*.out
 
 # Macros for timing compilation
 ifeq ($(UNAME_S),Darwin)

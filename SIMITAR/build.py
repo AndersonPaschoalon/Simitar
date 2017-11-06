@@ -4,7 +4,6 @@ import argcomplete
 import os
 
 def directory_tree():
-	os.system('rm -rf apps/RemoteSystemsTempFiles')
 	os.system('rm -rf RemoteSystemsTempFiles')
 	os.system('mkdir -p libsimitar/obj')
 	os.system('mkdir -p tests/xml')
@@ -18,11 +17,13 @@ def directory_tree():
 
 
 def clean():
-	print_header("Directory tree");
+	print_header("Building directory tree");
 	directory_tree()
+	print_header("Clean all components");
 	os.system('make -C libsimitar/ clean')
 	os.system('make -C  trace-analyzer/ clean')
 	os.system('make -C  tests/ clean')
+	os.system('make -C simitar-gen/ clean')
 	os.system('rm -rf data/log/*.log')
 
 
@@ -31,12 +32,12 @@ def build():
 	directory_tree()
 	print_header("Libsimitar");
 	os.system('make -C libsimitar/')
-	print_header("Trace Analyzer");
+	print_header("Trace Analyzer trace-analyzer");
 	os.system('make -C trace-analyzer/')
 	print_header("Tests");
 	os.system('make -C tests/')
-	#print_header("FlowGen Apps");
-	# os.system('make -C apps/')
+	print_header("SIMITAR traffic generator simitar-gen");
+	os.system('make -C simitar-gen/')
 
 
 def print_header(component_name):

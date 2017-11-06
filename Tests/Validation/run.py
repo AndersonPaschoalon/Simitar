@@ -50,7 +50,7 @@ def run_analyzis(pcap_file1, pcap_name1, pcap_file2, pcap_name2, pktfilter_prefi
     print('> pcap_file2: ' + pcap_file2)
     print('> pcap_name1: ' + pcap_name2)
     # go to script analysis dir
-    cd.cd('./analysis/')
+    cd.cd('./scripts/')
     # clean sim dir
     os.system('mkdir -p ./data')
     os.system('rm -rf data/*')

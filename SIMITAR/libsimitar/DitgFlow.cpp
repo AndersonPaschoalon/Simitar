@@ -108,7 +108,7 @@ std::string DitgFlow::ditg_command(const time_sec& onTime, const uint& npackets,
 	strCommand += " -f " + std::to_string(this->getNetworkTtl());
 	//destination and sources IPv4/IPv6 address
 	strCommand += " -a " + this->getNetworkDstAddr();
-	strCommand += " -sa " + this->getNetworkSrcAddr();
+	//strCommand += " -sa " + this->getNetworkSrcAddr();
 
 	/**
 	 * Transport-layer settings
@@ -117,13 +117,13 @@ std::string DitgFlow::ditg_command(const time_sec& onTime, const uint& npackets,
 	{
 		strCommand += " -T TCP -D ";
 		strCommand += " -rp " + std::to_string(this->getTransportDstPort());
-		strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
+		//strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
 	}
 	else if (this->getTransportProtocol() == PROTOCOL__UDP)
 	{
 		strCommand += " -T UDP ";
 		strCommand += " -rp " + std::to_string(this->getTransportDstPort());
-		strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
+		//strCommand += " -sp " + std::to_string(this->getTransportSrcPort());
 	}
 	else if (this->getTransportProtocol() == PROTOCOL__ICMP)
 	{
@@ -134,9 +134,10 @@ std::string DitgFlow::ditg_command(const time_sec& onTime, const uint& npackets,
 	{
 		//TODO Set D-ITG compile file to support SCTP
 		// To enable this option D-ITG has to be compiled with"sctp" option enabled (i.e.  make sctp=on).
-		strCommand += " -T SCTP "
-				+ std::to_string(this->getTransportSctpAssociationId()) + " "
-				+ std::to_string(this->getTransportSctpMaxStreams()) + " ";
+		//strCommand += " -T SCTP "
+		//		+ std::to_string(this->getTransportSctpAssociationId()) + " "
+		//		+ std::to_string(this->getTransportSctpMaxStreams()) + " ";
+		strCommand += " -T SCTP ";
 	}
 	else if (this->getTransportProtocol() == PROTOCOL__DCCP)
 	{

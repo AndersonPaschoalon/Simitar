@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_CxCNMLm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_CxCNMbm2Eeei3cCFEsvAAQ" bindingContexts="_CxHG7bm2Eeei3cCFEsvAAQ">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;IperfFlow.cpp&quot; tooltip=&quot;libsimitar/IperfFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/IperfFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;TinsFlow.cpp&quot; tooltip=&quot;libsimitar/TinsFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/TinsFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;DummyFlow.cpp&quot; tooltip=&quot;libsimitar/DummyFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/DummyFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlow.h&quot; tooltip=&quot;libsimitar/NetworkFlow.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/NetworkFlow.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlow.cpp&quot; tooltip=&quot;libsimitar/NetworkFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/NetworkFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;PlogMacros.h&quot; tooltip=&quot;libsimitar/PlogMacros.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/PlogMacros.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;simitar-app.cpp&quot; tooltip=&quot;simitar-gen/src/simitar-app.cpp&quot;>&#xA;&lt;persistable path=&quot;/simitar-gen/src/simitar-app.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;integration-tests.cpp&quot; tooltip=&quot;tests/integration/integration-tests.cpp&quot;>&#xA;&lt;persistable path=&quot;/tests/integration/integration-tests.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Defines.h&quot; tooltip=&quot;libsimitar/Defines.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/Defines.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;unity-tests.cpp&quot; tooltip=&quot;tests/unity/unity-tests.cpp&quot;>&#xA;&lt;persistable path=&quot;/tests/unity/unity-tests.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Main.cpp&quot; tooltip=&quot;trace-analyzer/src/Main.cpp&quot;>&#xA;&lt;persistable path=&quot;/trace-analyzer/src/Main.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;TinsFlow.h&quot; tooltip=&quot;libsimitar/TinsFlow.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/TinsFlow.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;StochasticModelFit.h&quot; tooltip=&quot;libsimitar/StochasticModelFit.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/StochasticModelFit.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;StochasticModelFit.cpp&quot; tooltip=&quot;libsimitar/StochasticModelFit.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/StochasticModelFit.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;SimitarWorkspace.h&quot; tooltip=&quot;libsimitar/SimitarWorkspace.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/SimitarWorkspace.h&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;DitgFlow.cpp&quot; tooltip=&quot;libsimitar/DitgFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/DitgFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlowFactory.cpp&quot; tooltip=&quot;libsimitar/NetworkFlowFactory.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/NetworkFlowFactory.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;DitgFlow.h&quot; tooltip=&quot;libsimitar/DitgFlow.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/DitgFlow.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;IperfFlow.cpp&quot; tooltip=&quot;libsimitar/IperfFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/IperfFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;TinsFlow.cpp&quot; tooltip=&quot;libsimitar/TinsFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/TinsFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;DummyFlow.cpp&quot; tooltip=&quot;libsimitar/DummyFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/DummyFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlow.h&quot; tooltip=&quot;libsimitar/NetworkFlow.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/NetworkFlow.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlow.cpp&quot; tooltip=&quot;libsimitar/NetworkFlow.cpp&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/NetworkFlow.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;PlogMacros.h&quot; tooltip=&quot;libsimitar/PlogMacros.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/PlogMacros.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;simitar-app.cpp&quot; tooltip=&quot;simitar-gen/src/simitar-app.cpp&quot;>&#xA;&lt;persistable path=&quot;/simitar-gen/src/simitar-app.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;integration-tests.cpp&quot; tooltip=&quot;tests/integration/integration-tests.cpp&quot;>&#xA;&lt;persistable path=&quot;/tests/integration/integration-tests.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Defines.h&quot; tooltip=&quot;libsimitar/Defines.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/Defines.h&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;unity-tests.cpp&quot; tooltip=&quot;tests/unity/unity-tests.cpp&quot;>&#xA;&lt;persistable path=&quot;/tests/unity/unity-tests.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Main.cpp&quot; tooltip=&quot;trace-analyzer/src/Main.cpp&quot;>&#xA;&lt;persistable path=&quot;/trace-analyzer/src/Main.cpp&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;TinsFlow.h&quot; tooltip=&quot;libsimitar/TinsFlow.h&quot;>&#xA;&lt;persistable path=&quot;/libsimitar/TinsFlow.h&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_CxCNMbm2Eeei3cCFEsvAAQ" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_CxCNMrm2Eeei3cCFEsvAAQ" label="%trimmedwindow.label.eclipseSDK" x="414" y="41" width="1024" height="740">
@@ -78,16 +78,14 @@
           <tags>persp.actionSet:ch.hsr.cdt.clonewar.app.actionSet</tags>
           <tags>persp.actionSet:ch.hsr.ifs.cute.tdd.actionSet</tags>
           <tags>persp.actionSet:ch.hsr.ifr.cute.sourceGeneratorActions</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_CxCNNbm2Eeei3cCFEsvAAQ" selectedElement="_CxCNNrm2Eeei3cCFEsvAAQ" horizontal="true">
-            <children xsi:type="basic:PartStack" xmi:id="_CxCNNrm2Eeei3cCFEsvAAQ" elementId="topLeft" containerData="2035" selectedElement="_CxCNN7m2Eeei3cCFEsvAAQ">
-              <tags>active</tags>
-              <tags>noFocus</tags>
+          <children xsi:type="basic:PartSashContainer" xmi:id="_CxCNNbm2Eeei3cCFEsvAAQ" selectedElement="_CxCNO7m2Eeei3cCFEsvAAQ" horizontal="true">
+            <children xsi:type="basic:PartStack" xmi:id="_CxCNNrm2Eeei3cCFEsvAAQ" elementId="topLeft" containerData="1730" selectedElement="_CxCNN7m2Eeei3cCFEsvAAQ">
               <children xsi:type="advanced:Placeholder" xmi:id="_CxCNN7m2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_CxC1Pbm2Eeei3cCFEsvAAQ"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_CxCNOLm2Eeei3cCFEsvAAQ" elementId="org.eclipse.cdt.ui.CView" toBeRendered="false" ref="_CxC1Wrm2Eeei3cCFEsvAAQ"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_CxCNObm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_CxC1W7m2Eeei3cCFEsvAAQ"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_CxCNOrm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.views.BookmarkView" toBeRendered="false" ref="_CxC1XLm2Eeei3cCFEsvAAQ"/>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_CxCNO7m2Eeei3cCFEsvAAQ" containerData="7965" selectedElement="_CxCNPLm2Eeei3cCFEsvAAQ">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_CxCNO7m2Eeei3cCFEsvAAQ" containerData="8270" selectedElement="_CxCNPLm2Eeei3cCFEsvAAQ">
               <children xsi:type="basic:PartSashContainer" xmi:id="_CxCNPLm2Eeei3cCFEsvAAQ" containerData="7500" selectedElement="_CxCNPbm2Eeei3cCFEsvAAQ" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_CxCNPbm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_CxC1Ibm2Eeei3cCFEsvAAQ"/>
                 <children xsi:type="basic:PartStack" xmi:id="_CxCNPrm2Eeei3cCFEsvAAQ" elementId="topRight" containerData="2500" selectedElement="_CxCNP7m2Eeei3cCFEsvAAQ">
@@ -200,17 +198,13 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_CxC1Ibm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.editorss" selectedElement="_CxC1Irm2Eeei3cCFEsvAAQ">
-      <children xsi:type="basic:PartStack" xmi:id="_CxC1Irm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_CxC1Kbm2Eeei3cCFEsvAAQ">
+      <children xsi:type="basic:PartStack" xmi:id="_CxC1Irm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_HEgmkL8yEeezMpOJrwC7nQ">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <children xsi:type="basic:Part" xmi:id="_CxC1I7m2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Main.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Main.cpp&quot; partName=&quot;Main.cpp&quot; title=&quot;Main.cpp&quot; tooltip=&quot;trace-analyzer/src/Main.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/trace-analyzer/src/Main.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;79&quot; selectionTopPixel=&quot;1803&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-        </children>
+        <tags>active</tags>
+        <tags>noFocus</tags>
         <children xsi:type="basic:Part" xmi:id="_CxC1JLm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="simitar-app.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;simitar-app.cpp&quot; partName=&quot;simitar-app.cpp&quot; title=&quot;simitar-app.cpp&quot; tooltip=&quot;simitar-gen/src/simitar-app.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/simitar-gen/src/simitar-app.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1347&quot; selectionTopPixel=&quot;255&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;simitar-app.cpp&quot; partName=&quot;simitar-app.cpp&quot; title=&quot;simitar-app.cpp&quot; tooltip=&quot;simitar-gen/src/simitar-app.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/simitar-gen/src/simitar-app.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;770&quot; selectionTopPixel=&quot;400&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
@@ -231,132 +225,22 @@
             <tags>popup:#OverviewRulerContext</tags>
           </menus>
         </children>
-        <children xsi:type="basic:Part" xmi:id="_CxC1KLm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="PlogMacros.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;PlogMacros.h&quot; partName=&quot;PlogMacros.h&quot; title=&quot;PlogMacros.h&quot; tooltip=&quot;libsimitar/PlogMacros.h&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/PlogMacros.h&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;190&quot; selectionOffset=&quot;405&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+        <children xsi:type="basic:Part" xmi:id="_HEgmkL8yEeezMpOJrwC7nQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DitgFlow.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;DitgFlow.cpp&quot; partName=&quot;DitgFlow.cpp&quot; title=&quot;DitgFlow.cpp&quot; tooltip=&quot;libsimitar/DitgFlow.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/DitgFlow.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3395&quot; selectionTopPixel=&quot;3093&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_CxC1Kbm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="TinsFlow.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;TinsFlow.cpp&quot; partName=&quot;TinsFlow.cpp&quot; title=&quot;TinsFlow.cpp&quot; tooltip=&quot;libsimitar/TinsFlow.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/TinsFlow.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;8&quot; selectionOffset=&quot;1943&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1Krm2Eeei3cCFEsvAAQ" elementId="#CEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1K7m2Eeei3cCFEsvAAQ" elementId="#CEditorRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorRulerContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1LLm2Eeei3cCFEsvAAQ" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_CxC1Lbm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="DummyFlow.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;DummyFlow.cpp&quot; partName=&quot;DummyFlow.cpp&quot; title=&quot;DummyFlow.cpp&quot; tooltip=&quot;libsimitar/DummyFlow.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/DummyFlow.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;320&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1Lrm2Eeei3cCFEsvAAQ" elementId="#CEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1L7m2Eeei3cCFEsvAAQ" elementId="#CEditorRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorRulerContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1MLm2Eeei3cCFEsvAAQ" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_CxC1Mbm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="NetworkFlow.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlow.cpp&quot; partName=&quot;NetworkFlow.cpp&quot; title=&quot;NetworkFlow.cpp&quot; tooltip=&quot;libsimitar/NetworkFlow.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/NetworkFlow.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1Mrm2Eeei3cCFEsvAAQ" elementId="#CEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1M7m2Eeei3cCFEsvAAQ" elementId="#CEditorRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorRulerContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1NLm2Eeei3cCFEsvAAQ" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_CxC1Nbm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="NetworkFlow.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;NetworkFlow.h&quot; partName=&quot;NetworkFlow.h&quot; title=&quot;NetworkFlow.h&quot; tooltip=&quot;libsimitar/NetworkFlow.h&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/NetworkFlow.h&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3&quot; selectionTopPixel=&quot;490&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1Nrm2Eeei3cCFEsvAAQ" elementId="#CEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1N7m2Eeei3cCFEsvAAQ" elementId="#CEditorRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorRulerContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1OLm2Eeei3cCFEsvAAQ" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_CxC1Obm2Eeei3cCFEsvAAQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="IperfFlow.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;IperfFlow.cpp&quot; partName=&quot;IperfFlow.cpp&quot; title=&quot;IperfFlow.cpp&quot; tooltip=&quot;libsimitar/IperfFlow.cpp&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/libsimitar/IperfFlow.cpp&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;13&quot; selectionOffset=&quot;5278&quot; selectionTopPixel=&quot;900&quot;/>&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1Orm2Eeei3cCFEsvAAQ" elementId="#CEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1O7m2Eeei3cCFEsvAAQ" elementId="#CEditorRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CEditorRulerContext</tags>
-            <tags>popup:org.eclipse.cdt.ui.editor.CEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_CxC1PLm2Eeei3cCFEsvAAQ" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_CxC1Pbm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.gif" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.navigator.resources.ProjectExplorer"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.navigator.resources"/>
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot;/>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1499322938483&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_CxC1Prm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -676,7 +560,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_CxC12rm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_dk8ScL3FEeei9IdasKFpwQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_CxKLMLm2Eeei3cCFEsvAAQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nF8YML8xEeezMpOJrwC7nQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_CxKLMLm2Eeei3cCFEsvAAQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_CxC17Lm2Eeei3cCFEsvAAQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -706,7 +590,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_CxC2Drm2Eeei3cCFEsvAAQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_dlBK8L3FEeei9IdasKFpwQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_CxKKyLm2Eeei3cCFEsvAAQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nF-0cL8xEeezMpOJrwC7nQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_CxKKyLm2Eeei3cCFEsvAAQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_CxC2GLm2Eeei3cCFEsvAAQ" elementId="org.eclipse.dltk.sh.ui.editor">
         <tags>Draggable</tags>
