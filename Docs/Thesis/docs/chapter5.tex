@@ -6,7 +6,9 @@
 
 
 
-As proof of concepts for our tool, we are going to use Mininet's emulated testbeds. We automate these tests using scripts, so they are reproducible.  They are responsible for building the topology, run the SIMITAR traffic generator, collect \textit{pcaps} and perform the proposed proof of concept analysis.  We make four plots for each trace, where we compare the original and the synthetic trace. The first two we used just for visual comparison:  flows per second and bandwidth. To compare the quality of the realism of the generated traffic, we plot the Flows cumulative distribution function\cite{harpoon-paper}, and the Wavelet multiresolution analysis\cite{swing-paper}.  Tests on physical testbeds and network functions stay for future work.
+As proof of concepts for our tool, we are going to use Mininet's emulated testbeds. We automate these tests using scripts, so they are reproducible.  They are responsible for building the topology, run the SIMITAR traffic generator, collect \textit{pcaps} and perform the proposed proof of concept analysis.  
+
+We make four plots for each trace, were we compare the original and the synthetic trace. Two of them we use for mere visual comparison:  flows per second and bandwidth. To compare the quality of the realism of the generated traffic, we plot the flows cumulative distribution function (CDF)\cite{harpoon-paper}, and the Wavelet multiresolution analysis.  In both case, the more similar the plots are, more similar the traffics are. The flow's cumulative distribution measures each new flow in the trace. The wavelet multiresolution analysis is capable of capture traffic scaling characteristics. If the value decreases, a periodicity on that time scale exists. With white-noise features, the traffic will remain constant. If the traffic has self-similar characteristics on a particular time scale, its value will increase linearly.
 
 \begin{table}[ht!]
 	\centering
@@ -31,9 +33,9 @@ As proof of concepts for our tool, we are going to use Mininet's emulated testbe
 \end{table}
 
 
-We use two different testbeds: a tree topology (figure~\ref{fig:topo-tree}), similar to tests performed by Swing\cite{swing-paper}\cite{background-traffic-matter}\cite{legotg-paper}, and a single hop connection of two hosts. Both topologies are SDN networks and have OpenDayLight Beryllium as the controller.  We present the complete specification of these experiments at the table ~\ref{tab:specifications}.
+We use two different testbeds: a tree topology (figure~\ref{fig:topo-tree}), similar to tests performed by Swing\cite{swing-paper}\cite{background-traffic-matter}\cite{legotg-paper}, and a single hop connection of two hosts. Both topologies are SDN networks and have OpenDayLight Beryllium as the controller.  We present the complete specification of these experiments at the table~\ref{tab:specifications}.
 	
-We generate the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The traffic is captured from the host interface with TCPdump in a \textit{pcap} format.  We organized the project directory tree as follows\footnote{ \href{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests}{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests} }: we placed the software at \texttt{SIMITAR}. We paced the validation tests, with short tutorials at \texttt{Tests} directory. The software documentation is at \texttt{Docs} directory. We organized the tests as python packages, configurable by a \texttt{config.py} file.
+We generate the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The traffic is captured from the host interface with TCPdump in a \textit{pcap} format.  We organized the project directory tree as follows\footnote{ \href{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests}{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests} }: we placed the software at \textit{SIMITAR}. We paced the validation tests, with short tutorials at \textit{Tests} directory. The software documentation is at \textit{Docs} directory. We organized the tests as python packages, configurable by a \textit{config.py} file.
 
 
 \begin{figure}[!ht]
@@ -51,11 +53,18 @@ We generate the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The 
 \end{figure}
 
 
+
+\section{About SIMITAR v0.4.2 (Eulemur rubriventer) \protect\footnote{We label the tags of SIMITAR control version on GitHub as lemurs species names \href{https://en.wikipedia.org/wiki/List\_of\_lemur\_species}{https://en.wikipedia.org/wiki/List\_of\_lemur\_species}} }
+
+% \project\footnote{}
+
 \section{Simitar using Iperf and with skype-pcap}
 
 
 
 \subsection{Single hop SDN topology}
+
+
 
 
 \begin{figure}[t!]
