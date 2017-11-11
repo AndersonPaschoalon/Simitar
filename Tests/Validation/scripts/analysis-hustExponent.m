@@ -67,8 +67,8 @@ h2 = hurst(interArrival2);
 % Save data 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 h = [h1 h2];
-title = 'hust exponent : inter-packet times';
-labels = strcat('Hurst:',DATA_FILE1 ,', Hurst:',DATA_FILE2);
-filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);
+title = ' hust exponent : inter-packet times';
+labels = strcat(' Hurst:',DATA_FILE1 ,', Hurst:',DATA_FILE2);
+filename = strcat(DATA_DIR, 'hurst_exponent', PLOT_DATA_EXT);
 matrix2File(h, filename, title, labels);
 

@@ -287,13 +287,13 @@ void TinsFlow::sendPackets(uint flowID, protocol etherProtocol,
 		sender.open_l2_socket(networkInterface);
 		sender.open_l3_socket(socket_type);
 
-		std::cout << std::endl << "[FlowId:" << flowID << "]: <";
+		//std::cout << std::endl << "[FlowId:" << flowID << "]: <";
 		for (uint i = 0; i < npackets; i++)
 		{
 			sender.send(*flowPkt, iface);
-			std::cout << i << ", ";
+			//std::cout << i << ", ";
 		}
-		std::cout << ">" << endl;
+		//std::cout << ">" << endl;
 		sender.close_socket(socket_type, networkInterface);
 
 	} catch (Tins::invalid_address &e)

@@ -23,7 +23,10 @@ feature:install  odl-dlux-core odl-dlux-node odl-dlux-yangui odl-dlux-yangvisual
 ```
 #http://localhost:8181/dlux/index.html
 http://localhost:8181/index.html
+login: admin
+password: admin
 ```
+
 
 ## 5. Clean up mininet and run
 

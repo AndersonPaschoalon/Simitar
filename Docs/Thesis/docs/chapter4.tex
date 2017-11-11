@@ -22,7 +22,7 @@ In the second section, we will describe breifely two others we used to calc flow
 
 \section{Inter Packet Times Modelling}
 
-\subsection{Introduction}
+\subsection{About Inter packet time and packet trains modelling}
 
 %2nd-review
 There are many works devoted to studying the nature of the Ethernet traffic\cite{selfsimilar-ethernet}. Classic Ethernet models used Poisson related processes to express generation of traffic. Initially, it makes sense since a Poisson process represents the probability of events occur with a known average rate, and independently of the last occurence\cite{selfsimilar-ethernet} \cite{book-poisson}. But studies made by Leland et al.\cite{selfsimilar-ethernet} showed that the Ethernet traffic has a self-similar and fractal nature. Even if they are able to represent the randomness of an Ethernet traffic, simple Poisson processes can't express traffic "burstiness" in a long-term time scale, such as traffic "spikes" on long-range "ripples". This is an indicative of the fractal and self-similar nature of the traffic, that usually we express by distributions with infinite variance, called heavy-tailed. Heavy-tail means that a stochastic distribution is not exponentially bounded\cite{sourcesonoff-paper}. Examples of heavy-tailed functions are Weibull, Pareto, Cauchy.  But heavy-tailed function may guarantee self-similarity, but not necessarily they will ensure other features like good correlation and same mean packet rate.
@@ -58,19 +58,9 @@ Kronewitter\cite{optimal-scheduling-of-heavy-tailed-traffic} presents a model of
 % \cite{traffic-modelling-matlab}
 % \cite{trasmission-failure}
 % \cite{improvement-approaches-modeling}
-
-
-
+ 
 
 \subsection{Methodology}
-
-%2nd-review
-We will start defining the datasets we are going to use in the rest of this work. Then, we define our criteria of parameterization and model choice and a methodology for measure the quality of method. 
-
-
-%In this chapter we will evaluate our proposed method for data modeling of inter-packet times.  We will present curves obtained by our prototype (implemented in Gnu Octave\footnote{\href{https://www.gnu.org/software/octave/}{https://www.gnu.org/software/octave/}}) that shows in detail how each step works. After explaining this process, we will present an evaluation method of our results, analyzing to analyze its quality. After this, we give some details of how we convert code from Octave to C++ and its benefits on time execution. All code used in this section is available on our GitHub page.%, on the directory \texttt{Prototypes}. 
-
-\subsection{Datasets}
 
 %2nd-review
 We start defining also define the \textit{pcaps} datasets we are going to use in the rest of this text. We will use for datasets, and for reproduction purposes, three are public available. 
@@ -85,10 +75,12 @@ The third we capture in our laboratory LAN, through a period of 24 hours. It was
 %2nd-review
 The fourth is a capture of a busy private network access point to the Internet, available on-line on TCPreplay website \footnote{ \href{http://tcpreplay.appneta.com/wiki/captures.html}{http://tcpreplay.appneta.com/wiki/captures.html}}, and is called \texttt{bigFlows.pcap}. We will refer to it \textit{bigflows-pcap}.
 
+
+%In this chapter we will evaluate our proposed method for data modeling of inter-packet times.  We will present curves obtained by our prototype (implemented in Gnu Octave\footnote{\href{https://www.gnu.org/software/octave/}{https://www.gnu.org/software/octave/}}) that shows in detail how each step works. After explaining this process, we will present an evaluation method of our results, analyzing to analyze its quality. After this, we give some details of how we convert code from Octave to C++ and its benefits on time execution. All code used in this section is available on our GitHub page.%, on the directory \texttt{Prototypes}. 
+
+
 %Along with these datasets, we will use two subpcaps from the originals. The first, \textit{skype-flowburst-pcap}, is a burst of a single HTTP flow from \textit{skype-pcap}. It can be obtained from Wireshark using the filter \texttt{(ip.src\_host==172.16.133.25) \&\& (ip.dst\_host==74.125.170.42) \&\& (tcp.dstport==80) \&\& (tcp.srcport==63378) \&\& (frame.time\_relative>30.0) \&\&( frame.time\_relative<50.0)}. The second, \textit{caida1s-pcap} is a trace with the first second from \texttt{wan-pcap}.
 
-
-\subsection{Methodology}
 
 %2nd-review
 We summarize our process of modeling inter-packet times at the figure~\ref{fig:model-parameterization}. We collect a set of inter-packet times from an actual traffic capture. Then, we estimate a set of parameters for stochastic functions, using different methodologies. Then, from these parametrized models, we estimate which best represent our data set, using the measure of quality AIC (Akaike information criterion). We also calculate another measure of quality called BIC(Bayesian information criterion), for comparison of results. In this chapter, we present our results obtained on our prototype implemented in Octave\footnote{ \href{https://www.gnu.org/software/octave/}{https://www.gnu.org/software/octave/}}. 
@@ -281,7 +273,6 @@ J(M) = \phi(Cr, M) + \phi(Me, M) + \phi(Hr, M)
 The smaller is the cost $J$, the best is the model. Then we compare the results achieved by AIC and BIC, and $J$.
 
 \subsection{Results}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%

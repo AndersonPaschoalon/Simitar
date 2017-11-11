@@ -1,0 +1,3 @@
+Analysis:jaca_iperf-2 using pcaps /home/anderson/ProjetoMestrado/Tests/Validation/pcaps/lan-gateway-10s.pcap and /home/anderson/ProjetoMestrado/Tests/Validation/pcaps/guaxinim_lgw10s_simple_tins_host-h1_h1-eth0.client.pcap 
+@ 9/11/2017-19:41:48
+comments: Neste esperimento executei o simitar utilizando como ferramenta tins, em uma topologia one-hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor o host h2. Estou tentando reproduzir o trafego pesado do lan-gateway

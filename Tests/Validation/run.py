@@ -1,4 +1,5 @@
 #!/usr/bin/python3.5
+import argparse
 import os
 import sys
 import time
@@ -14,7 +15,7 @@ import Cd.Cd as dir
 
 
 #def main(args):
-def main():
+def main(replot):
     pcap1 = config.pcap1
     pcap2 = config.pcap2
     pcap_name1 = config.pcap1_type
@@ -26,13 +27,15 @@ def main():
     plots_dir = 'plots/' + analyzis_name
     # making sure the program is being executed in the source location, so it can be executed from anyware
     cd = dir.Cd(os.path.dirname(os.path.abspath(__file__)))
-    run_analyzis(pcap_file1=pcap_file1, pcap_name1=pcap_name1, pcap_file2=pcap_file2, pcap_name2=pcap_name2,
-                 pktfilter_prefix=config.pktfilter_prefix, analyzis_name=analyzis_name, plots_dir=plots_dir, cd=cd, comments=config.comments)
+    if replot == False:
+        run_analyzis(pcap_file1=pcap_file1, pcap_name1=pcap_name1, pcap_file2=pcap_file2, pcap_name2=pcap_name2,
+            pktfilter_prefix=config.pktfilter_prefix, analyzis_name=analyzis_name, plots_dir=plots_dir, cd=cd, comments=config.comments)
     plot_data(config.pcap1_type, config.pcap2_type, analyzis_name, plots_dir)
 
 def validation_help():
     print('To execute run:')
-    print('    ./run.py')
+    print('    ./run.py          : run the calculations and plot the data')
+    print('    ./run.py --replot : replot the data')
     print('To configure edite the file config.py')
 
 def print_header(title):
@@ -67,12 +70,13 @@ def run_analyzis(pcap_file1, pcap_name1, pcap_file2, pcap_name2, pktfilter_prefi
     os.system('./analysis-hustExponent.m  ' + datafile1 + ' ' + datafile2)
     os.system('./analysis-bandwidth.m ' + datafile1 + ' ' + datafile2 + ' "1" "10^6"')
     os.system('./analysis-flow.m ' + datafile1 + ' ' + datafile2 + ' "1"')
+    os.system('./analysis-pcapinfo.sh ' + pcap_file1 + ' ' + pcap_file2)
     # back to root dir
     cd.back()
     # creating plots dir
     os.system('rm -rf ' + plots_dir)
     os.system('mkdir -p ' + plots_dir)
-    os.system('mv analysis/data/* ' + plots_dir)
+    os.system('mv scripts/data/* ' + plots_dir)
     str_about = 'Analysis:' + analyzis_name + " using pcaps " + pcap_file1 + ' and ' + pcap_file2 + ' '
     str_date = '@ ' + str(time.localtime().tm_mday) + '/' + str(time.localtime().tm_mon) + '/' + str(
         time.localtime().tm_year) + '-' + str(time.localtime().tm_hour) + ':' + str(
@@ -109,10 +113,13 @@ def plot_data(trace_name1, trace_name2, analyzis_name, plots_dir):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--replot', dest='replot', action='store_true')
+    args = parser.parse_args()
     # if (len(sys.argv) == 1) or (len(sys.argv) == 2):
     #    validation_help()
     # else:
     #    main(sys.argv[1:])
-    main()
+    main(args.replot)
 
 

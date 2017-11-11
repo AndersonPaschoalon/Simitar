@@ -1,3 +1,0 @@
-Analysis:abacate_tins using pcaps /home/anderson/ProjetoMestrado/Tests/Validation/pcaps/lan-gateway-10s.pcap and /home/anderson/ProjetoMestrado/Tests/Validation/pcaps/coala_skype_simple_iperf_host-h2_h1-eth0.client.pcap 
-@ 1/11/2017-17:12:55
-comments: Neste esperimento executei o simitar utilizando como ferramenta iperf, em uma topologia one-hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor é o host h2

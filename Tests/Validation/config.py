@@ -11,17 +11,18 @@ class config:
     pcapfile_1 = "lan-gateway-10s.pcap"
 
     # pcap2 file name
-    pcapfile_2 = "pangolin03_skype_simple_tins_host-h2_h1-eth0.client.pcap"
-    pcapfile_2 = "coala_skype_simple_iperf_host-h2_h1-eth0.client.pcap"
+    #pcapfile_2 = "pangolin03_skype_simple_tins_host-h2_h1-eth0.client.pcap"
+    #pcapfile_2 = "coala_skype_simple_iperf_host-h2_h1-eth0.client.pcap"
     #pcapfile_2 = "wombat03_skype_simple_iperf_host-h1_h1-eth0.client.pcap"
-    #pcapfile_2 = ""
+    #pcapfile_2 = "wombat03_skype_simple_iperf_host-h1_h1-eth0.client.pcap"
     #pcapfile_2 = "wombat01_skype_simple_tins_h1-eth0.client.pcap"
     #pcapfile_2 = "wombat01_skype_simple_iperf_h1-eth0.client.pcap"
     #pcapfile_2 = "wombat01_skype_tree_iperf_h1-eth0.client.pcap"
     #pcapfile_2 = "ospf.pcap"
+    pcapfile_2 = "guaxinim_lgw10s_simple_tins_host-h1_h1-eth0.client.pcap"
 
-    # analyzis name. this name will name the directory where the plots will be saved
-    analysis_name = "abacate_tins"
+    # analyzis name. this name will name the directory where the plots will be saved. Sugestion: fruit name :P
+    analysis_name = "jaca_tins2"
 
     # pcap1 name that will be used as legend on the plot
     pcap1_type = "lgw10s-pcap"
@@ -31,7 +32,7 @@ class config:
 
     # just some information that will be recorded on the file about.log
     #comments = "Neste esperimento executei o simitar utilizando como ferramenta o iperf, em uma topologia arvore SDN. O cliente (gerador de pacotes) era o host h1, e os clientes os hosts h2-h8."
-    comments = "Neste esperimento executei o simitar utilizando como ferramenta iperf, em uma topologia one-hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor é o host h2"
+    comments = "Neste esperimento executei o simitar utilizando como ferramenta tins, em uma topologia one-hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor o host h2. Estou tentando reproduzir o trafego pesado do lan-gateway"
 
 
     ############################################################################
