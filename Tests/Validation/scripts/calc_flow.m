@@ -1,4 +1,4 @@
-function [timeVector nFlowsVector flowCdfVector flowCumulativeVector] = calc_flow(vetDepertureTimes, vetFlows, sample_size)
+function [timeVector nFlowsVector flowCdfVector flowCumulativeVector nflows] = calc_flow(vetDepertureTimes, vetFlows, sample_size)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Returns the number of flows over a sequnce of time intervals defined by 
 % sample_size, and the Empirical CDF of flows. It also returns the time 
@@ -25,12 +25,14 @@ function [timeVector nFlowsVector flowCdfVector flowCumulativeVector] = calc_flo
 %	Output timeVector: vector of time intervalls
 %	Output nFlowsVector: vector of flow per sample_size
 %	Output flowCdfVector: flow cumulative distribution
+%	Output nflows: number ov flows
 %
 vetDepertureTimes = vetDepertureTimes(:);
 vetFlows = vetFlows(:);
 maxTime = vetDepertureTimes(end);
 out_size = floor(maxTime/sample_size);
 in_size = length(vetDepertureTimes);
+nflows = max(vetFlows);
 
 %numberOfFlows = max(vetFlows);
 %oldValsList = zeros(numberOfFlows, 1);
@@ -68,6 +70,15 @@ for i = 1:out_size
 	nFlowsVector(i) = uniqueFlows;
 	flowCumulativeVector(i) = newFlowsVector(j);
 	
+	%i
+	%firstIndex
+	%lastIndex
+	%vetFlows(firstIndex:lastIndex)
+	%unique(vetFlows(firstIndex:lastIndex))
+	%uniqueFlows
+	%pause;
+	
 endfor
 flowCdfVector = flowCumulativeVector/max(flowCumulativeVector);
+
 

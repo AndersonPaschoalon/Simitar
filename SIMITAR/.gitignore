@@ -1,4 +1,12 @@
-pcaps/*
-libsimitar/obj/*
 !pcaps/.gitkeep
-
+pcaps/*.pcap
+!libsimitar/obj/.gitkeep
+libsimitar/obj/*
+!data/log/.gitkeep
+data/db/*.db
+!simitar-gen/obj/.gitkeep
+simitar-gen/obj/*
+!tests/integration/obj/.gitkeep
+tests/integration/obj/*
+!tests/unity/obj/.gitkeep
+tests/unity/obj/*

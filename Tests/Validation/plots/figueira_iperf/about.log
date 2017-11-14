@@ -1,3 +1,0 @@
-Analysis:figueira_iperf using pcaps /home/anderson/ProjetoMestrado/Tests/Validation/pcaps/skype.pcap and /home/anderson/ProjetoMestrado/Tests/Validation/pcaps/wombat01_skype_tree_iperf_h1-eth0.client.pcap 
-@ 31/10/2017-13:54:28
-comments: Neste esperimento executei o simitar utilizando como ferramenta o iperf, em uma topologia arvore SDN. O cliente (gerador de pacotes) era o host h1, e os clientes os hosts h2-h8.

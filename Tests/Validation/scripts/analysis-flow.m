@@ -68,44 +68,29 @@ sample_size = GRANULARITY;
 
 
 
-[timeVector1 nFlows1 flowCdf1] = calc_flow(vetDepertureTimes1, vetFlow1, sample_size);
-[timeVector2 nFlows2 flowCdf2] = calc_flow(vetDepertureTimes2, vetFlow2, sample_size);
+[timeVector1 nFlows1 flowCdf1 cumulative1 maxflows1] = calc_flow(vetDepertureTimes1, vetFlow1, sample_size);
+[timeVector2 nFlows2 flowCdf2 cumulative2 maxflows2] = calc_flow(vetDepertureTimes2, vetFlow2, sample_size);
 
-%input ("DEBUG: Press any key to continue vetFlow")
-%[vetFlow1(1:30) vetFlow2(1:30)]
-%input ("DEBUG: Press any key to continue timeVector")
-%[ timeVector1(1:30) timeVector2(1:30) ]
-%input ("DEBUG: Press any key to continue nFlows")
-%[ nFlows1(1:30) nFlows2(1:30) ]
-%input ("DEBUG: Press any key to continue flowCdf")
-%[ flowCdf1(1:30) flowCdf2(1:30) ]
-%input ("DEBUG: Press any key to continue")
 
 m1 = min(timeVector1(end), timeVector2(end));
 m2 = max(timeVector1(end), timeVector2(end));
 
-%input ("DEBUG: Press any key to continue m1 m2")
-%m1
-%m2
-
 timeVector1 = regularizeVet(timeVector1, m1);
-vetFlow1 = regularizeVet(vetFlow1, m1);
-vetFlow2 = regularizeVet(vetFlow2, m1);
-%input ("DEBUG: Press any key to continue vetFlow")
-%size(vetFlow1)
-%size(vetFlow2)
-%[vetFlow1(1:30), vetFlow2(1:30)]
+nFlows1 = regularizeVet(nFlows1, m1);
+nFlows2 = regularizeVet(nFlows2, m1);
 
 flowCdf1 = regularizeVet(flowCdf1, m2);
 flowCdf2 = regularizeVet(flowCdf2, m2);
+cumulative1 = regularizeVet(cumulative1, m2);
+cumulative2 = regularizeVet(cumulative2, m2);
 timeVector2 = regularizeVet(timeVector2, m2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Save data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Flow_Ps = [timeVector1 vetFlow1 vetFlow2];
+Flow_Ps = [timeVector1 nFlows1 nFlows2];
 title = 'FlowsPs';
-labels = 'time(x)(seconds) n.flows(y)1 n.flows(y)1';
+labels = 'time(x)(seconds) n.flows1 n.flows2';
 filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);
 matrix2File(Flow_Ps, filename, title, labels);
 
@@ -115,6 +100,17 @@ labels = 'time(x)(seconds) flowsCDF1 flowsCDF2';
 filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);
 matrix2File(Flow_CDF, filename, title, labels);
 
+Flow_cumulative = [timeVector2 cumulative1 cumulative2];
+title = 'FlowCumulative';
+labels = 'time(x)(seconds) flows_cumulative1 flows_cumulative2';
+filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);
+matrix2File(Flow_cumulative, filename, title, labels);
+
+Flow_maxflows = [maxflows1 maxflows2];
+title = 'FlowMaxflows';
+labels = 'flows_maxflows1 flows_maxflows2';
+filename = strcat(DATA_DIR, title, PLOT_DATA_EXT);
+matrix2File(Flow_maxflows, filename, title, labels);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Plot
