@@ -8,18 +8,19 @@ capture or pcap file), and generate traffic using almost any packet generator
 tool (low level C APIs such as libtins, traffic generator tools such Iperf).
 Currently it is supporting:
 * Iperf
-* D-ITG
 * Libtins (C++ API)
+* D-ITG (testing)
+
 
 
 ## Docs
 
-Directory of Articles, Thesis, References, and Figures
+Directory of Articles, Thesis, References,Software documentation, and Figures
 
 
 ## SIMITAR
 
-SIMITAR main repository
+SIMITAR software
 
 
 ## Tests

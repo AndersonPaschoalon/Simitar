@@ -3,17 +3,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
 \section{Validation Tests}
 
-As proof of concepts for our tool, we are going to use Mininet's emulated testbeds. We automate these tests using scripts, so they are reproducible. They are responsible for running all the proposed tests in this chapter and perform the calculations. It includes:
+
+As proof of concepts for our tool, we are going to use Mininet's emulated testbeds. We automate all these tests using scripts, so they are reproducible. They are responsible for running all the proposed tests in this chapter and perform the calculations. It includes:
 
 \begin{itemize}
 	\item Build the topology;
 	\item Run the SIMITAR traffic generator;
-	\item Collect \textit{pcaps};
-	\item Perform the proposed proof of concept analysis. 
+	\item Collect the packeckets as \textit{pcap} files, and stract data from it;
+	\item Perform the proposed proof of concept analysis;
+	\item Plot the data.
 \end{itemize}
 
+Each test is organized as a Python packege, responsible for tigger all the applications and other scripts. The parameters for each simulation can be configured by a \textit{config.py} file. Also the file \textit{README} provide a tutorial to run correctely each test. With all tools instaled, less then fifteen minutes is enought to stat runnin each test again.A complete specification of our scenario we show at the table ~\ref{tab:specifications}, including the hardware specificatins and the software versions. 
 
 \begin{table}[ht!]
 	\centering
@@ -40,16 +44,6 @@ As proof of concepts for our tool, we are going to use Mininet's emulated testbe
 	\end{tabular}
 \end{table}
 
-
-For each test, we generate a set of plots to compare the original and synthetic trace. Two of them we use for mere visual comparison:  flows per second and bandwidth. To compare the realism quality of the generated traffic, we plot the flows cumulative distribution function (CDF)\cite{harpoon-paper}, and the Wavelet multiresolution analysis.  In both cases, the more similar the plots are, the more similar the traffics are according to each perspective. 
-
-The flow's cumulative distribution measures each new flow identified the trace. It is a measure similarity of the traffic at the flow-level.  The wavelet multiresolution analysis is capable of capture traffic scaling characteristics and is a measure of similarity at the packet-level. If the value decreases, a periodicity on that time scale exists. With white-noise features, the traffic will remain constant. If the traffic has self-similar characteristics on a particular time scale, its value will increase linearly.
-
-We use two different testbeds: a tree topology (figure~\ref{fig:topo-tree}), similar to tests performed by Swing\cite{swing-paper}\cite{background-traffic-matter}\cite{legotg-paper}, and a single hop connection of two hosts. Both topologies are SDN networks and have OpenDayLight Beryllium as the controller.  We present the complete specification of these experiments at the table~\ref{tab:specifications}.
-	
-We generate the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The traffic is captured from the host interface with TCPdump in a \textit{pcap} format.  We organized the project directory tree as follows\footnote{ \href{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests}{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests} }: we placed the software at \textit{SIMITAR}. We paced the validation tests, with short tutorials at \textit{Tests} directory. The software documentation is at \textit{Docs} directory. We organized the tests as python packages, configurable by a \textit{config.py} file.
-
-
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale=0.4]{figures/ch5/topo-tree}
@@ -64,9 +58,14 @@ We generate the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The 
 	\label{fig:topo-simple}
 \end{figure}
 
-We use as testbeds: a tree topology (figure~\ref{fig:topo-tree}), similar to tests performed by Swing\cite{swing-paper}\cite{background-traffic-matter}\cite{legotg-paper}, and a single hop connection of two hosts. Both topologies are SDN networks and have OpenDayLight Beryllium as the controller.  We present the complete specification of these experiments at the table~\ref{tab:specifications}.
 
-For generating the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The traffic is captured from the host interface with TCPdump in a \textit{pcap} format.  We organized the project directory tree as follows\footnote{ \href{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests}{https://github.com/AndersonPaschoalon/ProjetoMestrado/tree/master/Tests} }: we placed the software at \textit{SIMITAR}. We paced the validation tests, with short tutorials at \textit{Tests} directory. They are organized as python packages, and configurable by a \textit{config.py} file. The software documentation is at \textit{Docs} directory. 
+For each test, we generate a set of plots to compare the original and synthetic trace. Two of them we use for mere visual comparison:  flows per second and bandwidth. To compare the realism quality of the generated traffic, we plot the flows cumulative distribution function (CDF)\cite{harpoon-paper}, and the Wavelet multiresolution analysis.  On every case, the more closer the plots are, the more similar the traffics are according to each perspective. Also, we wrote in the table ~\ref{tab:results-summary} a complation of each traffic statistics. 
+
+The flow's cumulative distribution measures each new flow identified the trace. It is a measure similarity of the traffic at the flow-level.  The wavelet multiresolution analysis is capable of capture traffic scaling characteristics and is a measure of similarity at the packet-level. If the value decreases, a periodicity on that time scale exists. With white-noise features, the traffic will remain constant. If the traffic has self-similar characteristics on a particular time scale, its value will increase linearly.
+
+We use as testbeds: a tree topology (figure~\ref{fig:topo-tree}), similar to tests performed by Swing\cite{swing-paper}\cite{background-traffic-matter}\cite{legotg-paper}, and a one-hop connection of two hosts. Both topologies are SDN networks and have OpenDayLight Beryllium as the controller.
+
+For generating the traffic on the host \textit{h1} with IPv4 address 10.0.0.1. The traffic is captured from the host interface with TCPdump in a \textit{pcap} format.  We organized the project directory tree as follows\footnote{ \href{https://github.com/AndersonPaschoalon/ProjetoMestrado}{https://github.com/AndersonPaschoalon/ProjetoMestrado} }: the software is at \textit{SIMITAR}. All validation tests and project prototypes we aved at \textit{Tests} directory. The software documentation is at \textit{Docs} directory.
 
 We use SIMITAR v0.4.2 (Eulemur rubriventer)\footnote{ We label the tags of SIMITAR control version on GitHub as lemurs species names (\href{https://en.wikipedia.org/wiki/List_of_lemur_species}{https://en.wikipedia.org/wiki/List\_of\_lemur\_species})}, as tagged at the GitHub repository.  SIMITAR already have two functional traffic generator engines: Iperf and libtins C++ API.  
 
@@ -74,15 +73,14 @@ For schedule of the timing of traffic generated by each flow, we implemented thr
 
 Libtins enable the creation and emission of arbitrary packets and do not require the establishment of a connection.  Thus SIMITAR does not need to operate in server mode on the destination. The packet customization capability is vast, and enable a full usage of our model parameters. Control inter-packet times stays for future work. 
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
 
 \begin{table}[ht!]
 	\centering
 	\caption{Sumary of results comparing the original traces (italic) and te traffic generated by SIMITAR, with the description of the scenario.}
-	\label{my-label}
+	\label{tab:results-summary}
 	\scalebox{0.87}{
 \begin{tabular}{lcccccc}
 	\hline
@@ -100,18 +98,17 @@ Libtins enable the creation and emission of arbitrary packets and do not require
 \end{table}
 
 
-
 % Flows per second
 \begin{figure}[ht!]
 	\centering
 	\subfloat[\textit{Iperf, single-hop, skype-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/skype-iperf-FlowsPs.pdf}
-		\label{fig:iperfCdf}
+		\label{fig:iperfFps}
 	}
 	\hspace{0mm}
 	\subfloat[\textit{Iperf, tree, skype-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/skype-tree-iperf-FlowsPs.pdf}
-		\label{fig:iperftreeCdf}
+		\label{fig:iperftreeFps}
 	}
 	\hspace{0mm}
 	\subfloat[\textit{libtins, single-hop, skype-pcap}]{
@@ -121,7 +118,7 @@ Libtins enable the creation and emission of arbitrary packets and do not require
 	\hspace{0mm}
 	\subfloat[\textit{libtins, single-hop, langw10s-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/lgw-tins-FlowsPs.pdf}
-		\label{fig:tinsLgwCdf}
+		\label{fig:tinsLgwFps}
 	}
 	\hspace{0mm}
 	\caption{Flow per seconds}
@@ -132,22 +129,22 @@ Libtins enable the creation and emission of arbitrary packets and do not require
 	\centering
 	\subfloat[\textit{Iperf, single-hop, skype-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/skype-iperf-Bandwidth.pdf}
-		\label{fig:iperfCdf}
+		\label{fig:iperfBw}
 	}
 	\hspace{0mm}
 	\subfloat[\textit{Iperf, tree, skype-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/skype-tree-iperf-Bandwidth.pdf}
-		\label{fig:iperftreeCdf}
+		\label{fig:iperftreeBw}
 	}
 	\hspace{0mm}
 	\subfloat[\textit{libtins, single-hop, skype-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/skype-tins-Bandwidth.pdf}
-		\label{fig:tinsCdf}
+		\label{fig:tinsBw}
 	}
 	\hspace{0mm}
 	\subfloat[\textit{libtins, single-hop, langw10s-pcap}]{
 		\includegraphics[width=77mm]{figures/ch5/lgw-tins-Bandwidth.pdf}
-		\label{fig:tinsLgwCdf}
+		\label{fig:tinsLgwBw}
 	}
 	\hspace{0mm}
 	\caption{Traces bandwidth.}
@@ -207,11 +204,32 @@ Libtins enable the creation and emission of arbitrary packets and do not require
 \end{figure}
 
 
+We display our results in the figures ~\ref{fig:flows-ps} to ~\ref{fig:wavelet}, and in the table ~\ref{tab:results-summary}. As we can see in the figure ~\ref{fig:flows-bandwidth}, the generated traffics are not identical regarding bandwidth. But the synthetic and original both presents a fractal-like shape. In fact, the values of each  Hurst exponent of inter-packet times had an error smaller than 10\% compared to the original in every case.  The plot of flows per second seems much more accurate visually, since most of the peaks match.  We can analyze it precisely observing the cumulative flow distribution\ref{fig:flows-cdf}, where the results were almost identical on every plot. However, when SIMITAR is replicating the traffic of \textit{lgw10s-pcap} the number of flows per second decreases. It happens because of the methodology of traffic generation of the class \textit{TinsFlow} since it sends the packets of each flow as fast as possible. This behavior can be observed in the bandwidth plot as well since it is much larger in the first seconds. 
+
+%<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>
+
+The best results achieved by SIMITAR were on the flow distribution characterization. On every experiment made, the cumulative distribution of flows was almost identical. The small imprecisions on the plots are expected and should result from threads and process concurrence of resources and imprecision on the sleep/wake signaling on the traffic generation side. Imprecisions on packet capture buffer may count as well since the operating system did the packet timing. This was our greatest achievement in our research. This result means that our method of flow scheduling and independent traffic generation were effective and efficient on replicating the original traffic. The actual number of flows was much larger when SIMITAR used Iperf and about the same amount but small when used libtins. This happens because Iperf establishes the connection to control the signaling and the traffic statistics in addition to the connection of the actual traffic. With libtins, the number is small because if an error happens when it is creating a flow, its execution is aborted. 
+
+
+On Wavelet multiresolution analysis of inter-packet times, the results have changed more in each case. The time resolution chosen was ten milliseconds, and it is represented in $\log_2$ scale. The actual time scale of each $j$ value is given by the equation:
+
+\begin{equation}
+t = \frac{2^{j}}{100} [s]
+\end{equation}
+
+In the first case(figure ~\ref{fig:iperfWaveletMREA}), SIMITAR using Iperf in a single-hop scenario, on small time scales the energy level of the synthetic traffic remained almost constant, which indicates white-noise characteristics. The original skype traffic increased linearly, an indication of fractal shape. The synthetic trace started to increase at the time scale 5-6 (300-600 milliseconds). After this scale, the error between the curves become very small. One possible reason for this behavior is the fact that the constant which regulate the minimum burst time (\texttt{DataProcessor::m\_min\_on\_time}) is set to 100 milliseconds. For small time scales the traffic become similar to white noise since Iperf just emits traffic with constant bandwidth. For larger scales, it captures the same fractals patterns of the original trace. It also captures a periodicity pattern at the time-scale of 9 seconds. The authors of \cite{swing-paper} measured the same periodicity pattern. But on this trace, we observe some periodicity at 11 and 13 time-scales (20 and 80 seconds). 
+
+In the second case, on a tree topology on small time scales, the same white-noise behavior is identified. We identify a similar behavior on the energy behavior on larger time-scales, but with a larger gap between the curves. Packet collision on switches requiring retransmission packets explains this behavior. In fact, as we can see in the table ~\ref{tab:results-summary}, two hundred more packets are leaving the client on the tree topology compared to the one-hop. 
+
+On the last two plots, where we use libtins as packet crafter, the energy level is much higher, and the curves are much less correlated. SIMITAR are not modeling inter-packet with libtins, and are sending packets as fast as possible. We may observe on the figures ~\ref{fig:tinsBw} and ~\ref{fig:tinsLgwBw} that than have much  higher peaks compared to the original \textit{skype-pcap}.  As we see in the figure ~\ref{fig:tinsBw}, it just captured some periodicity characteristics at the time larger than 11-12 (20-40 seconds). SIMITAR determines larger periods between packets with session OFF times, and the session cut time (\texttt{DataProcessor::m\_session\_cut\_time}) is 30 seconds, that explain this behavior.
+
+
+The current implementation still has problems on accurately reproduce \textit{pcaps} with high bandwidth values and a larger number of flows. The major limitation is the time required to generate the compact trace descriptor.  The procedure is still mono-thread, and the linear regression procedure is not optimized. So, the time for processing a large pcap file with thousands of flows is still prohibitively high, spending dozens of hours on processing. 
+
+Using the first 10 seconds of the trace \textit{bigFlows-pcap}, on 10 seconds of operation, Iperf generated much fewer packets than the expected. It is an expected behavior since the operating system couldn't handle so much newer processes (one per flow) in such short time. On the other hand, the same drawback wasn't observed using libtins as traffic generator tool, since being a low-level API makes it much computationally cheaper.  In the figure ~\ref{fig:} we visualize the results of SIMITAR using \textit{libtins}. The flow's cumulative distribution was achieved a good result. But, the wavelet analysis curves still didn't match.
 
 
 
-\section{Current Limitations}
-
-
-
-To evaluate the Scalling profile of the traccic generator, we are usig the same validation used for Swing\cite{swing-paper}: multiresolution energy analysis.
+%\section{Current Limitations}
+%
+%To evaluate the Scalling profile of the traccic generator, we are usig the same validation used for Swing\cite{swing-paper}: multiresolution energy analysis.
