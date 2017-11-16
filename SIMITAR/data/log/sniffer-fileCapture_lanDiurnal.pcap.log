@@ -281,3 +281,571 @@ Layer IP:
 DATA
 
 
+[ERROR] (MainThread) [2572934] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, AS15169 Google Inc., 37.750999, -97.821999
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.750999
+	Source GeoIP Longitude: -97.821999
+	Source: 8.8.4.4
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x1306 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x3b10 (15120)
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2666158] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0xdceb [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x6d26 (27942)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2670052] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x3295 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x177d (6013)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2716694] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x3cbe [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x0d54 (3412)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2739447] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x269c [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x2376 (9078)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2758461] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, AS15169 Google Inc., 37.750999, -97.821999
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.750999
+	Source GeoIP Longitude: -97.821999
+	Source: 8.8.4.4
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0xc032 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x8de3 (36323)
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2833484] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0xc575 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x849c (33948)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [2992188] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x4b37 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0xfeda (65242)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [3002206] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0xdc4c [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x6dc5 (28101)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [3101763] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, Mountain View, CA, AS15169 Google Inc., 37.386002, -122.083801
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.386002
+	Source GeoIP Longitude: -122.083801
+	Source: 8.8.8.8
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x4d70 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0xfca1 (64673)
+	Source GeoIP City: Mountain View, CA
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [3125544] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, AS15169 Google Inc., 37.750999, -97.821999
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.750999
+	Source GeoIP Longitude: -97.821999
+	Source: 8.8.4.4
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x9e33 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0xafe2 (45026)
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [3150433] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, AS15169 Google Inc., 37.750999, -97.821999
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.750999
+	Source GeoIP Longitude: -97.821999
+	Source: 8.8.4.4
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x3f5f [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x0eb7 (3767)
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [3354909] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, AS15169 Google Inc., 37.750999, -97.821999
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.750999
+	Source GeoIP Longitude: -97.821999
+	Source: 8.8.4.4
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0xf673 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0x57a2 (22434)
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+
+[ERROR] (MainThread) [3420060] Invalid packet attribute:  
+ Packet (Length: 1482)
+Layer ETH:
+	Destination: 52:54:00:42:68:aa
+	.... ..1. .... .... .... .... = LG bit: Locally administered address (this is NOT the factory default)
+	Address: 52:54:00:42:68:aa
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+	Type: IPv4 (0x0800)
+	Source: 00:15:c5:36:23:44
+	.... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)
+	Address: 00:15:c5:36:23:44
+	.... ...0 .... .... .... .... = IG bit: Individual address (unicast)
+Layer IP:
+	Source GeoIP: United States, AS15169 Google Inc., 37.750999, -97.821999
+	Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)
+	0... .... = Reserved bit: Not set
+	Source GeoIP Latitude: 37.750999
+	Source GeoIP Longitude: -97.821999
+	Source: 8.8.4.4
+	Destination: 10.1.1.15
+	0000 00.. = Differentiated Services Codepoint: Default (0)
+	0100 .... = Version: 4
+	Header checksum: 0x71f1 [validation disabled]
+	Fragment offset: 0
+	Header checksum status: Unverified
+	.0.. .... = Don't fragment: Not set
+	Source GeoIP Country: United States
+	..1. .... = More fragments: Set
+	Total Length: 1468
+	.... 0101 = Header Length: 20 bytes (5)
+	Identification: 0xdc24 (56356)
+	Flags: 0x01 (More Fragments)
+	Source GeoIP AS Number: AS15169 Google Inc.
+	Time to live: 48
+	.... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)
+	Protocol: UDP (17)
+	Destination GeoIP: Unknown
+DATA
+
+

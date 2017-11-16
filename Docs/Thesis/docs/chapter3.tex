@@ -346,8 +346,19 @@ The figure \ref{fig:network-trace-flow-class-diagram} illustrates it well. It pr
 
 \section{Usage and Use Cases}
 
-SIMITAR works in four different states: as a sniffer, packet injector, client or server. 
-When it working as a sniffer, is produces as output a Compact Trace Descriptor file. It may work over a \textit{pcap} file or an Ethernet interface.
+Each SIMITAR component works as a different application:
+
+\begin{itemize}
+	\item \texttt{sniffer-cli.py};
+	\item \texttt{trace.db} (sqlite3 database);
+	\item \texttt{trace-analyzer}.
+	\item \texttt{simitar-gen} (traffic generator).
+\end{itemize}
+
+
+When it working as a sniffer, it strores data from the capture traffic in the sqlite3 database. It may work over a \textit{pcap} file or an Ethernet interface. Working as a trace a trace-analyzer, it receive the name of the trace as stored in the database, and creates a XML compact trace descriptor. The constants used in the modelling may be changed and provided as command line argument. If not, the default values will be used. 
+
+As a traffic generator it may work as a client or a server. Working as a server is necessary for tools that require establishing a connection before generate the traffic, such as Iperf and D-ITG. It will just work passivaly. Working as a client, is acts as a traffic emissor. Tools such as \textit{libtins} dos not require server operation the send the traffic. 
 
 When it operates as a client or as packet injector, it is operating as a traffic generator. The difference is that as a client, the used traffic generator is connection-oriented. It needs to establish a connection with the destination host (the server), before start sending packets. Operating as a client, it must take as an input a list of IP or MAC destination addresses, since they will not match with the ones in the original trace. It takes as an input a single destination in the command line, or list of many, in a text file passes as a parameter. Also, it uses the machine IP address as packet's source IP.
 

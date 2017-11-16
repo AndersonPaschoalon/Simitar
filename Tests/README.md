@@ -3,11 +3,11 @@ This directory contains a set of python packages for testing SIMITAR software.
 
 
 ## Cd
-Package for safely changing directories.
+Package for safely changing directories. Used by the others packages.
 
 
 ## GnuplotScripts
-Package for manage a set of generic gnuplot scripts for plotting graphis, in a sistematic and simplistic way.
+Package for manage a set of generic gnuplot scripts for plotting graphis, in a sistematic and simplistic way. Used by the others packages.
 
 
 ## PrototypeDataProcessor
@@ -45,7 +45,7 @@ These scripts are made to compare two pcap files in a single plot.
 * Flow per second plot;
 * Flow empirical CDF plot;
 * Wavelet MRA analyzis;
-* Hurst exponent value, number of packets, number of flows, and mean bandwidth table. (TODO)
+* Traffic statistics: Hurst exponent value, number of packets, number of flows, mean bandwidth, mean packet rate.
 
 
 
