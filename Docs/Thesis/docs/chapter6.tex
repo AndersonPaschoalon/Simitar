@@ -3,12 +3,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
 \section{Future Work}
 
-In this section we discuss some ideas for future works and implementation for SIMITAR. We suggest approaches to get better results. They include perfromance improovments, calibration of some constants and finer controll of packet injection. We list them as a task list in the talbe  
+In this section, we discuss some ideas for future works and implementation for SIMITAR. We suggest approaches to get better results. They include performance improvements, calibration of constants\footnote{Calibration here means to test many values, and see which one can improve our outcomes for a large variety of traces of traces.} and a finer control of packet injection. We list them as a task list on the table ~\ref{tab:task-list}.  
 
 
 \begin{table}[ht!]
@@ -17,7 +14,7 @@ In this section we discuss some ideas for future works and implementation for SI
 	\label{tab:task-list}
 	\begin{tabular}{cccc}
 		\hline
-		\multicolumn{3}{c}{{\color[HTML]{000000} Future Work}}                                                                               & Priority                \\ \hline
+		\multicolumn{3}{c}{Future Work}	& Priority \\ \hline
 		1                      & Optimizing linear regression                              &                                                 & \textit{high}                    \\
 		2                      & Flow-merging option                                       &                                                 & medium                  \\
 		3                      & Smart flow-scheduler                                      &                                                 & \textit{high}                    \\
@@ -33,7 +30,7 @@ In this section we discuss some ideas for future works and implementation for SI
 		13                     & \texttt{DataProcessor::m\_session\_cut\_time}           &                                                 & low                     \\
 		14                     & Minimum number of packets per flow option                 & \multirow{-4}{*}{Calibration}  & low                     \\ \hline
 		15 & Python API/Lua for traffic generation & & low \\
-		16 & Crafter of  pcap files & & low \\
+		16 & Crafter of  pcap files & \multirow{-2}{*}{New features} & low \\
 		%17 & Json compact trace descriptor  & \multirow{-3}{*}{New features} & low 
 		\hline
 	\end{tabular}
@@ -41,19 +38,18 @@ In this section we discuss some ideas for future works and implementation for SI
 
 
 
+(1) The major issue of SIMITAR now is optimizing data processing for creating the compact trace descriptor. The performance becomes an issue when processing large \textit{pcap} files with more dozens of thousands of flows. The time expended for processing traces, in this case, is exceeding tens of hours. In the current implementation, the linear regression execution is mono-thread, and the stop criterion is just the number of iterations. Parallel processing, and creating stop criteria based on convergence in addition to the number of iterations will improve the performance. 
+
+(2) Crating an option for merging flows is a possibility to improve the performance of traffic with several thousands of flows and Gigabits of bandwidth, such as from WAN captures. A merge criterion, for example, is to consider just network headers on flow's classification.
 
 
-(1) The major issue of SIMITAR now is optimizing data processing for creating the compact trace descriptor. The performance becomes an issue when processing large \textit{pcap} files with more dozens of thousands of flows. The processing in this case may take some hours. In the current implementation, the linear regression is mono-thread, and the stop criteria are just the number of iterations. Parallel processing, and creating stop criteria based on convergence, alongside with the number of iterations, should increase the processing performance. 
-
-(2) Crating an option for merging flows is a possibility to imprrove performance of traffic with several thousands of flows and Gigabits of bandwidth, such as from WAN captures. A merge criterion for example is considere just network headers to classify the flows. 
-
-(3) On the traffic generation, currently, the threads for all flows are being instantiated once the traffic generations start. A smarter traffic generation, where each thread is instantiated when the traffic is active and dies when it is inactive should reduce the overhead for \textit{pcap} files with a large number of flows. For traffic with a massive amount of flows, a methodology for merging them should reduce overheads and enable replication of traffic with a much larger bandwidth. 
+(3) Currently, all the flow threads are instantiated once the traffic generations start. A smarter traffic generation where SIMITAR instantiates each thread when the traffic, and join when it is inactive should reduce the overhead for traces with a large number of flows. For traffics with a massive amount of streams, a methodology for merging them should reduce computational costs and enable replication of traffic with a much more significant bandwidth. 
 
 
-(4) Constant \texttt{DataProcessor::minimumAmountOfPackets}: SIMITAR only estimates stochastic models for inter-packet times if the number of flow packets is larger than this value. If it is smaller, we use only the constant model, for two reasons. First, because with a small sample, the accuracy estimate stochastic model is poor. Second, because we avoid the parameterization process, which is cost in the case of linear regression. Its value today is set to 30. Increasing this value, we may achieve a more reasonable performance for individual flows, and reduce the processing time. 
+(4) Constant \texttt{DataProcessor::minimumAmountOfPackets}: SIMITAR only estimates stochastic models for inter-packet times if the number of packets for this flow is larger than this amount. If it is smaller, SIMITAR just uses the constant model. We decide to do it for two reasons. First, because with a small sample, the modeling accuracy is poor . Second, we avoid the cost of the parameterization process. Now, its value is set to Its value today is set to 30. Increasing this amount, we may achieve a more reasonable performance for individual flows, and reduce the processing time. 
 
 
-(5) One possibility to improove the traffic generation performance isuse DPDK KNI interfaces \footnote{\href{http://dpdk.org/doc/guides/prog_guide/kernel_nic_interface.html}{http://dpdk.org/doc/guides/prog\_guide/kernel\_nic\_interface.html}}. The The DPDK Kernel NIC Interface (KNI) allow applications from the user's space interact with DPDK ports. In this way, we may achieve a faster packet processing. This can be integrated as an instatiatable feature of SIMITAR (figure ~\ref{fig:dpdk-if}).
+(5) One possibility to improve the traffic generation performance issue DPDK Kernel NIC Interface  (KNI interfaces) \footnote{\href{http://dpdk.org/doc/guides/prog_guide/kernel_nic_interface.html}{http://dpdk.org/doc/guides/prog\_guide/kernel\_nic\_interface.html}}. DPDK KNI interfaces allow applications from the user's space interact with DPDK ports. In this way, we may achieve a faster packet processing. This can be integrated as an insatiable feature of SIMITAR (figure ~\ref{fig:dpdk-if}).
 
 
 \begin{figure}[h!]
@@ -71,30 +67,32 @@ In this section we discuss some ideas for future works and implementation for SI
 	\label{fig:DpdkFlow}
 \end{figure}
 
-
-(6) Another issue is the sniffer component is taking to much time to extract data form large \textit{pcap} files. Implementing an C/C++ multi-thread sniffer, includding the packet processing and the SQL queries, will improove its performance. 
-
-
-(7) SIMITAR's current implementation using \textit{libtins} to generate the packets does not model inter-packet times. To avoid processing overheads on calculating random numbers, these values may be calculated before the actual traffic generation, and then be used. By this approach, the scaling characteristics of the traffic generated by libtins should improve, and be closer to the original traffic. 
-
-(8-10) Expand SIMITAR to other traffic generator tools, as we present in the figure ~\ref{fig:DpdkFlow}. D-ITG offers many stochastic functions for cusmtumization of inter-packet times, Ostinato offers a rich header and protocol custumization, and DPDK a high performance on packet generation. Each tools is able to affer a different result on traffic generation, each with benefits and drawbacks, such as cumputation cost, and complexity of development. DPDK offers the possibility to bypass the Linux network stack, called packet acceleration. So, this implementation could enable for SIMITAR high-bandwidht along wiht traffic realism.
-
-(11) Constant \texttt{DataProcessor::min\_time}: smallest time considered for inter-packet times. We use this value to avoid inter-packet times equals to zero due to the sniffer resolution. In that case, some of our procedures would diverge. It can change the fitting accuracy. Today, this value is $5e-8$.
+(6) Another issue is the sniffer component is taking to much time to extract data from large \textit{pcap} files. Implementing a C/C++ multi-thread sniffer, including the packet processing and the SQL queries, will improve its performance. 
 
 
-(12) \texttt{DataProcessor::m\_min\_on\_time}: this value controls the small ON time that a \textit{file} can have. This value  can change the precision of the generated traffic. Currently this value is $0.1$s. 
+(7) SIMITAR's current implementation using \textit{libtins} to generate the packets does not model inter-packet times. To avoid overheads on random numbers calculation,  these values must be calculated before the actual traffic generation. Modelling inter-packet times the scaling characteristics of libtins traffic should improve. 
 
 
-(13) Constant \texttt{DataProcessor::m\_session\_cut\_time}: this member defines whatever a file transference still active or has ended. It defines the smallest OFF time acceptable. This value will change how many files SIMITAR will transfer per flow, and how many times it will call the underlying traffic generator. This constant may affect both computational performance and traffic realism.
+(8-10) Expand SIMITAR to other traffic generator tools, as we present in the figure ~\ref{fig:DpdkFlow}. D-ITG offers many stochastic functions for customization of inter-packet times, Ostinato provides a rich set of headers and protocols, and DPDK a high performance on packet generation. Each tool can offer a different result on traffic generation, each with benefits and drawbacks, such as computational cost, and development complexity.  Also, DPDK provides the possibility to bypass the Linux network stack, called packet acceleration. So, this implementation can enable for SIMITAR high-bandwidth along with traffic realism.
 
 
-(14) Constant \textit{Control a minimum number of packets required for SIMITAR create a new flow}: This would reduce the number of flows created, improving its computational performance. Since SIMITAR manages each flow in a  different thread, it will create fewer threads, reducing overheads. This action should not impact  on throughput and scaling characteristics because few packets would be ignored. But it can increase the precision of the most significant flows since all the threads are competing each other on the Operational System. But, the number of flows created would be smaller.
+(11) Calibrate  the constant  \texttt{DataProcessor::min\_time}: smallest time considered for inter-packet times. We use this value to avoid inter-packet times equals to zero due to the sniffer resolution. A zero-inter-packet time would make the procedure fail.  This value can change the fitting accuracy. Today, this value is $5e-8$.
 
 
-(15) Currently, SIMITAR only enables the programming of flow traffic generation in C++. Adding Python and Lua support for reading NetwrokTrace and NetworkFlow objects, we can enable expansion for Python/Lua traffic generation APIs (such as Ostinato and MoonGen APIs), without creating C++ "wrappers".
+(12) Calibrate  the constant \texttt{DataProcessor::m\_min\_on\_time}: this value controls the small ON time that a \textit{file} can have. It can change the generated traffic precision. Currently this value is $0.1$s. 
+
+
+(13) Calibrate  the constant \texttt{DataProcessor::m\_session\_cut\_time}: this value defines whatever a file transference still active or has ended. It defines the smallest OFF time acceptable. This value will change how many files SIMITAR will transfer per flow, and how many times it will call the underlying traffic generator. This constant affects the computational performance and traffic realism.
+
+
+(14) Constant \textit{Control a minimum number of packets required for SIMITAR create a new flow}: this would reduce the number of flows created, improving its computational performance. Since SIMITAR manages each flow in a different thread, it will create fewer threads simultaneously, reducing overheads. This action should not impact on throughput and scaling characteristics because few packets would be ignored. But it can increase the precision of the most significant flows since all the threads are competing for each other on the Operational System. But, the number of flows created would be smaller.
+
+
+(15) Currently, SIMITAR only enables the programming of flow traffic generation in C++. Adding Python and Lua support for the Flow Generator component, we can enable expansion for Python/Lua traffic generation APIs (such as Ostinato and MoonGen APIs), without creating C++ wrappers.
 
 
 (16) \textbf{PcapGen: a compact \textit{pcap} lybrary}: Create a component capable of generate synthetic \textit{pcap} files, using Compact Trace Descriptors(CTDs) files. We can implement this using SIMITAR as a packet injector, but in an emulated host interface, for example, using Mininet. Then, the traffic can be collected, using a tool such as TCPDump or Tshark. We present a diagram of this idea in the figure ~\ref{fig:pcap-gen}. This expansion would enable SIMITAR  to work as trace library for pcap-based benchmark tools.
+
 
 \begin{figure}[!ht]
 	\centering
@@ -121,14 +119,26 @@ In this section we discuss some ideas for future works and implementation for SI
 \section{Final Conclusions}
 
 
+In this dissertation we discuss our process of conceiving, researching, definition and development and validation of an realistic traffic generator able to at the same time fulfill gaps others proposals haven't, and achieve results comparable to the available proposals. This was not a linear procedure. Was indeed anespiral procedure, as proposed by Sommervile on Software Engineering\cite{sommerville}. At the figure~\ref{fig:spiral} we show how it was done. 
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale=0.4]{figures/ch6/spiral}
+	\caption{Spiral research and development procedure}
+	\label{fig:spiral}
+\end{figure}
+
+Starting with some concepts, we search in the literatue the state of things, related works and some gaps for inovation. We proposed a traffic generator, and validated a simplistic prototype \footnote{In the appendix ~\ref{ap:publications}, the  article "Towards a Flexible and Extensible Framework for Realistic Traffic Generation on Emerging Networking Scenarios" where this prototype is validated is presented.} \footnote{This initial step was crucial, since on later stages, changes on the architecture design are much more dificult. In fact, some ponctual changes such as directory structure and new classes are inevitable. But structural changes are impracticable.}. After this we serch for more sollutions and methodologies that could be applied to solve or problem. In this procedure we researched many topics that at end didnt fit to our intentions, such as Machine Learning and Neural Networks. But others such as Linear regression, maximum likelihood, and BIC and AIC were indeed sactisfatory. Again, we planned a methodology, a procedure, and validate these ideais, as prototypes. Here the seed for the first part of the chapter ~\ref{ch:modeling-evaluation} and the article "Using BIC and AIC for Ethernet traffic model selection. Is it worth?"(at appendix ~\ref{ap:publications}. Than we reseach for more related works to  gain insights and find platforms and lybraries able to fulfill our requirements. In this step we designed our algorithms presented on chapter ~\ref{ch:modeling-evaluation}, and choosed the APIs, packages and lybraries. This procedure continued by incremental upgrades, until we arrived on the version presented on the chapter ~\ref{ch:validation}.  
 
 
 
-TODO considerações, contrubuições, lições, boas idéias, mas idéias
 
 
+- revisitar as contribuições e os resultados alcançados, e comparar com a literatura
 
-\textcolor{red}{some text here}
+- paragrafo de encerramento
+
+
 
 
 

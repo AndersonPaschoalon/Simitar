@@ -598,27 +598,31 @@ If the first $deltaTime$ defines an OFF time, or if it is the first ON time, its
 We also developed an simple test to guess the application protocol, based on the port numbers and the tranport protocol used by each flow. We currently are classifing the application protocols presented in the table ~\ref{tab:application-protocols}. If a flow matches the port number, and the transport protocol, it is classified as belongig to an application protocol.
 
 
-\begin{table}[ht!]
-	\centering
-	\caption{Stack of models used to create the CTD file}
-	\label{tab:mehtods}
-	\begin{tabular}{|l|l|l|}
-		\hline
-		Layer & Method & Variables \\
-		\hline
-		Link Layer  & \multirow{3}{*}{Packets header's data} & \texttt{link\_layer}, \texttt{link\_layer.mac\_src}, \texttt{link\_layer.mac\_dst} \\ \cline{1-1}\cline{3-3}
-		
-		Network Layer & & \texttt{network\_layer}, \texttt{network\_layer.src\_ip}, \texttt{network\_layer.dst\_ip}, \texttt{network\_layer.ttl},\texttt{}\\ \cline{1-1}\cline{3-3}
-		
-		Transport Layer & & \texttt{transport\_layer}, \texttt{transport\_layer.dst\_port}, \texttt{transport\_layer.src\_port}\\ \hline
-		
-		Application Layer  & Application Match Table  & \texttt{application\_layer} \\ \hline
-		
-		\multirow{2}{*}{Inter Packet Times} & Algorithm: $calcOnOff$  & \texttt{inter\_packet\_times}\\ 
-		\cline{2-2}\cline{3-3}  & Algorithm: $stochasticModelFitting$                    &\\  \hline
-		Packet Sizes  & Algorithm: $stochasticModelFitting$ &\\ \hline
-	\end{tabular}
-\end{table}
+%\begin{table}[ht!]
+%	\centering
+%	\caption{Stack of models used to create the CTD file}
+%	\label{tab:mehtods}
+%	\begin{tabular}{|l|l|}
+%		\hline
+%		Layer & Method \\
+%		\hline
+%		Link Layer  & \multirow{3}{*}{Packets header's data} \\ \cline{1-1}\cline{3-3}
+%		
+%		Network Layer & \\ \cline{1-1}\cline{3-3}
+%		
+%		Transport Layer & \\ \hline
+%		
+%		Application Layer  & Application Match Table  \\ \hline
+%		
+%		\multirow{2}{*}{Inter Packet Times} & Algorithm: $calcOnOff$  \\ 
+%
+%		%\cline{2-2}\cline{3-3}  
+%		& Algorithm: $stochasticModelFitting$ \\  \hline
+%
+%		Packet Sizes  & Algorithm: $stochasticModelFitting$ \\ \hline
+%
+%	\end{tabular}
+%\end{table}
 
 
 %\section{Implementation Details}
