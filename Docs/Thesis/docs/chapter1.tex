@@ -12,16 +12,20 @@ Emerging technologies such as SDN and NFV are great promises. If succeeding at l
 It is already a well-known fact that the type of traffic used on performing tests matters. Studies show that a realistic Ethernet traffic provides a different and more variable load characteristics on routers\cite{harpoon-validation}, even with the same mean bandwidth consumption. It indicates that tests with constant bit rate traffic generator tools are not enough for a complete validation of a new technology. There are many reasons for this behavior, which includes burstiness and packet sizes.
 
 
-A burstier traffic can cause packet more buffer overflows on network\cite{burstiness-queue-lenght}\cite{modelling-of-self-similar}\cite{empirical-interarrival-study}, degenerating network performance\footnote{Fuatures such as packet-trains periods and inter-packet times affect traffic burstiness}. Also, a burstier and realistic traffic will not just impact on performance, but on measurement as well, since a realistic and burstier traffic impacts on bandwidth measurement accuracy\cite{legotg-paper}\cite{background-traffic-matter}. Another key question is how applications will deal with packets. It is a well-known fact that applications have a huge performance degradation processing small packets\cite{comparative-trafficgen-tools}. A synthetic realistic traffic must not have a single packet-size, but must use a distribution\cite{packet-distribution-model}. 
+A burstier traffic can cause packet more buffer overflows on network \cite{burstiness-queue-lenght} \cite{modelling-of-self-similar} \cite{empirical-interarrival-study}, degenerating network performance\footnote{Fuatures such as packet-trains periods and inter-packet times affect traffic burstiness}. Also, a burstier and realistic traffic will not just impact on performance, but on measurement accuracy as well \cite{legotg-paper} \cite{background-traffic-matter}. Another key question is how applications will deal with packets. It is a well-known fact that applications have a huge performance degradation processing small packets\cite{comparative-trafficgen-tools}. A synthetic realistic traffic must not have a single packet-size, but must use a distribution \cite{packet-distribution-model}. 
 
 
-Also, realistic workload generators are essential security research\cite{ditg-paper}.  Generation of realistic workloads is important in the evaluation of firewall middleboxes. It includes studies of intrusion, anomaly detection, and malicious workloads\cite{ditg-paper}.   Since on traditional hardware-based types of \textit{middleboxes}, the impact of realistic traffic is not negligible, we can expect that its impact over virtualized middle-boxes should be even larger, due the extra overhead of a virtualization layer. Also, on SDN networks, each new flow arriving on a switch demands an extra communication load between it and the controller, unpacting necativelly as well. 
-We also have a flow-oriented operation on SDN switches. Since its operation relies on queries on flow tables, a stress load must have the same flow properties of an actual ISP scenario.
+Realistic workload generators are also essential security research\cite{ditg-paper}.  Generation of realistic workloads is important in the evaluation of firewall middleboxes. It includes studies of intrusion, anomaly detection, and malicious workloads\cite{ditg-paper}. 
+
+Since on traditional hardware-based types of \textit{middleboxes}, the impact of realistic traffic is not negligible, we can expect that its impact over virtualized middle-boxes should be even larger, due the extra overhead of a virtualization layer. 
+
+
+Another important point is the flow-oriented operation of SDN networks. Each new flow arriving on a SDN switch demands an extra communication load between it and the controller. This may create a bootleneck between the switch and the controller.  We also have a flow-oriented operation on SDN switches. Since its operation relies on queries on flow tables, a stress load must have the same flow properties of an actual ISP scenario.
 
 
 Therefore, there is a demand for the study of the impact of a realistic traffic on this new sort of environment. How VNFs and virtualized middle-boxes and SDN testbeds will behave if stressed with a realistic traffic load in comparison to a constant rate traffic is a relevant subject.  
 
-%3nd-review
+
 \section{Open-source Solutions}
 
 
@@ -91,7 +95,7 @@ Also, just choosing which workload generator tool may fit better for the user ne
 
 
 
-Now, we are going to formalize these exposed concepts in a proposal of research and development. Or main targets here are:
+Now, we are going to formalize these exposed conceptual gaps in the literature, in a proposal of research and development. Or main targets here are:
 
 \begin{itemize}
 

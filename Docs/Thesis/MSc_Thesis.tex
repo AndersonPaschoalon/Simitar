@@ -1,4 +1,5 @@
 \input{00_Preambulo}
+\input{docs/macros}
 %\loadglsentries{00_Acronyms}
 %\makeglossaries
 %\input{00_Acronyms}
@@ -14,18 +15,13 @@
 %\usepackage{algorithm}
 %\usepackage{algpseudocode}
 
+\titulo{\ThesisTitle
 
-
-
-
-
-
-\titulo{SIMITAR: A Tool for Generation of Synthetic and Realistic Network Workload for Benchmarking and Testing  
-
-\vspace{0.7cm} SIMITAR: Uma Ferramente para Geração de Trafego de Rede Sintético e Realistico para Benchmarking e Testes}
-\autor{Anderson dos Santos Paschoalon}
+\vspace{0.7cm} \TituloDaTese
+}
+\autor{\Author}
 \local{CAMPINAS}
-\data{2017}
+\data{\Year}
 
 % ---- compila o \'{\i}ndice  ----
 \makeindex
@@ -51,40 +47,24 @@
 %\setcounter{page}{1}
 \imprimirfolhaderosto
 
- \begin{fichacatalografica}
+\begin{fichacatalografica}
 %    \vspace*{\fill}
 %    \begin{center}
 %        \textsc{Inclua aqui o pdf com a ficha catalogr\'{a}fica fornecida pela BAE.}
 %    \end{center}
 %    \vspace*{\fill}
 % --- --- ---
-    \includepdf[pages={1}]{docs/Ficha-Catalografica-Protocolo-86219375.pdf}
-    %\includepdf[pages={1}]{figures/cat.jpg}
-    %\includepdf{ficha-catalografica.pdf}
- \end{fichacatalografica}
+\includepdf[pages={1}]{docs/Ficha-Catalografica-Protocolo-86219375.pdf}
+%\includepdf[pages={1}]{figures/cat.jpg}
+%\includepdf{ficha-catalografica.pdf}
+\end{fichacatalografica}
 % ---
 \newpage
 %\vspace*{\fill}
 %\begin{center}
 %    \textsc{Inclua aqui a folha de assinaturas.}
 %\end{center}
-\textbf{COMISSÃO JULGADORA - DISSERTAÇÃO DE MESTRADO}
-
-\vspace{1cm}
-\begin{flushleft}
-\textbf{Candidato}: Anderson dos Santos Paschoalon \hspace{1cm}     RA: 083233 \\
-\textbf{Data da Defesa}: \\
-\textbf{Título da Tese}: \\
-``Generation of Synthetic and Realistic Network Workload for Benchmarking and Tests of Emerging Techinologies''\\%english\\
-``Geração de Trafego de Rede Sintético e Realistico para Benchmarking e testes de Tecnologias Emergentes''%portuguese
-\end{flushleft}
-\vspace{0.2cm}
-\begin{flushleft}Prof. Dr. Christian Rodolfo Esteve Rothenberg (Presidente, FEEC/UNICAMP)\\
-Prof. Dr. Edmundo Roberto Mauro Madeira (IC/UNICAMP) - Membro Titular\\
-Prof. Dr. Marcos Antonio de Siqueira (PADTEC) - Membro Titular
-\end{flushleft}
-\vspace{0.2cm} 
-\begin{flushleft}Ata de defesa, com as respectivas assinaturas dos membros da Comissão Julgadora, encontra-se no processo de vida acadêmica do aluno. \end{flushleft}
+\AtaDeDefesa
 
 %\vspace*{\fill}
 \newpage
@@ -96,52 +76,26 @@ Prof. Dr. Marcos Antonio de Siqueira (PADTEC) - Membro Titular
 \vspace*{\fill}
 \centering
 \noindent
-\textit{Mauris malesuada egestas enim, ac interdum justo feugiat quis. Etiam ullamcorper volutpat ex, at laoreet mauris vehicula eu. Integer dignissim egestas purus, sit amet feugiat orci fringilla vel. Curabitur tincidunt ac massa non molestie. Suspendisse potenti. In molestie a tortor ac pellentesque. Cras a risus et tellus hendrerit pretium ut quis arcu.}
-
-\textit{Aliquam vehicula erat eu odio mollis, ut vehicula mauris laoreet. Cras volutpat ante sed orci bibendum maximus. Pellentesque felis elit, laoreet vitae bibendum in, malesuada ut nulla. Vestibulum pharetra faucibus blandit. Morbi tristique at leo ut ultrices. Etiam sollicitudin justo lacus, non rutrum mi imperdiet non. Cras nec mauris odio. Quisque eleifend purus interdum nulla suscipit lobortis.}
-
-\textit{Proin vel nulla scelerisque nunc vehicula tempor. Curabitur non arcu ante. Etiam eget mattis tellus. Aenean molestie cursus ex, in pharetra eros hendrerit nec. In cursus egestas interdum. Ut scelerisque fringilla maximus. In facilisis vel dui vitae hendrerit. Integer a orci vel lectus lobortis fringilla. Phasellus eleifend commodo justo, cursus vehicula lorem. Donec a libero ultrices risus tempus condimentum imperdiet eget justo. 
-}
-
+\Dedicatoria
 \vspace*{\fill}
 \end{dedicatoria}
-% ---
-% --- Agradecimentos ---
+
+
 \begin{agradecimentos}
-	%\lipsum[3]
-%First of all, I would like to thank my advisor Prof. Dr. Christian Rothenberg for the trust and for letting me be part of his selected group of students. I would not be able to imagine the undertaking of this research without his innovative ideas, consistent support and continuous encouragement. I would therefore like to express my gratitude for being a great instructor and an even greater friend. 
-
-%At the State University of Campinas (Unicamp) I have had the opportunity to learn from the best professors. I would like to acknowledge Prof. Dr. Mauricio Magalhães, Prof. Dr. Edson Borin, Prof. Dr. Edmundo Madeira and Prof. Dr. Léo Pini for sharing their knowledge and experience, which served as a constant motivation throughout this work.
-
-%I would like to thank the committee members Marcos Antonio de Siqueira, Edmundo Roberto Mauro Madeira and Christian Rothenberg for the recommendations and insightful criticism they offered me in order to improve the final version of my thesis.
-
-%I had the good fortune to meet very talented people within the INTRIG and LCA groups. My special thanks go to Mateus, Samuel, Samira, Gyanesh, Alex, Luis, Raphael, Anderson, Hirley, Ramon, Alaelson, Claudio, Talita, Javier, Elias, Rodrigo, Roberto, Mariana, Ranyeri, Aldo, Wallace, Vitor, Raphael V. and Amadeu, Mariana and Lino for their friendship and their support throughout these two years.
-
-%I would like to express special gratitude for the financial and technical support received from the Ericsson Innovation Center (Brazil), which allowed me to carry out this research.    
-
- Mauris malesuada egestas enim, ac interdum justo feugiat quis. Etiam ullamcorper volutpat ex, at laoreet mauris vehicula eu. Integer dignissim egestas purus, sit amet feugiat orci fringilla vel. Curabitur tincidunt ac massa non molestie. Suspendisse potenti. In molestie a tortor ac pellentesque. Cras a risus et tellus hendrerit pretium ut quis arcu.
-
-Aliquam vehicula erat eu odio mollis, ut vehicula mauris laoreet. Cras volutpat ante sed orci bibendum maximus. Pellentesque felis elit, laoreet vitae bibendum in, malesuada ut nulla. Vestibulum pharetra faucibus blandit. Morbi tristique at leo ut ultrices. Etiam sollicitudin justo lacus, non rutrum mi imperdiet non. Cras nec mauris odio. Quisque eleifend purus interdum nulla suscipit lobortis.
-
-Proin vel nulla scelerisque nunc vehicula tempor. Curabitur non arcu ante. Etiam eget mattis tellus. Aenean molestie cursus ex, in pharetra eros hendrerit nec. In cursus egestas interdum. Ut scelerisque fringilla maximus. In facilisis vel dui vitae hendrerit. Integer a orci vel lectus lobortis fringilla. Phasellus eleifend commodo justo, cursus vehicula lorem. Donec a libero ultrices risus tempus condimentum imperdiet eget justo. 
-    
-    
+\Acknowledgements
 \end{agradecimentos}
 
 % ---
 % --- Ep\'{\i}grafe  ---
 \begin{epigrafe}
-	\vspace*{\fill}
+\vspace*{\fill}
 \begin{flushright}
 \begin{minipage}{9.9cm}
-\textit{``Discipline, sooner or later, will defeat intelligence.''\\
-``A disciplina cedo ou tarde vencerá a inteligência.''\\
-``La disciplina tarde o temprano vencerá a la inteligencia.''}
+\Epigrafe
 \end{minipage}
 \end{flushright}
-
 \begin{flushright}
-\textit{Japanese proverb}
+\textit{\EpigrafeAuthor}
 \end{flushright}
 \end{epigrafe}
 
@@ -149,44 +103,14 @@ Proin vel nulla scelerisque nunc vehicula tempor. Curabitur non arcu ante. Etiam
 % --- RESUMOS (em portugu\^{e}s e ingl\^{e}s ---
 
 \begin{resumo}
-%\lipsum[1]
-
- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim nulla vel interdum maximus. Curabitur diam turpis, tincidunt sit amet dolor ac, egestas gravida lorem. Maecenas ac varius lorem. Vivamus porta neque eros, a molestie augue fermentum sit amet. Duis ut pellentesque metus. In sollicitudin placerat risus. Phasellus auctor ac arcu ac sagittis. Pellentesque nec iaculis eros. Vivamus quis convallis felis, nec facilisis risus. Suspendisse potenti. Etiam luctus elit eu est fermentum auctor. Curabitur mattis, nulla quis posuere iaculis, dolor lectus euismod eros, eu commodo felis nunc sed tortor. Quisque aliquam leo diam, nec placerat sapien placerat et. Integer vel accumsan mauris.
-
-Nam sodales purus ac nibh maximus, non tempor ante sagittis. Donec vulputate vehicula dapibus. Duis mollis nisl vel fermentum eleifend. Nam sollicitudin metus vitae justo bibendum ullamcorper. Mauris sollicitudin, tellus nec placerat rutrum, est lectus commodo enim, in imperdiet est elit sit amet justo. Integer scelerisque gravida facilisis. Aenean rhoncus eget metus id rutrum. Curabitur vel volutpat quam, id lobortis lectus. Aenean semper semper massa, at finibus eros varius eget. Etiam volutpat tellus est, at rhoncus ligula scelerisque sed. Sed nisi sapien, semper in pharetra eget, pellentesque ac dolor.
-
-In at rhoncus mauris, non semper turpis. Praesent iaculis lorem faucibus interdum vehicula. Nullam nec massa feugiat, pharetra turpis vitae, dignissim eros. Aliquam vel sapien et risus vulputate luctus non at risus. Quisque ac urna massa. Donec faucibus diam eu ex egestas viverra. In feugiat nunc at erat convallis aliquam. Suspendisse consequat urna quam, non dignissim massa pretium vel. Donec tincidunt pellentesque vestibulum. Sed aliquet imperdiet libero a fringilla. Maecenas tempor augue vel accumsan imperdiet. Pellentesque accumsan quis risus non malesuada. Maecenas sodales suscipit libero, fringilla imperdiet augue elementum non. Integer dignissim vehicula libero vel volutpat. Cras vel molestie tellus, ac varius nunc. 
-
-%Application-Layer Traffic Optimization (ALTO) is a recently standardized protocol that provides abstract network topology and cost maps in addition to endpoint information services that can be consumed by applications in order to become network-aware and to take optimized decisions regarding traffic flows. 
-%In this work, we propose a public service based on the ALTO specification using public routing information available at the Brazilian Internet eXchange Points (IXPs).
-%Our ALTO server prototype takes the acronym AaaS (ALTO-as-a-Service) and is based on over 2.5GB of real BGP data from the 25 Brazilian IX.br public IXPs.
-%We evaluate our proposal in terms of functional behaviour and performance via proof-of-concept experiments, which point to the potential benefits of applications being able to take smart endpoint selection decisions when consuming the developer-friendly ALTO APIs.
-
-\vspace{\onelineskip}
-
-\noindent\textbf{Keywords}: Routing (Computer network management); IXPs (Internet exchange points); Computer networks; SDN (software defined networking).
-    
-%\cleardoublepage
-%    \vspace{\onelineskip}
-%    \vspace{\onelineskip}
+\Abstract
 \newpage
 \begin{otherlanguage*}{english}
 \begin{center}{\ABNTEXchapterfont\huge Resumo}\end{center}
-    %\lipsum[2]
-     Aliquam velit metus, elementum a metus a, pharetra molestie enim. Nam et dolor blandit, egestas libero ut, porttitor sem. Proin felis lorem, ultrices vel lacus eget, dapibus ornare urna. Donec et nibh ut orci condimentum cursus feugiat aliquet enim. Donec vel purus semper, iaculis dolor vel, placerat elit. Pellentesque nec magna pretium, eleifend risus eget, dapibus elit. Nam finibus sem at mauris auctor, a sodales erat bibendum. Phasellus mattis purus vel magna dignissim auctor. Sed at arcu a arcu hendrerit viverra ut a ligula. Sed et libero nibh. Sed sit amet nunc urna. Fusce eu arcu sed urna congue dapibus. Sed accumsan eget sem vitae euismod. Nulla lorem magna, viverra sit amet blandit vitae, accumsan et ante. Nunc ultrices eleifend pulvinar.
-
-Vivamus nisi turpis, venenatis ut massa at, porttitor ornare tortor. Quisque tristique quam non nibh posuere pellentesque. Integer egestas felis ligula, ac rutrum turpis lobortis a. Donec scelerisque non sem porta scelerisque. Etiam molestie, arcu sagittis placerat fringilla, orci lacus lobortis odio, porttitor vehicula ex risus et velit. Sed tempor interdum volutpat. Sed ac dui eget justo convallis auctor. Duis lobortis mauris lacus, eu gravida ex hendrerit non. Nullam rutrum pretium nibh, id mollis est condimentum nec. Maecenas tincidunt erat sit amet mauris tristique, quis sagittis justo lobortis. Duis augue quam, semper eget ligula id, sagittis condimentum augue. Curabitur tincidunt scelerisque sollicitudin. 
-
-%Otimização de Tráfego na Camada de Aplicação (ALTO - \textit{Application-Layer Traffic Optimization}) é um protocolo recentemente padronizado que fornece uma topologia da rede e mapa de custos abstratos, além de serviços de informação de endpoints que podem ser consumidos pelos aplicativos, a fim de tornar-se conscientes da rede e tomar decisões otimizadas sobre os fluxos de tráfego.
-%Neste trabalho, propomos um serviço público baseado nas especificações ALTO usando informação de roteamento pública disponível nos Pontos de Troca de Tráfego (PTTs) brasileiros.
-Nosso protótipo de servidor ALTO, representado pela sigla AaaS (ALTO-as-a-Service), é baseado em mais de 2,5 GB de dados BGP reais dos 25 PTTs públicos brasileiros (IX.br).
-%Nossa proposta é avaliada em termos de comportamento funcional e desempenho através de experimentos de prova de conceito que apontam como potencial benefício das aplicações, a capacidade de tomar decisões inteligentes na seleção de endpoint ao consumir as APIs ALTO.
-\vspace{\onelineskip}
-\noindent\textbf{Palavras-chaves}: Roteamento (Administração de redes de computadores); Engenharia de tráfego; Redes de computadores; Bancos de dados.
-
+\Resumo
 \end{otherlanguage*}
 \end{resumo}
-% ---
+
 
 % --- inserir lista de ilustra\c{c}\~{o}es ---
 \pdfbookmark[0]{\listfigurename}{lof}
@@ -218,7 +142,6 @@ Nosso protótipo de servidor ALTO, representado pela sigla AaaS (ALTO-as-a-Servi
 %\printnomenclature
 \cleardoublepage
 % ---
-% CORRECTIONS 16-11
 \pagenumbering{arabic}
 \setcounter{page}{17}
 
@@ -226,7 +149,6 @@ Nosso protótipo de servidor ALTO, representado pela sigla AaaS (ALTO-as-a-Servi
 \textual
 
 % ---- Introdu\c{c}\~{a}o ----
-%\label{cap:intro}
 \include{docs/chapter1}
 \include{docs/chapter2}
 \include{docs/chapter3}
@@ -234,8 +156,6 @@ Nosso protótipo de servidor ALTO, representado pela sigla AaaS (ALTO-as-a-Servi
 \bookmarksetup{startatroot}%
 \include{docs/chapter5}
 \include{docs/chapter6}
-%\include{docs/06_Limitations}
-%\include{docs/chapter}
 
 %\addcontentsline{toc}{chapter}{Conclus\~{a}o}
 
@@ -260,7 +180,6 @@ Nosso protótipo de servidor ALTO, representado pela sigla AaaS (ALTO-as-a-Servi
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
 
-%\include{docs/appendix/01_Appendix}
 \include{docs/appendix/appendixA}
 \include{docs/appendix/appendixB}
 \include{docs/appendix/appendixC}
