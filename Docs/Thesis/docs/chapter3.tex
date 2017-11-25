@@ -3,11 +3,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %3nd-review
-In this chapter, we will present our tool which aims to solve the issues addressed in the chapter ~\ref{ch:introduction}, called SIMITAR (SnIffing, ModellIng and TrAffic geneRation), and how it works. It aims to generate a platform-agnostic traffic, which can be extended to any traffic engine, including traffic generators tools and APIs. SIMITAR creates a  model in XML, configured using actual traces (from \textit{pcaps} or real-time sniffing), we call Compact Trace Descritor (CTD). 
+In this chapter, we will present our tool which aims to fill the gaps addressed in the chapter ~\ref{ch:introduction}. It is called SIMITAR (SnIffing, ModellIng and TrAffic geneRation) and aims to generate a platform-agnostic traffic: it can be extended to almost any traffic engine, including traffic generators tools and APIs. SIMITAR creates a  model in XML, configured using actual traces (from \textit{pcaps} or real-time sniffing), we call Compact Trace Descritor (CTD). 
 
 
-
-We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows. It uses this data to generate a set of parameters for our traffic models, using a set of algorithms. Finally, it provides these parameters to a traffic generator engine and controls its packets injection.
+We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows and uses this data to generate a set of parameters for our traffic model, using a set of algorithms. Finally, SIMITAR provides these parameters to a traffic generator engine and controls its packets injection.
 
 % cycle of operation
 %2nd-review
@@ -21,11 +20,8 @@ We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation
 
 \section{SIMITAR Architecture}
 
-%2nd-review
-To meet the requirements presented in the section ~\ref{ch:introduction}, we will present a solution, and define how each part works, as in a low-level requirement list\cite{sommerville}.  
 
-%2nd-review
-SIMITAR architecture is presented in the figure~\ref{fig:architecture}, and it is composed of five components: a \textit{Sniffer}, a \textit{SQLite database}, a \textit{TraceAnalyzer}, a \textit{FlowGenerator} and the \textit{Network Traffic Generator}, as subsystem. We describe each part below.
+To meet the requirements presented in the section ~\ref{ch:introduction}, we will present a solution, and define how each part works, as in a low-level requirement list\cite{sommerville}. SIMITAR architecture is presented in the figure~\ref{fig:architecture}, and it is composed of for components: a \textit{Sniffer}, a \textit{SQLite database}, a \textit{TraceAnalyzer}, a \textit{FlowGenerator};  and a \textit{Network Traffic Generator}, as subsystem. We describe each part below.
 
 % component diagram and module design
 \begin{figure*}[ht!]
@@ -51,10 +47,10 @@ This component collects network traffic data and classifies it into flows, stori
 \end{figure*}
 
 
-The first version of this component was implemented in Shell Script (Bash).  Tsahrk\footnote{\href{https://www.wireshark.org/docs/man-pages/tshark.html}{https://www.wireshark.org/docs/man-pages/tshark.html}} was used to extract header fields, and Awk to match the flows, and Sed/Awk to create the Sqlite queries. This version was too slow to operate in real time on Ethernet interfaces. On the other hand, was fast to implement, and enable the implementation of the other components, before this last version was released.
+The first version of this component was implemented in Shell Script (Bash).  Tsahrk\footnote{\href{https://www.wireshark.org/docs/man-pages/tshark.html}{https://www.wireshark.org/docs/man-pages/tshark.html}} was used to extract header fields, and Awk to match the flows, and Sed/Awk to create the Sqlite queries. This version was too slow to operate in real time on Ethernet interfaces. On the other hand, was fast to implement, and enable the implementation of the other components, before this last version was released. The second and cuerrent version is implemented using Python. This version used Pyshark \footnote{\href{https://pypi.python.org/pypi/pyshark}{https://pypi.python.org/pypi/pyshark}} as sniffer library.  
 
 
-The second version was implemented using Python. This version used Pyshark\footnote{\href{https://pypi.python.org/pypi/pyshark}{https://pypi.python.org/pypi/pyshark}} as sniffer library. The flow classification is made by a class called FlowId. It has class we developed called OrderedSet. A set is a list of elements with no repetition but do not keep track of the insertion order. Our OrderedSet does. Also, it make use of a  64 bits hash function of the family FNV\footnote{The collision probability of a good 64 bits hash function in a table with 10000 items is about of $2.71e-12$.}. The listed header fields are inputs for a hash function, its value is set on the ordered set, and its order is returned. This value is set as a packet flowID.  
+It has a data structure we developed called \textit{OrderedSet}. A set is a list of elements with no repetition but do not keep track of the insertion order. Our OrderedSet does. Also, it make use of a  64 bits hash function of the family FNV\footnote{The collision probability of a good 64 bits hash function in a table with 10000 items is about of $2.71e-12$.}. The listed header fields are inputs for a hash function, its value is set on the ordered set, and its order(index on the \textit{OrderedSet}) is returned. The index value is set as a packet flowID.  
 
 %c++ http://ideone.com/F0V42m
 %2nd-review
@@ -74,15 +70,9 @@ As future improvements for this component, we propose a more efficient implement
 \end{figure*}
 
 
-The database stores the collected raw data  from the traces for further analysis. The \textit{Sniffer} and the \textit{TraceAnalyzer} can access the database. 
+The database stores the collected raw data  from the traces for further analysis. The \textit{Sniffer} and the \textit{TraceAnalyzer} components uses the database.  We choose an SQLite database, because according to its specifications\footnote{\href{https://www.sqlite.org/whentouse.html}{https://www.sqlite.org/whentouse.html}}, it fits well our porposes. It is simple and well-suitable for an amount of data smaller than terabytes. In the figure ~\ref{fig:simitar-database} we present the relational model of our database, which stores a set of features extracted from packets, along with the flowID calculated by the sniffer component. 
 
 
-We choose an SQLite database, because according to the SQLite specifications\footnote{\href{https://www.sqlite.org/whentouse.html}{https://www.sqlite.org/whentouse.html}}, it is the best option for our database. It is simple and well-suitable for an amount of data smaller than terabytes.
-
-
-In the figure ~\ref{fig:simitar-database} we present the relational model of our database, which stores a set of features extracted from packets, along with the FlowID calculated by the sniffer component. 
-
-%3nd-review
 \subsection{Trace Analyzer}
 
 
@@ -152,23 +142,19 @@ Each one of these parameters is unique per flow. Other features like PSD (packet
 To represent inter packet times, we adopt a simplified version of the Harpoon traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Here, we will explain our simplified version, which is illustrated at figure~\ref{fig:modified-harpoon-model}. 
 
 
-Harpoon uses a more conventional definition of each level, based on the measurement of SYN and ACK TCP flags. It use TCP flags (SYN) to classify packets in different levels, named there file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets.
+Harpoon uses a definition of each level, based on the measurement of SYN and ACK TCP flags. It use TCP flags (SYN) to classify packets in different levels, named there file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets.
 
 
-In our algorithm simplified version, we define (as Harpoon does) three different layers of data transference to model and control: file, session, and flow. 
+In our algorithm simplified version, we define (as Harpoon does) three different layers of data transference to model and control: file, session, and flow. For SIMITAR, a file is just a sequence of consecutive packets transmitted continuously, without large interruption of traffic. It can be, for example, packets transmitted downloading a file, of UDP packets of a connection or a single ICMP echo packet. The session-layer refers to a sequence of multiple files transmitted between a source and a destination, belonging to the same flow.  And the flow level refers to the conjunct of flows, as classified by the Sniffer.  Now, we explain SIMITAR operation on each layer. All contants and defaults mode of operation can be changed by command line options.
 
 
-For SIMITAR, a file is just a sequence of consecutive packets transmitted continuously, without large interruption of traffic. It can be, for example, packets transmitted downloading a file, of UDP packets of a connection or a single ICMP echo packet. The session-layer refers to a sequence of multiple files transmitted between a source and a destination, belonging to the same flow.  And the flow level refers to the conjunct of flow classified by the Sniffer.  
+In the \textbf{flow layer} the \textit{TraceAnalyzer} loads the flow arrival times from the database, and calculates the inter-packet times within the flow context. 
 
 
-\textbf{Flow-layer}: The Trace Analyzer loads the flow arrival times from the database, and calculates the inter-packet times within the flow context. 
-
-
-\textbf{Session-layer}: At the session layer, we use a deterministic approach for evaluating times between files and the actual file transference, the OFF and ON times of a packet train model, respectivaly. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the on times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. We did this, first because ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Second, because in the case of just one packet, the ON time would be zero. OFF times, on the other hand, are defined by the constant \texttt{m\_session\_cut\_time}. If the time between packets of the same flow is larger than this, we consider it belonging to a different file, so it is a Session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} (30 seconds).
-The control of ON/OFF periods is made by the \texttt{NetworkFlow} class.
+At the \textbf{session layer}, we use a deterministic approach for evaluating file tranference time and times between files: ON/OFF times sequence of packet trains. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the ON times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators and in the case of just one packet, the ON time would be zero. So setting aminimum acceptable time solve these issues. The OFF times, on the other hand, are defined by the constant \texttt{session\_cut\_time} \footnote{In the code it is called \texttt{DataProcessor::m\_session\_cut\_time} }. If the time between packets of the same flow is larger than this, we consider it belonging to a different file, so it is a Session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} for the \texttt{session\_cut\_time}: 30 seconds. The control of ON/OFF periods in the traffic generation is made by the \textit{FlowGenerator} component \footnote{This control is made by the class \texttt{NetworkFlow}}.
 
 %2nd-review
-\textbf{File-layer}: Here we model the inter-packet times at the file level. To estimate inter-packet times within files, we select all inter-packet times smaller than \texttt{m\_session\_cut\_time}. All files within the same flow are considered to follow the same model. We delegate the control of the inter-packet times to the underlying workload engine tool. We ordered them, from the best to the worst. Currently, we are using eight different stochastic functions parameterizations. They are Weibull(linear regression), Normal(mean/standard deviation calculation), Exponential(mean and linear regression estimation), Pareto(linear regression and maximum likelihood), Cauchy(linear regression) and Constant(mean calculation). From those, Weibull, Pareto, and Cauchy are heavy-tailed functions, and therefore self-similar processes. \textcolor{red}{<<<<pode mudar, calibrar>>>>} But if the flow has less than 30 packets, just the constant model is evaluated. It is because numerical methods gave poor results if the data sample used is small. We sort these models according to the Akaike Information Criterion (AIC)\cite{sourcesonoff-paper}\cite{bic-aic-comparision}. We will enter in deeper details on this methodology on the chapter ~\ref{ch:modeling-evaluation}. The methodology of selection is presented in the figure~\ref{fig:model-parameterization}
+In the \textbf{file layer}, we model the inter-packet times at the file level. To estimate inter-packet times within files, we select all inter-packet times smaller than \texttt{session\_cut\_time}\footnote{In the code it is called\texttt{DataProcessor::m\_session\_cut\_time} }. All files within the same flow are considered to follow the same model. We delegate the control of the inter-packet times to the underlying workload engine tool. We ordered them, from the best to the worst. Currently, we are using eight different stochastic functions parameterizations. They are Weibull(linear regression), Normal(mean/standard deviation calculation), Exponential(mean and linear regression estimation), Pareto(linear regression and maximum likelihood), Cauchy(linear regression) and Constant(mean calculation). From those, Weibull, Pareto, and Cauchy are heavy-tailed functions, and therefore self-similar processes. But if the flow has less than 30 packets, just the constant model is evaluated. It is because numerical methods gave poor results if the data sample used is small. We sort these models according to the Akaike Information Criterion (AIC) as default\cite{sourcesonoff-paper}\cite{bic-aic-comparision}. We will enter in deeper details on this methodology on the chapter ~\ref{ch:modeling-evaluation}. The methodology of selection is presented in the figure~\ref{fig:model-parameterization}
 
 %2nd-review
 \begin{figure*}[ht!]
@@ -198,7 +184,7 @@ As is possible to see in many works \cite{packet-distribution-model} \cite{udp-f
 \subsubsection{Compact Trace Descriptor}
 
 %2nd-review
-An example of the final result of all the methods is presented in the XML code down below. It illustrates a flow of a \textit{Compact Trace Descriptor}(CDT) file.
+An example of the final result of all the methods is presented in the XML code down below. It illustrates a flow of a \textit{Compact Trace Descriptor}(CDT) file. The traffic models for inter-packet times are grouped by the tag \texttt{inter\_packet\_times}, and the packet trains by the tag \texttt{session\_times}. All the times are in seconds, and \texttt{inf} represents infinity. The protocol of each layer is stored as data by each tag.
 
 \begin{minted}[frame=single,
                framesep=3mm,
@@ -207,33 +193,35 @@ An example of the final result of all the methods is presented in the XML code d
                tabsize=4,
                fontsize=\scriptsize, 
                breaklines=true]{xml}
-<flow start_delay="31.621941" duration="91.584654" ds_byte="0" n_kbytes="1" n_packets="13">
-	<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
-	<network_layer src_ip="10.1.1.48" dst_ip="216.58.199.35" ttl="64">IPV4</network_layer>
-	<transport_layer dst_port="34683" src_port="443">TCP</transport_layer>
-	<application_layer>HTTPS</application_layer>
-	<inter_packet_times>
-		<stochastic_model name="pareto-ml" aic="-24.738412" bic="-23.768599" param1="0.152500524612205" param2="0.000024050000003"/>
-		<stochastic_model name="weibull" aic="-16.155977" bic="-15.186164" param1="0.130469107098031" param2="0.063433369086366"/>
-		<stochastic_model name="pareto-lr" aic="49.322192" bic="50.292005" param1="0.892551148108768" param2="0.000024050000003"/>
-		<stochastic_model name="exponential-me" aic="76.776570" bic="77.746383" param1="0.131026317153354" param2="0.000000000000000"/>
-        <stochastic_model name="normal" aic="105.882623" bic="106.852436" param1="7.632054549999999" param2="17.598918053235813"/>
-        <stochastic_model name="exponential-lr" aic="116.913056" bic="117.882870" param1="0.009752000000000" param2="0.000000000000000"/>
-        <stochastic_model name="cauchy" aic="128.406532" bic="129.376345" param1="1.935832000000000" param2="-7.245692000000000"/>
-        <stochastic_model name="constant" aic="inf" bic="inf" param1="7.632054549999999" param2="0.000000000000000"/>
-    </inter_packet_times>
-	<session_times on_times="0.96856400,0.10000000,0.10000000" off_times="45.30807900,45.30801100" n_packets="11,1,1" n_bytes="1650,66,66"/>
-	<packet_sizes n_packets="13" n_kbytes="1">
-		<ps_mode1 n_packets="12" n_kbytes="1">
-			<stochastic_model name="constant" aic="inf" bic="inf" param1="99.916667" param2="0.000000"/>
-			<stochastic_model name="normal" aic="137.020397" bic="137.990210" param1="99.916667" param2="64.408439"/>
-			<stochastic_model name="exponential-me" aic="138.504076" bic="139.473889" param1="0.010008" param2="0.000000"/>
-		</ps_mode1>
-		<ps_mode2 n_packets="1" n_kbytes="0">
-		<stochastic_model name="constant" aic="inf" bic="inf" param1="583.000000" param2="0.000000"/>
-		</ps_mode2>
-	</packet_sizes>
-</flow>
+               
+	<flow start_delay="0.144400" duration="317.744333" ds_byte="0" n_kbytes="40" n_packets="344">
+		<link_layer mac_src="64:1c:67:69:51:bb" mac_dst="70:62:b8:9b:3e:d1">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.1.1" dst_ip="192.168.1.2" ttl="64">IPV4</network_layer>
+		<transport_layer dst_port="2128" src_port="53">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="pareto-ml" aic="-1165.310696" bic="-1157.646931" param1="0.405085202535192" param2="0.002272655895996"/>
+			<stochastic_model name="pareto-lr" aic="-454.049749" bic="-446.385984" param1="0.061065000000000" param2="0.002272655895996"/>
+			<stochastic_model name="weibull" aic="-246.882037" bic="-239.218273" param1="0.120355000000000" param2="0.001629000000000"/>
+			<stochastic_model name="exponential-me" aic="486.370061" bic="494.033826" param1="1.340057495455104" param2="0.000000000000000"/>
+			<stochastic_model name="normal" aic="1629.370900" bic="1637.034665" param1="0.746236637899171" param2="2.626808289821357"/>
+			<stochastic_model name="exponential-lr" aic="3166.816047" bic="3174.479812" param1="0.009752000000000" param2="0.000000000000000"/>
+			<stochastic_model name="cauchy" aic="31737.418442" bic="31745.082207" param1="0.000000000000194" param2="-3152.827055696396656"/>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="0.746236637899171" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="29.22199798,73.40390396,151.84077454" off_times="30.85738373,32.42027283" n_packets="19,103,222" n_bytes="2272,12399,26689"/>
+		<packet_sizes n_packets="344" n_kbytes="40">
+			<ps_mode1 n_packets="344" n_kbytes="40">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="120.232558" param2="0.000000"/>
+				<stochastic_model name="normal" aic="2926.106952" bic="2933.788235" param1="120.232558" param2="16.941453"/>
+				<stochastic_model name="exponential-me" aic="3987.126362" bic="3994.807645" param1="0.008317" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	
 \end{minted}
 
 %2nd-review
@@ -247,7 +235,7 @@ An example of the final result of all the methods is presented in the XML code d
     \caption{Simplified-harpoon emission algorithm}
     \label{fig:alg-simplified-harpoon}
 \end{figure*}
-0
+
 The Flow Generator handles the data on the CTD file, and use to retrieve parameters for traffic generation. It crafts and controls each flow in a separated thread. 
 
 %2nd-review
@@ -375,14 +363,25 @@ When operating as a server, it just start-up the traffic generator server, and w
                tabsize=4,
                fontsize=\scriptsize, 
                breaklines=true]{bash}
-# Operation as a sniffer over a Ethernet interface named <ether-interface> 
-./simitar --sniffer --if <ether-interface> --out <cdt-name>
-# Operation as a client using the traffic generator D-ITG, using a list of destination hosts of a text file
-./simitar --client ditg --in <cdt-xml-name> --dst-list-ip <ip-list-file> 
-# Operation as a packet injector with uses the Libtins library to craft packets
-./simitar --pkt-injection libtins --in <cdt-xml-name> 
-# Operation as a server. just runs D-ITG in the server mode.
-./simitar --server ditg
+
+# @ SIMITAR/, load enviroment variables
+source data/config/simitar-workspace-config.sh
+
+# @ SIMITAR/sniffer/, execute to sniffer the eth0 interface, and create a trace entry called "intrig" in the database
+./sniffer-cli.py new intrig live eth0
+
+# @ SIMITAR/sniffer/, execute this command to list all traces recorded in the database
+./sniffer-cli.py list
+
+# @ SIMITAR/trace-analyzer/, execute this command to create two Compact Trace Descriptors, called intrig.ms.xml and intrig.sec.xml. The first is parameterized using milisecons, and de second, uses seconds as time unity.
+./trace-analyzer --trace intrig
+
+# @ SIMITAR/simitar-gen/, execute these commands to generate traffic using the intrig.sec.xml compact trace descriptor. It is stored at the directory "../data/xml/". 
+# Libtins
+./simitar-gen --tool tins --mode client --ether eth0 --xml ../data/xml/intrig.sec.xml 
+# Iperf
+./simitar-gen --tool iperf --mode client --ether eth0 --xml ../data/xml/intrig.sec.xml --dst-ip 10.0.0.2
+./simitar-gen --tool iperf --mode server --ether eth0 --xml ../data/xml/intrig.sec.xml
 
 \end{minted}
 
