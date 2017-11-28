@@ -18,7 +18,7 @@ NetworkFlowFactory::~NetworkFlowFactory()
 }
 
 
-NetworkFlow* NetworkFlowFactory::make_flow(const string& choise)
+NetworkFlow* NetworkFlowFactory::make_flow(const std::string& choise)
 {
 	std::string choise_lc;
 

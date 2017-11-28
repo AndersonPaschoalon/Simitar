@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="npackets" key="selection"/>
+		<item value="NetworkFlowFactory" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="NetworkFlowFactory"/>
 			<item value="npackets"/>
 			<item value="milliseconds"/>
 			<item value="logLevel"/>
@@ -15,7 +16,6 @@
 			<item value="setTimeScale"/>
 			<item value="time_sca"/>
 			<item value="dpTimeScale"/>
-			<item value="nflows"/>
 		</list>
 		<list key="replacehistory">
 			<item value="unity"/>

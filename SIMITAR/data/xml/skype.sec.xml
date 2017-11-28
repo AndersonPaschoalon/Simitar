@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trace info_tracename="" trafficGenEngine="" info_captureDate="" info_commentaries="" n_flows="168">
+<trace info_tracename="" info_captureDate="" info_commentaries="" n_flows="168">
 	<flow start_delay="0.000000" duration="322.623871" ds_byte="0" n_kbytes="107" n_packets="141">
-		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<link_layer mac_src="70:62:b8:9b:3e:d1" mac_dst="64:1c:67:69:51:bb">ETHERNET</link_layer>
 		<network_layer src_ip="212.204.214.114" dst_ip="192.168.1.2" ttl="46">IPV4</network_layer>
 		<transport_layer dst_port="2848" src_port="6667">TCP</transport_layer>
 		<application_layer>NULL</application_layer>
