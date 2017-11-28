@@ -164,9 +164,10 @@ As is possible to see in many works \cite{packet-distribution-model} \cite{udp-f
 
 
 \subsubsection{Compact Trace Descriptor}
+%<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 %2nd-review
-An example of the final result of all the methods is presented in the XML code down below. It illustrates a flow of a \textit{Compact Trace Descriptor}(CDT) file. The traffic models for inter-packet times are grouped by the tag \texttt{inter\_packet\_times}, and the packet trains by the tag \texttt{session\_times}. All the times are in seconds, and \texttt{inf} represents infinity. The protocol of each layer is stored as data by each tag.
+An example of the final result of all the methods is presented in the XML code down below. It illustrates a flow of a \textit{Compact Trace Descriptor}(CDT) file. The traffic models for inter-packet times are grouped by the tag \texttt{inter\_packet\_times}, and the packet trains by the tag \texttt{session\_times}. All the times are in seconds, and "\texttt{inf}" represents infinity. The protocol of each layer is stored as data by each tag.
 
 \begin{minted}[frame=single,
                framesep=3mm,
@@ -218,11 +219,7 @@ An example of the final result of all the methods is presented in the XML code d
     \label{fig:alg-simplified-harpoon}
 \end{figure*}
 
-The Flow Generator handles the data on the CTD file, and use to retrieve parameters for traffic generation. It crafts and controls each flow in a separated thread. 
-
-
-We first implemented it using the D-ITG API. But our Flow Generator can use any traffic generator with API, CLI or script interface as well. To easily expand this component, we use the design pattern factory. If the user wants to introduce support for a new traffic generator, he just has to expand the class \texttt{DummyFlow} and add the support on the method \texttt{make\_flow()} of the class \texttt{NetworkFlow}. We will discuss this deeper in the next section.
-
+The Flow Generator handles the data on the \textit{Compact Trace Descriptor} file, and use to retrieve parameters for traffic generation. It crafts and controls each flow in a separated thread. To valitate its operation we implemented using Iperf traffic generation\cite{web-iperf} and Libtins C++ API.  To simplify the expansion of this component, we use the design pattern factory. If the user wants to introduce support for a new traffic generator, he just has to expand the class \texttt{DummyFlow}. The new class must not have any new attribute.  Support for this class must be given in the \texttt{NetworkFlowFactory} class.
 
 This component works in two different layers according to the traffic generators classification introduced in the chapter ~\ref{ch:literature-review}: at the Flow level, and packet level, as presented in the figure ~\ref{fig:layers-workload-tools}. 
 
@@ -233,18 +230,13 @@ This component works in two different layers according to the traffic generators
     \label{fig:alg-traffic-engine-config}
 \end{figure*}
 
-\subsubsection{Flow-level Traffic Generation Operation}
 
-At the flow-level, it controls each flow using the algorithm at figure~\ref{alg-simplified-harpoon}. This algorithm handles our model defined at the figure~\ref{fig:modified-harpoon-model}.
+At the flow-level, SIMITAR controls each flow using the algorithm at figure~\ref{alg-simplified-harpoon}. This algorithm handles our model defined at the figure~\ref{fig:modified-harpoon-model}. This procedure is independet of the traffic generator being used.
 
-%2nd-review
-It starts a \textit{thread} for each flow in the \textit{Compact Trace Descriptor}, then the thread sleeps its \texttt{start\_delay}. It is the time when the first flow packet was captured in the original capture. It then calls the underlying traffic generation method, passing to it the file ON time, number of packets and number of bytes to be sent (file size). Then it sleeps the next session OFF time from the stack until it ends. When the list of ON/OFF times is over, the thread ends. 
+It starts a \textit{thread} for each flow in the \textit{Compact Trace Descriptor}, then the thread sleeps for \texttt{start\_delay} seconds. This is the arrival time of the first flow packet. Passed this time, it then calls the underlying traffic generation tool(defined as command line argument), and pass to it the flowID, file ON time, number of packets and number of bytes to be sent (file size), and network interface. Then it sleeps the next session OFF time. When the list of ON/OFF times from the flow is over, the thread ends. 
 
 
-\subsubsection{Flow Generation Programming}
-
-%2nd-review
-At the packet level, it must use the expanded class of the \texttt{DummyFlow}. In this level, the job of our tool is to configure the underlying engine, to send a file, as defined before. Therefore it uses the \textit{getters} available, and the passed parameters, defined by the operation described in the previous session. The implementation of this level should follow the flowchart presented in the figure ~\ref{fig:alg-traffic-engine-config}.
+At the packet level, the  \texttt{DummyFlow} derived class must implement  a new \texttt{flowGenerate()} method. Here, the job of our tool is to configure the underlying engine, to send a \textit{file}, as defined in the figure ~\ref{fig:modified-harpoon-model}. This method must use the available parameters, atributes and \textit{getters} to configure and generate a thread-safe traffic.  The implementation of this level should follow the flowchart presented in the figure ~\ref{fig:alg-traffic-engine-config}.
 Down below we present a simplistic code of how the D-ITG API can be used to generate packet-level traffic. We call this concept \textit{Flow Generation Programming} A more complex configuration is possible, but it serves to illustrate the procedure. Its API documentation is available at on D-ITG web-site \footnote{\href{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}}. 
 \begin{minted}[frame=single,
                framesep=3mm,
@@ -253,26 +245,30 @@ Down below we present a simplistic code of how the D-ITG API can be used to gene
                tabsize=4,
                fontsize=\scriptsize, 
                breaklines=true]{c++}
-void flowGenerate(const counter& flowId, const time_sec& onTime, const uint& npackets, const uint& nbytes,  const string& netInterface)
+
+
+// This implementation is just a simplified version to illustrate the procedure.
+void DitgFlow::flowGenerate(const counter& flowId, const time_sec& onTime, const uint& npackets, const uint& nbytes,  const string& netInterface)
 {
-	char localhost[CHAR_BUFFER];
-	string strCommand;
-	char command[CHAR_BUFFER];
-	uint i = 0;
-	int rc = 0;
-	getLocalIp("eth0", localhost);
+	// create command to generate the traffic
+	std::string strCommand;
+	std::string localhost = getNetworkSrcAddr(); 
 	strCommand += " -t " + std::to_string(onTime); 
 	strCommand += " -k " + std::to_string(nbytes / 1024);
-	strCommand += " -a " + getHostIP();
+	strCommand += " -a " + getNetworkDstAddr();
+	
+	// configure protocol
 	if (this->getTransportProtocol() == PROTOCOL__TCP)
 		strCommand += " -T TCP -D ";
 	else if (this->getTransportProtocol() == PROTOCOL__UDP)
 		strCommand += " -T UDP ";
 	else if (this->getTransportProtocol() == PROTOCOL__ICMP)
 		strCommand += " -T ICMP ";
-	for(;;i++)
+		
+	//configure inter-packet time model, just Weibull or Constant
+	for(uint i = 0;;i++)
 	{	
-		StochasticModelFit idtModel = this->getInterDepertureTimeModel(i);
+		StochasticModelFit idtModel = getInterDepertureTimeModel(i);
 		if(idtModel.modelName() == WEIBULL)
 		{
 			strCommand += " -W " + std::to_string(idtModel.param1()) + " " + std::to_string(idtModel.param2());
@@ -284,12 +280,14 @@ void flowGenerate(const counter& flowId, const time_sec& onTime, const uint& npa
 			break;
 		}
 	}
-	strcpy(command, strCommand.c_str());
-	rc = DITGsend(localhost, command); // it is not blocking
-    usleep(onTime*10e6);
+	
+	// it uses C strings as arguments
+	// it is not blocking, so it must block until finishes
+	int rc = DITGsend(localhost.c_str(), command.c_str()); 
+    usleep(onTime*10e6); // D-ITG uses miliseconds as time unity
 	if (rc != 0)
 	{
-		printf("\nDITGsend() return value was %d\n", rc);
+		PLOG_ERROR << "DITGsend() return value was" << rc ; // our log macro for erros
 		exit(EXIT_FAILURE);
 	}
 }
