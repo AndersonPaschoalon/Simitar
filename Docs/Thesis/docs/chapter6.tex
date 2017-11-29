@@ -31,23 +31,24 @@ Identified these issues and possible future works, we conceived approaches and m
 	\begin{tabular}{cccc}
 		\hline
 		\multicolumn{3}{c}{Future Work}	& Priority \\ \hline
-		1                      & Optimizing linear regression                              &                                                 & \textit{high}                    \\
-		2                      & Flow-merging option                                       &                                                 & medium                  \\
-		3                      & Smart flow-scheduler                                      &                                                 & \textit{high}                    \\
-		4                      & \texttt{DataProcessor::minimumAmountOfPackets}                         &                                                 & low                     \\
-		5                      & DPDK KNI interfaces                                       &                                                 & medium                     \\
-		6                      & Multi-thread C++ sniffer                                  & \multirow{-6}{*}{Performance}                   & \textit{high}                    \\ \hline
-		7                      & Model inter-packet times on \texttt{TinsFlow}           &                                                 & \textit{high}                    \\
-		8                      & D-ITG flow generator (\texttt{DitgFlow})                &                                                 & low                     \\
-		9                      & DPDK flow generator (\texttt{DpdkFlow})                 &                                                 & medium                     \\
-		10                     & Ostinato flow generator (\texttt{OstinatoFlow})         & \multirow{-4}{*}{Tool support}                  & low                     \\ \hline
-		11                     & \texttt{DataProcessor::min\_time}                       &                                                 & low                     \\
-		12                     & \texttt{DataProcessor::m\_min\_on\_time}                &                                                 & low                     \\
-		13                     & \texttt{DataProcessor::m\_session\_cut\_time}           &                                                 & low                     \\
-		14                     & Minimum number of packets per flow option                 & \multirow{-4}{*}{Calibration}  & low                     \\ \hline
-		15 & Python API/Lua for traffic generation & & low \\
-		16 & Crafter of  pcap files & \multirow{-2}{*}{New features} & low \\
-		%17 & Json compact trace descriptor  & \multirow{-3}{*}{New features} & low 
+		1   & Optimizing linear regression                      &                                & \textcolor{red}{high} \\
+		2   & Flow-merging option                               &                                & medium \\
+		3   & Smart flow-scheduler                              &                                & \textit{high} \\
+		4   & \texttt{DataProcessor::minimumAmountOfPackets}    &                                & low \\
+		5   & DPDK KNI interfaces                               &                                & medium \\
+		6   & Multi-thread C++ sniffer                          &                                & \textit{high} \\ \hline
+		7   & Cluster operation (high speed traffic-gen) & \multirow{-7}{*}{Performance}  & \textit{high} \\
+		8   & Model inter-packet times on \texttt{TinsFlow}     &                                & \textit{high} \\
+		9   & D-ITG flow generator (\texttt{DitgFlow})          &                                & low \\
+		10  & DPDK flow generator (\texttt{DpdkFlow})           &                                & medium \\
+		11  & Ostinato flow generator (\texttt{OstinatoFlow})   & \multirow{-4}{*}{Tool support} & low \\ \hline
+		12  & \texttt{DataProcessor::min\_time}                 &                                & low \\
+		13  & \texttt{DataProcessor::m\_min\_on\_time}          &                                & low \\
+		14  & \texttt{DataProcessor::m\_session\_cut\_time}     &                                & low \\
+		15  & Minimum number of packets per flow option         & \multirow{-4}{*}{Calibration}  & low \\ \hline
+		16  & Python API/Lua for traffic generation             &                                & low \\
+		17  & Crafter of  pcap files                            & \multirow{-2}{*}{New features} & low \\
+
 		\hline
 	\end{tabular}
 \end{table}
@@ -86,28 +87,30 @@ Identified these issues and possible future works, we conceived approaches and m
 (6) Another issue is the sniffer component is taking to much time to extract data from large \textit{pcap} files. Implementing a C/C++ multi-thread sniffer, including the packet processing and the SQL queries, will improve its performance. 
 
 
-(7) SIMITAR's current implementation using \textit{libtins} to generate the packets does not model inter-packet times. To avoid overheads on random numbers calculation,  these values must be calculated before the actual traffic generation. Modelling inter-packet times the scaling characteristics of libtins traffic should improve. 
+(7) Since the \textit{compact trace descriptor} describes $n$ different flows, it can be splitted on $m$ different files, each describing $n/m$ flows, and still describe the same traffic. With $m$ synchronized machines woking in parallel, each using one of these $m$ parts of the original \textit{compact trace descriptor}, with use of link-agregattion techinique\footnote{http://www.comutadores.com.br/configurando-link-aggregationetherchannel-entre-cisco-e-hpn/} we can achieve high speeds on bare-metal. 
+
+(8) SIMITAR's current implementation using \textit{libtins} to generate the packets does not model inter-packet times. To avoid overheads on random numbers calculation,  these values must be calculated before the actual traffic generation. Modelling inter-packet times the scaling characteristics of libtins traffic should improve. 
 
 
-(8-10) Expand SIMITAR to other traffic generator tools, as we present in the figure ~\ref{fig:DpdkFlow}. D-ITG offers many stochastic functions for customization of inter-packet times, Ostinato provides a rich set of headers and protocols, and DPDK a high performance on packet generation. Each tool can offer a different result on traffic generation, each with benefits and drawbacks, such as computational cost, and development complexity.  Also, DPDK provides the possibility to bypass the Linux network stack, called packet acceleration. So, this implementation can enable for SIMITAR high-bandwidth along with traffic realism.
+(9-11) Expand SIMITAR to other traffic generator tools, as we present in the figure ~\ref{fig:DpdkFlow}. D-ITG offers many stochastic functions for customization of inter-packet times, Ostinato provides a rich set of headers and protocols, and DPDK a high performance on packet generation. Each tool can offer a different result on traffic generation, each with benefits and drawbacks, such as computational cost, and development complexity.  Also, DPDK provides the possibility to bypass the Linux network stack, called packet acceleration. So, this implementation can enable for SIMITAR high-bandwidth along with traffic realism.
 
 
-(11) Calibrate  the constant  \texttt{DataProcessor::min\_time}: smallest time considered for inter-packet times. We use this value to avoid inter-packet times equals to zero due to the sniffer resolution. A zero-inter-packet time would make the procedure fail.  This value can change the fitting accuracy. Today, this value is $5e-8$.
+(12) Calibrate  the constant  \texttt{DataProcessor::min\_time}: smallest time considered for inter-packet times. We use this value to avoid inter-packet times equals to zero due to the sniffer resolution. A zero-inter-packet time would make the procedure fail.  This value can change the fitting accuracy. Today, this value is $5e-8$.
 
 
-(12) Calibrate  the constant \texttt{DataProcessor::m\_min\_on\_time}: this value controls the small ON time that a \textit{file} can have. It can change the generated traffic precision. Currently this value is $0.1$s. 
+(13) Calibrate  the constant \texttt{DataProcessor::m\_min\_on\_time}: this value controls the small ON time that a \textit{file} can have. It can change the generated traffic precision. Currently this value is $0.1$s. 
 
 
-(13) Calibrate  the constant \texttt{DataProcessor::m\_session\_cut\_time}: this value defines whatever a file transference still active or has ended. It defines the smallest OFF time acceptable. This value will change how many files SIMITAR will transfer per flow, and how many times it will call the underlying traffic generator. This constant affects the computational performance and traffic realism.
+(14) Calibrate  the constant \texttt{DataProcessor::m\_session\_cut\_time}: this value defines whatever a file transference still active or has ended. It defines the smallest OFF time acceptable. This value will change how many files SIMITAR will transfer per flow, and how many times it will call the underlying traffic generator. This constant affects the computational performance and traffic realism.
 
 
-(14) Constant \textit{Control a minimum number of packets required for SIMITAR create a new flow}: this would reduce the number of flows created, improving its computational performance. Since SIMITAR manages each flow in a different thread, it will create fewer threads simultaneously, reducing overheads. This action should not impact on throughput and scaling characteristics because few packets would be ignored. But it can increase the precision of the most significant flows since all the threads are competing for each other on the Operational System. But, the number of flows created would be smaller.
+(15) Constant \textit{Control a minimum number of packets required for SIMITAR create a new flow}: this would reduce the number of flows created, improving its computational performance. Since SIMITAR manages each flow in a different thread, it will create fewer threads simultaneously, reducing overheads. This action should not impact on throughput and scaling characteristics because few packets would be ignored. But it can increase the precision of the most significant flows since all the threads are competing for each other on the Operational System. But, the number of flows created would be smaller.
 
 
-(15) Currently, SIMITAR only enables the programming of flow traffic generation in C++. Adding Python and Lua support for the Flow Generator component, we can enable expansion for Python/Lua traffic generation APIs (such as Ostinato and MoonGen APIs), without creating C++ wrappers.
+(16) Currently, SIMITAR only enables the programming of flow traffic generation in C++. Adding Python and Lua support for the Flow Generator component, we can enable expansion for Python/Lua traffic generation APIs (such as Ostinato and MoonGen APIs), without creating C++ wrappers.
 
 
-(16) \textbf{PcapGen: a compact \textit{pcap} lybrary}: Create a component capable of generate synthetic \textit{pcap} files, using Compact Trace Descriptors(CTDs) files. We can implement this using SIMITAR as a packet injector, but in an emulated host interface, for example, using Mininet. Then, the traffic can be collected, using a tool such as TCPDump or Tshark. We present a diagram of this idea in the figure ~\ref{fig:pcap-gen}. This expansion would enable SIMITAR  to work as trace library for pcap-based benchmark tools.
+(17) \textbf{PcapGen: a compact \textit{pcap} lybrary}: Create a component capable of generate synthetic \textit{pcap} files, using Compact Trace Descriptors(CTDs) files. We can implement this using SIMITAR as a packet injector, but in an emulated host interface, for example, using Mininet. Then, the traffic can be collected, using a tool such as TCPDump or Tshark. We present a diagram of this idea in the figure ~\ref{fig:pcap-gen}. This expansion would enable SIMITAR  to work as trace library for pcap-based benchmark tools.
 
 
 \begin{figure}[!ht]
@@ -161,8 +164,6 @@ Out tests performed on the chapter ~\ref{ch:validation} intend to focus on packe
 
 
 Finally, we created a list of improvements and future works, aiming the improvement of performance on processing time, and packet generation; and the methods to improve the realism of the traffic generated. In the is we believe to overcome the current limitations.
-
-
 
 
 
