@@ -32,7 +32,7 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	xml_node<> * root_node;
 
 	// Read the xml file into a vector
-	std::ifstream theFile(fileName); //TODO
+	std::ifstream theFile(fileName);
 	std::vector<char> buffer((std::istreambuf_iterator<char>(theFile)),
 			std::istreambuf_iterator<char>());
 	buffer.push_back('\0');
