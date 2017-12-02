@@ -85,6 +85,12 @@ B.~Han, V.~Gopalakrishnan, L.~Ji, and S.~Lee, ``Network function
   virtualization: Challenges and opportunities for innovations,''
   \emph{Communications Magazine, IEEE}, vol.~53, no.~2, pp. 90--97, Feb 2015.
 
+\bibitem{sdn-survey}
+D.~Kreutz, F.~Ramos, P.~Esteves~Verissimo, C.~Esteve~Rothenberg,
+  S.~Azodolmolky, and S.~Uhlig, ``Software-defined networking: A comprehensive
+  survey,'' \emph{Proceedings of the IEEE}, vol. 103, no.~1, pp. 14--76, Jan
+  2015.
+
 \bibitem{validate-trafficgen}
 S.~Molnar, P.~Megyesi, and G.~Szabo, ``How to validate traffic generators?'' in
   \emph{2013 IEEE International Conference on Communications Workshops (ICC)},
@@ -136,16 +142,20 @@ K.~V. Vishwanath and A.~Vahdat, ``Swing: Realistic and responsive network
   traffic generation,'' \emph{IEEE/ACM Transactions on Networking}, vol.~17,
   no.~3, pp. 712--725, June 2009.
 
+\bibitem{moongen-paper}
+\BIBentryALTinterwordspacing
+P.~Emmerich, S.~Gallenm\"{u}ller, D.~Raumer, F.~Wohlfart, and G.~Carle,
+  ``Moongen: A scriptable high-speed packet generator,'' in \emph{Proceedings
+  of the 2015 ACM Conference on Internet Measurement Conference}, ser. IMC
+  '15.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: ACM, 2015, pp.
+  275--287. [Online]. Available:
+  \url{http://doi.acm.org/10.1145/2815675.2815692}
+\BIBentrySTDinterwordspacing
+
 \bibitem{selfsimilar-ethernet}
 W.~E. Leland, M.~S. Taqqu, W.~Willinger, and D.~V. Wilson, ``On the
   self-similar nature of ethernet traffic (extended version),'' \emph{IEEE/ACM
   Transactions on Networking}, vol.~2, no.~1, pp. 1--15, Feb 1994.
-
-\bibitem{sdn-survey}
-D.~Kreutz, F.~Ramos, P.~Esteves~Verissimo, C.~Esteve~Rothenberg,
-  S.~Azodolmolky, and S.~Uhlig, ``Software-defined networking: A comprehensive
-  survey,'' \emph{Proceedings of the IEEE}, vol. 103, no.~1, pp. 14--76, Jan
-  2015.
 
 \bibitem{bic-aic-comparision}
 \BIBentryALTinterwordspacing

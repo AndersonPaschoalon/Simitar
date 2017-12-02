@@ -27,6 +27,7 @@
 \citation{ditg-paper}
 \citation{ditg-paper}
 \citation{nfv-challenges}
+\citation{sdn-survey}
 \citation{ditg-paper}
 \citation{validate-trafficgen}
 \citation{comparative-trafficgen-tools}
@@ -50,15 +51,12 @@
 \citation{swing-paper}
 \citation{swing-paper}
 \citation{do-you-trust}
-\citation{legotg-paper}
-\citation{swing-paper}
-\citation{legotg-paper}
-\citation{comparative-trafficgen-tools}
 \citation{ditg-paper}
+\citation{moongen-paper}
 \citation{legotg-paper}
 \citation{selfsimilar-ethernet}
 \citation{swing-paper}
-\citation{harpoon-paper}
+\citation{harpoon-validation}
 \citation{swing-paper}
 \citation{swing-paper}
 \citation{legotg-paper}
@@ -73,19 +71,19 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces SIMITAR's sniffer hash-based flow classification\relax }}{3}{figure.caption.2}}
 \newlabel{fig:sniffer}{{2}{3}{SIMITAR's sniffer hash-based flow classification\relax }{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-B}}SQLite database}{3}{subsection.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Trace Analyzer}{3}{subsection.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SIMITAR's SQLite database relational model\relax }}{3}{figure.caption.3}}
+\newlabel{fig:simitar-database}{{3}{3}{SIMITAR's SQLite database relational model\relax }{figure.caption.3}{}}
 \citation{harpoon-paper}
 \citation{harpoon-validation}
-\citation{harpoon-paper}
+\citation{harpoon-validation}
 \citation{swing-paper}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces SIMITAR's SQLite database relational model\relax }}{4}{figure.caption.3}}
-\newlabel{fig:simitar-database}{{3}{4}{SIMITAR's SQLite database relational model\relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}1}Flow features}{4}{subsubsection.3.3.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}2}Inter Packet Times}{4}{subsubsection.3.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Directory diagram of the schema of a Compact Trace Descriptor (CDT) file.\relax }}{4}{figure.caption.4}}
-\newlabel{fig:CTD-diagram}{{4}{4}{Directory diagram of the schema of a Compact Trace Descriptor (CDT) file.\relax }{figure.caption.4}{}}
 \citation{sourcesonoff-paper}
 \citation{bic-aic-comparision}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-C}}Trace Analyzer}{4}{subsection.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Directory diagram of the schema of a Compact Trace Descriptor (CDT) file.\relax }}{4}{figure.caption.4}}
+\newlabel{fig:CTD-diagram}{{4}{4}{Directory diagram of the schema of a Compact Trace Descriptor (CDT) file.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}1}Flow features}{4}{subsubsection.3.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}2}Inter Packet Times}{4}{subsubsection.3.3.2}}
 \citation{packet-distribution-model}
 \citation{sourcesonoff-paper}
 \citation{udp-flows-model}
@@ -98,87 +96,94 @@
 \citation{udp-flows-model}
 \citation{packet-distribution-model}
 \citation{udp-flows-model}
-\citation{harpoon-paper}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}3}Packet Sizes}{5}{subsubsection.3.3.3}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {\unhbox \voidb@x \hbox {III-C}4}Packet Sizes}{5}{subsubsection.3.3.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Validation}{5}{section.4}}
-\newlabel{sec:validation}{{IV}{5}{Validation}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Methodology}{5}{subsection.4.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Experiments specification table\relax }}{5}{table.caption.5}}
-\newlabel{tab:specifications}{{I}{5}{Experiments specification table\relax }{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {III-D}}Flow Generator}{5}{subsection.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Class hierarchy of NetworkTrace and NetworkFlow, which enables the abstraction of the traffic generation model of the traffic generation engine.\relax }}{5}{figure.caption.5}}
+\newlabel{fig:network-trace-flow-class-diagram}{{5}{5}{Class hierarchy of NetworkTrace and NetworkFlow, which enables the abstraction of the traffic generation model of the traffic generation engine.\relax }{figure.caption.5}{}}
+\citation{harpoon-paper}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Simplified-harpoon emission algorithm\relax }}{6}{figure.caption.6}}
+\newlabel{fig:alg-simplified-harpoon}{{6}{6}{Simplified-harpoon emission algorithm\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Validation}{6}{section.4}}
+\newlabel{sec:validation}{{IV}{6}{Validation}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-A}}Methodology}{6}{subsection.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Traffic engine configuration model\relax }}{6}{figure.caption.7}}
+\newlabel{fig:alg-traffic-engine-config}{{7}{6}{Traffic engine configuration model\relax }{figure.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Experiments specification table\relax }}{6}{table.caption.8}}
+\newlabel{tab:specifications}{{I}{6}{Experiments specification table\relax }{table.caption.8}{}}
 \citation{swing-paper}
 \citation{background-traffic-matter}
 \citation{legotg-paper}
-\newlabel{fig:topo-simple}{{5a}{6}{Subfigure 5a}{subfigure.5.1}{}}
-\newlabel{sub@fig:topo-simple}{{(a)}{a}{Subfigure 5a\relax }{subfigure.5.1}{}}
-\newlabel{fig:topo-tree}{{5b}{6}{Subfigure 5b}{subfigure.5.2}{}}
-\newlabel{sub@fig:topo-tree}{{(b)}{b}{Subfigure 5b\relax }{subfigure.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Mininet SDN topologies. Controller OpenDayLight Beryllium.)\relax }}{6}{figure.caption.6}}
-\newlabel{fig:topo}{{5}{6}{Mininet SDN topologies. Controller OpenDayLight Beryllium.)\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Single hop SDN topology}}}{6}{subfigure.5.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Tree SDN topology}}}{6}{subfigure.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Results}{6}{subsection.4.2}}
+\newlabel{fig:topo-simple}{{8a}{7}{Subfigure 8a}{subfigure.8.1}{}}
+\newlabel{sub@fig:topo-simple}{{(a)}{a}{Subfigure 8a\relax }{subfigure.8.1}{}}
+\newlabel{fig:topo-tree}{{8b}{7}{Subfigure 8b}{subfigure.8.2}{}}
+\newlabel{sub@fig:topo-tree}{{(b)}{b}{Subfigure 8b\relax }{subfigure.8.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Mininet SDN topologies. Controller OpenDayLight Beryllium.)\relax }}{7}{figure.caption.9}}
+\newlabel{fig:topo}{{8}{7}{Mininet SDN topologies. Controller OpenDayLight Beryllium.)\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Single hop SDN topology}}}{7}{subfigure.8.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Tree SDN topology}}}{7}{subfigure.8.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\unhbox \voidb@x \hbox {IV-B}}Results}{7}{subsection.4.2}}
 \citation{swing-paper}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Sumary of results comparing the original traces (italic) and te traffic generated by SIMITAR, with the description of the scenario.\relax }}{7}{table.caption.7}}
-\newlabel{tab:results-summary}{{II}{7}{Sumary of results comparing the original traces (italic) and te traffic generated by SIMITAR, with the description of the scenario.\relax }{table.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{7}{section.5}}
-\newlabel{sec:conclusion}{{V}{7}{Conclusions}{section.5}{}}
-\newlabel{fig:iperfBw}{{6a}{8}{Subfigure 6a}{subfigure.6.1}{}}
-\newlabel{sub@fig:iperfBw}{{(a)}{a}{Subfigure 6a\relax }{subfigure.6.1}{}}
-\newlabel{fig:iperftreeBw}{{6b}{8}{Subfigure 6b}{subfigure.6.2}{}}
-\newlabel{sub@fig:iperftreeBw}{{(b)}{b}{Subfigure 6b\relax }{subfigure.6.2}{}}
-\newlabel{fig:tinsBw}{{6c}{8}{Subfigure 6c}{subfigure.6.3}{}}
-\newlabel{sub@fig:tinsBw}{{(c)}{c}{Subfigure 6c\relax }{subfigure.6.3}{}}
-\newlabel{fig:tinsLgwBw}{{6d}{8}{Subfigure 6d}{subfigure.6.4}{}}
-\newlabel{sub@fig:tinsLgwBw}{{(d)}{d}{Subfigure 6d\relax }{subfigure.6.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Traces bandwidth.\relax }}{8}{figure.caption.8}}
-\newlabel{fig:flows-bandwidth}{{6}{8}{Traces bandwidth.\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{8}{subfigure.6.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{8}{subfigure.6.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{8}{subfigure.6.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{8}{subfigure.6.4}}
-\newlabel{fig:iperfFps}{{7a}{8}{Subfigure 7a}{subfigure.7.1}{}}
-\newlabel{sub@fig:iperfFps}{{(a)}{a}{Subfigure 7a\relax }{subfigure.7.1}{}}
-\newlabel{fig:iperftreeFps}{{7b}{8}{Subfigure 7b}{subfigure.7.2}{}}
-\newlabel{sub@fig:iperftreeFps}{{(b)}{b}{Subfigure 7b\relax }{subfigure.7.2}{}}
-\newlabel{fig:tinsCdf}{{7c}{8}{Subfigure 7c}{subfigure.7.3}{}}
-\newlabel{sub@fig:tinsCdf}{{(c)}{c}{Subfigure 7c\relax }{subfigure.7.3}{}}
-\newlabel{fig:tinsLgwFps}{{7d}{8}{Subfigure 7d}{subfigure.7.4}{}}
-\newlabel{sub@fig:tinsLgwFps}{{(d)}{d}{Subfigure 7d\relax }{subfigure.7.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Flow per seconds\relax }}{8}{figure.caption.9}}
-\newlabel{fig:flows-ps}{{7}{8}{Flow per seconds\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{8}{subfigure.7.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{8}{subfigure.7.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{8}{subfigure.7.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{8}{subfigure.7.4}}
-\newlabel{fig:iperfCdf}{{8a}{9}{Subfigure 8a}{subfigure.8.1}{}}
-\newlabel{sub@fig:iperfCdf}{{(a)}{a}{Subfigure 8a\relax }{subfigure.8.1}{}}
-\newlabel{fig:iperftreeCdf}{{8b}{9}{Subfigure 8b}{subfigure.8.2}{}}
-\newlabel{sub@fig:iperftreeCdf}{{(b)}{b}{Subfigure 8b\relax }{subfigure.8.2}{}}
-\newlabel{fig:tinsCdf}{{8c}{9}{Subfigure 8c}{subfigure.8.3}{}}
-\newlabel{sub@fig:tinsCdf}{{(c)}{c}{Subfigure 8c\relax }{subfigure.8.3}{}}
-\newlabel{fig:tinsLgwCdf}{{8d}{9}{Subfigure 8d}{subfigure.8.4}{}}
-\newlabel{sub@fig:tinsLgwCdf}{{(d)}{d}{Subfigure 8d\relax }{subfigure.8.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Flows cumulative distributions.\relax }}{9}{figure.caption.10}}
-\newlabel{fig:flows-cdf}{{8}{9}{Flows cumulative distributions.\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{9}{subfigure.8.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{9}{subfigure.8.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{9}{subfigure.8.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{9}{subfigure.8.4}}
-\newlabel{fig:iperfWaveletMREA}{{9a}{9}{Subfigure 9a}{subfigure.9.1}{}}
-\newlabel{sub@fig:iperfWaveletMREA}{{(a)}{a}{Subfigure 9a\relax }{subfigure.9.1}{}}
-\newlabel{fig:iperftreeWaveletMREA}{{9b}{9}{Subfigure 9b}{subfigure.9.2}{}}
-\newlabel{sub@fig:iperftreeWaveletMREA}{{(b)}{b}{Subfigure 9b\relax }{subfigure.9.2}{}}
-\newlabel{fig:tinsWaveletMREA}{{9c}{9}{Subfigure 9c}{subfigure.9.3}{}}
-\newlabel{sub@fig:tinsWaveletMREA}{{(c)}{c}{Subfigure 9c\relax }{subfigure.9.3}{}}
-\newlabel{fig:tinsLgwWaveletMREA}{{9d}{9}{Subfigure 9d}{subfigure.9.4}{}}
-\newlabel{sub@fig:tinsLgwWaveletMREA}{{(d)}{d}{Subfigure 9d\relax }{subfigure.9.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Wavelet multiresolution energy analysis.\relax }}{9}{figure.caption.11}}
-\newlabel{fig:wavelet}{{9}{9}{Wavelet multiresolution energy analysis.\relax }{figure.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Sumary of results comparing the original traces (italic) and te traffic generated by SIMITAR, with the description of the scenario.\relax }}{8}{table.caption.10}}
+\newlabel{tab:results-summary}{{II}{8}{Sumary of results comparing the original traces (italic) and te traffic generated by SIMITAR, with the description of the scenario.\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusions}{8}{section.5}}
+\newlabel{sec:conclusion}{{V}{8}{Conclusions}{section.5}{}}
+\newlabel{fig:iperfBw}{{9a}{9}{Subfigure 9a}{subfigure.9.1}{}}
+\newlabel{sub@fig:iperfBw}{{(a)}{a}{Subfigure 9a\relax }{subfigure.9.1}{}}
+\newlabel{fig:iperftreeBw}{{9b}{9}{Subfigure 9b}{subfigure.9.2}{}}
+\newlabel{sub@fig:iperftreeBw}{{(b)}{b}{Subfigure 9b\relax }{subfigure.9.2}{}}
+\newlabel{fig:tinsBw}{{9c}{9}{Subfigure 9c}{subfigure.9.3}{}}
+\newlabel{sub@fig:tinsBw}{{(c)}{c}{Subfigure 9c\relax }{subfigure.9.3}{}}
+\newlabel{fig:tinsLgwBw}{{9d}{9}{Subfigure 9d}{subfigure.9.4}{}}
+\newlabel{sub@fig:tinsLgwBw}{{(d)}{d}{Subfigure 9d\relax }{subfigure.9.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Traces bandwidth.\relax }}{9}{figure.caption.11}}
+\newlabel{fig:flows-bandwidth}{{9}{9}{Traces bandwidth.\relax }{figure.caption.11}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{9}{subfigure.9.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{9}{subfigure.9.2}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{9}{subfigure.9.3}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{9}{subfigure.9.4}}
+\newlabel{fig:iperfFps}{{10a}{9}{Subfigure 10a}{subfigure.10.1}{}}
+\newlabel{sub@fig:iperfFps}{{(a)}{a}{Subfigure 10a\relax }{subfigure.10.1}{}}
+\newlabel{fig:iperftreeFps}{{10b}{9}{Subfigure 10b}{subfigure.10.2}{}}
+\newlabel{sub@fig:iperftreeFps}{{(b)}{b}{Subfigure 10b\relax }{subfigure.10.2}{}}
+\newlabel{fig:tinsCdf}{{10c}{9}{Subfigure 10c}{subfigure.10.3}{}}
+\newlabel{sub@fig:tinsCdf}{{(c)}{c}{Subfigure 10c\relax }{subfigure.10.3}{}}
+\newlabel{fig:tinsLgwFps}{{10d}{9}{Subfigure 10d}{subfigure.10.4}{}}
+\newlabel{sub@fig:tinsLgwFps}{{(d)}{d}{Subfigure 10d\relax }{subfigure.10.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Flow per seconds\relax }}{9}{figure.caption.12}}
+\newlabel{fig:flows-ps}{{10}{9}{Flow per seconds\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{9}{subfigure.10.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{9}{subfigure.10.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{9}{subfigure.10.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{9}{subfigure.10.4}}
+\newlabel{fig:iperfCdf}{{11a}{10}{Subfigure 11a}{subfigure.11.1}{}}
+\newlabel{sub@fig:iperfCdf}{{(a)}{a}{Subfigure 11a\relax }{subfigure.11.1}{}}
+\newlabel{fig:iperftreeCdf}{{11b}{10}{Subfigure 11b}{subfigure.11.2}{}}
+\newlabel{sub@fig:iperftreeCdf}{{(b)}{b}{Subfigure 11b\relax }{subfigure.11.2}{}}
+\newlabel{fig:tinsCdf}{{11c}{10}{Subfigure 11c}{subfigure.11.3}{}}
+\newlabel{sub@fig:tinsCdf}{{(c)}{c}{Subfigure 11c\relax }{subfigure.11.3}{}}
+\newlabel{fig:tinsLgwCdf}{{11d}{10}{Subfigure 11d}{subfigure.11.4}{}}
+\newlabel{sub@fig:tinsLgwCdf}{{(d)}{d}{Subfigure 11d\relax }{subfigure.11.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Flows cumulative distributions.\relax }}{10}{figure.caption.13}}
+\newlabel{fig:flows-cdf}{{11}{10}{Flows cumulative distributions.\relax }{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{10}{subfigure.11.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{10}{subfigure.11.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{10}{subfigure.11.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{10}{subfigure.11.4}}
+\newlabel{fig:iperfWaveletMREA}{{12a}{10}{Subfigure 12a}{subfigure.12.1}{}}
+\newlabel{sub@fig:iperfWaveletMREA}{{(a)}{a}{Subfigure 12a\relax }{subfigure.12.1}{}}
+\newlabel{fig:iperftreeWaveletMREA}{{12b}{10}{Subfigure 12b}{subfigure.12.2}{}}
+\newlabel{sub@fig:iperftreeWaveletMREA}{{(b)}{b}{Subfigure 12b\relax }{subfigure.12.2}{}}
+\newlabel{fig:tinsWaveletMREA}{{12c}{10}{Subfigure 12c}{subfigure.12.3}{}}
+\newlabel{sub@fig:tinsWaveletMREA}{{(c)}{c}{Subfigure 12c\relax }{subfigure.12.3}{}}
+\newlabel{fig:tinsLgwWaveletMREA}{{12d}{10}{Subfigure 12d}{subfigure.12.4}{}}
+\newlabel{sub@fig:tinsLgwWaveletMREA}{{(d)}{d}{Subfigure 12d\relax }{subfigure.12.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Wavelet multiresolution energy analysis.\relax }}{10}{figure.caption.14}}
+\newlabel{fig:wavelet}{{12}{10}{Wavelet multiresolution energy analysis.\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {Iperf, single-hop, skype-pcap}}}}{10}{subfigure.12.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {Iperf, tree, skype-pcap}}}}{10}{subfigure.12.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {libtins, single-hop, skype-pcap}}}}{10}{subfigure.12.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {libtins, single-hop, langw10s-pcap}}}}{10}{subfigure.12.4}}
 \citation{harpoon-paper}
 \citation{swing-paper}
 \citation{burstiness-queue-lenght}
@@ -207,10 +212,10 @@
 \citation{legotg-paper}
 \citation{legotg-paper}
 \citation{comparative-trafficgen-tools}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}>>>>> Temp Introduction <<<<<< }{10}{section.6}}
-\newlabel{sec:introduction-temp}{{VI}{10}{>>>>> Temp Introduction <<<<<<}{section.6}{}}
 \bibstyle{IEEEtran}
 \bibdata{IEEEabrv,references}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}>>>>> Temp Introduction <<<<<< }{11}{section.6}}
+\newlabel{sec:introduction-temp}{{VI}{11}{>>>>> Temp Introduction <<<<<<}{section.6}{}}
 \bibcite{harpoon-validation}{1}
 \bibcite{burstiness-queue-lenght}{2}
 \bibcite{modelling-of-self-similar}{3}
@@ -221,17 +226,18 @@
 \bibcite{packet-distribution-model}{8}
 \bibcite{ditg-paper}{9}
 \bibcite{nfv-challenges}{10}
-\bibcite{validate-trafficgen}{11}
-\bibcite{performance-trafficgen}{12}
-\bibcite{do-you-trust}{13}
-\bibcite{surge-paper}{14}
-\bibcite{sourcesonoff-paper}{15}
-\bibcite{harpoon-paper}{16}
-\bibcite{web-tcpreplay}{17}
-\bibcite{web-tg}{18}
-\bibcite{swing-paper}{19}
-\bibcite{selfsimilar-ethernet}{20}
-\bibcite{sdn-survey}{21}
-\bibcite{bic-aic-comparision}{22}
-\bibcite{udp-flows-model}{23}
-\@writefile{toc}{\contentsline {section}{References}{11}{section*.12}}
+\bibcite{sdn-survey}{11}
+\bibcite{validate-trafficgen}{12}
+\bibcite{performance-trafficgen}{13}
+\bibcite{do-you-trust}{14}
+\bibcite{surge-paper}{15}
+\bibcite{sourcesonoff-paper}{16}
+\bibcite{harpoon-paper}{17}
+\bibcite{web-tcpreplay}{18}
+\bibcite{web-tg}{19}
+\bibcite{swing-paper}{20}
+\bibcite{moongen-paper}{21}
+\bibcite{selfsimilar-ethernet}{22}
+\bibcite{bic-aic-comparision}{23}
+\bibcite{udp-flows-model}{24}
+\@writefile{toc}{\contentsline {section}{References}{12}{section*.15}}

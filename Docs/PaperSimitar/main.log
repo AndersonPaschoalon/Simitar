@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.15)  1 DEC 2017 05:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.6.5)  1 DEC 2017 20:06
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -121,52 +121,51 @@ LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
@@ -176,50 +175,50 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen126
 \Hy@linkcounter=\count94
 \Hy@pagecounter=\count95
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count96
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
+Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count97
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5041.
+LaTeX Info: Redefining \url on input line 5088.
 \XeTeXLinkMargin=\dimen127
 \Fld@menulength=\count98
 \Field@Width=\dimen128
 \Fld@charsize=\dimen129
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
 \Hy@abspage=\count99
 \c@Item=\count100
 \c@Hfootnote=\count101
@@ -228,12 +227,12 @@ LaTeX Info: Redefining \pageref on input line 6369.
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
 \Fld@listcount=\count102
 \c@bookmark@seq@number=\count103
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
@@ -243,7 +242,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \bigstrutjot=\dimen130
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
+Package: amsmath 2016/06/28 v2.15d AMS math features
 \@mathmargin=\skip45
 
 For additional information on amsmath, use the `?' option.
@@ -260,7 +259,7 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen132
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count104
 LaTeX Info: Redefining \frac on input line 199.
@@ -275,8 +274,8 @@ LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
 \big@size=\dimen133
-LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \macc@depth=\count109
 \c@MaxMatrixCols=\count110
 \dotsspace@=\muskip11
@@ -297,8 +296,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \multlinegap=\skip46
 \multlinetaggap=\skip47
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -327,25 +326,25 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 \Gread@gobject=\count120
 ))
 \Gin@req@height=\dimen140
 \Gin@req@width=\dimen141
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
 (textcomp)               4 = 5 + \texteuro
@@ -463,7 +462,7 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen142
 \captionmargin@=\dimen143
@@ -542,10 +541,10 @@ LaTeX Font Info:    ... okay on input line 20.
 \AtBeginShipoutBox=\box30
 Package hyperref Info: Link coloring OFF on input line 20.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count130
 )
@@ -558,7 +557,7 @@ LaTeX Info: Redefining \nameref on input line 20.
 \openout3 = `main.out'.
 
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count131
 \scratchdimen=\dimen150
@@ -572,15 +571,17 @@ LaTeX Info: Redefining \nameref on input line 20.
 \makeMPintoPDFobject=\count136
 \everyMPtoPDFconversion=\toks24
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -605,19 +606,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 ] [2]
-<figures/architecture-diagram.pdf, id=151, 400.95824pt x 278.85684pt>
+<figures/architecture-diagram.pdf, id=154, 400.95824pt x 278.85684pt>
 File: figures/architecture-diagram.pdf Graphic file (type pdf)
 
 <use figures/architecture-diagram.pdf>
 Package pdftex.def Info: figures/architecture-diagram.pdf used on input line 94
 .
-(pdftex.def)             Requested size: 280.57707pt x 195.12877pt.
+(pdftex.def)             Requested size: 252.0pt x 175.25949pt.
 
-Overfull \hbox (28.57707pt too wide) in paragraph at lines 94--95
- [][] 
- []
-
-<figures/sniffer-classifier.pdf, id=153, 302.76065pt x 223.35922pt>
+<figures/sniffer-classifier.pdf, id=156, 302.76065pt x 223.35922pt>
 File: figures/sniffer-classifier.pdf Graphic file (type pdf)
 
 <use figures/sniffer-classifier.pdf>
@@ -625,7 +622,7 @@ Package pdftex.def Info: figures/sniffer-classifier.pdf used on input line 116.
 
 (pdftex.def)             Requested size: 252.0pt x 185.91635pt.
 
-<figures/database-relational-model.pdf, id=155, 533.995pt x 414.54875pt>
+<figures/database-relational-model.pdf, id=158, 533.995pt x 414.54875pt>
 File: figures/database-relational-model.pdf Graphic file (type pdf)
 
 <use figures/database-relational-model.pdf>
@@ -636,7 +633,11 @@ ne 128.
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/sniffer-classifier.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <figures/cdt1.png, id=206, 536.0025pt x 653.44125pt>
+> <./figures/database-relational-model.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./figures/database-relational-model.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
+>] <figures/cdt1.png, id=214, 536.0025pt x 653.44125pt>
 File: figures/cdt1.png Graphic file (type png)
  <use figures/cdt1.png>
 Package pdftex.def Info: figures/cdt1.png used on input line 145.
@@ -650,187 +651,226 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 175.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [4 <./figures/database-relational-model.pdf> <./figures/cdt1.png>]
+)
 
-LaTeX Warning: Reference `ch:modeling-evaluation' on page 5 undefined on input 
+LaTeX Warning: Reference `ch:modeling-evaluation' on page 4 undefined on input 
 line 178.
 
 
-LaTeX Warning: Reference `fig:model-parameterization' on page 5 undefined on in
+LaTeX Warning: Reference `fig:model-parameterization' on page 4 undefined on in
 put line 178.
 
-<figures/topo-simple.png, id=243, 1077.02374pt x 323.2075pt>
+[4 <./figures/cdt1.png>]
+<figures/trace-flow.pdf, id=245, 448.34166pt x 324.76888pt>
+File: figures/trace-flow.pdf Graphic file (type pdf)
+
+<use figures/trace-flow.pdf>
+Package pdftex.def Info: figures/trace-flow.pdf used on input line 206.
+(pdftex.def)             Requested size: 252.0pt x 182.54823pt.
+
+<figures/alg-simplified-harpoon.pdf, id=246, 395.3169pt x 711.85951pt>
+File: figures/alg-simplified-harpoon.pdf Graphic file (type pdf)
+
+<use figures/alg-simplified-harpoon.pdf>
+Package pdftex.def Info: figures/alg-simplified-harpoon.pdf used on input line 
+213.
+(pdftex.def)             Requested size: 252.0pt x 453.78543pt.
+
+<figures/alg-traffic-engine-config.png, id=247, 456.2646pt x 338.7054pt>
+File: figures/alg-traffic-engine-config.png Graphic file (type png)
+
+<use figures/alg-traffic-engine-config.png>
+Package pdftex.def Info: figures/alg-traffic-engine-config.png used on input li
+ne 221.
+(pdftex.def)             Requested size: 252.0pt x 187.07411pt.
+
+
+LaTeX Warning: Reference `fig:modified-harpoon-model' on page 5 undefined on in
+put line 227.
+
+
+LaTeX Warning: Reference `ch:literature-review' on page 5 undefined on input li
+ne 231.
+
+
+LaTeX Warning: Reference `fig:modified-harpoon-model' on page 5 undefined on in
+put line 231.
+
+[5 <./figures/trace-flow.pdf>]
+
+LaTeX Warning: Reference `fig:modified-harpoon-model' on page 6 undefined on in
+put line 234.
+
+<figures/topo-simple.png, id=272, 1077.02374pt x 323.2075pt>
 File: figures/topo-simple.png Graphic file (type png)
 
 <use figures/topo-simple.png>
-Package pdftex.def Info: figures/topo-simple.png used on input line 249.
+Package pdftex.def Info: figures/topo-simple.png used on input line 284.
 (pdftex.def)             Requested size: 252.0pt x 75.62334pt.
 
-<figures/topo-tree.png, id=244, 1074.0125pt x 745.78625pt>
+<figures/topo-tree.png, id=273, 1074.0125pt x 745.78625pt>
 File: figures/topo-tree.png Graphic file (type png)
 
 <use figures/topo-tree.png>
-Package pdftex.def Info: figures/topo-tree.png used on input line 254.
+Package pdftex.def Info: figures/topo-tree.png used on input line 289.
 (pdftex.def)             Requested size: 252.0pt x 174.98668pt.
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 249--256
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 284--291
  [][] 
  []
 
 
-Overfull \hbox (7.00012pt too wide) in paragraph at lines 249--256
+Overfull \hbox (7.00012pt too wide) in paragraph at lines 284--291
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5]
-Underfull \vbox (badness 1609) has occurred while \output is active []
-
-
+[6 <./figures/alg-simplified-harpoon.pdf> <./figures/alg-traffic-engine-config.
+png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/skype-iperf-Bandwidth.pdf, id=264, 361.35pt x 216.81pt>
+<figures/skype-iperf-Bandwidth.pdf, id=297, 361.35pt x 216.81pt>
 File: figures/skype-iperf-Bandwidth.pdf Graphic file (type pdf)
 
 <use figures/skype-iperf-Bandwidth.pdf>
 Package pdftex.def Info: figures/skype-iperf-Bandwidth.pdf used on input line 3
-06.
+41.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tree-iperf-Bandwidth.pdf, id=265, 361.35pt x 216.81pt>
+<figures/skype-tree-iperf-Bandwidth.pdf, id=298, 361.35pt x 216.81pt>
 File: figures/skype-tree-iperf-Bandwidth.pdf Graphic file (type pdf)
 
 <use figures/skype-tree-iperf-Bandwidth.pdf>
 Package pdftex.def Info: figures/skype-tree-iperf-Bandwidth.pdf used on input l
-ine 311.
+ine 346.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tins-Bandwidth.pdf, id=266, 361.35pt x 216.81pt>
+<figures/skype-tins-Bandwidth.pdf, id=299, 361.35pt x 216.81pt>
 File: figures/skype-tins-Bandwidth.pdf Graphic file (type pdf)
 
 <use figures/skype-tins-Bandwidth.pdf>
-Package pdftex.def Info: figures/skype-tins-Bandwidth.pdf used on input line 31
-6.
+Package pdftex.def Info: figures/skype-tins-Bandwidth.pdf used on input line 35
+1.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/lgw-tins-Bandwidth.pdf, id=267, 361.35pt x 216.81pt>
+<figures/lgw-tins-Bandwidth.pdf, id=300, 361.35pt x 216.81pt>
 File: figures/lgw-tins-Bandwidth.pdf Graphic file (type pdf)
 
 <use figures/lgw-tins-Bandwidth.pdf>
-Package pdftex.def Info: figures/lgw-tins-Bandwidth.pdf used on input line 321.
+Package pdftex.def Info: figures/lgw-tins-Bandwidth.pdf used on input line 356.
 
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/skype-iperf-FlowsPs.pdf, id=268, 361.35pt x 216.81pt>
+<figures/skype-iperf-FlowsPs.pdf, id=301, 361.35pt x 216.81pt>
 File: figures/skype-iperf-FlowsPs.pdf Graphic file (type pdf)
 
 <use figures/skype-iperf-FlowsPs.pdf>
-Package pdftex.def Info: figures/skype-iperf-FlowsPs.pdf used on input line 332
+Package pdftex.def Info: figures/skype-iperf-FlowsPs.pdf used on input line 367
 .
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tree-iperf-FlowsPs.pdf, id=269, 361.35pt x 216.81pt>
+<figures/skype-tree-iperf-FlowsPs.pdf, id=302, 361.35pt x 216.81pt>
 File: figures/skype-tree-iperf-FlowsPs.pdf Graphic file (type pdf)
 
 <use figures/skype-tree-iperf-FlowsPs.pdf>
 Package pdftex.def Info: figures/skype-tree-iperf-FlowsPs.pdf used on input lin
-e 337.
+e 372.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tins-FlowsPs.pdf, id=270, 361.35pt x 216.81pt>
+<figures/skype-tins-FlowsPs.pdf, id=303, 361.35pt x 216.81pt>
 File: figures/skype-tins-FlowsPs.pdf Graphic file (type pdf)
 
 <use figures/skype-tins-FlowsPs.pdf>
-Package pdftex.def Info: figures/skype-tins-FlowsPs.pdf used on input line 342.
+Package pdftex.def Info: figures/skype-tins-FlowsPs.pdf used on input line 377.
 
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/lgw-tins-FlowsPs.pdf, id=271, 361.35pt x 216.81pt>
+<figures/lgw-tins-FlowsPs.pdf, id=304, 361.35pt x 216.81pt>
 File: figures/lgw-tins-FlowsPs.pdf Graphic file (type pdf)
 
 <use figures/lgw-tins-FlowsPs.pdf>
-Package pdftex.def Info: figures/lgw-tins-FlowsPs.pdf used on input line 347.
+Package pdftex.def Info: figures/lgw-tins-FlowsPs.pdf used on input line 382.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-iperf-FlowCdf.pdf, id=272, 361.35pt x 216.81pt>
+<figures/skype-iperf-FlowCdf.pdf, id=305, 361.35pt x 216.81pt>
 File: figures/skype-iperf-FlowCdf.pdf Graphic file (type pdf)
 
 <use figures/skype-iperf-FlowCdf.pdf>
-Package pdftex.def Info: figures/skype-iperf-FlowCdf.pdf used on input line 358
+Package pdftex.def Info: figures/skype-iperf-FlowCdf.pdf used on input line 393
 .
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tree-iperf-FlowCdf.pdf, id=273, 361.35pt x 216.81pt>
+<figures/skype-tree-iperf-FlowCdf.pdf, id=306, 361.35pt x 216.81pt>
 File: figures/skype-tree-iperf-FlowCdf.pdf Graphic file (type pdf)
 
 <use figures/skype-tree-iperf-FlowCdf.pdf>
 Package pdftex.def Info: figures/skype-tree-iperf-FlowCdf.pdf used on input lin
-e 363.
+e 398.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tins-FlowCdf.pdf, id=274, 361.35pt x 216.81pt>
+<figures/skype-tins-FlowCdf.pdf, id=307, 361.35pt x 216.81pt>
 File: figures/skype-tins-FlowCdf.pdf Graphic file (type pdf)
 
 <use figures/skype-tins-FlowCdf.pdf>
-Package pdftex.def Info: figures/skype-tins-FlowCdf.pdf used on input line 368.
+Package pdftex.def Info: figures/skype-tins-FlowCdf.pdf used on input line 403.
 
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/lgw-tins-FlowCdf.pdf, id=275, 361.35pt x 216.81pt>
+<figures/lgw-tins-FlowCdf.pdf, id=308, 361.35pt x 216.81pt>
 File: figures/lgw-tins-FlowCdf.pdf Graphic file (type pdf)
 
 <use figures/lgw-tins-FlowCdf.pdf>
-Package pdftex.def Info: figures/lgw-tins-FlowCdf.pdf used on input line 373.
+Package pdftex.def Info: figures/lgw-tins-FlowCdf.pdf used on input line 408.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-iperf-WaveletMREA.pdf, id=276, 361.35pt x 216.81pt>
+<figures/skype-iperf-WaveletMREA.pdf, id=309, 361.35pt x 216.81pt>
 File: figures/skype-iperf-WaveletMREA.pdf Graphic file (type pdf)
 
 <use figures/skype-iperf-WaveletMREA.pdf>
 Package pdftex.def Info: figures/skype-iperf-WaveletMREA.pdf used on input line
- 384.
+ 419.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tree-iperf-WaveletMREA.pdf, id=277, 361.35pt x 216.81pt>
+<figures/skype-tree-iperf-WaveletMREA.pdf, id=310, 361.35pt x 216.81pt>
 File: figures/skype-tree-iperf-WaveletMREA.pdf Graphic file (type pdf)
 
 <use figures/skype-tree-iperf-WaveletMREA.pdf>
 Package pdftex.def Info: figures/skype-tree-iperf-WaveletMREA.pdf used on input
- line 389.
+ line 424.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/skype-tins-WaveletMREA.pdf, id=278, 361.35pt x 216.81pt>
+<figures/skype-tins-WaveletMREA.pdf, id=311, 361.35pt x 216.81pt>
 File: figures/skype-tins-WaveletMREA.pdf Graphic file (type pdf)
 
 <use figures/skype-tins-WaveletMREA.pdf>
 Package pdftex.def Info: figures/skype-tins-WaveletMREA.pdf used on input line 
-394.
+429.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
-<figures/lgw-tins-WaveletMREA.pdf, id=279, 361.35pt x 216.81pt>
+<figures/lgw-tins-WaveletMREA.pdf, id=312, 361.35pt x 216.81pt>
 File: figures/lgw-tins-WaveletMREA.pdf Graphic file (type pdf)
 
 <use figures/lgw-tins-WaveletMREA.pdf>
-Package pdftex.def Info: figures/lgw-tins-WaveletMREA.pdf used on input line 39
-9.
+Package pdftex.def Info: figures/lgw-tins-WaveletMREA.pdf used on input line 43
+4.
 (pdftex.def)             Requested size: 219.08621pt x 131.45331pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./figures/topo-simple.png> <./figures/topo-tree.png>] [7]
+[7 <./figures/topo-simple.png> <./figures/topo-tree.png>] [8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8 <./figures/skype-iperf-Bandwidth.pdf> <./figures/skype-tree-iperf-Bandwidth
+ [9 <./figures/skype-iperf-Bandwidth.pdf> <./figures/skype-tree-iperf-Bandwidth
 .pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/skype-tree-iperf-Bandwidth.pd
@@ -862,11 +902,8 @@ clusion: multiple pdfs with page group included in a single page
 >]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9 <./figures/skype-iperf-FlowCdf.pdf> <./figures/skype-tree-iperf-FlowCdf.pdf
-
+ [10 <./figures/skype-iperf-FlowCdf.pdf> <./figures/skype-tree-iperf-FlowCdf.pd
+f
 
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/skype-tree-iperf-FlowCdf.pdf)
 : PDF inclusion: multiple pdfs with page group included in a single page
@@ -895,21 +932,17 @@ PDF inclusion: multiple pdfs with page group included in a single page
 pdfTeX warning: /usr/bin/pdflatex (file ./figures/lgw-tins-WaveletMREA.pdf): PD
 F inclusion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 1852) in paragraph at lines 465--466
+Underfull \hbox (badness 1852) in paragraph at lines 500--501
 []\OT1/ptm/m/n/10 Since syn-thetic traf-fic traces gen-er-a-tion is ma-ture in
  []
 
 
-Overfull \hbox (35.00153pt too wide) in paragraph at lines 468--468
+Overfull \hbox (35.00153pt too wide) in paragraph at lines 503--503
 [][][][][]\OT1/ptm/m/n/8 http://gull.sourceforge.net/doc/WP[]Seagull[]Open[]Sou
 rce[]tool[]for[]IMS[]testing.pdf[]| 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10])
-(./main.bbl
+) (./main.bbl [11]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ƒ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
@@ -927,13 +960,13 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
-[11]
+[12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 38.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 38.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 38.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 38C4CA511E3362D829E1F8BCA14AEE43;974.
+(rerunfilecheck)             Checksum: 349E1D409DC9AE07C9500B92B25E226E;1038.
 
 
 LaTeX Warning: There were undefined references.
@@ -944,13 +977,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 38.
  ) 
 Here is how much of TeX's memory you used:
- 9290 strings out of 493029
- 146433 string characters out of 6136234
- 245864 words of memory out of 5000000
- 12575 multiletter control sequences out of 15000+600000
- 48162 words of font info for 105 fonts, out of 8000000 for 9000
+ 9339 strings out of 493013
+ 147589 string characters out of 6135683
+ 247506 words of memory out of 5000000
+ 12619 multiletter control sequences out of 15000+600000
+ 49269 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,15n,49p,1693b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,15n,49p,1623b,379s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
@@ -964,10 +997,10 @@ texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 925595 bytes).
+Output written on main.pdf (12 pages, 1070493 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 464 compressed objects within 5 object streams
- 94 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 583 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 
