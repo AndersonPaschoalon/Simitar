@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>120</x>
+      <y>100</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;service&gt;
+Sniffer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>460</x>
+      <y>100</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;service&gt;&gt;
+Trace Analyzer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>280</x>
+      <y>280</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;database&gt;&gt;
+SQLite</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>650</x>
+      <y>280</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;subsystem&gt;&gt;
+Network Traffic Generator</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>840</x>
+      <y>100</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+&lt;&lt;service&gt;&gt;
+Flow Generator</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>120</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=()-
+m1=XML file</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>120</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=[].&gt;
+m2=&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>230</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=()-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>150</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=)-</panel_attributes>
+    <additional_attributes>20.0;70.0;20.0;30.0;180.0;30.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>370</x>
+      <y>230</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=()-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>150</y>
+      <w>200</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=[].&gt;
+m2=&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>180.0;10.0;180.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>150</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=[].&gt;
+m2=&lt;&lt;use&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;160.0;90.0</additional_attributes>
+  </element>
+</diagram>
