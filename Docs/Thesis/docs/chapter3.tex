@@ -2,12 +2,24 @@
 \chapter{System architecture and Methods}\label{ch:architecture}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% ok1
 
-In this chapter, we will present our tool which aims to fill the gaps addressed in the chapter ~\ref{ch:introduction}. It is called SIMITAR (SnIffing, ModellIng and TrAffic geneRation) and aims to generate a platform-agnostic traffic: it can use as traffic generator engine almost any traffic generator tools and programming API. It just requires a programming or command line interface. SIMITAR creates a  model in XML based on actual traces (\textit{pcaps} or real-time captures), we call Compact Trace Descriptor (CTD). 
+In this chapter, we will present our tool which aims to fill the gaps addressed in the chapter ~\ref{ch:introduction}. We call it \textit{SIMITAR}, an acronym for \textit{SnIffing, ModellIng and TrAffic geneRation}.  This acronym summarizes its operation. SIMITAR is a traffic generator able to learn features of a real traffic automatically, and reproduce a synthetic traffic similar to the original. It records a model for the traffic in an XML file we call \textit{compact trace descriptor} (CTD file). As input-data SIMITAR can use \textit{pcap} files or real-time captures.  
 
 
-We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows and uses this data to generate a set of parameters for our traffic model, using a set of algorithms. Finally, SIMITAR provides these parameters to a traffic generator engine and controls its packets injection.
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[height=2.4in]{figures/ch1/layer-diagram}
+	\caption{ Architecture conceptual idea: a toll to automatize many tasks on traffic modelling and generation.}
+	\label{fig:layer-diagram}
+\end{figure*}
+
+On the figure ~\ref{fig:layer-diagram} we abstract our concepts we stated in a layer diagram model. Or tool must work as an interface for the user automatizing traffic modeling, configuration, and emulation and offering services of intelligence and traffic generatrion programmability. In the figure we also include packet-acceleration\footnote{Packet acceleration is a concept introduced by DPDK\cite{web-dpdk}, which means kernel by-pass. Packet acceleration optimizes the packet processing, and therefore traffic generation, enabling higher throughput rates.}, however, in the current version, this feature is not implemented, but how to do it is discussed in the section of future works in the chapter ~\ref{ch:conclusion}.
+
+
+Our primary goal is to offer simple configuration, with realism, at a reasonable speed. We are introducing the concept of programmability for traffic generation. Since the \textit{compact trace descriptor} is a XML file, the user may create his custom traffic in a platform agnostic way creating his own CTD file. The intermediate layer of the figure ~\ref{fig:layer-diagram} summarize, the goal of the project in an illustrative way. Instead of storing a huge file \textit{pcap} with a size of many \textit{gigas}, we create a light-weight set of models and parameters that describe this same trace. 
+
+
+Then, we use this data as input for a traffic generator engine. We do so using APIs or creating new processes in a controlled manner. So will be possible to control packet parameters and flow's behavior in an automatized and self-configuring way. Using a component methodology, we decouple the traffic generation, from the data collection and parameterization process. Building it in this non-monolithic way,  enable a simple port for different traffic generators engines, what make our tools easy for updating with newer technologies. A project guideline is to reuse as much code and components as possible from the open-source community. We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows and uses this data to generate a set of parameters for our traffic model, using a set of algorithms. Finally, SIMITAR provides these parameters to a traffic generator engine and controls its packets injection.
 
 % cycle of operation
 \begin{figure*}[ht!]
