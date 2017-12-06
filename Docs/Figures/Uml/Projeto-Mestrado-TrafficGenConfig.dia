@@ -28,16 +28,10 @@
           <dia:boolean val="true"/>
         </dia:attribute>
         <dia:attribute name="scaling">
-          <dia:real val="0.5835302472114563"/>
+          <dia:real val="0.84420418739318848"/>
         </dia:attribute>
         <dia:attribute name="fitto">
-          <dia:boolean val="true"/>
-        </dia:attribute>
-        <dia:attribute name="fitwidth">
-          <dia:int val="1"/>
-        </dia:attribute>
-        <dia:attribute name="fitheight">
-          <dia:int val="1"/>
+          <dia:boolean val="false"/>
         </dia:attribute>
       </dia:composite>
     </dia:attribute>
@@ -287,7 +281,7 @@ this feature?#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="19.3005,18.0245"/>
+            <dia:point val="19.3005,18.0246"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000"/>
@@ -544,7 +538,7 @@ set feature#</dia:string>
         <dia:point val="22.8012,28.3275"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="22.7512,7.42145;26.25,28.3775"/>
+        <dia:rectangle val="22.7512,7.42146;26.25,28.3775"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="22.8012,28.3275"/>
@@ -614,7 +608,7 @@ set feature#</dia:string>
         <dia:point val="4.59125,7.805"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="2.83862,7.45747;4.64125,8.18108"/>
+        <dia:rectangle val="2.83863,7.45748;4.64125,8.18108"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="4.59125,7.805"/>
@@ -649,7 +643,7 @@ set feature#</dia:string>
         <dia:point val="14.4075,7.78326"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="12.8319,7.4432;14.4575,8.1668"/>
+        <dia:rectangle val="12.832,7.4432;14.4575,8.1668"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="14.4075,7.78326"/>
@@ -684,7 +678,7 @@ set feature#</dia:string>
         <dia:point val="8.5175,19.45"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="8.4675,19.4;15.9456,29.3006"/>
+        <dia:rectangle val="8.4675,19.4;15.9455,29.3006"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="8.5175,19.45"/>
