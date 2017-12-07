@@ -577,7 +577,7 @@ If the first $deltaTime$ defines an OFF time, or if it is the first ON time, its
 
 We also developed an simple test to guess the application protocol, based on the port numbers and the tranport protocol used by each flow. We currently are classifing the application protocols presented in the table ~\ref{tab:application-protocols}. If a flow matches the port number, and the transport protocol, it is classified as belongig to an application protocol.
 
-\section{Conclusion}
+\section{Conclusions}
 
 In this section, we went on details on some methodologies mentioned in the chapter ~\ref{ch:architecture}. Here we avoid implementation and architecture concepts, and just discussed the methods. In this first section, we focused our research on develope a consistent method for automatic selection of stochastic functions for inter-packet times. Since we could not find any other methodology in the literature, we developt our own and tested if it is worth or not. The results showed our method satisfactory and had presented a reasonable prediction rate on the best functions. We now can ensure that it is a safe method and that AIC and BIC are good criterions for this sort of data.  We abstracted this method in the algorithm ~\ref{alg:stochasticModelFitting}. In the second section, we also present the methods used to estimate packet trains periods (algorithm ~\ref{alg:calcOnOff}) and make the application classification (table ~\ref{tab:application-protocols}). In the table ~\ref{tab:methods}, the usage of each method is summarized. 
 

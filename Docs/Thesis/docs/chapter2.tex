@@ -11,7 +11,7 @@ In the following section, we will make a discussion on validation of traffic gen
 %Finally, we will present a short overview of new arriving network technologies: SDN and NFV. We will use them as use cases at the chapter ~\ref{ch:use-cases}. Also, we will present our motivations for this choice. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Traffic generator tools}
+\section{Traffic generator tools}\label{sec:traffic-gen}
 
 %2nd-review
 A traffic generator tool is a system capable of creating and injecting packets into a computer network in a controlled way to generate a synthetic traffic \cite{validate-trafficgen}.  there is a huge variety of traffic generation tools described on the literature \cite{validate-trafficgen} \cite{ditg-paper} and available in the open-source community\footnote{\href{http://www.icir.org/models/trafficgenerators.html}{http://www.icir.org/models/trafficgenerators.html}}. This is a cause of many  different approaches and methodologies available to network traffic generator's developers \cite{validate-trafficgen}.
@@ -449,7 +449,7 @@ Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-tru
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Network Traffic Modeling and Realistic Traffic Generation}
+\section{Network Traffic Modeling and Realistic Traffic Generation}\label{sec:modeling-traffic}
 
 
 Along with the huge diversity of traffic generator tools, there are many traffic generation approaches, depending on the main purpose of the traffic generator. Maximum throughput traffic generators have in mind the idea of sending as much traffic through an interface as it can. But the generation of a realistic workload is a need for validation of many aspects of a new infrastructure. First, to generate a realist traffic, we need to define the complexity that our synthetic traffic must have, compared to real ones. Depending on our purpose, we may focus on one or more aspects of the traffic. For example, protocols, header customization, packet-level features (inter-departure, packet-size) and flow level features (number of flows and flow modeling).
@@ -582,7 +582,7 @@ Finally, on newly arrived internet scenarios, due its increasing complexity of n
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Validation of Traffic Generator Tools}
+\section{Validation of Traffic Generator Tools}~\ref{sec:validation-traffic-gen}
 % techniques
 
 There are many possible validation techniques for traffic generator tools found in the literature. Any of them have their own importance and application. Magyesi and Szabó\cite{validate-trafficgen} presents an abstract of the main metrics validation metrics. The authors classify them in four categories: packet based metrics, flow based metrics, scaling characteristics and QoS/QoE related metrics. As suggested by other works\cite{swing-paper}, we state here that an synthetic traffic can be considered realistic, metrics of these four classes are close to measured on a real scenario.
@@ -771,6 +771,11 @@ Bartlett et al.\cite{legotg-paper} implements a modular framework for composing 
 The main purpose of their experiment is to show how LegoTG is able to generate background traffic, in a simple way. Also, it shows how a realistic background traffic can influence on research conclusions. The experiment chosen is one of the use cases proposed for Swing\cite{background-traffic-matter}, and its evaluate the error on bandwidth estimation of different measurement tools. It shows that LegoTG is able eble to provide easy and custrom traffic generation.
 
 
+
+\section{Conclusions}
+
+
+In this chapter, we review and discussed some fundamental concepts of our research: network traffic generators, network traffic modeling, and network traffic generators validation. In the section ~\ref{sec:traffic-gen} we surveyed types of traffic generators, and a comparison between its considerable variability of features. It helped us to summarize and have a deep understanding of what is available today for use, and define its gaps. Also, it helped us to see find what tools and frameworks are possible for us to use. In the section ~\ref{sec:modeling-traffic} create a brief overview putting together efforts on network traffic modeling and realistic traffic generation. On modeling, we made a short historical summary of some critical points, and on realistic traffic generation, we discussed some reference tools. Finally, we revied methodologies for validation of traffic generator tools, presenting some study cases at the end. This survey worked as a reference for the definition of our methodology of evaluation. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
