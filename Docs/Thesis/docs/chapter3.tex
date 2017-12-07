@@ -13,13 +13,13 @@ In this chapter, we will present our tool which aims to fill the gaps addressed 
 	\label{fig:layer-diagram}
 \end{figure*}
 
-On the figure ~\ref{fig:layer-diagram} we abstract our concepts we stated in a layer diagram model. Or tool must work as an interface for the user automatizing traffic modeling, configuration, and emulation and offering services of intelligence and traffic generatrion programmability. In the figure we also include packet-acceleration\footnote{Packet acceleration is a concept introduced by DPDK\cite{web-dpdk}, which means kernel by-pass. Packet acceleration optimizes the packet processing, and therefore traffic generation, enabling higher throughput rates.}, however, in the current version, this feature is not implemented, but how to do it is discussed in the section of future works in the chapter ~\ref{ch:conclusion}.
+On the figure ~\ref{fig:layer-diagram} we abstract our concepts we stated in a layer diagram model. Or tool must work as an interface for the user automatizing traffic modeling, configuration, and emulation and offer services of intelligence and traffic generation programmability. In the figure, we also include packet-acceleration\footnote{Packet acceleration is a concept introduced by DPDK\cite{web-dpdk}, which means kernel by-pass. Packet acceleration optimizes the packet processing, and therefore traffic generation, enabling higher throughput rates.}, however, in the current version, this feature is not implemented, but how to do it is discussed in the section of future works in the chapter ~\ref{ch:conclusion}. To avoid confusions, we will refer to the underlying workload tool as packet generator engine/tool, and for SIMITAR as a traffic generator. Even if this packet generator may be a traffic generator itself (such as Iperf), on SIMITAR, its operates just on the packet-level, as we explain in the chapter ~\ref{ch:literature-review}, and our tool is a multi-layer traffic generator tool.
 
 
-Our primary goal is to offer simple configuration, with realism, at a reasonable speed. We are introducing the concept of programmability for traffic generation. Since the \textit{compact trace descriptor} is a XML file, the user may create his custom traffic in a platform agnostic way creating his own CTD file. The intermediate layer of the figure ~\ref{fig:layer-diagram} summarize, the goal of the project in an illustrative way. Instead of storing a huge file \textit{pcap} with a size of many \textit{gigas}, we create a light-weight set of models and parameters that describe this same trace. 
+Our primary goal is to offer simple configuration, with \textbf{realism}, at a reasonable speed. The intermediate layer of the figure ~\ref{fig:layer-diagram} summarize, the goal of the project in an illustrative way. Instead of storing a huge file \textit{pcap} with a size of many \textit{gigas}, we create a light-weight set of models and parameters that describe this same trace. We are also introducing the concept of \textbf{programmability}. Since the \textit{compact trace descriptor},  is an XML file, the user may create his custom traffic in a platform agnostic way creating his own CTD file. So the will be able to create multi-flow Ethernet workload not having to create many scripts for each tool or reading its documentation. A single description of the traffic will fit any supported packet generator. Using a component methodology, we decouple the packet generation, from the data collection and parameterization process. We developt it using the design pattern factory to make the extension easy for any packet generator engine. 
 
 
-Then, we use this data as input for a traffic generator engine. We do so using APIs or creating new processes in a controlled manner. So will be possible to control packet parameters and flow's behavior in an automatized and self-configuring way. Using a component methodology, we decouple the traffic generation, from the data collection and parameterization process. Building it in this non-monolithic way,  enable a simple port for different traffic generators engines, what make our tools easy for updating with newer technologies. A project guideline is to reuse as much code and components as possible from the open-source community. We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows and uses this data to generate a set of parameters for our traffic model, using a set of algorithms. Finally, SIMITAR provides these parameters to a traffic generator engine and controls its packets injection.
+We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows and uses this data to generate a set of parameters for our traffic model, using a set of algorithms. Finally, SIMITAR provides these parameters to a packet generator engine and controls its packets injection.
 
 % cycle of operation
 \begin{figure*}[ht!]
@@ -30,9 +30,9 @@ Then, we use this data as input for a traffic generator engine. We do so using A
 \end{figure*}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{SIMITAR Architecture}
 
-% ok1
 
 To meet the requirements presented in the chapter ~\ref{ch:introduction}, we will define our solution, and how it works. SIMITAR architecture is presented in the figure~\ref{fig:architecture}. It is composed of four components: a \textit{Sniffer}, a \textit{SQLite database}, a \textit{TraceAnalyzer}, a \textit{FlowGenerator};  and a \textit{Network Traffic Generator}, as subsystem. We describe each part below.
 
@@ -48,7 +48,7 @@ To meet the requirements presented in the chapter ~\ref{ch:introduction}, we wil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Sniffer}
 
-% ok1
+
 
 This component collects network traffic data and classifies it into flows, storing stores in an SQLite database. It defines each flow by the same criteria used by SDN switches\cite{sdn-survey},  through header fields matches. It uses:
 
@@ -93,9 +93,9 @@ As future improvements for this component, we propose a more efficient implement
 The database stores the collected raw data from the traces for further analysis. The \textit{Sniffer} and the \textit{TraceAnalyzer} components uses the database.  We choose an SQLite database, because according to its specifications\footnote{\href{https://www.sqlite.org/whentouse.html}{https://www.sqlite.org/whentouse.html}}, it fits well our purposes. It is simple and well-suitable for an amount of data smaller than terabytes. In the figure ~\ref{fig:simitar-database} we present the relational model of our database, which stores a set of features extracted from packets, along with the flowID calculated by the sniffer component. 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Trace Analyzer}
 
-% ok1
 
 This module is the core of our project. It creates a trace model via the analysis of the collected data. We define here a Compact Trace Descriptor (CTD) as a human and machine-readable file, which describes a traffic trace through a set of flows, each of them represented by a set of parameters, such as header information and analytical models.  The Trace Analyze has the task to learn these features from raw traces data (stored in the SQLite database) and generate an XML file.  In the figure~\ref{fig:CTD-diagram} we show a directory diagram of a CDT file. It has many of many flow fields, and each one contains each parameter estimated. Now we will describe how we construct it. 
 
@@ -113,9 +113,9 @@ This module is the core of our project. It creates a trace model via the analysi
 \end{figure}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Flow features}
 
-% ok1 
 
 Some unique per-flow features are directly measured from the data. They are:  
 
@@ -137,22 +137,16 @@ Each one of these parameters is unique per flow. Other features like PSD (packet
 \end{figure*}
 
 
-To represent inter-packet times, we adopt a simplified version of the Harpoon's traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Here, we will explain our simplified version, which is illustrated at figure~\ref{fig:modified-harpoon-model}. 
-
-
-Harpoon uses a definition of each level, based on the measurement of SYN and ACK TCP flags. It uses TCP flags (SYN) to classify packets in different levels, named their file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets.
+To represent inter-packet times, we adopt a simplified version of the Harpoon's traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Here, we will explain our simplified version, which is illustrated at figure~\ref{fig:modified-harpoon-model}. Harpoon uses a definition of each level, based on the measurement of SYN and ACK TCP flags. It uses TCP flags (SYN) to classify packets in different levels, named their file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets.
 
 
 In our algorithm simplified version, we define three different layers of data transference to model and control: file, session, and flow. For SIMITAR, a file is just a sequence of consecutive packets transmitted continuously, without large interruption of traffic. It can be, for example, packets sent downloading a file, packets from a  UDP  connection or a single ICMP echo packet. The session-layer refers to a sequence of multiple files transmitted between a source and a destination, belonging to the same flow.  The flow level refers to the conjunct of flows, as classified by the Sniffer.  Now, we explain SIMITAR operation on each layer. 
 
 
-In the \textbf{flow layer} the \textit{TraceAnalyzer} loads the flow arrival times from the database and calculates the inter-packet times within the flow context. 
+In the \textbf{flow layer} the \textit{TraceAnalyzer} loads the flow arrival times from the database and calculates the inter-packet times within the flow context. At the \textbf{session layer}, we use a deterministic approach for evaluating file transference time and times between files: ON/OFF times sequence of packet trains. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the ON times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Also in the case of just one packet, the ON time would be zero. So setting a minimum acceptable time to solve these issues. The OFF times, on the other hand, are defined by the constant \texttt{session\_cut\_time} \footnote{In the code it is called \texttt{DataProcessor::m\_session\_cut\_time} }. If the time between two packets of the same flow is larger than \texttt{session\_cut\_time}, we consider them belonging to a different file, so this time is a session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} for the \texttt{session\_cut\_time}: 30 seconds. The control of ON/OFF periods in the traffic generation is made by the \textit{Flow Generator} component \footnote{This control is made by the class \texttt{NetworkFlow}}.
 
 
-At the \textbf{session layer}, we use a deterministic approach for evaluating file transference time and times between files: ON/OFF times sequence of packet trains. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the ON times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Also in the case of just one packet, the ON time would be zero. So setting a minimum acceptable time to solve these issues. The OFF times, on the other hand, are defined by the constant \texttt{session\_cut\_time} \footnote{In the code it is called \texttt{DataProcessor::m\_session\_cut\_time} }. If the time between two packets of the same flow is larger than \texttt{session\_cut\_time}, we consider them belonging to a different file, so this time is a session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} for the \texttt{session\_cut\_time}: 30 seconds. The control of ON/OFF periods in the traffic generation is made by the \textit{Flow Generator} component \footnote{This control is made by the class \texttt{NetworkFlow}}.
-
-
-In the \textbf{file layer}, we model the inter-packet times at the file level. To estimate inter-packet times within files, we select all inter-packet times smaller than \texttt{session\_cut\_time}\footnote{In the code it is called\texttt{DataProcessor::m\_session\_cut\_time} }. All files within the same flow are considered to follow the same model. We delegate the control of the inter-packet times to the underlying workload engine tool. We ordered them, from the best to the worst. Currently, we are using eight different stochastic functions parameterizations. They are Weibull(linear regression), Normal(mean/standard deviation calculation), Exponential(mean and linear regression estimation), Pareto(linear regression and maximum likelihood), Cauchy(linear regression) and Constant(mean calculation). From those, Weibull, Pareto, and Cauchy are heavy-tailed functions, and therefore self-similar processes. But if the flow has less than 30 packets, just the constant model is evaluated. It is because numerical methods gave poor results if the data sample used is small. We sort these models according to the Akaike Information Criterion (AIC) as default\cite{sourcesonoff-paper}\cite{bic-aic-comparision}. We will enter into deeper details on this methodology on the chapter ~\ref{ch:modeling-evaluation}. The methodology of selection is presented in the figure~\ref{fig:model-parameterization}, and all constants and modes of operation can be changed by command line options.
+In the \textbf{file layer}, we model the inter-packet times at the file level. To estimate inter-packet times within files, we select all inter-packet times smaller than \texttt{session\_cut\_time}\footnote{In the code it is called\texttt{DataProcessor::m\_session\_cut\_time} }. All files within the same flow are considered to follow the same model. We delegate the control of the inter-packet times to the underlying packet generator engine. We ordered them, from the best to the worst. Currently, we are using eight different stochastic functions parameterizations. They are Weibull(linear regression), Normal(mean/standard deviation calculation), Exponential(mean and linear regression estimation), Pareto(linear regression and maximum likelihood), Cauchy(linear regression) and Constant(mean calculation). From those, Weibull, Pareto, and Cauchy are heavy-tailed functions, and therefore self-similar processes. But if the flow has less than 30 packets, just the constant model is evaluated. It is because numerical methods gave poor results if the data sample used is small. We sort these models according to the Akaike Information Criterion (AIC) as default\cite{sourcesonoff-paper}\cite{bic-aic-comparision}. We will enter into deeper details on this methodology on the chapter ~\ref{ch:modeling-evaluation}. The methodology of selection is presented in the figure~\ref{fig:model-parameterization}, and all constants and modes of operation can be changed by command line options.
 
 
 \begin{figure*}[ht!]
@@ -222,12 +216,14 @@ An example of the final result of all the methods is presented in the XML code d
 %2nd-review
 %The current version of our tool, do not intrinsically supports responsiveness. The underlying traffic generator API can support it (such as Seagull\cite{web-seagull}), but we do not generate any mathematical model for this purpose, and this may also stand as a future work we discuss on chapter ~\ref{ch:conclusion}. 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Flow Generator}
 
 \begin{figure*}[ht!]
 	\centering
 	\includegraphics[height=3.0in]{figures/ch3/trace-flow}
-	\caption{Class hierarchy of NetworkTrace and NetworkFlow, which enables the abstraction of the traffic generation model of the traffic generation engine.}
+	\caption{Class hierarchy of NetworkTrace and NetworkFlow, which enables the abstraction of the traffic generation model of the packet generation engine.}
 	\label{fig:network-trace-flow-class-diagram}
 \end{figure*}
 
@@ -242,19 +238,19 @@ An example of the final result of all the methods is presented in the XML code d
 \begin{figure*}[ht!]
 	\centering
 	\includegraphics[height=4.0in]{figures/ch3/alg-traffic-engine-config}
-	\caption{Traffic engine configuration model}
+	\caption{Packet engine configuration method}
 	\label{fig:alg-traffic-engine-config}
 \end{figure*}
 
 
-The Flow Generator handles the data on the \textit{Compact Trace Descriptor} file, and use to retrieve parameters for traffic generation. It crafts and controls each flow in a separated thread. We already implemented this component using Iperf traffic generator and Libtins C++ API, and it must follow the calss hierarcy as presented in the figure ~\ref{fig:network-trace-flow-class-diagram}.  This component was designed using the design pattern Factory, to simplify its expansion and support\footnote{If the user wants to introduce support for a new traffic generator, he just has to expand the class \texttt{DummyFlow}, creating a new derived class (figure ~\ref{fig:network-trace-flow-class-diagram} ). On our current implementation we already have implemented \texttt{IperfFlow} and \texttt{TinsFlow}, and \texttt{DitgFlow} is under validation process. This new class has the requirement of not have any new attribute. The support for this new class must be given on the factory class \texttt{NetworkFlowFactory}. For closed loop packet-crafters (that means, tools which must establish a connection between the source and the destination), two methods must be implemented: \texttt{flowGenerate()} and \texttt{server()}. \texttt{flowGenerate()} is responsible for sending a \textit{file}, as defined on de figure~\ref{fig:modified-harpoon-model}, and \texttt{server()} to receive $n$ files. Open loop packet-crafters, such as we implemented using Libtins (just sent the packets, do not establishes a connection), the server do not need to be implemented.}. 
+The Flow Generator handles the data on the \textit{Compact Trace Descriptor} file, and use to retrieve parameters for traffic generation. It crafts and controls each flow in a separated thread. We already implemented this component using Iperf and Libtins(C++ API) as packet generators. It must follow the class hierarcy as presented in the figure ~\ref{fig:network-trace-flow-class-diagram}.  This component was designed using the design pattern Factory, to simplify its expansion and support\footnote{If the user wants to introduce support for a new packet generator engine, he just has to expand the class \texttt{DummyFlow}, creating a new derived class (figure ~\ref{fig:network-trace-flow-class-diagram} ). On our current implementation we already have implemented \texttt{IperfFlow} and \texttt{TinsFlow}, and \texttt{DitgFlow} is under validation process. This new class has the requirement of not have any new attribute. The support for this new class must be given on the factory class \texttt{NetworkFlowFactory}. For closed loop packet-crafters (that means, tools which must establish a connection between the source and the destination), two methods must be implemented: \texttt{flowGenerate()} and \texttt{server()}. \texttt{flowGenerate()} is responsible for sending a \textit{file}, as defined on de figure~\ref{fig:modified-harpoon-model}, and \texttt{server()} to receive $n$ files. Open loop packet-crafters, such as we implemented using Libtins (just sent the packets, do not establishes a connection), the server do not need to be implemented.}. 
 
 
 
-This component and therefore our traffic generator is a multi-layer workload generator according to the typing introduced on chapter ~\ref{ch:literature-review} \footnote{Since it works both at packet and flow level, but do not work at application level.}. At the flow-level, SIMITAR controls each flow using the algorithm at figure~\ref{fig:alg-simplified-harpoon}. This algorithm handles our model defined at the figure ~\ref{fig:modified-harpoon-model}. This procedure is independent of the underlying packet crafting tool used. It starts a \textit{thread} for each flow in the \textit{Compact Trace Descriptor}, then the thread sleeps for \texttt{start\_delay} seconds. This is the arrival time of the first flow packet. Passed this time, it then calls the underlying traffic generation tool(defined as command line argument), and pass to it the flowID, file ON time, number of packets and number of bytes to be sent (file size), and network interface. Then it sleeps the next session OFF time. When the list of ON/OFF times from the flow is over, the thread ends. 
+This component itself is a multi-layer workload generator according to the typing introduced on chapter ~\ref{ch:literature-review} \footnote{Since it works both at packet and flow level, but do not work at application level.}. At the flow-level, SIMITAR controls each flow using the algorithm at figure~\ref{fig:alg-simplified-harpoon}. This algorithm handles our model defined at the figure ~\ref{fig:modified-harpoon-model}. This procedure is independent of the underlying packet crafting tool used. It starts a \textit{thread} for each flow in the \textit{Compact Trace Descriptor}, then the thread sleeps for \texttt{start\_delay} seconds. This is the arrival time of the first flow packet. Passed this time, it then calls the underlying packet generator tool(defined as command line argument), and pass to it the flowID, file ON time, number of packets and number of bytes to be sent (file size), and network interface. Then it sleeps the next session OFF time. When the list of ON/OFF times from the flow is over, the thread ends. 
 
 
-At the packet level, the job of our tool is to configure the underlying engine, to send a \textit{file}, as defined in the figure ~\ref{fig:modified-harpoon-model}. This method must use the available parameters, attributes and \textit{getters} to configure and generate a thread-safe traffic using the method \texttt{flowGenerate()}. The \textit{file} configuration must follow the in the figure ~\ref{fig:alg-traffic-engine-config}.  Down below we present a simple code of how the D-ITG API can be used to generate packet-level traffic. A more complex configuration is possible, but it serves to illustrate the procedure. We call this concept \textit{Flow Generation Programming}.  Its API documentation is available at on D-ITG website \footnote{\href{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}}. 
+At the packet level, SIMITAR configures the packet-generator tool to send a \textit{file}, as defined in the figure ~\ref{fig:modified-harpoon-model}. This method must use the available parameters, attributes and \textit{getters} to configure and generate a thread-safe traffic using the method \texttt{flowGenerate()}. The \textit{file} configuration must follow the in the figure ~\ref{fig:alg-traffic-engine-config}.  Down below we present a simple code of how the D-ITG API can be used to generate packet-level traffic. A more complex configuration is possible, but it serves to illustrate the procedure. We call this concept \textit{Flow Generation Programming}.  Its API documentation is available at on D-ITG website \footnote{\href{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}{http://www.grid.unina.it/software/ITG/manual/index.html\#SECTION00047000000000000000}}. 
 
 
 \begin{minted}[frame=single,
@@ -313,30 +309,28 @@ void DitgFlow::flowGenerate(const counter& flowId, const time_sec& onTime, const
 }
 \end{minted}
 
-\subsection{Network Traffic Generator}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Network Packet Generator}
 
 
-A network traffic generator software that should provide its API or script interface for the \textit{FlowGenerator} component. With this tool, the user must be eble to send packets/traffic and controll atributes, such as sending time, bandwidht, number of packets, protocols, and so on. That means, any available parameter form the compact trace descriptor. If it does not have an API but an CLI, the user may have to use functions such as \texttt{fork()} or \texttt{popen()}.
+A network packet generator is a tool or lybrary that should provide its API or script interface\footnote{In the case of a tool with a available CLI, to use it as packet generator we must use functions such as \texttt{fork()} or \texttt{popen()}. For Iperf, we used \texttt{popen()}.} for the \textit{FlowGenerator} component. With this engine, the user must be eble to send packets and controll atributes such as sending time, bandwidth, number of packets, protocols, and so on. That means, any available parameter form the compact trace descriptor.
  
 
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Usage and Use Cases}
 
 Each SIMITAR component works as a different application:
 
 \begin{itemize}
-	\item \texttt{sniffer-cli.py};
-	\item \texttt{trace.db} (sqlite3 database);
-	\item \texttt{trace-analyzer}.
-	\item \texttt{simitar-gen} (traffic generator).
+	\item \textit{Sniffer}: \texttt{sniffer-cli.py};
+	\item \textit{Database}: \texttt{trace.db};
+	\item \textit{Trace Analyzer}: \texttt{trace-analyzer}.
+	\item \textit{Flow Generator}: \texttt{simitar-gen} (the actual traffic generator).
 \end{itemize}
 
 
-When it working as a sniffer, it stores data from the captured traffic in the sqlite3 database. It may work over a \textit{pcap} file or an Ethernet interface. Working as a trace a trace-analyzer, it receives the name of the trace as stored in the database, and creates an XML compact trace descriptor. The constants used in the modeling may be changed and provided as command line argument. If not, the default values will be used. As a traffic generator, it may work as a client or a server. Working as a server is necessary for closed-loop engines; tools that require establishing a connection before generating the traffic, such as Iperf and D-ITG. It will just work passively. Working as a client is acting as a traffic emitter. Open loop packet-crafter tools such as \textit{libtins} does not require server operation the send the traffic. In the case of closed-loop tools, the destination IP addresses must be explicitly given in the command line by the options \texttt{--dst-list-ip} or \texttt{--dst-ip}. Down below, we present simple examples of commands used to activate each operation mode.
+Down below we show some usage commands of SIMITAR's components. The \texttt{sniffer-cli.py} application creates a new trace entry on the database using the command option \texttt{new}. Then the \texttt{Trace Analyzer} is able to create a \textit{compact trace descriptor} using the same trace entry. We can change the constants used by the \textit{Trace Analyzer} by command line option. As a traffic generator (\texttt{simitar-gen}), SIMITAR may work as a client or a server. Working as a server is necessary for closed-loop packet-generator engines; tools that require establishing a connection before generating the traffic, such as Iperf and D-ITG. It will just work passively. Working as a client is acting as a traffic emitter. Open loop packet-crafter tools such as \textit{libtins} does not require server operation to send the traffic. In case of closed-loop tools, the destination IP addresses must be explicitly given in the command line by the options \texttt{--dst-list-ip} or \texttt{--dst-ip}. 
 
 
 \begin{minted}[frame=single,
@@ -350,7 +344,7 @@ When it working as a sniffer, it stores data from the captured traffic in the sq
 # @ SIMITAR/, load enviroment variables
 source data/config/simitar-workspace-config.sh
 
-# @ SIMITAR/sniffer/, execute to sniffer the eth0 interface, and create a trace entry called "intrig" in the database
+# @ SIMITAR/sniffer/, execute to sniff the eth0 interface, and create a trace entry called "intrig" in the database
 ./sniffer-cli.py new intrig live eth0
 
 # @ SIMITAR/sniffer/, execute this command to list all traces recorded in the database
@@ -367,5 +361,17 @@ source data/config/simitar-workspace-config.sh
 ./simitar-gen --tool iperf --mode server --ether eth0 --xml ../data/xml/intrig.sec.xml
 
 \end{minted}
+
+
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[height=2.4in]{figures/ch3/use-case}
+	\caption{Use case example of SIMITAR}
+	\label{fig:use-case}
+\end{figure*}
+
+
+An example of use case is presented in the figure ~\ref{fig:use-case}. A Device under test can be stressed using a combination of traffic generated by many clients and server pairs. In the case of an open-loop packet generator tool (such as in the Libtins implementation), the servers pairs are not necessary. Using passive network measures, such as Pathload and pathChirp \cite{swing-paper}, it is possible to measure statistics form the device under tests. 
+
 
 

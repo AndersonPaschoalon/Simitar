@@ -30,7 +30,7 @@ The open-source community offers a huge variety of workload generators and bench
 Some traffic generator tools offer support emulation of single application workloads. However, this does not correspond to real complex scenarios. Other tools work as packet replay engines, such as TCPreplay and TCPivo. Although in that way is possible to produce a realistic workload at high rates, it comes with some issues. First, the storage space required becomes huge for long-term and high-speed traffic capture traces. Also, obtaining good traffic traces sometimes is hard, due privacy issues and fewer good sources. 
 
 
-Many tools support a larger set of protocols and high-performance, such Seagull and Ostinato. Others are also able to control inter-packet times and packet sizes using stochastic models, like D-ITG\cite{ditg-paper} and MoonGen. All of them offer a complex configuration framework, but its custumization is all up to the user. So, there is no simple way for the user to create an synthetic realistic traffic scenario. 
+Many tools support a larger set of protocols and high-performance, such Seagull and Ostinato. Others are also able to control inter-packet times and packet sizes using stochastic models, like D-ITG\cite{ditg-paper}, sourcesOnOff\cite{sourcesonoff-paper}, and MoonGen. All of them offer a complex configuration framework, but its custumization is all up to the user. So, there is no simple way for the user to create an synthetic realistic traffic scenario. 
 
 We also have available a variety of APIs that enable creation of traffic and custom packets, wich include low-level APIs, such as Linux Socket API,  Libpcap, Libtins, DPDK, Pcapplusplus, libcrafter, impacket, scapy and many others. These APIs enable a finer controll and customization over each packet, and are used to implement traffic generators. For example, Ostinato and TCPreplay uses Libpcap, and MoonGen uses DPDK. Also, many of the listed traffic generators provides their own API, such as Ostinato Python API, D-ITG C API, and MoonGen LUA API. 
 
@@ -54,8 +54,32 @@ We have a large variety open-source tools available for custom traffic generatio
 
 There are fewer sollutions on the open source community available that aim to fill this gap. Tools like Swing and Harpoon uses capture traces to set intern parameters, enabling an easier configuration. Also, Swing uses complex multi-levels models which are able to provide a high degree of realism\cite{swing-paper}. However they have their issues as well. Harpoon does not configure parameters at packet level\cite{harpoon-paper} and is not supported by newer Linux kernels, what may be a huge problem with setup and configuration. Swing\cite{swing-paper} aims to generate realistic traffic, but focous on background traffic, and high throughputs it is not a goal off the application\cite{swing-paper} \cite{legotg-paper}. Due the fact that its traffic generation engine is coupled to its modeling framework, you can't opt to use a newer/faster packet generation library. The only way of replacing the traffic engine is changing and recompiling the original code. This is clearly a hard task\cite{legotg-paper}, and an error prone activity. Again, we fall in the same problem a complex task that usually is not the goal of the project. 
 
-Another issue is the large variety of tools, and different methods of configuration and limitations. To create a custom traffic, a user must read large manuals, and custom-design scripts. One of our bigger proposals is create a tool able to automatically do this processes. So The user may design his custom traffic by creating his own Compact Trace Descriptor, and create a traffic using many different tools, like Ostinato, D-ITG, Iperf, but not caring about how to proper configure each of them. 
+Another issue is the large variety of tools, and different methods of configuration and limitations. To create a custom traffic, a user must read large manuals, and custom-design scripts. One of our bigger proposals is create a tool able to automatically do this processes. So The user may design his custom traffic by creating his own Compact Trace Descriptor, and create a traffic using many different tools, like Ostinato, D-ITG, Iperf, but not caring about how to proper configure each of them. In the table ~\ref{tab:related-work} we summarize our current scenario.
 
+
+
+\begin{table}[ht!]
+	\centering
+	\caption{Current scenario of traffic generation}
+	\scalebox{0.87}{
+	\begin{tabular}{cccccc}
+		\hline
+		\rowcolor[HTML]{9B9B9B} 
+		Sollution    & User Space  & Autoconfigurable & Realistic Traffic & Traffic Custumization & Extensibility \\ \hline
+		Harpoon      & \textbf{no} & yes              & yes               & yes                   & \textbf{no}   \\
+		\rowcolor[HTML]{C0C0C0} 
+		D-ITG        & yes         & \textbf{no}      & yes               & yes                   & \textbf{no}   \\
+		Swing        & yes         & yes              & yes               & \textbf{no}           & \textbf{no}   \\
+		\rowcolor[HTML]{C0C0C0} 
+		Ostinato     & yes         & \textbf{no}      & \textbf{no}       & yes                   & yes           \\
+		LegoTG       & yes         & \textbf{no}      & \textbf{no}       & yes                   & yes           \\
+		\rowcolor[HTML]{C0C0C0} 
+		sourcesOnOff & yes         & \textbf{no}      & yes               & yes                   & \textbf{no}   \\
+		Iperf        & yes         & \textbf{no}      & \textbf{no}       & yes                   & \textbf{no}   \\ \hline
+	\end{tabular}
+	}
+	\label{tab:related-work}
+\end{table}
 
 %Since synthetic traffic traces generation is mature in academia, the creation of custom network workloads through the configuration of  open-source tools is an affordable task. But it is not often available in an automatic way, and most of the times is a challenging question\cite{legotg-paper}, and still, requires expert knowledge. It requires time, study, and is vulnerable to human mistakes and lack of validation. Such work may require weeks to complete a realistic reproduction of a single scenario, so most of the time it is just not done. We argue that widely (i.e. affordable) existing approaches can be regarded as simplistic often point solutions to more general cases. 
 

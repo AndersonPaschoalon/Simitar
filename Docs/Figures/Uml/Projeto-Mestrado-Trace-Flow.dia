@@ -530,13 +530,13 @@
         <dia:real val="4.1999999999999993"/>
       </dia:attribute>
       <dia:attribute name="name">
-        <dia:string>#DitgFlow#</dia:string>
+        <dia:string>#TinsFlow#</dia:string>
       </dia:attribute>
       <dia:attribute name="stereotype">
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>#(packet generation via DITG API)#</dia:string>
+        <dia:string>#(packet generation via Libtins C++ API)#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>
@@ -1106,7 +1106,7 @@
         <dia:string>##</dia:string>
       </dia:attribute>
       <dia:attribute name="comment">
-        <dia:string>#(packet generation using Iperf)#</dia:string>
+        <dia:string>#(packet generation using Iperf  CLI)#</dia:string>
       </dia:attribute>
       <dia:attribute name="abstract">
         <dia:boolean val="false"/>

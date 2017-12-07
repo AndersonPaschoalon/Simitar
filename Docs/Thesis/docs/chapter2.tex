@@ -36,13 +36,11 @@ In the literature there are many classifications of traffic generators\cite{sour
 \end{itemize}
 
 
+The most common traffic generator classification in the literature is about its abstraction level\cite{do-you-trust}. There are four groups: Application-level, flow-level, packet-level and multi-level traffic generators. We present a diagram  ilustrating its concept at figure ~\ref{fig:layers-workload-tools}.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Classes of traffic generator tools}
-
-The most common traffic generator taxonomy in the literature is about its abstraction level\cite{do-you-trust}. There are four groups: Application-level, flow-level, packet-level and multi-level traffic generators. We present a diagram  ilustrating its concept at figure ~\ref{fig:layers-workload-tools}.
-
-
-\subsubsection{According to its abstraction level}
+\subsection{According to its abstraction level}
 
 \textbf{Application-level traffic generators}: they try to emulate the behavior of network applications, simulating real workloads stochastically and/or responsively \footnote{Responsiveness refers to the property of capacity of response over time of the workload tool. That means, the behavior of the output may change according to what packets have arrived in the network interface}. As examples we have Surge\cite{surge-paper} able to emulate the behavior of web clients and services. The behavior of such applications is, in general, based on request-response exchanges models.
 
@@ -77,15 +75,15 @@ Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-tru
 	\label{fig:layers-workload-tools}
 \end{figure}
 
-\subsubsection{According to its implementation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{According to its implementation}
 
 \textbf{Software-only traffic generators}: Implementations of traffic generators completely independent of its running hardware platform. This comprehends most of traffic generator tolls.
 
 \textbf{Software and hardware-dependent traffic generators}: Traffic generators implemented in software, but dependent of underlying hardware. The most preeminent examples of this class are implemented over DPDK\cite{web-dpdk}. DPDK works directly on the NIC interface, avoiding overheads of the Operational System. As cited on its official website, this approach permits huge precision and speed in the timing of packets, since it is able to send and receive packets within less than 80 clock cycles.
 
 \textbf{Hardware traffic generators}: This open-source traffic generators implementations are implemented in hardware description language (VHDL/Verilog), and work on NetFPGAs. Some examples of implementations are: PacketGenerator \cite{web-netfpgapacketgenerator}, Caliper \cite{web-caliper}, and OSNT Packet Generator \cite{web-osnt}.
-
-
 
 
 
@@ -451,7 +449,7 @@ Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-tru
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Overview of Network Traffic Modeling and Realistic Traffic Generation}
+\section{Network Traffic Modeling and Realistic Traffic Generation}
 
 
 Along with the huge diversity of traffic generator tools, there are many traffic generation approaches, depending on the main purpose of the traffic generator. Maximum throughput traffic generators have in mind the idea of sending as much traffic through an interface as it can. But the generation of a realistic workload is a need for validation of many aspects of a new infrastructure. First, to generate a realist traffic, we need to define the complexity that our synthetic traffic must have, compared to real ones. Depending on our purpose, we may focus on one or more aspects of the traffic. For example, protocols, header customization, packet-level features (inter-departure, packet-size) and flow level features (number of flows and flow modeling).
@@ -585,8 +583,9 @@ Finally, on newly arrived internet scenarios, due its increasing complexity of n
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Validation of Traffic Generator Tools}
+% techniques
 
-There are many possible validation technics for traffic generator tools found in the literature. Any of them have their own importance and application. Magyesi and Szabó\cite{validate-trafficgen} presents an abstract of the main metrics validation metrics. The authors classify them in four categories: packet based metrics, flow based metrics, scaling characteristics and QoS/QoE related metrics. As suggested by other works\cite{swing-paper}, we state here that an synthetic traffic can be considered realistic, metrics of these four classes are close to measured on a real scenario.
+There are many possible validation techniques for traffic generator tools found in the literature. Any of them have their own importance and application. Magyesi and Szabó\cite{validate-trafficgen} presents an abstract of the main metrics validation metrics. The authors classify them in four categories: packet based metrics, flow based metrics, scaling characteristics and QoS/QoE related metrics. As suggested by other works\cite{swing-paper}, we state here that an synthetic traffic can be considered realistic, metrics of these four classes are close to measured on a real scenario.
 
 Here we present a short review of each of these validation techniques. After that, we will present seven different study cases on validation of related traffic generators. They are Swing\cite{swing-paper}, Harpoon\cite{harpoon-paper}, D-ITG\cite{ditg-paper}, sourcesOnOff\cite{sourcesonoff-paper}, MoonGen\cite{moongen-paper}, LegoTG\cite{legotg-paper} and NFPA\cite{nfpa-paper}.
 
