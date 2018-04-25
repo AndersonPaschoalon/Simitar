@@ -9,48 +9,48 @@ With the work done so far and the results achieved, we may identify the current 
 We can list as  main weak points right now:
 
 \begin{itemize}
-	\item Poor performance of the Trace Analyzer and Sniffer components;
-	\item Weak scaling results of the traffic generator using \textit{libtins}.
+    \item Poor performance of the Trace Analyzer and Sniffer components;
+    \item Weak scaling results of the traffic generator using \textit{libtins}.
 \end{itemize}
 
 And as further implementations, but with low priority, we may have:
 
 \begin{itemize}
-	\item Support for new traffic generator tools;
-	\item APIs for the Flow Generator on  Python and Lua, wich have cosolidate traffic generator APIs;
-	\item A \textit{pcap-crafter} component. Instead of creating traffic, creates a \textit{pcap} file.
+    \item Support for new traffic generator tools;
+    \item APIs for the Flow Generator on  Python and Lua, wich have cosolidate traffic generator APIs;
+    \item A \textit{pcap-crafter} component. Instead of creating traffic, creates a \textit{pcap} file.
 \end{itemize}
 
 Identified these issues and possible future works, we conceived approaches and methods to achieve these results. They include improvements on the implementation,  calibration of constants\footnote{Calibration here means to test many values, and see which one can improve our outcomes for a large variety of traces of traces.}, a finner control of packet injection, use of new technologies and newer implementations. As we always did in the project, we create a task list of activities and organize them by priority and goal. They are listed in the table ~\ref{tab:task-list}.  
 
 
 \begin{table}[ht!]
-	\centering
-	\caption{Future Work: task list}
-	\label{tab:task-list}
-	\begin{tabular}{cccc}
-		\hline
-		\multicolumn{3}{c}{Future Work}	& Priority \\ \hline
-		1   & Optimizing linear regression                       &                                & \textbf{\textit{high}} \\
-		2   & Flow-merging option                                &                                & \textit{medium} \\
-		3   & Smart flow-scheduler and thread/process management &                                & \textbf{\textit{high}} \\
-		4   & \texttt{DataProcessor::minimumAmountOfPackets}     &                                & low \\
-		5   & DPDK KNI interfaces                                &                                & \textit{medium} \\
-		6   & Multi-thread C++ sniffer                           &                                & \textbf{\textit{high}} \\ 
-		7   & Cluster operation (high speed traffic-gen)         & \multirow{-7}{*}{Performance}  & \textbf{\textit{high}} \\ \hline
-		8   & Model inter-packet times on \texttt{TinsFlow}      &                                & \textbf{\textit{high}} \\
-		9   & D-ITG flow generator (\texttt{DitgFlow})           &                                & low \\
-		10  & DPDK flow generator (\texttt{DpdkFlow})            &                                & \textit{medium} \\
-		11  & Ostinato flow generator (\texttt{OstinatoFlow})    & \multirow{-4}{*}{Tool support} & low \\ \hline
-		12  & \texttt{DataProcessor::min\_time}                  &                                & low \\
-		13  & \texttt{DataProcessor::m\_min\_on\_time}           &                                & low \\
-		14  & \texttt{DataProcessor::m\_session\_cut\_time}      &                                & low \\
-		15  & Minimum number of packets per flow option          & \multirow{-4}{*}{Calibration}  & low \\ \hline
-		16  & Python API/Lua for traffic generation              &                                & low \\
-		17  & Crafter of  pcap files                             & \multirow{-2}{*}{New features} & low \\
+    \centering
+    \caption{Future Work: task list}
+    \label{tab:task-list}
+    \begin{tabular}{cccc}
+        \hline
+        \multicolumn{3}{c}{Future Work}    & Priority \\ \hline
+        1   & Optimizing linear regression                       &                                & \textbf{\textit{high}} \\
+        2   & Flow-merging option                                &                                & \textit{medium} \\
+        3   & Smart flow-scheduler and thread/process management &                                & \textbf{\textit{high}} \\
+        4   & \texttt{DataProcessor::minimumAmountOfPackets}     &                                & low \\
+        5   & DPDK KNI interfaces                                &                                & \textit{medium} \\
+        6   & Multi-thread C++ sniffer                           &                                & \textbf{\textit{high}} \\ 
+        7   & Cluster operation (high speed traffic-gen)         & \multirow{-7}{*}{Performance}  & \textbf{\textit{high}} \\ \hline
+        8   & Model inter-packet times on \texttt{TinsFlow}      &                                & \textbf{\textit{high}} \\
+        9   & D-ITG flow generator (\texttt{DitgFlow})           &                                & low \\
+        10  & DPDK flow generator (\texttt{DpdkFlow})            &                                & \textit{medium} \\
+        11  & Ostinato flow generator (\texttt{OstinatoFlow})    & \multirow{-4}{*}{Tool support} & low \\ \hline
+        12  & \texttt{DataProcessor::min\_time}                  &                                & low \\
+        13  & \texttt{DataProcessor::m\_min\_on\_time}           &                                & low \\
+        14  & \texttt{DataProcessor::m\_session\_cut\_time}      &                                & low \\
+        15  & Minimum number of packets per flow option          & \multirow{-4}{*}{Calibration}  & low \\ \hline
+        16  & Python API/Lua for traffic generation              &                                & low \\
+        17  & Crafter of  pcap files                             & \multirow{-2}{*}{New features} & low \\
 
-		\hline
-	\end{tabular}
+        \hline
+    \end{tabular}
 \end{table}
 
 
@@ -62,33 +62,33 @@ Identified these issues and possible future works, we conceived approaches and m
 (3) Currently, all the flow threads are instantiated once the traffic generations start. A smarter traffic generation where SIMITAR instantiates each thread when the traffic, and join when it is inactive should reduce the overhead for traces with a large number of flows. For traffics with a massive amount of streams, a methodology for merging them should reduce computational costs and enable replication of traffic with a much more significant bandwidth. Another improvement in traffic generations is reduced memory consumption per thread and process, and optimize the code.
 
 
-(4) Constant \texttt{DataProcessor::minimumAmountOfPackets}: SIMITAR only estimates stochastic models for inter-packet times if the number of packets for this flow is larger than this amount. If it is smaller, SIMITAR just uses the constant model. We decide to do it for two reasons. First, because with a small sample, the modeling accuracy is poor. Second, we avoid the cost of the parameterization process. Now, its value is set to Its value today is set to 30. Increasing this amount, we may achieve a more reasonable performance for individual flows, and reduce the processing time. 
+(4) Constant \texttt{DataProcessor::minimumAmountOfPackets}: SIMITAR only estimates stochastic models for inter-packet times if the number of packets for this flow is larger than this amount. Otherwise, SIMITAR uses the constant model. We decide to do it for two reasons. First, because with a small sample, the modeling accuracy is reduced. Second, we avoid the cost of the parameterization process. Now, its value is set to Its value today is set to 30. Increasing this amount, we may achieve more reasonable performance for individual flows, and reduce the processing time. 
 
 
-(5) One possibility to improve the traffic generation performance issue DPDK Kernel NIC Interface  (KNI interfaces) \footnote{\href{http://dpdk.org/doc/guides/prog_guide/kernel_nic_interface.html}{http://dpdk.org/doc/guides/prog\_guide/kernel\_nic\_interface.html}}. DPDK KNI interfaces allow applications from the user's space interact with DPDK ports. In this way, we may achieve a faster packet processing. This can be integrated as an insatiable feature of SIMITAR (figure ~\ref{fig:dpdk-if}).
+(5) One possibility to improve the traffic generation performance issue DPDK Kernel NIC Interface  (KNI interfaces) \footnote{\href{http://dpdk.org/doc/guides/prog_guide/kernel_nic_interface.html}{http://dpdk.org/doc/guides/prog\_guide/kernel\_nic\_interface.html}}. DPDK KNI interfaces allow applications from the user's space interact with DPDK ports. In this way, we may achieve a faster packet processing. This can be integrated as an instantiable feature of SIMITAR (figure ~\ref{fig:dpdk-if}).
 
 
 \begin{figure}[h!]
-	\centering
-	\subfloat[DpdkFlow]{
-		\includegraphics[height=2.0in]{figures/ch6/dpdk-flow}
-		\label{fig:dpdk-flow}
-	}
-	\hspace{0mm}
-	\subfloat[DpdkInterface]{
-		\includegraphics[height=2.0in]{figures/ch6/dpdk-interface}
-		\label{fig:dpdk-if}
-	}
-	\caption{Class diagram for DPDK support expansions. On (a), we have a implementation of traffic generation based on DPDK. On (b) we are using DPDK KNI interfaces.}
-	\label{fig:DpdkFlow}
+    \centering
+    \subfloat[DpdkFlow]{
+        \includegraphics[height=2.0in]{figures/ch6/dpdk-flow}
+        \label{fig:dpdk-flow}
+    }
+    \hspace{0mm}
+    \subfloat[DpdkInterface]{
+        \includegraphics[height=2.0in]{figures/ch6/dpdk-interface}
+        \label{fig:dpdk-if}
+    }
+    \caption{Class diagram for DPDK support expansions. On (a), we have a implementation of traffic generation based on DPDK. On (b) we are using DPDK KNI interfaces.}
+    \label{fig:DpdkFlow}
 \end{figure}
 
 (6) Another issue is the sniffer component is taking to much time to extract data from large \textit{pcap} files. Implementing a C/C++ multi-thread sniffer, including the packet processing and the SQL queries, will improve its performance. 
 
 
-(7) Since the \textit{compact trace descriptor} describes $n$ different flows, it can be splitted on $m$ different files, each describing $n/m$ flows, and still describe the same traffic. With $m$ synchronized machines woking in parallel, each using one of these $m$ parts of the original \textit{compact trace descriptor}, with use of link-agregattion techinique\footnote{http://www.comutadores.com.br/configurando-link-aggregationetherchannel-entre-cisco-e-hpn/} we can achieve high speeds on bare-metal. 
+(7) Since the \textit{compact trace descriptor} describes $n$ different flows, it can be split on $m$ separate files, each representing $n/m$ flows, and still portray the same traffic. With $m$ synchronized machines working in parallel, each using one of these $m$ parts of the original \textit{compact trace descriptor}, with use of link-aggregation techinique\footnote{http://www.comutadores.com.br/configurando-link-aggregationetherchannel-entre-cisco-e-hpn/} we can achieve high speeds on bare-metal. 
 
-(8) SIMITAR's current implementation using \textit{libtins} to generate the packets does not model inter-packet times. To avoid overheads on random numbers calculation,  these values must be calculated before the actual traffic generation. Modelling inter-packet times the scaling characteristics of libtins traffic should improve. 
+(8) SIMITAR's current implementation using \textit{libtins} to generate the packets does not model inter-packet times. To avoid overheads,  the values of inter-packet times must be calculated before the actual traffic generation. Modeling inter-packet times the scaling characteristics of libtins traffic should improve. 
 
 
 (9-11) Expand SIMITAR to other traffic generator tools, as we present in the figure ~\ref{fig:DpdkFlow}. D-ITG offers many stochastic functions for customization of inter-packet times, Ostinato provides a rich set of headers and protocols, and DPDK a high performance on packet generation. Each tool can offer a different result on traffic generation, each with benefits and drawbacks, such as computational cost, and development complexity.  Also, DPDK provides the possibility to bypass the Linux network stack, called packet acceleration. So, this implementation can enable for SIMITAR high-bandwidth along with traffic realism.
@@ -103,22 +103,22 @@ Identified these issues and possible future works, we conceived approaches and m
 (14) Calibrate  the constant \texttt{DataProcessor::m\_session\_cut\_time}: this value defines whatever a file transference still active or has ended. It defines the smallest OFF time acceptable. This value will change how many files SIMITAR will transfer per flow, and how many times it will call the underlying traffic generator. This constant affects the computational performance and traffic realism.
 
 
-(15) Constant \textit{Control a minimum number of packets required for SIMITAR create a new flow}: this would reduce the number of flows created, improving its computational performance. Since SIMITAR manages each flow in a different thread, it will create fewer threads simultaneously, reducing overheads. This action should not impact on throughput and scaling characteristics because few packets would be ignored. But it can increase the precision of the most significant flows since all the threads are competing for each other on the Operational System. But, the number of flows created would be smaller.
+(15) Constant \textit{Control a minimum number of packets required for SIMITAR create a new flow}: this would reduce the number of flows created, improving its computational performance. Since SIMITAR manages each flow in a different thread, it will generate fewer threads simultaneously, reducing overheads. This action should not impact on throughput and scaling characteristics because few packets would be ignored. But it can increase the precision of the most significant flows since all the threads are competing for each other on the Operational System. But, the number of flows created would be smaller.
 
 
-(16) Currently, SIMITAR only enables the programming of flow traffic generation in C++. Adding Python and Lua support for the Flow Generator component, we can enable expansion for Python/Lua traffic generation APIs (such as Ostinato and MoonGen APIs), without creating C++ wrappers.
+(16) Currently, SIMITAR only enables the programming of flow traffic generation in C++. Adding Python and Lua support for the Flow Generator component, we can allow expansion for Python/Lua traffic generation APIs (such as Ostinato and MoonGen APIs), without creating C++ wrappers.
 
 
 (17) \textbf{PcapGen: a compact \textit{pcap} lybrary}: Create a component capable of generate synthetic \textit{pcap} files, using Compact Trace Descriptors(CTDs) files. We can implement this using SIMITAR as a packet injector, but in an emulated host interface, for example, using Mininet. Then, the traffic can be collected, using a tool such as TCPDump or Tshark. We present a diagram of this idea in the figure ~\ref{fig:pcap-gen}. This expansion would enable SIMITAR  to work as trace library for pcap-based benchmark tools.
 
 
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[height=2.0in]{figures/ch6/pcap-gen}
-	\caption{Using SIMITAR for generation synthetic \textit{pcap} files, CTD files: a component schema}
-	\label{fig:pcap-gen}
+    \centering
+    \includegraphics[height=2.0in]{figures/ch6/pcap-gen}
+    \caption{Using SIMITAR for generation synthetic \textit{pcap} files, CTD files: a component schema}
+    \label{fig:pcap-gen}
 \end{figure}
-	
+    
 
 
 %\item \textbf{Use OpenDayLight REST API for data collection}: Another different approach for data collection could be the use the OpenDayLight REST API to collect data from an SDN OpenFlow switches, instead of a using a Sniffer. Through REST API is possible to extract many statistics from nodes, hosts, and ports, such active flows, the number of packets matched per flows, packet drops, and so on. But, different features would be measured,  and a new model for traffic generation would be needed. On the other hand, we could reuse many procedures implemented.  
@@ -127,41 +127,41 @@ Identified these issues and possible future works, we conceived approaches and m
 
 %Since the proposed architecture is model-independent, another future work is to use the same general concepts of compact trace descriptor and API agnostic modeling on different models and compare the results.
 
-%Our proposed future work is to implement this idea using the Swing\cite{swing-paper} and the Harpoon Model\cite{harpoon-paper}.  We can create not just Simitar trace descriptors, but Swing and Harpoon trace descriptors as well. So, as here, we would have the same components: the Sniffer, the SQLite database, the DataProcessor, the flow generator, and the same interface based on an XML Compact Trace Descriptor. The FlowGenerator would abstract the traffic generation in based on the Swing and Harpoon model, in an API independent way as well. 
+%Our proposed future work is to implement this idea using the Swing\cite{swing-paper} and the Harpoon Model\cite{harpoon-paper}.  We can create not just SIMITAR trace descriptors, but Swing and Harpoon trace descriptors as well. So, as here, we would have the same components: the Sniffer, the SQLite database, the DataProcessor, the flow generator, and the same interface based on an XML Compact Trace Descriptor. The FlowGenerator would abstract the traffic generation based on the Swing and Harpoon model, in an API independent way as well. 
 
-%These implementations can lead to a definitive and standardized model of realistic traffic generation. In this way, progresses on high-speed traffic generation would no more make old traffic generators and models obsolete. Also, would enable the comparison (ain a fair way) which model is actually the best since the same engine and technic for generating packets will be used.
+%These implementations can lead to a definitive and standardized model of realistic traffic generation. In this way, progresses on high-speed traffic generation would no more make old traffic generators and models obsolete. Also, would enable the comparison (in a fair way) which model is the best since the same engine and technic for generating packets will be used.
 
-%Also, the idea of a Compact Trace Descriptor, by itself separates the idea of traffic generation and the modeling. De development of new methodologies for modeling is  separated from the traffic generation. So a data-developer, using any compact trace descriptor interface may just "plug" his method of data modeling in the FlowGenerator. He has not to care about how the packets were going to be generated anymore nor in what programming language is being used to craft packets.
+%Also, the idea of a Compact Trace Descriptor, by itself separates the concept of traffic generation and the modeling. The development of new methodologies for modeling is divided from the traffic generation. So a data-developer, using any small trace descriptor interface may just "plug" his method of data modeling in the FlowGenerator. He has not to care about how the packets were going to be generated anymore nor in what programming language is being used to craft packets.
 
 
 \section{Final Conclusions}
 
 
-In this dissertation we discuss our process of conceiving, researching, definition and development and validation of an realistic traffic generator able to at the same time fulfill gaps others proposals haven't, and achieve results comparable to the available proposals. This was not a linear procedure. Was indeed an espiral procedure, as proposed by Sommervile on Software Engineering\cite{sommerville}. Clealy its not identical, because we adapt it for research purposes. At the figure~\ref{fig:spiral} we show a diagram of who  it was done. 
+In this dissertation, we discuss our process of conceiving, researching, definition and development and validation of a realistic traffic generator able to at the same time fulfill gaps others proposals haven't, and achieve results comparable to the available suggestions. This was not a linear procedure. Was indeed a spiral procedure, as proposed by Sommerville on Software Engineering\cite{sommerville}. It's not identical, because we adapt it for research purposes. At the figure~\ref{fig:spiral} we show a diagram of how we do it. 
 
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[scale=0.4]{figures/ch6/spiral}
-	\caption{Spiral research and development procedure}
-	\label{fig:spiral}
+    \centering
+    \includegraphics[scale=0.4]{figures/ch6/spiral}
+    \caption{Spiral research and development procedure}
+    \label{fig:spiral}
 \end{figure}
 
 
-We started defining our goals creating a task list, formalizing it on "Working Plan" documents. These tasks lists covered the whole process and included research, the study of new subjects, implementation, and testing. Next, search on the literature the state of things, related works and points for innovation. At this point, we defined the concepts of our traffic generator. We create an architecture model using UML, defining the software components, classes and sequence diagrams. This initial step was crucial since, in later stages, changes in the architecture design are much more difficult. In fact, some small changes such as directory structure and new classes are inevitable. But structural changes are impracticable. At this point we implemented a simplistic prototype, and validate it\footnote{In the appendix ~\ref{ap:publications}, this prototype is validated in the article "Towards a Flexible and Extensible Framework for Realistic Traffic Generation on Emerging Networking Scenarios"}. 
+We started defining our goals creating a task list, formalizing it on "Working Plan" documents. These tasks lists covered the whole process and included research, the study of new subjects, implementation, and testing. Next, search on the literature the state of things, related works and points for innovation. At this point, we defined the concepts of our traffic generator. We create an architecture model using UML, defining the software components, classes and sequence diagrams. This initial step was crucial since, in later stages, changes in the architecture design are much more difficult. In fact, some small changes such as directory structure and new classes are inevitable. But structural changes are impracticable. At this point we implemented a simple prototype, and validate it\footnote{In the appendix ~\ref{ap:publications}, this prototype is validated in the article "Towards a Flexible and Extensible Framework for Realistic Traffic Generation on Emerging Networking Scenarios"}. 
 
 
 After this, we search for more solutions and methodologies that could be applied to solve our problems and improve the performance of our prototype. In this procedure, we researched many topics that at the end didn't fit our intentions, such as Machine Learning and Neural Networks. But others such as Linear regression, maximum likelihood, and information criterions (BIC/AIC) were indeed satisfactory. Again, we planned a methodology, procedure, and validate these ideas, as prototypes. Here the seed for the first part of the chapter ~\ref{ch:modeling-evaluation} and the article "Using BIC and AIC for Ethernet traffic model selection. Is it worth?" (in the appendix ~\ref{ap:publications}). Then we research for more related works to gain insights and find platforms and libraries able to fulfill our requirements. In this step, we designed our algorithms presented in chapter ~\ref{ch:modeling-evaluation}, and chose the APIs, packages, and libraries, such as Armadillo\cite{armadillo}, a C++ linear algebra library. Many ideas we used to conceive our ideas were inspired by previous works and solutions, such as D-ITG\cite{ditg-paper}, Harpoon\cite{harpoon-validation}, Swing\cite{swing-paper} sourcesOnoff\cite{sourcesonoff-paper}, and LegoTG\cite{legotg-paper}. This procedure continued with incremental upgrades until we arrived on the version presented on the chapter ~\ref{ch:validation}. 
 
 
-In the chapter ~\ref{ch:modeling-evaluation} we achieve a significant contribution of our work, which shows that the information criteria AIC and BIC are efficient analytical methods for select models for inter-packet times. Both can infer a good model, even evaluated according to different types of metrics, without any simulation. Also, we show evidence that for Ethernet traffic of data, choosing AIC and BIC make almost no difference. As far as is our knowledge, this is a complete study on the use of AIC and BIC on inter-packet times modeling of Ethernet traffic.
+In the chapter ~\ref{ch:modeling-evaluation} we achieve a significant contribution to our work, which shows that the information criteria AIC and BIC are efficient analytical methods for select models for inter-packet times. Both can infer a good model, even evaluated according to different types of metrics, without any simulation. Also, we show evidence that for Ethernet traffic of data, choosing AIC and BIC make almost no difference. As far as is our knowledge, this is a complete study on the use of AIC and BIC on inter-packet times modeling of Ethernet traffic.
 
 
-In the end, we were able to implement a functional implementation of the solution proposed in the chapter ~\ref{ch:introduction}. Our main contribution here is the development of a traffic generator tool that at the same time can provide realistic synthetic traffic, and its modeling framework is extensible for most of the traffic generation libraries and tools. In fact, our current implementations use tow very distinct packet-crafters: \textit{libtins}, a C++ library designed for the implementation of sniffers and traffic generators, and Iperf, a traffic generator commonly used to measure bandwidth. 
+In the end, we were able to implement a functional implementation of the solution proposed in the chapter ~\ref{ch:introduction}. Our main contribution here is the development of a traffic generator tool that at the same time can provide realistic synthetic traffic, and its modeling framework is extensible for most of the traffic generation libraries and tools. In fact, our current implementations use tow very distinct packet-crafters: \textit{libtins}, a C++ library designed for the application of sniffers and traffic generators, and Iperf, a traffic generator commonly used to measure bandwidth. 
 
 
 Out tests performed on the chapter ~\ref{ch:validation} intend to focus on packet-level, flow-level and scaling metrics, as we state on chapter ~\ref{ch:literature-review}. The results were notably good at the flow-level. SIMITAR were able to replicate the flow-cumulative distribution with high accuracy, and with \textit{libtins}, the number of flows as well. The number of flows was larger because it establishes additional connections for signaling and statistics control. On scaling and packet matrics, the results still have to be improved. Iperf as the traffic generator tool, still being limited, has proved to be efficient on replication the scaling characteristics for the Skype traffic. Since it establishes socket connections to generate the traffic, we believe that this fact makes it accurate on replication traffic from applications. 
 
 
-Finally, we created a list of improvements and future works, aiming the improvement of the software, inclusing, performance better processing time and packet generation, and the realismo on the traffic generated. In fact, the greater bootleneck of the project resides on processing performance. The results on realism, even with a lot of room for improovments, already have a good quality. With the proposed future works we believe to be possible overcome the current limitations.
+Finally, we created a list of improvements and future works, aiming the development of the software, including, performance better processing time and packet generation, and the realism on the traffic generated. In fact, the higher bottleneck of the project resides on processing performance. The results on realism, even with a lot of room for improvement, already have a good quality. With the proposed future works we believe to be possible overcome the current limitations.
 
 

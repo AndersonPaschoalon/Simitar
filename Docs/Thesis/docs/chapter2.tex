@@ -2,70 +2,39 @@
 \chapter{Literature Review}\label{ch:literature-review}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this chapter, we will review some topics from the literature that serve as a base for this whole work. We will define what is a traffic generator tool, and introduce a taxonomy that distinguishes them. After, we will present a survey of many available open-source and free traffic generators. We introduce each tool and then present a feature comparison between each of them. As far as we know, this is the extensible features comparison of traffic generators available so far in the literature. The first two sections are devoted to this topic.
-
-In the third section we will overview network traffic modeling and realistic traffic generation. We will discuss stochastic models that used to describe the Internet traffic. Based on that we will discuss features a realistic traffic should have.  We can count self-similarity and burstiness,  header fields, packet size and flow features.
-
-In the following section, we will make a discussion on validation of traffic generator tools. First, presenting the main approaches of validation made on literature. Then, we will discuss some validation study cases of related works, always introducing new concepts when needed.
-
-%Finally, we will present a short overview of new arriving network technologies: SDN and NFV. We will use them as use cases at the chapter ~\ref{ch:use-cases}. Also, we will present our motivations for this choice. 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Traffic generator tools}\label{sec:traffic-gen}
+\section{A Brief Survey on Traffic Generators}\label{sec:traffic-gen}
 
-%2nd-review
-A traffic generator tool is a system capable of creating and injecting packets into a computer network in a controlled way to generate a synthetic traffic \cite{validate-trafficgen}.  there is a huge variety of traffic generation tools described on the literature \cite{validate-trafficgen} \cite{ditg-paper} and available in the open-source community\footnote{\href{http://www.icir.org/models/trafficgenerators.html}{http://www.icir.org/models/trafficgenerators.html}}. This is a cause of many  different approaches and methodologies available to network traffic generator's developers \cite{validate-trafficgen}.
+A traffic generator is a tool capable of creating and injecting packets into a computer network in a controlled way to generate a synthetic traffic \cite{validate-trafficgen}.  There is a vast variety of traffic generators described on the literature \cite{validate-trafficgen} \cite{ditg-paper} and available in the open-source community\footnote{\href{http://www.icir.org/models/trafficgenerators.html}{http://www.icir.org/models/trafficgenerators.html}}. This is a consequence of an equally large amount of approaches for crafting synthetic traffic \cite{validate-trafficgen}.
 
-%2nd-review
-%Also, previous research such as Oliver et al. \cite{flow-level-ip} have demonstrated that one unique statistical law cannot express all complexity of an original Internet trace (an Internet trace is an Internet traffic capture made over a network interface). So, just selecting a stochastic process for a traffic generator, do not guarantee realism.
+The development of new network generators tightly related with to the current needs of network environment, applications sets, and purpose of use \cite{validate-trafficgen}. For example, if we want to evaluate the performance limits of equipment or new technology, you may want to execute stress tests, at specific constant rates. In this case, maximum throughput traffic generator is more interesting. On the other hand, to test how it performs on an actual network environment, you should search for a tool that produces a stochastically realist profile. Or, if you have a more specific usage case, you may search for a traffic generator that emulates an application scenario such as a client and a network server\cite{surge-paper}. 
 
-%2nd-review
-New network generators development is directly related with to the current needs of network environment, applications sets, and purpose of use \cite{validate-trafficgen}. According to the context, you may want to send as many packets as possible through an interface to  equipment stress . So, in this case, a maximum throughput traffic generator is more interesting. In others situations, you may want a stochastically realist profile. Or even a traffic generator that reflect a special scenario such as a specific application; for example a client and server exchanging data\cite{surge-paper}. In this case, the target would be to stress a server. Another possibility a huge variety of protocols available, or even support of new protocols.
 
-%2nd-review
-Alongside with the traffic generators, there are many APIs available. There are low-level APIs which enables direct packet injection, such as \textit{libpcap}\cite{web-tcpdump}, \textit{libtins}\cite{web-libtins}, DPDK\cite{web-dpdk} and the GNU C socket library\cite{web-socket}. And there are high-level APIs, provided by traffic generator tools, such as D-ITG\cite{ditg-paper}, Ostinato\cite{web-ostinato} and MoonGen\cite{moongen-paper}. In this case they enable an easy custom traffic generation and statistics. Also, there are implementations of hardware-based traffic generators using NetFPGAs\footnote{\href{http://netfpga.org/site/\#/}{http://netfpga.org/site/\#/}}.
+Alongside with the variety of traffic generators, there are many APIs to create traffic. Some are low-level APIs which enables direct packet injection, such as \textit{libpcap}\cite{web-tcpdump}, \textit{libtins}\cite{web-libtins}, DPDK\cite{web-dpdk} and the GNU C socket library\cite{web-socket}. And there are high-level APIs, provided by traffic generator tools, such as D-ITG\cite{ditg-paper}, Ostinato\cite{web-ostinato} and MoonGen\cite{moongen-paper}. In this case, they enable an easy custom traffic generation and statistics. Also, there are implementations of hardware-based traffic generators using NetFPGAs\footnote{\href{http://netfpga.org/site/\#/}{http://netfpga.org/site/\#/}}.
 
-%2nd-review
-In the literature there are many classifications of traffic generators\cite{sourcesonoff-paper}\cite{hybrid-traffic-gen}\cite{validate-trafficgen}\cite{do-you-trust}. Some tools may have some features compatible with one or more classes. But classify them it is an efficient way to distinguish the difference between these tools. We will give two different taxonomies:
 
-%2nd-review
+There are many classifications of traffic generators\cite{sourcesonoff-paper}\cite{hybrid-traffic-gen}\cite{validate-trafficgen}\cite{do-you-trust}, and many have features that fall into more than one class. But classify them it is an efficient way to distinguish the difference between these tools. We will cite here two:
+
 \begin{itemize}
-\item According to its abstraction level \cite{do-you-trust};
-%\item According to its purpose (engine replay, throughput, realism) \cite{validate-trafficgen}
-\item According to its implementation.
+	\item According to its abstraction level \cite{do-you-trust};
+	%\item According to its purpose (engine replay, throughput, realism) \cite{validate-trafficgen}
+	\item According to its implementation.
 \end{itemize}
 
-
-The most common traffic generator classification in the literature is about its abstraction level\cite{do-you-trust}. There are four groups: Application-level, flow-level, packet-level and multi-level traffic generators. We present a diagram  ilustrating its concept at figure ~\ref{fig:layers-workload-tools}.
-
+The most common traffic generator classification in the literature is about its abstraction level\cite{do-you-trust}. There are four groups: Application-level, flow-level, packet-level and multi-level traffic generators. We present a diagram illustrating its concept in figure ~\ref{fig:layers-workload-tools}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{According to its abstraction level}
 
-\textbf{Application-level traffic generators}: they try to emulate the behavior of network applications, simulating real workloads stochastically and/or responsively \footnote{Responsiveness refers to the property of capacity of response over time of the workload tool. That means, the behavior of the output may change according to what packets have arrived in the network interface}. As examples we have Surge\cite{surge-paper} able to emulate the behavior of web clients and services. The behavior of such applications is, in general, based on request-response exchanges models.
+\textbf{Application-level traffic generators}: they try to emulate the behavior of network applications, simulating real workloads stochastically or responsively \footnote{Responsiveness refers to the property of capacity of response over time of the workload tool. That means the behavior of the output may change according to what packets have arrived in the network interface}. As examples, we have Surge\cite{surge-paper}, which emulates the communication between clients and web servers.
 
-\textbf{Flow-level traffic generators}: they are able to configure and reproduce features of flows\cite{do-you-trust}\cite{sourcesonoff-paper}, such as flow duration, start times distributions, and temporal (diurnal) traffic volumes\cite{do-you-trust}. Harpoon \cite{harpoon-paper} is able to extract these parameters from Cisco NetFlow data, collected from live routers.
+\textbf{Flow-level traffic generators}: they are able to configure and reproduce features of flows\cite{do-you-trust}\cite{sourcesonoff-paper}, such as flow duration, start times distributions, and temporal (diurnal) traffic volumes\cite{do-you-trust}. Harpoon \cite{harpoon-paper} is able to extract these parameters from Cisco NetFlow data, collected from  routers.
 
-\textbf{Packet-level traffic generators}: most traffic generators available fall in this class. They are able to craft packets and inject into the network, and controll features like inter departure times (IDT), packet size(PS), throughput and packets per second\cite{validate-trafficgen}. \cite{validate-trafficgen} classify them as replay engines, maximum throughput generators, and model based generators. Traffic Replay engines, such TCPreplay\cite{web-tcpreplay}, are  able to read packet capture files (\textit{pcap} files), and inject copies on a network interface. Model-based generators, such D-ITG \cite{ditg-paper}, TG\cite{web-tg}, may have PS and IDT configured by the user. They can configure IDT  either by constant values (defining the packet rate or bandwidth) or by stochastic models. Maximum throughput engines like Ostinato and Seagull are tools that the main goal is to perform end-to-end stress testing. Are included in this category generators that are able to craft packets from the link layer, like Brute, KUTE, and pktgen.
+\textbf{Packet-level traffic generators}: most traffic generators available fall in this class. They can craft and inject packets into the network, and control features like inter-departure times (IDT), packet size(PS), throughput and packets per second\cite{validate-trafficgen}. \cite{validate-trafficgen} classify them as replay engines, maximum throughput generators, and model-based generators. Traffic Replay engines, such TCPreplay\cite{web-tcpreplay}, can read packet capture files (\textit{pcap} files), and inject copies on a network interface. Model-based generators, such D-ITG \cite{ditg-paper}, TG\cite{web-tg}, may have PS and IDT configured by the user. They can configure IDT  either by constant values (defining the packet rate or bandwidth) or by stochastic models. Maximum throughput engines like Ostinato and Seagull are tools that the main goal is to perform end-to-end stress testing. Are included in this category generators that can craft packets from the link layer, like Brute, KUTE, and pktgen.
 
-\textbf{Multi-level traffic generators}: this is a more recent class of network traffic generator, and its proposal is to take into account existing interaction among each layer of the network stack, to create background network traffic as close as possible from reality. One of the most relevant tools we can found is Swing \cite{swing-paper}. Swing take into account many points of each layer, using an approach based on randomness and responsiveness \cite{swing-paper}. That means, it uses PS and IDT stochastic models, but also take into account flow and application layer behavior. Swing is able to model things like\cite{swing-paper}: 
+\textbf{Multi-level traffic generators}: this is a more recent class of network traffic generator. They take into account existing interaction among each layer of the network stack, to create network traffic as close as possible to reality. Today, the most relevant tool is Swing \cite{swing-paper}. Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-trust} argues that due its complexity, they are rarely used to conduct experimental researchers. Also, due its complexity, its performance is limited\cite{legotg-paper}. 
 
-\begin{itemize}
-
-\item User behavior: Number of request and responses, time between requests and responses;
-
-\item Request and Responses: number of connections, time between start of connections;
-
-\item Connection: Number of request and responses per connection, applications modeling (HTTP, P2P, SMTP), transport protocols TCP/UDP based on the application, response sizes, request sizes, user think between exchanges on a connection;
-
-\item Packet: packet size (Maximum transmission unit), IP addresses, (MTU), bit rate and packet arrival distribution, 
-
-\item Link: link Latency Delay, loss rates.
-
-
-\end{itemize}
-
-Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-trust} argues that due its complexity, they are rarely used to conduct experimental researchers. Also, we can  justify due its overheads, since the performance of such complex traffic generator is limited\cite{legotg-paper}. The authors Vishwanat et al. \cite{swing-paper} cite that they have generated traces of about of 200 Mbps, about the same result found by \cite{legotg-paper}. In the other hand, D-ITG reached 9808 Mbps\cite{comparative-trafficgen-tools} in a link of 10 Gbps, but operating as a maximum throughput generator.
+% On the other hand, D-ITG reached 9808 Mbps\cite{comparative-trafficgen-tools} in a link of 10 Gbps, but operating as a maximum throughput generator.
 
 
 \begin{figure}[!ht]
@@ -79,12 +48,11 @@ Swing take as input collected \textit{pcap} files. Botta at al. \cite{do-you-tru
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{According to its implementation}
 
-\textbf{Software-only traffic generators}: Implementations of traffic generators completely independent of its running hardware platform. This comprehends most of traffic generator tolls.
+\textbf{Software-only traffic generators}: Implementations of traffic generators utterly independent of its running hardware platform. This implementation comprehends most of traffic generator tolls.
 
-\textbf{Software and hardware-dependent traffic generators}: Traffic generators implemented in software, but dependent of underlying hardware. The most preeminent examples of this class are implemented over DPDK\cite{web-dpdk}. DPDK works directly on the NIC interface, avoiding overheads of the Operational System. As cited on its official website, this approach permits huge precision and speed in the timing of packets, since it is able to send and receive packets within less than 80 clock cycles.
+\textbf{Software and hardware-dependent traffic generators}: Traffic generators implemented in software, but dependent on the underlying hardware. The most preeminent examples of this class are implemented over DPDK\cite{web-dpdk}. DPDK works directly on the NIC interface, avoiding overheads of the Operational System. As cited on its official website, this approach permits huge precision and speed in the timing of packets, since it can send and receive packets within less than 80 clock cycles.
 
 \textbf{Hardware traffic generators}: This open-source traffic generators implementations are implemented in hardware description language (VHDL/Verilog), and work on NetFPGAs. Some examples of implementations are: PacketGenerator \cite{web-netfpgapacketgenerator}, Caliper \cite{web-caliper}, and OSNT Packet Generator \cite{web-osnt}.
-
 
 
 %Tabela: revisao dos principais geradores de trafego
@@ -582,12 +550,10 @@ Finally, on newly arrived internet scenarios, due its increasing complexity of n
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Validation of Traffic Generator Tools}~\ref{sec:validation-traffic-gen}
-% techniques
+\section{Validation of Traffic Generator Tools}~\label{sec:validation-traffic-gen}
 
-There are many possible validation techniques for traffic generator tools found in the literature. Any of them have their own importance and application. Magyesi and Szabó\cite{validate-trafficgen} presents an abstract of the main metrics validation metrics. The authors classify them in four categories: packet based metrics, flow based metrics, scaling characteristics and QoS/QoE related metrics. As suggested by other works\cite{swing-paper}, we state here that an synthetic traffic can be considered realistic, metrics of these four classes are close to measured on a real scenario.
-
-Here we present a short review of each of these validation techniques. After that, we will present seven different study cases on validation of related traffic generators. They are Swing\cite{swing-paper}, Harpoon\cite{harpoon-paper}, D-ITG\cite{ditg-paper}, sourcesOnOff\cite{sourcesonoff-paper}, MoonGen\cite{moongen-paper}, LegoTG\cite{legotg-paper} and NFPA\cite{nfpa-paper}.
+After the implementation of a traffic generator, it has to be validated. Thus, we need a set of proof of concepts to evaluate if it reached its purposes or not. 
+There are many validation techniques researchers have proposed over time, according to the traffic generator intended behavior.  Magyesi and Szabó\cite{validate-trafficgen} presented on their work a survey of these techniques, grouped by type of metric. The authors classify them into four categories: packet based metrics, flow-based metrics, scaling characteristics and QoS/QoE related metrics. As suggested by other works\cite{swing-paper}, we state here that synthetic traffic can be considered realistic, metrics of these four classes are close to measured in a real scenario. Here we present a short review of each of these validation techniques. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -599,15 +565,15 @@ Packet based are the most simple and more used metrics in the validation of traf
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Flow Based Metrics}
 
-Flow based metrics are becoming more important since newer network elements, like SDN devices, are able of execute flow-based operations\cite{validate-trafficgen}\cite{sdn-survey}. Magyesi and Szabó\cite{validate-trafficgen} consider the most important flow metrics the flow size distribution and the flow volume. The flow volume are proportional to the number of flow instances and flow-based device should run simultaneously. And the flow sizes defines how much time each instance will run.
+Flow-based metrics are becoming more critical since newer network elements, like SDN devices, are able of executing flow-based operations\cite{validate-trafficgen}\cite{sdn-survey}. Magyesi and Szabó\cite{validate-trafficgen} consider the essential flow metrics the flow size distribution and the flow volume. The flow volume stands for the number of flows of traffic. The flow size distribution is a measure of the length of time and in size of data of each flow in network traffic. The flow volume is proportional to the number of flow instances that a flow-based device should run simultaneously. And the flow sizes defines how much time each of these instances will  run.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Scaling Characteristics}
 
-Second order characteristics such as burstiness and long-range dependence are responsible for the complex nature of the internet traffic\cite{validate-trafficgen}. Due its non-stationary nature, traditional methods fail on extract useful information\cite{validate-trafficgen}. The first analysis made in that way were focus on the estimation of the Hurst exponent\cite{selfsimilar-ethernet}. They demonstrated the self-similar nature of the ethernet traffic. As explained before, a self-similar traffic should an Hust exponent $H$, such as $ 0.5 < H < 1$. Over the years, wavalet based analysis have become an efficient way of reveal correlations, bursts and scaling  nature of the ethernet traffic\cite{validate-trafficgen}. Many works found on the literature have used wavelet based analysis \cite{swing-paper}\cite{non-intrusive-wavelet}\cite{wavelet-analysis-long-range}. 
+Second order characteristics such as burstiness and long-range dependence are responsible for the complex nature of the internet traffic\cite{validate-trafficgen}. Due its non-stationary nature, traditional methods fail on extract useful information\cite{validate-trafficgen}. The first analysis made in that way focused on the estimation of the Hurst exponent\cite{selfsimilar-ethernet}. They demonstrated the self-similar nature of the Ethernet traffic. As explained before, self-similar traffic should a Hust exponent $H$, such as $ 0.5 < H < 1$. Over the years, wavelet-based analysis has become an efficient way of reveal correlations, bursts and scaling nature of the ethernet traffic\cite{validate-trafficgen}. Many works found on the literature have used wavelet-based analysis \cite{swing-paper}\cite{non-intrusive-wavelet}\cite{wavelet-analysis-long-range}. 
 
-Huang et al. \cite{non-intrusive-wavelet} and Abry and Veitch \cite{wavelet-analysis-long-range} offers an extensible explanation of  wavelet-based scaling analysis (WSA) or wavelet multi-resolution energy analysis (WMA). Here, is presented a brief summary of the main information presented by these two works, which you should refer to, for further details. 
+Huang et al. \cite{non-intrusive-wavelet} and Abry and Veitch \cite{wavelet-analysis-long-range} offers an extensible explanation of wavelet-based scaling analysis (WSA) or wavelet multi-resolution energy analysis (WMA). Here, is presented a summary of the primary information offered by these two works, which you should refer to, for further details. 
 
 First, consider a time series $X_{0,k}$ for $k = 0, 1, ... 2^n$:
 
@@ -621,7 +587,7 @@ Supose then that we coaser $X_{0}$ in another time-serie $X_{1}$ with half of th
 X_{1,k} = \frac{1}{\sqrt{2}}(X_{0,2k} + X_{0,2k+1})
 \end{equation}
 
-If we take the differences, instead of the avarages, evaluate the so called \textit{details}. 
+If we take the differences, instead of the averages, evaluate the so-called \textit{details}. 
 
 \begin{equation}
 d_{1,k} = \frac{1}{\sqrt{2}}(X_{0,2k} - X_{0,2k+1})
@@ -642,9 +608,9 @@ E_{j} = \frac{1}{N_{j}} \sum_{k = 0}^{N_{j} - 1} |d_{j,k}|^{2}; \qquad j = 1, 2,
 \\ 
 were $N_{j}$ is the number of coefficients at scale $j$. If we plot $\log(E_{j})$ as a function o the scale $j$, we will obtain an wavelet multiresolution energy plot. 
 
-On energy wavelet multiresolution energy plots, we can capture three main different behavior, according to the scale.  On \textbf{periodic time series}, the Energy values will be small. In fact, on perfectly periodic scales $j$, the values of the energy function $E_{j}$ will be zero. So periodicity will be sensed if the value of the energy function decrease. Perfect \textbf{white noise time series} will maintain the same value of the energy function. So an approximately constant values for the energy function $E_{j}$ indicates white noise behavior (wich can be represented by a Poisson process\cite{poisson-white-noise}). On \textbf{self-similar time series}, the energy function plot $\log(E_{j})$ will grow approximately linearly with the scale $j$.  
+On energy wavelet multiresolution energy plots, we can capture three different main behavior, according to the scale.  On \textbf{periodic time series}, the Energy values will be small. In fact, on perfectly periodic scales $j$, the values of the energy function $E_{j}$ will be zero. So periodicity will be sensed if the value of the energy function decrease. Perfect \textbf{white noise time series} will maintain the same value of the energy function. So an approximately constant values for the energy function $E_{j}$ indicates white noise behavior (which can be represented by a Poisson process\cite{poisson-white-noise}). On \textbf{self-similar time series}, the energy function plot $\log(E_{j})$ will grow approximately linearly with the scale $j$.  
 
-Some recent works suggest the use of multi-fractal models, instead of the self-similar models (also called monofractal)\cite{validate-trafficgen}\cite{udp-flows-model}. Since there is a lack  on multiscaling analysis on the literature on validation of traffic generators, this approach will not be used in this work. 
+Some recent works suggest the use of multi-fractal models, instead of the self-similar models (also called monofractal)\cite{validate-trafficgen}\cite{udp-flows-model}. Since there is a lack of multiscaling analysis on the literature on validation of traffic generators, this type of analysis will stay for future works. 
 
 \begin{figure*}[ht!]
 	\centering
@@ -656,126 +622,18 @@ Some recent works suggest the use of multi-fractal models, instead of the self-s
 
 Another way to analyze scalling characteristics is through QQplots. QQplot is a visual method to compare sample data with a specific stochastic distribution. It orders the sample data values from the smallest to largest, then plots it against the expected value given by the probability distribution function. The data sample values appear along the y-axis and the expected values along the x-axis. The more linear, the more the data is likely to be expressed by this specific stochastic distribution.
 
-Dependendin on the type of plot, some behavios of the empirical dataset, compared to the theoretical may be observed. In the figure ~\ref{fig:qqplot-tutorial} is presented a sumary. 
-
-
+Dependent on how the plot behaves, some features of the empirical dataset compared to the theoretical can be observed. In the figure ~\ref{fig:qqplot-tutorial} is presented a summary. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{QoS/QoE Related Metrics}
 
-For the point of view of a traffic generation, is interesting that the QoS and QoE metrics present similar values to the ones found on real scenarios. As stated by Magyesi and Szabó\cite{validate-trafficgen}, important QoS/QoE metrics on validation of workload tools are: Round trip Time values (RTT), avarage queue whaiting time and queue size. Still on queue size, self-similar traffic consumes router buffers faster than Poisson traffic\cite{multi-player-online-game-self-similarity}.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Study cases}
-
-\subsubsection{Swing}
-Swing\cite{swing-paper} is at the present time, one of the main references of realistic traffic generation.  The authors extracted bidirectional metrics from a network link of synthetic traces. Their goals were to get  realism, responsiveness, and randomness.  They define realism as a trace that reflects the following characteristics of the original: 
-
-\begin{itemize}
-\item Packet inter-arrival rate and burstiness across many time scales;
-\item Packet size distributions;
-\item Flow characteristics as arrival rate and length distributions;
-\item Destination IPs and port distributions.
-\end{itemize}
-
-The traffic generator uses a structural model the account interactions between many layers of the network stack. Each layer has many control variables, which is randomly generated by a stochastic process.  They begin the parameterization, classifying tcpdump\cite{web-libpcap} \textit{pcap}  files with the data, they are able to estimate parameters. 
-
-They validate the results using public available traffic traces, from Mawi\cite{web-mawi} and CAIDA\cite{web-caida}. On the paper, the author focuses on these validation metrics:
-
-\begin{itemize}
-\item Comparison of estimated parameters of the original and swing  generated traces;
-\item Comparison of aggregate and per-application bandwidth and packets per seconds ;
-\item QoS metrics such as two-way delay and loss rates;
-\item Scaling analysis, via Energy multiresolution energy analysis.
-\end{itemize}
-
-
-To the vast majority of the results, both original and swing traces results were close from each other. Thus,  Swing was able to match aggregate and burstiness metrics, per byte and per packet, across many time scales.  
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Harpoon}
-
-Harpoon\cite{harpoon-validation}\cite{harpoon-paper} is a traffic generator able to generate representative traffic at IP \textit{flow level}. It is able to generate TCP and IP with the same byte, packet, temporal and spatial characteristics measured at routers. Also, Harpoon is a self-configurable tool, since it automatically extracts parameters from network traces. It estimates some parameters from original traffic trace: file sizes, inter-connection times, source and destination IP addresses, and the number of active sessions. 
-
-As proof of concept \cite{ harpoon-validation}, the authors compared statistics from original and harpoon's generated traces. The two main types of comparisons: diurnal throughput, and for stochastic variable CDF and frequency distributions. Diurnal throughput refers to the mean bandwidth variation within a day period.  In a usual network, during the day the bandwidth consumption is larger, and at night smaller. Also, they compared:
-
-\begin{itemize}
-\item CDF of bytes transferred per 10 minutes
-\item CDF of packets transferred per 10 minutes
-\item CDF of inter-connection time
-\item CDF of file size
-\item CDF of flow arrivals per 1 hour
-\item Destination IP address frequency
-\end{itemize}
-
-At the end, they showed the differences on throughput evaluation of a Cisco 6509 switch/router using Harpoon and a constant rate traffic generator.  
-Harpoon was proven able to give close CDFs, frequency and diurnal throughput plots compared to the original traces. Also, the results demonstrated that Harpoon provide a more variable load on routers, compared to a constant rate traffic. It indicates the importance of using realistic traffic traces on the evaluation of equipment and technologies. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{D-ITG}
-
-D-ITG\cite{ditg-paper} is a network traffic generator, with many configurable features. The tool provides a platform that meets many emerging requirements for a realistic traffic generation. For example, multi-platform, support of many protocols, distributed operation, sending/receiving flow scalability, generation models, and analytical model based generation high bit/packet rate. You can see different analytical and models and protocols supported by D-ITG at table ~\ref{tab:trafficgen-list1}. 
-
-We will focus on the evaluation of realism on analytical model parameterization.  It is a synthetic replication of a LAN party of eight players of Age of Mythology \footnote{\href{https://www.ageofempires.com/games/aom/}{https://www.ageofempires.com/games/aom/}}. They have captured traffic flows during the party. Then, they modeled its packet size and inter-packet time distributions. They show that the synthetic traffic and the analytical model have similar curves of packet size and inter-packet time, thus it can approximate the empirical data. Also, the mean and the standard deviation of the bit rate of the empirical and synthetic data are similar. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{sourcesOnOff}
-
-
-Varet et al. \cite{sourcesonoff-paper} creates an application implemented in C, called SourcesOnOff. It models the activity interval of packet trains using probabilistic distributions. To choose the best stochastic models, the authors have captured traffic traces using TCPdump. Then the developed tool is able to figure out what distribution(Weibull, Pareto, Exponential, Gaussian, etc) fits better the original traffic traces. It uses the Bayesian Information Criterion (BIC) for distance assessment. It tests the smaller BIC for each distribution, and selects it as the best choice. It ensures good correlation between the original and generated traces and self-similarity.
-
-The validation methods used on sourcesOnOff are: 
-\begin{itemize}
-\item Visual comparison between On time and Off time of the original trace and the stochastic fitting;
-\item QQplots, which aim to evaluate the correlation between inter-trains duration of real and generated traffic;
-\item Measurement of Autocorrelation\footnote{
-The autocorrelation functions measures the correlation between data samples $y_{t}$ and $y_{t + k}$, where $k =0, ..., K$, and the data sample $\{y\}$  is generated by an stochastic process.
-
-According to \cite{book-time-series-analysis}, the autocorrelation for a lag $k$ is:
-
-\begin{equation}
-r_{k} = \frac{c_{k}}{c_{0}}
-\end{equation}
-
-where 
-
-\begin{equation}
-c_{k} = \frac{1}{T - 1}\sum_{t = 1}^{T - k} (y_{t} - \bar{y})(y_{t+k} - \bar{y})
-\end{equation}
-
-and $c_{0}$ is the sample variance of the time series. 
-} of the measured throughput of the real and synthetic traffic;
-\item Hurst exponent computation of the real and the synthetic trace;
-\end{itemize}
-
-The results pointed to a good stochastic fitting, but better for On time values. On the other hand, the correlation value of the QQplot was bigger on the Off time values (99.8\% versus 97.9\%). In the real and synthetic traces, the autocorrelation of the throughput remained between an upper limit of 5\%. Finally, the ratio between the evaluated Hurst exponent always remained smaller than 12\%.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{MoonGen}
-
-MoonGen\cite{moongen-paper} is a high-speed scriptable paper capable of sature  10 GnE link with 64 bytes packets, using a single CPU core. The authors have built it over DPDK and LuaJit, enabling the user to have high flexibility on the crafting of each packet, through Lua scripts. It has multi-core support and runs on commodity server hardware. It is able to test latency with sub-microsecond precision and accuracy, using hardware timestamping of modern NICs cards. The Lua scripting API enable the implementation and high customization along with high-speed. This includes the controlling of packet sizes and control of inter-departure times.
-
-The authors evaluated this traffic generator focused on throughput metrics, rather than others. Also, they have small packet sizes (64 bytes to 256), since the per-packet costs dominate. In their work, they were able to surpass 15 Gbit/s with an XL710 40 GbE NIC. Also, they achieve throughput values close to the line rate with packets of 128 bytes, and 2 CPU cores. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{LegoTG}
-
-Bartlett et al.\cite{legotg-paper} implements a modular framework for composing custom traffic generation, called LegoTG. As argued by the authors (and by this present work), automation of many aspects of traffic generation is a desirable feature. The process of how to generate a proper background traffic may become a research by itself. Traffic generators available today offer a single model and a restricted set of features into a single code base, makes customization difficult. 
-
-The main purpose of their experiment is to show how LegoTG is able to generate background traffic, in a simple way. Also, it shows how a realistic background traffic can influence on research conclusions. The experiment chosen is one of the use cases proposed for Swing\cite{background-traffic-matter}, and its evaluate the error on bandwidth estimation of different measurement tools. It shows that LegoTG is able eble to provide easy and custrom traffic generation.
-
+For the point of view of a traffic generation, is interesting that the QoS and QoE metrics present similar values to the ones found in real scenarios. As stated by Magyesi and Szabó\cite{validate-trafficgen}, important QoS/QoE metrics on validation of workload tools are Roundtrip Time values (RTT), average queue waiting time and queue size. Still, on queue size, self-similar traffic consumes router buffers faster than Poisson traffic\cite{multi-player-online-game-self-similarity}.
 
 
 \section{Conclusions}
 
-
-In this chapter, we review and discussed some fundamental concepts of our research: network traffic generators, network traffic modeling, and network traffic generators validation. In the section ~\ref{sec:traffic-gen} we surveyed types of traffic generators, and a comparison between its considerable variability of features. It helped us to summarize and have a deep understanding of what is available today for use, and define its gaps. Also, it helped us to see find what tools and frameworks are possible for us to use. In the section ~\ref{sec:modeling-traffic} create a brief overview putting together efforts on network traffic modeling and realistic traffic generation. On modeling, we made a short historical summary of some critical points, and on realistic traffic generation, we discussed some reference tools. Finally, we revied methodologies for validation of traffic generator tools, presenting some study cases at the end. This survey worked as a reference for the definition of our methodology of evaluation. 
+In this chapter, we review and discussed some fundamental concepts of our research: network traffic generators, network traffic modeling, and network traffic generators validation. In the section ~\ref{sec:traffic-gen} we surveyed types of traffic generators, and a comparison between its considerable variability of features. It helped us to summarize and have a deep understanding of what is available today for use, and define its gaps. Also, it helped us to see find what tools and frameworks are possible for us to use. In the section ~\ref{sec:modeling-traffic} create a brief overview putting together efforts on network traffic modeling and realistic traffic generation. On modeling, we made a short historical summary of some critical points, and on practical traffic generation, we discussed some reference tools.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -793,4 +651,4 @@ In this chapter, we review and discussed some fundamental concepts of our resear
 
 %\textcolor{red}{TODO}
 
-%For NFV instrumentation and benchmark, there are still few works aiming this gap. \cite{instrumentation-framework-nfv} create a web-based framework for NFV instrumentation in bare-metal and embedded level, but the source code is not provided. \cite{nfv-benchmarking-fault} implement some usage cases of NFVIs (Network Function Virtualization Infrastructures) based on fault injection. \cite{nfpa-paper} implement an open-source tool, called NFPA, focusing on benchmarking of Network Functions. 
+%For NFV instrumentation and benchmark, there are still few works aiming this gap. \cite{instrumentation-framework-nfv} create a web-based framework for NFV instrumentation in bare-metal and embedded level, but the source code is not provided. \cite{nfv-benchmarking-fault} implement some use cases of NFVIs (Network Function Virtualization Infrastructures) based on fault injection. \cite{nfpa-paper} implement an open-source tool, called NFPA, focusing on benchmarking of Network Functions. 
