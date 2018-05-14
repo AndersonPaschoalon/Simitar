@@ -2,13 +2,15 @@
 \chapter{Traffic Modeling and Algorithms}\label{ch:modeling-evaluation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In this chapter, we are going to go into deep details on some implementations and modeling approaches mentioned in the last chapter. In the first section, we are going to discuss our methodology for modeling inter packet-times and validate it as a good choice. The problem we want to address are these:
+In this chapter, we are going to go into deep details on some implementations and modeling approaches mentioned in the last chapter. In the first section, we are going to discuss our methodology for modeling inter packet-times, and proof that it is a good choice. But before putting our hands on the problem, we need to precisely define what we want. We abstract our ideas in the bullets below:
 
 \begin{itemize}
     
-    \item We have a set of empirical inter-packet times, and some approximate stochastic models that describe it. We want to know what is the best analytically, avoiding human analysis;
+    \item Given a set of empiral inter-packet times, we want to parametrize not only one, bua a set of "candidates" stochastic functions to describe it
     
-    \item We want to know whatever if our modeling approaches are suitable or not to describe inter-packet times.
+    \item We want to know, analitically,  which of these candidates is the best, avoiding human analysis;
+    
+    \item We need a proof that our choosen analifical analysis is good or not to describe inter-packet times.
 
 \end{itemize}
 
@@ -132,7 +134,7 @@ Using the gradient descendant, we find an estimation of the linear coefficients 
 \beta = e^{-(b/a)}
 \end{equation}
 
-The gradient descendent consists in minimizing a cost function $J(\theta)$. We explain this procedure in the appendix ~\ref{ap:revision-probability}. In the figure~\ref{fig:linearization} we present as examples, the linearized data for the inter arrivals from the \textit{skype-pcap}, and in the figure ~\ref{fig:linearization-cost} the cost convergence. In the appendix ~\ref{ap:aditional-plots}, a complete set of these figures is presented.
+The gradient descendent consists in minimizing a cost function $J(\theta)$. We explain this procedure in the appendix ~\ref{ap:revision-probability}. In the figure~\ref{fig:linearization} we present as examples, the linearized data for the inter arrivals from the \textit{skype-pcap}, and in the figure ~\ref{fig:cost} the cost convergence. In the appendix ~\ref{ap:aditional-plots}, a complete set of these figures is presented.
 
 Applying the inverse equations of the linear coefficients ($\hat{\alpha} = \hat{a}$ and $\hat{\beta} = e^{-(\hat{b}/\hat{a})}$) \footnote{The hat symbol ( $ \widehat{} $ ) for the estimated parameters}, we are able to estimate the Weibull distribution parameters. We can summarize this procedure, in these steps:
 \begin{enumerate}
@@ -262,7 +264,6 @@ The smaller is the cost $J$, the best is the model. Then we compare the results 
 % Logscale Skype
 \begin{figure}[ht!]
 \centering
-\label{fig:aproximation-original-cdf}
 \subfloat[Chauchy]{
   \includegraphics[width=78mm]{figures/ch4/Skype_Logscale_-_Cauchy_aproximation_vs_Original_set}
 }
@@ -287,6 +288,7 @@ The smaller is the cost $J$, the best is the model. Then we compare the results 
 \subfloat[Weibull]{
   \includegraphics[width=78mm]{figures/ch4/Skype_Logscale_-_Weibull_aproximation_vs_Original_set}
 }
+\label{fig:aproximation-original-cdf}
 \caption{CDF functions for the approximations of \textit{skype-pcap} inter  packet times, of many stochastic functions.}
 \end{figure}
 
@@ -370,7 +372,7 @@ The smaller is the cost $J$, the best is the model. Then we compare the results 
     }
 \end{table}
 
-Here in this chapter we only discuss the plots achieved obtained by the \textit{pcap} \textit{skype-pcap} for simplicity. The other plots are provided and commented on the appendix ~\ref{ap:aditional-plots}. In the figure ~\ref{fig:aproximation-original-cdf} we present all estimated CDF functions along with the empirical CDF, for the trace \textit{skype-pcap}. They are on log-scale, which provide a better visualization for small time scales. In the case of the normal function, all values smaller than zero were set to zero on the plot. Is possible to see different accuracies and types of fittings on each plot. Visually, the best fit seems to be the Weibull trough linear regression. 
+Here in this chapter we only discuss the plots achieved obtained by the \textit{pcap} \textit{skype-pcap} for simplicity. The other plots are provided and commented on the appendix ~\ref{ap:aditional-plots}. In the figure~\ref{fig:aproximation-original-cdf} we present all estimated CDF functions along with the empirical CDF, for the trace \textit{skype-pcap}. They are on log-scale, which provide a better visualization for small time scales. In the case of the normal function, all values smaller than zero were set to zero on the plot. Is possible to see different accuracies and types of fittings on each plot. Visually, the best fit seems to be the Weibull trough linear regression. 
 
 Analyzing the plots, and what they would mean, our Cauchy fitting would impose almost constant traffic, with the inter-packet time close to the mean. On the trace \textit{skype-pcap} the exponential plots seems not to represent well the small values of inter-packet times. This is due fact that an exponential process is good at describing values close to the average. But, it fails to represent values too small and higher. On the other hand, a self-similar process like Weibull and Pareto are better serving inter-packet times with higher dispersion. Pareto(MLH) has a slow convergence, which means this distribution may generate values of inter-packet times too large. 
 
@@ -382,9 +384,13 @@ On our previsions, Weibull and Pareto(MLH and LR) are the best options. We expec
 
 Analyzing the quality of AIC and BIC as criteria of choose on \textit{skype-pcap}, based on the results form figure ~\ref{fig:correlation-hurst-skype-pcap} we see that concerning Correlation and Self-similarity it picked the right model: Weibull. Also regarding average packet rate and dispersion, it is still one of the best choices (along with Exponential(Me), Pareto(LR) and Cauchy). The third and the fourth choices (Pareto(LR)) and Exponential(LR) also are good options in most of these metrics. But, Pareto(MLH) is presented as the second best choice, and it had poor results in comparison to the others, especially on mean, correlation and dispersion. 
 
-All these results are abstracted by the cost function $J$. As we can see, on all pcaps, the best function selected by BIC and AIC~\ref{tab:prototype-results} also had the small cost~\ref{fig:cost-function}. 
+All these results are abstracted by the cost function $J$. As we can see, on all pcaps, the best function selected by BIC and AIC(table~\ref{tab:prototype-results}) also had the small cost(figure~\ref{fig:cost-function}). 
 
 Another important observation is the fact that exponential function was able to provide the best fitting for the \textit{wan-pcap}. The reasons for this behavior are both results of a much great traffic with no long-range gaps, and the precision of the measurement.
+
+
+Since there is a lot of information on table~\ref{tab:prototype-results} and on the figure~\ref{fig:cost-function}, we capture just the order of choise form each \textit{pcap} plotted on the figure~\ref{fig:cost-function_vs_aic-bic}. We can see that expecially on the best fittings, the results were closer. Just for the \textit{bigFlows-pcap} the results from the best and second best models were flipped. On all the other cases, the choises were the same. For the worsts models, the results tend to differ more, and loose correlation. It is not a bad thing, since they were not good choices after all. 
+
 
 %%%%%%%%%%%%%%
 % Skype correlation, Hurst, Mean Standard Deviation
@@ -439,6 +445,14 @@ Another important observation is the fact that exponential function was able to 
     \label{fig:cost-function}
 \end{figure}
 
+%validation Cost function
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=100mm]{figures/ch4/aic-bic_vs_costFunction_order}
+	\caption{Comparison of model selection order com cost function and AIC/BIC}
+    \label{fig:cost-function_vs_aic-bic}
+\end{figure}	
+
 \begin{algorithm}[ht!]
     \caption{stochasticModelFitting}
     \label{alg:stochasticModelFitting}
@@ -467,7 +481,7 @@ Another important observation is the fact that exponential function was able to 
 
 
 
-We can conclude that using AIC or BIC as criteria for choosing models for inter-packet times is a good choice.
+We can conclude that using AIC or BIC as criteria for choosing good models for inter-packet times is a good choice.
 
 Except by the Pareto function modeled using the Maximum likelihood method, have comparative results between the simulations and the AIC/BIC goes. The best fittings according to the AIC/BIC usually returned very accurate models, with a small error between the mean and fractal level, and correlation close to one. The models selected as the worsts traditionally yielded poor results.
 
@@ -538,7 +552,7 @@ We do not rely on only one type of parameterization. This approach turns our met
     
 \begin{table}[ht!]
     \centering
-    \caption{Application matach table}
+    \caption{Application match table}
     \label{tab:application-protocols}
     \begin{tabular}{lll}
         \hline

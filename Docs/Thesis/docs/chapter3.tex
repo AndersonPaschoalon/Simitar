@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In this chapter, we will present our tool which aims to fill the gaps addressed in the chapter ~\ref{ch:introduction}. We call it \textit{SIMITAR}, an acronym for \textit{SnIffing, ModellIng and TrAffic geneRation}.  This acronym summarizes its operation. SIMITAR is a traffic generator able to learn features of real traffic automatically, and reproduce synthetic traffic similar to the original. It records a model for the traffic in an XML file we call \textit{compact trace descriptor} (CTD file). As input-data SIMITAR can use \textit{pcap} files or real-time captures.  
+In this chapter, we will present our tool which aims to fill the gaps addressed in the chapter~\ref{ch:introduction}. We call it \textit{SIMITAR}, an acronym for \textit{SnIffing, ModellIng and TrAffic geneRation}\footnote{And Scimitar is curved sword originated on the Middle East.}.  This acronym summarizes its operation. SIMITAR is a traffic generator able to learn features of real traffic automatically, and reproduce synthetic traffic similar to the original. It records a model for the traffic in an XML file we call \textit{compact trace descriptor} (CTD file). As input-data SIMITAR can use \textit{pcap} files or real-time captures.  
 
 
 \begin{figure*}[ht!]
@@ -13,13 +13,13 @@ In this chapter, we will present our tool which aims to fill the gaps addressed 
     \label{fig:layer-diagram}
 \end{figure*}
 
-On the figure ~\ref{fig:layer-diagram} we abstract our concepts we stated in a layer diagram model. Or tool must work as an interface for the user automatizing traffic modeling, configuration, and emulation and offer services of intelligence and traffic generation programmability. In the figure, we also include packet-acceleration\footnote{Packet acceleration is a concept introduced by DPDK\cite{web-dpdk}, which means kernel by-pass. Packet acceleration optimizes the packet processing, and therefore traffic generation, enabling higher throughput rates.}, however, in the current version, this feature is not implemented, but how to do it is discussed in the section of future works in the chapter ~\ref{ch:conclusion}. To avoid confusions, we will refer to the underlying workload tool as packet generator engine/tool, and for SIMITAR as a traffic generator. Even if this packet generator may be a traffic generator itself (such as Iperf), on SIMITAR, its operates just on the packet-level, as we explain in the chapter ~\ref{ch:literature-review}, and our tool is a multi-layer traffic generator tool.
+On the figure ~\ref{fig:layer-diagram} we abstract our concepts we stated in a layer diagram model. Or tool work as an interface for the user automatizing traffic modeling, configuration, and emulation and offer services of intelligence and traffic generation programmability. In the figure, we also include packet-acceleration\footnote{Packet acceleration is a concept introduced by DPDK\cite{web-dpdk}, which means kernel by-pass. Packet acceleration optimizes the packet processing, and therefore traffic generation, enabling higher throughput rates.}, however, in the current version, this feature is not implemented, but how to do it is discussed in the section of future works in the chapter ~\ref{ch:conclusion}. To avoid confusions, we will refer to the underlying workload tool as packet generator engine/tool, and for SIMITAR as a traffic generator. Even if this packet generator may be a traffic generator itself (such as Iperf), on SIMITAR, its operates just on the packet-level, as we explain in the chapter ~\ref{ch:literature-review}, and our tool is a multi-layer traffic generator tool.
 
 
-Our primary goal is to offer simple configuration, with \textbf{realism}, at a reasonable speed. The intermediate layer of the figure ~\ref{fig:layer-diagram} summarize, the purpose of the project in an illustrative way. Instead of storing a huge file \textit{pcap} with a size of many \textit{gigas}, we create a light-weight set of models and parameters that describe this same trace. We are also introducing the concept of \textbf{programmability}. Since the \textit{compact trace descriptor},  is an XML file, the user may create his custom traffic in a platform agnostic way creating his own CTD file. So the user will be able to create multi-flow Ethernet traffic not having to build many scripts for each tool or reading its documentation. A single description of the traffic will fit any supported packet generator. Using a component methodology, we decouple the packet generation, from the data collection and parameterization process. We developt it using the design pattern factory to make the extension easy for any packet generator engine. 
+Our primary goal is to offer all services mentioned in the table~\ref{tab:related-work}, realismo on the synthetic traffic, auto-modelling and traffic configuration, simple usage,  configuration, and plain possibility of traffic customization for the user. The intermediate layer of the figure ~\ref{fig:layer-diagram} summarize, the purpose of the project in an illustrative way. Instead of storing a huge file \textit{pcap} with a size of many \textit{gigas}, we create a light-weight set of models and parameters that describe this same trace. We are also introducing the concept of \textbf{programmability}. Since the \textit{compact trace descriptor}(CDF), is an XML file, the user may create his custom traffic in a platform agnostic way creating his own CTD file. So the user will be able to create multi-flow Ethernet traffic not having to build many scripts for each tool or reading its documentation. A single description of the traffic will fit any supported packet generator. Using a component methodology, we decouple the packet generation, from the data collection and parameterization process. We developt it using the design pattern factory to make the extension easy for any packet generator engine. 
 
 
-We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool, from live captures or \textit{pcap} file collects raw data from Ethernet traffic. It then breaks these data into different flows and uses this data to generate a set of parameters for our traffic model, using a set of algorithms. Finally, SIMITAR provides these parameters to a packet generator engine and controls its packets injection.
+We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation}. Our tool collect packet data  from live captures or \textit{pcap} files. It then breaks the traffic into flows and uses the data to generate  parameters for our traffic model. Finally, SIMITAR provides these parameters to a packet generator engine and controls the packet injection.
 
 % cycle of operation
 \begin{figure*}[ht!]
@@ -34,7 +34,7 @@ We abstract its whole operation cycle in the figure ~\ref{fig:cycle-of-operation
 \section{SIMITAR Architecture}
 
 
-To meet the requirements presented in the chapter ~\ref{ch:introduction}, we will define our solution, and how it works. SIMITAR architecture is presented in the figure~\ref{fig:architecture}. It is composed of four components: a \textit{Sniffer}, a \textit{SQLite database}, a \textit{TraceAnalyzer}, a \textit{FlowGenerator};  and a \textit{Network Traffic Generator}, as subsystem. We describe each part below.
+To meet the requirements presented in the chapter ~\ref{ch:introduction}, we will define our solution, and how it works. SIMITAR architecture is presented in the figure~\ref{fig:architecture}. It is composed of four components: a \textit{Sniffer}, a \textit{SQLite database}, a \textit{TraceAnalyzer}, a \textit{FlowGenerator},  and a \textit{Network Traffic Generator}, as subsystem. We describe each part below.
 
 % component diagram and module design
 \begin{figure*}[ht!]
@@ -50,7 +50,7 @@ To meet the requirements presented in the chapter ~\ref{ch:introduction}, we wil
 
 
 
-This component collects network traffic data and classifies it into flows, storing stores in an SQLite database. It defines each flow by the same criteria used by SDN switches\cite{sdn-survey},  through header fields matches. It uses:
+This component collects network traffic data and classifies it into flows, storing stores in an SQLite database. It uses header field matches to classify the flows, such as in SDN switches\cite{sdn-survey}. The used fields are:
 
 \begin{itemize}
 \item Link Protocol
@@ -71,7 +71,7 @@ This component collects network traffic data and classifies it into flows, stori
 We implemented the first version of this component in Shell Script (Bash).  Tsahrk\footnote{\href{https://www.wireshark.org/docs/man-pages/tshark.html}{https://www.wireshark.org/docs/man-pages/tshark.html}} was used to extract header fields, and Awk to match the flows, and Sed/Awk to create the SQLite queries. This version was too slow to operate in real time on Ethernet interfaces. On the other hand, this approach was fast to implement and enable the implementation of the other components. The second and current version was made using Python. This version used Pyshark \footnote{\href{https://pypi.python.org/pypi/pyshark}{https://pypi.python.org/pypi/pyshark}} as sniffer library.  
 
 
-It has a data structure we developed called \textit{OrderedSet}. A set is a list of elements with no repetition but does not keep track of the insertion order. Our OrderedSet does. Also, it makes use of a  64 bits hash function of the family FNV\footnote{The collision probability of a good 64 bits hash function in a table with 10000 items is about of $2.71e-12$.}. The listed header fields are inputs for a hash function. The hash value is then added to the ordered set which returns its order (index on the \textit{OrderedSet}). The index value is chosen as a packet flowID.  
+It has a data structure we developed called \textit{OrderedSet}. A set is a list of elements with no repetition but does not keep track of the insertion order. Our OrderedSet does. Also, it uses a  64 bits hash function from the FNV\footnote{The collision probability of a good 64 bits hash function in a table with 10000 items is about of $2.71e-12$.} family. The listed header fields are inputs for a hash function. The hash value is then added to the ordered set which returns its order (index on the \textit{OrderedSet}). The index value is chosen as a packet flowID.  
 
 
 %c++ http://ideone.com/F0V42m
@@ -132,21 +132,44 @@ Each one of these parameters is unique per flow. Other features like packet-size
 \begin{figure*}[ht!]
     \centering
     \includegraphics[height=2.0in]{figures/ch3/modified-harpoon-model}
-    \caption{The schema of the modified version of the Harpoon algorithm we adopt on SCIMITAR.}
+    \caption{The schema of the modified version of the Harpoon algorithm we adopt on SIMITAR.}
     \label{fig:modified-harpoon-model}
 \end{figure*}
 
 
-To represent inter-packet times, we adopt a modified version of the Harpoon's traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Harpoon uses a definition of each level, based on the measurement of SYN and ACK TCP flags. It uses TCP flags (SYN) to classify packets in different levels, named their file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets. For our purposes, the advantage of this strategy is that the evaluation of the packet-train is not attached to a specific protocol. We illustrate this behavior in the figure~\ref{fig:modified-harpoon-model}.
+To represent inter-packet times, we adopt a modified version of the Harpoon's traffic model. A deep explanation of the original model can be found at \cite{harpoon-paper} and \cite{harpoon-validation}. Harpoon uses a definition of each level, based on the measurement of SYN and ACK TCP flags. It uses TCP flags (SYN) to classify packets in different levels, named their file, session, and user level. We choose to estimate these values, based on inter-packet times only. The distinction is made based on the time delay between packets. For our purposes, the advantage of our strategy is that the evaluation of the packet-train is not attached to a specific header field, so we can define packet trains for any sort of flow. We illustrate this behavior in the figure~\ref{fig:modified-harpoon-model}.
 
 
 In our algorithm, we define three different layers of data transference to model and control: \textit{file}, \textit{session}, and \textit{flow}. For SIMITAR, a \textit{file} is a sequence of consecutive packets transmitted continuously, without long interruption of traffic. A file can be, for example, packets from download, a UDP   connection or a single ICMP echo packet. The session-layer refers to a sequence of multiple files transmitted between a source and a destination, belonging to the same flow.  The flow level refers to the conjunct of flows, as classified by the Sniffer.  Now, we explain SIMITAR operation on each layer. 
 
 
-In the \textbf{flow layer} the \textit{TraceAnalyzer} loads the flow arrival times from the database and calculates the inter-packet times within the flow context. At the \textbf{session layer}, we use a deterministic approach for evaluating file transference time and times between files: ON/OFF times sequence of packet trains. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} responsible for estimating these times. It also determines the number of packets and bytes transferred by each file. Since the ON times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Also in the case of just one packet, the ON time would be zero. So setting a minimum acceptable time to solve these issues. The OFF times, on the other hand, are defined by the constant \texttt{session\_cut\_time} \footnote{In the code it is called \texttt{DataProcessor::m\_session\_cut\_time} }. If the time between two packets of the same flow is larger than \texttt{session\_cut\_time}, we consider them belonging to a different file, so this time is a session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} for the \texttt{session\_cut\_time}: 30 seconds. The control of ON/OFF periods in the traffic generation is made by the \textit{Flow Generator} component \footnote{This control is made by the class \texttt{NetworkFlow}}.
+In the \textbf{flow layer} the \textit{TraceAnalyzer} loads the flow arrival times from the database and calculates the inter-packet times within the flow context. At the \textbf{session layer}, we use a deterministic approach for evaluating file transference time and times between files: ON/OFF times sequence of packet trains. We choose a deterministic model because in this way we can express diurnal behavior\cite{harpoon-paper}.  We develop an algorithm called \textit{calcOnOff} that estimate these times. It also determines the number of packets and bytes transferred by each file. Since the ON times will serve as input for actual traffic generators, we defined a minimum acceptable time for on periods equals to 100 ms. ON times can be arbitrary smalls, and they could be incompatible with acceptable ON periods for traffic generators. Also in the case of just one packet, the ON time would be zero. So setting a minimum acceptable time to solve these issues. The OFF times, on the other hand, are defined by the constant \texttt{session\_cut\_time} \footnote{In the code it is called \texttt{DataProcessor::m\_session\_cut\_time} }. If the time between two packets of the same flow is larger than \texttt{session\_cut\_time}, we consider them belonging to a different file, so this time is a session OFF time. In this case, we use the same value of the constant \textit{Request and Response timeout} of Swing\cite{swing-paper} for the \texttt{session\_cut\_time}: 30 seconds. The control of ON/OFF periods in the traffic generation is made by the \textit{Flow Generator} component \footnote{This control is made by the class \texttt{NetworkFlow}}.
 
 
-In the \textbf{file layer}, we model the inter-packet times at the file level. To estimate inter-packet times within files, we select all inter-packet times smaller than \texttt{session\_cut\_time}\footnote{In the code it is called\texttt{DataProcessor::m\_session\_cut\_time} }. All files within the same flow are considered to follow the same model. We delegate the control of the inter-packet times to the underlying packet generator engine. We ordered them, from the best to the worst. Currently, we are using eight different stochastic functions parameterizations. They are Weibull(linear regression), Normal(mean/standard deviation calculation), Exponential(mean and linear regression estimation), Pareto(linear regression and maximum likelihood), Cauchy(linear regression) and Constant(mean calculation). From those, Weibull, Pareto, and Cauchy are heavy-tailed functions, and therefore self-similar processes. But if the flow has less than 30 packets, just the constant model is evaluated. It is because numerical methods gave poor results if the data sample used is small. We sort these models according to the Akaike Information Criterion (AIC) as default\cite{sourcesonoff-paper}\cite{bic-aic-comparision}. We will enter into deeper details on this methodology on the chapter ~\ref{ch:modeling-evaluation}. We present the methodology of selection in the figure~\ref{fig:model-parameterization}. All these constants and modes of operation are modifiable via command-line options.
+In the \textbf{file layer}, we model the inter-packet times at the file level. We select all times smaller than \texttt{session\_cut\_time}\footnote{In the code it is called\texttt{DataProcessor::m\_session\_cut\_time} }, and all files within the same flow are considered to follow the same model. We delegate the control of the inter-packet times to the underlying packet generator engine. We ordered them, from the best to the worst. Currently, we are using eight different stochastic functions parameterizations. We display each of them on the table~\ref{tab:parameterizations-sumary} .
+
+
+\begin{table}[ht!]
+	\centering
+	\caption{Functions and parameterizations used by SIMITAR}
+		\begin{tabular}{c c c c}
+			\toprule
+			\textbf{Function} & Linear Regression & Maximum Likelihood & Empirical\footnotemark \\
+			\midrule
+			Weibull         & $\checkmark$    &                  &                  \\
+			Normal             &                  &                  &  $\checkmark$    \\
+			Exponential      & $\checkmark$    &                  &  $\checkmark$    \\
+			Pareto          & $\checkmark$    & $\checkmark$    &                  \\
+			Cauchy          & $\checkmark$    &                  &                  \\
+			Constant          &                 &                  & $\checkmark$    \\
+			\bottomrule
+		\end{tabular}
+		\label{tab:parameterizations-sumary}
+\end{table}
+\footnotetext{Empirical estimation, by calculation of the avarge, and standard deviation} 
+
+
+From the functions presented in the first column~\ref{tab:parameterizations-sumary}, Weibull, Pareto, and Cauchy are heavy-tailed (and self-similar processes). But if the flow has less than 30 packets, just the constant model is evaluated. It is because numerical methods gave poor results if the data sample used is small. We sort these models according to the Akaike Information Criterion (AIC) as default\cite{sourcesonoff-paper}\cite{bic-aic-comparision}. We will enter into deeper details on this methodology on the chapter ~\ref{ch:modeling-evaluation}. We present the methodology of selection in the figure~\ref{fig:model-parameterization}. All these constants and modes of operation are modifiable via command-line options.
 
 
 \begin{figure*}[ht!]

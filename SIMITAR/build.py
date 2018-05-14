@@ -62,6 +62,7 @@ def unninstall():
 
 
 def deps():
+	# pip install argcomplete 
 	print_header("Tools dependencies")
 	os.system('sudo apt-get install ostinato;')
 	os.system('sudo apt-get install wireshark')

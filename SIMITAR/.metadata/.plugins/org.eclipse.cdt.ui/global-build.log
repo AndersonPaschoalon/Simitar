@@ -4405,3 +4405,267 @@ make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
 * Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -lsqlite3 -larmadillo -ltins 
 	 Link time: 00:00:01
 make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/unity'
+00:40:22 **** Build of configuration Default for project libsimitar ****
+make all 
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DataProcessor.cpp -> ../libsimitar/obj/DataProcessor.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DataProcessor.o ../libsimitar/DataProcessor.cpp -I ../deps/ -I ../libsimitar/
+In file included from ../libsimitar/NetworkTrace.h:23:0,
+                 from ../libsimitar/DataProcessor.h:34,
+                 from ../libsimitar/DataProcessor.cpp:8:
+/usr/include/rapidxml/rapidxml_iterators.hpp:21:26: error: expected nested-name-specifier
+         typedef typename xml_node<Ch> value_type;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:21:39: error: invalid declarator before ‘value_type’
+         typedef typename xml_node<Ch> value_type;
+                                       ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:22:26: error: expected nested-name-specifier
+         typedef typename xml_node<Ch> &reference;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:22:39: error: invalid declarator before ‘&’ token
+         typedef typename xml_node<Ch> &reference;
+                                       ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:23:26: error: expected nested-name-specifier
+         typedef typename xml_node<Ch> *pointer;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:23:39: error: invalid declarator before ‘*’ token
+         typedef typename xml_node<Ch> *pointer;
+                                       ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:37:9: error: ‘reference’ does not name a type
+         reference operator *() const
+         ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:43:9: error: ‘pointer’ does not name a type
+         pointer operator->() const
+         ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:100:26: error: expected nested-name-specifier
+         typedef typename xml_attribute<Ch> value_type;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:100:44: error: invalid declarator before ‘value_type’
+         typedef typename xml_attribute<Ch> value_type;
+                                            ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:101:26: error: expected nested-name-specifier
+         typedef typename xml_attribute<Ch> &reference;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:101:44: error: invalid declarator before ‘&’ token
+         typedef typename xml_attribute<Ch> &reference;
+                                            ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:102:26: error: expected nested-name-specifier
+         typedef typename xml_attribute<Ch> *pointer;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:102:44: error: invalid declarator before ‘*’ token
+         typedef typename xml_attribute<Ch> *pointer;
+                                            ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:116:9: error: ‘reference’ does not name a type
+         reference operator *() const
+         ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:122:9: error: ‘pointer’ does not name a type
+         pointer operator->() const
+         ^
+make: *** [../libsimitar/obj/DataProcessor.o] Error 1
+Makefile:110: recipe for target '../libsimitar/obj/DataProcessor.o' failed
+00:40:52 **** Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+00:40:54 **** Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+00:40:55 **** Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+In file included from ../../libsimitar/NetworkTrace.h:23:0,
+                 from ../../libsimitar/DataProcessor.h:34,
+                 from ../../tests/integration/integration-tests.cpp:11:
+/usr/include/rapidxml/rapidxml_iterators.hpp:21:26: error: expected nested-name-specifier
+         typedef typename xml_node<Ch> value_type;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:21:39: error: invalid declarator before ‘value_type’
+         typedef typename xml_node<Ch> value_type;
+                                       ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:22:26: error: expected nested-name-specifier
+         typedef typename xml_node<Ch> &reference;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:22:39: error: invalid declarator before ‘&’ token
+         typedef typename xml_node<Ch> &reference;
+                                       ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:23:26: error: expected nested-name-specifier
+         typedef typename xml_node<Ch> *pointer;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:23:39: error: invalid declarator before ‘*’ token
+         typedef typename xml_node<Ch> *pointer;
+                                       ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:37:9: error: ‘reference’ does not name a type
+         reference operator *() const
+         ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:43:9: error: ‘pointer’ does not name a type
+         pointer operator->() const
+         ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:100:26: error: expected nested-name-specifier
+         typedef typename xml_attribute<Ch> value_type;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:100:44: error: invalid declarator before ‘value_type’
+         typedef typename xml_attribute<Ch> value_type;
+                                            ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:101:26: error: expected nested-name-specifier
+         typedef typename xml_attribute<Ch> &reference;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:101:44: error: invalid declarator before ‘&’ token
+         typedef typename xml_attribute<Ch> &reference;
+                                            ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:102:26: error: expected nested-name-specifier
+         typedef typename xml_attribute<Ch> *pointer;
+                          ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:102:44: error: invalid declarator before ‘*’ token
+         typedef typename xml_attribute<Ch> *pointer;
+                                            ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:116:9: error: ‘reference’ does not name a type
+         reference operator *() const
+         ^
+/usr/include/rapidxml/rapidxml_iterators.hpp:122:9: error: ‘pointer’ does not name a type
+         pointer operator->() const
+         ^
+Makefile:113: recipe for target '../../tests/integration/obj/integration-tests.o' failed
+make[1]: *** [../../tests/integration/obj/integration-tests.o] Error 1
+make: *** [all] Error 2
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+Makefile:4: recipe for target 'all' failed
+00:46:02 **** Incremental Build of configuration Default for project libsimitar ****
+make all 
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/DataProcessor.cpp -> ../libsimitar/obj/DataProcessor.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/DataProcessor.o ../libsimitar/DataProcessor.cpp -I ../deps/ -I ../libsimitar/
+	 Compile time: 00:00:30
+mkdir -p ../libsimitar/obj
+
+* Compiling: ../libsimitar/NetworkTrace.cpp -> ../libsimitar/obj/NetworkTrace.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -c -o ../libsimitar/obj/NetworkTrace.o ../libsimitar/NetworkTrace.cpp -I ../deps/ -I ../libsimitar/
+In file included from ../libsimitar/NetworkTrace.h:22:0,
+                 from ../libsimitar/NetworkTrace.cpp:8:
+/usr/include/rapidxml/rapidxml_print.hpp: In instantiation of ‘OutIt rapidxml::internal::print_node(OutIt, const rapidxml::xml_node<Ch>*, int, int) [with OutIt = std::back_insert_iterator<std::__cxx11::basic_string<char> >; Ch = char]’:
+/usr/include/rapidxml/rapidxml_print.hpp:390:36:   required from ‘OutIt rapidxml::print(OutIt, const rapidxml::xml_node<Ch>&, int) [with OutIt = std::back_insert_iterator<std::__cxx11::basic_string<char> >; Ch = char]’
+../libsimitar/NetworkTrace.cpp:772:56:   required from here
+/usr/include/rapidxml/rapidxml_print.hpp:115:37: error: ‘print_children’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_children(out, node, flags, indent);
+                                     ^
+/usr/include/rapidxml/rapidxml_print.hpp:169:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_children(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_children(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:120:41: error: ‘print_element_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_element_node(out, node, flags, indent);
+                                         ^
+/usr/include/rapidxml/rapidxml_print.hpp:242:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_element_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_element_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:125:38: error: ‘print_data_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_data_node(out, node, flags, indent);
+                                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:208:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_data_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_data_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:130:39: error: ‘print_cdata_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_cdata_node(out, node, flags, indent);
+                                       ^
+/usr/include/rapidxml/rapidxml_print.hpp:219:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_cdata_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_cdata_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:135:45: error: ‘print_declaration_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_declaration_node(out, node, flags, indent);
+                                             ^
+/usr/include/rapidxml/rapidxml_print.hpp:298:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_declaration_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_declaration_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:140:41: error: ‘print_comment_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_comment_node(out, node, flags, indent);
+                                         ^
+/usr/include/rapidxml/rapidxml_print.hpp:321:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_comment_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_comment_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:145:41: error: ‘print_doctype_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_doctype_node(out, node, flags, indent);
+                                         ^
+/usr/include/rapidxml/rapidxml_print.hpp:339:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_doctype_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_doctype_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:150:36: error: ‘print_pi_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_pi_node(out, node, flags, indent);
+                                    ^
+/usr/include/rapidxml/rapidxml_print.hpp:361:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_pi_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_pi_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp: In instantiation of ‘OutIt rapidxml::internal::print_node(OutIt, const rapidxml::xml_node<Ch>*, int, int) [with OutIt = std::ostream_iterator<char, char, std::char_traits<char> >; Ch = char]’:
+/usr/include/rapidxml/rapidxml_print.hpp:390:36:   required from ‘OutIt rapidxml::print(OutIt, const rapidxml::xml_node<Ch>&, int) [with OutIt = std::ostream_iterator<char, char, std::char_traits<char> >; Ch = char]’
+/usr/include/rapidxml/rapidxml_print.hpp:403:14:   required from ‘std::basic_ostream<Ch>& rapidxml::print(std::basic_ostream<Ch>&, const rapidxml::xml_node<Ch>&, int) [with Ch = char]’
+/usr/include/rapidxml/rapidxml_print.hpp:414:21:   required from ‘std::basic_ostream<Ch>& rapidxml::operator<<(std::basic_ostream<Ch>&, const rapidxml::xml_node<Ch>&) [with Ch = char]’
+../libsimitar/NetworkTrace.cpp:777:17:   required from here
+/usr/include/rapidxml/rapidxml_print.hpp:115:37: error: ‘print_children’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_children(out, node, flags, indent);
+                                     ^
+/usr/include/rapidxml/rapidxml_print.hpp:169:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_children(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_children(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:120:41: error: ‘print_element_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_element_node(out, node, flags, indent);
+                                         ^
+/usr/include/rapidxml/rapidxml_print.hpp:242:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_element_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_element_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:125:38: error: ‘print_data_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_data_node(out, node, flags, indent);
+                                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:208:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_data_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_data_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:130:39: error: ‘print_cdata_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_cdata_node(out, node, flags, indent);
+                                       ^
+/usr/include/rapidxml/rapidxml_print.hpp:219:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_cdata_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_cdata_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:135:45: error: ‘print_declaration_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_declaration_node(out, node, flags, indent);
+                                             ^
+/usr/include/rapidxml/rapidxml_print.hpp:298:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_declaration_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_declaration_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:140:41: error: ‘print_comment_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_comment_node(out, node, flags, indent);
+                                         ^
+/usr/include/rapidxml/rapidxml_print.hpp:321:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_comment_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_comment_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:145:41: error: ‘print_doctype_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_doctype_node(out, node, flags, indent);
+                                         ^
+/usr/include/rapidxml/rapidxml_print.hpp:339:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_doctype_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_doctype_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+/usr/include/rapidxml/rapidxml_print.hpp:150:36: error: ‘print_pi_node’ was not declared in this scope, and no declarations were found by argument-dependent lookup at the point of instantiation [-fpermissive]
+                 out = print_pi_node(out, node, flags, indent);
+                                    ^
+/usr/include/rapidxml/rapidxml_print.hpp:361:22: note: ‘template<class OutIt, class Ch> OutIt rapidxml::internal::print_pi_node(OutIt, const rapidxml::xml_node<Ch>*, int, int)’ declared here, later in the translation unit
+         inline OutIt print_pi_node(OutIt out, const xml_node<Ch> *node, int flags, int indent)
+                      ^
+make: *** [../libsimitar/obj/NetworkTrace.o] Error 1
+Makefile:110: recipe for target '../libsimitar/obj/NetworkTrace.o' failed
+00:47:04 **** Incremental Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+00:47:05 **** Incremental Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+00:47:06 **** Incremental Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:20
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread  -lsqlite3 -larmadillo -ltins   
+g++: error: ../../libsimitar/libsimitar.a: Arquivo ou diretório não encontrado
+Makefile:94: recipe for target '../integration-tests' failed
+make[1]: *** [../integration-tests] Error 1
+make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
+make: *** [all] Error 2
+Makefile:4: recipe for target 'all' failed

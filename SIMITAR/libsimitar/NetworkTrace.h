@@ -18,10 +18,15 @@
 #include <vector>
 #include <errno.h>
 #include <unistd.h>
-#include <rapidxml/rapidxml.hpp>
-#include <rapidxml/rapidxml_print.hpp>
-#include <rapidxml/rapidxml_iterators.hpp>
-#include <rapidxml/rapidxml_utils.hpp>
+//#include <rapidxml/rapidxml.hpp>
+//#include <rapidxml/rapidxml_print.hpp>
+//#include <rapidxml/rapidxml_iterators.hpp>
+//#include <rapidxml/rapidxml_utils.hpp>
+#include "rapidxml-1.13/rapidxml.hpp"
+#include "rapidxml-1.13/rapidxml_utils.hpp"
+#include "rapidxml-1.13/rapidxml_print.hpp"
+//#include "rapidxml-1.13/rapidxml_iterators.hpp"
+
 
 using namespace rapidxml;
 using std::string;

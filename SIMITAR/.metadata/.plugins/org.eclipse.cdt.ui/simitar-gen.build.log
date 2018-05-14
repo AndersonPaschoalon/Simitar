@@ -1,6 +1,6 @@
-20:54:12 **** Build of configuration Default for project simitar-gen ****
+00:47:04 **** Incremental Build of configuration Default for project simitar-gen ****
 make all 
 make: Nothing to be done for 'all'.
 
-20:54:12 Build Finished (took 168ms)
+00:47:05 Build Finished (took 745ms)
 

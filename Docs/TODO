@@ -8,6 +8,7 @@ sudo activate-global-python-argcomplete
 
 [sniffer]
 when "sniffer-cli.py new <trace-name> live" is executed without root permission no error messege is displayed and a trace enty is added in the Traces table
+https://medium.com/@JasonWyatt/squeezing-performance-from-sqlite-insertions-971aff98eef2
 
 
 [LIBSIMITAR] 
