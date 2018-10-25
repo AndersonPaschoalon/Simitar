@@ -1,4 +1,28 @@
 function Pplt = cdfParetoPlot(pareto_alpha, pareto_xm, max_time, plotName)
+% cdfParetoPlot - generate a CDF vector of a pareto function, and plot 
+% its figure
+%
+% Syntax:  value = adiff(a1, a2)
+%
+% Inputs:
+%    pareto_alpha - function param 
+%    pareto_xm - function param 
+%    max_time - max time on the plot 
+%    plotName - figure name 
+%
+% Outputs:
+%    Nplt - x and y values of the CDF 
+%
+% Example: 
+%    Eplt = cdfParetoPlot(2, 2, 15, 'test')
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% Author: Anderson Paschoalon
+% email: anderson.paschoalon@gmail.com
+% Sep 2018: Last revision: 16-Sep-2018 
         %linspace_size = 100;
         %pareto_x = linspace(0, max_time, linspace_size)';
 	linspace_size = 1000;

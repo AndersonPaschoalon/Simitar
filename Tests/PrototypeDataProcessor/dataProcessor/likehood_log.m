@@ -1,12 +1,11 @@
 function L = likehood_log(data, functionName, paramVet)
-% LIKEHOOD_LOG compute the logarithm of likehood function value
-%       LIKEHOOD_LOG(data, functionName, paramVet) evaluete the logarithm of 
-% the maximum likehood function of a set of data, of a stochastic function.
+% likehood_log - compute the logarithm of likehood function value.  
+% Evaluete the logarithm of the maximum likehood function of a set of data, 
+% of a stochastic function.
+% 
+% Syntax: L = likehood_log(data, functionName, paramVet)
 %
-% Parameters:
-% data  
-%       A vector of data wich will be used to evaluate the maximum likehood 
-%       function.
+% Inputs:
 % functionName
 %       A lower case string of the name of the stochastic function, wich will 
 %       be used to to compute the maximum likehood function. The supported 
@@ -33,8 +32,23 @@ function L = likehood_log(data, functionName, paramVet)
 %               paramVet(2) = xm (scale)
 %       Cauchy
 %               paramVet(1) = gamma (scale)
-%               paramVet(2) = x0 (location)
+%               paramVet(2) = x0 (location)   
 %
+% Outputs:
+%    L - natural logarithm of likelihood function 
+%
+% Example: 
+%    data = [0.5 0.3 2 5]'
+%    L = likehood_log(data, 'weibull', [0.5 0.5]')
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% Author: Anderson Paschoalon
+% email: anderson.paschoalon@gmail.com
+% Sep 2018: Last revision: 16-Sep-2018 
+% Initialize some useful values  
 data_prob = zeros(size(data));
 if(isequal(functionName, 'weibull'))
         alpha = paramVet(1);

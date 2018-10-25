@@ -74,71 +74,71 @@ matrix2File([interArrival interArrivalCdf], filename, title, labels);
 % Weibull fitting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if(WEIBULL_FITTING != 0)
-        fprintf("\n*********************\nWeibull data fitting\n*********************\n");
-        %linearized data
-        fprintf("Data linearization plot\n");
-        %y = log(-log(1.00 - interArrivalCdf));
-        y = log(-log(1.00 - interArrivalCdf));
-        x = log(interArrival);
-        %dlmwrite('xy.txt',[x y]); %?????????
-        figure; %new figure
-        plotData(x, y, 'x', 'y', 'b-+', 'Linearized data and linear fitting');
+    fprintf("\n*********************\nWeibull data fitting\n*********************\n");
+    %linearized data
+    fprintf("Data linearization plot\n");
+    %y = log(-log(1.00 - interArrivalCdf));
+    y = log(-log(1.00 - interArrivalCdf));
+    x = log(interArrival);
+    %dlmwrite('xy.txt',[x y]); %?????????
+    figure; %new figure
+    plotData(x, y, 'x', 'y', 'b-+', 'Linearized data and linear fitting');
 
-        % gradient descendent
-        fprintf('Running Gradient Descent ...\n')
-        X = [ones(m, 1), x(:,1)]; % Add a column of ones to x
-        theta = zeros(2, 1); % initialize fitting parameters
-        % gradient descent settings
-        iterations = 1500;
-        learning_rate = 0.01;
-        % run gradient descent
-        [theta J_history ] = gradientDescent(X, y, theta, learning_rate, iterations);
-        % print theta to screen
-        fprintf('Theta found by gradient descent: %f %f \n', theta(1), theta(2));
-        fprintf('Initial coast J(1) = %f; Final coast J(end) = %f \n', J_history(1), J_history(end));
-        hold on; % keep previous plot visible
-        % plot the linear fit over the non-linear (linearized) data
-        plot(X(:,2), X*theta, 'r-')
-        legend('Training data', 'Linear regression', 'Location','southeast'  ,'Orientation','vertical');
-        hold off % don't overlay any more plots on this figure
-        saveas(gca , 'figures/Weibull - Linearized data and linear fitting.png');
+    % gradient descendent
+    fprintf('Running Gradient Descent ...\n')
+    X = [ones(m, 1), x(:,1)]; % Add a column of ones to x
+    theta = zeros(2, 1); % initialize fitting parameters
+    % gradient descent settings
+    iterations = 1500;
+    learning_rate = 0.01;
+    % run gradient descent
+    [theta J_history ] = gradientDescent(X, y, theta, learning_rate, iterations);
+    % print theta to screen
+    fprintf('Theta found by gradient descent: %f %f \n', theta(1), theta(2));
+    fprintf('Initial coast J(1) = %f; Final coast J(end) = %f \n', J_history(1), J_history(end));
+    hold on; % keep previous plot visible
+    % plot the linear fit over the non-linear (linearized) data
+    plot(X(:,2), X*theta, 'r-')
+    legend('Training data', 'Linear regression', 'Location','southeast'  ,'Orientation','vertical');
+    hold off % don't overlay any more plots on this figure
+    saveas(gca , 'figures/Weibull - Linearized data and linear fitting.png');
 
-        % plot Cost J() convergence
-        figure; %new figure
-        plotData(1:length(J_history), J_history, 'iterations', 'J(iterations)', '-g', 'Weibull - Cost J(iterations) convergence');
-        saveas(gca , 'figures/Weibull - Cost J(iterations) convergence.png');
+    % plot Cost J() convergence
+    figure; %new figure
+    plotData(1:length(J_history), J_history, 'iterations', 'J(iterations)', '-g', 'Weibull - Cost J(iterations) convergence');
+    saveas(gca , 'figures/Weibull - Cost J(iterations) convergence.png');
 
-        %parameter estimation
-        weibull_alpha = abs(theta(2));
-	if( abs(theta(2)) < INFINITEZIMAL) 
-		theta(2) = INFINITEZIMAL;
-	endif
-        weibull_betha = abs(real(exp(-theta(1)/theta(2))));
+    %parameter estimation
+    weibull_alpha = abs(theta(2));
+    if( abs(theta(2)) < INFINITEZIMAL) 
+        theta(2) = INFINITEZIMAL;
+    endif
+    weibull_betha = abs(real(exp(-theta(1)/theta(2))));
 
-        % Plot original data and aproximation fitting
-        cdfW_temp = real(cdfWeibullPlot(weibull_alpha, weibull_betha, max_time,'Weibull aproximation vs Original set'));
-	cdfW = real(cdfW_temp);
-        hold on;
-        plot(interArrival, interArrivalCdf, '-r');
-	legend('aproximation', 'original', 'Location','southeast'  ,'Orientation','vertical');
-        saveas(gca , 'figures/Weibull aproximation vs Original set.png');
-        
-        hold off;
-	
-	%linealization plot
-	title = "Weibull - Linearized data and linear fitting";
-	labels = "Linearized-data(x), Linearized-data(y), Aproximation(x), Aproximation(y)";
-	filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
-	matrix2File([x y X(:,2) X*theta], filename, title, labels);
-	title = "Weibull - Cost J(iterations) convergence";
-	labels = "iterations, J(iterations)";
-	filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
-	matrix2File([(1:length(J_history))' J_history], filename, title, labels);
-	title = "Weibull aproximation vs Original set";
-	labels = "W(x), W(CDF) ";
-	filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
-	matrix2File(real(cdfW), filename, title, labels);	
-	
+    % Plot original data and aproximation fitting
+    cdfW_temp = real(cdfWeibullPlot(weibull_alpha, weibull_betha, max_time,'Weibull aproximation vs Original set'));
+    cdfW = real(cdfW_temp);
+    hold on;
+    plot(interArrival, interArrivalCdf, '-r');
+    legend('aproximation', 'original', 'Location','southeast'  ,'Orientation','vertical');
+    saveas(gca , 'figures/Weibull aproximation vs Original set.png');
+    
+    hold off;
+
+    %linealization plot
+    title = "Weibull - Linearized data and linear fitting";
+    labels = "Linearized-data(x), Linearized-data(y), Aproximation(x), Aproximation(y)";
+    filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
+    matrix2File([x y X(:,2) X*theta], filename, title, labels);
+    title = "Weibull - Cost J(iterations) convergence";
+    labels = "iterations, J(iterations)";
+    filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
+    matrix2File([(1:length(J_history))' J_history], filename, title, labels);
+    title = "Weibull aproximation vs Original set";
+    labels = "W(x), W(CDF) ";
+    filename = strcat(PLOT_DIR, title, PLOT_DATA_EXT);
+    matrix2File(real(cdfW), filename, title, labels);	
+
 	
 endif
 

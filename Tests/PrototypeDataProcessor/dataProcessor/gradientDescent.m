@@ -1,8 +1,31 @@
 function [theta, J_history] = gradientDescent(X, y, theta, learning_rate, num_iters)
-%GRADIENTDESCENT Performs gradient descent to learn theta
-%   theta = GRADIENTDESENT(X, y, theta, learning_rate, num_iters) updates theta by 
-%   taking num_iters gradient steps with learning rate learning_rate
-
+% gradientDescent - Performs gradient descent to learn theta
+% theta = GRADIENTDESENT(X, y, theta, learning_rate, num_iters) updates theta by 
+% taking num_iters gradient steps with learning rate learning_rate
+% 
+% Syntax: [theta, J_history] = gradientDescent(X, y, theta, learning_rate, num_iters)
+%
+% Inputs:
+%   X - data 
+%   y - data 
+%   theta - init learn vector
+%   learning_rate - learning rate 
+%   num_iters - number of iterations
+%
+% Outputs:
+%    theta - learn vector
+%    J_history - cost history 
+%
+% Example: 
+%    [theta, J_history] = gradientDescent(X, y, theta, learning_rate, num_iters)
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% Author: Anderson Paschoalon
+% email: anderson.paschoalon@gmail.com
+% Sep 2018: Last revision: 16-Sep-2018 
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);

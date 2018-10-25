@@ -22,7 +22,7 @@ def main(args):
     # run simulations
     run_simulations(pcap_file, sym_name, plots_dir, cd)
     # plot data
-    plot_data(pcap_file, sym_name, plots_dir)
+    #plot_data(pcap_file, sym_name, plots_dir)
 
 def dataprocessor_help():
     print('./run.py <pcap_file>  <simulation_name>')
@@ -37,18 +37,20 @@ def print_header(title):
 
 def run_simulations(pcap_file, sym_name, plots_dir, cd):
     print_header("Simulations for:" + sym_name + " using pcap:" + pcap_file)
-    # clean sim dir
+    # clean sim dir or create if it does not exist
     cd.cd('./dataProcessor/')
+    os.system('mkdir -p figures')
+    os.system('mkdir -p data')
     os.system('rm -rf data/*')
     # filter inter-pacekt times
     os.system('./pcap-filter.sh --time-delta ' + pcap_file + ' ' + sym_name)
     # execute dataProcessor prototype
-    os.system('./dataProcessor.m ' + sym_name)
+    os.system('./dataProcessor.m ' + sym_name + ' |tee data/dataProcessorStdOut.log')
     # calc cost function of each simulation
     os.system('./calcCostFunction.py ' + 'data/')
     # back to working directory
     cd.back()
-    # creating plots dir
+    # creating plots dir, clean if already exist
     os.system('rm -rf ' + plots_dir)
     os.system('mkdir -p ' + plots_dir)
     os.system('mv dataProcessor/data/* ' + plots_dir)

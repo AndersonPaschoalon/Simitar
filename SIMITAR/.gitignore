@@ -10,3 +10,4 @@ simitar-gen/obj/*
 tests/integration/obj/*
 !tests/unity/obj/.gitkeep
 tests/unity/obj/*
+deps/libtins

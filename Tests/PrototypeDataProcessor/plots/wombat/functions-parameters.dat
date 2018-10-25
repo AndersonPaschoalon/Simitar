@@ -1,8 +1,0 @@
-Weibull: weibull_alpha=0.101597, weibull_betha=0.016123
-Normal: normal_mean=0.706830, normal_std=2.647680
-Exponential(LR)=1.533399
-Exponential(Me)=1.414767
-Pareto(LR): pareto_alpha=0.220086, pareto_xm=0.000000
-Pareto(MLH): pareto_mlh_alpha=0.092687, pareto_mlh_xm=0.000000
-Cauchy: cauchy_gamma=0.000076, cauchy_x0=0.144711
-

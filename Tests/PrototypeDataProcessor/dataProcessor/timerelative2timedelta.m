@@ -1,4 +1,5 @@
 #!/usr/bin/octave-cli -qf
+% Script used by pcap-filter.sh to calc time relative
 
 arg_list = argv ();
 

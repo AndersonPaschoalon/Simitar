@@ -1,3 +1,4 @@
+% used?
 function [h,stats] = cdfplot(data)
 
         data_len = length(data);

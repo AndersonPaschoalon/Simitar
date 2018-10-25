@@ -1,4 +1,30 @@
 function sff2File(filename, title, labels, separator, vs, vf1, vf2)
+% sff2File - save data on csv format on file
+%
+% Syntax: sff2File(filename, title, labels, separator, vs, vf1, vf2)
+%
+% Inputs:
+%    filename -
+%    title  -
+%    labels  -
+%    separator  -
+%    vs  -
+%    vf1 -
+%    vf2  -
+%
+% Outputs:
+%    fig - figure object
+%
+% Example: 
+%    sff2File(filename, title, labels, separator, vs, vf1, vf2)
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% Author: Anderson Paschoalon
+% email: anderson.paschoalon@gmail.com
+% Sep 2018: Last revision: 16-Sep-2018  
 	fid = fopen(filename,'wt');
 	fprintf(fid, "#%s\n", title);
 	fprintf(fid, "#%s\n", labels);

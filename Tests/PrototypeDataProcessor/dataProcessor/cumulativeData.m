@@ -23,6 +23,27 @@
 ## Created: 2017-04-12
 
 function [retVet] = cumulativeData (dataVet)
+% cumulativeData - create a cumulative data vector, acumulating dataVet 
+%
+% Syntax: retVet = cumulativeData (dataVet)
+%
+% Inputs:
+%    dataVet - original vector
+%
+% Outputs:
+%    dataVet - acumulated vector
+%
+% Example: 
+%    retVet = cumulativeData ([1 2 3])
+%    % retVet has [1 3 6]
+%
+% Other m-files required: none
+% Subfunctions: none
+% MAT-files required: none
+%
+% Author: Anderson Paschoalon
+% email: anderson.paschoalon@gmail.com
+% Sep 2018: Last revision: 16-Sep-2018 
 	m = length(dataVet);
 	%init retVet
 	retVet = zeros(m, 1);
