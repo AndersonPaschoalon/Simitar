@@ -2,11 +2,11 @@
 
 SIMITAR stands for SIMITAR: SnIffing, ModellIng and TrAffic geneRation. SIMITAR is a tool for creating synthetic and realist network traffic. It uses actual netowork traffic (live captures or pcap files) for creating a flow-oriented traffic model. This model is used for creating network traffic, and is provided as parameter for the traffic generator. It is self-configurated because you dont have to care about adjusting stochastic parameters such as exponenetial rates, protocol, ports, or traffic rates as input parameters. It is all contained inside te traffic model created.
 
-![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/digram-project-cycle.png)
+![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/digram-project-cycle.png | width=200)
 
 The traffic generator is not attached to a especific technology. It has a flow scheduler, which creates a thread for each flow. As traffic generator engine we can use from applications to low-level C/C++ lybraries. Currently we have extended it to [Libtins](http://libtins.github.io/)(C++ packet frafter lyrbrary) and [Iperf](https://iperf.fr/).  
 
-![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/arch1.svg)
+![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/arch1.svg | width=48)
 
 
 ## Components and apps
@@ -18,12 +18,7 @@ SIMITAR is composed of 4 components:
 - Trace Analyzer (trace-analyzer/trace-analyzer or bin/trace-analyzer)
 - Traffic Generator (simitar-gen/simitar-gen or bin/simitar-gen)
 
-<p align="center">
-  <img width="200" height="200" src="blob:null/7f9a8c2c-9976-4801-92e4-fa13969c0fc1">
-</p>
-
-
-![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.pdf)
+![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.pdf | width=48)
 
 Before executing any command, you must load the enviroment variables:
 ```
