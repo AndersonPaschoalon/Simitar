@@ -19,7 +19,7 @@ SIMITAR is composed of 4 components:
 - Traffic Generator (simitar-gen/simitar-gen or bin/simitar-gen)
 
 <p align="center">
-  <img width="200" height="200" src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.pdf">
+  <img width="200" height="200" src="blob:null/7f9a8c2c-9976-4801-92e4-fa13969c0fc1">
 </p>
 
 
