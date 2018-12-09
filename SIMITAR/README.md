@@ -11,13 +11,14 @@ The traffic generator is not attached to a especific technology. It has a flow s
 
 ## Components and apps
 
-SIMITAR is composed of 4 components.:
+SIMITAR is composed of 4 components:
+
 - Sniffer (sniffer/sniffer-cli.py or bin/simitar-sniffer) : 
 - Database (data/db/Trace.db)
 - Trace Analyzer (trace-analyzer/trace-analyzer or bin/trace-analyzer)
 - Traffic Generator (simitar-gen/simitar-gen or bin/simitar-gen)
 
-![](blob:null/3c4e9336-1eb0-4c15-8c0e-461fd2a3d61f)
+![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.pdf)
 
 Before executing any command, you must load the enviroment variables:
 ```
