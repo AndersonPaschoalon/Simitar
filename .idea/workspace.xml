@@ -2,81 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9e68a1f-1cb7-4859-91cf-4176d49338a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/28328209-23a4c9e4-6bbc-11e7-829e-cab7dc28bc73.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/29639572-94504628-8831-11e7-9462-0c806018ab8c.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/31919641-b0c1caca-b842-11e7-83ba-465807366d01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/8b8c31e6-2d50-11e7-8b18-3b6161f31ffa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/ade05c76-358a-11e7-84ee-7ae9fc0c8688.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/b414e040-2d50-11e7-802f-1db6c860ac67.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/c6ea5908-2d4f-11e7-809b-4be175440059.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docs/Figures/releases/f090a340-2d4d-11e7-8292-fd4f42fe82dd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/analysis/figures/wombat01_a-WaveletMREA.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/analysis/figures/wombat01_b-WaveletMREA.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/Bandwidth.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/Bandwidth.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/FlowCdf.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/FlowCdf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/FlowsPs.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/FlowsPs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/WaveletMREA.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/WaveletMREA.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/Bandwidth.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/Bandwidth.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/FlowCdf.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/FlowCdf.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/FlowsPs.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/FlowsPs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/WaveletMREA.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/WaveletMREA.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/SimulationMininet/pcaps/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/config.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/Bandwidth.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/FlowCdf.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/FlowsPs.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/WaveletMREA.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/about.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/hust exponent : inter-packet times.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/packetsinfo_wombat01_a1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_a/packetsinfo_wombat01_a2.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/Bandwidth.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/FlowCdf.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/FlowsPs.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/WaveletMREA.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/about.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/hust exponent : inter-packet times.dat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/packetsinfo_wombat01_b1.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Tests/Validation/plots/wombat01_b/packetsinfo_wombat01_b2.csv" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/pcaps/wombat01_iperf_skype.client.pcap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/pcaps/wombat01_iperf_skype.server.pcap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-iperf.sh" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/CsvFile.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/CsvFile.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/DitgFlow.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/DitgFlow.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/DummyFlow.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/DummyFlow.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/IperfFlow.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/IperfFlow.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/NetworkFlow.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/NetworkFlow.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/NetworkFlowFactory.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/NetworkFlowFactory.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/NetworkTrace.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/NetworkTrace.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/RegressionTests.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/RegressionTests.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/SimitarWorkspace.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/SimitarWorkspace.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/StochasticModelFit.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/StochasticModelFit.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/TinsFlow.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/TinsFlow.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/cfunctions.gcda" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/obj/cfunctions.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/simitar-gen/gmon.out" afterPath="$PROJECT_DIR$/SIMITAR/simitar-gen/gmon.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/simitar-gen/obj/simitar-app.gcda" afterPath="$PROJECT_DIR$/SIMITAR/simitar-gen/obj/simitar-app.gcda" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Validation/analysis/figures/Bandwidth.png" afterPath="$PROJECT_DIR$/Tests/Validation/analysis/figures/Bandwidth.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Validation/analysis/figures/FlowCDF.png" afterPath="$PROJECT_DIR$/Tests/Validation/analysis/figures/FlowCDF.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Validation/analysis/figures/FlowPs.png" afterPath="$PROJECT_DIR$/Tests/Validation/analysis/figures/FlowPs.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterPath="$PROJECT_DIR$/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Tests/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/README" afterPath="$PROJECT_DIR$/Tests/SimulationMininet/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/config.py" afterPath="$PROJECT_DIR$/Tests/SimulationMininet/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/run-client.py" afterPath="$PROJECT_DIR$/Tests/SimulationMininet/run-client.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/run-server.py" afterPath="$PROJECT_DIR$/Tests/SimulationMininet/run-server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/SimulationMininet/simple-topo-test.py" afterPath="$PROJECT_DIR$/Tests/SimulationMininet/simple-topo-test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Validation/run.py" afterPath="$PROJECT_DIR$/Tests/Validation/run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/pcaps/.gitignore" afterPath="$PROJECT_DIR$/Tests/pcaps/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SIMITAR/data/log/simitar.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SIMITAR/data/log/sniffer-fileCapture_lanDiurnal.pcap.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SIMITAR/tests/.integration-tests_time" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/data/db/trace.db" afterPath="$PROJECT_DIR$/SIMITAR/data/db/trace.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/libsimitar/libsimitar.a" afterPath="$PROJECT_DIR$/SIMITAR/libsimitar/libsimitar.a" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/simitar-gen/obj/simitar-app.o" afterPath="$PROJECT_DIR$/SIMITAR/simitar-gen/obj/simitar-app.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/simitar-gen/simitar-gen" afterPath="$PROJECT_DIR$/SIMITAR/simitar-gen/simitar-gen" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/builder-helper.py" afterPath="$PROJECT_DIR$/SIMITAR/builder-helper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/simitar-gen/Makefile" afterPath="$PROJECT_DIR$/SIMITAR/simitar-gen/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/sniffer/sniffer-cli.py" afterPath="$PROJECT_DIR$/SIMITAR/sniffer/sniffer-cli.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SIMITAR/trace-analyzer/Makefile" afterPath="$PROJECT_DIR$/SIMITAR/trace-analyzer/Makefile" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,8 +31,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="47" />
     <option name="y" value="24" />
-    <option name="width" value="1873" />
-    <option name="height" value="1056" />
+    <option name="width" value="1319" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -113,8 +49,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -127,12 +63,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjetoMestrado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ProjetoMestrado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SIMITAR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SIMITAR/sniffer" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -148,32 +98,32 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="24" width="1873" height="1056" extended-state="6" />
+    <frame x="47" y="24" width="1319" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24943139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">

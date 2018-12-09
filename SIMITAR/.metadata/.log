@@ -5544,3 +5544,958 @@ java.io.FileNotFoundException: /home/anderson/ProjetoMestrado/SIMITAR/.metadata/
 	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1165)
 	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SESSION 2018-12-08 01:49:59.209 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-12-08 01:50:42.022
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-12-08 01:50:42.337
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2018-12-08 01:50:42.337
+!MESSAGE Could not read metadata for 'RemoteSystemsTempFiles'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/1.tree)[568]: java.io.FileNotFoundException: /home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/1.tree (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.writeTree(SaveManager.java:2085)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:904)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:864)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:715)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1565)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2464)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2219)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:447)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:136)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 568 2018-12-08 01:50:42.370
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/1.tree (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.writeTree(SaveManager.java:2085)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:904)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:864)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:715)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1565)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2464)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2219)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:447)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:936)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:319)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571)
+	at org.eclipse.osgi.container.Module.start(Module.java:439)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:391)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:136)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-08 01:50:44.441
+!MESSAGE Unable to load resource file:/home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.xml.sax.SAXParseExceptionpublicId: file:/home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:350)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:326)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:231)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:435)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:260)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:601)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; systemId: file:/home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1472)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:1014)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:261)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1297)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	... 24 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2018-12-08 01:50:44.442
+!MESSAGE The persisted workbench has no top-level windows, so reinitializing with defaults.
+!STACK 0
+java.lang.Exception
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:236)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:435)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:260)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:601)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-08 01:51:00.155
+!MESSAGE Indexed 'libsimitar' (16 sources, 19 headers) in 8,24 sec: 3.192 declarations; 8.291 references; 110 unresolved inclusions; 0 syntax errors; 5.432 unresolved names (32%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-08 01:51:02.027
+!MESSAGE Indexed 'simitar-gen' (1 sources, 15 headers) in 0,802 sec: 1.000 declarations; 1.349 references; 81 unresolved inclusions; 0 syntax errors; 811 unresolved names (26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-08 01:51:47.881
+!MESSAGE Indexed 'tests' (2 sources, 856 headers) in 41,8 sec: 81.740 declarations; 196.678 references; 0 unresolved inclusions; 1 syntax errors; 34 unresolved names (0,012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-12-08 01:52:26.897
+!MESSAGE Indexed 'trace-analyzer' (1 sources, 878 headers) in 39 sec: 82.857 declarations; 200.001 references; 0 unresolved inclusions; 1 syntax errors; 34 unresolved names (0,012%)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-08 01:55:44.359
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1745)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1828)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1202)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1144)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.resources 4 568 2018-12-08 02:02:07.570
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1745)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1828)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1202)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1144)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.219
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Assignment in condition\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.242
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Statement has no effect\")",macro=>true,exceptions=>()}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.243
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Class has a virtual method and non-virtual destructor\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.244
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Catching by reference is recommended\")",unknown=>false,exceptions=>()}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.245
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Suggested parenthesis around expression\")",paramNot=>false}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.246
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"No return value\")",implicit=>false}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.247
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Unused return value\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.248
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"No return\")",implicit=>false}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.249
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Assignment to itself\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.251
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Suspicious semicolon\")",else=>false,afterelse=>false}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.252
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"No break at end of case\")",no_break_comment=>"no break",last_case_param=>false,empty_case_param=>false}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.253
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Unused variable declaration in file scope\")",macro=>true,exceptions=>("@(#)","$Id")}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.253
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Unused function declaration\")",macro=>true}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.254
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Unused static function\")",macro=>true}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.256
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Class members should be properly initialized\")",skip=>true}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.258
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Name convention for function\")",pattern=>"^[a-z]",macro=>true,exceptions=>()}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.259
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Return with parenthesis\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.261
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Symbol is not resolved\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.262
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Invalid overload\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.264
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Ambiguous problem\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.266
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Circular inheritance\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.267
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Invalid redeclaration\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.268
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Invalid redefinition\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.269
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Member declaration not found\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.271
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Label statement not found\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.272
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Invalid template argument\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.273
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Type cannot be resolved\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.274
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Function cannot be resolved\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.275
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Invalid arguments\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.276
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Method cannot be resolved\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.277
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Field cannot be resolved\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.279
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Abstract class cannot be instantiated\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-08 02:51:03.280
+!MESSAGE Internal Error
+!STACK 0
+java.lang.IllegalArgumentException: {launchModes=>{RUN_ON_FULL_BUILD=>true,RUN_ON_INC_BUILD=>true,RUN_ON_FILE_OPEN=>false,RUN_ON_FILE_SAVE=>false,RUN_AS_YOU_TYPE=>true,RUN_ON_DEMAND=>true},suppression_comment=>"@suppress(\"Format String Vulnerability\")"}:java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:158)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.setProblemPreferenceValues(CodanPreferencesLoader.java:193)
+	at org.eclipse.cdt.codan.internal.core.CodanPreferencesLoader.load(CodanPreferencesLoader.java:149)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getWorkspaceProfile(CheckersRegistry.java:345)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:366)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.getResourceProfile(CheckersRegistry.java:377)
+	at org.eclipse.cdt.codan.internal.core.CheckersRegistry.isCheckerEnabled(CheckersRegistry.java:413)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:81)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:54)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanPartListener$2.run(CodanPartListener.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.IllegalArgumentException: "
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:189)
+	at org.eclipse.cdt.codan.core.param.MapProblemPreference.importValue(MapProblemPreference.java:156)
+	... 11 more
+
+!ENTRY org.eclipse.ui.ide 4 4 2018-12-08 03:10:21.586
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2018-12-08 03:10:21.587
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2018-12-08 03:10:21.587
+!MESSAGE Could not write metadata for '/RemoteSystemsTempFiles'.
+!STACK 0
+java.io.FileNotFoundException: /home/anderson/Install/ProjetoMestrado/SIMITAR/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers (No such file or directory)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.<init>(SafeFileOutputStream.java:51)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1635)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSave(SaveManager.java:1716)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1177)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2344)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:509)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)

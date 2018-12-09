@@ -1,2 +1,5 @@
 [INFO] (MainThread) Program execution time: 12.463902 s
 [INFO] (MainThread) Program execution time: 12.187321 s
+[DEBUG] (MainThread) Using selector: EpollSelector
+[INFO] (MainThread) Program execution time: 8.050522 s
+[DEBUG] (MainThread) Using selector: EpollSelector

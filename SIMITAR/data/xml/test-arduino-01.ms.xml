@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<trace info_tracename="" info_captureDate="" info_commentaries="" n_flows="17">
+	<flow start_delay="0.000000" duration="6142.276764" ds_byte="0" n_kbytes="0" n_packets="2">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="fe80::c131:e513:ce3e:edab" dst_ip="ff02::16" ttl="1">ICMPV6</network_layer>
+		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="6142.276763916015625" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="2" n_bytes="180"/>
+		<packet_sizes n_packets="2" n_kbytes="0">
+			<ps_mode1 n_packets="2" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="90.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="inf" bic="inf" param1="90.000000" param2="0.000000"/>
+				<stochastic_model name="exponential-me" aic="25.999239" bic="23.385533" param1="0.011111" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="305.355072" duration="7987.049103" ds_byte="0" n_kbytes="0" n_packets="5">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="" dst_ip="" ttl="0">IPV4</network_layer>
+		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="1996.762325695800882" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="7987.04910278" off_times="" n_packets="5" n_bytes="300"/>
+		<packet_sizes n_packets="5" n_kbytes="0">
+			<ps_mode1 n_packets="5" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
+				<stochastic_model name="exponential-me" aic="54.943446" bic="54.162321" param1="0.016667" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="388.791084" duration="8909.193039" ds_byte="0" n_kbytes="0" n_packets="5">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.0.79" dst_ip="201.82.0.66" ttl="0">IPV4</network_layer>
+		<transport_layer dst_port="53" src_port="43258">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="2227.298309735107068" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="8909.19303894" off_times="" n_packets="5" n_bytes="380"/>
+		<packet_sizes n_packets="5" n_kbytes="0">
+			<ps_mode1 n_packets="5" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
+				<stochastic_model name="exponential-me" aic="57.307333" bic="56.526209" param1="0.013158" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="398.531914" duration="8912.612915" ds_byte="0" n_kbytes="0" n_packets="5">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="201.82.0.66" dst_ip="192.168.0.79" ttl="0">IPV4</network_layer>
+		<transport_layer dst_port="43258" src_port="53">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="2228.153278759765271" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="8912.61291504" off_times="" n_packets="5" n_bytes="904"/>
+		<packet_sizes n_packets="5" n_kbytes="0">
+			<ps_mode1 n_packets="5" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="180.800000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="54.074116" bic="53.292992" param1="180.800000" param2="39.983747"/>
+				<stochastic_model name="exponential-me" aic="65.973914" bic="65.192790" param1="0.005531" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="612.550020" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="" dst_ip="" ttl="0">IPV4</network_layer>
+		<transport_layer dst_port="0" src_port="0">NULL</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="60"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="60.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="923.341990" duration="10.555029" ds_byte="0" n_kbytes="1" n_packets="3">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.100.3" dst_ip="239.255.255.250" ttl="0">IPV4</network_layer>
+		<transport_layer dst_port="1900" src_port="48660">UDP</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="5.277564457702637" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="10.55502892" off_times="" n_packets="3" n_bytes="1113"/>
+		<packet_sizes n_packets="3" n_kbytes="1">
+			<ps_mode1 n_packets="3" n_kbytes="1">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="371.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="33.669324" bic="31.866549" param1="371.000000" param2="40.149720"/>
+				<stochastic_model name="exponential-me" aic="45.497212" bic="43.694437" param1="0.002695" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="939.600945" duration="10.894060" ds_byte="0" n_kbytes="1" n_packets="3">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.100.3" dst_ip="239.255.255.250" ttl="1">IPV4</network_layer>
+		<transport_layer dst_port="1900" src_port="45537">UDP</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="5.447080067443848" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="10.89406013" off_times="" n_packets="3" n_bytes="1113"/>
+		<packet_sizes n_packets="3" n_kbytes="1">
+			<ps_mode1 n_packets="3" n_kbytes="1">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="371.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="33.669324" bic="31.866549" param1="371.000000" param2="40.149720"/>
+				<stochastic_model name="exponential-me" aic="45.497212" bic="43.694437" param1="0.002695" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="2150.444031" duration="6143.872261" ds_byte="0" n_kbytes="0" n_packets="2">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="fe80::be2e:48ff:fed4:ab0" dst_ip="ff02::1" ttl="1">ICMPV6</network_layer>
+		<transport_layer dst_port="0" src_port="0">ICMPV6</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="6143.872261047363281" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="2" n_bytes="300"/>
+		<packet_sizes n_packets="2" n_kbytes="0">
+			<ps_mode1 n_packets="2" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="150.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="inf" bic="inf" param1="150.000000" param2="0.000000"/>
+				<stochastic_model name="exponential-me" aic="28.042541" bic="25.428836" param1="0.006667" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="8925.305367" duration="189.935684" ds_byte="0" n_kbytes="0" n_packets="2">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.30.253.125" dst_ip="192.168.0.79" ttl="1">IPV4</network_layer>
+		<transport_layer dst_port="37750" src_port="443">TCP</transport_layer>
+		<application_layer>HTTPS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="189.935684204101562" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="2" n_bytes="163"/>
+		<packet_sizes n_packets="2" n_kbytes="0">
+			<ps_mode1 n_packets="2" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="81.500000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="21.025409" bic="18.411703" param1="81.500000" param2="21.920310"/>
+				<stochastic_model name="exponential-me" aic="25.602412" bic="22.988706" param1="0.012270" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="8925.536156" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.0.79" dst_ip="192.30.253.125" ttl="1">IPV4</network_layer>
+		<transport_layer dst_port="443" src_port="37750">TCP</transport_layer>
+		<application_layer>HTTPS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="101"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="101.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="9298.024178" duration="12.585640" ds_byte="0" n_kbytes="0" n_packets="2">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.0.79" dst_ip="201.82.0.61" ttl="1">IPV4</network_layer>
+		<transport_layer dst_port="53" src_port="43258">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="12.585639953613281" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="2" n_bytes="152"/>
+		<packet_sizes n_packets="2" n_kbytes="0">
+			<ps_mode1 n_packets="2" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="inf" bic="inf" param1="76.000000" param2="0.000000"/>
+				<stochastic_model name="exponential-me" aic="25.322933" bic="22.709228" param1="0.013158" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="9298.063278" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="2804:14c:481:162e:d9cf:5ed1:e005:f645" dst_ip="2804:14c:412:672:201:82:0:68" ttl="64">ICMPV6</network_layer>
+		<transport_layer dst_port="53" src_port="48498">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="96"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="96.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="9298.081398" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="2804:14c:481:162e:d9cf:5ed1:e005:f645" dst_ip="2804:14c:414:672:201:82:0:51" ttl="64">ICMPV6</network_layer>
+		<transport_layer dst_port="53" src_port="48498">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="96"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="96.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="9310.324669" duration="14.583588" ds_byte="0" n_kbytes="0" n_packets="2">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="201.82.0.61" dst_ip="192.168.0.79" ttl="64">IPV4</network_layer>
+		<transport_layer dst_port="43258" src_port="53">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="constant" aic="inf" bic="inf" param1="14.583587646484375" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="2" n_bytes="347"/>
+		<packet_sizes n_packets="2" n_kbytes="0">
+			<ps_mode1 n_packets="2" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="173.500000" param2="0.000000"/>
+				<stochastic_model name="normal" aic="24.451298" bic="21.837592" param1="173.500000" param2="51.618795"/>
+				<stochastic_model name="exponential-me" aic="28.624710" bic="26.011005" param1="0.005764" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="9311.123848" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="2804:14c:412:672:201:82:0:68" dst_ip="2804:14c:481:162e:d9cf:5ed1:e005:f645" ttl="64">ICMPV6</network_layer>
+		<transport_layer dst_port="48498" src_port="53">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="214"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="214.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="9311.155319" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="2804:14c:414:672:201:82:0:51" dst_ip="2804:14c:481:162e:d9cf:5ed1:e005:f645" ttl="64">ICMPV6</network_layer>
+		<transport_layer dst_port="48498" src_port="53">UDP</transport_layer>
+		<application_layer>DNS</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="214"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="214.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+	<flow start_delay="10139.083862" duration="0.000000" ds_byte="0" n_kbytes="0" n_packets="1">
+		<link_layer mac_src="no-mac-src" mac_dst="no-mac-dst">ETHERNET</link_layer>
+		<network_layer src_ip="192.168.0.13" dst_ip="224.0.0.251" ttl="64">IPV4</network_layer>
+		<transport_layer dst_port="5353" src_port="5353">UDP</transport_layer>
+		<application_layer>NULL</application_layer>
+		<inter_packet_times>
+			<stochastic_model name="single-packet" aic="inf" bic="inf" param1="0.000000000000000" param2="0.000000000000000"/>
+		</inter_packet_times>
+		<session_times on_times="100.00000000" off_times="" n_packets="1" n_bytes="502"/>
+		<packet_sizes n_packets="1" n_kbytes="0">
+			<ps_mode1 n_packets="0" n_kbytes="0">
+				<stochastic_model name="no-model-selected" aic="inf" bic="inf" param1="0.000000" param2="0.000000"/>
+			</ps_mode1>
+			<ps_mode2 n_packets="1" n_kbytes="0">
+				<stochastic_model name="constant" aic="inf" bic="inf" param1="502.000000" param2="0.000000"/>
+			</ps_mode2>
+		</packet_sizes>
+	</flow>
+</trace>
+

@@ -4669,3 +4669,32 @@ make[1]: *** [../integration-tests] Error 1
 make[1]: Leaving directory '/home/anderson/ProjetoMestrado/SIMITAR/tests/integration'
 make: *** [all] Error 2
 Makefile:4: recipe for target 'all' failed
+01:56:48 **** Build of configuration Default for project libsimitar ****
+make all 
+make: Nothing to be done for 'all'.
+01:56:49 **** Build of configuration Default for project simitar-gen ****
+make all 
+make: Nothing to be done for 'all'.
+01:56:50 **** Build of configuration Default for project trace-analyzer ****
+make all 
+make: Nothing to be done for 'all'.
+01:56:50 **** Build of configuration Debug for project tests ****
+make all 
+make -C integration/
+make[1]: Entering directory '/home/anderson/Install/ProjetoMestrado/SIMITAR/tests/integration'
+
+* Compiling: ../../tests/integration/integration-tests.cpp -> ../../tests/integration/obj/integration-tests.og++ -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg  -fprofile-arcs -Wall -c -o ../../tests/integration/obj/integration-tests.o ../../tests/integration/integration-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:06
+
+* Linking: ../integration-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../integration-tests ../../tests/integration/obj/integration-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread  -lsqlite3 -larmadillo -ltins   
+	 Link time: 00:00:02
+make[1]: Leaving directory '/home/anderson/Install/ProjetoMestrado/SIMITAR/tests/integration'
+make -C unity/
+make[1]: Entering directory '/home/anderson/Install/ProjetoMestrado/SIMITAR/tests/unity'
+
+* Compiling: ../../tests/unity/unity-tests.cpp -> ../../tests/unity/obj/unity-tests.og++ -fmessage-length=0 -std=c++11  -Wall -c -o ../../tests/unity/obj/unity-tests.o ../../tests/unity/unity-tests.cpp -I ../../deps/ -I ../../libsimitar/
+	 Compile time: 00:00:07
+
+* Linking: ../unity-testsg++ -p  -ftest-coverage -fprofile-arcs -o ../unity-tests ../../tests/unity/obj/unity-tests.o -I ../../deps/ -I ../../libsimitar/ -Wl,-Bstatic ../../libsimitar/libsimitar.a -Wl,-Bdynamic -lpthread -lsqlite3 -larmadillo -ltins 
+	 Link time: 00:00:01
+make[1]: Leaving directory '/home/anderson/Install/ProjetoMestrado/SIMITAR/tests/unity'

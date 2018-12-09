@@ -92,7 +92,7 @@ class Database:
             print(colored("Error: Database " + self._name + " is oppened. You must close before remove physically.", 'red'))
             return False
 
-    def print(self, table_name):
+    def print_info(self, table_name):
         """
         Prints a formated table on the standard output.
         :param table_name: table to be printed
@@ -101,8 +101,56 @@ class Database:
         command = 'sqlite3 ' + self._name + '  ".headers ON" ".mode column" "select * from ' + table_name + ';"'
         # print(command)
         os.system(command)
-
         return True
+
+    def print_table(self, table_name, where_clause=''):
+        print('table_name:'+table_name)
+        self.cursor.execute('PRAGMA table_info(' + table_name + ');')
+        col_info = self.cursor.fetchall()
+        col_names = [''] * len(col_info)
+        col_max_len = [0] * len(col_info)
+        col_title_len = [0] * len(col_info)
+        col_sizes = [0] * len(col_info)
+        i = 0
+        while i < len(col_names):
+            col_names[i] = col_info[i][1]
+            i += 1
+        for i in range(len(col_title_len)):
+            col_title_len[i] = len(str(col_names[i]))
+        # retrieve all data
+        values = []
+        if where_clause=='':
+            values = self.get(table_name, '*')
+        else:
+            values = self.get_where(table_name, '*', where_clause)
+        nrows = len(values)
+        ncols = len(values[0])
+        for i in range(nrows):
+            for j in range(ncols):
+                if len(str(values[i][j])) > col_max_len[j]:
+                    col_max_len[j] = len(str((values[i][j])))
+        for i in range(len(col_sizes)):
+            col_sizes[i] = max(col_max_len[i], col_title_len[i])
+        # print table
+        spacing = '   '
+        padingchar = ' '
+        print_str = ''
+        for i in range(len(col_names)):
+            print_str += str(col_names[i])
+            padding_len = col_sizes[i] - len(col_names[i])
+            print_str += padingchar * padding_len + spacing
+        print(print_str)
+        print_str = ''
+        for i in range(len(col_names)):
+            print_str += '-' * col_sizes[i] + spacing
+        print(print_str)
+        for i in range(len(values)):
+            print_str = ''
+            for j in range(len(values[i])):
+                print_str += str(values[i][j])
+                padding_len = col_sizes[j] - len(str(values[i][j]))
+                print_str += padingchar * padding_len + spacing
+            print(print_str)
 
     def get(self, table, thecolumns, limit=None):
         """
@@ -189,7 +237,7 @@ class Database:
 
     def delete(self, table, where):
         """
-         Function to write data of the database.
+         Function to write delete of the database.
         :param table: The database's table from which to query.
         :param where: where SQL clause of delete query
         :return: True in success
@@ -290,6 +338,12 @@ if __name__ == '__main__':
     age1 = db.get_where('clientes', 'nome', 'idade=23')
     print('Age: ' + str(age1))
     db.delete('clientes', 'cpf=12345678901 AND idade=23')
-    db.print('clientes')
+    db.print_info('clientes')
+
+    ###############
+    table_name = 'clientes'
+    where_clause = '*'
+    db.print_table(table_name)
+
     db.close()
     # db.rm()

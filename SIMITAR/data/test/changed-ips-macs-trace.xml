@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<trace info_tracename="teste-chapolin" trafficGenEngine="D-ITG" info_captureDate="07/04/2017" info_commentaries="este e um teste do compact trace descriptor" n_flows="58">
+<trace info_tracename="teste-chapolin" info_captureDate="07/04/2017" info_commentaries="este e um teste do compact trace descriptor" n_flows="58">
 	<flow start_delay="0.000000" duration="158.366891" ds_byte="0" n_kbytes="1434" n_packets="1416">
 		<link_layer mac_src="no-mac-src" mac_dst="64:1c:67:69:51:b0">ETHERNET</link_layer>
 		<network_layer src_ip="10.1.1.1" dst_ip="10.0.0.1" ttl="64">IPV4</network_layer>

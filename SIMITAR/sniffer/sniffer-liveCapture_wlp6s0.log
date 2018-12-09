@@ -1,0 +1,2296 @@
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.780762us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.570312us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.556396us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.517578us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.557373us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.520264us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.642090us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.651855us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.482910us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.568848us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.554199us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.697266us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.586182us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.608398us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.544922us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.519287us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.589844us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.576416us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.012207us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.629150us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.784668us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.542969us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.725342us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.541016us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.525391us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.897217us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.580811us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.536865us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.566650us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.871094us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.619385us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.611572us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.566895us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.665527us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.607910us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.618408us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.691406us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.598633us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.608154us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.599609us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.191895us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.648193us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.894287us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.591553us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.526855us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.633789us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.141113us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.562988us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.656982us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.607666us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.827393us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.097168us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.571045us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.598145us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.564697us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.764404us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.565918us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.612793us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.586182us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.895752us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.677002us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.601318us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.565918us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.588379us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.070801us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.090332us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.576172us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.543213us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.566162us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.775391us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.614746us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.564697us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.875000us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.569092us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.906250us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.822998us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.555420us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.589844us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.112061us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.603760us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.628418us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.555420us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.086670us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.082275us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.056641us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.548340us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.541992us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.554688us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.624512us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.563721us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.559082us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.593018us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.682129us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.562500us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.532715us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.536865us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.560059us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.687744us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.608887us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.689453us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.563477us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.609131us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.584229us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.573486us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.976318us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.788086us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.016846us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.636475us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.052490us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.659668us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.544678us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.051758us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.564453us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.518066us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.582764us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.603516us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.585205us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.038818us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.578125us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.558594us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.650391us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.577637us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.573486us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.585693us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.613281us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.537598us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.571289us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.542725us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.632568us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.551514us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.533203us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.609375us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.856689us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.672363us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.588623us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.557861us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.582764us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.548828us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.548340us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.966797us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.039062us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.583008us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.560791us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.614502us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.526611us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.652344us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.554199us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.062500us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.648193us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.586914us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.587158us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.531982us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.823730us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.665771us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.593018us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.108643us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.148926us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.651367us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.585938us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.611572us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.551758us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.058594us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.099121us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.866455us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.923584us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.531250us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.596680us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.534180us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.981445us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.616455us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.550537us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.981934us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.744629us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.179932us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.523926us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.611572us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.822266us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.042969us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.570312us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.713867us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.822754us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.651855us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.545654us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.626709us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.782715us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.575439us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.613525us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.603271us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.571289us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.577148us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.605469us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.551514us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.671875us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.571045us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.623291us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.569336us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.587891us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.533691us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.939941us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.081055us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.563965us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.532959us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.874023us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.539307us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.056396us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.088623us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.745605us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.035156us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.559326us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.607422us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.562744us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.607178us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.614502us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.068848us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.610840us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.669922us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.155518us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.590576us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.625244us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.751221us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.560547us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.587158us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.560059us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.596436us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.790039us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.581055us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.939941us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.629395us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.830566us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.548340us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.566162us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.554932us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.538086us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.571777us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.537598us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.622314us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.576660us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.876465us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.567383us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.559570us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.630127us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.545654us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.590088us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.552246us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.080322us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.580811us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.562988us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.543213us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.594727us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.626953us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.095459us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.606445us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.556396us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.140381us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.739990us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.584473us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.538818us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.294189us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.069824us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.555908us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.605225us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.715332us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.573730us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.046387us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.602295us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.938477us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.584717us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.681396us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.658203us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.563721us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.589600us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.058594us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.584229us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.099121us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.930420us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.550781us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.909180us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.540771us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.546387us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.638916us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.996094us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.577148us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.641113us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.013428us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.575195us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.549316us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.540039us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.570312us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.551514us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.792725us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.560547us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.261475us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.546875us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.577881us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.601318us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.586182us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.587158us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.693115us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.100586us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.970947us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.035889us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.887939us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.709229us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.221924us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.889160us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.276611us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.069824us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.045166us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.022217us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.577393us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.568115us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.068848us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.119629us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.581055us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.762207us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.559570us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.641602us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.574219us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.665283us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.628906us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.040283us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.806641us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.244141us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.748047us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.166992us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.636475us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.095703us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.167725us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.194336us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.198242us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.713867us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.196045us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.227295us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.637207us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.653564us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.842041us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.630371us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.020020us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.628174us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.181641us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.697021us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.644287us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.534912us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.865723us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.074951us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 2.253906us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.452637us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.711670us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.020508us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.938477us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.597656us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.972412us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.690430us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.082764us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.629883us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.609375us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.842529us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.612061us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.644531us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.569580us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.616455us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.573486us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.015381us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.632568us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.613770us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.549561us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.601074us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.637695us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.594482us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.625732us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.569336us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.955078us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.824463us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.068359us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.591064us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.116455us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.247803us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 4.693604us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.053711us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.089844us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.071777us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.126709us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.061279us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.075195us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.079590us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.074951us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.226074us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.081543us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.065674us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.131104us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.066406us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.065186us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.561523us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.791016us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.579590us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.573730us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.916016us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.996826us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.770996us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.611328us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.664795us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.080078us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.781494us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.661621us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.667236us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.705322us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.654785us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.644531us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.717773us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.661621us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.007812us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.644531us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.598633us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.200439us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.894531us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.209229us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.181641us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.688232us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.543457us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.609131us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.720215us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.603027us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.942627us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.231689us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.596191us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.546631us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.544189us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.631348us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.544678us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.768555us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.545654us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.617676us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.197510us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.608398us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.584961us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.622559us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.617188us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.586426us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.580322us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.568359us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.665039us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.040527us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.558105us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.606445us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.753906us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.603271us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.546631us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.558838us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.042236us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.071533us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.996094us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.612061us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.619385us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.672363us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.081543us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.676270us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.057129us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.768311us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.562744us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.032959us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.557129us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.786621us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.257080us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.246094us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.265869us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.839600us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.543457us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.005127us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.655762us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.537842us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.709717us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.949219us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.083740us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.048340us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.019287us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.051514us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.091309us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.157471us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.098389us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.086670us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.094727us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.091064us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.963867us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.048828us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.105957us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.089355us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.047607us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.111084us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.073975us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.077637us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.110352us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.142578us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.095215us
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) ***********************
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.070557us
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.962402us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.569092us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.458740us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.007324us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.799072us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.480713us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.482178us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.367432us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.268555us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.739502us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.649414us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.810059us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.814453us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.666016us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.639160us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.664307us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.415283us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.273193us
+[INFO] (MainThread) Program execution time: 4.042739 s
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.352539us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.930664us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.932129us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.678711us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.914551us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.950684us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.769531us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.076172us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.336182us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.888428us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.025635us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.392578us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.356689us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.539551us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.595947us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.222900us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.112061us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.901123us
+[INFO] (MainThread) Program execution time: 4.049623 s
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.239014us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.636475us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.650391us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.739746us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.541504us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.463623us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.470459us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.321777us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.130127us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.154297us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.707031us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.976074us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.469238us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.448975us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.440186us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.433105us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.809814us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.705811us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.326172us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.473877us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.614746us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.102539us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.723877us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.755859us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.655518us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.482422us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.462646us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.061035us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.724365us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.621094us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.772705us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.458740us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.461426us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.644531us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.478760us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.820801us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.790771us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.229004us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.739746us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.834961us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.731934us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.770996us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.646240us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.631104us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.810059us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.699219us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.198242us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.446533us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.566162us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.447998us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.214111us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.108154us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.304932us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.543457us
+[INFO] (MainThread) Program execution time: 4.059556 s
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.792969us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.553223us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.017334us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.825195us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.331543us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.120117us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.357422us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.679443us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.543213us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.373779us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.603516us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.922119us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.102783us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.615479us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.550293us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.555176us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.948975us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.032471us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.136963us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.222900us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.824707us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.023193us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.363037us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.560059us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.519775us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.819824us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.457275us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.475098us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.601807us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.391846us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.583740us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.608154us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.535645us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.712891us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.672607us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.814941us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.564209us
+[INFO] (MainThread) Program execution time: 3.807103 s
+[DEBUG] (MainThread) Using selector: EpollSelector
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.523438us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.141602us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.574219us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.526367us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.462402us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.379395us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.589355us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.435791us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.402100us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 1.285156us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.654053us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.772949us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.775635us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.510742us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.396484us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.610840us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.345703us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.445801us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.736816us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.407227us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.451660us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.742432us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.619873us
+[DEBUG] (MainThread) ** Capture start **
+[DEBUG] (MainThread) Max execution time of PacketInfo(): 0.416748us
+[INFO] (MainThread) Program execution time: 4.155097 s
+[DEBUG] (MainThread) Using selector: EpollSelector
+[INFO] (MainThread) Program execution time: 3.822231 s
