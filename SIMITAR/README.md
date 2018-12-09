@@ -18,6 +18,11 @@ SIMITAR is composed of 4 components:
 - Trace Analyzer (trace-analyzer/trace-analyzer or bin/trace-analyzer)
 - Traffic Generator (simitar-gen/simitar-gen or bin/simitar-gen)
 
+<p align="center">
+  <img width="200" height="200" src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.pdf">
+</p>
+
+
 ![](https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.pdf)
 
 Before executing any command, you must load the enviroment variables:
