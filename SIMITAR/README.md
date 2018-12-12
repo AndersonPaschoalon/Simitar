@@ -98,7 +98,128 @@ just the operation as a client, since since it crafts packets "on the wire". It 
 
 ## Demo
 
-todo
+For running this demo, you must have installed the following tools installed:
+- Wireshark
+- Mininet
+- OpenDayLight (distribution-karaf-0.4.0-Beryllium)
+- SIMITAR
+We also recoment a XML visualizer, such as XML Tree Editor.
+
+### Installing  and running OpenDayLight (Beryllium)
+
+First, we procedute with the follow commans on the terminal
+```bash
+apt-get update
+apt-get install maven git unzip
+```
+Than, you cd to the directory you want to install OpenDayLight, and execute:
+```bash
+wget https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.4.0-Beryllium/distribution-karaf-0.4.0-Beryllium.zip
+unzip distribution-karaf-0.4.0-Beryllium.zip
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+```
+To run OpenDaylight, execute:
+```bash
+cd distribution-karaf-0.4.0-Beryllium.zip
+./bin/karaf
+```
+On the OpenDayLight terminal, execute
+```command
+opendaylight-user@root> feature:install odl-restconf odl-l2switch-switch odl-mdsal-apidocs odl-dlux-core
+opendaylight-user@root> feature:install odl-dlux-all odl-openflowplugin-flow-services-ui
+opendaylight-user@root> feature:install  odl-dlux-core odl-dlux-node odl-dlux-yangui odl-dlux-yangvisualizer
+```
+You may access the web interface of OpenDayLight using this link and login/passorwds on your brownser:
+```command
+http://localhost:8181/index.html
+login: admin
+password: admin
+```
+
+### Running and visualizing our Mininet topology:
+
+From SIMITAR root directory, run: 
+```bash
+cd Tests/SimulationMininet/
+```
+First of all, clean up mininet:
+```bash
+sudo mn -c
+```
+We first will build the simpler topology:
+```bash
+sudo ./simple-topo-test.py
+```
+From Mininet terminal, you have to tell OpenDayLight where are all switches:
+```bash
+mininet> pingall
+```
+<p align="center">
+	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/Screenshot1.png" width="700" >
+</p>
+
+
+In the screenshot below you will see the topology we just build. To open a terminal for the host h1, type on mininet console:
+```bash
+mininet> xterm h1 
+```
+On the h1 terminal, open Wireshark:
+```bash
+wireshark &
+```
+and start scanning the interface `h1-eth0`. To run SIMITAR, execute:
+```
+source data/config/simitar-workspace-config.sh
+ ./bin/simitar-gen --tool tins --mode client --ether h1-eth0 --xml ./data/xml/skype.sec.xml
+```
+If you go to the Wireshark window you just oppened, you will the the packets being generated, and how the bandwidth looks like over the time. Simitar will stop its execution once the whole traffic descripted by `skype.sec.xml` is executed. 
+
+<p align="center">
+	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/Screenshot2.png" width="700" >
+</p>
+<p align="center">
+	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/Screenshot3.png" width="700" >
+</p>
+
+Since the implementation of Libtins, specified by the option `--tool tins` works as a packet injector, there is no need for the use of a server-size instantiation of SIMITAR. But if you choose iperf as traffic generator tool, you will need it. This time we will build a funnier topology:
+```command
+# @ Tests/SimulationMininet/
+$ sudo mn -c
+$ sudo ./simple-topo-test.py
+# @ mininet terminal. IF it fails the first time, just try again
+mininet> pingall
+```
+On the OpenDayLight session you oppened on your favourite bronwnser, reload the page. You will find something like this:
+
+<p align="center">
+	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/Screenshot4.png" width="700" >
+</p>
+
+Much cooler.
+
+Now, on the mininet terminal, execute: 
+```bash
+mininet> xterm h1
+mininet> xterm h8
+```
+Run wireshark on both, and go to SIMITAR directory on both was well.  On the h8 terminal, run the server first:
+```bash
+# xterm h8
+source data/config/simitar-workspace-config.sh
+ ./bin/simitar-gen --tool tins --mode server --ether h1-eth0 --xml ./data/xml/skype.sec.xml 
+```
+
+Iperf need to know the IP addr of the destination, to stablishes contact. Try both commans below (in two different runs). In the first, you will just pass a single Ip address of destinations. For the second, to run properly, you will need to execute the server-side command of simitar on all hosts, from 2 to 8. The argument is a CSV file, in the format <IPAddr>,MACAddr. For iperf, there is no need for the MAC address. The MACs on the file `data/csv/ip-addrs-list1.csv` are not actually used.  
+```bash
+# xterm h1
+source data/config/simitar-workspace-config.sh
+ ./bin/simitar-gen --tool iperf --mode client --ether h1-eth0 --xml ./data/xml/skype.sec.xml  --dst-ip 10.0.08
+```
+```bash
+# xterm h1
+source data/config/simitar-workspace-config.sh
+ ./bin/simitar-gen --tool iperf --mode client --ether h1-eth0 --xml ./data/xml/skype.sec.xml  --dst-list-ip ./data/csv/ip-addrs-list1.csv
+```
 
 
 ## Directories and files
