@@ -1,0 +1,27 @@
+File name:           skype.pcap
+File type:           Wireshark/tcpdump/... - pcap
+File encapsulation:  Ethernet
+File timestamp precision:  microseconds (6)
+Packet size limit:   file hdr: 65535 bytes
+Number of packets:   1.071
+File size:           296 kB
+Data size:           279 kB
+Capture duration:    322,623873 seconds
+First packet time:   2006-08-25 16:31:06,780544
+Last packet time:    2006-08-25 16:36:29,404417
+Data byte rate:      866 bytes/s
+Data bit rate:       6.928 bits/s
+Average packet size: 260,89 bytes
+Average packet rate: 3 packets/s
+SHA256:              c6870418f33f6f7e56dbe1371e992014facc351b8224e6b9801d2249002c1b1d
+RIPEMD160:           30d892ca6ae09753a393d06bc3ec24819777cfc2
+SHA1:                f3b67d06c121a414ad5c47d7b796b79be8d8fe48
+Strict time order:   True
+Number of interfaces in file: 1
+Interface #0 info:
+                     Encapsulation = Ethernet (1 - ether)
+                     Capture length = 65535
+                     Time precision = microseconds (6)
+                     Time ticks per second = 1000000
+                     Number of stat entries = 0
+                     Number of packets = 1071
