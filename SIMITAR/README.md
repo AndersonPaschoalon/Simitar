@@ -129,7 +129,7 @@ opendaylight-user@root> feature:install odl-restconf odl-l2switch-switch odl-mds
 opendaylight-user@root> feature:install odl-dlux-all odl-openflowplugin-flow-services-ui
 opendaylight-user@root> feature:install  odl-dlux-core odl-dlux-node odl-dlux-yangui odl-dlux-yangvisualizer
 ```
-You may access the web interface of OpenDayLight using this link and login/passorwds on your brownser:
+You may access the web interface of OpenDayLight using this link and login/passorwds on your browser:
 ```command
 http://localhost:8181/index.html
 login: admin
