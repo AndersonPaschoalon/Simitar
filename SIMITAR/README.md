@@ -3,6 +3,8 @@
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/Docs/Figures/large.jpg" width="200" title="This is a Scimitar, not a Simitar :P">
 </p>
 
+## 1. Introdution
+
 SIMITAR stands for SIMITAR: SnIffing, ModellIng and TrAffic geneRation. SIMITAR is a tool for creating synthetic and realist network traffic. It uses actual netowork traffic (live captures or pcap files) for creating a flow-oriented traffic model. This model is used for creating network traffic, and is provided as parameter for the traffic generator. It is self-configurated because you dont have to care about adjusting stochastic parameters such as exponenetial rates, protocol, ports, or traffic rates as input parameters. It is all contained inside te traffic model created.
 
 <p align="center">
@@ -15,7 +17,7 @@ The traffic generator is not attached to a especific technology. It has a flow s
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/arch1.svg" width="400" >
 </p>
 
-## Quick installation Guide
+## 2. Quick installation Guide
 
 Clone this project directory:
 ```bash
@@ -43,7 +45,7 @@ These commands will ensure all required directories are created, and run `make c
 | trace-analyzer/trace-analyzer | bin/simitar-trace-analyzer |
 | simitar-gen/simitar-gen       | bin/simitar-gen            |
 
-## Components and apps
+## 3. Components and apps
 
 SIMITAR is composed of 4 components:
 
@@ -56,7 +58,7 @@ SIMITAR is composed of 4 components:
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.png" width="400" >
 </p>
 
-## Basic Execution
+## 4. Basic Execution
 
 Before executing any command, you must load the enviroment variables:
 ```bash
@@ -96,7 +98,7 @@ Iperf and D-ITG  require the use of a client and a server, since it creates a
 connection before sending any packets. Others tools like tins, require
 just the operation as a client, since since it crafts packets "on the wire". It is important the use of the `-E` option on `sudo` to export the enviroment variables.
 
-## Demo
+## 5. Demo
 
 For running this demo, you must have installed the following tools installed:
 - Wireshark
@@ -105,7 +107,7 @@ For running this demo, you must have installed the following tools installed:
 - SIMITAR
 We also recoment a XML visualizer, such as XML Tree Editor.
 
-### Installing  and running OpenDayLight (Beryllium)
+### 5.1 Installing  and running OpenDayLight (Beryllium)
 
 First, we procedute with the follow commans on the terminal
 ```bash
@@ -136,7 +138,7 @@ login: admin
 password: admin
 ```
 
-### Running and visualizing our Mininet topology:
+### 5.2 Running and visualizing our Mininet topology:
 
 From SIMITAR root directory, run: 
 ```bash
@@ -221,8 +223,7 @@ source data/config/simitar-workspace-config.sh
  ./bin/simitar-gen --tool iperf --mode client --ether h1-eth0 --xml ./data/xml/skype.sec.xml  --dst-list-ip ./data/csv/ip-addrs-list1.csv
 ```
 
-
-## Directories and files
+## 6. Directories and files
 
 - build.py 
 Python script to helpd the installation of dependencies and build/clean process
