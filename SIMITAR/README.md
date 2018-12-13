@@ -9,7 +9,7 @@ SIMITAR stands for SIMITAR: SnIffing, ModellIng and TrAffic geneRation. SIMITAR 
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/digram-project-cycle.png" width="400" >
 </p>
 
-The traffic generator is not attached to a especific technology. It has a flow scheduler, which creates a thread for each flow. As traffic generator engine we can use from applications to low-level C/C++ lybraries. Currently we have extended it to [Libtins](http://libtins.github.io/)(C++ packet frafter lyrbrary) and [Iperf](https://iperf.fr/).  
+The traffic generator is not attached to a especific technology. It has a flow scheduler, which creates a thread for each flow. As traffic generator engine we can use from applications to low-level C/C++ lybraries. Currently we have extended it to [Libtins](http://libtins.github.io/)(C++ packet frafter library) and [Iperf](https://iperf.fr/).  
 
 <p align="center">
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/arch1.svg" width="400" >
