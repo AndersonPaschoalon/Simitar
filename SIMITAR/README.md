@@ -68,7 +68,6 @@ Sniffer works collecting information about an input traffic such as a pcap file
 or a live traffic, and stores it in a sqlite3 database. It can be executed on
 the directory sniffer/. Eg.:
 ```bash
-#
 ./sniffer-cli.py new "intrig-traffic" live eth0 --timeout 15
 ```
 This command will start and store a new capture trace on the local database. This capture will least for 15 seconds.  Ather this execution, use this command to show the capture information on the database:
