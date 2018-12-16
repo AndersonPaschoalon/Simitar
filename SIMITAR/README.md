@@ -23,9 +23,9 @@ Clone this project directory:
 ```bash
 git clone https://github.com/AndersonPaschoalon/ProjetoMestrado
 ```
-Go to `SIMITAR root directory`
+Go to SIMITAR root directory:
 ```bash
-cd cd Projeto/Mestrado/SIMITAR/
+cd Projeto/Mestrado/SIMITAR/
 ```
 Run the `build.py` script. This is a script used to simplify the installarion of dependencies and build process. Type:
 ```
