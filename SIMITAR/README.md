@@ -232,6 +232,7 @@ Python script to helpd the installation of dependencies and build/clean process
 ./build --build		# build SIMITAR
 ./build --clean		# clean 
 ./build --remake	# clean and build
+./build --help          # desrcription of the commands
 ```
 
 - bin/
