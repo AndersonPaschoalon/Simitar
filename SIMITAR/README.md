@@ -97,6 +97,7 @@ Iperf and D-ITG  require the use of a client and a server, since it creates a
 connection before sending any packets. Others tools like tins, require
 just the operation as a client, since since it crafts packets "on the wire". It is important the use of the `-E` option on `sudo` to export the enviroment variables.
 
+
 ## 5. Demos
 
 ### 5.1. 5 minutes (or less) demo (if you already have everything installed)
@@ -117,7 +118,8 @@ source data/config/simitar-workspace-config.sh
 sudo -E ./bin/simitar-gen --tool tins --mode client --ether lo  --xml data/xml/skype.sec.xml --dst-ip 127.0.0.1
 ```
 
-### 5.1. OpenDayLight Topology Demo
+### 5.2. OpenDayLight Topology Demo
+
 
 For running this demo, you must have installed the following tools installed:
 - Wireshark
@@ -126,7 +128,7 @@ For running this demo, you must have installed the following tools installed:
 - SIMITAR
 We also recoment a XML visualizer, such as XML Tree Editor.
 
-### 5.1 Installing  and running OpenDayLight (Beryllium)
+#### 5.2.1. Installing  and running OpenDayLight (Beryllium)
 
 First, we procedute with the follow commans on the terminal
 ```bash
@@ -157,7 +159,7 @@ login: admin
 password: admin
 ```
 
-### 5.2 Running and visualizing our Mininet topology:
+#### 5.2.2 Running and visualizing our Mininet topology:
 
 From SIMITAR root directory, run: 
 ```bash
@@ -179,7 +181,7 @@ mininet> pingall
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/Screenshot1.png" width="700" >
 </p>
 
-### 5.3 Finally, SIMITAR
+#### 5.2.3 Finally, SIMITAR
 
 In the screenshot below you will see the topology we just build. To open a terminal for the host h1, type on mininet console:
 ```bash
@@ -252,17 +254,17 @@ Python script to helpd the installation of dependencies and build/clean process
 ./build --build		# build SIMITAR
 ./build --clean		# clean 
 ./build --remake	# clean and build
+./build --help          # desrcription of the commands
 ```
+
 
 - `bin/`
 Link for executable files.
 	* `simitar-sniffer` (link to `sniffer/sniffer-cli.py`)
 	* `simitar-trace-analyzer` (link to `trace-analyzer/trace-analyzer`)
 	* `simitar-gen` (link to `simitar-gen/simitar-gen`)
-	
 
 - `data/`
-Directory to store SIMITAR data.
 	* `config/`: enviroment variables and dependencies scripts.
 	* `csv/`: directory to store csv files of IP/MAC addrs.
 	* `db/`: Stores the Trace.db file
