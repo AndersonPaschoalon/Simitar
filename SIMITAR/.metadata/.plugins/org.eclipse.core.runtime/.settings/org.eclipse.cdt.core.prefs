@@ -1,5 +1,8 @@
+build.all.configs.enabled=false
+build.proj.ref.configs.enabled=false
 doctool/workspace.default=org.eclipse.cdt.ui.doxygen
 eclipse.preferences.version=1
+errorparser.default.ids=org.eclipse.cdt.autotools.core.ErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.VCErrorParser;org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.MakeErrorParser
 indexer/indexAllFiles=true
 indexer/indexAllHeaderVersions=false
 indexer/indexAllVersionsSpecificHeaders=
@@ -14,5 +17,6 @@ indexer/skipReferences=false
 indexer/skipTypeReferences=false
 indexer/updatePolicy=0
 indexer/useHeuristicIncludeResolution=true
+language.settings.providers.workspace.prefs.toggle=true
 macros/workspace=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<macros/>\n
 org.eclipse.cdt.core.showSourceRootsAtTopLevelOfProject=true

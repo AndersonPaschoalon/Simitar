@@ -18,6 +18,8 @@
 		<item value="false" key="testFileSelected"/>
 		<item value="true" key="stubSelected0"/>
 	</section>
+	<section name="PDOMSearchPage">
+	</section>
 	<section name="RenameInformationPopup">
 	</section>
 	<section name="OptionalMessageDialog.hide.">

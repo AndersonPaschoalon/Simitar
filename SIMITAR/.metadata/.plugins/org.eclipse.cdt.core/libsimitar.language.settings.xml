@@ -1565,6 +1565,7 @@
 					</entry>
 				</language>
 			</provider>
+			<provider id="org.eclipse.cdt.build.crossgcc.CrossGCCBuiltinSpecsDetector"/>
 		</extension>
 	</configuration>
 </project>

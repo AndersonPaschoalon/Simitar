@@ -41,7 +41,7 @@ int main(int argc, char** argv)
     ///info = 4,   //!< info: execution important info
     ///debug = 5,  //!< debug: used for debug
     ///verbose = 6 //!< verbose: just keep track of what is being done
-	PLOG_INIT(warning);
+	PLOG_INIT(debug);
 	try
 	{
 		///

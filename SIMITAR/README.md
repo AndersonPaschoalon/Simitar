@@ -3,27 +3,29 @@
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/Docs/Figures/large.jpg" width="200" title="This is a Scimitar, not a Simitar :P">
 </p>
 
+## 1. Introdution
+
 SIMITAR stands for SIMITAR: SnIffing, ModellIng and TrAffic geneRation. SIMITAR is a tool for creating synthetic and realist network traffic. It uses actual netowork traffic (live captures or pcap files) for creating a flow-oriented traffic model. This model is used for creating network traffic, and is provided as parameter for the traffic generator. It is self-configurated because you dont have to care about adjusting stochastic parameters such as exponenetial rates, protocol, ports, or traffic rates as input parameters. It is all contained inside te traffic model created.
 
 <p align="center">
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/digram-project-cycle.png" width="400" >
 </p>
 
-The traffic generator is not attached to a especific technology. It has a flow scheduler, which creates a thread for each flow. As traffic generator engine we can use from applications to low-level C/C++ lybraries. Currently we have extended it to [Libtins](http://libtins.github.io/)(C++ packet frafter lyrbrary) and [Iperf](https://iperf.fr/).  
+The traffic generator is not attached to a especific technology. It has a flow scheduler, which creates a thread for each flow. As traffic generator engine we can use from applications to low-level C/C++ lybraries. Currently we have extended it to [Libtins](http://libtins.github.io/)(C++ packet frafter library) and [Iperf](https://iperf.fr/).  
 
 <p align="center">
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/arch1.svg" width="400" >
 </p>
 
-## Quick installation Guide
+## 2. Quick installation Guide
 
 Clone this project directory:
 ```bash
 git clone https://github.com/AndersonPaschoalon/ProjetoMestrado
 ```
-Go to `SIMITAR root directory`
+Go to SIMITAR root directory:
 ```bash
-cd cd Projeto/Mestrado/SIMITAR/
+cd Projeto/Mestrado/SIMITAR/
 ```
 Run the `build.py` script. This is a script used to simplify the installarion of dependencies and build process. Type:
 ```
@@ -43,20 +45,20 @@ These commands will ensure all required directories are created, and run `make c
 | trace-analyzer/trace-analyzer | bin/simitar-trace-analyzer |
 | simitar-gen/simitar-gen       | bin/simitar-gen            |
 
-## Components and apps
+## 3. Components and apps
 
 SIMITAR is composed of 4 components:
 
-- Sniffer (sniffer/sniffer-cli.py or bin/simitar-sniffer) : Capture data from the pcap files or live captures.
-- Database (data/db/Trace.db): local database for the capture traces.
-- Trace Analyzer (trace-analyzer/trace-analyzer or bin/trace-analyzer):  creates the XML file (Compact Trace Descriptor) used by simitar-gen to create a synthetic traffic. The files are placed at the directory `/data/xml/`. Some pre-generated Compact Trace Descriptor files are already placed there. 
-- Traffic Generator (simitar-gen/simitar-gen or bin/simitar-gen): creates the sysnthetic traffic. A component diagram of the wole project is placed in the image below.
+- Sniffer (`sniffer/sniffer-cli.py` or `bin/simitar-sniffer`) : Capture data from the pcap files or live captures.
+- Database (`data/db/Trace.db`): local database for the capture traces.
+- Trace Analyzer (`trace-analyzer/trace-analyzer` or `bin/trace-analyzer`):  creates the XML file (Compact Trace Descriptor) used by simitar-gen to create a synthetic traffic. The files are placed at the directory `/data/xml/`. Some pre-generated Compact Trace Descriptor files are already placed there. 
+- Traffic Generator (`simitar-gen/simitar-gen` or `bin/simitar-gen`): creates the sysnthetic traffic. A component diagram of the wole project is placed in the image below.
 
 <p align="center">
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/architecture-diagram.png" width="400" >
 </p>
 
-## Basic Execution
+## 4. Basic Execution
 
 Before executing any command, you must load the enviroment variables:
 ```bash
@@ -64,9 +66,8 @@ source data/config/simitar-workspace-config.sh
 ```
 Sniffer works collecting information about an input traffic such as a pcap file
 or a live traffic, and stores it in a sqlite3 database. It can be executed on
-the directory sniffer/. Eg.:
+the directory `sniffer/`. Eg.:
 ```bash
-#
 ./sniffer-cli.py new "intrig-traffic" live eth0 --timeout 15
 ```
 This command will start and store a new capture trace on the local database. This capture will least for 15 seconds.  Ather this execution, use this command to show the capture information on the database:
@@ -74,8 +75,8 @@ This command will start and store a new capture trace on the local database. Thi
 ./sniffer-cli.py list
 ```
 Trace Analyzer creates a compact trace descriptor in XML file using a saved 
-in the database. It salves the xml on the directory data/xml/. It can be 
-executed on the directory trace-analyzer/. Eg.:
+in the database. It salves the xml on the directory `data/xml/`. It can be 
+executed on the directory `trace-analyzer/`. Eg.:
 ```bash
 ./trace-analyzer --trace "intrig-traffic"
 ```
@@ -96,7 +97,27 @@ Iperf and D-ITG  require the use of a client and a server, since it creates a
 connection before sending any packets. Others tools like tins, require
 just the operation as a client, since since it crafts packets "on the wire". It is important the use of the `-E` option on `sudo` to export the enviroment variables.
 
-## Demo
+## 5. Demos
+
+### 5.1. 5 minutes (or less) demo (if you already have everything installed)
+
+Open two terminals (we recomend [terminator](https://gnometerminator.blogspot.com/p/introduction.html)). First, lets try `iperf` as packet generator engine. At SIMITAR root directory:
+```bash
+source data/config/simitar-workspace-config.sh
+sudo -E ./bin/simitar-gen --tool iperf --mode server --ether lo  --xml data/xml/skype.sec.xml
+```
+Than, on another terminal, execute:
+```bash
+source data/config/simitar-workspace-config.sh
+sudo -E ./bin/simitar-gen --tool iperf --mode client --ether lo  --xml data/xml/skype.sec.xml --dst-ip 127.0.0.1
+```
+To test Libtins as packet generator engine, just execute:
+```bash
+source data/config/simitar-workspace-config.sh
+sudo -E ./bin/simitar-gen --tool tins --mode client --ether lo  --xml data/xml/skype.sec.xml --dst-ip 127.0.0.1
+```
+
+### 5.1. OpenDayLight Topology Demo
 
 For running this demo, you must have installed the following tools installed:
 - Wireshark
@@ -105,7 +126,7 @@ For running this demo, you must have installed the following tools installed:
 - SIMITAR
 We also recoment a XML visualizer, such as XML Tree Editor.
 
-### Installing  and running OpenDayLight (Beryllium)
+### 5.1 Installing  and running OpenDayLight (Beryllium)
 
 First, we procedute with the follow commans on the terminal
 ```bash
@@ -129,14 +150,14 @@ opendaylight-user@root> feature:install odl-restconf odl-l2switch-switch odl-mds
 opendaylight-user@root> feature:install odl-dlux-all odl-openflowplugin-flow-services-ui
 opendaylight-user@root> feature:install  odl-dlux-core odl-dlux-node odl-dlux-yangui odl-dlux-yangvisualizer
 ```
-You may access the web interface of OpenDayLight using this link and login/passorwds on your brownser:
+You may access the web interface of OpenDayLight using this link and login/passorwds on your browser:
 ```command
 http://localhost:8181/index.html
 login: admin
 password: admin
 ```
 
-### Running and visualizing our Mininet topology:
+### 5.2 Running and visualizing our Mininet topology:
 
 From SIMITAR root directory, run: 
 ```bash
@@ -158,6 +179,7 @@ mininet> pingall
 	<img src="https://github.com/AndersonPaschoalon/ProjetoMestrado/blob/master/SIMITAR/data/misc/Screenshot1.png" width="700" >
 </p>
 
+### 5.3 Finally, SIMITAR
 
 In the screenshot below you will see the topology we just build. To open a terminal for the host h1, type on mininet console:
 ```bash
@@ -221,8 +243,7 @@ source data/config/simitar-workspace-config.sh
  ./bin/simitar-gen --tool iperf --mode client --ether h1-eth0 --xml ./data/xml/skype.sec.xml  --dst-list-ip ./data/csv/ip-addrs-list1.csv
 ```
 
-
-## Directories and files
+## 6. Directories and files
 
 - build.py 
 Python script to helpd the installation of dependencies and build/clean process
@@ -233,40 +254,52 @@ Python script to helpd the installation of dependencies and build/clean process
 ./build --remake	# clean and build
 ```
 
-- bin 
+- `bin/`
+Link for executable files.
+	* `simitar-sniffer` (link to `sniffer/sniffer-cli.py`)
+	* `simitar-trace-analyzer` (link to `trace-analyzer/trace-analyzer`)
+	* `simitar-gen` (link to `simitar-gen/simitar-gen`)
+	
 
-- data/
+- `data/`
 Directory to store SIMITAR data.
-	* config: enviroment variables and dependencies scripts.
-	* csv: directory to store csv files of IP/MAC addrs.
-	* db: Stores the Trace.db file
-	* log: store the logfiles generated by the components
-	* test: store files used by the unity and integration tests.
-	* xml: stores the Compact Trace Descriptors files.
+	* `config/`: enviroment variables and dependencies scripts.
+	* `csv/`: directory to store csv files of IP/MAC addrs.
+	* `db/`: Stores the Trace.db file
+	* `log/`: store the logfiles generated by the components
+	* `test/`: store files used by the unity and integration tests.
+	* `xml/`: stores the Compact Trace Descriptors files.
 
-- desps/
+- `desps/`
 Third parties software code used on this project
 
-- libsimitar/
+- `libsimitar/`
 SIMITAR library and classes used by simitar components and apps.
 
-- pcaps/
+- `pcaps/`
 Used to store pcap files
 
-- README.md
+- `README.md`
 This description
 
-- simitar-gen/
+- `simitar-gen/`
 Simitar traffic generator directory
 
-- sniffer/
+- `sniffer/`
 Sniffer component directory, used to capture traffic data
 
-- tests/
-Unity and integration testes
+- `tests/`
+Unity and integration tests:
+	* `integration/` (source)  
+	* `integration-tests` (binary)
+	* `Makefile`
+	* `unity/` (source) 
+	* `unity-tests`  (binary)
+	* `xml/` (xml used by binaries)
 
-- trace-analyzer/
+-` trace-analyzer/`
 Trace Analyzer directory
+
 
 
 

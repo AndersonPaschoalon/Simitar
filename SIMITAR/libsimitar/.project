@@ -4,6 +4,9 @@
 	<comment></comment>
 	<projects>
 		<project>data</project>
+		<project>simitar-gen</project>
+		<project>tests</project>
+		<project>trace-analyzer</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

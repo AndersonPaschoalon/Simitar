@@ -49,10 +49,12 @@ H_FILES 	:= $(wildcard $(HEADER_DIR)/*.h) # do not change
 OBJ_FILES 	:= $(addprefix $(OBJ_DIR)/,$(notdir $(CPP_FILES:.cpp=.o))) # do not change
 
 #
-LD_FLAGS 	:= -p -pg -ftest-coverage -fprofile-arcs
+#LD_FLAGS 	:= -p -pg -ftest-coverage -fprofile-arcs
+LD_FLAGS 	:= -p -pg 
 
 #
-CC_FLAGS 	:= -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -H
+#CC_FLAGS 	:= -fmessage-length=0 -std=c++11 -O0 -g3 -p -pg -ftest-coverage -fprofile-arcs -Wall -H
+CC_FLAGS 	:= -std=c++11 -O0 -g3 -p -pg -Wall 
 
 # dynamic lybrary argument: "-Wl,-Bdynamic -ldynamic-lib-name". Eg.: "-Wl,-Bdynamic -lpthread"
 # LD_LIBS 	:= -Wl,-Bdynamic -lpthread -llog4cpp -lsqlite3 -larmadillo -lITG 

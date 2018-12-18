@@ -1,0 +1,8 @@
+Locale.o: Locale.c /usr/include/stdc-predef.h ../include/version.h \
+ ../config.h
+
+/usr/include/stdc-predef.h:
+
+../include/version.h:
+
+../config.h:
