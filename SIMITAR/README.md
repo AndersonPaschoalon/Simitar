@@ -273,7 +273,12 @@ Link for executable files.
 	* `xml/`: stores the Compact Trace Descriptors files.
 
 - `desps/`
-Third parties software code used on this project
+Third parties software code used on this project:
+	* iperf-2.0.9-source.tar.gz
+	* rapidxml-1.13.tar.gz
+	* libtins.tar.gz
+	* plog.tar.gz
+
 
 - `libsimitar/`
 SIMITAR library and classes used by simitar components and apps.
