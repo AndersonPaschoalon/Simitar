@@ -118,8 +118,15 @@ matrix2File(Flow_maxflows, filename, title, labels);
 clf;
 hold on;
 grid on;
-plot1 = plot(timeVector1, vetFlow1, '-r');
-plot2 = plot(timeVector1, vetFlow2, '-b');
+% plot 1
+minlen1 = min(length(timeVector1), length(vetFlow1));
+fprintf("Lenght of plotting vector for FlowPs(timeVector1 x vetFlow1) minlen1: %d \n", minlen1);
+plot1 = plot(timeVector1(1:minlen1), vetFlow1(1:minlen1), '-r');
+% plot 2
+minlen2 = min(length(timeVector1), length(vetFlow2));
+fprintf("Lenght of plotting vector for FlowPs(timeVector1 x vetFlow2) minlen2: %d \n", minlen2);
+plot2 = plot(timeVector1(1:minlen2), vetFlow2(1:minlen2), '-b');
+% save
 set(gca, 'fontsize', 20);
 set(gca,'Fontname','Timesnewroman');
 xlabel('time (seconds)'); 
@@ -132,8 +139,15 @@ grid off;
 clf;
 hold on;
 grid on;
-plot1 = plot(timeVector2, flowCdf1, '-r');
-plot2 = plot(timeVector2, flowCdf2, '-b');
+% plot 1
+minlen1 = min(length(timeVector2), length(flowCdf1));
+fprintf("Lenght of plotting vector for FlowPs(timeVector2 x flowCdf1) minlen1: %d \n", minlen1);
+plot1 = plot(timeVector2(1:minlen1), flowCdf1(1:minlen1), '-r');
+% plot 2
+minlen2 = min(length(timeVector2), length(flowCdf2));
+fprintf("Lenght of plotting vector for FlowPs(timeVector2 x flowCdf2) minlen2: %d \n", minlen2);
+plot2 = plot(timeVector2(1:minlen2), flowCdf2(1:minlen2), '-b');
+% save
 set(gca, 'fontsize', 20);
 set(gca,'Fontname','Timesnewroman');
 xlabel('time (seconds)'); 

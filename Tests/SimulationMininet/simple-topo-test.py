@@ -13,20 +13,20 @@ from mininet.cli import CLI
 from mininet.topo import Topo
 
 def createTopo():
-	topo=Topo()
-	#Create Nodes
-	topo.addHost("h1")
-	topo.addHost("h2")
-	topo.addSwitch('s1')
-	#Create links
-	topo.addLink('h1','s1')
-	topo.addLink('h2','s1')
-	return topo
+    topo=Topo()
+    #Create Nodes
+    topo.addHost("h1")
+    topo.addHost("h2")
+    topo.addSwitch('s1')
+    #Create links
+    topo.addLink('h1','s1')
+    topo.addLink('h2','s1')
+    return topo
 
 class MultiSwitch( OVSSwitch ):
-	"Custom Switch() subclass that connects to different controllers"
-	def start( self, controllers ):
-		return OVSSwitch.start( self, [ cmap[ self.name ] ] )
+    "Custom Switch() subclass that connects to different controllers"
+    def start( self, controllers ):
+        return OVSSwitch.start( self, [ cmap[ self.name ] ] )
 
 setLogLevel( 'info' )
 cOdl = RemoteController( 'OpenDayLight', ip='127.0.0.1', port=6633 )

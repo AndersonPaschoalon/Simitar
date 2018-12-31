@@ -6,6 +6,7 @@ import csv
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
+from Utils.Terminal import Terminal as term
 
 
 ########################################################################################################################

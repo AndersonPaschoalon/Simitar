@@ -3,7 +3,11 @@
 import subprocess
 import time
 import os
+import sys
 from config import config
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/..')
+from SimulationMininet.Config import Config
+
 
 operation_mode = "server"
 

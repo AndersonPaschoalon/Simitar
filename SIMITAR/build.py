@@ -164,7 +164,16 @@ def install_plog():
 def install_rapdxml():
     Utils.print_color("cyan", "\n# install rapidxml-1.13")
     os.system('tar -xvzf deps/rapidxml-1.13.tar.gz -C deps/; '
-    'sudo cp  -r  deps/rapidxml-1.13 /usr/include/ ;')
+        'sudo cp  -r  deps/rapidxml-1.13 /usr/include/ ;')
+
+
+def install_iperf():
+    Utils.print_color("cyan", "\n# install iperf")
+    os.system('tar -xvzf deps/iperf-2.0.9-source.tar.gz -C deps/; '
+        'cd deps/iperf-2.0.9-source/ ;'
+        './configure;'
+        'make;'
+        'sudo make install;')
 
 
 def directory_tree():

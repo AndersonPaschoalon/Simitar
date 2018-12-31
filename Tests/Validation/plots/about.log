@@ -1,0 +1,39 @@
+Analysis:Abacate using pcaps pcaps/test.pcap 
+ @ 201812241532
+ settings: n_runs: 3 pcap_file_1: test.pcap pcap_name_1:test-pcap pcap_file_2_prefix:test pcap_name_2_prefix:test pcap1_type: lgw10s-pcap pcap2_type: simitar-tins 
+ comments: Neste esperimento executei o simitar utilizando como ferramenta Libtins(C++), em uma topologia single hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando reproduzir um pesado trafego de um lan gateway por 10 segundos. 
+Analysis:Abacate using pcaps pcaps/test.pcap 
+ @ 20181224114538
+ settings: n_runs: 3 pcap_file_1: test.pcap pcap_name_1:test-pcap pcap_file_2_prefix:test pcap_name_2_prefix:test pcap1_type: lgw10s-pcap pcap2_type: simitar-tins 
+ comments: Neste esperimento executei o simitar utilizando como ferramenta Libtins(C++), em uma topologia single hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando reproduzir um pesado trafego de um lan gateway por 10 segundos. 
+Analysis:Abacate using pcaps pcaps/test.pcap 
+ @ 20181224115342
+ settings: n_runs: 3 pcap_file_1: test.pcap pcap_name_1:test-pcap pcap_file_2_prefix:test pcap_name_2_prefix:test pcap1_type: lgw10s-pcap pcap2_type: simitar-tins 
+ comments: Neste esperimento executei o simitar utilizando como ferramenta Libtins(C++), em uma topologia single hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando reproduzir um pesado trafego de um lan gateway por 10 segundos. 
+  
+-------------------------------------------------------------------------------
+  -- Analysis:Abacate using pcaps pcaps/test.pcap --  
+-------------------------------------------------------------------------------
+
+  @ 2018/12/24 12:31:31
+  Simulation duration: 0:00:19.997148
+  Settings: n_runs: 3 pcap_file_1: test.pcap pcap_name_1:test-pcap pcap_file_2_prefix:test pcap_name_2_prefix:test pcap1_type: lgw10s-pcap pcap2_type: simitar-tins 
+  Comments: Neste esperimento executei o simitar utilizando como ferramenta Libtins(C++), em uma topologia single hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando reproduzir um pesado trafego de um lan gateway por 10 segundos. 
+  
+  -------------------------------------------------------------------------------
+  -- Analysis:Abacate using pcaps ../pcaps/test.pcap --  
+  -------------------------------------------------------------------------------
+
+  @ 2018/12/24 13:12:49
+  Simulation duration: 0:00:08.151091
+  Settings: n_runs: 3 pcap_file_1: test.pcap pcap_name_1:test-pcap pcap_file_2_prefix:test pcap_name_2_prefix:test pcap1_type: lgw10s-pcap pcap2_type: simitar-tins 
+  Comments: Neste esperimento executei o simitar utilizando como ferramenta Libtins(C++), em uma topologia single hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando reproduzir um pesado trafego de um lan gateway por 10 segundos. 
+  
+  -------------------------------------------------------------------------------
+  -- Analysis:Abacate using pcaps ../Pcaps/test.pcap --  
+  -------------------------------------------------------------------------------
+
+  @ 2018/12/24 13:15:13
+  Simulation duration: 0:00:20.308244
+  Settings: n_runs: 3 pcap_file_1: test.pcap pcap_name_1:test-pcap pcap_file_2_prefix:test pcap_name_2_prefix:test pcap1_type: lgw10s-pcap pcap2_type: simitar-tins 
+  Comments: Neste esperimento executei o simitar utilizando como ferramenta Libtins(C++), em uma topologia single hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando reproduzir um pesado trafego de um lan gateway por 10 segundos. 

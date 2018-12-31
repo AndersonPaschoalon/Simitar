@@ -1,125 +1,91 @@
 #!/usr/bin/python3.5
-import argparse
 import os
 import sys
-import time
-from config import config
-sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/..')
+import datetime
+from Config import Config as config
+from Utils.Cd import Cd
+from Utils.Terminal import Terminal as term
 
-import GnuplotScripts.GnuplotScripts as gps
-import Cd.Cd as dir
-
-# PCAP_FILE1 = "../../Pcap/wireshark-wiki_http.pcap"
-# PCAP_FILE2 = "../../Pcap/wireshark-wiki_ospf.pcap"
-# TEST_NAME = "lemur"
+def main():
+    run_validation()
 
 
-#def main(args):
-def main(replot):
-    pcap1 = config.pcap1
-    pcap2 = config.pcap2
-    pcap_name1 = config.pcap1_type
-    pcap_name2 = config.pcap2_type
-    analyzis_name = config.analysis_name
-    # input arguments
-    pcap_file1 = os.path.dirname(os.path.abspath(__file__)) + '/' + pcap1
-    pcap_file2 = os.path.dirname(os.path.abspath(__file__)) + '/' + pcap2
-    plots_dir = 'plots/' + analyzis_name
-    # making sure the program is being executed in the source location, so it can be executed from anyware
-    cd = dir.Cd(os.path.dirname(os.path.abspath(__file__)))
-    if replot == False:
-        run_analyzis(pcap_file1=pcap_file1, pcap_name1=pcap_name1, pcap_file2=pcap_file2, pcap_name2=pcap_name2,
-            pktfilter_prefix=config.pktfilter_prefix, analyzis_name=analyzis_name, plots_dir=plots_dir, cd=cd, comments=config.comments)
-    plot_data(config.pcap1_type, config.pcap2_type, analyzis_name, plots_dir)
-
-def validation_help():
-    print('To execute run:')
-    print('    ./run.py          : run the calculations and plot the data')
-    print('    ./run.py --replot : replot the data')
-    print('To configure edite the file config.py')
-
-def print_header(title):
-    print('')
-    print('###############################################################################')
-    print('# ' + title)
-    print('###############################################################################')
-
-
-def run_analyzis(pcap_file1, pcap_name1, pcap_file2, pcap_name2, pktfilter_prefix, analyzis_name, plots_dir, cd, comments):
-    # print info
-    print_header("Analysis " + analyzis_name + " using pcaps: " + pcap_file1 + ' and ' + pcap_file2)
-    print('> pcap_file1: ' + pcap_file1 )
-    print('> pcap_name1: ' + pcap_name1)
-    print('> pcap_file2: ' + pcap_file2)
-    print('> pcap_name1: ' + pcap_name2)
+def run_validation():
+    init_time = datetime.datetime.now()
+    cd = Cd()
+    term.print_header("Analysis " + config.analysis_name + " using pcaps: " + config.pcap_file_1 + ' and ' + \
+                 config.pcap_file_2('*'), "purple")
+    list_pcap_names_2 = []
+    for i in range(0, config.n_runs):
+        list_pcap_names_2.append(config.pcap_file_2(i))
+    term.print_color("blue", "  Original pcap  : " + config.pcap_file_1)
+    term.print_color("blue", "  Synthetic pcaps: " + str(list_pcap_names_2))
+    term.print_color("blue", '  > pcap_file1: ' + config.pcap1() )
+    term.print_color("blue", '  > pcap_name1: ' + config.pcap_name_1)
+    term.print_color("blue", '  > pcap_file2: ' + config.pcap2('*'))
+    term.print_color("blue", '  > pcap_name1: ' + config.pcap_name_2('*'))
     # go to script analysis dir
     cd.cd('./scripts/')
+    term.print_color("blue", '  @ directory:')
+    cd.pwd()
     # clean sim dir
-    os.system('mkdir -p ./data')
-    os.system('rm -rf data/*')
-    # filter packet data
-    print_header('Filtering data from pcap ' + pcap_file1)
-    os.system('./analysis-pkt-filter.py ' + pcap_name1 + " " + pcap_file1)
-    print_header('Filter inter-pacekt data from pcap ' + pcap_file2)
-    os.system('./analysis-pkt-filter.py ' +  pcap_name2 + " "  + pcap_file2)
-    datafile1 =  pktfilter_prefix + pcap_name1 + ".csv"
-    datafile2 =  pktfilter_prefix + pcap_name2 + ".csv"
-    print('> (datafile1, datafile2) = ', datafile1, datafile2)
-    # run analyzis
-    os.system('./analysis-waveletMra.m ' + datafile1 + ' ' + datafile2 + ' ' + analyzis_name)
-    os.system('./analysis-hustExponent.m  ' + datafile1 + ' ' + datafile2)
-    os.system('./analysis-bandwidth.m ' + datafile1 + ' ' + datafile2 + ' "1" "10^6"')
-    os.system('./analysis-flow.m ' + datafile1 + ' ' + datafile2 + ' "1"')
-    os.system('./analysis-pcapinfo.sh ' + pcap_file1 + ' ' + pcap_file2)
-    # back to root dir
+    term.command('  mkdir -p ./data', 'yellow')
+    term.command('  rm -rf data/*', 'yellow')
+    # filter original data
+    term.print_color("blue", '  --- Filtering inter-packet data from pcap ../' + config.pcap1())
+    term.command('  ./analysis-pkt-filter.py ' + config.pcap_name_1 + " ../" + config.pcap1(), 'green')
+    for i in range(0, config.n_runs):
+        term.print_header("  --- iteration " + str(i), "purple")
+        # filter packet (iteration) data
+        term.print_color("blue", '  --- Filtering inter-packet data from pcap ../' + config.pcap2(i))
+        term.command(' ./analysis-pkt-filter.py ' + config.pcap_name_2(i) + " ../" + config.pcap2(i))
+        datafile1 = config.pktfilter_out_file(config.pcap_name_1)
+        datafile2 = config.pktfilter_out_file(config.pcap_name_2(i))
+        term.print_color("blue", '  --- (datafile1, datafile2) = (' + datafile1 + ', ' + datafile2 + ')')
+        # individual tests
+        term.command('  ./analysis-bandwidth.m ' + datafile1 + ' ' + datafile2 + ' "1" "10^6"', 'green')
+        term.command('  mv ./data/Bandwidth.dat ./data/Bandwidth' +str(i) + '.dat', 'green')
+        term.command('  ./analysis-flow.m ' + datafile1 + ' ' + datafile2 + ' "1"', 'green')
+        term.command('  mv ./data/FlowCdf.dat ./data/FlowCdf' + str(i) + '.dat', 'green')
+        term.command('  mv ./data/FlowCumulative.dat ./data/FlowCumulative' + str(i) + '.dat', 'green')
+        term.command('  mv ./data/FlowMaxflows.dat ./data/FlowMaxflows' + str(i) + '.dat', 'green')
+        term.command('  mv ./data/FlowsPs.dat ./data/FlowsPs' + str(i) + '.dat', 'green')
+        # repeated testes
+        term.command('  ./analysis-waveletMra.m ' + datafile1 + ' ' + datafile2 + ' ' + config.analysis_name, 'green')
+        term.command('  mv ./data/WaveletMREA.dat ./data/WaveletMREA' + str(i) + '.dat', 'green')
+        term.command('  ./analysis-hustExponent.m  ' + datafile1 + ' ' + datafile2, 'green')
+        term.command('  mv ./data/hurst_exponent.dat ./data/hurst_exponent' + str(i) + '.dat', 'green')
+        term.command('  ./analysis-pcapinfo.sh ' + '../' + config.pcap1() + ' ' + '../' + config.pcap2(i), 'green')
+        term.command('  mv ./data/pcapsinfo.txt ./data/pcapsinfo' + str(i) + '.txt', 'green')
+    # about test
+    end_time = datetime.datetime.now()
+    hline = '  -------------------------------------------------------------------------------\n'
+    str_about = hline + '  -- Analysis:' + config.analysis_name + " using pcaps " + config.pcap1() + ' --\n' + hline + \
+                '\n  @ ' + str(end_time.year) + '/' + str(end_time.month) + '/' + str(end_time.day) + ' ' +\
+                str(end_time.hour) + ':' + str(end_time.minute) + ':' + str(end_time.second) + \
+                '\n  Simulation duration: ' + str(end_time - init_time) + \
+                '\n  Settings: ' + 'n_runs: ' + str(config.n_runs) + ' pcap_file_1: ' + \
+                config.pcap_file_1 + ' pcap_name_1:' + config.pcap_name_1 + ' pcap_file_2_prefix:' + \
+                config.pcap_file_2_prefix + ' pcap_name_2_prefix:' + config.pcap_name_2_prefix + \
+                ' pcap1_type: ' + config.pcap1_type + ' pcap2_type: ' + config.pcap2_type +  \
+                ' \n  Comments: ' + config.comments + ' '
+    term.print_color("blue", '  About: ' + str_about)
+    term.command('  echo \"' + str_about + '\" >> ./data/about.log', 'green')
+    # back to  Validation root directory
     cd.back()
-    # creating plots dir
-    os.system('rm -rf ' + plots_dir)
-    os.system('mkdir -p ' + plots_dir)
-    os.system('mv scripts/data/* ' + plots_dir)
-    str_about = 'Analysis:' + analyzis_name + " using pcaps " + pcap_file1 + ' and ' + pcap_file2 + ' '
-    str_date = '@ ' + str(time.localtime().tm_mday) + '/' + str(time.localtime().tm_mon) + '/' + str(
-        time.localtime().tm_year) + '-' + str(time.localtime().tm_hour) + ':' + str(
-        time.localtime().tm_min) + ':' + str(time.localtime().tm_sec)
-    os.system('echo \"' + str_about + '\" >>' + plots_dir + '/about.log')
-    os.system('echo \"' + str_date + '\" >>' + plots_dir + '/about.log')
-    os.system('echo \"' + 'comments: ' + comments + '\" >>' + plots_dir + '/about.log')
-
-
-def plot_data(trace_name1, trace_name2, analyzis_name, plots_dir):
-    font_config = 'Helvetica,15'
-    print_header("Plots for:" + analyzis_name + " using traces " + trace_name1 + ' and ' + trace_name2)
-    gp = gps.GnuplotScripts(data_dir=plots_dir, plot_dir=plots_dir, font=font_config, linestyle_1='b+',
-                            linestyle_2='rx',
-                            linestyle_3='g-', linestyle_4='v-', type='linespoints', line_width=2)
-
-    print('Ploting Wavelet Multiresolution Analisis')
-    gp.plot_config(xlabel='Time scale j', ylabel='log2(Energy(j))', legend1=trace_name1, legend2=trace_name2,
-                   type='linespoints', title=' Wavelet Multiresolution Analisis')
-    gp.plot_2functionxyxy(datafile='WaveletMREA.dat', filename='WaveletMREA')
-
-    print('Ploting Bandwidth')
-    gp.plot_config(xlabel='Time(seconds)', ylabel='Mbps', legend1=trace_name1, legend2=trace_name2, type='lines',
-                   linestyle_1='b-', linestyle_2='r-', title='Bandwidth')
-    gp.plot_2function(datafile='Bandwidth.dat', filename='Bandwidth')
-
-    print('Ploting Flow data (FlowPs and FlowCDF)')
-    gp.plot_config(xlabel='Time(seconds)', ylabel='Number of Flows', legend1=trace_name1, legend2=trace_name2,
-                   type='lines', linestyle_1='b-', linestyle_2='r-', title='Flows per second')
-    gp.plot_2function(datafile='FlowsPs.dat', filename='FlowsPs')
-    gp.plot_config(xlabel='Time(seconds)', ylabel='Flows CDF', legend1=trace_name1, legend2=trace_name2,
-                   type='lines', linestyle_1='b-', linestyle_2='r-', title='Flows CDF distributions')
-    gp.plot_2function(datafile='FlowCdf.dat', filename='FlowCdf')
+    term.print_color("blue", '  @ directory:')
+    cd.pwd()
+    # move files
+    plotdir_name = config.plots_dir + config.analysis_name + "-" + str(end_time.year) + '-' + str(end_time.month) + \
+                   '-' + str(end_time.day) + '-' +  str(end_time.hour) + '-' +  str(end_time.minute) + '-' + \
+                   str(end_time.second)
+    term.command('  mkdir -p ' + plotdir_name, 'yellow')
+    term.command('  mv scripts/data/* ' + plotdir_name, 'yellow')
+    term.command('  mkdir -p ' + plotdir_name + '/octave-figs/', 'yellow')
+    term.command('  mv scripts/figures/* ' + plotdir_name + '/octave-figs/', 'yellow')
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--replot', dest='replot', action='store_true')
-    args = parser.parse_args()
-    # if (len(sys.argv) == 1) or (len(sys.argv) == 2):
-    #    validation_help()
-    # else:
-    #    main(sys.argv[1:])
-    main(args.replot)
+    main()
 
 

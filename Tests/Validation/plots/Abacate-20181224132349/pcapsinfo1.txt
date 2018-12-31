@@ -1,0 +1,56 @@
+-------------------------------------------------------------
+File name:           ../../Pcaps/test.pcap
+File type:           Wireshark/tcpdump/... - pcap
+File encapsulation:  Ethernet
+File timestamp precision:  microseconds (6)
+Packet size limit:   file hdr: 65535 bytes
+Number of packets:   622
+File size:           47 kB
+Data size:           37 kB
+Capture duration:    28,969106 seconds
+First packet time:   2004-10-05 11:01:05,275344
+Last packet time:    2004-10-05 11:01:34,244450
+Data byte rate:      1.288 bytes/s
+Data bit rate:       10 kbps
+Average packet size: 60,00 bytes
+Average packet rate: 21 packets/s
+SHA256:              dc101ea9bfda59f56b54bfb949195c3f169032c045b47f98e6952a86933c1b8d
+RIPEMD160:           cb6304961fac10b95d4a72d09a7190d5e24c3726
+SHA1:                139fa7ebc757c36628f7db3f45d18dcb2c5dc5de
+Strict time order:   True
+Number of interfaces in file: 1
+Interface #0 info:
+                     Encapsulation = Ethernet (1 - ether)
+                     Capture length = 65535
+                     Time precision = microseconds (6)
+                     Time ticks per second = 1000000
+                     Number of stat entries = 0
+                     Number of packets = 622
+-------------------------------------------------------------
+File name:           ../../Pcaps/test1.pcap
+File type:           Wireshark/tcpdump/... - pcap
+File encapsulation:  Ethernet
+File timestamp precision:  microseconds (6)
+Packet size limit:   file hdr: 65535 bytes
+Number of packets:   43
+File size:           25 kB
+Data size:           25 kB
+Capture duration:    30,393704 seconds
+First packet time:   2004-05-13 07:17:07,311224
+Last packet time:    2004-05-13 07:17:37,704928
+Data byte rate:      825 bytes/s
+Data bit rate:       6.604 bits/s
+Average packet size: 583,51 bytes
+Average packet rate: 1 packets/s
+SHA256:              25a72bdf10339f2c29916920c8b9501d294923108de8f29b19aba7cc001ab60d
+RIPEMD160:           6ef5f0c165a1db4a3cad3116b0c5bcc0cf6b9ab7
+SHA1:                3aac91181c3b7eb34fb7d2b6dd6783f4827fcf07
+Strict time order:   True
+Number of interfaces in file: 1
+Interface #0 info:
+                     Encapsulation = Ethernet (1 - ether)
+                     Capture length = 65535
+                     Time precision = microseconds (6)
+                     Time ticks per second = 1000000
+                     Number of stat entries = 0
+                     Number of packets = 43

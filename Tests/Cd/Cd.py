@@ -2,7 +2,7 @@ import os
 
 class Cd:
     """Context manager for changing the current working directory"""
-    def __init__(self, newPath):
+    def __init__(self, newPath='.'):
         self.cd(newPath)
         try:
             self.__parent_dir = os.getcwd()
