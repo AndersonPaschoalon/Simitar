@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2.7
 
 """
 Create a network where different switches are connected to
@@ -11,6 +11,7 @@ from mininet.node import OVSSwitch, Controller, RemoteController
 from mininet.log import setLogLevel
 from mininet.cli import CLI
 from mininet.topo import Topo
+
 
 class SimpleTopoTest(object):
     """
@@ -43,6 +44,7 @@ class SimpleTopoTest(object):
         return topo
 
     def __init__(self):
+        os.system("sudo mn -c")
         setLogLevel('info')
         #cOdl = RemoteController('OpenDayLight', ip='127.0.0.1', port=6633)
         #cmap = {'s1': cOdl}

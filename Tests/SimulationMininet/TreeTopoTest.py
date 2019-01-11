@@ -1,3 +1,5 @@
+#!/usr/bin/python2.7
+
 """
 Create a network where different switches are connected to
 different controllers, by creating a custom Switch() subclass.
@@ -27,6 +29,7 @@ class TreeTopoTest(object):
             return OVSSwitch.start(self, [TreeTopoTest.cmap[self.name]])
 
     def __init__(self):
+        os.system("sudo mn -c")
         setLogLevel('info')
         self.topo = TreeTopo( depth=3, fanout=2 )
         self.net = Mininet( topo=self.topo, switch=TreeTopoTest.MultiSwitch, build=False )

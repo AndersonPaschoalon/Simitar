@@ -14,13 +14,13 @@ def main():
     # capture pcap
     tcpdump_command = "tcpdump -i " + config.ether_interface_client + " -s 65535 -w " + config.capture_dir + config.pcap_name + "_" + config.ether_interface_client  + ".client.pcap"
     os.system('mkdir -p ' + config.capture_dir)
-    term.print_header("  Tcpdump", color="purple")
+    term.print_h1("  Tcpdump", color="purple")
     term.print_color("blue", "  > interface: " + config.ether_interface_client)
     term.print_color("blue", "  > pcap file: " +config.pcap_name)
     term.print_color("blue", "  > tcpdump command: " + tcpdump_command)
     term.command(tcpdump_command + " &", "green")
     # client execution
-	term.print_header("  simitar-gen, mode:client", color="blue")
+	term.print_h1("  simitar-gen, mode:client", color="blue")
     cd = Cd()
     cd()
     #cd_dir = " cd " + config.simitargen_app_dir + "; "
@@ -49,7 +49,7 @@ def main():
     # sleep until finishes
     time.sleep(config.exec_time + 1)  # <-- There's no time.wait, but time.sleep.
     # kill tcpdump
-	term.print_header('killing processes')
+	term.print_h1('killing processes')
     kill_tcpdump_command = "killall tcpdump -9"
     kill_simitargen_command = "killall simitar-gen -9"
     print("> " + kill_tcpdump_command)
