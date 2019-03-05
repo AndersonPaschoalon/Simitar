@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+from .Terminal import Terminal as term
 
 class Csv(object):
     @staticmethod
@@ -13,6 +14,11 @@ class Csv(object):
         with open(datafile) as f:
             lines = (line for line in f if not line.startswith('#'))
             csv_matrix = np.loadtxt(lines, delimiter=',')
+        #csv_isnan = np.isnan(csv_matrix)
+        #if len(csv_isnan) > 0:
+        #    term.print_color(color="red", data="**WARNING** Csv.load_csv: there is non numeric values at {" +
+        #                     datafile + "}. len(np.isnan(csv_matrix)):" + str(len(csv_isnan)) )
+        #    csv_matrix[np.isnan(csv_matrix)] = 0
         return csv_matrix
 
     @staticmethod

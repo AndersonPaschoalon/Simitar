@@ -13,6 +13,10 @@ from Utils.XmlFirst import XmlFirst
 
 configxml = XmlFirst("config.xml")
 class Config:
+    ############################################################################
+    # Run configuration
+    ############################################################################
+
     # directory where the pcap files are placed (all pcaps must be in the same directory)
     pcaps_dir = configxml.getText("pcaps_dir")
     # name of the directory where the plots and data will be saved
@@ -37,8 +41,54 @@ class Config:
     comments = configxml.getText("comments")
 
     ############################################################################
-    # do not change
+    # File names
     ############################################################################
+
+    errorplot_preextension = configxml.getText("errorplot_preextension")
+    about_file = configxml.getText("about_file")
+    pcapsinfo_ex = configxml.getText("pcapsinfo_ex")
+    pcapsinfo_file = configxml.getText("pcapsinfo_file")
+    wavelet_mrea_ex = configxml.getText("wavelet_mrea_ex")
+    wavelet_mrea_file = configxml.getText("wavelet_mrea_file")
+    packetsinfo_ex = configxml.getText("packetsinfo_ex")
+    packetsinfo_file = configxml.getText("packetsinfo_file")
+    hurst_exponent_ex = configxml.getText("hurst_exponent_ex")
+    hurst_exponent_file = configxml.getText("hurst_exponent_file")
+    flows_ps_ex = configxml.getText("flows_ps_ex")
+    flows_ps_file = configxml.getText("flows_ps_file")
+    flow_max_flows_ex = configxml.getText("flow_max_flows_ex")
+    flow_max_flows_file = configxml.getText("flow_max_flows_file")
+    flow_cumulative_ex = configxml.getText("flow_cumulative_ex")
+    flow_cumulative_file = configxml.getText("flow_cumulative_file")
+    flow_cdf_ex = configxml.getText("flow_cdf_ex")
+    flow_cdf_file = configxml.getText("flow_cdf_file")
+    bandwidth_ex = configxml.getText("bandwidth_ex")
+    bandwidth_file = configxml.getText("bandwidth_file")
+    scrip_figure_dir = configxml.getText("scrip_figure_dir")
+    scrip_data_dir = configxml.getText("scrip_data_dir")
+    errorplot_ex = configxml.getText("errorplot_ex")
+
+    average_packet_size_file = configxml.getText("average_packet_size_file")
+    average_packet_size_ex = configxml.getText("average_packet_size_ex")
+    average_packet_rate_file = configxml.getText("average_packet_rate_file")
+    average_packet_rate_ex = configxml.getText("average_packet_rate_ex")
+    data_byte_rate_file = configxml.getText("data_byte_rate_file")
+    data_byte_rate_ex = configxml.getText("data_byte_rate_ex")
+    data_bit_rate_file = configxml.getText("data_bit_rate_file")
+    data_bit_rate_ex = configxml.getText("data_bit_rate_ex")
+    number_of_packets_file = configxml.getText("number_of_packets_file")
+    number_of_packets_ex = configxml.getText("number_of_packets_ex")
+    capture_duration_file = configxml.getText("capture_duration_file")
+    capture_duration_ex = configxml.getText("capture_duration_ex")
+
+    ############################################################################
+    # Plots titles
+    ############################################################################
+    title_wavelet = configxml.getText("title_wavelet")
+    title_bandwidth = configxml.getText("title_bandwidth")
+    title_flow_ps = configxml.getText("title_flow_ps")
+    title_flow_cdf = configxml.getText("title_flow_cdf")
+
     # returns the path+name of the original pcap file
     @staticmethod
     def pcap1():
@@ -64,3 +114,76 @@ class Config:
     def pktfilter_out_file(pcap_file_name):
         return 'packetsinfo_' + pcap_file_name + '.csv'
 
+    @staticmethod
+    def fileplot_wavelet():
+        return Config.wavelet_mrea_file + "." + Config.errorplot_preextension + "." + Config.errorplot_ex
+
+    @staticmethod
+    def fileplot_bandwidth():
+        return Config.bandwidth_file + "." + Config.errorplot_preextension + "." + Config.errorplot_ex
+
+    @staticmethod
+    def fileplot_flowcdf():
+        return Config.flow_cdf_file + "." + Config.errorplot_preextension + "." + Config.errorplot_ex
+
+    @staticmethod
+    def fileplot_flowps():
+        return Config.flows_ps_file + "." + Config.errorplot_preextension + "." + Config.errorplot_ex
+
+
+
+"""
+def file_pcapsinfo(ith):
+    return pcapsinfo_file + str(ith) + pcapsinfo_ex
+
+def file_wavelet_mrea(ith):
+    return _file + str(ith) + _ex
+
+def file_packetsinfo(ith):
+    return _file + str(ith) + _ex
+
+def file_hurst_exponent(ith):
+    return _file + str(ith) + _ex
+
+def file_flows_ps(ith):
+    return _file + str(ith) + _ex
+
+def file_flow_max_flows(ith):
+    return _file + str(ith) + _ex
+
+def file_flow_cumulative(ith):
+    return _file + str(ith) + _ex
+
+def file_flow_cdf(ith):
+    return _file + str(ith) + _ex
+
+def file_bandwidth(ith):
+    return _file + str(ith) + _ex
+
+def file_pcapsinfo():
+    return _file + _ex
+
+def file_wavelet_mrea():
+    return _file + _ex
+
+def file_packetsinfo():
+    return _file + _ex
+
+def file_hurst_exponent():
+    return _file + _ex
+
+def file_flows_ps():
+    return _file + _ex
+
+def file_flow_max_flows():
+    return _file + _ex
+
+def file_flow_cumulative():
+    return _file + _ex
+
+def file_flow_cdf():
+    return _file + _ex
+
+def file_bandwidth():
+    return _file + _ex
+"""

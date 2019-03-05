@@ -25,7 +25,7 @@ function [timeVector nFlowsVector flowCdfVector flowCumulativeVector nflows] = c
 %	Output timeVector: vector of time intervalls
 %	Output nFlowsVector: vector of flow per sample_size
 %	Output flowCdfVector: flow cumulative distribution
-%	Output nflows: number ov flows
+%	Output nflows: number of flows
 %
 vetDepertureTimes = vetDepertureTimes(:);
 vetFlows = vetFlows(:);

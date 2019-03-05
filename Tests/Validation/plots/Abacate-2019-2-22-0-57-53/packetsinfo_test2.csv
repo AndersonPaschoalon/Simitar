@@ -1,0 +1,2 @@
+#Experiment:test2 pcap: ../../Pcaps/test2.pcap>
+#frameNumber, flowID, frameLen, InterPacketTime, frameTime

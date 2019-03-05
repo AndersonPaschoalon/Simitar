@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>
+html, body {
+  width: 92%;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<body>
+
+<div id="root"> </div>
+
+<script>
+    function generateTitle(mainTitle)
+    {
+        let mainRoot = document.getElementById("root");
+        let imgTitle = document.createElement("h1");
+        imgTitle.innerHTML = mainTitle;
+        imgTitle.style.textAlign = "center";
+        mainRoot.appendChild(imgTitle);
+    }
+    function generateImageNode(imageName) {
+        let mainRoot = document.getElementById("root");
+        let divRoot = document.createElement("div");
+        let divRow = document.createElement("div");
+        let divCol1 = document.createElement("div");
+        let divCol2 = document.createElement("div");
+        let divCol3 = document.createElement("div");
+        divRow.className = "row";
+        divCol1.className = "column";
+        divCol2.className = "column";
+        divCol3.className = "column";
+        let imgTitle = document.createElement("h3");
+        imgTitle.innerHTML = imageName;
+        imgTitle.style.textAlign = "center";
+        let imgPngEx = ".png"
+        let imgEpsEx = ".eps"
+        let imgPdfEx = ".pdf"
+        let imgWidth = "100%";
+
+        // Image png
+        let imgPng = document.createElement("img");
+        imgPng.style.width = imgWidth;
+        imgPng.src = imageName + imgPngEx;
+        imgPng.title = imageName + imgPngEx;
+        divCol1.appendChild(imgPng);
+
+        // image eps
+        let imgEps = document.createElement("a");
+        imgEps.style.width = imgWidth;
+        imgEps.href = imageName + imgEpsEx;
+        imgEps.title = imageName + imgEpsEx;
+        let epsImgIcon = document.createElement("img");
+        epsImgIcon.style.width = imgWidth;
+        epsImgIcon.src = imageName + imgPngEx;
+        imgEps.appendChild(epsImgIcon)
+        //imgEps.innerHTML = "aaaaaaaa"
+        divCol2.appendChild(imgEps);
+
+        let imgPdf = document.createElement("embed");
+        imgPdf.style.width = imgWidth;
+        imgPdf.type = "application/pdf"
+        imgPdf.style = "overflow:hidden; display:block; position: absolute; height: 40%; width: 40%"
+        imgPdf.src = imageName + imgPdfEx;
+        imgPdf.title = imageName + imgPdfEx;
+
+        divCol3.appendChild(imgPdf);
+        divRow.appendChild(imgTitle);
+        divRow.appendChild(divCol1);
+        divRow.appendChild(divCol2);
+        divRow.appendChild(divCol3);
+        mainRoot.appendChild(divRow);
+    }
+    // Example:
+    // generateTitle("experiment_name");
+    // generateImageNode("img1");
+    // generateImageNode("img2");
+    // generateImageNode("img3");
+    // auto-generated javascritp goes here
+    ###AUTO_GENERATED_CODE###
+</script>
+
+</body>
+</html>

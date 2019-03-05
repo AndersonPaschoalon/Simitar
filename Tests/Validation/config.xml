@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <smitar_validation>
+
+    <!--
+    ################################################################################################################
+    SIMULATION
+    #################################################################################################################
+    -->
+
     <!-- directory where the pcap files are placed (all pcaps must be in the same directory) -->
     <pcaps_dir>../Pcaps/</pcaps_dir>
 
@@ -35,5 +42,86 @@
     hop SDN. O cliente (gerador de pacotes) era o host h1, e o servidor os hosts h2-h8. Estou tentando
     reproduzir um pesado trafego de um lan gateway por 10 segundos.
     </comments>
+
+    <!--
+    ################################################################################################################
+    FILENAMES
+    #################################################################################################################
+    -->
+
+    <!--  -->
+    <scrip_data_dir>data/</scrip_data_dir>
+    <scrip_figure_dir>figures/</scrip_figure_dir>
+
+    <!--  -->
+    <bandwidth_file>Bandwidth</bandwidth_file>
+    <bandwidth_ex>dat</bandwidth_ex>
+
+    <!--  -->
+    <flow_cdf_file>FlowCdf</flow_cdf_file>
+    <flow_cdf_ex>dat</flow_cdf_ex>
+
+    <!--  -->
+    <flow_cumulative_file>FlowCumulative</flow_cumulative_file>
+    <flow_cumulative_ex>dat</flow_cumulative_ex>
+
+    <!--  -->
+    <flow_max_flows_file>FlowMaxflows</flow_max_flows_file>
+    <flow_max_flows_ex>dat</flow_max_flows_ex>
+
+    <!--  -->
+    <flows_ps_file>FlowsPs</flows_ps_file>
+    <flows_ps_ex>dat</flows_ps_ex>
+
+    <!--  -->
+    <hurst_exponent_file>hurst_exponent</hurst_exponent_file>
+    <hurst_exponent_ex>dat</hurst_exponent_ex>
+
+    <!--  -->
+    <packetsinfo_file>packetsinfo_</packetsinfo_file>
+    <packetsinfo_ex>csv</packetsinfo_ex>
+
+    <!--  -->
+    <wavelet_mrea_file>WaveletMREA</wavelet_mrea_file>
+    <wavelet_mrea_ex>dat</wavelet_mrea_ex>
+
+    <!--  -->
+    <pcapsinfo_file>pcapsinfo</pcapsinfo_file>
+    <pcapsinfo_ex>txt</pcapsinfo_ex>
+
+    <average_packet_size_file>AveragePacketSize</average_packet_size_file>
+    <average_packet_size_ex>dat</average_packet_size_ex>
+
+    <average_packet_rate_file>AveragePacketRate</average_packet_rate_file>
+    <average_packet_rate_ex>dat</average_packet_rate_ex>
+
+    <data_byte_rate_file>DataByteRate</data_byte_rate_file>
+    <data_byte_rate_ex>dat</data_byte_rate_ex>
+
+    <data_bit_rate_file>DataBitRate</data_bit_rate_file>
+    <data_bit_rate_ex>dat</data_bit_rate_ex>
+
+    <number_of_packets_file>NumberOfPackets</number_of_packets_file>
+    <number_of_packets_ex>dat</number_of_packets_ex>
+
+    <capture_duration_file>CaptureDuration</capture_duration_file>
+    <capture_duration_ex>dat</capture_duration_ex>
+
+    <!--  -->
+    <about_file>about.log</about_file>>
+    <errorplot_preextension>errplot</errorplot_preextension>
+    <errorplot_ex>csv</errorplot_ex>
+
+    <!--
+    ################################################################################################################
+    PLOTS
+    #################################################################################################################
+    -->
+
+    <title_wavelet>Wavelet Multiresolution Energy Analizis</title_wavelet>
+    <title_bandwidth>Bandwidth</title_bandwidth>
+    <title_flow_ps>Flows per second</title_flow_ps>
+    <title_flow_cdf>Flow CDF</title_flow_cdf>
+
 
 </smitar_validation>
