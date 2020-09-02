@@ -18,6 +18,7 @@
 #include <vector>
 #include <errno.h>
 #include <unistd.h>
+
 //#include <rapidxml/rapidxml.hpp>
 //#include <rapidxml/rapidxml_print.hpp>
 //#include <rapidxml/rapidxml_iterators.hpp>
@@ -278,6 +279,18 @@ private:
 	static const char * LABEL_BIC;
 	static const char * LABEL_NPACKETS;
 	static const char * LABEL_NKBYTES;
+	// TODO Tiny Flow Object
+	static const char * TAG_TINY_FLOW;
+	static const char * PROP_TINYFLOW_PROTOCOL_LINK_LAYER;
+	static const char * PROP_TINYFLOW_PROTOCOL_NETWORK_LAYER;
+	static const char * PROP_TINYFLOW_NETWORK_ADDRESS_DESTINATION;
+	static const char * PROP_TINYFLOW_NETWORK_ADDRESS_SOURCE;
+	static const char * PROP_TINYFLOW_PROTOCOL_TRANSPORT;
+	static const char * PROP_TINYFLOW_THROUGHPUT;
+	static const char * PROP_TINYFLOW_NUMBER_OF_PACKETS_MODE1;
+	static const char * PROP_TINYFLOW_NUMBER_OF_PACKETS_MODE2;
+	static const char * PROP_TINYFLOW_AVERAGE_PACKET_SIZE_MODE1;
+	static const char * PROP_TINYFLOW_AVERAGE_PACKET_SIZE_MODE2;
 
 	int getDstIpMac(uint& counter, const char* filename, char* ipAddr,
 			char* MacAddr);

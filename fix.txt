@@ -1,0 +1,9 @@
+# correções de problemas na instalação
+
+
+fiz upgrade do python 
+sudo python3 -m pip install --user --upgrade pip==20.2.2
+
+instalei pacotes
+sudo -E ./build.py -d pkg
+

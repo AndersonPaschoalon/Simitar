@@ -309,9 +309,163 @@ Trace Analyzer directory
 
 
 
+## 7. COMPACT TRACE DESCRIPTOR VERSION 2 - CDTv2
+ 
+The CDTv2 is a newer version of the Original compact trace descriptor. It preserves most of the original XML structure, but all XML tags, XML properties, network protocols, stochastic models and math definitions all to a single character. The conversion tables from the original ones to CDTv2 format are presented donwn below:
+
+### Tag and Properties table for Flow Object
+
+| Tag                 | v2  | Property      | v2 |	
+|---------------------|:---:|:-------------:|:--:|
+| flow                | F   |               |    |
+|                     |     | flow_id       | id |
+|                     |     | start_delay   | s  |
+|                     |     | duration	    | d  |
+|                     |     | ds_byte       | b* |
+|                     |     | n_kbytes	    | k  |
+|                     |     | n_packets	    | n  |
+| link_layer          | L   |               |    |
+|                     |     | mac_src       | s  |
+|                     |     | mac_dst       | d  |
+| network_layer       | N   |               |    |
+|                     |     | src_ip        | s  |
+|                     |     | dst_ip        | d  |
+|                     |     | ttl           | t  |
+| transport_layer     | T   |               |	 |
+|                     |     | dst_port      | s  |
+|                     |     | src_port      | d  |
+|                     |     | association_id| i  |
+|                     |     | max_streams   | m  |
+| application_layer   | A   |               |    | 
+| inter_packet_times  | I   |               |    | 
+| stochastic_model    | M   |               |    | 
+|                     |     | name          | n  |
+|                     |     | aic           | a  |
+|                     |     | bic           | b  |
+|                     |     | param1        | p  |
+|                     |     | param2        | q  |
+| session_times       | S   |               |    | 
+|                     |     | on_times	    | o  |
+|                     |     | off_times	    | f  |
+|                     |     | n_packets	    | n  |
+|                     |     | n_bytes       | b  |
+| packet_sizes        | P   |               |    | 
+|                     |     | n_packets	    | p  |
+|                     |     | n_kbytes	    | k  |
+| ps_mode1            | Q   |               |    | 
+|                     |     | n_packets	    | p  |
+|                     |     | n_kbytes      | k  |
+| stochastic_model    | M   |               |    | 
+|                     |     | name          | n  |
+|                     |     | aic           | a  |
+|                     |     | bic           | b  |
+|                     |     | param1        | p  |
+|                     |     | param2        | q  |
+| ps_mode2            | R   |               |    | 
+|                     |     | n_packets	    | p  |
+|                     |     | n_kbytes	    | k  |
+| stochastic_model    | M   |               |    | 
+|                     |     | name          | n  |
+|                     |     | aic           | a  |
+|                     |     | bic           | b  |
+|                     |     | param1        | p  |
+|                     |     | param2        | q  |
+--
+(*) deprecated
 
 
+### Tag and Properties table for Trace Object
 
+Since the Trace object occours only one time it has a more verbose representation, but with few changes:
+
+```xml
+<trace info_tracename="" info_captureDate="" info_commentaries="" n_flows="">
+```
+
+| Tag                 | v2    | Property           | v2            |	
+|---------------------|:-----:|:------------------:|:-------------:|
+| trace               | TRACE |                    |               |
+|                     |       | info\_tracename    | trace\_name   |
+|                     |       | info\_captureDate  | capture\_date |
+|                     |       | info_commentaries  | comment       |
+|                     |       | n\_flows           | n\_flows      |
+
+
+### Protocol Conversion Table
+ 
+|                 | Protocol | v2 String | Name                          |
+|-----------------|:--------:|:---------:|:-----------------------------:|
+| **-**           | NULL     | 0         | No Valid Protocol             |
+| **Link**        | ETHERNET | @         | Ethernet protocol             |
+| **Network**     | IPV4     | 4         | IPv4 network protocol         |
+|                 | IPV6     | 6         | IPv6 network protocol         | 
+|                 | ARP      | 1         | ARP protocol                  |
+|                 | ICMP     | 5         | ICMP network protocol         |
+|                 | ICMPV6   | 7         | ICMPv6 network protocol       |
+| **Transport**   | TCP      | T         | TCP transport protocol        |
+|                 | UDP      | U         | UDP transport protocol        | 
+|                 | DCCP     | D         | DCCP protocol                 |
+|                 | GRE      | G         | GRE protocol                  |
+|                 | SCTP     | S         | SCTP protocol                 |
+| **Application** | HTTP     | h         | HTTP application protocol     |
+|                 | HTTPS    | i         | HTTPS application protocol    |
+|                 | SNMP     | n         | SNMP application protocol     |
+|                 | SMTP     | m         | SMTP application protocol     |
+|                 | FTP      | f         | FTP application protocol      |
+|                 | BGP      | b         | BGP protocol                  |
+|                 | DHCP     | d         | DHCP application protocol     |
+|                 | DNS      | e         | DNS application protocol      |
+|                 | SSH      | s         | SSH application protocol      |
+|                 | Telnet   | t         | Telnet application protocol   |
+|                 | TACACS   | c         | TACACS application protocol   |
+
+### Stochastic Model Conversion Name
+
+| Model Name        | v2 String   |
+|-------------------|:-----------:|
+| weibull           | w           | 
+| pareto-lr         | p           | 
+| pareto-ml         | q           | 
+| exponential-me    | e           | 
+| exponential-lr*   | f           | 
+| normal            | n           | 
+| constant          | c           | 
+| cauchy            | h           | 
+--
+(*) deprecated
+
+### Math
+
+| Math Representation  | v1 String  | v2 String | 
+|----------------------|:----------:|:----------|
+| Infinite             | inf        | i         | 
+| Not a Number         | NaN        | n         | 
+
+
+### TinyFlows
+
+The idea behide this new object is that flow with few packets may be reprsented with a much simpler model, without significative loose on quality representation of the overhaul model. Support for this object is yet to be done on CDTv2.
+
+```xml
+<Y l="" n="" d="" s="" t="" h="" n="" m="" p="" q="" />
+```	
+
+| Tag                 | v2  | Property                     | v2 |	
+|---------------------|:---:|:----------------------------:|:--:|
+| Tiny Flow           | Y   |                              |    |
+|                     |     | protocol link layer          | l  |
+|                     |     | protocol network layer       | n  |
+|                     |     | network address destination  | d  |
+|                     |     | network address source       | s  |
+|                     |     | protocol transport           | t  |
+|                     |     | throughput                   | h  |
+|                     |     | number of packets mode 1     | m1 |
+|                     |     | number of packets mode 2     | m2 |
+|                     |     | avarage packet size mode 1   | p  |
+|                     |     | avarage packet size mode 2   | q  |
+
+
+ 
 
 
 

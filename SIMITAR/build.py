@@ -65,8 +65,8 @@ class Utils(object):
     def pip_install(lib_list):
         Utils.print_color('cyan', '\n$ sudo apt-get install python3-pip')
         os.system('sudo apt-get install python3-pip')
-        Utils.print_color('cyan', '\n$ sudo python3 -m pip install --user --upgrade pip==9.0.3')
-        os.system('sudo python3 -m pip install --user --upgrade pip==9.0.3')
+        #Utils.print_color('cyan', '\n$ sudo python3 -m pip install --user --upgrade pip==9.0.3')
+        #os.system('sudo python3 -m pip install --user --upgrade pip==9.0.3')
         Utils.print_color('cyan', '\n$ pip3 install setuptools')
         os.system('pip3 install setuptools')
         #os.system('pip install --upgrade pip')

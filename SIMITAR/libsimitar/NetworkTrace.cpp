@@ -7,6 +7,128 @@
 
 #include "NetworkTrace.h"
 
+#ifndef CDT_V2
+
+const char * NetworkTrace::LABEL_TRACE = "trace";
+const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";
+const char * NetworkTrace::LABEL_CAPTURE_DATE = "info_captureDate";
+const char * NetworkTrace::LABEL_COMMENTARIES = "info_commentaries";
+const char * NetworkTrace::LABEL_TRAFFIC_ENGINE = "trafficGenEngine";
+const char * NetworkTrace::LABEL_NUMBER_OF_FLOWS = "n_flows";
+const char * NetworkTrace::LABEL_FLOW = "flow";
+const char * NetworkTrace::LABEL_FLOW_ID = "flow_id";
+const char * NetworkTrace::LABEL_FLOW_START_DELAY = "start_delay";
+const char * NetworkTrace::LABEL_FLOW_DURATION = "duration";
+const char * NetworkTrace::LABEL_FLOW_DS_BYTE = "ds_byte";
+const char * NetworkTrace::LABEL_FLOW_NUMBER_KBYTES = "n_kbytes";
+const char * NetworkTrace::LABEL_FLOW_NUMBER_PACKETS = "n_packets";
+const char * NetworkTrace::LABEL_LINK_LAYER = "link_layer";
+const char * NetworkTrace::LABEL_MAC_SRC = "mac_src";
+const char * NetworkTrace::LABEL_MAC_DST = "mac_dst";
+const char * NetworkTrace::LABEL_NETWORK_LAYER = "network_layer";
+const char * NetworkTrace::LABEL_TTL = "ttl";
+const char * NetworkTrace::LABEL_SRC_IP = "src_ip";
+const char * NetworkTrace::LABEL_DST_IP = "dst_ip";
+const char * NetworkTrace::LABEL_TRANSPORT_LAYER = "transport_layer";
+const char * NetworkTrace::LABEL_SRCPORT = "src_port";
+const char * NetworkTrace::LABEL_DSTPORT = "dst_port";
+const char * NetworkTrace::LABEL_SCTP_ASSOCIATION_ID = "association_id";
+const char * NetworkTrace::LABEL_SCTP_MAX_STREAMS = "max_streams";
+const char * NetworkTrace::LABEL_APPLICATION_LAYER = "application_layer";
+const char * NetworkTrace::LABEL_INTERPACKETTIMES = "inter_packet_times";
+const char * NetworkTrace::LABEL_INTERFILE = "inter_file_times";
+const char * NetworkTrace::LABEL_INTERSESSION = "inter_session_times";
+const char * NetworkTrace::LABEL_SESSION = "session_times";
+const char * NetworkTrace::LABEL_SESSION_ON = "on_times";
+const char * NetworkTrace::LABEL_SESSION_OFF = "off_times";
+const char * NetworkTrace::LABEL_SESSION_NPACKETS = "n_packets";
+const char * NetworkTrace::LABEL_SESSION_NBYTES = "n_bytes";
+const char * NetworkTrace::LABEL_PACKETSIZES = "packet_sizes";
+const char * NetworkTrace::LABEL_PSMODE1 = "ps_mode1";
+const char * NetworkTrace::LABEL_PSMODE2 = "ps_mode2";
+const char * NetworkTrace::LABEL_STOCHASTIC_MODEL = "stochastic_model";
+const char * NetworkTrace::LABEL_STOCHASTIC_MODEL_NAME = "name";
+const char * NetworkTrace::LABEL_PARAM1 = "param1";
+const char * NetworkTrace::LABEL_PARAM2 = "param2";
+const char * NetworkTrace::LABEL_AIC = "aic";
+const char * NetworkTrace::LABEL_BIC = "bic";
+const char * NetworkTrace::LABEL_NPACKETS = "n_packets";
+const char * NetworkTrace::LABEL_NKBYTES = "n_kbytes";
+
+#else // new version CDT_V2
+
+// Trace Object
+const char * NetworkTrace::LABEL_TRACE = "TRACE";
+const char * NetworkTrace::LABEL_TRACE_NAME = "trace_name ";
+const char * NetworkTrace::LABEL_CAPTURE_DATE = "capture_date";
+const char * NetworkTrace::LABEL_COMMENTARIES = "comment";
+const char * NetworkTrace::LABEL_TRAFFIC_ENGINE = "tg"; // TODO - DEPRECATED
+const char * NetworkTrace::LABEL_NUMBER_OF_FLOWS = "n_flows";
+
+// Flow Object
+// - tag flow
+const char * NetworkTrace::LABEL_FLOW = "F";
+const char * NetworkTrace::LABEL_FLOW_ID = "id";
+const char * NetworkTrace::LABEL_FLOW_START_DELAY = "s";
+const char * NetworkTrace::LABEL_FLOW_DURATION = "d";
+const char * NetworkTrace::LABEL_FLOW_DS_BYTE = "b"; // TODO - DEPRECATED
+const char * NetworkTrace::LABEL_FLOW_NUMBER_KBYTES = "k";
+const char * NetworkTrace::LABEL_FLOW_NUMBER_PACKETS = "n";
+// - tag link_layer
+const char * NetworkTrace::LABEL_LINK_LAYER = "L";
+const char * NetworkTrace::LABEL_MAC_SRC = "s";
+const char * NetworkTrace::LABEL_MAC_DST = "d";
+// - tag network_layer
+const char * NetworkTrace::LABEL_NETWORK_LAYER = "N";
+const char * NetworkTrace::LABEL_TTL = "t";
+const char * NetworkTrace::LABEL_SRC_IP = "s";
+const char * NetworkTrace::LABEL_DST_IP = "d";
+// - tag transport-layer
+const char * NetworkTrace::LABEL_TRANSPORT_LAYER = "T";
+const char * NetworkTrace::LABEL_SRCPORT = "s";
+const char * NetworkTrace::LABEL_DSTPORT = "d";
+const char * NetworkTrace::LABEL_SCTP_ASSOCIATION_ID = "i"; // TODO DEPRECATED
+const char * NetworkTrace::LABEL_SCTP_MAX_STREAMS = "m";    // TODO DEPRECATED
+// - tag application_layer
+const char * NetworkTrace::LABEL_APPLICATION_LAYER = "A";
+// - tag inter_packet_times
+const char * NetworkTrace::LABEL_INTERPACKETTIMES = "I";
+// - tag session_times
+const char * NetworkTrace::LABEL_SESSION = "S";
+const char * NetworkTrace::LABEL_SESSION_ON = "o";
+const char * NetworkTrace::LABEL_SESSION_OFF = "f";
+const char * NetworkTrace::LABEL_SESSION_NPACKETS = "n";
+const char * NetworkTrace::LABEL_SESSION_NBYTES = "b";
+// - tag packet_sizes/ps_mode1/ps_mode2
+const char * NetworkTrace::LABEL_PACKETSIZES = "P";
+const char * NetworkTrace::LABEL_PSMODE1 = "Q";
+const char * NetworkTrace::LABEL_PSMODE2 = "R";
+const char * NetworkTrace::LABEL_NPACKETS = "p";
+const char * NetworkTrace::LABEL_NKBYTES = "q";
+// - tag stochastic_model
+const char * NetworkTrace::LABEL_STOCHASTIC_MODEL = "M";
+const char * NetworkTrace::LABEL_STOCHASTIC_MODEL_NAME = "n";
+const char * NetworkTrace::LABEL_PARAM1 = "p";
+const char * NetworkTrace::LABEL_PARAM2 = "q";
+const char * NetworkTrace::LABEL_AIC = "a";
+const char * NetworkTrace::LABEL_BIC = "b";
+
+// TODO Tiny Flow Object
+const char * NetworkTrace::TAG_TINY_FLOW = "Y";
+const char * NetworkTrace::PROP_TINYFLOW_PROTOCOL_LINK_LAYER = "l";
+const char * NetworkTrace::PROP_TINYFLOW_PROTOCOL_NETWORK_LAYER = "n";
+const char * NetworkTrace::PROP_TINYFLOW_NETWORK_ADDRESS_DESTINATION = "d";
+const char * NetworkTrace::PROP_TINYFLOW_NETWORK_ADDRESS_SOURCE = "s";
+const char * NetworkTrace::PROP_TINYFLOW_PROTOCOL_TRANSPORT = "t";
+const char * NetworkTrace::PROP_TINYFLOW_THROUGHPUT = "h";
+const char * NetworkTrace::PROP_TINYFLOW_NUMBER_OF_PACKETS_MODE1 = "m1";
+const char * NetworkTrace::PROP_TINYFLOW_NUMBER_OF_PACKETS_MODE2 = "m2";
+const char * NetworkTrace::PROP_TINYFLOW_AVERAGE_PACKET_SIZE_MODE1 = "p";
+const char * NetworkTrace::PROP_TINYFLOW_AVERAGE_PACKET_SIZE_MODE2 = "q";
+
+#endif
+
+
 NetworkTrace::NetworkTrace()
 {
 	PLOG_DEBUG << "NetworkTrace() constructor default";
@@ -17,17 +139,16 @@ NetworkTrace::NetworkTrace(const string& fileName,
 {
 	PLOG_DEBUG << "NetworkTrace() file constructor;  args fileName:" << fileName
 						<< ", trafficGenEngine:" << trafficGenEngine;
-
+	// init vars
 	long int nflows = 0;
-	//long int fcounter = 0;
 	string strBuffer;
 	unsigned int uintBuffer;
 	unsigned long int lintBuffer;
 	time_sec timeBuffer;
 	port_number portBuffer = 0;
 	Protocol pBuffer = Protocol();
-	std::list<StochasticModelFit>* modelList = NULL;
-
+	list<StochasticModelFit>* modelList = NULL;
+	// init XML
 	xml_document<> doc;
 	xml_node<> * root_node;
 
@@ -47,29 +168,16 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	info_commentaries = root_node->first_attribute(LABEL_COMMENTARIES)->value();
 	info_captureDate = root_node->first_attribute(LABEL_CAPTURE_DATE)->value();
 
-	// DEBUG - check it it works
-	//m_trafficGenEngine =
-	//		root_node->first_attribute(LABEL_TRAFFIC_ENGINE)->value();
-
-	//MESSER_INFO(
-	//		"Creating Trace: info_tracename=%s, trafficGenEngine=%s,info_captureDate=%s, info_commentaries=%s, n_flows=%s  @<%s, %s>",
-	//		root_node->first_attribute("info_tracename")->value(),
-	//		root_node->first_attribute("trafficGenEngine")->value(),
-	//		root_node->first_attribute("info_captureDate")->value(),
-	//		root_node->first_attribute("info_commentaries")->value(),
-	//		root_node->first_attribute("n_flows")->value());
-
-	charvet2type(root_node->first_attribute("n_flows")->value(), nflows);
+	charvet2type(root_node->first_attribute(LABEL_NUMBER_OF_FLOWS)->value(), nflows);
 
 	uint fcounter = 0;
-	for (xml_node<> * flow_node = root_node->first_node("flow"); flow_node;
+	for (xml_node<> * flow_node = root_node->first_node(LABEL_FLOW); flow_node;
 			flow_node = flow_node->next_sibling())
 	{
 
 		/// Create flow
 		NetworkFlow* netFlow = NetworkFlowFactory::make_flow(trafficGenEngine);
 
-		// PLOG debug
 		PLOG_VERBOSE << "Factoring flow[" << fcounter
 							<< "]: NetworkFlowFactory::make_flow("
 							<< trafficGenEngine << ")";
@@ -77,94 +185,93 @@ NetworkTrace::NetworkTrace(const string& fileName,
 		fcounter++;
 
 		/// Flow Settings
-		charvet2type(flow_node->first_attribute("start_delay")->value(),
+		charvet2type(flow_node->first_attribute(LABEL_FLOW_START_DELAY)->value(),
 				timeBuffer);
 		netFlow->setFlowStartDelay(timeBuffer);
 
-		charvet2type(flow_node->first_attribute("duration")->value(),
+		charvet2type(flow_node->first_attribute(LABEL_FLOW_DURATION)->value(),
 				timeBuffer);
 		netFlow->setFlowDuration(timeBuffer);
 
-		charvet2type(flow_node->first_attribute("ds_byte")->value(),
+		charvet2type(flow_node->first_attribute(LABEL_FLOW_DS_BYTE)->value(),
 				uintBuffer);
 		netFlow->setFlowDsByte(uintBuffer);
 
-		charvet2type(flow_node->first_attribute("n_kbytes")->value(),
+		charvet2type(flow_node->first_attribute(LABEL_FLOW_NUMBER_KBYTES)->value(),
 				lintBuffer);
 		netFlow->setNumberOfKbytes(lintBuffer);
 
-		charvet2type(flow_node->first_attribute("n_packets")->value(),
+		charvet2type(flow_node->first_attribute(LABEL_FLOW_NUMBER_PACKETS)->value(),
 				lintBuffer);
 		netFlow->setNumberOfPackets(lintBuffer);
 
-		/// Link layer
-		xml_node<> * link_node = flow_node->first_node("link_layer");
+		// Link layer
+		xml_node<> * link_node = flow_node->first_node(LABEL_LINK_LAYER);
 		pBuffer = Protocol(link_node->value());
 		netFlow->setLinkProtocol(pBuffer.get());
 		netFlow->setMacAddr(link_node->first_attribute(LABEL_MAC_SRC)->value(),
 				link_node->first_attribute(LABEL_MAC_DST)->value());
 
-		/// Network layer
-		xml_node<> * network_node = flow_node->first_node("network_layer");
+		// Network layer
+		xml_node<> * network_node = flow_node->first_node(LABEL_NETWORK_LAYER);
 		pBuffer = Protocol(network_node->value());
 		netFlow->setNetworkProtocol(pBuffer.get());
 		netFlow->setNetworkSrcAddr(
-				network_node->first_attribute("src_ip")->value());
+				network_node->first_attribute(LABEL_SRC_IP)->value());
 		netFlow->setNetworkDstAddr(
-				network_node->first_attribute("dst_ip")->value());
-		charvet2type(network_node->first_attribute("ttl")->value(), uintBuffer);
+				network_node->first_attribute(LABEL_DST_IP)->value());
+		charvet2type(network_node->first_attribute(LABEL_TTL)->value(), uintBuffer);
 		netFlow->setNetworkTtl(uintBuffer);
 
-		/// Transport layer
-		xml_node<> * transport_node = flow_node->first_node("transport_layer");
+		// Transport layer
+		xml_node<> * transport_node = flow_node->first_node(LABEL_TRANSPORT_LAYER);
 
 		pBuffer = Protocol(transport_node->value());
 		netFlow->setTransportProtocol(pBuffer.get());
 
-		charvet2type(transport_node->first_attribute("src_port")->value(),
+		charvet2type(transport_node->first_attribute(LABEL_SRCPORT)->value(),
 				portBuffer);
 		netFlow->setTransportSrcPort(portBuffer);
 
-		charvet2type(transport_node->first_attribute("dst_port")->value(),
+		charvet2type(transport_node->first_attribute(LABEL_DSTPORT)->value(),
 				portBuffer);
 		netFlow->setTransportDstPort(portBuffer);
 
-		/// Application
+		// Application
 		xml_node<> * application_node = flow_node->first_node(
-				"application_layer");
+				LABEL_APPLICATION_LAYER);
 		pBuffer = Protocol(application_node->value());
 		netFlow->setApplicationProtocol(pBuffer.get());
 
-		/// Inter packet times
+		// Inter packet times
 		xml_node<> * interpacket_node = flow_node->first_node(
-				"inter_packet_times");
+				LABEL_INTERPACKETTIMES);
 
 		modelList = new list<StochasticModelFit>;
 		for (xml_node<> * model_node = interpacket_node->first_node(
-				"stochastic_model"); model_node;
+				LABEL_STOCHASTIC_MODEL); model_node;
 				model_node = model_node->next_sibling())
 		{
 			double p1 = 0;
 			double p2 = 0;
 			double aic = 0;
 			double bic = 0;
-			charvet2type(model_node->first_attribute("param1")->value(), p1);
-			charvet2type(model_node->first_attribute("param2")->value(), p2);
-			charvet2type(model_node->first_attribute("aic")->value(), aic);
-			charvet2type(model_node->first_attribute("bic")->value(), bic);
+			charvet2type(model_node->first_attribute(LABEL_PARAM1)->value(), p1);
+			charvet2type(model_node->first_attribute(LABEL_PARAM2)->value(), p2);
+			charvet2type(model_node->first_attribute(LABEL_AIC)->value(), aic);
+			charvet2type(model_node->first_attribute(LABEL_BIC)->value(), bic);
 			modelList->push_back(
 					StochasticModelFit(
-							model_node->first_attribute("name")->value(), p1,
+							model_node->first_attribute(LABEL_STOCHASTIC_MODEL_NAME)->value(), p1,
 							p2, aic, bic));
 		}
 		netFlow->setInterDepertureTimeModels(modelList);
 
-		/// Sessions On/Off
+		// Sessions On/Off
 		xml_node<> * session_node = flow_node->first_node(LABEL_SESSION);
 		vector<time_sec>* onTimes = new vector<time_sec>;
 		vector<time_sec>* offTimes = new vector<time_sec>;
 
-		//new 19/5
 		vector<unsigned int>* pktCounter = new vector<unsigned int>;
 		vector<unsigned int>* fileSize = new vector<unsigned int>;
 
@@ -173,19 +280,15 @@ NetworkTrace::NetworkTrace(const string& fileName,
 		charvet2type(session_node->first_attribute(LABEL_SESSION_OFF)->value(),
 				*offTimes);
 
-		//new 19/5
 		charvet2type(
 				session_node->first_attribute(LABEL_SESSION_NPACKETS)->value(),
 				*pktCounter);
 		charvet2type(
 				session_node->first_attribute(LABEL_SESSION_NBYTES)->value(),
 				*fileSize);
-
-		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
-		//new 19/5
 		netFlow->setSessionTimesOnOff(onTimes, offTimes, pktCounter, fileSize);
 
-		/// Packet sizes
+		// Packet sizes
 		xml_node<> * packetsizes_nodes = flow_node->first_node("packet_sizes");
 
 		charvet2type(packetsizes_nodes->first_attribute("n_packets")->value(),
@@ -203,7 +306,7 @@ NetworkTrace::NetworkTrace(const string& fileName,
 		list<StochasticModelFit>* psm1 = new list<StochasticModelFit>;
 		list<StochasticModelFit>* psm2 = new list<StochasticModelFit>;
 
-		/// Packet size, mode 1
+		// Packet size, mode 1
 		xml_node<> * psmode1_node = packetsizes_nodes->first_node("ps_mode1");
 		charvet2type(psmode1_node->first_attribute("n_packets")->value(),
 				npacketsm1);
@@ -213,55 +316,41 @@ NetworkTrace::NetworkTrace(const string& fileName,
 				"stochastic_model"); model_node;
 				model_node = model_node->next_sibling())
 		{
-			//	printf(
-			//			"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
-			//			model_node->first_attribute("name")->value(),
-			//			model_node->first_attribute("param1")->value(),
-			//			model_node->first_attribute("param2")->value(),
-			//			model_node->first_attribute("aic")->value(),
-			//			model_node->first_attribute("bic")->value());
 			double p1 = 0;
 			double p2 = 0;
 			double aic = 0;
 			double bic = 0;
-			charvet2type(model_node->first_attribute("param1")->value(), p1);
-			charvet2type(model_node->first_attribute("param2")->value(), p2);
-			charvet2type(model_node->first_attribute("aic")->value(), aic);
-			charvet2type(model_node->first_attribute("bic")->value(), bic);
+			charvet2type(model_node->first_attribute(LABEL_PARAM1)->value(), p1);
+			charvet2type(model_node->first_attribute(LABEL_PARAM2)->value(), p2);
+			charvet2type(model_node->first_attribute(LABEL_AIC)->value(), aic);
+			charvet2type(model_node->first_attribute(LABEL_BIC)->value(), bic);
 			psm1->push_back(
 					StochasticModelFit(
-							model_node->first_attribute("name")->value(), p1,
+							model_node->first_attribute(LABEL_STOCHASTIC_MODEL_NAME)->value(), p1,
 							p2, aic, bic));
 		}
 
-		/// Packet size, mode 2
-		xml_node<> * psmode2_node = packetsizes_nodes->first_node("ps_mode2");
-		charvet2type(psmode2_node->first_attribute("n_packets")->value(),
+		// Packet size, mode 2
+		xml_node<> * psmode2_node = packetsizes_nodes->first_node(LABEL_PSMODE2);
+		charvet2type(psmode2_node->first_attribute(LABEL_NPACKETS)->value(),
 				npacketsm2);
-		charvet2type(psmode2_node->first_attribute("n_kbytes")->value(),
+		charvet2type(psmode2_node->first_attribute(LABEL_NKBYTES)->value(),
 				nkbytesm2);
 		for (xml_node<> * model_node = psmode2_node->first_node(
-				"stochastic_model"); model_node;
+				LABEL_STOCHASTIC_MODEL); model_node;
 				model_node = model_node->next_sibling())
 		{
-			//	printf(
-			//			"\t\t\t\tstochastic_model: Name=%s, param1=%s, param2=%s, aic=%s, bic=%s\n",
-			//			model_node->first_attribute("name")->value(),
-			//			model_node->first_attribute("param1")->value(),
-			//			model_node->first_attribute("param2")->value(),
-			//			model_node->first_attribute("aic")->value(),
-			//			model_node->first_attribute("bic")->value());
 			double p1 = 0;
 			double p2 = 0;
 			double aic = 0;
 			double bic = 0;
-			charvet2type(model_node->first_attribute("param1")->value(), p1);
-			charvet2type(model_node->first_attribute("param2")->value(), p2);
-			charvet2type(model_node->first_attribute("aic")->value(), aic);
-			charvet2type(model_node->first_attribute("bic")->value(), bic);
+			charvet2type(model_node->first_attribute(LABEL_PARAM1)->value(), p1);
+			charvet2type(model_node->first_attribute(LABEL_PARAM2)->value(), p2);
+			charvet2type(model_node->first_attribute(LABEL_AIC)->value(), aic);
+			charvet2type(model_node->first_attribute(LABEL_BIC)->value(), bic);
 			psm2->push_back(
 					StochasticModelFit(
-							model_node->first_attribute("name")->value(), p1,
+							model_node->first_attribute(LABEL_STOCHASTIC_MODEL_NAME)->value(), p1,
 							p2, aic, bic));
 		}
 
@@ -301,17 +390,6 @@ void NetworkTrace::setInfoCaptureDate(const std::string& infoCaptureDate)
 	info_captureDate = infoCaptureDate;
 }
 
-//const std::string& NetworkTrace::getInfoCaptureInterface() const
-//{
-//	return info_captureInterface;
-//}
-
-//void NetworkTrace::setInfoCaptureInterface(
-//		const std::string& infoCaptureInterface)
-//{
-//	info_captureInterface = infoCaptureInterface;
-//}
-
 const std::string& NetworkTrace::getInfoCommentaries() const
 {
 	return info_commentaries;
@@ -343,11 +421,7 @@ int NetworkTrace::writeToFile(void) const
 
 int NetworkTrace::writeToFile(const std::string& fileName) const
 {
-	//MESSER_LOG_INIT(ERROR);
-
-	//MESSER_DEBUG("Executing method writeToFile(), fileName=%s @  @<%s, %s>",
-	//		fileName.c_str());
-
+	PLOG_DEBUG << "writeToFile:" << fileName;
 	unsigned int nPsM1Fittings = 3;
 	unsigned int nPsM2Fittings = 3;
 	unsigned int nFittings = 0;
@@ -355,7 +429,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 	unsigned int i = 0;
 	unsigned int j = 0;
 	char tracename[CHAR_BUFFER] = "";
-	//char tgengine[CHAR_BUFFER] = "";
 	char capdate[CHAR_BUFFER] = "";
 	char commentaries[CHAR_BUFFER] = "";
 	char charfileName[CHAR_BUFFER] = "";
@@ -375,10 +448,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 	string2charvet(info_tracename, tracename);
 	trace->append_attribute(
 			doc.allocate_attribute(LABEL_TRACE_NAME, tracename));
-
-	//string2charvet(m_trafficGenEngine, tgengine);
-	//trace->append_attribute(
-	//		doc.allocate_attribute(LABEL_TRAFFIC_ENGINE, tgengine));
 
 	string2charvet(info_captureDate, capdate);
 	trace->append_attribute(
@@ -405,9 +474,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 		nPsM2Fittings = networkFlow[i]->getNumberOfPsMode2Models();
 
-		//MESSER_DEBUG("(nPsM1Fittings, nPsM2Fittings) = (%d, %d)  @<%s, %s>",
-		//		nPsM1Fittings, nPsM2Fittings);
-
 		fd[i].psMode1 = new modelData[nPsM1Fittings];
 		fd[i].psMode2 = new modelData[nPsM2Fittings];
 		fd[i].n_psM1Models = nPsM1Fittings;
@@ -417,9 +483,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 
 	for (i = 0; i < nFlows; i++)
 	{
-		//MESSER_DEBUG("networkFlow[%d]->getFlowStartDelay()=%f  @<%s, %s>", i,
-		//		networkFlow[i]->getFlowStartDelay());
-
 		//flow
 		sprintf(fd[i].flow_start_delay, "%f",
 				networkFlow[i]->getFlowStartDelay());
@@ -468,17 +531,12 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 
 		for (j = 0; j < nFittings; j++)
 		{
-			//sf = networkFlow[i]->getInterDepertureTimeModel_next();
 			sf = networkFlow[i]->getInterDepertureTimeModel(j);
 			sf.strModelName(fd[i].interPkt[j].name);
 			sprintf(fd[i].interPkt[j].aic, "%f", sf.aic());
 			sprintf(fd[i].interPkt[j].bic, "%f", sf.bic());
 			sprintf(fd[i].interPkt[j].param1, "%.15f", sf.param1());
 			sprintf(fd[i].interPkt[j].param2, "%.15f", sf.param2());
-
-			//MESSER_DEBUG("fd[i].interPkt[j].name=%s  @<%s, %s>",
-			//		fd[i].interPkt[j].name);
-
 		}
 
 		vector2str(*networkFlow[i]->getSessionOnVector(),
@@ -486,33 +544,22 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		vector2str(*networkFlow[i]->getSessionOffVector(),
 				fd[i].session_OffTimes);
 
-		//new 20/5
 		vector2str(*networkFlow[i]->getSessionOnBytesVector(),
 				fd[i].session_nBytes);
 		vector2str(*networkFlow[i]->getSessionOnPacketsVector(),
 				fd[i].session_nPackets);
 
-		//MESSER_DEBUG(
-		//		"fd[%d].session_OnTimes=[%s], fd[%d].session_OffTimes=[%s]", i,
-		//		fd[i].session_OnTimes, i, fd[i].session_OffTimes);
-		//networkFlow[i]->logOnOff();
-
 		//Packet size mode1
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 
-		//MESSER_DEBUG("networkFlow[i]->getNumberOfPsMode1Models()=%d @<%s, %s>",
-		//		networkFlow[i]->getNumberOfPsMode1Models());
-
 		for (j = 0; j < nPsM1Fittings; j++)
 		{
-			//sf = networkFlow[i]->getPacketSizeModelMode1_next();
 			sf = networkFlow[i]->getPacketSizeModelMode1(j);
 			sf.strModelName(fd[i].psMode1[j].name);
 			sprintf(fd[i].psMode1[j].aic, "%f", sf.aic());
 			sprintf(fd[i].psMode1[j].bic, "%f", sf.bic());
 			sprintf(fd[i].psMode1[j].param1, "%f", sf.param1());
 			sprintf(fd[i].psMode1[j].param2, "%f", sf.param2());
-			//cout << fd[i].psMode1[j].name << endl;
 		}
 		sprintf(fd[i].psMode1_Nkbytes, "%ld",
 				networkFlow[i]->getNkbytesMode1());
@@ -527,14 +574,12 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		nPsM2Fittings = networkFlow[i]->getNumberOfPsMode2Models();
 		for (j = 0; j < nPsM2Fittings; j++)
 		{
-			//sf = networkFlow[i]->getPacketSizeModelMode2_next();
 			sf = networkFlow[i]->getPacketSizeModelMode2(j);
 			sf.strModelName(fd[i].psMode2[j].name);
 			sprintf(fd[i].psMode2[j].aic, "%f", sf.aic());
 			sprintf(fd[i].psMode2[j].bic, "%f", sf.bic());
 			sprintf(fd[i].psMode2[j].param1, "%f", sf.param1());
 			sprintf(fd[i].psMode2[j].param2, "%f", sf.param2());
-			//cout << fd[i].psMode2[j].name << endl;
 		}
 		sprintf(fd[i].psMode2_Nkbytes, "%ld",
 				networkFlow[i]->getNkbytesMode2());
@@ -548,18 +593,13 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		//Reset data structure conters
 		networkFlow[i]->resetCounters();
 
-		//MESSER_DEBUG("end loop @<%s, %s>");
 	}
 
-	// => Create XML
 	for (i = 0; i < nFlows; i++)
 	{
-		//MESSER_DEBUG("Creating XML @<%s, %s>");
-
 		xml_node<>* flow = doc.allocate_node(node_element, LABEL_FLOW);
 
 		// flow
-
 		flow->append_attribute(
 				doc.allocate_attribute(LABEL_FLOW_START_DELAY,
 						fd[i].flow_start_delay));
@@ -576,7 +616,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 						fd[i].flow_npackets));
 
 		//Link layer
-
 		xml_node<>* link_layer = doc.allocate_node(node_element,
 				LABEL_LINK_LAYER);
 		flow->append_node(link_layer);
@@ -588,7 +627,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 				doc.allocate_attribute(LABEL_MAC_DST, fd[i].mac_dst));
 
 		//Network layer
-
 		xml_node<>* network_layer = doc.allocate_node(node_element,
 				LABEL_NETWORK_LAYER);
 		flow->append_node(network_layer);
@@ -601,7 +639,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 				doc.allocate_attribute(LABEL_TTL, fd[i].net_ttl));
 
 		//Tranport layer
-
 		xml_node<>* transport_layer = doc.allocate_node(node_element,
 				LABEL_TRANSPORT_LAYER);
 		flow->append_node(transport_layer);
@@ -622,7 +659,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		}
 
 		// Application layer
-
 		xml_node<>* application_layer = doc.allocate_node(node_element,
 				LABEL_APPLICATION_LAYER);
 		flow->append_node(application_layer);
@@ -679,7 +715,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		flow->append_node(sessionOnOffTimes);
 
 		//Packet Size models
-
 		xml_node<>* packetSizes = doc.allocate_node(node_element,
 				LABEL_PACKETSIZES);
 		flow->append_node(packetSizes);
@@ -690,16 +725,13 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 				doc.allocate_attribute(LABEL_NKBYTES, fd[i].flow_nkbytes));
 
 		//Packet sizes mode 1
-
 		xml_node<>* packetSizeMode1 = doc.allocate_node(node_element,
 				LABEL_PSMODE1);
 		packetSizes->append_node(packetSizeMode1);
-
 		packetSizeMode1->append_attribute(
 				doc.allocate_attribute(LABEL_NPACKETS, fd[i].psMode1_Npackets));
 		packetSizeMode1->append_attribute(
 				doc.allocate_attribute(LABEL_NKBYTES, fd[i].psMode1_Nkbytes));
-
 		nPsM1Fittings = networkFlow[i]->getNumberOfPsMode1Models();
 		for (j = 0; j < nPsM1Fittings; j++)
 		{
@@ -725,9 +757,7 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 			packetSizeMode1->append_node(stochastic_model);
 		}
 
-		//--------------
 		//Packet sizes mode 2
-
 		xml_node<>* packetSizeMode2 = doc.allocate_node(node_element,
 				LABEL_PSMODE2);
 		packetSizes->append_node(packetSizeMode2);
@@ -761,9 +791,6 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 
 			packetSizeMode2->append_node(stochastic_model);
 		}
-
-		//-----------
-		//end
 		trace->append_node(flow);
 	}
 
@@ -778,8 +805,7 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 	file_stored.close();
 	doc.clear();
 
-	PLOG_DEBUG << "Free memory";
-
+	PLOG_DEBUG << "Free memory allocated";
 	//Free memory allocated
 	for (i = 0; i < nFlows; i++)
 	{
@@ -791,9 +817,9 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 		delete[] fd[i].psMode2;
 		fd[i].psMode2 = NULL;
 	}
-
 	delete[] fd;
 	fd = NULL;
+	PLOG_DEBUG << "Memory was freed successfully!";
 
 	return (0);
 
@@ -806,9 +832,6 @@ long int NetworkTrace::getNumberOfFlows() const
 
 const std::string NetworkTrace::toString() const
 {
-	//std::string tostring = info_tracename + info_captureInterface
-	//		+ info_captureDate + info_commentaries;
-
 	std::string tostring = info_tracename + info_captureDate
 			+ info_commentaries;
 	return (tostring);
@@ -873,6 +896,8 @@ void NetworkTrace::clientServerIps(const char* filename,
 	char ether[CHAR_BUFFER];
 	int is_if_empty = strcmp(etherInterface, "");
 
+	PLOG_DEBUG << "clientServerIps filename:" << filename
+				<< ", etherInterface:" << etherInterface;
 	if (is_if_empty == 0)
 	{
 		getLocalIfIp(ether, localhost);
@@ -928,6 +953,8 @@ inline int NetworkTrace::getLocalIfIp(char* interface, char* ipaddr)
 	int s;
 	char host[NI_MAXHOST];
 
+	PLOG_ERROR << "getLocalIfIp for interface:" << interface <<
+			", ipaddr:" << ipaddr;
 	if (getifaddrs(&ifaddr) == -1)
 	{
 		PLOG_ERROR << "Error, cant execute getifaddrs()";
@@ -1031,59 +1058,12 @@ void NetworkTrace::regression_tests()
 	RegressionTests rt = RegressionTests();
 
 	rt.printHeader("class NetworkTrace");
-	//rt.printTestResult("string2charvet", test_string2charvet());
 	rt.printTestResult("Read and Write to the XML", test_readWrite2XML());
 	rt.printTestResult("test On/Off Vector sizes consistency",
 			test_OnOffSizes());
 	rt.printTestResult("FileIpMac", test_setFileIpMac());
 	rt.printTestResult("Local IP", test_getLocalIp());
 }
-
-const char * NetworkTrace::LABEL_TRACE = "trace";
-const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";
-const char * NetworkTrace::LABEL_CAPTURE_DATE = "info_captureDate";
-const char * NetworkTrace::LABEL_COMMENTARIES = "info_commentaries";
-const char * NetworkTrace::LABEL_TRAFFIC_ENGINE = "trafficGenEngine";
-const char * NetworkTrace::LABEL_NUMBER_OF_FLOWS = "n_flows";
-const char * NetworkTrace::LABEL_FLOW = "flow";
-const char * NetworkTrace::LABEL_FLOW_ID = "flow_id";
-const char * NetworkTrace::LABEL_FLOW_START_DELAY = "start_delay";
-const char * NetworkTrace::LABEL_FLOW_DURATION = "duration";
-const char * NetworkTrace::LABEL_FLOW_DS_BYTE = "ds_byte";
-const char * NetworkTrace::LABEL_FLOW_NUMBER_KBYTES = "n_kbytes";
-const char * NetworkTrace::LABEL_FLOW_NUMBER_PACKETS = "n_packets";
-const char * NetworkTrace::LABEL_LINK_LAYER = "link_layer";
-const char * NetworkTrace::LABEL_MAC_SRC = "mac_src";
-const char * NetworkTrace::LABEL_MAC_DST = "mac_dst";
-const char * NetworkTrace::LABEL_NETWORK_LAYER = "network_layer";
-const char * NetworkTrace::LABEL_TTL = "ttl";
-const char * NetworkTrace::LABEL_SRC_IP = "src_ip";
-const char * NetworkTrace::LABEL_DST_IP = "dst_ip";
-const char * NetworkTrace::LABEL_TRANSPORT_LAYER = "transport_layer";
-const char * NetworkTrace::LABEL_SRCPORT = "src_port";
-const char * NetworkTrace::LABEL_DSTPORT = "dst_port";
-const char * NetworkTrace::LABEL_SCTP_ASSOCIATION_ID = "association_id";
-const char * NetworkTrace::LABEL_SCTP_MAX_STREAMS = "max_streams";
-const char * NetworkTrace::LABEL_APPLICATION_LAYER = "application_layer";
-const char * NetworkTrace::LABEL_INTERPACKETTIMES = "inter_packet_times";
-const char * NetworkTrace::LABEL_INTERFILE = "inter_file_times";
-const char * NetworkTrace::LABEL_INTERSESSION = "inter_session_times";
-const char * NetworkTrace::LABEL_SESSION = "session_times";
-const char * NetworkTrace::LABEL_SESSION_ON = "on_times";
-const char * NetworkTrace::LABEL_SESSION_OFF = "off_times";
-const char * NetworkTrace::LABEL_SESSION_NPACKETS = "n_packets";
-const char * NetworkTrace::LABEL_SESSION_NBYTES = "n_bytes";
-const char * NetworkTrace::LABEL_PACKETSIZES = "packet_sizes";
-const char * NetworkTrace::LABEL_PSMODE1 = "ps_mode1";
-const char * NetworkTrace::LABEL_PSMODE2 = "ps_mode2";
-const char * NetworkTrace::LABEL_STOCHASTIC_MODEL = "stochastic_model";
-const char * NetworkTrace::LABEL_STOCHASTIC_MODEL_NAME = "name";
-const char * NetworkTrace::LABEL_PARAM1 = "param1";
-const char * NetworkTrace::LABEL_PARAM2 = "param2";
-const char * NetworkTrace::LABEL_AIC = "aic";
-const char * NetworkTrace::LABEL_BIC = "bic";
-const char * NetworkTrace::LABEL_NPACKETS = "n_packets";
-const char * NetworkTrace::LABEL_NKBYTES = "n_kbytes";
 
 bool NetworkTrace::test_readWrite2XML()
 {
@@ -1191,10 +1171,14 @@ bool NetworkTrace::test_getLocalIp()
 	char local_host[CHAR_BUFFER];
 	char local_ether[CHAR_BUFFER];
 
+	PLOG_DEBUG << "test_getLocalIp()";
 	getLocalIfIp(local_ether, local_host);
 
-	cout << "localhost: " << local_host << endl;
-	cout << "ether: " << local_ether << endl;
+	//cout << "localhost: " << local_host << endl;
+	//cout << "ether: " << local_ether << endl;
+	PLOG_DEBUG <<  "localhost: " << local_host;
+	PLOG_DEBUG << "ether: " << local_ether ;
+
 
 	return (true);
 }

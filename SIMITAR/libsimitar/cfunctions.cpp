@@ -7,13 +7,13 @@
 
 #include "cfunctions.h"
 
-void string2charvet(const std::string s, char* vetc)
+void string2charvet(const std::string s, char *vetc)
 {
 	strncpy(vetc, s.c_str(), sizeof(char) * CHAR_BUFFER);
 	vetc[sizeof(char) * CHAR_BUFFER - 1] = '\0';
 }
 
-void vector2str(std::vector<double> theVec, char* str)
+void vector2str(std::vector<double> theVec, char *str)
 {
 
 	std::list<double> theList;
@@ -21,7 +21,7 @@ void vector2str(std::vector<double> theVec, char* str)
 	list2str(theList, str);
 
 }
-void vector2str(std::vector<int> theVec, char* str)
+void vector2str(std::vector<int> theVec, char *str)
 {
 
 	std::list<int> theList;
@@ -29,7 +29,7 @@ void vector2str(std::vector<int> theVec, char* str)
 	list2str(theList, str);
 
 }
-void vector2str(std::vector<long int> theVec, char* str)
+void vector2str(std::vector<long int> theVec, char *str)
 {
 
 	std::list<long int> theList;
@@ -37,7 +37,7 @@ void vector2str(std::vector<long int> theVec, char* str)
 	list2str(theList, str);
 
 }
-void vector2str(std::vector<uint> theVec, char* str)
+void vector2str(std::vector<uint> theVec, char *str)
 {
 
 	std::list<uint> theList;
@@ -45,7 +45,7 @@ void vector2str(std::vector<uint> theVec, char* str)
 	list2str(theList, str);
 
 }
-void vector2str(std::vector<unsigned long int> theVec, char* str)
+void vector2str(std::vector<unsigned long int> theVec, char *str)
 {
 
 	std::list<unsigned long int> theList;
@@ -54,7 +54,7 @@ void vector2str(std::vector<unsigned long int> theVec, char* str)
 
 }
 
-void list2str(std::list<double> theList, char* str)
+void list2str(std::list<double> theList, char *str)
 {
 	str[0] = '\0';
 	char buffer[CHAR_BUFFER] = "\0";
@@ -72,7 +72,7 @@ void list2str(std::list<double> theList, char* str)
 	}
 }
 
-void list2str(std::list<int> theList, char* str)
+void list2str(std::list<int> theList, char *str)
 {
 
 	str[0] = '\0';
@@ -92,12 +92,13 @@ void list2str(std::list<int> theList, char* str)
 
 }
 
-void list2str(std::list<long int> theList, char* str)
+void list2str(std::list<long int> theList, char *str)
 {
 
 	str[0] = '\0';
 	char buffer[CHAR_BUFFER] = "\0";
-	for (std::list<long int>::iterator it = theList.begin(); it != theList.end();)
+	for (std::list<long int>::iterator it = theList.begin();
+			it != theList.end();)
 	{
 		//std::string val = to_string(*it);
 		sprintf(buffer, "%ld", *it);
@@ -112,7 +113,7 @@ void list2str(std::list<long int> theList, char* str)
 
 }
 
-void list2str(std::list<uint> theList, char* str)
+void list2str(std::list<uint> theList, char *str)
 {
 	str[0] = '\0';
 	char buffer[CHAR_BUFFER] = "\0";
@@ -131,7 +132,7 @@ void list2str(std::list<uint> theList, char* str)
 
 }
 
-void list2str(std::list<unsigned long int> theList, char* str)
+void list2str(std::list<unsigned long int> theList, char *str)
 {
 
 	str[0] = '\0';
@@ -152,32 +153,32 @@ void list2str(std::list<unsigned long int> theList, char* str)
 
 }
 
-void charvet2type(const char* vetc, uint& v)
+void charvet2type(const char *vetc, uint &v)
 {
 	sscanf(vetc, "%d", &v);
 }
 
-void charvet2type(const char* vetc, int& v)
+void charvet2type(const char *vetc, int &v)
 {
 	sscanf(vetc, "%d", &v);
 }
 
-void charvet2type(const char* vetc, long int& v)
+void charvet2type(const char *vetc, long int &v)
 {
 	sscanf(vetc, "%ld", &v);
 }
 
-void charvet2type(const char* vetc, unsigned long int& v)
+void charvet2type(const char *vetc, unsigned long int &v)
 {
 	sscanf(vetc, "%ld", &v);
 }
 
-void charvet2type(const char* vetc, double& v)
+void charvet2type(const char *vetc, double &v)
 {
 	sscanf(vetc, "%lf", &v);
 }
 
-void charvet2type(const char* vetc, std::list<double>& theList)
+void charvet2type(const char *vetc, std::list<double> &theList)
 {
 
 //char in_cstr[CHAR_BUFFER] = "1,223,3;4 5555 6";
@@ -219,7 +220,7 @@ void charvet2type(const char* vetc, std::list<double>& theList)
 
 }
 
-void charvet2type(const char* vetc, std::list<int>& theList)
+void charvet2type(const char *vetc, std::list<int> &theList)
 {
 
 	char buffer[CHAR_BUFFER];
@@ -255,7 +256,7 @@ void charvet2type(const char* vetc, std::list<int>& theList)
 
 }
 
-void charvet2type(const char* vetc, std::list<long int>& theList)
+void charvet2type(const char *vetc, std::list<long int> &theList)
 {
 
 	char buffer[CHAR_BUFFER];
@@ -291,7 +292,7 @@ void charvet2type(const char* vetc, std::list<long int>& theList)
 
 }
 
-void charvet2type(const char* vetc, std::list<uint>& theList)
+void charvet2type(const char *vetc, std::list<uint> &theList)
 {
 
 	char buffer[CHAR_BUFFER];
@@ -327,7 +328,7 @@ void charvet2type(const char* vetc, std::list<uint>& theList)
 
 }
 
-void charvet2type(const char* vetc, std::vector<long int>& theVector)
+void charvet2type(const char *vetc, std::vector<long int> &theVector)
 {
 	std::list<long int> theList;
 	charvet2type(vetc, theList);
@@ -339,7 +340,7 @@ void charvet2type(const char* vetc, std::vector<long int>& theVector)
 //	charvet2type(vetc, theList);
 //	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 //}
-void charvet2type(const char* vetc, std::vector<int>& theVector)
+void charvet2type(const char *vetc, std::vector<int> &theVector)
 {
 	std::list<int> theList;
 	charvet2type(vetc, theList);
@@ -351,14 +352,14 @@ void charvet2type(const char* vetc, std::vector<int>& theVector)
 //	charvet2type(vetc, theList);
 //	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 //}
-void charvet2type(const char* vetc, std::vector<double>& theVector)
+void charvet2type(const char *vetc, std::vector<double> &theVector)
 {
 	std::list<double> theList;
 	charvet2type(vetc, theList);
 	std::copy(theList.begin(), theList.end(), std::back_inserter(theVector));
 }
 
-void charvet2type(const char* vetc, std::vector<uint>& theVector)
+void charvet2type(const char *vetc, std::vector<uint> &theVector)
 {
 	std::list<uint> theList;
 	charvet2type(vetc, theList);
@@ -377,7 +378,7 @@ bool delimiter(char c)
 	}
 }
 
-bool delimiter(char c, const char& d)
+bool delimiter(char c, const char &d)
 {
 	if (c == d)
 	{
@@ -387,11 +388,11 @@ bool delimiter(char c, const char& d)
 }
 
 template<typename T>
-void printList(std::list<T>& theList)
+void printList(std::list<T> &theList)
 {
 	std::cout << "[";
-	for (typename std::list<int>::iterator it = theList.begin(); it != theList.end();
-			it++)
+	for (typename std::list<int>::iterator it = theList.begin();
+			it != theList.end(); it++)
 	{
 		std::cout << *it << ", ";
 	}
@@ -410,10 +411,11 @@ void printList(std::list<T>& theList)
  }
  */
 
-void printList(std::list<double>& theList)
+void printList(std::list<double> &theList)
 {
 	std::cout << "[";
-	for (std::list<double>::iterator it = theList.begin(); it != theList.end(); it++)
+	for (std::list<double>::iterator it = theList.begin(); it != theList.end();
+			it++)
 	{
 		std::cout << std::setprecision(10) << *it << ", ";
 	}
@@ -451,14 +453,14 @@ bool isEqual(double a, double b, double epsilon = 0.001)
  }
  */
 
-void cumulativeDistribution(std::list<double>& dataSample,
-		std::list<double>* cumulativeDat)
+void cumulativeDistribution(std::list<double> &dataSample,
+		std::list<double> *cumulativeDat)
 {
 	uint i = 0;
 	double cVal = 0;
 
-	for (std::list<double>::iterator it = dataSample.begin(); it != dataSample.end();
-			it++)
+	for (std::list<double>::iterator it = dataSample.begin();
+			it != dataSample.end(); it++)
 	{
 		if (i == 0)
 		{
@@ -474,17 +476,17 @@ void cumulativeDistribution(std::list<double>& dataSample,
 	}
 }
 
-bool isFileEmpty(std::ifstream& pFile)
+bool isFileEmpty(std::ifstream &pFile)
 {
 	return pFile.peek() == std::ifstream::traits_type::eof();
 }
 
-char** str_split(char* a_str, const char a_delim)
+char** str_split(char *a_str, const char a_delim)
 {
-	char** result = 0;
+	char **result = 0;
 	size_t count = 0;
-	char* tmp = a_str;
-	char* last_comma = 0;
+	char *tmp = a_str;
+	char *last_comma = 0;
 	char delim[2];
 	delim[0] = a_delim;
 	delim[1] = 0;
@@ -518,7 +520,7 @@ char** str_split(char* a_str, const char a_delim)
 	if (result)
 	{
 		size_t idx = 0;
-		char* token = strtok(a_str, delim);
+		char *token = strtok(a_str, delim);
 
 		while (token)
 		{
@@ -533,10 +535,11 @@ char** str_split(char* a_str, const char a_delim)
 	return result;
 }
 
-void scalar_product(std::list<double>& theList, double scalar)
+void scalar_product(std::list<double> &theList, double scalar)
 {
 
-	for (std::list<double>::iterator it = theList.begin(); it != theList.end(); it++)
+	for (std::list<double>::iterator it = theList.begin(); it != theList.end();
+			it++)
 	{
 		*it = (*it) * scalar;
 	}
@@ -650,7 +653,8 @@ bool test_charvet2type()
 
 //double
 	uint i = 0;
-	for (std::list<double>::iterator it = aList.begin(); it != aList.end(); it++)
+	for (std::list<double>::iterator it = aList.begin(); it != aList.end();
+			it++)
 	{
 		//std::cout << vd[i] << ":" << *it << std::endl;
 		if (vd[i] != *it)
@@ -671,7 +675,8 @@ bool test_charvet2type()
 	}
 //long int
 	i = 0;
-	for (std::list<long int>::iterator it = aListL.begin(); it != aListL.end(); it++)
+	for (std::list<long int>::iterator it = aListL.begin(); it != aListL.end();
+			it++)
 	{
 		//std::cout << vli[i] << ":" << *it << std::endl;
 		if (vli[i] != *it)
@@ -751,7 +756,8 @@ bool test_scalar_prod()
 	//printList(aList);
 
 	uint i = 0;
-	for (std::list<double>::iterator it = aList.begin(); it != aList.end(); it++)
+	for (std::list<double>::iterator it = aList.begin(); it != aList.end();
+			it++)
 	{
 		if (aListdot7[i] != *it)
 		{
@@ -763,7 +769,8 @@ bool test_scalar_prod()
 	scalar_product(aList, 1.16);
 	//printList(aList);
 	i = 0;
-	for (std::list<double>::iterator it = aList.begin(); it != aList.end(); it++)
+	for (std::list<double>::iterator it = aList.begin(); it != aList.end();
+			it++)
 	{
 
 		if (!isEqual(aList7_116[i], *it))
@@ -779,22 +786,28 @@ bool test_scalar_prod()
 	return (true);
 }
 
-FILE * popen2(string command, string type, int & pid) {
+FILE* popen2(string command, string type, int &pid)
+{
 	pid_t child_pid;
 	int fd[2];
 	pipe(fd);
 
-	if ((child_pid = fork()) == -1) {
+	if ((child_pid = fork()) == -1)
+	{
 		perror("fork");
 		exit(1);
 	}
 
 	/* child process */
-	if (child_pid == 0) {
-		if (type == "r") {
+	if (child_pid == 0)
+	{
+		if (type == "r")
+		{
 			close(fd[READ]); //Close the READ end of the pipe since the child's fd is write-only
 			dup2(fd[WRITE], 1); //Redirect stdout to pipe
-		} else {
+		}
+		else
+		{
 			close(fd[WRITE]); //Close the WRITE end of the pipe since the child's fd is read-only
 			dup2(fd[READ], 0);   //Redirect stdin to pipe
 		}
@@ -802,29 +815,38 @@ FILE * popen2(string command, string type, int & pid) {
 		setpgid(child_pid, child_pid); //Needed so negative PIDs can kill children of /bin/sh
 		execl("/bin/sh", "/bin/sh", "-c", command.c_str(), NULL);
 		exit(0);
-	} else {
-		if (type == "r") {
+	}
+	else
+	{
+		if (type == "r")
+		{
 			close(fd[WRITE]); //Close the WRITE end of the pipe since parent's fd is read-only
-		} else {
+		}
+		else
+		{
 			close(fd[READ]); //Close the READ end of the pipe since parent's fd is write-only
 		}
 	}
 
 	pid = child_pid;
 
-	if (type == "r") {
+	if (type == "r")
+	{
 		return fdopen(fd[READ], "r");
 	}
 
 	return fdopen(fd[WRITE], "w");
 }
 
-int pclose2(FILE * fp, pid_t pid) {
+int pclose2(FILE *fp, pid_t pid)
+{
 	int stat;
 
 	fclose(fp);
-	while (waitpid(pid, &stat, 0) == -1) {
-		if (errno != EINTR) {
+	while (waitpid(pid, &stat, 0) == -1)
+	{
+		if (errno != EINTR)
+		{
 			stat = -1;
 			break;
 		}
@@ -832,5 +854,4 @@ int pclose2(FILE * fp, pid_t pid) {
 
 	return stat;
 }
-
 

@@ -18,7 +18,7 @@ IperfFlow::~IperfFlow()
 	// nothing to do
 }
 
-int IperfFlow::server(const std::string& netInterface)
+int IperfFlow::server(const std::string &netInterface)
 {
 	printf(
 			"NOTE: Use Compact Trace Descriptors parameterized in seconds (sufix .sec) in the client side.\n");
@@ -88,8 +88,8 @@ int IperfFlow::iperf_server_udp()
 	return (0);
 }
 
-void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
-		const uint& npackets, const uint& nbytes, const string& netInterface)
+void IperfFlow::flowGenerate(const counter &flowId, const time_sec &onTime,
+		const uint &npackets, const uint &nbytes, const string &netInterface)
 {
 
 	// popen args
@@ -104,8 +104,9 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
 
 	if (!(in = popen(command, "r")))
 	{
-		PLOG_ERROR << ERRORMSG_CANNOT_CREATE_PROCESS << "IperfFlow error: cannot execute command `" << command
-							<< "`" << std::endl;
+		PLOG_ERROR << ERRORMSG_CANNOT_CREATE_PROCESS
+							<< "IperfFlow error: cannot execute command `"
+							<< command << "`" << std::endl;
 		return;
 	}
 
@@ -177,8 +178,8 @@ void IperfFlow::flowGenerate(const counter& flowId, const time_sec& onTime,
  Report bugs to <iperf-users@lists.sourceforge.net>
 
  **/
-std::string IperfFlow::iperf_command(const time_sec& onTime,
-		const uint& npackets, const uint& nbytes, const string& netInterface)
+std::string IperfFlow::iperf_command(const time_sec &onTime,
+		const uint &npackets, const uint &nbytes, const string &netInterface)
 {
 	/// iperf running options. Traffic generation custom options
 	enum_transmission_type transmission_type = packets;

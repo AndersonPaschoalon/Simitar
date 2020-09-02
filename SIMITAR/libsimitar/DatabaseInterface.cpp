@@ -56,10 +56,10 @@ string DatabaseInterface::toString()
 }
 
 int DatabaseInterface::getTraceData(const string experimentName,
-		const string label, string* value)
+		const string label, string *value)
 {
 	string string_sql; //SQL string query
-	char* sql = NULL; //SQL char[] query
+	char *sql = NULL; //SQL char[] query
 	int rc = 0; //control output flag
 	sqlite3_stmt *res; //database handle
 
@@ -84,7 +84,8 @@ int DatabaseInterface::getTraceData(const string experimentName,
 	rc = sqlite3_step(res);
 	if (rc != SQLITE_ROW)
 	{
-		perror("Error @ `int DatabaseInterface::getTraceData()`, column not found");
+		perror(
+				"Error @ `int DatabaseInterface::getTraceData()`, column not found");
 		databaseInterface_error = 3;
 	}
 
@@ -102,7 +103,7 @@ int DatabaseInterface::getTraceData(const string experimentName,
 }
 
 int DatabaseInterface::getTraceData(const string experimentName,
-		const string label, int* value)
+		const string label, int *value)
 {
 	string temp_int;
 	int ret_value;
@@ -116,10 +117,10 @@ int DatabaseInterface::getTraceData(const string experimentName,
 	return ret_value;
 }
 
-int DatabaseInterface::getTraceList(list<string>& traceNames_list)
+int DatabaseInterface::getTraceList(list<string> &traceNames_list)
 {
 	int rc = 0; 				//control output flag
-	char* sql = NULL; 			//SQL char[] query
+	char *sql = NULL; 			//SQL char[] query
 	string string_sql; 			//SQL string query
 	sqlite3_stmt *res; 			//database handle
 
@@ -156,10 +157,10 @@ int DatabaseInterface::getTraceList(list<string>& traceNames_list)
 	return (0);
 }
 
-int DatabaseInterface::getNumberOfFlows(string experimentName, long int* nflows)
+int DatabaseInterface::getNumberOfFlows(string experimentName, long int *nflows)
 {
 	string string_sql; 						//SQL string query
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	int rc = 0; 							//control output flag
 	sqlite3_stmt *res; 						//database handle
 	char strExperimentId[INT_BUFFER_SIZE]; 	// FlowID string
@@ -190,7 +191,8 @@ int DatabaseInterface::getNumberOfFlows(string experimentName, long int* nflows)
 	rc = sqlite3_step(res);
 	if (rc != SQLITE_ROW)
 	{
-		perror("Error @ `DatabaseInterface::getNumberOfFlows()`, column not found");
+		perror(
+				"Error @ `DatabaseInterface::getNumberOfFlows()`, column not found");
 		databaseInterface_error = 3;
 		return (-3);
 	}
@@ -210,7 +212,7 @@ int DatabaseInterface::getNumberOfFlows(string experimentName, long int* nflows)
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, long int* value)
+		string label, long int *value)
 {
 	string temp_int;
 	int ret_value;
@@ -223,7 +225,7 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, double* value)
+		string label, double *value)
 {
 	string temp_d;
 	int ret_value;
@@ -236,13 +238,13 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, string* str)
+		string label, string *str)
 {
 	int rc = 0; 							//control output flag
 	int experimentID;
 	char strFlowId[INT_BUFFER_SIZE]; 		// FlowID string
 	char strExperimentId[INT_BUFFER_SIZE]; 	// FlowID string
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	string string_sql; 						//SQL string query
 	sqlite3_stmt *res; 						//database handle
 
@@ -290,14 +292,14 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, list<long int>& value_list)
+		string label, list<long int> &value_list)
 {
 	int rc = 0; 							//control output flag
 	int experimentID;
 	long int value; 						//rows values
 	char strFlowId[INT_BUFFER_SIZE]; 		// FlowID string
 	char strExperimentId[INT_BUFFER_SIZE]; 	// FlowID string
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	string string_sql; 						//SQL string query
 	sqlite3_stmt *res;						//database handle
 
@@ -345,7 +347,7 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, list<int>& value_list)
+		string label, list<int> &value_list)
 {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	int rc = 0; 							//control output flag
@@ -353,7 +355,7 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 	int value; 								//rows values
 	char strFlowId[INT_BUFFER_SIZE]; 		//FlowID string
 	char strExperimentId[INT_BUFFER_SIZE]; 	//FlowID string
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	string string_sql; 						//SQL string query
 	sqlite3_stmt *res;						//database handle
 
@@ -401,7 +403,7 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, list<unsigned int>& value_list)
+		string label, list<unsigned int> &value_list)
 {
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	int rc = 0; 							//control output flag
@@ -409,7 +411,7 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 	int value; 								//rows values
 	char strFlowId[INT_BUFFER_SIZE]; 		//FlowID string
 	char strExperimentId[INT_BUFFER_SIZE]; 	//FlowID string
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	string string_sql; 						//SQL string query
 	sqlite3_stmt *res;						//database handle
 
@@ -456,16 +458,15 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 	return (0);
 }
 
-
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, list<double>& value_list)
+		string label, list<double> &value_list)
 {
 	int rc = 0; 							//control output flag
 	int experimentID;
 	double value; 							//rows values
 	char strFlowId[INT_BUFFER_SIZE]; 		// FlowID string
 	char strExperimentId[INT_BUFFER_SIZE]; 	// FlowID string
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	string string_sql; 						//SQL string query
 	sqlite3_stmt *res; 						//database handle
 
@@ -512,13 +513,13 @@ int DatabaseInterface::getFlowData(string experimentName, int flowID,
 }
 
 int DatabaseInterface::getFlowData(string experimentName, int flowID,
-		string label, list<string>& value_list)
+		string label, list<string> &value_list)
 {
 	int rc = 0; 							//control output flag
 	int experimentID;						//
 	char strFlowId[INT_BUFFER_SIZE]; 		// FlowID string
 	char strExperimentId[INT_BUFFER_SIZE]; 	// FlowID string
-	char* sql = NULL; 						//SQL char[] query
+	char *sql = NULL; 						//SQL char[] query
 	string string_sql; 						//SQL string query
 	sqlite3_stmt *res; 						//database handle
 

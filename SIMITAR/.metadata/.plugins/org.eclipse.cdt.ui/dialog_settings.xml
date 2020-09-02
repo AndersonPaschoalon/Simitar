@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="${workspace_loc:/libs}/libsimitar.a" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
-	<item value="Default C++ test template" key="LastUsedSourceTemplate"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="${workspace_loc:/libs}/libsimitar.a"/>
+	<item key="LastUsedSourceTemplate" value="Default C++ test template"/>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
-		<item value="229" key="size.height"/>
-		<item value="806" key="size.width"/>
+		<item key="size.height" value="229"/>
+		<item key="size.width" value="806"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
 	<section name="NewClassWizardPage">
-		<item value="true" key="stubSelected1"/>
-		<item value="true" key="stubVirtual1"/>
-		<item value="false" key="namespaceSelected"/>
-		<item value="false" key="stubInline0"/>
-		<item value="false" key="stubInline1"/>
-		<item value="" key="namespace"/>
-		<item value="false" key="testFileSelected"/>
-		<item value="true" key="stubSelected0"/>
+		<item key="stubSelected1" value="true"/>
+		<item key="stubVirtual1" value="true"/>
+		<item key="namespaceSelected" value="false"/>
+		<item key="stubInline0" value="false"/>
+		<item key="stubInline1" value="false"/>
+		<item key="namespace" value=""/>
+		<item key="testFileSelected" value="false"/>
+		<item key="stubSelected0" value="true"/>
 	</section>
 	<section name="PDOMSearchPage">
 	</section>
 	<section name="RenameInformationPopup">
 	</section>
 	<section name="OptionalMessageDialog.hide.">
-		<item value="0" key="askReindex.detail"/>
+		<item key="askReindex.detail" value="0"/>
 	</section>
 	<section name="CRenameRefactoringInputPage">
-		<item value="3" key="scope"/>
-		<item value="" key="workingset"/>
-		<item value="false" key="references_inv"/>
-		<item value="false" key="comment"/>
-		<item value="false" key="exhausiveFileSearch"/>
-		<item value="false" key="macroDefinition"/>
+		<item key="scope" value="3"/>
+		<item key="workingset" value=""/>
+		<item key="references_inv" value="false"/>
+		<item key="comment" value="false"/>
+		<item key="exhausiveFileSearch" value="false"/>
+		<item key="macroDefinition" value="false"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="254" key="size.y"/>
-		<item value="798" key="size.x"/>
+		<item key="size.y" value="254"/>
+		<item key="size.x" value="798"/>
 	</section>
 </section>
