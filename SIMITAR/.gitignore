@@ -1,12 +1,70 @@
-!pcaps/.gitkeep
-pcaps/*.pcap
+################################################################################
+# C++ .gitignore
+################################################################################
+# Prerequisites
+*.d
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+# Precompiled Headers
+*.gch
+*.pch
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+# Fortran module files
+*.mod
+*.smod
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+# Executables
+*.exe
+*.out
+*.app
+
+
+################################################################################
+# Project .gitignore
+################################################################################
+# root
+gmon.out
+lgw10s_valgrind.log
+# bin/
+# data/
+!data/log/.gitkeep
+data/log/*
+data/db/*.db
+data/db/trace2.db
+# deps/
+# libsimitar/
 !libsimitar/obj/.gitkeep
 libsimitar/obj/*
-!data/log/.gitkeep
-data/db/*.db
+# pcaps/
+!pcaps/.gitkeep
+pcaps/*.pcap
+# scripts/
+# simitar-gen/
 !simitar-gen/obj/.gitkeep
 simitar-gen/obj/*
+# sniffer/
+# tests/
 !tests/integration/obj/.gitkeep
 tests/integration/obj/*
 !tests/unity/obj/.gitkeep
 tests/unity/obj/*
+# trace-analyzer/
+
+
+
+
+
+
+
+
+
