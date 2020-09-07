@@ -3,13 +3,16 @@
  *
  *  Created on: 14 de jun de 2016
  *      Author: apaschoalon
+ *  #Author                #Date         #Modification
+ *  ...............................................................................................
+ *  Anderson Paschoalon    04/09/2019    More logs for Debug
  */
 
 #include "DataProcessor.h"
 
 DataProcessor::DataProcessor()
 {
-	//m_time_scale = seconds;
+	PLOG_VERBOSE << "DataProcessor Default Constructor";
 	m_time_scale = 1.0;
 	m_min_on_time = 0.1;
 	m_session_cut_time = 30.0;
@@ -21,17 +24,28 @@ DataProcessor::DataProcessor(time_scale timeScale, time_sec minOnTime,
 		time_sec sessionCutTime, uint minNumberOfPackets,
 		const std::string& criterion)
 {
+	PLOG_DEBUG << "DataProcessor Constructor";
 	if (timeScale == milliseconds)
+	{
 		m_time_scale = 1000.0;
-	else
-		m_time_scale = 1.0;
-
-	if (criterion == "aic")
-		informationCriterionParam = "aic";
-	else if (criterion == "bic")
-		informationCriterionParam = "bic";
+	}
 	else
 	{
+		m_time_scale = 1.0;
+	}
+
+	if (criterion == "aic")
+	{
+		informationCriterionParam = "aic";
+	}
+	else if (criterion == "bic")
+	{
+		informationCriterionParam = "bic";
+	}
+	else
+	{
+		PLOG_WARN << "Invalid criterion or no criterion selected: {" << criterion
+				<< "}. Selecting default criterion: aic";
 		cerr << "\nInvalid criterion or no criterion selected: " << criterion
 				<< endl << "Selecting default criterion: AIC\n";
 		informationCriterionParam = "aic";
@@ -40,11 +54,16 @@ DataProcessor::DataProcessor(time_scale timeScale, time_sec minOnTime,
 	m_min_on_time = m_time_scale * minOnTime;
 	m_session_cut_time = m_time_scale * sessionCutTime;
 	min_time = min_time * m_time_scale;
+	PLOG_VERBOSE << "minimumAmountOfPackets:" << minimumAmountOfPackets <<
+			", m_min_on_time:" << m_min_on_time <<
+			", m_session_cut_time:" << m_session_cut_time <<
+			", min_time:" << min_time;
 }
 
 DataProcessor::~DataProcessor()
 {
-//nothing to do at all
+	//nothing to do at all
+	PLOG_DEBUG << "DataProcessor Destructor";
 }
 
 void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr,
@@ -63,6 +82,9 @@ void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr,
 	}
 	else
 	{
+		PLOG_WARN << "Some problem ocurred getting the time scalle. "
+				<< "m_timeScale=" << m_time_scale
+				<< ", but it should be 1 or 1000";
 		cerr << "Some problem ocurred getting the time scalle\n"
 				<< "m_timeScale=" << m_time_scale
 				<< ", but it should be 1 or 1000" << endl;
@@ -77,6 +99,7 @@ void DataProcessor::getConfiguration(time_scale timeScale, string& timeScaleStr,
 int DataProcessor::calculate_v2(const string& experimentName,
 		TraceDbManager* dbManager, NetworkTrace* netTrace)
 {
+	PLOG_VERBOSE << " DataProcessor::calculate_v2";
 	///iterator variables
 	uint fcounter = 0;
 	uint nflows = dbManager->getNumberOfFlows(experimentName);
@@ -85,8 +108,10 @@ int DataProcessor::calculate_v2(const string& experimentName,
 	int flowIntData = 0;
 	time_sec startDalay = 0;		//time of the fist packet of the flow
 	time_sec flowDuration = 0;	//duration of the flow
-	list<int> ttlList;
+	//list<int> ttlList;
+	list<int>* ttlList = new list<int>;
 	int ttl = 0;
+	/*
 	///flow-level variables
 	list<time_sec> relativeTime;	//time relative to the 1st packet list
 	long int nbytesMode1 = 0;
@@ -102,14 +127,44 @@ int DataProcessor::calculate_v2(const string& experimentName,
 	list<time_sec> arrival_list;
 	list<time_sec> interArrival_list; // list of inter arrival times of a flow
 	list<time_sec> interArrival_fileStack;
+	*/
+	///flow-level variables
+	list<time_sec>* relativeTime = new list<time_sec>;	//time relative to the 1st packet list
+	long int nbytesMode1 = 0;
+	long int nbytesMode2 = 0;
+	long int nKbytesMode1 = 0;		//Number of kbytes (bytes/1024) of the
+	long int nKbytesMode2 = 0;
+	///packetSize variables
+	//list<unsigned int> pslist;
+	list<uint>* pslist = new list<uint>;
+	list<packet_size>* psFirstMode = new list<packet_size>;
+	list<packet_size>* psSecondMode = new  list<packet_size>;
+	///inter-deperture time variables
+	list<time_sec>* arrival_list = new list<time_sec>;
+	list<time_sec>* interArrival_list = new list<time_sec>; // list of inter arrival times of a flow
+	list<time_sec>* interArrival_fileStack = new list<time_sec>;
 	time_sec idt_pivot = 0;
 	time_sec idt_next = 0;
 	time_sec idt_start = 0;
+	//Session Times
+	vector<time_sec>* onTimes = NULL;
+	vector<time_sec>* offTimes = NULL;
+	vector<unsigned int>* pktCounter = NULL;
+	vector<unsigned int>* fileSize = NULL;
+	// network flow pointer
+	NetworkFlow* netFlow = NULL;
+	list<StochasticModelFit>* fitModelList1 = NULL;
+	list<StochasticModelFit>* fitModelList2 = NULL;
 
+	printf("Creating flow models for %d flows...\n", nflows);
 	for (fcounter = 0; fcounter < nflows; fcounter++)
 	{
-		//NetworkFlow* netFlow = NetworkFlow::make_flow("dummy");
-		NetworkFlow* netFlow = NetworkFlowFactory::make_flow("dummy");
+		printf(".");
+		fflush(stdout);
+		PLOG_VERBOSE << " DataProcessor::calculate_v2 fcounter/nflows = " << fcounter << "/" << nflows;
+		// clean pointer
+		netFlow = NULL;
+		netFlow = NetworkFlowFactory::make_flow("dummy");
 
 		//reset temp vars
 		flowStrData = "";
@@ -118,29 +173,37 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		nbytesMode2 = 0;
 		nKbytesMode1 = 0;
 		nKbytesMode2 = 0;
-		relativeTime.clear();
-		pslist.clear();
-		psFirstMode.clear();
-		psSecondMode.clear();
-		arrival_list.clear();
-		interArrival_list.clear();
-		interArrival_fileStack.clear();
+		ttlList->clear();
+		relativeTime->clear();
+		pslist->clear();
+		psFirstMode->clear();
+		psSecondMode->clear();
+		arrival_list->clear();
+		interArrival_list->clear();
+		interArrival_fileStack->clear();
+		// NULL pointers
+		onTimes = NULL;
+		offTimes = NULL;
+		pktCounter = NULL;
+		fileSize = NULL;
+		fitModelList1 = NULL;
+		fitModelList2 = NULL;
 
-		dbManager->getFlowPktData(experimentName, fcounter, "pktSize", pslist);
+		dbManager->getFlowPktData(experimentName, fcounter, "pktSize", *pslist);
 		//databaseInterface->getFlowData(experimentName, fcounter, "frame__len",
 		//		pslist);
 
 		// Evaluate packet-size and number ob kbytes for each mode
-		for (list<uint>::iterator it = pslist.begin(); it != pslist.end(); it++)
+		for (list<uint>::iterator it = pslist->begin(); it != pslist->end(); it++)
 		{
 			if (*it <= PACKET_SIZE_MODE_CUT_VALUE)
 			{
-				psFirstMode.push_back(packet_size(*it));
+				psFirstMode->push_back(packet_size(*it));
 				nbytesMode1 += *it;
 			}
 			else
 			{
-				psSecondMode.push_back(packet_size(*it));
+				psSecondMode->push_back(packet_size(*it));
 				nbytesMode2 += *it;
 			}
 		}
@@ -150,17 +213,17 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		// load time-relative data. The time values are relative to the begin of
 		// the experiment
 		dbManager->getFlowPktData(experimentName, fcounter, "arrivalTime",
-				relativeTime);
+				*relativeTime);
 		//databaseInterface->getFlowData(experimentName, fcounter,
 		//		"frame__time_relative", relativeTime);
 
-		scalar_product(relativeTime, m_time_scale);
+		scalar_product(*relativeTime, m_time_scale);
 
 		// Evaluate interarriaval  times
-		for (list<time_sec>::iterator it = relativeTime.begin();
-				it != relativeTime.end(); it++)
+		for (list<time_sec>::iterator it = relativeTime->begin();
+				it != relativeTime->end(); it++)
 		{
-			if (it == relativeTime.begin())
+			if (it == relativeTime->begin())
 			{
 				idt_pivot = *it;
 				idt_start = idt_pivot;
@@ -168,29 +231,29 @@ int DataProcessor::calculate_v2(const string& experimentName,
 			else
 			{
 				idt_next = *it;
-				interArrival_list.push_back(idt_next - idt_pivot);
-				arrival_list.push_back(idt_next - idt_start);
+				interArrival_list->push_back(idt_next - idt_pivot);
+				arrival_list->push_back(idt_next - idt_start);
 				idt_pivot = idt_next;
 			}
 		}
 
 		// Separate file inter packet times
-		for (list<time_sec>::iterator it = interArrival_list.begin();
-				it != interArrival_list.end(); it++)
+		for (list<time_sec>::iterator it = interArrival_list->begin();
+				it != interArrival_list->end(); it++)
 		{
 			if (*it < m_session_cut_time)
 			{
-				interArrival_fileStack.push_back(*it);
+				interArrival_fileStack->push_back(*it);
 			}
 		}
 
 		////////////////////////////////////////////////////////////////////////
 		/// Flow-level Options
 		////////////////////////////////////////////////////////////////////////
-		startDalay = relativeTime.front();
+		startDalay = relativeTime->front();
 		netFlow->setFlowStartDelay(startDalay);
 
-		flowDuration = relativeTime.back() - relativeTime.front();
+		flowDuration = relativeTime->back() - relativeTime->front();
 		netFlow->setFlowDuration(flowDuration);
 
 		/// DS byte configuration -- now it is just set to zero
@@ -198,7 +261,7 @@ int DataProcessor::calculate_v2(const string& experimentName,
 
 		/// set npackes and nkbytes
 		netFlow->setNumberOfKbytes(nKbytesMode1 + nKbytesMode2);
-		netFlow->setNumberOfPackets(pslist.size());
+		netFlow->setNumberOfPackets(pslist->size());
 
 		////////////////////////////////////////////////////////////////////////
 		/// Protocols Options
@@ -242,14 +305,13 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		netFlow->setNetworkDstAddr(flowStrData);
 
 		/// set ttl as the most frequent
-		dbManager->getFlowPktData(experimentName, fcounter, "ttl", ttlList);
-		ttl = mode(&ttlList);
+		dbManager->getFlowPktData(experimentName, fcounter, "ttl", *ttlList);
+		ttl = mode(ttlList);
 
 		netFlow->setNetworkTtl(ttl);
 
 		/// L4 Protocols
 		/// reference: https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers
-
 		dbManager->getFlowData(experimentName, fcounter, "protocolTransport",
 				flowIntData);
 		if (flowIntData == ICMP_CODE)
@@ -292,9 +354,8 @@ int DataProcessor::calculate_v2(const string& experimentName,
 				flowIntData);
 		netFlow->setTransportDstPort(flowIntData);
 
-		/// Application protocol
-		/// reference :
-		/// https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+		// Application protocol
+		// reference: https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
 		netFlow->setApplicationProtocol(
 				aplicationProtocol(netFlow->getTransportProtocol(),
 						netFlow->getTransportSrcPort(),
@@ -305,27 +366,33 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 
 		netFlow->setInterDepertureTimeModels(
-				fitModelsInterArrival(interArrival_fileStack,
+				fitModelsInterArrival(*interArrival_fileStack,
 						informationCriterionParam));
 
 		//Session Times
-		vector<time_sec>* onTimes = new vector<time_sec>;
-		vector<time_sec>* offTimes = new vector<time_sec>;
-		vector<unsigned int>* pktCounter = new vector<unsigned int>;
-		vector<unsigned int>* fileSize = new vector<unsigned int>;
-		//calcOnOff(interArrival_list, 7, 0.1, onTimes, offTimes);
-
-		calcOnOff(interArrival_list, pslist, m_session_cut_time, m_min_on_time,
+		onTimes = new vector<time_sec>;
+		offTimes = new vector<time_sec>;
+		pktCounter = new vector<unsigned int>;
+		fileSize = new vector<unsigned int>;
+		this->calcOnOff(*interArrival_list, *pslist, m_session_cut_time, m_min_on_time,
 				onTimes, offTimes, pktCounter, fileSize);
-
-		//netFlow->setInterSessionTimesOnOff(onTimes, offTimes);
-		//netFlow->setSessionTimesOnOff(onTimes, offTimes);
 		netFlow->setSessionTimesOnOff(onTimes, offTimes, pktCounter, fileSize);
+		onTimes = NULL;
+		offTimes = NULL;
+		pktCounter = NULL;
+		fileSize = NULL;
 
 		/// Packet size data
-		netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
-				fitModelsPsSize(psSecondMode), nKbytesMode1, nKbytesMode2,
-				psFirstMode.size(), psSecondMode.size());
+		//netFlow->setPacketSizeModel(fitModelsPsSize(psFirstMode),
+		//		fitModelsPsSize(psSecondMode), nKbytesMode1, nKbytesMode2,
+		//		psFirstMode->size(), psSecondMode->size());
+		fitModelList1 = fitModelsPsSize(*psFirstMode);
+		fitModelList2 = fitModelsPsSize(*psSecondMode);
+		netFlow->setPacketSizeModel(fitModelList1,
+				fitModelList2, nKbytesMode1, nKbytesMode2,
+				psFirstMode->size(), psSecondMode->size());
+		fitModelList1 = NULL;
+		fitModelList2 = NULL;
 
 		netFlow->setFlowId(fcounter);
 
@@ -334,17 +401,36 @@ int DataProcessor::calculate_v2(const string& experimentName,
 		////////////////////////////////////////////////////////////////////////
 		netTrace->pushback_Netflow(netFlow);
 
+		// clean pointers
+		netFlow = NULL;
 	}
+	printf("\ndone\n");
+
+	// clear pointers
+	delete ttlList;
+	delete relativeTime;
+	delete pslist;
+	delete psFirstMode;
+	delete psSecondMode;
+	delete arrival_list;
+	delete interArrival_list;
+	delete interArrival_fileStack;
+	ttlList = NULL;
+	relativeTime = NULL;
+	pslist = NULL;
+	psFirstMode = NULL;
+	psSecondMode = NULL;
+	arrival_list = NULL;
+	interArrival_list = NULL;
+	interArrival_fileStack = NULL;
 
 	return (0);
 }
 
+
 int DataProcessor::calculate(const string& experimentName,
 		DatabaseInterface* databaseInterface, NetworkTrace* netTrace)
 {
-
-
-
 	///iterator variables
 	long int fcounter = 0;
 	long int nflows = 0;
@@ -652,6 +738,7 @@ int DataProcessor::calculate(const string& experimentName,
 	return (0);
 }
 
+
 protocol DataProcessor::aplicationProtocol(protocol transportProtocol,
 		port_number srcPort, port_number dstPort)
 {
@@ -875,12 +962,12 @@ list<StochasticModelFit>* DataProcessor::fitModelsInterArrival(
 list<StochasticModelFit>* DataProcessor::fitModelsPsSize(
 		list<double>& empiricalData)
 {
-//constants
-//const int numberOfModels = 3;
+	//constants
+	//const int numberOfModels = 3;
 	const int m = empiricalData.size(); //empirical data-size
-//vars
+	//vars
 	int counter = 0;
-//StochasticModelFit* modelVet = NULL;
+	//StochasticModelFit* modelVet = NULL;
 	vec paramVec = zeros<vec>(2);
 	vec infoCriterion = zeros<vec>(2);
 
@@ -1291,6 +1378,7 @@ T DataProcessor::mode(list<T>* theList)
 	}
 
 	delete[] vet;
+	vet = NULL;
 
 	return (mode);
 }
@@ -1299,12 +1387,13 @@ template<typename T>
 inline T* DataProcessor::list_to_cvector(list<T>* theList) const
 {
 	int listSize = theList->size();
-	T* vet;
+	T* vet = NULL;
 	int i = 0;
 
 	vet = new T[listSize];
 	if (listSize == 0)
 	{
+		vet = NULL;
 		return (0);
 	}
 
@@ -1318,10 +1407,12 @@ inline T* DataProcessor::list_to_cvector(list<T>* theList) const
 
 	return (vet);
 }
+
 template<typename T>
 inline void DataProcessor::delete_cvector(T* c_vet) const
 {
 	delete[] c_vet;
+	c_vet = NULL;
 }
 
 inline vec* DataProcessor::empiricalCdf(list<double>& empiricalData)
@@ -1353,6 +1444,7 @@ inline vec* DataProcessor::empiricalCdf(list<double>& empiricalData)
 	(*interArrivalCdf)(data_size - 1) = 1;
 
 	delete_cvector(cvet_empiricalData);
+	cvet_empiricalData = NULL;
 	return (interArrivalCdf);
 }
 
@@ -1890,6 +1982,9 @@ bool DataProcessor::test_list_tocvector()
 	delete_cvector(cvet1);
 	delete_cvector(cvet2);
 	delete_cvector(cvet3);
+	cvet1 = NULL;
+	cvet2 = NULL;
+	cvet3 = NULL;
 
 	return (true);
 }
@@ -2776,7 +2871,10 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet, const time_sec cut_time,
 //MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
 //MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
 	delete_cvector(arrival_time);
+	arrival_time = NULL;
 	delete_cvector(delta_time);
+	delta_time = NULL;
+
 }
 
 void DataProcessor::setSessionOnOffTimes(list<time_sec>& interArrivalTimes)
@@ -2942,7 +3040,9 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet,
 //MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
 //MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
 	delete_cvector(arrival_time);
+	arrival_time = NULL;
 	delete_cvector(delta_time);
+	delta_time = NULL;
 }
 
 void DataProcessor::calcOnOff(list<time_sec>& deltaVet,
@@ -3103,7 +3203,9 @@ void DataProcessor::calcOnOff(list<time_sec>& deltaVet,
 //MESSER_DEBUG("onTimes->size() = %d @<%s, %s>", onTimes->size());
 //MESSER_DEBUG("offTimes->size() = %d @<%s, %s>", offTimes->size());
 	delete_cvector(arrival_time);
+	arrival_time = NULL;
 	delete_cvector(delta_time);
+	delta_time = NULL;
 }
 
 bool DataProcessor::test_calcOnOff()

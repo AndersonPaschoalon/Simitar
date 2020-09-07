@@ -8,8 +8,9 @@
 #ifndef NETWORKTRACE_H_
 #define NETWORKTRACE_H_
 
-//external libs
-//#include <cstring>
+///////////////////////////////////////////////////////////////////////////////
+/// EXTERNAL LIBS
+///////////////////////////////////////////////////////////////////////////////
 #include <string.h>
 #include <cstdio>
 #include <cstdlib>
@@ -28,7 +29,9 @@
 #include "rapidxml-1.13/rapidxml_print.hpp"
 //#include "rapidxml-1.13/rapidxml_iterators.hpp"
 
-
+///////////////////////////////////////////////////////////////////////////////
+/// NAMESPACES
+///////////////////////////////////////////////////////////////////////////////
 using namespace rapidxml;
 using std::string;
 using std::cout;
@@ -38,7 +41,9 @@ using std::cin;
 using std::endl;
 using std::vector;
 
-//local libs
+///////////////////////////////////////////////////////////////////////////////
+/// LOCAL LIBS
+///////////////////////////////////////////////////////////////////////////////
 #include "SimitarWorkspace.h"
 #include "CsvFile.h"
 #include "NetworkFlow.h"
@@ -48,10 +53,69 @@ using std::vector;
 #include "cfunctions.h"
 #include "RegressionTests.h"
 
+///////////////////////////////////////////////////////////////////////////////
+/// TYPES
+///////////////////////////////////////////////////////////////////////////////
 
-//namespaces
 typedef struct flow_data_struct flowData;
 typedef struct model_data_struct modelData;
+
+struct model_data_struct
+{
+	char name[CHAR_BUFFER];
+	char param1[CHAR_BUFFER];
+	char param2[CHAR_BUFFER];
+	char aic[CHAR_BUFFER];
+	char bic[CHAR_BUFFER];
+};
+
+struct flow_data_struct
+{
+	//Inter packet times
+	char session_OnTimes[CHAR_LARGE_BUFFER];
+	char session_OffTimes[CHAR_LARGE_BUFFER];
+	char session_nPackets[CHAR_LARGE_BUFFER];
+	char session_nBytes[CHAR_LARGE_BUFFER];
+	unsigned int n_interFileModels;
+	modelData* interFileOn;
+	modelData* interFileOff;
+	unsigned int n_interPktModels;
+	modelData* interPkt;
+
+	//Packet sizes
+	unsigned int n_psM1Models;
+	unsigned int n_psM2Models;
+	modelData* psMode1;
+	modelData* psMode2;
+	char psMode1_Nkbytes[CHAR_BUFFER];
+	char psMode1_Npackets[CHAR_BUFFER];
+	char psMode2_Nkbytes[CHAR_BUFFER];
+	char psMode2_Npackets[CHAR_BUFFER];
+
+	//Flow
+	char flow_id[CHAR_BUFFER];
+	char flow_duration[CHAR_BUFFER];
+	char flow_start_delay[CHAR_BUFFER];
+	char flow_ds_byte[CHAR_BUFFER];
+	char flow_npackets[CHAR_BUFFER];
+	char flow_nkbytes[CHAR_BUFFER];
+
+	//Protocols
+	char link_p[CHAR_BUFFER];
+	char mac_src[CHAR_BUFFER];
+	char mac_dst[CHAR_BUFFER];
+	char net_p[CHAR_BUFFER];
+	char net_addrsrc[CHAR_BUFFER];
+	char net_addrdst[CHAR_BUFFER];
+	char net_ttl[CHAR_BUFFER];
+	char trans_p[CHAR_BUFFER];
+	char trans_psrc[CHAR_BUFFER];
+	char trans_pdst[CHAR_BUFFER];
+	char trans_sctpid[CHAR_BUFFER];
+	char trans_sctpmax[CHAR_BUFFER];
+	char app_p[CHAR_BUFFER];
+};
+
 
 class NetworkTrace
 {
@@ -232,7 +296,9 @@ private:
 	std::string info_captureDate;
 	std::string info_commentaries;
 
-	//constants
+	//other constants
+	static const char * DEFAULT_TRACE_NAME;
+	//compact trace descriptor
 	static const char * LABEL_TRACE;
 	static const char * LABEL_TRACE_NAME;
 	static const char * LABEL_TRAFFIC_ENGINE;
@@ -305,67 +371,5 @@ private:
 	bool test_getLocalIp();
 };
 
-struct model_data_struct
-{
-	char name[CHAR_BUFFER];
-	char param1[CHAR_BUFFER];
-	char param2[CHAR_BUFFER];
-	char aic[CHAR_BUFFER];
-	char bic[CHAR_BUFFER];
-};
-
-struct flow_data_struct
-{
-	//Inter packet times
-
-	char session_OnTimes[CHAR_LARGE_BUFFER];
-	char session_OffTimes[CHAR_LARGE_BUFFER];
-	char session_nPackets[CHAR_LARGE_BUFFER];
-	char session_nBytes[CHAR_LARGE_BUFFER];
-
-	unsigned int n_interFileModels;
-	modelData* interFileOn;
-	modelData* interFileOff;
-
-	unsigned int n_interPktModels;
-	modelData* interPkt;
-
-	//Packet sizes
-
-	unsigned int n_psM1Models;
-	unsigned int n_psM2Models;
-	modelData* psMode1;
-	modelData* psMode2;
-	char psMode1_Nkbytes[CHAR_BUFFER];
-	char psMode1_Npackets[CHAR_BUFFER];
-	char psMode2_Nkbytes[CHAR_BUFFER];
-	char psMode2_Npackets[CHAR_BUFFER];
-
-	//Flow
-
-	char flow_id[CHAR_BUFFER];
-	char flow_duration[CHAR_BUFFER];
-	char flow_start_delay[CHAR_BUFFER];
-	char flow_ds_byte[CHAR_BUFFER];
-	char flow_npackets[CHAR_BUFFER];
-	char flow_nkbytes[CHAR_BUFFER];
-
-	//Protocols
-
-	char link_p[CHAR_BUFFER];
-	char mac_src[CHAR_BUFFER];
-	char mac_dst[CHAR_BUFFER];
-	char net_p[CHAR_BUFFER];
-	char net_addrsrc[CHAR_BUFFER];
-	char net_addrdst[CHAR_BUFFER];
-	char net_ttl[CHAR_BUFFER];
-	char trans_p[CHAR_BUFFER];
-	char trans_psrc[CHAR_BUFFER];
-	char trans_pdst[CHAR_BUFFER];
-	char trans_sctpid[CHAR_BUFFER];
-	char trans_sctpmax[CHAR_BUFFER];
-	char app_p[CHAR_BUFFER];
-
-};
 
 #endif /* NETWORKTRACE_H_ */

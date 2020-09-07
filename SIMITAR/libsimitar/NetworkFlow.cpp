@@ -14,7 +14,7 @@ NetworkFlow::NetworkFlow()
 	flow_time_scale = seconds;
 //	flow_sleep_method = method_usleep;
 
-	///flow-level parameters initialization
+///flow-level parameters initialization
 	flowId = 0;
 	flow_ds_byte = 0;
 	flow_duration = 0;
@@ -87,30 +87,41 @@ void NetworkFlow::setTimeScale(time_scale theTimeScale)
 NetworkFlow::~NetworkFlow()
 {
 
-	ptr_interArrivalModelList->clear();
+	PLOG_VERBOSE << "NetoworkFlow Destructor: NetworkFlow::~NetworkFlow()";
+	PLOG_VERBOSE << "this->toString(): " << this->toString();
 
-	ptr_session_onTimes->clear();
-	ptr_session_offTimes->clear();
-	ptr_session_nBytes->clear();
-	ptr_session_nPackets->clear();
-
-	ptr_psMode1->clear();
-	ptr_psMode2->clear();
-
-	/// interarrival data structs
+	// free
+	PLOG_VERBOSE << "delete NetworkFlow pointers";
 	delete ptr_interArrivalModelList;
-
 	delete ptr_session_onTimes;
 	delete ptr_session_offTimes;
 	delete ptr_session_nBytes;
 	delete ptr_session_nPackets;
-
-	/// packet-size data structures
 	delete ptr_psMode1;
 	delete ptr_psMode2;
+
+	// set NULL
+	PLOG_VERBOSE << "set NetworkFlow pointers to NULL";
+	ptr_interArrivalModelList = NULL;
+	ptr_session_onTimes = NULL;
+	ptr_session_offTimes = NULL;
+	ptr_session_nBytes = NULL;
+	ptr_session_nPackets = NULL;
+	ptr_psMode1 = NULL;
+	ptr_psMode2 = NULL;
+
+	PLOG_VERBOSE << "this->toString(): " << this->toString();
+	PLOG_VERBOSE << "success -> exit";
 }
 
-std::string NetworkFlow::print()
+string NetworkFlow::print()
+{
+	simitar_iostream_mutex.lock();
+	printf("%s\n", this->toString().c_str());
+	simitar_iostream_mutex.unlock();
+	return this->toString();
+}
+string NetworkFlow::toString()
 {
 	string flow_str_print = "";
 	StochasticModelFit themodel;
@@ -161,10 +172,6 @@ std::string NetworkFlow::print()
 			+ this->getPacketSizeModelMode1(0).strModelName() + "]";
 	flow_str_print += " Packet-size-Mode2["
 			+ this->getPacketSizeModelMode2(0).strModelName() + "]";
-
-	simitar_iostream_mutex.lock();
-	printf("%s\n", flow_str_print.c_str());
-	simitar_iostream_mutex.unlock();
 
 	return (flow_str_print);
 }
@@ -230,12 +237,12 @@ void NetworkFlow::setLinkProtocol(protocol linkProtocol)
 	link_protocol = linkProtocol;
 }
 
-void NetworkFlow::setMacSrcAddr(const string& macSrc)
+void NetworkFlow::setMacSrcAddr(const string &macSrc)
 {
 	mac_src = macSrc;
 }
 
-void NetworkFlow::setMacDstAddr(const string& macDst)
+void NetworkFlow::setMacDstAddr(const string &macDst)
 {
 	mac_dst = macDst;
 }
@@ -245,7 +252,7 @@ const string& NetworkFlow::getNetworkDstAddr() const
 	return network_dst_addr;
 }
 
-void NetworkFlow::setNetworkDstAddr(const string& networkDstAddr)
+void NetworkFlow::setNetworkDstAddr(const string &networkDstAddr)
 {
 	network_dst_addr = networkDstAddr;
 }
@@ -275,7 +282,7 @@ const string& NetworkFlow::getNetworkSrcAddr() const
 	return network_src_addr;
 }
 
-void NetworkFlow::setNetworkSrcAddr(const string& networkSrcAddr)
+void NetworkFlow::setNetworkSrcAddr(const string &networkSrcAddr)
 {
 	network_src_addr = networkSrcAddr;
 }
@@ -404,15 +411,15 @@ StochasticModelFit NetworkFlow::getInterDepertureTimeModel(
 }
 
 void NetworkFlow::setInterDepertureTimeModels(
-		list<StochasticModelFit>* modelList)
+		list<StochasticModelFit> *modelList)
 {
 	ptr_interArrivalModelList = modelList;
 	//interDepertureTimeModel_counter = 0;
 }
 
-void NetworkFlow::setSessionTimesOnOff(vector<time_sec>* onTimesVec,
-		vector<time_sec>* offTimesVec, vector<unsigned int>* pktCounter,
-		vector<unsigned int>* fileSize)
+void NetworkFlow::setSessionTimesOnOff(vector<time_sec> *onTimesVec,
+		vector<time_sec> *offTimesVec, vector<unsigned int> *pktCounter,
+		vector<unsigned int> *fileSize)
 {
 	ptr_session_onTimes = onTimesVec;
 	ptr_session_offTimes = offTimesVec;
@@ -525,9 +532,8 @@ StochasticModelFit NetworkFlow::getPacketSizeModelMode2(unsigned int position)
 	return (themodel);
 }
 
-
-void NetworkFlow::setPacketSizeModel(std::list<StochasticModelFit>* modelVet1,
-		std::list<StochasticModelFit>* modelVet2, long int nkbytesMode1,
+void NetworkFlow::setPacketSizeModel(std::list<StochasticModelFit> *modelVet1,
+		std::list<StochasticModelFit> *modelVet2, long int nkbytesMode1,
 		long int nkbytesMode2, long int nPacketsMode1, long int nPacketsMode2)
 {
 	ptr_psMode1 = modelVet1;
@@ -597,7 +603,7 @@ long int NetworkFlow::getNpacketsMode2() const
 	return npackets_mode2;
 }
 
-void NetworkFlow::setMacAddr(const string& macSrc, const string& macDst)
+void NetworkFlow::setMacAddr(const string &macSrc, const string &macDst)
 {
 	mac_src = macSrc;
 	mac_dst = macDst;
@@ -619,7 +625,7 @@ void NetworkFlow::resetCounters()
 	sessionOffTimes_counter = 0;
 }
 
-inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
+inline int NetworkFlow::getLocalIfIp(char *interface, char *ipaddr)
 {
 	struct ifaddrs *ifaddr, *ifa;
 	int s;
@@ -665,7 +671,7 @@ inline int NetworkFlow::getLocalIfIp(char* interface, char* ipaddr)
 	return (0);
 }
 
-inline int NetworkFlow::getLocalIp(const char* interface, char* ipaddr)
+inline int NetworkFlow::getLocalIp(const char *interface, char *ipaddr)
 {
 	struct ifaddrs *ifaddr, *ifa;
 	int s;
@@ -725,12 +731,12 @@ void NetworkFlow::printModels()
 	}
 }
 
-vector<time_sec> *NetworkFlow::getSessionOnVector()
+vector<time_sec>* NetworkFlow::getSessionOnVector()
 {
 	return (ptr_session_onTimes);
 }
 
-vector<time_sec> *NetworkFlow::getSessionOffVector()
+vector<time_sec>* NetworkFlow::getSessionOffVector()
 {
 	return (ptr_session_offTimes);
 }

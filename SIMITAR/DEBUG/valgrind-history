@@ -1,0 +1,115 @@
+==8902== HEAP SUMMARY:
+==8902==     in use at exit: 1,151,086 bytes in 475 blocks
+==8902==   total heap usage: 12,899 allocs, 12,508 frees, 3,104,865 bytes allocated
+==8902== 
+==8902== LEAK SUMMARY:
+==8902==    definitely lost: 1,568 bytes in 69 blocks
+==8902==    indirectly lost: 115,920 bytes in 404 blocks
+==8902==      possibly lost: 0 bytes in 0 blocks
+==8902==    still reachable: 1,033,598 bytes in 2 blocks
+==8902==                       of which reachable via heuristic:
+==8902==                         length64           : 80 bytes in 1 blocks
+==8902==         suppressed: 0 bytes in 0 blocks
+==8902== Rerun with --leak-check=full to see details of leaked memory
+==8902== 
+==8902== For counts of detected and suppressed errors, rerun with: -v
+==8902== ERROR SUMMARY: 168 errors from 14 contexts (suppressed: 0 from 0)
+
+==3781== LEAK SUMMARY:
+==3781==    definitely lost: 176 bytes in 11 blocks
+==3781==    indirectly lost: 111,040 bytes in 296 blocks
+==3781==      possibly lost: 0 bytes in 0 blocks
+==3781==    still reachable: 1,032,966 bytes in 2 blocks
+==3781==                       of which reachable via heuristic:
+==3781==                         length64           : 80 bytes in 1 blocks
+==3781==         suppressed: 0 bytes in 0 blocks
+==3781== Reachable blocks (those to which a pointer was found) are not shown.
+==3781== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3781== 
+==3781== For counts of detected and suppressed errors, rerun with: -v
+==3781== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)
+
+==2687== HEAP SUMMARY:
+==2687==     in use at exit: 1,144,182 bytes in 309 blocks
+==2687==   total heap usage: 12,969 allocs, 12,660 frees, 3,105,353 bytes allocated
+==2687== 
+==2687== LEAK SUMMARY:
+==2687==    definitely lost: 176 bytes in 11 blocks
+==2687==    indirectly lost: 111,040 bytes in 296 blocks
+==2687==      possibly lost: 0 bytes in 0 blocks
+==2687==    still reachable: 1,032,966 bytes in 2 blocks
+==2687==                       of which reachable via heuristic:
+==2687==                         length64           : 80 bytes in 1 blocks
+==2687==         suppressed: 0 bytes in 0 blocks
+==2687== Rerun with --leak-check=full to see details of leaked memory
+==2687== 
+==2687== For counts of detected and suppressed errors, rerun with: -v
+==2687== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+==2695== 
+==2695== LEAK SUMMARY:
+==2695==    definitely lost: 176 bytes in 11 blocks
+==2695==    indirectly lost: 111,040 bytes in 296 blocks
+==2695==      possibly lost: 0 bytes in 0 blocks
+==2695==    still reachable: 1,032,966 bytes in 2 blocks
+==2695==                       of which reachable via heuristic:
+==2695==                         length64           : 80 bytes in 1 blocks
+==2695==         suppressed: 0 bytes in 0 blocks
+==2695== Reachable blocks (those to which a pointer was found) are not shown.
+==2695== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==2695== 
+==2695== For counts of detected and suppressed errors, rerun with: -v
+==2695== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)
+
+==4115== LEAK SUMMARY:
+==4115==    definitely lost: 176 bytes in 11 blocks
+==4115==    indirectly lost: 111,040 bytes in 296 blocks
+==4115==      possibly lost: 0 bytes in 0 blocks
+==4115==    still reachable: 1,033,358 bytes in 2 blocks
+==4115==                       of which reachable via heuristic:
+==4115==                         length64           : 80 bytes in 1 blocks
+==4115==         suppressed: 0 bytes in 0 blocks
+==4115== Reachable blocks (those to which a pointer was found) are not shown.
+==4115== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==4115== 
+==4115== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)
+==4115== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)
+
+==4673== LEAK SUMMARY:
+==4673==    definitely lost: 0 bytes in 8 blocks
+==4673==    indirectly lost: 0 bytes in 0 blocks
+==4673==      possibly lost: 0 bytes in 0 blocks
+==4673==    still reachable: 1,033,518 bytes in 1 blocks
+==4673==         suppressed: 0 bytes in 0 blocks
+==4673== Reachable blocks (those to which a pointer was found) are not shown.
+==4673== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==4673== 
+==4673== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==4673== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

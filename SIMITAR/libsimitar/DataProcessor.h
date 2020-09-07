@@ -28,6 +28,7 @@
 #include <armadillo>
 
 //local libs
+#include "PlogMacros.h"
 #include "Defines.h"
 #include "DatabaseInterface.h"
 #include "TraceDbManager.h"

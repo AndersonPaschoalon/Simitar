@@ -17,6 +17,11 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
+
+// version of XML Compact trace description
+// TODO - remover daqui, isso deve ser configuravel pelo workspace ou no trace analyzer
+//#define CDT_V2 1
+
 /**
  * Time scale enumeration used by NetworkFlow
  */
@@ -35,8 +40,7 @@ typedef enum
 #define CHAR_LARGE_BUFFER 1000
 #define CHAR_HUGE_BUFFER 10000
 #define MEGA_POWER 1000000
-// version of XML Compact trace description
-#define CDT_V2 1
+
 
 
 /**

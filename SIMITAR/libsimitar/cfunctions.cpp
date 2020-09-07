@@ -794,7 +794,7 @@ FILE* popen2(string command, string type, int &pid)
 
 	if ((child_pid = fork()) == -1)
 	{
-		perror("fork");
+		perror("fork error on cfunctions::popen2()");
 		exit(1);
 	}
 
@@ -853,5 +853,21 @@ int pclose2(FILE *fp, pid_t pid)
 	}
 
 	return stat;
+}
+
+
+string dataTimeNow()
+{
+	  time_t rawtime;
+	  struct tm * timeinfo;
+	  char buffer[80];
+
+	  time (&rawtime);
+	  timeinfo = localtime(&rawtime);
+
+	  strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+	  string str(buffer);
+
+	  return str;
 }
 

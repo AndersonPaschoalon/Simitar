@@ -7,8 +7,11 @@
 
 #include "NetworkTrace.h"
 
+
+
 #ifndef CDT_V2
 
+// Compact Trace Descriptors
 const char * NetworkTrace::LABEL_TRACE = "trace";
 const char * NetworkTrace::LABEL_TRACE_NAME = "info_tracename";
 const char * NetworkTrace::LABEL_CAPTURE_DATE = "info_captureDate";
@@ -128,10 +131,16 @@ const char * NetworkTrace::PROP_TINYFLOW_AVERAGE_PACKET_SIZE_MODE2 = "q";
 
 #endif
 
+// Other consts
+const char * NetworkTrace::DEFAULT_TRACE_NAME= "defalt-trace-name";
 
 NetworkTrace::NetworkTrace()
 {
 	PLOG_DEBUG << "NetworkTrace() constructor default";
+	this->networkFlow = vector<NetworkFlow*>();
+	this->info_tracename = DEFAULT_TRACE_NAME;
+	this->info_captureDate = dataTimeNow();
+	this->info_commentaries = "";
 }
 
 NetworkTrace::NetworkTrace(const string& fileName,
@@ -164,9 +173,9 @@ NetworkTrace::NetworkTrace(const string& fileName,
 	// Find our root node
 	root_node = doc.first_node(LABEL_TRACE);
 
-	info_tracename = root_node->first_attribute(LABEL_TRACE_NAME)->value();
-	info_commentaries = root_node->first_attribute(LABEL_COMMENTARIES)->value();
-	info_captureDate = root_node->first_attribute(LABEL_CAPTURE_DATE)->value();
+	this->info_tracename = root_node->first_attribute(LABEL_TRACE_NAME)->value();
+	this->info_commentaries = root_node->first_attribute(LABEL_COMMENTARIES)->value();
+	this->info_captureDate = root_node->first_attribute(LABEL_CAPTURE_DATE)->value();
 
 	charvet2type(root_node->first_attribute(LABEL_NUMBER_OF_FLOWS)->value(), nflows);
 
@@ -369,14 +378,27 @@ NetworkTrace::NetworkTrace(const string& fileName,
 NetworkTrace::~NetworkTrace()
 {
 	PLOG_DEBUG << "Destructor ~NetworkTrace().networkFlow.size() = "
-						<< networkFlow.size();
+						<< this->networkFlow.size();
 
-	for (unsigned int i = 0; i < networkFlow.size(); i++)
+	for (unsigned int i = 0; i < this->networkFlow.size(); i++)
 	{
-		PLOG_VERBOSE << "delete networkFlow[" << i << "]";
-		delete networkFlow[i];
+
+		PLOG_VERBOSE << "** FLOW [" << i << "] memAddr:" << networkFlow[i] << "**********************";
+
+		PLOG_VERBOSE << this->networkFlow[i]->toString();
+
+		PLOG_VERBOSE << "*****************************************************************************";
 	}
-	networkFlow.clear();
+
+	for (unsigned int i = 0; i < this->networkFlow.size(); i++)
+	{
+		PLOG_VERBOSE << "delete networkFlow[" << i << "] memAddr:" << networkFlow[i];
+		delete this->networkFlow[i];
+		networkFlow[i] = NULL;
+	}
+
+	PLOG_DEBUG << "networkFlow.clear()";
+	this->networkFlow.clear();
 
 }
 
@@ -827,13 +849,13 @@ int NetworkTrace::writeToFile(const std::string& fileName) const
 
 long int NetworkTrace::getNumberOfFlows() const
 {
-	return (networkFlow.size());
+	return (this->networkFlow.size());
 }
 
 const std::string NetworkTrace::toString() const
 {
-	std::string tostring = info_tracename + info_captureDate
-			+ info_commentaries;
+	std::string tostring = "trace:" + this->info_tracename + ", captureDate:" +
+			this->info_captureDate + ",  commentaries:"+  this->info_commentaries;
 	return (tostring);
 }
 

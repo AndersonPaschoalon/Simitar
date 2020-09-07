@@ -31,6 +31,14 @@ using namespace arma;
 
 #define _TESTS_FLAG 1
 
+
+/**
+ * returns a string with the data time in the format
+ * dd-mm-yyyy hh:mm:ss
+ * @return
+ */
+string dataTimeNow();
+
 /**
  *
  * @param command

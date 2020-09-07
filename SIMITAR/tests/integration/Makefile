@@ -4,7 +4,7 @@
 .PHONY: all clean remake
 
 # exec file name
-EXEC_FILE	:= ../integration-tests
+EXEC_FILE	:= ../integration-tests.exe
 
 # static lib name
 STATIC_LIB	:= 

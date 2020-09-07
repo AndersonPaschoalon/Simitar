@@ -39,7 +39,8 @@ export SIMITAR_DATABASE_V1=${SIMITAR_WORKSPACE}'/data/db/trace_v1.db'
 ###############################################################################
 # Database location and name (V2)
 ###############################################################################
-export SIMITAR_DATABASE_V2=${SIMITAR_WORKSPACE}'/data/db/trace.db'
+#export SIMITAR_DATABASE_V2=${SIMITAR_WORKSPACE}'/data/db/trace.db'
+export SIMITAR_DATABASE_V2=${SIMITAR_WORKSPACE}'/data/db/trace2.db'
 
 
 ###############################################################################

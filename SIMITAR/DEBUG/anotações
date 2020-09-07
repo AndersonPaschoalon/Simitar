@@ -1,0 +1,45 @@
+para deletear no flow
+		onTimes = NULL;
+		offTimes = NULL;
+		pktCounter = NULL;
+		fileSize = NULL;
+		fitModelList1 = NULL;
+		fitModelList2 = NULL;
+		netFlow
+
+
+setInterDepertureTimeModels(
+	@ptr_interArrivalModelList = NULL;
+	@ptr_session_onTimes = NULL;
+	@ptr_session_offTimes = NULL;
+	@ptr_session_nBytes = NULL;
+	@ptr_session_nPackets = NULL;
+	ptr_psMode1 = NULL;
+	ptr_psMode2 = NULL;
+
+
+void NetworkFlow::setInterDepertureTimeModels
+	@ptr_interArrivalModelList = modelList;
+
+void NetworkFlow::setSessionTimesOnOff
+	@ptr_session_onTimes = onTimesVec;
+	@ptr_session_offTimes = offTimesVec;
+	@ptr_session_nPackets = pktCounter;
+	@ptr_session_nBytes = fileSize;	
+
+
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file="valgrind.log"
+
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file="valgrind.log" ./bin/simitar-trace-analyzer --trace "http.pcap-001"
+
+
+valgrind --leak-check=full --track-origins=yes --verbose --log-file="valgrind.log" ./bin/simitar-trace-analyzer --trace "http.pcap-001"
+
+
+
+valgrind --leak-check=full --track-origins=yes --verbose --log-file="valgrind.log" ./bin/simitar-trace-analyzer --trace "lgw10s"
+
+
+valgrind --leak-check=full --track-origins=yes --verbose --log-file="valgrind.log" ./bin/simitar-trace-analyzer --trace "5gb-tcp-connection-001"
+
+

@@ -74,7 +74,9 @@ public:
 
 	inline int getLocalIp(const char* interface, char* ipaddr);
 
-	std::string print();
+	string print();
+
+	string toString();
 
 	void resetCounters();
 
@@ -259,9 +261,7 @@ private:
 	////////////////////////////////////////////////////////////////////////////
 	/// Flow-level settings
 	////////////////////////////////////////////////////////////////////////////
-
 	time_scale flow_time_scale;
-	//sleep_method flow_sleep_method;
 
 	////////////////////////////////////////////////////////////////////////////
 	/// Flow-level options
@@ -316,7 +316,6 @@ private:
 	vector<time_sec>* ptr_session_offTimes;
 	vector<uint>* ptr_session_nPackets;
 	vector<uint>* ptr_session_nBytes;
-	//counter sessionOnTimes_counter = 0;
 	counter sessionOnTimes_counter = -1;
 	counter sessionOffTimes_counter = 0;
 

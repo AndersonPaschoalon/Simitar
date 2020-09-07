@@ -1,4 +1,4 @@
-#!/usr/bin/python3.5
+#!/usr/bin/python3
 import argparse
 import re
 import sys

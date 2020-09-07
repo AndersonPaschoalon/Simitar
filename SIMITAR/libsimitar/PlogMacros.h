@@ -3,6 +3,9 @@
  *
  *  Created on: 24 de jul de 2017
  *      Author: anderson
+ *  #Author                #Date         #Modification
+ *  ...............................................................................................
+ *  Anderson Paschoalon    04/09/2019    Improvement on log Macros
  */
 
 #ifndef PLOGMACROS_H_
@@ -32,7 +35,7 @@ enum Severity
     verbose = 6 //!< verbose
 };
  */
-#define PLOG_INIT(logLevel)\
+#define PLOG_INIT_CSV(logLevel)\
 		char* _plog_logfile_env = std::getenv("SIMITAR_LOGFILE");\
 		char _fileName[500];\
 		if(_plog_logfile_env)\
@@ -50,13 +53,49 @@ enum Severity
 			LOG_ERROR  << "[" << __FILE__ << "] " << "Can't find env variable SIMITAR_LOGFILE";\
 		}
 
-#define PLOG_NONE LOG_NONE  << "[" << __FILE__ << "] "
-#define PLOG_FATAL LOG_FATAL  << "[" << __FILE__ << "] "
-#define PLOG_ERROR LOG_ERROR  << "[" << __FILE__ << "] "
-#define PLOG_WARN LOG_WARNING  << "[" << __FILE__ << "] "
-#define PLOG_INFO LOG_INFO  << "[" << __FILE__ << "] "
-#define PLOG_DEBUG LOG_DEBUG  << "[" << __FILE__ << "] "
-#define PLOG_VERBOSE LOG_VERBOSE  << "[" << __FILE__ << "] "
+/*
+#define PLOG_INIT_TXT(logLevel)\
+		char* _plog_logfile_env = std::getenv("SIMITAR_LOGFILE");\
+		char _fileName[500];\
+		if(_plog_logfile_env)\
+		{ \
+			strcpy(_fileName, _plog_logfile_env);\
+			static plog::RollingFileAppender<plog::TxtFormatter> fileAppender(_fileName,\
+					800000, 2);\
+			static plog::ColorConsoleAppender<plog::TxtFormatter> consoleAppender;\
+			plog::init(plog::logLevel, &fileAppender).addAppender(&consoleAppender); \
+		}\
+		else\
+		{\
+			static plog::ColorConsoleAppender<plog::TxtFormatter> consoleAppender;\
+			plog::init(plog::logLevel, &consoleAppender);\
+			LOG_ERROR  << "[" << __FILE__ << "] " << "Can't find env variable SIMITAR_LOGFILE";\
+		}
+*/
+
+#define PLOG_INIT_TXT(logLevel)\
+		char* _plog_logfile_env = std::getenv("SIMITAR_LOGFILE");\
+		char _fileName[500];\
+		if(_plog_logfile_env)\
+		{ \
+			strcpy(_fileName, _plog_logfile_env);\
+			static plog::RollingFileAppender<plog::TxtFormatter> fileAppender(_fileName,\
+					50000000, 200);\
+			plog::init(plog::logLevel, &fileAppender); \
+		}\
+		else\
+		{\
+			static plog::ColorConsoleAppender<plog::TxtFormatter> consoleAppender;\
+			plog::init(plog::logLevel, &consoleAppender);\
+			LOG_ERROR  << "[" << __FILE__ << "] " << "Can't find env variable SIMITAR_LOGFILE";\
+		}
+#define PLOG_NONE    LOG_NONE    << __FILE__ << ">>\t"
+#define PLOG_FATAL   LOG_FATAL   << __FILE__ << ">>\t"
+#define PLOG_ERROR   LOG_ERROR   << __FILE__ << ">>\t"
+#define PLOG_WARN    LOG_WARNING << __FILE__ << ">>\t"
+#define PLOG_INFO    LOG_INFO    << __FILE__ << ">>\t"
+#define PLOG_DEBUG   LOG_DEBUG   << __FILE__ << ">>\t"
+#define PLOG_VERBOSE LOG_VERBOSE << __FILE__ << ">>\t"
 
 #define SUCCESS 									0	/* Success*/
 #define ERROR_INVALID_ASSIGNMENT 					1	/* Invalid atribuition*/
